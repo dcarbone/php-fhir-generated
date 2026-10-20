@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,8 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension;
@@ -114,16 +112,16 @@ class FHIRImagingObjectSelectionInstance extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
-            ValuePatternMatchRule::NAME => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
+            'value_pattern_match' => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
         ],
         self::FIELD_SOP_CLASS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_UID => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_URL => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -553,7 +551,7 @@ class FHIRImagingObjectSelectionInstance extends FHIRBackboneElement
             || isset($decoded->_sopClass)
             || property_exists($decoded, self::FIELD_SOP_CLASS)
             || property_exists($decoded, self::FIELD_SOP_CLASS_EXT)) {
-            $v = $decoded->_sopClass ?? new \stdClass();
+            $v = isset($decoded->_sopClass) ? clone $decoded->_sopClass : new \stdClass();
             $v->value = $decoded->sopClass ?? null;
             $type->setSopClass(FHIROid::jsonUnserialize($v, $config));
         }
@@ -561,7 +559,7 @@ class FHIRImagingObjectSelectionInstance extends FHIRBackboneElement
             || isset($decoded->_uid)
             || property_exists($decoded, self::FIELD_UID)
             || property_exists($decoded, self::FIELD_UID_EXT)) {
-            $v = $decoded->_uid ?? new \stdClass();
+            $v = isset($decoded->_uid) ? clone $decoded->_uid : new \stdClass();
             $v->value = $decoded->uid ?? null;
             $type->setUid(FHIROid::jsonUnserialize($v, $config));
         }
@@ -569,7 +567,7 @@ class FHIRImagingObjectSelectionInstance extends FHIRBackboneElement
             || isset($decoded->_url)
             || property_exists($decoded, self::FIELD_URL)
             || property_exists($decoded, self::FIELD_URL_EXT)) {
-            $v = $decoded->_url ?? new \stdClass();
+            $v = isset($decoded->_url) ? clone $decoded->_url : new \stdClass();
             $v->value = $decoded->url ?? null;
             $type->setUrl(FHIRUri::jsonUnserialize($v, $config));
         }

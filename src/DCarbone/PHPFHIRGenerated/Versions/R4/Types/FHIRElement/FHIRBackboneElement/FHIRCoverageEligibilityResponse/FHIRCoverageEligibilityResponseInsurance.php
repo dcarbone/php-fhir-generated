@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
@@ -103,7 +102,7 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_COVERAGE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -478,7 +477,7 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
             || isset($decoded->_inforce)
             || property_exists($decoded, self::FIELD_INFORCE)
             || property_exists($decoded, self::FIELD_INFORCE_EXT)) {
-            $v = $decoded->_inforce ?? new \stdClass();
+            $v = isset($decoded->_inforce) ? clone $decoded->_inforce : new \stdClass();
             $v->value = $decoded->inforce ?? null;
             $type->setInforce(FHIRBoolean::jsonUnserialize($v, $config));
         }

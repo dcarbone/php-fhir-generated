@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRElement
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,8 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRConstraintSeverity;
@@ -111,19 +109,19 @@ class FHIRElementDefinitionConstraint extends FHIRElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
-            ValuePatternMatchRule::NAME => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
+            'value_pattern_match' => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
         ],
         self::FIELD_KEY => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_SEVERITY => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_HUMAN => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_XPATH => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -584,7 +582,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement
             || isset($decoded->_key)
             || property_exists($decoded, self::FIELD_KEY)
             || property_exists($decoded, self::FIELD_KEY_EXT)) {
-            $v = $decoded->_key ?? new \stdClass();
+            $v = isset($decoded->_key) ? clone $decoded->_key : new \stdClass();
             $v->value = $decoded->key ?? null;
             $type->setKey(FHIRId::jsonUnserialize($v, $config));
         }
@@ -592,7 +590,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement
             || isset($decoded->_requirements)
             || property_exists($decoded, self::FIELD_REQUIREMENTS)
             || property_exists($decoded, self::FIELD_REQUIREMENTS_EXT)) {
-            $v = $decoded->_requirements ?? new \stdClass();
+            $v = isset($decoded->_requirements) ? clone $decoded->_requirements : new \stdClass();
             $v->value = $decoded->requirements ?? null;
             $type->setRequirements(FHIRString::jsonUnserialize($v, $config));
         }
@@ -600,7 +598,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement
             || isset($decoded->_severity)
             || property_exists($decoded, self::FIELD_SEVERITY)
             || property_exists($decoded, self::FIELD_SEVERITY_EXT)) {
-            $v = $decoded->_severity ?? new \stdClass();
+            $v = isset($decoded->_severity) ? clone $decoded->_severity : new \stdClass();
             $v->value = $decoded->severity ?? null;
             $type->setSeverity(FHIRConstraintSeverity::jsonUnserialize($v, $config));
         }
@@ -608,7 +606,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement
             || isset($decoded->_human)
             || property_exists($decoded, self::FIELD_HUMAN)
             || property_exists($decoded, self::FIELD_HUMAN_EXT)) {
-            $v = $decoded->_human ?? new \stdClass();
+            $v = isset($decoded->_human) ? clone $decoded->_human : new \stdClass();
             $v->value = $decoded->human ?? null;
             $type->setHuman(FHIRString::jsonUnserialize($v, $config));
         }
@@ -616,7 +614,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement
             || isset($decoded->_xpath)
             || property_exists($decoded, self::FIELD_XPATH)
             || property_exists($decoded, self::FIELD_XPATH_EXT)) {
-            $v = $decoded->_xpath ?? new \stdClass();
+            $v = isset($decoded->_xpath) ? clone $decoded->_xpath : new \stdClass();
             $v->value = $decoded->xpath ?? null;
             $type->setXpath(FHIRString::jsonUnserialize($v, $config));
         }

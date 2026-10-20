@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -63,8 +63,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept;
@@ -103,10 +101,10 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
-            ValuePatternMatchRule::NAME => '/^[a-z0-9\\-\\.]{1,36}$/',
+            'value_pattern_match' => '/^[a-z0-9\\-\\.]{1,36}$/',
         ],
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -592,7 +590,7 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
             || isset($decoded->_onsetString)
             || property_exists($decoded, self::FIELD_ONSET_STRING)
             || property_exists($decoded, self::FIELD_ONSET_STRING_EXT)) {
-            $v = $decoded->_onsetString ?? new \stdClass();
+            $v = isset($decoded->_onsetString) ? clone $decoded->_onsetString : new \stdClass();
             $v->value = $decoded->onsetString ?? null;
             $type->setOnsetString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -600,7 +598,7 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
             || isset($decoded->_note)
             || property_exists($decoded, self::FIELD_NOTE)
             || property_exists($decoded, self::FIELD_NOTE_EXT)) {
-            $v = $decoded->_note ?? new \stdClass();
+            $v = isset($decoded->_note) ? clone $decoded->_note : new \stdClass();
             $v->value = $decoded->note ?? null;
             $type->setNote(FHIRString::jsonUnserialize($v, $config));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
@@ -107,7 +106,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_RESOURCE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -671,7 +670,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
             || isset($decoded->_rendering)
             || property_exists($decoded, self::FIELD_RENDERING)
             || property_exists($decoded, self::FIELD_RENDERING_EXT)) {
-            $v = $decoded->_rendering ?? new \stdClass();
+            $v = isset($decoded->_rendering) ? clone $decoded->_rendering : new \stdClass();
             $v->value = $decoded->rendering ?? null;
             $type->setRendering(FHIRUrl::jsonUnserialize($v, $config));
         }
@@ -709,7 +708,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addImage(FHIRString::jsonUnserialize($v, $config));
             }
@@ -726,7 +725,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addOther(FHIRString::jsonUnserialize($v, $config));
             }

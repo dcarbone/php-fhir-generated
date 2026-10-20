@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -925,7 +925,7 @@ class FHIRAddress extends FHIRElement
             || isset($decoded->_use)
             || property_exists($decoded, self::FIELD_USE)
             || property_exists($decoded, self::FIELD_USE_EXT)) {
-            $v = $decoded->_use ?? new \stdClass();
+            $v = isset($decoded->_use) ? clone $decoded->_use : new \stdClass();
             $v->value = $decoded->use ?? null;
             $type->setUse(FHIRAddressUse::jsonUnserialize($v, $config));
         }
@@ -933,7 +933,7 @@ class FHIRAddress extends FHIRElement
             || isset($decoded->_type)
             || property_exists($decoded, self::FIELD_TYPE)
             || property_exists($decoded, self::FIELD_TYPE_EXT)) {
-            $v = $decoded->_type ?? new \stdClass();
+            $v = isset($decoded->_type) ? clone $decoded->_type : new \stdClass();
             $v->value = $decoded->type ?? null;
             $type->setType(FHIRAddressType::jsonUnserialize($v, $config));
         }
@@ -941,7 +941,7 @@ class FHIRAddress extends FHIRElement
             || isset($decoded->_text)
             || property_exists($decoded, self::FIELD_TEXT)
             || property_exists($decoded, self::FIELD_TEXT_EXT)) {
-            $v = $decoded->_text ?? new \stdClass();
+            $v = isset($decoded->_text) ? clone $decoded->_text : new \stdClass();
             $v->value = $decoded->text ?? null;
             $type->setText(FHIRString::jsonUnserialize($v, $config));
         }
@@ -957,7 +957,7 @@ class FHIRAddress extends FHIRElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addLine(FHIRString::jsonUnserialize($v, $config));
             }
@@ -966,7 +966,7 @@ class FHIRAddress extends FHIRElement
             || isset($decoded->_city)
             || property_exists($decoded, self::FIELD_CITY)
             || property_exists($decoded, self::FIELD_CITY_EXT)) {
-            $v = $decoded->_city ?? new \stdClass();
+            $v = isset($decoded->_city) ? clone $decoded->_city : new \stdClass();
             $v->value = $decoded->city ?? null;
             $type->setCity(FHIRString::jsonUnserialize($v, $config));
         }
@@ -974,7 +974,7 @@ class FHIRAddress extends FHIRElement
             || isset($decoded->_district)
             || property_exists($decoded, self::FIELD_DISTRICT)
             || property_exists($decoded, self::FIELD_DISTRICT_EXT)) {
-            $v = $decoded->_district ?? new \stdClass();
+            $v = isset($decoded->_district) ? clone $decoded->_district : new \stdClass();
             $v->value = $decoded->district ?? null;
             $type->setDistrict(FHIRString::jsonUnserialize($v, $config));
         }
@@ -982,7 +982,7 @@ class FHIRAddress extends FHIRElement
             || isset($decoded->_state)
             || property_exists($decoded, self::FIELD_STATE)
             || property_exists($decoded, self::FIELD_STATE_EXT)) {
-            $v = $decoded->_state ?? new \stdClass();
+            $v = isset($decoded->_state) ? clone $decoded->_state : new \stdClass();
             $v->value = $decoded->state ?? null;
             $type->setState(FHIRString::jsonUnserialize($v, $config));
         }
@@ -990,7 +990,7 @@ class FHIRAddress extends FHIRElement
             || isset($decoded->_postalCode)
             || property_exists($decoded, self::FIELD_POSTAL_CODE)
             || property_exists($decoded, self::FIELD_POSTAL_CODE_EXT)) {
-            $v = $decoded->_postalCode ?? new \stdClass();
+            $v = isset($decoded->_postalCode) ? clone $decoded->_postalCode : new \stdClass();
             $v->value = $decoded->postalCode ?? null;
             $type->setPostalCode(FHIRString::jsonUnserialize($v, $config));
         }
@@ -998,7 +998,7 @@ class FHIRAddress extends FHIRElement
             || isset($decoded->_country)
             || property_exists($decoded, self::FIELD_COUNTRY)
             || property_exists($decoded, self::FIELD_COUNTRY_EXT)) {
-            $v = $decoded->_country ?? new \stdClass();
+            $v = isset($decoded->_country) ? clone $decoded->_country : new \stdClass();
             $v->value = $decoded->country ?? null;
             $type->setCountry(FHIRString::jsonUnserialize($v, $config));
         }

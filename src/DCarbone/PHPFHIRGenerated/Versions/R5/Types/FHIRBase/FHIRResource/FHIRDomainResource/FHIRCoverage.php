@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageClass;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageCostToBeneficiary;
@@ -168,13 +167,13 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_KIND => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_BENEFICIARY => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1372,7 +1371,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1718,7 +1717,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRFinancialResourceStatusCodes::jsonUnserialize($v, $config));
         }
@@ -1726,7 +1725,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_kind)
             || property_exists($decoded, self::FIELD_KIND)
             || property_exists($decoded, self::FIELD_KIND_EXT)) {
-            $v = $decoded->_kind ?? new \stdClass();
+            $v = isset($decoded->_kind) ? clone $decoded->_kind : new \stdClass();
             $v->value = $decoded->kind ?? null;
             $type->setKind(FHIRKind::jsonUnserialize($v, $config));
         }
@@ -1784,7 +1783,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_dependent)
             || property_exists($decoded, self::FIELD_DEPENDENT)
             || property_exists($decoded, self::FIELD_DEPENDENT_EXT)) {
-            $v = $decoded->_dependent ?? new \stdClass();
+            $v = isset($decoded->_dependent) ? clone $decoded->_dependent : new \stdClass();
             $v->value = $decoded->dependent ?? null;
             $type->setDependent(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1824,7 +1823,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_order)
             || property_exists($decoded, self::FIELD_ORDER)
             || property_exists($decoded, self::FIELD_ORDER_EXT)) {
-            $v = $decoded->_order ?? new \stdClass();
+            $v = isset($decoded->_order) ? clone $decoded->_order : new \stdClass();
             $v->value = $decoded->order ?? null;
             $type->setOrder(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
@@ -1832,7 +1831,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_network)
             || property_exists($decoded, self::FIELD_NETWORK)
             || property_exists($decoded, self::FIELD_NETWORK_EXT)) {
-            $v = $decoded->_network ?? new \stdClass();
+            $v = isset($decoded->_network) ? clone $decoded->_network : new \stdClass();
             $v->value = $decoded->network ?? null;
             $type->setNetwork(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1851,7 +1850,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_subrogation)
             || property_exists($decoded, self::FIELD_SUBROGATION)
             || property_exists($decoded, self::FIELD_SUBROGATION_EXT)) {
-            $v = $decoded->_subrogation ?? new \stdClass();
+            $v = isset($decoded->_subrogation) ? clone $decoded->_subrogation : new \stdClass();
             $v->value = $decoded->subrogation ?? null;
             $type->setSubrogation(FHIRBoolean::jsonUnserialize($v, $config));
         }

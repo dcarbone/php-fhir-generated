@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -766,7 +766,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
             || isset($decoded->_subunit)
             || property_exists($decoded, self::FIELD_SUBUNIT)
             || property_exists($decoded, self::FIELD_SUBUNIT_EXT)) {
-            $v = $decoded->_subunit ?? new \stdClass();
+            $v = isset($decoded->_subunit) ? clone $decoded->_subunit : new \stdClass();
             $v->value = $decoded->subunit ?? null;
             $type->setSubunit(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -774,7 +774,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
             || isset($decoded->_sequence)
             || property_exists($decoded, self::FIELD_SEQUENCE)
             || property_exists($decoded, self::FIELD_SEQUENCE_EXT)) {
-            $v = $decoded->_sequence ?? new \stdClass();
+            $v = isset($decoded->_sequence) ? clone $decoded->_sequence : new \stdClass();
             $v->value = $decoded->sequence ?? null;
             $type->setSequence(FHIRString::jsonUnserialize($v, $config));
         }
@@ -782,7 +782,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
             || isset($decoded->_length)
             || property_exists($decoded, self::FIELD_LENGTH)
             || property_exists($decoded, self::FIELD_LENGTH_EXT)) {
-            $v = $decoded->_length ?? new \stdClass();
+            $v = isset($decoded->_length) ? clone $decoded->_length : new \stdClass();
             $v->value = $decoded->length ?? null;
             $type->setLength(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -804,7 +804,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
             || isset($decoded->_nTerminalModification)
             || property_exists($decoded, self::FIELD_N_TERMINAL_MODIFICATION)
             || property_exists($decoded, self::FIELD_N_TERMINAL_MODIFICATION_EXT)) {
-            $v = $decoded->_nTerminalModification ?? new \stdClass();
+            $v = isset($decoded->_nTerminalModification) ? clone $decoded->_nTerminalModification : new \stdClass();
             $v->value = $decoded->nTerminalModification ?? null;
             $type->setNTerminalModification(FHIRString::jsonUnserialize($v, $config));
         }
@@ -819,7 +819,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
             || isset($decoded->_cTerminalModification)
             || property_exists($decoded, self::FIELD_C_TERMINAL_MODIFICATION)
             || property_exists($decoded, self::FIELD_C_TERMINAL_MODIFICATION_EXT)) {
-            $v = $decoded->_cTerminalModification ?? new \stdClass();
+            $v = isset($decoded->_cTerminalModification) ? clone $decoded->_cTerminalModification : new \stdClass();
             $v->value = $decoded->cTerminalModification ?? null;
             $type->setCTerminalModification(FHIRString::jsonUnserialize($v, $config));
         }

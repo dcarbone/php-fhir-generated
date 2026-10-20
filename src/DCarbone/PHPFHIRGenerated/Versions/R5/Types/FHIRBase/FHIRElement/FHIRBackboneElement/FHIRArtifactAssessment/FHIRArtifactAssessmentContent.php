@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -967,7 +967,7 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
             || isset($decoded->_informationType)
             || property_exists($decoded, self::FIELD_INFORMATION_TYPE)
             || property_exists($decoded, self::FIELD_INFORMATION_TYPE_EXT)) {
-            $v = $decoded->_informationType ?? new \stdClass();
+            $v = isset($decoded->_informationType) ? clone $decoded->_informationType : new \stdClass();
             $v->value = $decoded->informationType ?? null;
             $type->setInformationType(FHIRArtifactAssessmentInformationType::jsonUnserialize($v, $config));
         }
@@ -975,7 +975,7 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
             || isset($decoded->_summary)
             || property_exists($decoded, self::FIELD_SUMMARY)
             || property_exists($decoded, self::FIELD_SUMMARY_EXT)) {
-            $v = $decoded->_summary ?? new \stdClass();
+            $v = isset($decoded->_summary) ? clone $decoded->_summary : new \stdClass();
             $v->value = $decoded->summary ?? null;
             $type->setSummary(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -1023,7 +1023,7 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addPath(FHIRUri::jsonUnserialize($v, $config));
             }
@@ -1043,7 +1043,7 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
             || isset($decoded->_freeToShare)
             || property_exists($decoded, self::FIELD_FREE_TO_SHARE)
             || property_exists($decoded, self::FIELD_FREE_TO_SHARE_EXT)) {
-            $v = $decoded->_freeToShare ?? new \stdClass();
+            $v = isset($decoded->_freeToShare) ? clone $decoded->_freeToShare : new \stdClass();
             $v->value = $decoded->freeToShare ?? null;
             $type->setFreeToShare(FHIRBoolean::jsonUnserialize($v, $config));
         }

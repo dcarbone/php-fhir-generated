@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultPrimarySource;
@@ -158,7 +157,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1073,7 +1072,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1357,7 +1356,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addTargetLocation(FHIRString::jsonUnserialize($v, $config));
             }
@@ -1373,7 +1372,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRVerificationResultStatus::jsonUnserialize($v, $config));
         }
@@ -1381,7 +1380,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
             || isset($decoded->_statusDate)
             || property_exists($decoded, self::FIELD_STATUS_DATE)
             || property_exists($decoded, self::FIELD_STATUS_DATE_EXT)) {
-            $v = $decoded->_statusDate ?? new \stdClass();
+            $v = isset($decoded->_statusDate) ? clone $decoded->_statusDate : new \stdClass();
             $v->value = $decoded->statusDate ?? null;
             $type->setStatusDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1414,7 +1413,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
             || isset($decoded->_lastPerformed)
             || property_exists($decoded, self::FIELD_LAST_PERFORMED)
             || property_exists($decoded, self::FIELD_LAST_PERFORMED_EXT)) {
-            $v = $decoded->_lastPerformed ?? new \stdClass();
+            $v = isset($decoded->_lastPerformed) ? clone $decoded->_lastPerformed : new \stdClass();
             $v->value = $decoded->lastPerformed ?? null;
             $type->setLastPerformed(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1422,7 +1421,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
             || isset($decoded->_nextScheduled)
             || property_exists($decoded, self::FIELD_NEXT_SCHEDULED)
             || property_exists($decoded, self::FIELD_NEXT_SCHEDULED_EXT)) {
-            $v = $decoded->_nextScheduled ?? new \stdClass();
+            $v = isset($decoded->_nextScheduled) ? clone $decoded->_nextScheduled : new \stdClass();
             $v->value = $decoded->nextScheduled ?? null;
             $type->setNextScheduled(FHIRDate::jsonUnserialize($v, $config));
         }

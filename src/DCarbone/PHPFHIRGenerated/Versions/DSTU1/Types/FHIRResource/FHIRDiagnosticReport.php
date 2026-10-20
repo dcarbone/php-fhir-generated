@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -63,7 +63,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive;
@@ -133,25 +132,25 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_NAME => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_ISSUED => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_SUBJECT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_PERFORMER => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_DIAGNOSTIC_DATE_TIME => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_DIAGNOSTIC_PERIOD => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1277,7 +1276,7 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1568,7 +1567,7 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRDiagnosticReportStatus::jsonUnserialize($v, $config));
         }
@@ -1576,7 +1575,7 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
             || isset($decoded->_issued)
             || property_exists($decoded, self::FIELD_ISSUED)
             || property_exists($decoded, self::FIELD_ISSUED_EXT)) {
-            $v = $decoded->_issued ?? new \stdClass();
+            $v = isset($decoded->_issued) ? clone $decoded->_issued : new \stdClass();
             $v->value = $decoded->issued ?? null;
             $type->setIssued(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1623,7 +1622,7 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
             || isset($decoded->_diagnosticDateTime)
             || property_exists($decoded, self::FIELD_DIAGNOSTIC_DATE_TIME)
             || property_exists($decoded, self::FIELD_DIAGNOSTIC_DATE_TIME_EXT)) {
-            $v = $decoded->_diagnosticDateTime ?? new \stdClass();
+            $v = isset($decoded->_diagnosticDateTime) ? clone $decoded->_diagnosticDateTime : new \stdClass();
             $v->value = $decoded->diagnosticDateTime ?? null;
             $type->setDiagnosticDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1682,7 +1681,7 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
             || isset($decoded->_conclusion)
             || property_exists($decoded, self::FIELD_CONCLUSION)
             || property_exists($decoded, self::FIELD_CONCLUSION_EXT)) {
-            $v = $decoded->_conclusion ?? new \stdClass();
+            $v = isset($decoded->_conclusion) ? clone $decoded->_conclusion : new \stdClass();
             $v->value = $decoded->conclusion ?? null;
             $type->setConclusion(FHIRString::jsonUnserialize($v, $config));
         }

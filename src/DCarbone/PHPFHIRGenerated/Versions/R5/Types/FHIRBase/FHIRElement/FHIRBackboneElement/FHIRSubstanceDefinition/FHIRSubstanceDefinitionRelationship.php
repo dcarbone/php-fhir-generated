@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean;
@@ -133,7 +132,7 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -150,6 +149,7 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A pointer to another substance, as a resource or just a representational code.
+     * (choose any one of substanceDefinition*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $substanceDefinitionReference;
@@ -160,6 +160,7 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A pointer to another substance, as a resource or just a representational code.
+     * (choose any one of substanceDefinition*, but only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $substanceDefinitionCodeableConcept;
@@ -193,7 +194,7 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
      *
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
-     * other.
+     * other. (choose any one of amount*, but only one)
      */
     #[FHIRQuantity]
     protected FHIRQuantity $amountQuantity;
@@ -205,7 +206,7 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
      *
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
-     * other.
+     * other. (choose any one of amount*, but only one)
      */
     #[FHIRRatio]
     protected FHIRRatio $amountRatio;
@@ -216,7 +217,7 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
      *
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
-     * other.
+     * other. (choose any one of amount*, but only one)
      */
     #[FHIRString]
     protected FHIRString $amountString;
@@ -324,6 +325,7 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A pointer to another substance, as a resource or just a representational code.
+     * (choose any one of substanceDefinition*, but only one)
      */
     public function getSubstanceDefinitionReference(): null|FHIRReference
     {
@@ -336,6 +338,7 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A pointer to another substance, as a resource or just a representational code.
+     * (choose any one of substanceDefinition*, but only one)
      */
     public function setSubstanceDefinitionReference(null|FHIRReference $substanceDefinitionReference): self
     {
@@ -354,6 +357,7 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A pointer to another substance, as a resource or just a representational code.
+     * (choose any one of substanceDefinition*, but only one)
      */
     public function getSubstanceDefinitionCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -367,6 +371,7 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A pointer to another substance, as a resource or just a representational code.
+     * (choose any one of substanceDefinition*, but only one)
      */
     public function setSubstanceDefinitionCodeableConcept(null|FHIRCodeableConcept $substanceDefinitionCodeableConcept): self
     {
@@ -454,7 +459,7 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
      *
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
-     * other.
+     * other. (choose any one of amount*, but only one)
      */
     public function getAmountQuantity(): null|FHIRQuantity
     {
@@ -470,7 +475,7 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
      *
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
-     * other.
+     * other. (choose any one of amount*, but only one)
      */
     public function setAmountQuantity(null|FHIRQuantity $amountQuantity): self
     {
@@ -490,7 +495,7 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
      *
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
-     * other.
+     * other. (choose any one of amount*, but only one)
      */
     public function getAmountRatio(): null|FHIRRatio
     {
@@ -505,7 +510,7 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
      *
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
-     * other.
+     * other. (choose any one of amount*, but only one)
      */
     public function setAmountRatio(null|FHIRRatio $amountRatio): self
     {
@@ -524,7 +529,7 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
      *
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
-     * other.
+     * other. (choose any one of amount*, but only one)
      */
     public function getAmountString(): null|FHIRString
     {
@@ -538,7 +543,7 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
      *
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
-     * other.
+     * other. (choose any one of amount*, but only one)
      */
     public function setAmountString(null|string|FHIRStringPrimitive|FHIRString $amountString): self
     {
@@ -872,7 +877,7 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
             || isset($decoded->_isDefining)
             || property_exists($decoded, self::FIELD_IS_DEFINING)
             || property_exists($decoded, self::FIELD_IS_DEFINING_EXT)) {
-            $v = $decoded->_isDefining ?? new \stdClass();
+            $v = isset($decoded->_isDefining) ? clone $decoded->_isDefining : new \stdClass();
             $v->value = $decoded->isDefining ?? null;
             $type->setIsDefining(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -894,7 +899,7 @@ class FHIRSubstanceDefinitionRelationship extends FHIRBackboneElement
             || isset($decoded->_amountString)
             || property_exists($decoded, self::FIELD_AMOUNT_STRING)
             || property_exists($decoded, self::FIELD_AMOUNT_STRING_EXT)) {
-            $v = $decoded->_amountString ?? new \stdClass();
+            $v = isset($decoded->_amountString) ? clone $decoded->_amountString : new \stdClass();
             $v->value = $decoded->amountString ?? null;
             $type->setAmountString(FHIRString::jsonUnserialize($v, $config));
         }

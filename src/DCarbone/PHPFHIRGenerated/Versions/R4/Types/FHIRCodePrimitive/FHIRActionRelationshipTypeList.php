@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -63,7 +63,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive;
  */
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueOneOfRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
@@ -83,16 +82,16 @@ class FHIRActionRelationshipTypeList extends FHIRCodePrimitive
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
-            ValueOneOfRule::NAME => [
-                0 => 'before-start',
-                1 => 'before',
-                2 => 'before-end',
-                3 => 'concurrent-with-start',
-                4 => 'concurrent',
-                5 => 'concurrent-with-end',
-                6 => 'after-start',
-                7 => 'after',
-                8 => 'after-end',
+            'value_one_of' => [
+                'before-start',
+                'before',
+                'before-end',
+                'concurrent-with-start',
+                'concurrent',
+                'concurrent-with-end',
+                'after-start',
+                'after',
+                'after-end',
             ],
         ],
     ];

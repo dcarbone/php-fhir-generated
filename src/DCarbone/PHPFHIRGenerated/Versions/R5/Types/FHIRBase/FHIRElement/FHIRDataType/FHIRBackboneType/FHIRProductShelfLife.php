@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -153,7 +153,8 @@ class FHIRProductShelfLife extends FHIRBackboneType
      * The shelf life time period can be specified using a numerical value for the
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
-     * and the symbol identifier shall be used.
+     * and the symbol identifier shall be used. (choose any one of period*, but only
+     * one)
      */
     #[FHIRDuration]
     protected FHIRDuration $periodDuration;
@@ -165,7 +166,8 @@ class FHIRProductShelfLife extends FHIRBackboneType
      * The shelf life time period can be specified using a numerical value for the
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
-     * and the symbol identifier shall be used.
+     * and the symbol identifier shall be used. (choose any one of period*, but only
+     * one)
      */
     #[FHIRString]
     protected FHIRString $periodString;
@@ -275,7 +277,8 @@ class FHIRProductShelfLife extends FHIRBackboneType
      * The shelf life time period can be specified using a numerical value for the
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
-     * and the symbol identifier shall be used.
+     * and the symbol identifier shall be used. (choose any one of period*, but only
+     * one)
      */
     public function getPeriodDuration(): null|FHIRDuration
     {
@@ -290,7 +293,8 @@ class FHIRProductShelfLife extends FHIRBackboneType
      * The shelf life time period can be specified using a numerical value for the
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
-     * and the symbol identifier shall be used.
+     * and the symbol identifier shall be used. (choose any one of period*, but only
+     * one)
      */
     public function setPeriodDuration(null|FHIRDuration $periodDuration): self
     {
@@ -310,7 +314,8 @@ class FHIRProductShelfLife extends FHIRBackboneType
      * The shelf life time period can be specified using a numerical value for the
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
-     * and the symbol identifier shall be used.
+     * and the symbol identifier shall be used. (choose any one of period*, but only
+     * one)
      */
     public function getPeriodString(): null|FHIRString
     {
@@ -325,7 +330,8 @@ class FHIRProductShelfLife extends FHIRBackboneType
      * The shelf life time period can be specified using a numerical value for the
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
-     * and the symbol identifier shall be used.
+     * and the symbol identifier shall be used. (choose any one of period*, but only
+     * one)
      */
     public function setPeriodString(null|string|FHIRStringPrimitive|FHIRString $periodString): self
     {
@@ -544,7 +550,7 @@ class FHIRProductShelfLife extends FHIRBackboneType
             || isset($decoded->_periodString)
             || property_exists($decoded, self::FIELD_PERIOD_STRING)
             || property_exists($decoded, self::FIELD_PERIOD_STRING_EXT)) {
-            $v = $decoded->_periodString ?? new \stdClass();
+            $v = isset($decoded->_periodString) ? clone $decoded->_periodString : new \stdClass();
             $v->value = $decoded->periodString ?? null;
             $type->setPeriodString(FHIRString::jsonUnserialize($v, $config));
         }

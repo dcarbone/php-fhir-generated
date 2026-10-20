@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -58,8 +58,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive;
  */
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMinLengthRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueOneOfRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
@@ -77,56 +75,56 @@ class FHIRResourceType extends FHIRStringPrimitive
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
-            ValueMinLengthRule::NAME => 1,
-            ValueOneOfRule::NAME => [
-                0 => 'Provenance',
-                1 => 'Condition',
-                2 => 'CarePlan',
-                3 => 'Supply',
-                4 => 'Device',
-                5 => 'Query',
-                6 => 'Order',
-                7 => 'Organization',
-                8 => 'Procedure',
-                9 => 'Substance',
-                10 => 'DiagnosticReport',
-                11 => 'Group',
-                12 => 'ValueSet',
-                13 => 'Medication',
-                14 => 'MessageHeader',
-                15 => 'ImmunizationRecommendation',
-                16 => 'DocumentManifest',
-                17 => 'MedicationDispense',
-                18 => 'MedicationPrescription',
-                19 => 'MedicationAdministration',
-                20 => 'Encounter',
-                21 => 'SecurityEvent',
-                22 => 'MedicationStatement',
-                23 => 'List',
-                24 => 'Questionnaire',
-                25 => 'Composition',
-                26 => 'DeviceObservationReport',
-                27 => 'OperationOutcome',
-                28 => 'Conformance',
-                29 => 'Media',
-                30 => 'FamilyHistory',
-                31 => 'Other',
-                32 => 'Profile',
-                33 => 'Location',
-                34 => 'Observation',
-                35 => 'AllergyIntolerance',
-                36 => 'DocumentReference',
-                37 => 'Immunization',
-                38 => 'RelatedPerson',
-                39 => 'Specimen',
-                40 => 'OrderResponse',
-                41 => 'Alert',
-                42 => 'ConceptMap',
-                43 => 'Patient',
-                44 => 'Practitioner',
-                45 => 'AdverseReaction',
-                46 => 'ImagingStudy',
-                47 => 'DiagnosticOrder',
+            'value_min_length' => 1,
+            'value_one_of' => [
+                'Provenance',
+                'Condition',
+                'CarePlan',
+                'Supply',
+                'Device',
+                'Query',
+                'Order',
+                'Organization',
+                'Procedure',
+                'Substance',
+                'DiagnosticReport',
+                'Group',
+                'ValueSet',
+                'Medication',
+                'MessageHeader',
+                'ImmunizationRecommendation',
+                'DocumentManifest',
+                'MedicationDispense',
+                'MedicationPrescription',
+                'MedicationAdministration',
+                'Encounter',
+                'SecurityEvent',
+                'MedicationStatement',
+                'List',
+                'Questionnaire',
+                'Composition',
+                'DeviceObservationReport',
+                'OperationOutcome',
+                'Conformance',
+                'Media',
+                'FamilyHistory',
+                'Other',
+                'Profile',
+                'Location',
+                'Observation',
+                'AllergyIntolerance',
+                'DocumentReference',
+                'Immunization',
+                'RelatedPerson',
+                'Specimen',
+                'OrderResponse',
+                'Alert',
+                'ConceptMap',
+                'Patient',
+                'Practitioner',
+                'AdverseReaction',
+                'ImagingStudy',
+                'DiagnosticOrder',
             ],
         ],
     ];

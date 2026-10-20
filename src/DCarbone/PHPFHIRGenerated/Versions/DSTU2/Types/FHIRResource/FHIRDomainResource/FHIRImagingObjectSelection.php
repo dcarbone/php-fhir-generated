@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive;
@@ -132,16 +131,16 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements VersionCo
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_UID => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_PATIENT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_TITLE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_STUDY => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -658,7 +657,7 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements VersionCo
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -853,7 +852,7 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements VersionCo
             || isset($decoded->_uid)
             || property_exists($decoded, self::FIELD_UID)
             || property_exists($decoded, self::FIELD_UID_EXT)) {
-            $v = $decoded->_uid ?? new \stdClass();
+            $v = isset($decoded->_uid) ? clone $decoded->_uid : new \stdClass();
             $v->value = $decoded->uid ?? null;
             $type->setUid(FHIROid::jsonUnserialize($v, $config));
         }
@@ -875,7 +874,7 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements VersionCo
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
@@ -890,7 +889,7 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements VersionCo
             || isset($decoded->_authoringTime)
             || property_exists($decoded, self::FIELD_AUTHORING_TIME)
             || property_exists($decoded, self::FIELD_AUTHORING_TIME_EXT)) {
-            $v = $decoded->_authoringTime ?? new \stdClass();
+            $v = isset($decoded->_authoringTime) ? clone $decoded->_authoringTime : new \stdClass();
             $v->value = $decoded->authoringTime ?? null;
             $type->setAuthoringTime(FHIRDateTime::jsonUnserialize($v, $config));
         }

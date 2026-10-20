@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -1169,7 +1169,7 @@ class FHIRContractTerm extends FHIRBackboneElement
             || isset($decoded->_issued)
             || property_exists($decoded, self::FIELD_ISSUED)
             || property_exists($decoded, self::FIELD_ISSUED_EXT)) {
-            $v = $decoded->_issued ?? new \stdClass();
+            $v = isset($decoded->_issued) ? clone $decoded->_issued : new \stdClass();
             $v->value = $decoded->issued ?? null;
             $type->setIssued(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1253,7 +1253,7 @@ class FHIRContractTerm extends FHIRBackboneElement
             || isset($decoded->_text)
             || property_exists($decoded, self::FIELD_TEXT)
             || property_exists($decoded, self::FIELD_TEXT_EXT)) {
-            $v = $decoded->_text ?? new \stdClass();
+            $v = isset($decoded->_text) ? clone $decoded->_text : new \stdClass();
             $v->value = $decoded->text ?? null;
             $type->setText(FHIRString::jsonUnserialize($v, $config));
         }

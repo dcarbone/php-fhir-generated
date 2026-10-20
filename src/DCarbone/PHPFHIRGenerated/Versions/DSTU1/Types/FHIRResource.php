@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -526,7 +526,7 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -674,7 +674,7 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
             || isset($decoded->_language)
             || property_exists($decoded, self::FIELD_LANGUAGE)
             || property_exists($decoded, self::FIELD_LANGUAGE_EXT)) {
-            $v = $decoded->_language ?? new \stdClass();
+            $v = isset($decoded->_language) ? clone $decoded->_language : new \stdClass();
             $v->value = $decoded->language ?? null;
             $type->setLanguage(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -694,8 +694,7 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
             }
             foreach($vals as $v) {
                 $typeClassName = VersionTypeMap::mustGetContainedTypeClassnameFromJSON($v);
-                unset($v->resourceType);
-                $type->addContained($typeClassName::jsonUnserialize($v, $config));
+                $type->addContained(VersionTypeMap::jsonUnserializeResource($typeClassName, $v, $config));
             }
         }
         if (isset($decoded->extension) || property_exists($decoded, self::FIELD_EXTENSION)) {
@@ -713,7 +712,7 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
             || isset($decoded->_id)
             || property_exists($decoded, self::FIELD_ID)
             || property_exists($decoded, self::FIELD_ID_EXT)) {
-            $v = $decoded->_id ?? new \stdClass();
+            $v = isset($decoded->_id) ? clone $decoded->_id : new \stdClass();
             $v->value = $decoded->id ?? null;
             $type->setId(FHIRId::jsonUnserialize($v, $config));
         }

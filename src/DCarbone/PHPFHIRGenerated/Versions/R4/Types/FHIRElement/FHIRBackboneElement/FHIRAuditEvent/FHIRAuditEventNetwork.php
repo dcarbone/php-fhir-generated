@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -348,7 +348,7 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
             || isset($decoded->_address)
             || property_exists($decoded, self::FIELD_ADDRESS)
             || property_exists($decoded, self::FIELD_ADDRESS_EXT)) {
-            $v = $decoded->_address ?? new \stdClass();
+            $v = isset($decoded->_address) ? clone $decoded->_address : new \stdClass();
             $v->value = $decoded->address ?? null;
             $type->setAddress(FHIRString::jsonUnserialize($v, $config));
         }
@@ -356,7 +356,7 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
             || isset($decoded->_type)
             || property_exists($decoded, self::FIELD_TYPE)
             || property_exists($decoded, self::FIELD_TYPE_EXT)) {
-            $v = $decoded->_type ?? new \stdClass();
+            $v = isset($decoded->_type) ? clone $decoded->_type : new \stdClass();
             $v->value = $decoded->type ?? null;
             $type->setType(FHIRAuditEventAgentNetworkType::jsonUnserialize($v, $config));
         }

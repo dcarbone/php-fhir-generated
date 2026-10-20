@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -713,7 +713,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
             || isset($decoded->_category)
             || property_exists($decoded, self::FIELD_CATEGORY)
             || property_exists($decoded, self::FIELD_CATEGORY_EXT)) {
-            $v = $decoded->_category ?? new \stdClass();
+            $v = isset($decoded->_category) ? clone $decoded->_category : new \stdClass();
             $v->value = $decoded->category ?? null;
             $type->setCategory(FHIRObservationRangeCategory::jsonUnserialize($v, $config));
         }
@@ -746,7 +746,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
             || isset($decoded->_gender)
             || property_exists($decoded, self::FIELD_GENDER)
             || property_exists($decoded, self::FIELD_GENDER_EXT)) {
-            $v = $decoded->_gender ?? new \stdClass();
+            $v = isset($decoded->_gender) ? clone $decoded->_gender : new \stdClass();
             $v->value = $decoded->gender ?? null;
             $type->setGender(FHIRAdministrativeGender::jsonUnserialize($v, $config));
         }
@@ -768,7 +768,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
             || isset($decoded->_condition)
             || property_exists($decoded, self::FIELD_CONDITION)
             || property_exists($decoded, self::FIELD_CONDITION_EXT)) {
-            $v = $decoded->_condition ?? new \stdClass();
+            $v = isset($decoded->_condition) ? clone $decoded->_condition : new \stdClass();
             $v->value = $decoded->condition ?? null;
             $type->setCondition(FHIRString::jsonUnserialize($v, $config));
         }

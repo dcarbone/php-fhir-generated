@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -63,7 +63,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive;
@@ -115,10 +114,10 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_SUBJECT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_COLLECTION => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -706,7 +705,7 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -932,7 +931,7 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
             || isset($decoded->_receivedTime)
             || property_exists($decoded, self::FIELD_RECEIVED_TIME)
             || property_exists($decoded, self::FIELD_RECEIVED_TIME_EXT)) {
-            $v = $decoded->_receivedTime ?? new \stdClass();
+            $v = isset($decoded->_receivedTime) ? clone $decoded->_receivedTime : new \stdClass();
             $v->value = $decoded->receivedTime ?? null;
             $type->setReceivedTime(FHIRDateTime::jsonUnserialize($v, $config));
         }

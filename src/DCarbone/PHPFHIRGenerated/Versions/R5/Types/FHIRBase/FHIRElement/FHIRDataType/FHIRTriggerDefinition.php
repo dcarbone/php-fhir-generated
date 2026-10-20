@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType;
@@ -140,7 +139,7 @@ class FHIRTriggerDefinition extends FHIRDataType
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -204,7 +203,8 @@ class FHIRTriggerDefinition extends FHIRDataType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a periodic trigger). (choose any one of
+     * timing*, but only one)
      */
     #[FHIRTiming]
     protected FHIRTiming $timingTiming;
@@ -213,7 +213,8 @@ class FHIRTriggerDefinition extends FHIRDataType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a periodic trigger). (choose any one of
+     * timing*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $timingReference;
@@ -223,7 +224,8 @@ class FHIRTriggerDefinition extends FHIRDataType
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a periodic trigger). (choose any one of
+     * timing*, but only one)
      */
     #[FHIRDate]
     protected FHIRDate $timingDate;
@@ -236,7 +238,8 @@ class FHIRTriggerDefinition extends FHIRDataType
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a periodic trigger). (choose any one of
+     * timing*, but only one)
      */
     #[FHIRDateTime]
     protected FHIRDateTime $timingDateTime;
@@ -473,7 +476,8 @@ class FHIRTriggerDefinition extends FHIRDataType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a periodic trigger). (choose any one of
+     * timing*, but only one)
      */
     public function getTimingTiming(): null|FHIRTiming
     {
@@ -489,7 +493,8 @@ class FHIRTriggerDefinition extends FHIRDataType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a periodic trigger). (choose any one of
+     * timing*, but only one)
      */
     public function setTimingTiming(null|FHIRTiming $timingTiming): self
     {
@@ -506,7 +511,8 @@ class FHIRTriggerDefinition extends FHIRDataType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a periodic trigger). (choose any one of
+     * timing*, but only one)
      */
     public function getTimingReference(): null|FHIRReference
     {
@@ -518,7 +524,8 @@ class FHIRTriggerDefinition extends FHIRDataType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a periodic trigger). (choose any one of
+     * timing*, but only one)
      */
     public function setTimingReference(null|FHIRReference $timingReference): self
     {
@@ -536,7 +543,8 @@ class FHIRTriggerDefinition extends FHIRDataType
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a periodic trigger). (choose any one of
+     * timing*, but only one)
      */
     public function getTimingDate(): null|FHIRDate
     {
@@ -549,7 +557,8 @@ class FHIRTriggerDefinition extends FHIRDataType
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a periodic trigger). (choose any one of
+     * timing*, but only one)
      */
     public function setTimingDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $timingDate): self
     {
@@ -573,7 +582,8 @@ class FHIRTriggerDefinition extends FHIRDataType
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a periodic trigger). (choose any one of
+     * timing*, but only one)
      */
     public function getTimingDateTime(): null|FHIRDateTime
     {
@@ -589,7 +599,8 @@ class FHIRTriggerDefinition extends FHIRDataType
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The timing of the event (if this is a periodic trigger).
+     * The timing of the event (if this is a periodic trigger). (choose any one of
+     * timing*, but only one)
      */
     public function setTimingDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timingDateTime): self
     {
@@ -918,7 +929,7 @@ class FHIRTriggerDefinition extends FHIRDataType
             || isset($decoded->_type)
             || property_exists($decoded, self::FIELD_TYPE)
             || property_exists($decoded, self::FIELD_TYPE_EXT)) {
-            $v = $decoded->_type ?? new \stdClass();
+            $v = isset($decoded->_type) ? clone $decoded->_type : new \stdClass();
             $v->value = $decoded->type ?? null;
             $type->setType(FHIRTriggerType::jsonUnserialize($v, $config));
         }
@@ -926,7 +937,7 @@ class FHIRTriggerDefinition extends FHIRDataType
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -941,7 +952,7 @@ class FHIRTriggerDefinition extends FHIRDataType
             || isset($decoded->_subscriptionTopic)
             || property_exists($decoded, self::FIELD_SUBSCRIPTION_TOPIC)
             || property_exists($decoded, self::FIELD_SUBSCRIPTION_TOPIC_EXT)) {
-            $v = $decoded->_subscriptionTopic ?? new \stdClass();
+            $v = isset($decoded->_subscriptionTopic) ? clone $decoded->_subscriptionTopic : new \stdClass();
             $v->value = $decoded->subscriptionTopic ?? null;
             $type->setSubscriptionTopic(FHIRCanonical::jsonUnserialize($v, $config));
         }
@@ -963,7 +974,7 @@ class FHIRTriggerDefinition extends FHIRDataType
             || isset($decoded->_timingDate)
             || property_exists($decoded, self::FIELD_TIMING_DATE)
             || property_exists($decoded, self::FIELD_TIMING_DATE_EXT)) {
-            $v = $decoded->_timingDate ?? new \stdClass();
+            $v = isset($decoded->_timingDate) ? clone $decoded->_timingDate : new \stdClass();
             $v->value = $decoded->timingDate ?? null;
             $type->setTimingDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -971,7 +982,7 @@ class FHIRTriggerDefinition extends FHIRDataType
             || isset($decoded->_timingDateTime)
             || property_exists($decoded, self::FIELD_TIMING_DATE_TIME)
             || property_exists($decoded, self::FIELD_TIMING_DATE_TIME_EXT)) {
-            $v = $decoded->_timingDateTime ?? new \stdClass();
+            $v = isset($decoded->_timingDateTime) ? clone $decoded->_timingDateTime : new \stdClass();
             $v->value = $decoded->timingDateTime ?? null;
             $type->setTimingDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }

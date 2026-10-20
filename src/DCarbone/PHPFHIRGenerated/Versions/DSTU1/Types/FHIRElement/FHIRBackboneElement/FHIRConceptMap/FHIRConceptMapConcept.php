@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -63,8 +63,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement;
@@ -100,10 +98,10 @@ class FHIRConceptMapConcept extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
-            ValuePatternMatchRule::NAME => '/^[a-z0-9\\-\\.]{1,36}$/',
+            'value_pattern_match' => '/^[a-z0-9\\-\\.]{1,36}$/',
         ],
         self::FIELD_SYSTEM => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -516,7 +514,7 @@ class FHIRConceptMapConcept extends FHIRBackboneElement
             || isset($decoded->_system)
             || property_exists($decoded, self::FIELD_SYSTEM)
             || property_exists($decoded, self::FIELD_SYSTEM_EXT)) {
-            $v = $decoded->_system ?? new \stdClass();
+            $v = isset($decoded->_system) ? clone $decoded->_system : new \stdClass();
             $v->value = $decoded->system ?? null;
             $type->setSystem(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -524,7 +522,7 @@ class FHIRConceptMapConcept extends FHIRBackboneElement
             || isset($decoded->_code)
             || property_exists($decoded, self::FIELD_CODE)
             || property_exists($decoded, self::FIELD_CODE_EXT)) {
-            $v = $decoded->_code ?? new \stdClass();
+            $v = isset($decoded->_code) ? clone $decoded->_code : new \stdClass();
             $v->value = $decoded->code ?? null;
             $type->setCode(FHIRCode::jsonUnserialize($v, $config));
         }

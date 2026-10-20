@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive;
@@ -110,10 +109,10 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_CODE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_MIN => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -507,7 +506,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
             || isset($decoded->_code)
             || property_exists($decoded, self::FIELD_CODE)
             || property_exists($decoded, self::FIELD_CODE_EXT)) {
-            $v = $decoded->_code ?? new \stdClass();
+            $v = isset($decoded->_code) ? clone $decoded->_code : new \stdClass();
             $v->value = $decoded->code ?? null;
             $type->setCode(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -515,7 +514,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
             || isset($decoded->_profile)
             || property_exists($decoded, self::FIELD_PROFILE)
             || property_exists($decoded, self::FIELD_PROFILE_EXT)) {
-            $v = $decoded->_profile ?? new \stdClass();
+            $v = isset($decoded->_profile) ? clone $decoded->_profile : new \stdClass();
             $v->value = $decoded->profile ?? null;
             $type->setProfile(FHIRCanonical::jsonUnserialize($v, $config));
         }
@@ -523,7 +522,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
             || isset($decoded->_min)
             || property_exists($decoded, self::FIELD_MIN)
             || property_exists($decoded, self::FIELD_MIN_EXT)) {
-            $v = $decoded->_min ?? new \stdClass();
+            $v = isset($decoded->_min) ? clone $decoded->_min : new \stdClass();
             $v->value = $decoded->min ?? null;
             $type->setMin(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
@@ -531,7 +530,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
             || isset($decoded->_max)
             || property_exists($decoded, self::FIELD_MAX)
             || property_exists($decoded, self::FIELD_MAX_EXT)) {
-            $v = $decoded->_max ?? new \stdClass();
+            $v = isset($decoded->_max) ? clone $decoded->_max : new \stdClass();
             $v->value = $decoded->max ?? null;
             $type->setMax(FHIRString::jsonUnserialize($v, $config));
         }

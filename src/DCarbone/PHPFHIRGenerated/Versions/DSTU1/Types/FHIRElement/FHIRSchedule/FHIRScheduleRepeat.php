@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedul
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -63,8 +63,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive;
@@ -114,13 +112,13 @@ class FHIRScheduleRepeat extends FHIRElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
-            ValuePatternMatchRule::NAME => '/^[a-z0-9\\-\\.]{1,36}$/',
+            'value_pattern_match' => '/^[a-z0-9\\-\\.]{1,36}$/',
         ],
         self::FIELD_DURATION => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_UNITS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -617,7 +615,7 @@ class FHIRScheduleRepeat extends FHIRElement
             || isset($decoded->_frequency)
             || property_exists($decoded, self::FIELD_FREQUENCY)
             || property_exists($decoded, self::FIELD_FREQUENCY_EXT)) {
-            $v = $decoded->_frequency ?? new \stdClass();
+            $v = isset($decoded->_frequency) ? clone $decoded->_frequency : new \stdClass();
             $v->value = $decoded->frequency ?? null;
             $type->setFrequency(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -625,7 +623,7 @@ class FHIRScheduleRepeat extends FHIRElement
             || isset($decoded->_when)
             || property_exists($decoded, self::FIELD_WHEN)
             || property_exists($decoded, self::FIELD_WHEN_EXT)) {
-            $v = $decoded->_when ?? new \stdClass();
+            $v = isset($decoded->_when) ? clone $decoded->_when : new \stdClass();
             $v->value = $decoded->when ?? null;
             $type->setWhen(FHIREventTiming::jsonUnserialize($v, $config));
         }
@@ -633,7 +631,7 @@ class FHIRScheduleRepeat extends FHIRElement
             || isset($decoded->_duration)
             || property_exists($decoded, self::FIELD_DURATION)
             || property_exists($decoded, self::FIELD_DURATION_EXT)) {
-            $v = $decoded->_duration ?? new \stdClass();
+            $v = isset($decoded->_duration) ? clone $decoded->_duration : new \stdClass();
             $v->value = $decoded->duration ?? null;
             $type->setDuration(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -641,7 +639,7 @@ class FHIRScheduleRepeat extends FHIRElement
             || isset($decoded->_units)
             || property_exists($decoded, self::FIELD_UNITS)
             || property_exists($decoded, self::FIELD_UNITS_EXT)) {
-            $v = $decoded->_units ?? new \stdClass();
+            $v = isset($decoded->_units) ? clone $decoded->_units : new \stdClass();
             $v->value = $decoded->units ?? null;
             $type->setUnits(FHIRUnitsOfTime::jsonUnserialize($v, $config));
         }
@@ -649,7 +647,7 @@ class FHIRScheduleRepeat extends FHIRElement
             || isset($decoded->_count)
             || property_exists($decoded, self::FIELD_COUNT)
             || property_exists($decoded, self::FIELD_COUNT_EXT)) {
-            $v = $decoded->_count ?? new \stdClass();
+            $v = isset($decoded->_count) ? clone $decoded->_count : new \stdClass();
             $v->value = $decoded->count ?? null;
             $type->setCount(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -657,7 +655,7 @@ class FHIRScheduleRepeat extends FHIRElement
             || isset($decoded->_end)
             || property_exists($decoded, self::FIELD_END)
             || property_exists($decoded, self::FIELD_END_EXT)) {
-            $v = $decoded->_end ?? new \stdClass();
+            $v = isset($decoded->_end) ? clone $decoded->_end : new \stdClass();
             $v->value = $decoded->end ?? null;
             $type->setEnd(FHIRDateTime::jsonUnserialize($v, $config));
         }

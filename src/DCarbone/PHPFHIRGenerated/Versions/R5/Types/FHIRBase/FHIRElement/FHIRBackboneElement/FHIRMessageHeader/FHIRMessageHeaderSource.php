@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -145,7 +145,8 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Identifies the routing target to send acknowledgements to.
+     * Identifies the routing target to send acknowledgements to. (choose any one of
+     * endpoint*, but only one)
      */
     #[FHIRUrl]
     protected FHIRUrl $endpointUrl;
@@ -154,7 +155,8 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Identifies the routing target to send acknowledgements to.
+     * Identifies the routing target to send acknowledgements to. (choose any one of
+     * endpoint*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $endpointReference;
@@ -252,7 +254,8 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Identifies the routing target to send acknowledgements to.
+     * Identifies the routing target to send acknowledgements to. (choose any one of
+     * endpoint*, but only one)
      */
     public function getEndpointUrl(): null|FHIRUrl
     {
@@ -264,7 +267,8 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Identifies the routing target to send acknowledgements to.
+     * Identifies the routing target to send acknowledgements to. (choose any one of
+     * endpoint*, but only one)
      */
     public function setEndpointUrl(null|string|FHIRUrlPrimitive|FHIRUrl $endpointUrl): self
     {
@@ -284,7 +288,8 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Identifies the routing target to send acknowledgements to.
+     * Identifies the routing target to send acknowledgements to. (choose any one of
+     * endpoint*, but only one)
      */
     public function getEndpointReference(): null|FHIRReference
     {
@@ -296,7 +301,8 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Identifies the routing target to send acknowledgements to.
+     * Identifies the routing target to send acknowledgements to. (choose any one of
+     * endpoint*, but only one)
      */
     public function setEndpointReference(null|FHIRReference $endpointReference): self
     {
@@ -613,7 +619,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
             || isset($decoded->_endpointUrl)
             || property_exists($decoded, self::FIELD_ENDPOINT_URL)
             || property_exists($decoded, self::FIELD_ENDPOINT_URL_EXT)) {
-            $v = $decoded->_endpointUrl ?? new \stdClass();
+            $v = isset($decoded->_endpointUrl) ? clone $decoded->_endpointUrl : new \stdClass();
             $v->value = $decoded->endpointUrl ?? null;
             $type->setEndpointUrl(FHIRUrl::jsonUnserialize($v, $config));
         }
@@ -628,7 +634,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -636,7 +642,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
             || isset($decoded->_software)
             || property_exists($decoded, self::FIELD_SOFTWARE)
             || property_exists($decoded, self::FIELD_SOFTWARE_EXT)) {
-            $v = $decoded->_software ?? new \stdClass();
+            $v = isset($decoded->_software) ? clone $decoded->_software : new \stdClass();
             $v->value = $decoded->software ?? null;
             $type->setSoftware(FHIRString::jsonUnserialize($v, $config));
         }
@@ -644,7 +650,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
             || isset($decoded->_version)
             || property_exists($decoded, self::FIELD_VERSION)
             || property_exists($decoded, self::FIELD_VERSION_EXT)) {
-            $v = $decoded->_version ?? new \stdClass();
+            $v = isset($decoded->_version) ? clone $decoded->_version : new \stdClass();
             $v->value = $decoded->version ?? null;
             $type->setVersion(FHIRString::jsonUnserialize($v, $config));
         }

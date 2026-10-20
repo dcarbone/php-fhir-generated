@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -1052,7 +1052,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
             || isset($decoded->_shape)
             || property_exists($decoded, self::FIELD_SHAPE)
             || property_exists($decoded, self::FIELD_SHAPE_EXT)) {
-            $v = $decoded->_shape ?? new \stdClass();
+            $v = isset($decoded->_shape) ? clone $decoded->_shape : new \stdClass();
             $v->value = $decoded->shape ?? null;
             $type->setShape(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1068,7 +1068,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addColor(FHIRString::jsonUnserialize($v, $config));
             }
@@ -1085,7 +1085,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addImprint(FHIRString::jsonUnserialize($v, $config));
             }

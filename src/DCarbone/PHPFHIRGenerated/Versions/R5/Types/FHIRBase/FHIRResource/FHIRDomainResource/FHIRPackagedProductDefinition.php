@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -1263,7 +1263,7 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1552,7 +1552,7 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1585,7 +1585,7 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
             || isset($decoded->_statusDate)
             || property_exists($decoded, self::FIELD_STATUS_DATE)
             || property_exists($decoded, self::FIELD_STATUS_DATE_EXT)) {
-            $v = $decoded->_statusDate ?? new \stdClass();
+            $v = isset($decoded->_statusDate) ? clone $decoded->_statusDate : new \stdClass();
             $v->value = $decoded->statusDate ?? null;
             $type->setStatusDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1604,7 +1604,7 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -1634,7 +1634,7 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
             || isset($decoded->_copackagedIndicator)
             || property_exists($decoded, self::FIELD_COPACKAGED_INDICATOR)
             || property_exists($decoded, self::FIELD_COPACKAGED_INDICATOR_EXT)) {
-            $v = $decoded->_copackagedIndicator ?? new \stdClass();
+            $v = isset($decoded->_copackagedIndicator) ? clone $decoded->_copackagedIndicator : new \stdClass();
             $v->value = $decoded->copackagedIndicator ?? null;
             $type->setCopackagedIndicator(FHIRBoolean::jsonUnserialize($v, $config));
         }

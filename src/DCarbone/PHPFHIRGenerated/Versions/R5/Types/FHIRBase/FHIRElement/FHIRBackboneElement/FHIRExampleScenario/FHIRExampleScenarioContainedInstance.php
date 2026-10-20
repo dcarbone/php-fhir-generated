@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
@@ -118,7 +117,7 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_INSTANCE_REFERENCE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -365,7 +364,7 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
             || isset($decoded->_instanceReference)
             || property_exists($decoded, self::FIELD_INSTANCE_REFERENCE)
             || property_exists($decoded, self::FIELD_INSTANCE_REFERENCE_EXT)) {
-            $v = $decoded->_instanceReference ?? new \stdClass();
+            $v = isset($decoded->_instanceReference) ? clone $decoded->_instanceReference : new \stdClass();
             $v->value = $decoded->instanceReference ?? null;
             $type->setInstanceReference(FHIRString::jsonUnserialize($v, $config));
         }
@@ -373,7 +372,7 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
             || isset($decoded->_versionReference)
             || property_exists($decoded, self::FIELD_VERSION_REFERENCE)
             || property_exists($decoded, self::FIELD_VERSION_REFERENCE_EXT)) {
-            $v = $decoded->_versionReference ?? new \stdClass();
+            $v = isset($decoded->_versionReference) ? clone $decoded->_versionReference : new \stdClass();
             $v->value = $decoded->versionReference ?? null;
             $type->setVersionReference(FHIRString::jsonUnserialize($v, $config));
         }

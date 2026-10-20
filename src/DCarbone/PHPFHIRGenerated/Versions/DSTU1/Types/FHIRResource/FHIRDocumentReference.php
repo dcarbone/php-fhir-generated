@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -63,7 +63,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive;
@@ -149,25 +148,25 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_MASTER_IDENTIFIER => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_SUBJECT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_AUTHOR => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_INDEXED => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_MIME_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1490,7 +1489,7 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1954,7 +1953,7 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
             || isset($decoded->_policyManager)
             || property_exists($decoded, self::FIELD_POLICY_MANAGER)
             || property_exists($decoded, self::FIELD_POLICY_MANAGER_EXT)) {
-            $v = $decoded->_policyManager ?? new \stdClass();
+            $v = isset($decoded->_policyManager) ? clone $decoded->_policyManager : new \stdClass();
             $v->value = $decoded->policyManager ?? null;
             $type->setPolicyManager(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -1969,7 +1968,7 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
             || isset($decoded->_created)
             || property_exists($decoded, self::FIELD_CREATED)
             || property_exists($decoded, self::FIELD_CREATED_EXT)) {
-            $v = $decoded->_created ?? new \stdClass();
+            $v = isset($decoded->_created) ? clone $decoded->_created : new \stdClass();
             $v->value = $decoded->created ?? null;
             $type->setCreated(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1977,7 +1976,7 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
             || isset($decoded->_indexed)
             || property_exists($decoded, self::FIELD_INDEXED)
             || property_exists($decoded, self::FIELD_INDEXED_EXT)) {
-            $v = $decoded->_indexed ?? new \stdClass();
+            $v = isset($decoded->_indexed) ? clone $decoded->_indexed : new \stdClass();
             $v->value = $decoded->indexed ?? null;
             $type->setIndexed(FHIRInstant::jsonUnserialize($v, $config));
         }
@@ -1985,7 +1984,7 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRDocumentReferenceStatus::jsonUnserialize($v, $config));
         }
@@ -2011,7 +2010,7 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2030,7 +2029,7 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
             || isset($decoded->_primaryLanguage)
             || property_exists($decoded, self::FIELD_PRIMARY_LANGUAGE)
             || property_exists($decoded, self::FIELD_PRIMARY_LANGUAGE_EXT)) {
-            $v = $decoded->_primaryLanguage ?? new \stdClass();
+            $v = isset($decoded->_primaryLanguage) ? clone $decoded->_primaryLanguage : new \stdClass();
             $v->value = $decoded->primaryLanguage ?? null;
             $type->setPrimaryLanguage(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -2038,7 +2037,7 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
             || isset($decoded->_mimeType)
             || property_exists($decoded, self::FIELD_MIME_TYPE)
             || property_exists($decoded, self::FIELD_MIME_TYPE_EXT)) {
-            $v = $decoded->_mimeType ?? new \stdClass();
+            $v = isset($decoded->_mimeType) ? clone $decoded->_mimeType : new \stdClass();
             $v->value = $decoded->mimeType ?? null;
             $type->setMimeType(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -2054,7 +2053,7 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addFormat(FHIRUri::jsonUnserialize($v, $config));
             }
@@ -2063,7 +2062,7 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
             || isset($decoded->_size)
             || property_exists($decoded, self::FIELD_SIZE)
             || property_exists($decoded, self::FIELD_SIZE_EXT)) {
-            $v = $decoded->_size ?? new \stdClass();
+            $v = isset($decoded->_size) ? clone $decoded->_size : new \stdClass();
             $v->value = $decoded->size ?? null;
             $type->setSize(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -2071,7 +2070,7 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
             || isset($decoded->_hash)
             || property_exists($decoded, self::FIELD_HASH)
             || property_exists($decoded, self::FIELD_HASH_EXT)) {
-            $v = $decoded->_hash ?? new \stdClass();
+            $v = isset($decoded->_hash) ? clone $decoded->_hash : new \stdClass();
             $v->value = $decoded->hash ?? null;
             $type->setHash(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2079,7 +2078,7 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
             || isset($decoded->_location)
             || property_exists($decoded, self::FIELD_LOCATION)
             || property_exists($decoded, self::FIELD_LOCATION_EXT)) {
-            $v = $decoded->_location ?? new \stdClass();
+            $v = isset($decoded->_location) ? clone $decoded->_location : new \stdClass();
             $v->value = $decoded->location ?? null;
             $type->setLocation(FHIRUri::jsonUnserialize($v, $config));
         }

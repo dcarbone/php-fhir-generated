@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean;
@@ -135,7 +134,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_WHO => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -218,7 +217,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * When the event utilizes a network there should be an agent describing the local
      * system, and an agent describing remote system, with the network interface
-     * details.
+     * details. (choose any one of network*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $networkReference;
@@ -229,7 +228,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * When the event utilizes a network there should be an agent describing the local
      * system, and an agent describing remote system, with the network interface
-     * details.
+     * details. (choose any one of network*, but only one)
      */
     #[FHIRUri]
     protected FHIRUri $networkUri;
@@ -240,7 +239,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * When the event utilizes a network there should be an agent describing the local
      * system, and an agent describing remote system, with the network interface
-     * details.
+     * details. (choose any one of network*, but only one)
      */
     #[FHIRString]
     protected FHIRString $networkString;
@@ -595,7 +594,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * When the event utilizes a network there should be an agent describing the local
      * system, and an agent describing remote system, with the network interface
-     * details.
+     * details. (choose any one of network*, but only one)
      */
     public function getNetworkReference(): null|FHIRReference
     {
@@ -609,7 +608,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * When the event utilizes a network there should be an agent describing the local
      * system, and an agent describing remote system, with the network interface
-     * details.
+     * details. (choose any one of network*, but only one)
      */
     public function setNetworkReference(null|FHIRReference $networkReference): self
     {
@@ -628,7 +627,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * When the event utilizes a network there should be an agent describing the local
      * system, and an agent describing remote system, with the network interface
-     * details.
+     * details. (choose any one of network*, but only one)
      */
     public function getNetworkUri(): null|FHIRUri
     {
@@ -642,7 +641,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * When the event utilizes a network there should be an agent describing the local
      * system, and an agent describing remote system, with the network interface
-     * details.
+     * details. (choose any one of network*, but only one)
      */
     public function setNetworkUri(null|string|FHIRUriPrimitive|FHIRUri $networkUri): self
     {
@@ -664,7 +663,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * When the event utilizes a network there should be an agent describing the local
      * system, and an agent describing remote system, with the network interface
-     * details.
+     * details. (choose any one of network*, but only one)
      */
     public function getNetworkString(): null|FHIRString
     {
@@ -678,7 +677,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * When the event utilizes a network there should be an agent describing the local
      * system, and an agent describing remote system, with the network interface
-     * details.
+     * details. (choose any one of network*, but only one)
      */
     public function setNetworkString(null|string|FHIRStringPrimitive|FHIRString $networkString): self
     {
@@ -977,7 +976,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
             || isset($decoded->_requestor)
             || property_exists($decoded, self::FIELD_REQUESTOR)
             || property_exists($decoded, self::FIELD_REQUESTOR_EXT)) {
-            $v = $decoded->_requestor ?? new \stdClass();
+            $v = isset($decoded->_requestor) ? clone $decoded->_requestor : new \stdClass();
             $v->value = $decoded->requestor ?? null;
             $type->setRequestor(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1000,7 +999,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addPolicy(FHIRUri::jsonUnserialize($v, $config));
             }
@@ -1016,7 +1015,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
             || isset($decoded->_networkUri)
             || property_exists($decoded, self::FIELD_NETWORK_URI)
             || property_exists($decoded, self::FIELD_NETWORK_URI_EXT)) {
-            $v = $decoded->_networkUri ?? new \stdClass();
+            $v = isset($decoded->_networkUri) ? clone $decoded->_networkUri : new \stdClass();
             $v->value = $decoded->networkUri ?? null;
             $type->setNetworkUri(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -1024,7 +1023,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
             || isset($decoded->_networkString)
             || property_exists($decoded, self::FIELD_NETWORK_STRING)
             || property_exists($decoded, self::FIELD_NETWORK_STRING_EXT)) {
-            $v = $decoded->_networkString ?? new \stdClass();
+            $v = isset($decoded->_networkString) ? clone $decoded->_networkString : new \stdClass();
             $v->value = $decoded->networkString ?? null;
             $type->setNetworkString(FHIRString::jsonUnserialize($v, $config));
         }

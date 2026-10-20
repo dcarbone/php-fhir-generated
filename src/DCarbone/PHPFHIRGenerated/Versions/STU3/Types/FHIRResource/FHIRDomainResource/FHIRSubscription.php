@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRSubscriptionStatusList;
@@ -130,16 +129,16 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_REASON => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_CRITERIA => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_CHANNEL => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -688,7 +687,7 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -918,7 +917,7 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRSubscriptionStatus::jsonUnserialize($v, $config));
         }
@@ -937,7 +936,7 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_end)
             || property_exists($decoded, self::FIELD_END)
             || property_exists($decoded, self::FIELD_END_EXT)) {
-            $v = $decoded->_end ?? new \stdClass();
+            $v = isset($decoded->_end) ? clone $decoded->_end : new \stdClass();
             $v->value = $decoded->end ?? null;
             $type->setEnd(FHIRInstant::jsonUnserialize($v, $config));
         }
@@ -945,7 +944,7 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_reason)
             || property_exists($decoded, self::FIELD_REASON)
             || property_exists($decoded, self::FIELD_REASON_EXT)) {
-            $v = $decoded->_reason ?? new \stdClass();
+            $v = isset($decoded->_reason) ? clone $decoded->_reason : new \stdClass();
             $v->value = $decoded->reason ?? null;
             $type->setReason(FHIRString::jsonUnserialize($v, $config));
         }
@@ -953,7 +952,7 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_criteria)
             || property_exists($decoded, self::FIELD_CRITERIA)
             || property_exists($decoded, self::FIELD_CRITERIA_EXT)) {
-            $v = $decoded->_criteria ?? new \stdClass();
+            $v = isset($decoded->_criteria) ? clone $decoded->_criteria : new \stdClass();
             $v->value = $decoded->criteria ?? null;
             $type->setCriteria(FHIRString::jsonUnserialize($v, $config));
         }
@@ -961,7 +960,7 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_error)
             || property_exists($decoded, self::FIELD_ERROR)
             || property_exists($decoded, self::FIELD_ERROR_EXT)) {
-            $v = $decoded->_error ?? new \stdClass();
+            $v = isset($decoded->_error) ? clone $decoded->_error : new \stdClass();
             $v->value = $decoded->error ?? null;
             $type->setError(FHIRString::jsonUnserialize($v, $config));
         }

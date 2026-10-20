@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -576,7 +576,7 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements VersionContain
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -769,7 +769,7 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements VersionContain
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRFinancialResourceStatusCodes::jsonUnserialize($v, $config));
         }
@@ -777,7 +777,7 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements VersionContain
             || isset($decoded->_created)
             || property_exists($decoded, self::FIELD_CREATED)
             || property_exists($decoded, self::FIELD_CREATED_EXT)) {
-            $v = $decoded->_created ?? new \stdClass();
+            $v = isset($decoded->_created) ? clone $decoded->_created : new \stdClass();
             $v->value = $decoded->created ?? null;
             $type->setCreated(FHIRDateTime::jsonUnserialize($v, $config));
         }

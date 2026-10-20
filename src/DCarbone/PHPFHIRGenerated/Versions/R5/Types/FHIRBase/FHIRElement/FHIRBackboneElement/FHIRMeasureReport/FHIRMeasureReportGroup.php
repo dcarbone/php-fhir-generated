@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -192,7 +192,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * The measure score for this population group, calculated as appropriate for the
      * measure type and scoring method, and based on the contents of the populations
-     * defined in the group.
+     * defined in the group. (choose any one of measureScore*, but only one)
      */
     #[FHIRQuantity]
     protected FHIRQuantity $measureScoreQuantity;
@@ -207,7 +207,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * The measure score for this population group, calculated as appropriate for the
      * measure type and scoring method, and based on the contents of the populations
-     * defined in the group.
+     * defined in the group. (choose any one of measureScore*, but only one)
      */
     #[FHIRDateTime]
     protected FHIRDateTime $measureScoreDateTime;
@@ -219,7 +219,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * The measure score for this population group, calculated as appropriate for the
      * measure type and scoring method, and based on the contents of the populations
-     * defined in the group.
+     * defined in the group. (choose any one of measureScore*, but only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $measureScoreCodeableConcept;
@@ -230,7 +230,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * The measure score for this population group, calculated as appropriate for the
      * measure type and scoring method, and based on the contents of the populations
-     * defined in the group.
+     * defined in the group. (choose any one of measureScore*, but only one)
      */
     #[FHIRPeriod]
     protected FHIRPeriod $measureScorePeriod;
@@ -241,7 +241,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * The measure score for this population group, calculated as appropriate for the
      * measure type and scoring method, and based on the contents of the populations
-     * defined in the group.
+     * defined in the group. (choose any one of measureScore*, but only one)
      */
     #[FHIRRange]
     protected FHIRRange $measureScoreRange;
@@ -252,7 +252,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * The measure score for this population group, calculated as appropriate for the
      * measure type and scoring method, and based on the contents of the populations
-     * defined in the group.
+     * defined in the group. (choose any one of measureScore*, but only one)
      */
     #[FHIRDuration]
     protected FHIRDuration $measureScoreDuration;
@@ -500,7 +500,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * The measure score for this population group, calculated as appropriate for the
      * measure type and scoring method, and based on the contents of the populations
-     * defined in the group.
+     * defined in the group. (choose any one of measureScore*, but only one)
      */
     public function getMeasureScoreQuantity(): null|FHIRQuantity
     {
@@ -516,7 +516,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * The measure score for this population group, calculated as appropriate for the
      * measure type and scoring method, and based on the contents of the populations
-     * defined in the group.
+     * defined in the group. (choose any one of measureScore*, but only one)
      */
     public function setMeasureScoreQuantity(null|FHIRQuantity $measureScoreQuantity): self
     {
@@ -539,7 +539,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * The measure score for this population group, calculated as appropriate for the
      * measure type and scoring method, and based on the contents of the populations
-     * defined in the group.
+     * defined in the group. (choose any one of measureScore*, but only one)
      */
     public function getMeasureScoreDateTime(): null|FHIRDateTime
     {
@@ -557,7 +557,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * The measure score for this population group, calculated as appropriate for the
      * measure type and scoring method, and based on the contents of the populations
-     * defined in the group.
+     * defined in the group. (choose any one of measureScore*, but only one)
      */
     public function setMeasureScoreDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $measureScoreDateTime): self
     {
@@ -580,7 +580,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * The measure score for this population group, calculated as appropriate for the
      * measure type and scoring method, and based on the contents of the populations
-     * defined in the group.
+     * defined in the group. (choose any one of measureScore*, but only one)
      */
     public function getMeasureScoreCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -595,7 +595,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * The measure score for this population group, calculated as appropriate for the
      * measure type and scoring method, and based on the contents of the populations
-     * defined in the group.
+     * defined in the group. (choose any one of measureScore*, but only one)
      */
     public function setMeasureScoreCodeableConcept(null|FHIRCodeableConcept $measureScoreCodeableConcept): self
     {
@@ -614,7 +614,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * The measure score for this population group, calculated as appropriate for the
      * measure type and scoring method, and based on the contents of the populations
-     * defined in the group.
+     * defined in the group. (choose any one of measureScore*, but only one)
      */
     public function getMeasureScorePeriod(): null|FHIRPeriod
     {
@@ -628,7 +628,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * The measure score for this population group, calculated as appropriate for the
      * measure type and scoring method, and based on the contents of the populations
-     * defined in the group.
+     * defined in the group. (choose any one of measureScore*, but only one)
      */
     public function setMeasureScorePeriod(null|FHIRPeriod $measureScorePeriod): self
     {
@@ -647,7 +647,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * The measure score for this population group, calculated as appropriate for the
      * measure type and scoring method, and based on the contents of the populations
-     * defined in the group.
+     * defined in the group. (choose any one of measureScore*, but only one)
      */
     public function getMeasureScoreRange(): null|FHIRRange
     {
@@ -661,7 +661,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * The measure score for this population group, calculated as appropriate for the
      * measure type and scoring method, and based on the contents of the populations
-     * defined in the group.
+     * defined in the group. (choose any one of measureScore*, but only one)
      */
     public function setMeasureScoreRange(null|FHIRRange $measureScoreRange): self
     {
@@ -680,7 +680,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * The measure score for this population group, calculated as appropriate for the
      * measure type and scoring method, and based on the contents of the populations
-     * defined in the group.
+     * defined in the group. (choose any one of measureScore*, but only one)
      */
     public function getMeasureScoreDuration(): null|FHIRDuration
     {
@@ -694,7 +694,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * The measure score for this population group, calculated as appropriate for the
      * measure type and scoring method, and based on the contents of the populations
-     * defined in the group.
+     * defined in the group. (choose any one of measureScore*, but only one)
      */
     public function setMeasureScoreDuration(null|FHIRDuration $measureScoreDuration): self
     {
@@ -951,7 +951,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
             || isset($decoded->_linkId)
             || property_exists($decoded, self::FIELD_LINK_ID)
             || property_exists($decoded, self::FIELD_LINK_ID_EXT)) {
-            $v = $decoded->_linkId ?? new \stdClass();
+            $v = isset($decoded->_linkId) ? clone $decoded->_linkId : new \stdClass();
             $v->value = $decoded->linkId ?? null;
             $type->setLinkId(FHIRString::jsonUnserialize($v, $config));
         }
@@ -991,7 +991,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
             || isset($decoded->_measureScoreDateTime)
             || property_exists($decoded, self::FIELD_MEASURE_SCORE_DATE_TIME)
             || property_exists($decoded, self::FIELD_MEASURE_SCORE_DATE_TIME_EXT)) {
-            $v = $decoded->_measureScoreDateTime ?? new \stdClass();
+            $v = isset($decoded->_measureScoreDateTime) ? clone $decoded->_measureScoreDateTime : new \stdClass();
             $v->value = $decoded->measureScoreDateTime ?? null;
             $type->setMeasureScoreDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }

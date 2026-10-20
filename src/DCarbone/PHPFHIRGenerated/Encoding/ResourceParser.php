@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Encoding;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -75,7 +75,7 @@ class ResourceParser
                     implode('","', array_keys((array)$input))
                 ));
             }
-            return $className::jsonUnserialize($input, $version->getConfig()->getUnserializeConfig());
+            return $version->getTypeMap()::jsonUnserializeResource($className, $input, $version->getConfig()->getUnserializeConfig());
         }
         throw new \DomainException(sprintf(
             'Unable to determine FHIR Type from provided array: missing "%s" key.  Available keys: ["%s"]',
@@ -96,7 +96,7 @@ class ResourceParser
                 static::getPrintableStringInput($input->saveXML())
             ));
         }
-        return $fhirType::xmlUnserialize($input, $version->getConfig()->getUnserializeConfig());
+        return $version->getTypeMap()::xmlUnserializeResource($fhirType, $input, $version->getConfig()->getUnserializeConfig());
     }
 
     public static function parseDOMDocument(VersionInterface $version, \DOMDocument $input): null|ResourceTypeInterface

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -523,7 +523,7 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
             || isset($decoded->_id)
             || property_exists($decoded, self::FIELD_ID)
             || property_exists($decoded, self::FIELD_ID_EXT)) {
-            $v = $decoded->_id ?? new \stdClass();
+            $v = isset($decoded->_id) ? clone $decoded->_id : new \stdClass();
             $v->value = $decoded->id ?? null;
             $type->setId(FHIRId::jsonUnserialize($v, $config));
         }
@@ -538,7 +538,7 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
             || isset($decoded->_implicitRules)
             || property_exists($decoded, self::FIELD_IMPLICIT_RULES)
             || property_exists($decoded, self::FIELD_IMPLICIT_RULES_EXT)) {
-            $v = $decoded->_implicitRules ?? new \stdClass();
+            $v = isset($decoded->_implicitRules) ? clone $decoded->_implicitRules : new \stdClass();
             $v->value = $decoded->implicitRules ?? null;
             $type->setImplicitRules(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -546,7 +546,7 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
             || isset($decoded->_language)
             || property_exists($decoded, self::FIELD_LANGUAGE)
             || property_exists($decoded, self::FIELD_LANGUAGE_EXT)) {
-            $v = $decoded->_language ?? new \stdClass();
+            $v = isset($decoded->_language) ? clone $decoded->_language : new \stdClass();
             $v->value = $decoded->language ?? null;
             $type->setLanguage(FHIRCode::jsonUnserialize($v, $config));
         }

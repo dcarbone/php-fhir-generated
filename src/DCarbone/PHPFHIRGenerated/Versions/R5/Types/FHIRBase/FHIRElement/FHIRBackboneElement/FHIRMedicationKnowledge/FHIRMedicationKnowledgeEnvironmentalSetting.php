@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept;
@@ -120,16 +119,7 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_QUANTITY => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_RANGE => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_CODEABLE_CONCEPT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -156,7 +146,8 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Value associated to the setting. E.g., 40° – 50°F for temperature.
+     * Value associated to the setting. E.g., 40° – 50°F for temperature. (choose
+     * any one of value*, but only one)
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -165,7 +156,8 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Value associated to the setting. E.g., 40° – 50°F for temperature.
+     * Value associated to the setting. E.g., 40° – 50°F for temperature. (choose
+     * any one of value*, but only one)
      */
     #[FHIRRange]
     protected FHIRRange $valueRange;
@@ -175,7 +167,8 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Value associated to the setting. E.g., 40° – 50°F for temperature.
+     * Value associated to the setting. E.g., 40° – 50°F for temperature. (choose
+     * any one of value*, but only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
@@ -261,7 +254,8 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Value associated to the setting. E.g., 40° – 50°F for temperature.
+     * Value associated to the setting. E.g., 40° – 50°F for temperature. (choose
+     * any one of value*, but only one)
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -275,7 +269,8 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Value associated to the setting. E.g., 40° – 50°F for temperature.
+     * Value associated to the setting. E.g., 40° – 50°F for temperature. (choose
+     * any one of value*, but only one)
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -292,7 +287,8 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Value associated to the setting. E.g., 40° – 50°F for temperature.
+     * Value associated to the setting. E.g., 40° – 50°F for temperature. (choose
+     * any one of value*, but only one)
      */
     public function getValueRange(): null|FHIRRange
     {
@@ -304,7 +300,8 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Value associated to the setting. E.g., 40° – 50°F for temperature.
+     * Value associated to the setting. E.g., 40° – 50°F for temperature. (choose
+     * any one of value*, but only one)
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -322,7 +319,8 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Value associated to the setting. E.g., 40° – 50°F for temperature.
+     * Value associated to the setting. E.g., 40° – 50°F for temperature. (choose
+     * any one of value*, but only one)
      */
     public function getValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -335,7 +333,8 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Value associated to the setting. E.g., 40° – 50°F for temperature.
+     * Value associated to the setting. E.g., 40° – 50°F for temperature. (choose
+     * any one of value*, but only one)
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {

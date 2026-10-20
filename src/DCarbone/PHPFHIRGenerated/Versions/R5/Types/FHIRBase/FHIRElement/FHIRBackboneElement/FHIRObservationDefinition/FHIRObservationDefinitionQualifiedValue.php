@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -1037,7 +1037,7 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
             || isset($decoded->_gender)
             || property_exists($decoded, self::FIELD_GENDER)
             || property_exists($decoded, self::FIELD_GENDER_EXT)) {
-            $v = $decoded->_gender ?? new \stdClass();
+            $v = isset($decoded->_gender) ? clone $decoded->_gender : new \stdClass();
             $v->value = $decoded->gender ?? null;
             $type->setGender(FHIRAdministrativeGender::jsonUnserialize($v, $config));
         }
@@ -1059,7 +1059,7 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
             || isset($decoded->_condition)
             || property_exists($decoded, self::FIELD_CONDITION)
             || property_exists($decoded, self::FIELD_CONDITION_EXT)) {
-            $v = $decoded->_condition ?? new \stdClass();
+            $v = isset($decoded->_condition) ? clone $decoded->_condition : new \stdClass();
             $v->value = $decoded->condition ?? null;
             $type->setCondition(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1067,7 +1067,7 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
             || isset($decoded->_rangeCategory)
             || property_exists($decoded, self::FIELD_RANGE_CATEGORY)
             || property_exists($decoded, self::FIELD_RANGE_CATEGORY_EXT)) {
-            $v = $decoded->_rangeCategory ?? new \stdClass();
+            $v = isset($decoded->_rangeCategory) ? clone $decoded->_rangeCategory : new \stdClass();
             $v->value = $decoded->rangeCategory ?? null;
             $type->setRangeCategory(FHIRObservationRangeCategory::jsonUnserialize($v, $config));
         }
@@ -1082,7 +1082,7 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
             || isset($decoded->_validCodedValueSet)
             || property_exists($decoded, self::FIELD_VALID_CODED_VALUE_SET)
             || property_exists($decoded, self::FIELD_VALID_CODED_VALUE_SET_EXT)) {
-            $v = $decoded->_validCodedValueSet ?? new \stdClass();
+            $v = isset($decoded->_validCodedValueSet) ? clone $decoded->_validCodedValueSet : new \stdClass();
             $v->value = $decoded->validCodedValueSet ?? null;
             $type->setValidCodedValueSet(FHIRCanonical::jsonUnserialize($v, $config));
         }
@@ -1090,7 +1090,7 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
             || isset($decoded->_normalCodedValueSet)
             || property_exists($decoded, self::FIELD_NORMAL_CODED_VALUE_SET)
             || property_exists($decoded, self::FIELD_NORMAL_CODED_VALUE_SET_EXT)) {
-            $v = $decoded->_normalCodedValueSet ?? new \stdClass();
+            $v = isset($decoded->_normalCodedValueSet) ? clone $decoded->_normalCodedValueSet : new \stdClass();
             $v->value = $decoded->normalCodedValueSet ?? null;
             $type->setNormalCodedValueSet(FHIRCanonical::jsonUnserialize($v, $config));
         }
@@ -1098,7 +1098,7 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
             || isset($decoded->_abnormalCodedValueSet)
             || property_exists($decoded, self::FIELD_ABNORMAL_CODED_VALUE_SET)
             || property_exists($decoded, self::FIELD_ABNORMAL_CODED_VALUE_SET_EXT)) {
-            $v = $decoded->_abnormalCodedValueSet ?? new \stdClass();
+            $v = isset($decoded->_abnormalCodedValueSet) ? clone $decoded->_abnormalCodedValueSet : new \stdClass();
             $v->value = $decoded->abnormalCodedValueSet ?? null;
             $type->setAbnormalCodedValueSet(FHIRCanonical::jsonUnserialize($v, $config));
         }
@@ -1106,7 +1106,7 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
             || isset($decoded->_criticalCodedValueSet)
             || property_exists($decoded, self::FIELD_CRITICAL_CODED_VALUE_SET)
             || property_exists($decoded, self::FIELD_CRITICAL_CODED_VALUE_SET_EXT)) {
-            $v = $decoded->_criticalCodedValueSet ?? new \stdClass();
+            $v = isset($decoded->_criticalCodedValueSet) ? clone $decoded->_criticalCodedValueSet : new \stdClass();
             $v->value = $decoded->criticalCodedValueSet ?? null;
             $type->setCriticalCodedValueSet(FHIRCanonical::jsonUnserialize($v, $config));
         }

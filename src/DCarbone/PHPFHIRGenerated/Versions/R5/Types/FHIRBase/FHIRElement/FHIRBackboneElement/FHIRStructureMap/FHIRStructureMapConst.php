@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -372,7 +372,7 @@ class FHIRStructureMapConst extends FHIRBackboneElement
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRId::jsonUnserialize($v, $config));
         }
@@ -380,7 +380,7 @@ class FHIRStructureMapConst extends FHIRBackboneElement
             || isset($decoded->_value)
             || property_exists($decoded, self::FIELD_VALUE)
             || property_exists($decoded, self::FIELD_VALUE_EXT)) {
-            $v = $decoded->_value ?? new \stdClass();
+            $v = isset($decoded->_value) ? clone $decoded->_value : new \stdClass();
             $v->value = $decoded->value ?? null;
             $type->setValue(FHIRString::jsonUnserialize($v, $config));
         }

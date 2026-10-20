@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -584,7 +584,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
             || isset($decoded->_maternalOrganismId)
             || property_exists($decoded, self::FIELD_MATERNAL_ORGANISM_ID)
             || property_exists($decoded, self::FIELD_MATERNAL_ORGANISM_ID_EXT)) {
-            $v = $decoded->_maternalOrganismId ?? new \stdClass();
+            $v = isset($decoded->_maternalOrganismId) ? clone $decoded->_maternalOrganismId : new \stdClass();
             $v->value = $decoded->maternalOrganismId ?? null;
             $type->setMaternalOrganismId(FHIRString::jsonUnserialize($v, $config));
         }
@@ -592,7 +592,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
             || isset($decoded->_maternalOrganismName)
             || property_exists($decoded, self::FIELD_MATERNAL_ORGANISM_NAME)
             || property_exists($decoded, self::FIELD_MATERNAL_ORGANISM_NAME_EXT)) {
-            $v = $decoded->_maternalOrganismName ?? new \stdClass();
+            $v = isset($decoded->_maternalOrganismName) ? clone $decoded->_maternalOrganismName : new \stdClass();
             $v->value = $decoded->maternalOrganismName ?? null;
             $type->setMaternalOrganismName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -600,7 +600,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
             || isset($decoded->_paternalOrganismId)
             || property_exists($decoded, self::FIELD_PATERNAL_ORGANISM_ID)
             || property_exists($decoded, self::FIELD_PATERNAL_ORGANISM_ID_EXT)) {
-            $v = $decoded->_paternalOrganismId ?? new \stdClass();
+            $v = isset($decoded->_paternalOrganismId) ? clone $decoded->_paternalOrganismId : new \stdClass();
             $v->value = $decoded->paternalOrganismId ?? null;
             $type->setPaternalOrganismId(FHIRString::jsonUnserialize($v, $config));
         }
@@ -608,7 +608,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
             || isset($decoded->_paternalOrganismName)
             || property_exists($decoded, self::FIELD_PATERNAL_ORGANISM_NAME)
             || property_exists($decoded, self::FIELD_PATERNAL_ORGANISM_NAME_EXT)) {
-            $v = $decoded->_paternalOrganismName ?? new \stdClass();
+            $v = isset($decoded->_paternalOrganismName) ? clone $decoded->_paternalOrganismName : new \stdClass();
             $v->value = $decoded->paternalOrganismName ?? null;
             $type->setPaternalOrganismName(FHIRString::jsonUnserialize($v, $config));
         }

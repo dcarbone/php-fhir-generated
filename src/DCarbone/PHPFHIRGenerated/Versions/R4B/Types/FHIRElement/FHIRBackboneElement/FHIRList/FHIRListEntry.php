@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive;
@@ -125,7 +124,7 @@ class FHIRListEntry extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ITEM => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -489,7 +488,7 @@ class FHIRListEntry extends FHIRBackboneElement
             || isset($decoded->_deleted)
             || property_exists($decoded, self::FIELD_DELETED)
             || property_exists($decoded, self::FIELD_DELETED_EXT)) {
-            $v = $decoded->_deleted ?? new \stdClass();
+            $v = isset($decoded->_deleted) ? clone $decoded->_deleted : new \stdClass();
             $v->value = $decoded->deleted ?? null;
             $type->setDeleted(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -497,7 +496,7 @@ class FHIRListEntry extends FHIRBackboneElement
             || isset($decoded->_date)
             || property_exists($decoded, self::FIELD_DATE)
             || property_exists($decoded, self::FIELD_DATE_EXT)) {
-            $v = $decoded->_date ?? new \stdClass();
+            $v = isset($decoded->_date) ? clone $decoded->_date : new \stdClass();
             $v->value = $decoded->date ?? null;
             $type->setDate(FHIRDateTime::jsonUnserialize($v, $config));
         }

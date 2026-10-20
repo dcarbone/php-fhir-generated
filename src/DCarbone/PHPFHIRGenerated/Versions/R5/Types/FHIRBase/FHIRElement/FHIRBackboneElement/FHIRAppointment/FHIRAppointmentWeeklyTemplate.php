@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -762,7 +762,7 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
             || isset($decoded->_monday)
             || property_exists($decoded, self::FIELD_MONDAY)
             || property_exists($decoded, self::FIELD_MONDAY_EXT)) {
-            $v = $decoded->_monday ?? new \stdClass();
+            $v = isset($decoded->_monday) ? clone $decoded->_monday : new \stdClass();
             $v->value = $decoded->monday ?? null;
             $type->setMonday(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -770,7 +770,7 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
             || isset($decoded->_tuesday)
             || property_exists($decoded, self::FIELD_TUESDAY)
             || property_exists($decoded, self::FIELD_TUESDAY_EXT)) {
-            $v = $decoded->_tuesday ?? new \stdClass();
+            $v = isset($decoded->_tuesday) ? clone $decoded->_tuesday : new \stdClass();
             $v->value = $decoded->tuesday ?? null;
             $type->setTuesday(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -778,7 +778,7 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
             || isset($decoded->_wednesday)
             || property_exists($decoded, self::FIELD_WEDNESDAY)
             || property_exists($decoded, self::FIELD_WEDNESDAY_EXT)) {
-            $v = $decoded->_wednesday ?? new \stdClass();
+            $v = isset($decoded->_wednesday) ? clone $decoded->_wednesday : new \stdClass();
             $v->value = $decoded->wednesday ?? null;
             $type->setWednesday(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -786,7 +786,7 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
             || isset($decoded->_thursday)
             || property_exists($decoded, self::FIELD_THURSDAY)
             || property_exists($decoded, self::FIELD_THURSDAY_EXT)) {
-            $v = $decoded->_thursday ?? new \stdClass();
+            $v = isset($decoded->_thursday) ? clone $decoded->_thursday : new \stdClass();
             $v->value = $decoded->thursday ?? null;
             $type->setThursday(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -794,7 +794,7 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
             || isset($decoded->_friday)
             || property_exists($decoded, self::FIELD_FRIDAY)
             || property_exists($decoded, self::FIELD_FRIDAY_EXT)) {
-            $v = $decoded->_friday ?? new \stdClass();
+            $v = isset($decoded->_friday) ? clone $decoded->_friday : new \stdClass();
             $v->value = $decoded->friday ?? null;
             $type->setFriday(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -802,7 +802,7 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
             || isset($decoded->_saturday)
             || property_exists($decoded, self::FIELD_SATURDAY)
             || property_exists($decoded, self::FIELD_SATURDAY_EXT)) {
-            $v = $decoded->_saturday ?? new \stdClass();
+            $v = isset($decoded->_saturday) ? clone $decoded->_saturday : new \stdClass();
             $v->value = $decoded->saturday ?? null;
             $type->setSaturday(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -810,7 +810,7 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
             || isset($decoded->_sunday)
             || property_exists($decoded, self::FIELD_SUNDAY)
             || property_exists($decoded, self::FIELD_SUNDAY_EXT)) {
-            $v = $decoded->_sunday ?? new \stdClass();
+            $v = isset($decoded->_sunday) ? clone $decoded->_sunday : new \stdClass();
             $v->value = $decoded->sunday ?? null;
             $type->setSunday(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -818,7 +818,7 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
             || isset($decoded->_weekInterval)
             || property_exists($decoded, self::FIELD_WEEK_INTERVAL)
             || property_exists($decoded, self::FIELD_WEEK_INTERVAL_EXT)) {
-            $v = $decoded->_weekInterval ?? new \stdClass();
+            $v = isset($decoded->_weekInterval) ? clone $decoded->_weekInterval : new \stdClass();
             $v->value = $decoded->weekInterval ?? null;
             $type->setWeekInterval(FHIRPositiveInt::jsonUnserialize($v, $config));
         }

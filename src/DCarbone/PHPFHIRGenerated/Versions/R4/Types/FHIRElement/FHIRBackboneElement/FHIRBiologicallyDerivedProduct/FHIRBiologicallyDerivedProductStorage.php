@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -465,7 +465,7 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
@@ -473,7 +473,7 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement
             || isset($decoded->_temperature)
             || property_exists($decoded, self::FIELD_TEMPERATURE)
             || property_exists($decoded, self::FIELD_TEMPERATURE_EXT)) {
-            $v = $decoded->_temperature ?? new \stdClass();
+            $v = isset($decoded->_temperature) ? clone $decoded->_temperature : new \stdClass();
             $v->value = $decoded->temperature ?? null;
             $type->setTemperature(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -481,7 +481,7 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement
             || isset($decoded->_scale)
             || property_exists($decoded, self::FIELD_SCALE)
             || property_exists($decoded, self::FIELD_SCALE_EXT)) {
-            $v = $decoded->_scale ?? new \stdClass();
+            $v = isset($decoded->_scale) ? clone $decoded->_scale : new \stdClass();
             $v->value = $decoded->scale ?? null;
             $type->setScale(FHIRBiologicallyDerivedProductStorageScale::jsonUnserialize($v, $config));
         }

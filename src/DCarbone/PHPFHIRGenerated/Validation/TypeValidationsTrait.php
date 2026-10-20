@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Validation;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -27,6 +27,8 @@ namespace DCarbone\PHPFHIRGenerated\Validation;
  */
 
 use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\SliceOccursRule;
 
 trait TypeValidationsTrait
 {
@@ -101,12 +103,24 @@ trait TypeValidationsTrait
      */
     public function _getValidationErrors(): array
     {
-        $rules = $this->_getCombinedValidationRules();
+        return $this->_collectValidationErrors($this->_getCombinedValidationRules(), true);
+    }
+
+    /**
+     * Runs the given rules against this type.
+     *
+     * @param array $rules Map of ["fieldname" => ["rule" => {constraint}]].
+     * @param bool $descend Whether to also collect the validation errors of the types held by this type's fields.
+     */
+    protected function _collectValidationErrors(array $rules, bool $descend): array
+    {
         $errs = [];
+        $seen = [];
         foreach ($this as $prop => $value) {
             if (str_starts_with($prop, '_')) {
                 continue;
             }
+            $seen[$prop] = true;
             if (isset($rules[$prop])) {
                 foreach ($rules[$prop] as $rule => $constraint) {
                     $err = Validator::runRule($this, $prop, $rule, $constraint, $value);
@@ -118,6 +132,9 @@ trait TypeValidationsTrait
                     }
                 }
             }
+            if (!$descend) {
+                continue;
+            }
             if ($value instanceof TypeInterface) {
                 foreach ($value->_getValidationErrors() as $subPath => $subErrs) {
                     $errs["{$prop}.{$subPath}"] = $subErrs;
@@ -128,6 +145,40 @@ trait TypeValidationsTrait
                         foreach ($vv->_getValidationErrors() as $subPath => $subErrs) {
                             $errs["{$prop}.{$i}.{$subPath}"] = $subErrs;
                         }
+                    }
+                }
+            }
+        }
+        // collection properties are declared without a default, so they are skipped by the loop above until set.  The
+        // rules that care about absence still have to run for them.
+        foreach ($rules as $prop => $propRules) {
+            if (isset($seen[$prop]) || PathResolver::isPath($prop)) {
+                continue;
+            }
+            foreach ([MinOccursRule::NAME, SliceOccursRule::NAME] as $rule) {
+                if (!isset($propRules[$rule])) {
+                    continue;
+                }
+                $err = Validator::runRule($this, $prop, $rule, $propRules[$rule], null);
+                if (null !== $err) {
+                    $errs[$prop][$rule] = $err;
+                }
+            }
+        }
+        // rules keyed by a dotted path are run against every instance the path resolves to.
+        foreach ($rules as $path => $pathRules) {
+            if (!PathResolver::isPath($path)) {
+                continue;
+            }
+            foreach (PathResolver::resolveParents($this, $path) as $resolved) {
+                // choice keys have no getter of their own; the choice rule reads each variant.
+                $value = str_ends_with($resolved['field'], PathResolver::CHOICE_SUFFIX)
+                    ? null
+                    : $resolved['type']->{'get' . $resolved['field']}();
+                foreach ($pathRules as $rule => $constraint) {
+                    $err = Validator::runRule($resolved['type'], $resolved['path'], $rule, $constraint, $value);
+                    if (null !== $err) {
+                        $errs[$resolved['path']][$rule] = $err;
                     }
                 }
             }

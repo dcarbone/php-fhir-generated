@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -366,7 +366,7 @@ class FHIRMoney extends FHIRDataType
             || isset($decoded->_value)
             || property_exists($decoded, self::FIELD_VALUE)
             || property_exists($decoded, self::FIELD_VALUE_EXT)) {
-            $v = $decoded->_value ?? new \stdClass();
+            $v = isset($decoded->_value) ? clone $decoded->_value : new \stdClass();
             $v->value = $decoded->value ?? null;
             $type->setValue(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -374,7 +374,7 @@ class FHIRMoney extends FHIRDataType
             || isset($decoded->_currency)
             || property_exists($decoded, self::FIELD_CURRENCY)
             || property_exists($decoded, self::FIELD_CURRENCY_EXT)) {
-            $v = $decoded->_currency ?? new \stdClass();
+            $v = isset($decoded->_currency) ? clone $decoded->_currency : new \stdClass();
             $v->value = $decoded->currency ?? null;
             $type->setCurrency(FHIRCode::jsonUnserialize($v, $config));
         }

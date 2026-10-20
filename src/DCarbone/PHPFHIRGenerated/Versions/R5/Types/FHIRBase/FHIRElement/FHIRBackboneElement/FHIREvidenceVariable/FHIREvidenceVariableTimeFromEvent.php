@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -175,7 +175,8 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The event used as a base point (reference point) in time.
+     * The event used as a base point (reference point) in time. (choose any one of
+     * event*, but only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $eventCodeableConcept;
@@ -184,7 +185,8 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The event used as a base point (reference point) in time.
+     * The event used as a base point (reference point) in time. (choose any one of
+     * event*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $eventReference;
@@ -197,7 +199,8 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The event used as a base point (reference point) in time.
+     * The event used as a base point (reference point) in time. (choose any one of
+     * event*, but only one)
      */
     #[FHIRDateTime]
     protected FHIRDateTime $eventDateTime;
@@ -209,7 +212,8 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The event used as a base point (reference point) in time.
+     * The event used as a base point (reference point) in time. (choose any one of
+     * event*, but only one)
      */
     #[FHIRId]
     protected FHIRId $eventId;
@@ -400,7 +404,8 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The event used as a base point (reference point) in time.
+     * The event used as a base point (reference point) in time. (choose any one of
+     * event*, but only one)
      */
     public function getEventCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -413,7 +418,8 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The event used as a base point (reference point) in time.
+     * The event used as a base point (reference point) in time. (choose any one of
+     * event*, but only one)
      */
     public function setEventCodeableConcept(null|FHIRCodeableConcept $eventCodeableConcept): self
     {
@@ -430,7 +436,8 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The event used as a base point (reference point) in time.
+     * The event used as a base point (reference point) in time. (choose any one of
+     * event*, but only one)
      */
     public function getEventReference(): null|FHIRReference
     {
@@ -442,7 +449,8 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The event used as a base point (reference point) in time.
+     * The event used as a base point (reference point) in time. (choose any one of
+     * event*, but only one)
      */
     public function setEventReference(null|FHIRReference $eventReference): self
     {
@@ -463,7 +471,8 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The event used as a base point (reference point) in time.
+     * The event used as a base point (reference point) in time. (choose any one of
+     * event*, but only one)
      */
     public function getEventDateTime(): null|FHIRDateTime
     {
@@ -479,7 +488,8 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The event used as a base point (reference point) in time.
+     * The event used as a base point (reference point) in time. (choose any one of
+     * event*, but only one)
      */
     public function setEventDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $eventDateTime): self
     {
@@ -502,7 +512,8 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The event used as a base point (reference point) in time.
+     * The event used as a base point (reference point) in time. (choose any one of
+     * event*, but only one)
      */
     public function getEventId(): null|FHIRId
     {
@@ -517,7 +528,8 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The event used as a base point (reference point) in time.
+     * The event used as a base point (reference point) in time. (choose any one of
+     * event*, but only one)
      */
     public function setEventId(null|string|FHIRIdPrimitive|FHIRId $eventId): self
     {
@@ -773,7 +785,7 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -806,7 +818,7 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
             || isset($decoded->_eventDateTime)
             || property_exists($decoded, self::FIELD_EVENT_DATE_TIME)
             || property_exists($decoded, self::FIELD_EVENT_DATE_TIME_EXT)) {
-            $v = $decoded->_eventDateTime ?? new \stdClass();
+            $v = isset($decoded->_eventDateTime) ? clone $decoded->_eventDateTime : new \stdClass();
             $v->value = $decoded->eventDateTime ?? null;
             $type->setEventDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -814,7 +826,7 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
             || isset($decoded->_eventId)
             || property_exists($decoded, self::FIELD_EVENT_ID)
             || property_exists($decoded, self::FIELD_EVENT_ID_EXT)) {
-            $v = $decoded->_eventId ?? new \stdClass();
+            $v = isset($decoded->_eventId) ? clone $decoded->_eventId : new \stdClass();
             $v->value = $decoded->eventId ?? null;
             $type->setEventId(FHIRId::jsonUnserialize($v, $config));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSupplyRequest\FHIRSupplyRequestParameter;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode;
@@ -162,10 +161,10 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ITEM => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_QUANTITY => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -282,7 +281,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * When the request should be fulfilled.
+     * When the request should be fulfilled. (choose any one of occurrence*, but only
+     * one)
      */
     #[FHIRDateTime]
     protected FHIRDateTime $occurrenceDateTime;
@@ -291,7 +291,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When the request should be fulfilled.
+     * When the request should be fulfilled. (choose any one of occurrence*, but only
+     * one)
      */
     #[FHIRPeriod]
     protected FHIRPeriod $occurrencePeriod;
@@ -304,7 +305,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When the request should be fulfilled.
+     * When the request should be fulfilled. (choose any one of occurrence*, but only
+     * one)
      */
     #[FHIRTiming]
     protected FHIRTiming $occurrenceTiming;
@@ -874,7 +876,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * When the request should be fulfilled.
+     * When the request should be fulfilled. (choose any one of occurrence*, but only
+     * one)
      */
     public function getOccurrenceDateTime(): null|FHIRDateTime
     {
@@ -890,7 +893,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * When the request should be fulfilled.
+     * When the request should be fulfilled. (choose any one of occurrence*, but only
+     * one)
      */
     public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime): self
     {
@@ -910,7 +914,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When the request should be fulfilled.
+     * When the request should be fulfilled. (choose any one of occurrence*, but only
+     * one)
      */
     public function getOccurrencePeriod(): null|FHIRPeriod
     {
@@ -922,7 +927,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When the request should be fulfilled.
+     * When the request should be fulfilled. (choose any one of occurrence*, but only
+     * one)
      */
     public function setOccurrencePeriod(null|FHIRPeriod $occurrencePeriod): self
     {
@@ -943,7 +949,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When the request should be fulfilled.
+     * When the request should be fulfilled. (choose any one of occurrence*, but only
+     * one)
      */
     public function getOccurrenceTiming(): null|FHIRTiming
     {
@@ -959,7 +966,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When the request should be fulfilled.
+     * When the request should be fulfilled. (choose any one of occurrence*, but only
+     * one)
      */
     public function setOccurrenceTiming(null|FHIRTiming $occurrenceTiming): self
     {
@@ -1261,7 +1269,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1565,7 +1573,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRSupplyRequestStatus::jsonUnserialize($v, $config));
         }
@@ -1591,7 +1599,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
             || isset($decoded->_priority)
             || property_exists($decoded, self::FIELD_PRIORITY)
             || property_exists($decoded, self::FIELD_PRIORITY_EXT)) {
-            $v = $decoded->_priority ?? new \stdClass();
+            $v = isset($decoded->_priority) ? clone $decoded->_priority : new \stdClass();
             $v->value = $decoded->priority ?? null;
             $type->setPriority(FHIRRequestPriority::jsonUnserialize($v, $config));
         }
@@ -1631,7 +1639,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
             || isset($decoded->_occurrenceDateTime)
             || property_exists($decoded, self::FIELD_OCCURRENCE_DATE_TIME)
             || property_exists($decoded, self::FIELD_OCCURRENCE_DATE_TIME_EXT)) {
-            $v = $decoded->_occurrenceDateTime ?? new \stdClass();
+            $v = isset($decoded->_occurrenceDateTime) ? clone $decoded->_occurrenceDateTime : new \stdClass();
             $v->value = $decoded->occurrenceDateTime ?? null;
             $type->setOccurrenceDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1653,7 +1661,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
             || isset($decoded->_authoredOn)
             || property_exists($decoded, self::FIELD_AUTHORED_ON)
             || property_exists($decoded, self::FIELD_AUTHORED_ON_EXT)) {
-            $v = $decoded->_authoredOn ?? new \stdClass();
+            $v = isset($decoded->_authoredOn) ? clone $decoded->_authoredOn : new \stdClass();
             $v->value = $decoded->authoredOn ?? null;
             $type->setAuthoredOn(FHIRDateTime::jsonUnserialize($v, $config));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept;
@@ -135,7 +134,7 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_RECURRENCE_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -937,7 +936,7 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
             || isset($decoded->_lastOccurrenceDate)
             || property_exists($decoded, self::FIELD_LAST_OCCURRENCE_DATE)
             || property_exists($decoded, self::FIELD_LAST_OCCURRENCE_DATE_EXT)) {
-            $v = $decoded->_lastOccurrenceDate ?? new \stdClass();
+            $v = isset($decoded->_lastOccurrenceDate) ? clone $decoded->_lastOccurrenceDate : new \stdClass();
             $v->value = $decoded->lastOccurrenceDate ?? null;
             $type->setLastOccurrenceDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -945,7 +944,7 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
             || isset($decoded->_occurrenceCount)
             || property_exists($decoded, self::FIELD_OCCURRENCE_COUNT)
             || property_exists($decoded, self::FIELD_OCCURRENCE_COUNT_EXT)) {
-            $v = $decoded->_occurrenceCount ?? new \stdClass();
+            $v = isset($decoded->_occurrenceCount) ? clone $decoded->_occurrenceCount : new \stdClass();
             $v->value = $decoded->occurrenceCount ?? null;
             $type->setOccurrenceCount(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
@@ -961,7 +960,7 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addOccurrenceDate(FHIRDate::jsonUnserialize($v, $config));
             }
@@ -999,7 +998,7 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addExcludingDate(FHIRDate::jsonUnserialize($v, $config));
             }
@@ -1016,7 +1015,7 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addExcludingRecurrenceId(FHIRPositiveInt::jsonUnserialize($v, $config));
             }

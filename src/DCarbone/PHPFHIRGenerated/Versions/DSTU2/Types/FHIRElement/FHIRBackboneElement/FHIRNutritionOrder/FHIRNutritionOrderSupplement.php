@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept;
@@ -106,7 +105,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
-            ValuePatternMatchRule::NAME => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
+            'value_pattern_match' => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
         ],
     ];
 
@@ -553,7 +552,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
             || isset($decoded->_productName)
             || property_exists($decoded, self::FIELD_PRODUCT_NAME)
             || property_exists($decoded, self::FIELD_PRODUCT_NAME_EXT)) {
-            $v = $decoded->_productName ?? new \stdClass();
+            $v = isset($decoded->_productName) ? clone $decoded->_productName : new \stdClass();
             $v->value = $decoded->productName ?? null;
             $type->setProductName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -579,7 +578,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
             || isset($decoded->_instruction)
             || property_exists($decoded, self::FIELD_INSTRUCTION)
             || property_exists($decoded, self::FIELD_INSTRUCTION_EXT)) {
-            $v = $decoded->_instruction ?? new \stdClass();
+            $v = isset($decoded->_instruction) ? clone $decoded->_instruction : new \stdClass();
             $v->value = $decoded->instruction ?? null;
             $type->setInstruction(FHIRString::jsonUnserialize($v, $config));
         }

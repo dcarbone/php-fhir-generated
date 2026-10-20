@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
@@ -136,13 +135,13 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_NAME => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_TITLE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_GENERATION => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -162,7 +161,8 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page.
+     * Indicates the URL or the actual content to provide for the page. (choose any one
+     * of source*, but only one)
      */
     #[FHIRUrl]
     protected FHIRUrl $sourceUrl;
@@ -171,7 +171,8 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page.
+     * Indicates the URL or the actual content to provide for the page. (choose any one
+     * of source*, but only one)
      */
     #[FHIRString]
     protected FHIRString $sourceString;
@@ -184,7 +185,8 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page.
+     * Indicates the URL or the actual content to provide for the page. (choose any one
+     * of source*, but only one)
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $sourceMarkdown;
@@ -286,7 +288,8 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page.
+     * Indicates the URL or the actual content to provide for the page. (choose any one
+     * of source*, but only one)
      */
     public function getSourceUrl(): null|FHIRUrl
     {
@@ -298,7 +301,8 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page.
+     * Indicates the URL or the actual content to provide for the page. (choose any one
+     * of source*, but only one)
      */
     public function setSourceUrl(null|string|FHIRUrlPrimitive|FHIRUrl $sourceUrl): self
     {
@@ -318,7 +322,8 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page.
+     * Indicates the URL or the actual content to provide for the page. (choose any one
+     * of source*, but only one)
      */
     public function getSourceString(): null|FHIRString
     {
@@ -330,7 +335,8 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page.
+     * Indicates the URL or the actual content to provide for the page. (choose any one
+     * of source*, but only one)
      */
     public function setSourceString(null|string|FHIRStringPrimitive|FHIRString $sourceString): self
     {
@@ -354,7 +360,8 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page.
+     * Indicates the URL or the actual content to provide for the page. (choose any one
+     * of source*, but only one)
      */
     public function getSourceMarkdown(): null|FHIRMarkdown
     {
@@ -370,7 +377,8 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page.
+     * Indicates the URL or the actual content to provide for the page. (choose any one
+     * of source*, but only one)
      */
     public function setSourceMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $sourceMarkdown): self
     {
@@ -749,7 +757,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
             || isset($decoded->_sourceUrl)
             || property_exists($decoded, self::FIELD_SOURCE_URL)
             || property_exists($decoded, self::FIELD_SOURCE_URL_EXT)) {
-            $v = $decoded->_sourceUrl ?? new \stdClass();
+            $v = isset($decoded->_sourceUrl) ? clone $decoded->_sourceUrl : new \stdClass();
             $v->value = $decoded->sourceUrl ?? null;
             $type->setSourceUrl(FHIRUrl::jsonUnserialize($v, $config));
         }
@@ -757,7 +765,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
             || isset($decoded->_sourceString)
             || property_exists($decoded, self::FIELD_SOURCE_STRING)
             || property_exists($decoded, self::FIELD_SOURCE_STRING_EXT)) {
-            $v = $decoded->_sourceString ?? new \stdClass();
+            $v = isset($decoded->_sourceString) ? clone $decoded->_sourceString : new \stdClass();
             $v->value = $decoded->sourceString ?? null;
             $type->setSourceString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -765,7 +773,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
             || isset($decoded->_sourceMarkdown)
             || property_exists($decoded, self::FIELD_SOURCE_MARKDOWN)
             || property_exists($decoded, self::FIELD_SOURCE_MARKDOWN_EXT)) {
-            $v = $decoded->_sourceMarkdown ?? new \stdClass();
+            $v = isset($decoded->_sourceMarkdown) ? clone $decoded->_sourceMarkdown : new \stdClass();
             $v->value = $decoded->sourceMarkdown ?? null;
             $type->setSourceMarkdown(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -773,7 +781,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRUrl::jsonUnserialize($v, $config));
         }
@@ -781,7 +789,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
             || isset($decoded->_title)
             || property_exists($decoded, self::FIELD_TITLE)
             || property_exists($decoded, self::FIELD_TITLE_EXT)) {
-            $v = $decoded->_title ?? new \stdClass();
+            $v = isset($decoded->_title) ? clone $decoded->_title : new \stdClass();
             $v->value = $decoded->title ?? null;
             $type->setTitle(FHIRString::jsonUnserialize($v, $config));
         }
@@ -789,7 +797,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
             || isset($decoded->_generation)
             || property_exists($decoded, self::FIELD_GENERATION)
             || property_exists($decoded, self::FIELD_GENERATION_EXT)) {
-            $v = $decoded->_generation ?? new \stdClass();
+            $v = isset($decoded->_generation) ? clone $decoded->_generation : new \stdClass();
             $v->value = $decoded->generation ?? null;
             $type->setGeneration(FHIRGuidePageGeneration::jsonUnserialize($v, $config));
         }

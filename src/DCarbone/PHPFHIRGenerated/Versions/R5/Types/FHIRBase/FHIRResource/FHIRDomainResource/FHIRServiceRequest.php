@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRServiceRequest\FHIRServiceRequestOrderDetail;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRServiceRequest\FHIRServiceRequestPatientInstruction;
@@ -196,13 +195,13 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_INTENT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_SUBJECT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -368,7 +367,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * An amount of service being requested which can be a quantity ( for example
      * $1,500 home modification), a ratio ( for example, 20 half day visits per month),
-     * or a range (2.0 to 1.8 Gy per fraction).
+     * or a range (2.0 to 1.8 Gy per fraction). (choose any one of quantity*, but only
+     * one)
      */
     #[FHIRQuantity]
     protected FHIRQuantity $quantityQuantity;
@@ -380,7 +380,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * An amount of service being requested which can be a quantity ( for example
      * $1,500 home modification), a ratio ( for example, 20 half day visits per month),
-     * or a range (2.0 to 1.8 Gy per fraction).
+     * or a range (2.0 to 1.8 Gy per fraction). (choose any one of quantity*, but only
+     * one)
      */
     #[FHIRRatio]
     protected FHIRRatio $quantityRatio;
@@ -391,7 +392,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * An amount of service being requested which can be a quantity ( for example
      * $1,500 home modification), a ratio ( for example, 20 half day visits per month),
-     * or a range (2.0 to 1.8 Gy per fraction).
+     * or a range (2.0 to 1.8 Gy per fraction). (choose any one of quantity*, but only
+     * one)
      */
     #[FHIRRange]
     protected FHIRRange $quantityRange;
@@ -440,7 +442,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The date/time at which the requested service should occur.
+     * The date/time at which the requested service should occur. (choose any one of
+     * occurrence*, but only one)
      */
     #[FHIRDateTime]
     protected FHIRDateTime $occurrenceDateTime;
@@ -449,7 +452,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The date/time at which the requested service should occur.
+     * The date/time at which the requested service should occur. (choose any one of
+     * occurrence*, but only one)
      */
     #[FHIRPeriod]
     protected FHIRPeriod $occurrencePeriod;
@@ -462,7 +466,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The date/time at which the requested service should occur.
+     * The date/time at which the requested service should occur. (choose any one of
+     * occurrence*, but only one)
      */
     #[FHIRTiming]
     protected FHIRTiming $occurrenceTiming;
@@ -471,7 +476,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
-     * the service. For example "pain", "on flare-up", etc.
+     * the service. For example "pain", "on flare-up", etc. (choose any one of
+     * asNeeded*, but only one)
      */
     #[FHIRBoolean]
     protected FHIRBoolean $asNeededBoolean;
@@ -482,7 +488,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
-     * the service. For example "pain", "on flare-up", etc.
+     * the service. For example "pain", "on flare-up", etc. (choose any one of
+     * asNeeded*, but only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $asNeededCodeableConcept;
@@ -1520,7 +1527,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * An amount of service being requested which can be a quantity ( for example
      * $1,500 home modification), a ratio ( for example, 20 half day visits per month),
-     * or a range (2.0 to 1.8 Gy per fraction).
+     * or a range (2.0 to 1.8 Gy per fraction). (choose any one of quantity*, but only
+     * one)
      */
     public function getQuantityQuantity(): null|FHIRQuantity
     {
@@ -1536,7 +1544,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * An amount of service being requested which can be a quantity ( for example
      * $1,500 home modification), a ratio ( for example, 20 half day visits per month),
-     * or a range (2.0 to 1.8 Gy per fraction).
+     * or a range (2.0 to 1.8 Gy per fraction). (choose any one of quantity*, but only
+     * one)
      */
     public function setQuantityQuantity(null|FHIRQuantity $quantityQuantity): self
     {
@@ -1556,7 +1565,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * An amount of service being requested which can be a quantity ( for example
      * $1,500 home modification), a ratio ( for example, 20 half day visits per month),
-     * or a range (2.0 to 1.8 Gy per fraction).
+     * or a range (2.0 to 1.8 Gy per fraction). (choose any one of quantity*, but only
+     * one)
      */
     public function getQuantityRatio(): null|FHIRRatio
     {
@@ -1571,7 +1581,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * An amount of service being requested which can be a quantity ( for example
      * $1,500 home modification), a ratio ( for example, 20 half day visits per month),
-     * or a range (2.0 to 1.8 Gy per fraction).
+     * or a range (2.0 to 1.8 Gy per fraction). (choose any one of quantity*, but only
+     * one)
      */
     public function setQuantityRatio(null|FHIRRatio $quantityRatio): self
     {
@@ -1590,7 +1601,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * An amount of service being requested which can be a quantity ( for example
      * $1,500 home modification), a ratio ( for example, 20 half day visits per month),
-     * or a range (2.0 to 1.8 Gy per fraction).
+     * or a range (2.0 to 1.8 Gy per fraction). (choose any one of quantity*, but only
+     * one)
      */
     public function getQuantityRange(): null|FHIRRange
     {
@@ -1604,7 +1616,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * An amount of service being requested which can be a quantity ( for example
      * $1,500 home modification), a ratio ( for example, 20 half day visits per month),
-     * or a range (2.0 to 1.8 Gy per fraction).
+     * or a range (2.0 to 1.8 Gy per fraction). (choose any one of quantity*, but only
+     * one)
      */
     public function setQuantityRange(null|FHIRRange $quantityRange): self
     {
@@ -1759,7 +1772,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The date/time at which the requested service should occur.
+     * The date/time at which the requested service should occur. (choose any one of
+     * occurrence*, but only one)
      */
     public function getOccurrenceDateTime(): null|FHIRDateTime
     {
@@ -1775,7 +1789,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The date/time at which the requested service should occur.
+     * The date/time at which the requested service should occur. (choose any one of
+     * occurrence*, but only one)
      */
     public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime): self
     {
@@ -1795,7 +1810,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The date/time at which the requested service should occur.
+     * The date/time at which the requested service should occur. (choose any one of
+     * occurrence*, but only one)
      */
     public function getOccurrencePeriod(): null|FHIRPeriod
     {
@@ -1807,7 +1823,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The date/time at which the requested service should occur.
+     * The date/time at which the requested service should occur. (choose any one of
+     * occurrence*, but only one)
      */
     public function setOccurrencePeriod(null|FHIRPeriod $occurrencePeriod): self
     {
@@ -1828,7 +1845,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The date/time at which the requested service should occur.
+     * The date/time at which the requested service should occur. (choose any one of
+     * occurrence*, but only one)
      */
     public function getOccurrenceTiming(): null|FHIRTiming
     {
@@ -1844,7 +1862,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The date/time at which the requested service should occur.
+     * The date/time at which the requested service should occur. (choose any one of
+     * occurrence*, but only one)
      */
     public function setOccurrenceTiming(null|FHIRTiming $occurrenceTiming): self
     {
@@ -1861,7 +1880,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
-     * the service. For example "pain", "on flare-up", etc.
+     * the service. For example "pain", "on flare-up", etc. (choose any one of
+     * asNeeded*, but only one)
      */
     public function getAsNeededBoolean(): null|FHIRBoolean
     {
@@ -1873,7 +1893,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
-     * the service. For example "pain", "on flare-up", etc.
+     * the service. For example "pain", "on flare-up", etc. (choose any one of
+     * asNeeded*, but only one)
      */
     public function setAsNeededBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $asNeededBoolean): self
     {
@@ -1895,7 +1916,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
-     * the service. For example "pain", "on flare-up", etc.
+     * the service. For example "pain", "on flare-up", etc. (choose any one of
+     * asNeeded*, but only one)
      */
     public function getAsNeededCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -1909,7 +1931,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
-     * the service. For example "pain", "on flare-up", etc.
+     * the service. For example "pain", "on flare-up", etc. (choose any one of
+     * asNeeded*, but only one)
      */
     public function setAsNeededCodeableConcept(null|FHIRCodeableConcept $asNeededCodeableConcept): self
     {
@@ -2729,7 +2752,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -3246,7 +3269,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addInstantiatesCanonical(FHIRCanonical::jsonUnserialize($v, $config));
             }
@@ -3263,7 +3286,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addInstantiatesUri(FHIRUri::jsonUnserialize($v, $config));
             }
@@ -3301,7 +3324,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRRequestStatus::jsonUnserialize($v, $config));
         }
@@ -3309,7 +3332,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
             || isset($decoded->_intent)
             || property_exists($decoded, self::FIELD_INTENT)
             || property_exists($decoded, self::FIELD_INTENT_EXT)) {
-            $v = $decoded->_intent ?? new \stdClass();
+            $v = isset($decoded->_intent) ? clone $decoded->_intent : new \stdClass();
             $v->value = $decoded->intent ?? null;
             $type->setIntent(FHIRRequestIntent::jsonUnserialize($v, $config));
         }
@@ -3328,7 +3351,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
             || isset($decoded->_priority)
             || property_exists($decoded, self::FIELD_PRIORITY)
             || property_exists($decoded, self::FIELD_PRIORITY_EXT)) {
-            $v = $decoded->_priority ?? new \stdClass();
+            $v = isset($decoded->_priority) ? clone $decoded->_priority : new \stdClass();
             $v->value = $decoded->priority ?? null;
             $type->setPriority(FHIRRequestPriority::jsonUnserialize($v, $config));
         }
@@ -3336,7 +3359,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
             || isset($decoded->_doNotPerform)
             || property_exists($decoded, self::FIELD_DO_NOT_PERFORM)
             || property_exists($decoded, self::FIELD_DO_NOT_PERFORM_EXT)) {
-            $v = $decoded->_doNotPerform ?? new \stdClass();
+            $v = isset($decoded->_doNotPerform) ? clone $decoded->_doNotPerform : new \stdClass();
             $v->value = $decoded->doNotPerform ?? null;
             $type->setDoNotPerform(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -3408,7 +3431,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
             || isset($decoded->_occurrenceDateTime)
             || property_exists($decoded, self::FIELD_OCCURRENCE_DATE_TIME)
             || property_exists($decoded, self::FIELD_OCCURRENCE_DATE_TIME_EXT)) {
-            $v = $decoded->_occurrenceDateTime ?? new \stdClass();
+            $v = isset($decoded->_occurrenceDateTime) ? clone $decoded->_occurrenceDateTime : new \stdClass();
             $v->value = $decoded->occurrenceDateTime ?? null;
             $type->setOccurrenceDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -3430,7 +3453,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
             || isset($decoded->_asNeededBoolean)
             || property_exists($decoded, self::FIELD_AS_NEEDED_BOOLEAN)
             || property_exists($decoded, self::FIELD_AS_NEEDED_BOOLEAN_EXT)) {
-            $v = $decoded->_asNeededBoolean ?? new \stdClass();
+            $v = isset($decoded->_asNeededBoolean) ? clone $decoded->_asNeededBoolean : new \stdClass();
             $v->value = $decoded->asNeededBoolean ?? null;
             $type->setAsNeededBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -3445,7 +3468,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
             || isset($decoded->_authoredOn)
             || property_exists($decoded, self::FIELD_AUTHORED_ON)
             || property_exists($decoded, self::FIELD_AUTHORED_ON_EXT)) {
-            $v = $decoded->_authoredOn ?? new \stdClass();
+            $v = isset($decoded->_authoredOn) ? clone $decoded->_authoredOn : new \stdClass();
             $v->value = $decoded->authoredOn ?? null;
             $type->setAuthoredOn(FHIRDateTime::jsonUnserialize($v, $config));
         }

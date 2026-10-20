@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension;
@@ -105,7 +104,7 @@ class FHIRBundleEntry extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
-            ValuePatternMatchRule::NAME => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
+            'value_pattern_match' => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
         ],
     ];
 
@@ -447,7 +446,7 @@ class FHIRBundleEntry extends FHIRBackboneElement
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->setResource($cn::xmlUnserialize($cen, $config));
+                    $type->setResource(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_SEARCH === $cen) {
                 $type->setSearch(FHIRBundleSearch::xmlUnserialize($ce, $config));
@@ -559,15 +558,13 @@ class FHIRBundleEntry extends FHIRBackboneElement
             || isset($decoded->_fullUrl)
             || property_exists($decoded, self::FIELD_FULL_URL)
             || property_exists($decoded, self::FIELD_FULL_URL_EXT)) {
-            $v = $decoded->_fullUrl ?? new \stdClass();
+            $v = isset($decoded->_fullUrl) ? clone $decoded->_fullUrl : new \stdClass();
             $v->value = $decoded->fullUrl ?? null;
             $type->setFullUrl(FHIRUri::jsonUnserialize($v, $config));
         }
         if (isset($decoded->resource)) {
             $typeClassName = VersionTypeMap::mustGetContainedTypeClassnameFromJSON($decoded->resource);
-            $v = $decoded->resource;
-            unset($v->resourceType);
-            $type->setResource($typeClassName::jsonUnserialize($v, $config));
+            $type->setResource(VersionTypeMap::jsonUnserializeResource($typeClassName, $decoded->resource, $config));
         }
         if (isset($decoded->search) || property_exists($decoded, self::FIELD_SEARCH)) {
             if (is_array($decoded->search)) {

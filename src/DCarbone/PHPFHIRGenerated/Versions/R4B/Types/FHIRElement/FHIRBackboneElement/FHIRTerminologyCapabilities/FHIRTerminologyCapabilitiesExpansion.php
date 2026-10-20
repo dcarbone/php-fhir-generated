@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -589,7 +589,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
             || isset($decoded->_hierarchical)
             || property_exists($decoded, self::FIELD_HIERARCHICAL)
             || property_exists($decoded, self::FIELD_HIERARCHICAL_EXT)) {
-            $v = $decoded->_hierarchical ?? new \stdClass();
+            $v = isset($decoded->_hierarchical) ? clone $decoded->_hierarchical : new \stdClass();
             $v->value = $decoded->hierarchical ?? null;
             $type->setHierarchical(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -597,7 +597,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
             || isset($decoded->_paging)
             || property_exists($decoded, self::FIELD_PAGING)
             || property_exists($decoded, self::FIELD_PAGING_EXT)) {
-            $v = $decoded->_paging ?? new \stdClass();
+            $v = isset($decoded->_paging) ? clone $decoded->_paging : new \stdClass();
             $v->value = $decoded->paging ?? null;
             $type->setPaging(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -605,7 +605,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
             || isset($decoded->_incomplete)
             || property_exists($decoded, self::FIELD_INCOMPLETE)
             || property_exists($decoded, self::FIELD_INCOMPLETE_EXT)) {
-            $v = $decoded->_incomplete ?? new \stdClass();
+            $v = isset($decoded->_incomplete) ? clone $decoded->_incomplete : new \stdClass();
             $v->value = $decoded->incomplete ?? null;
             $type->setIncomplete(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -624,7 +624,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
             || isset($decoded->_textFilter)
             || property_exists($decoded, self::FIELD_TEXT_FILTER)
             || property_exists($decoded, self::FIELD_TEXT_FILTER_EXT)) {
-            $v = $decoded->_textFilter ?? new \stdClass();
+            $v = isset($decoded->_textFilter) ? clone $decoded->_textFilter : new \stdClass();
             $v->value = $decoded->textFilter ?? null;
             $type->setTextFilter(FHIRMarkdown::jsonUnserialize($v, $config));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase64BinaryPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
@@ -148,40 +147,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_QUANTITY => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_CODEABLE_CONCEPT => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_STRING => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_BOOLEAN => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_INTEGER => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_RANGE => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_RATIO => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_TIME => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_DATE_TIME => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_PERIOD => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_BASE_64BINARY => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -213,7 +179,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -223,7 +189,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
@@ -232,7 +198,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     #[FHIRString]
     protected FHIRString $valueString;
@@ -240,7 +206,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
@@ -249,7 +215,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     #[FHIRInteger]
     protected FHIRInteger $valueInteger;
@@ -258,7 +224,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     #[FHIRRange]
     protected FHIRRange $valueRange;
@@ -268,7 +234,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     #[FHIRRatio]
     protected FHIRRatio $valueRatio;
@@ -276,7 +242,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * A time during the day, with no date specified
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     #[FHIRTime]
     protected FHIRTime $valueTime;
@@ -289,7 +255,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     #[FHIRDateTime]
     protected FHIRDateTime $valueDateTime;
@@ -298,7 +264,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     #[FHIRPeriod]
     protected FHIRPeriod $valuePeriod;
@@ -307,7 +273,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * A stream of bytes, base64 encoded
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     #[FHIRBase64Binary]
     protected FHIRBase64Binary $valueBase64Binary;
@@ -423,7 +389,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -437,7 +403,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -455,7 +421,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     public function getValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -468,7 +434,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -485,7 +451,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     public function getValueString(): null|FHIRString
     {
@@ -497,7 +463,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -516,7 +482,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     public function getValueBoolean(): null|FHIRBoolean
     {
@@ -527,7 +493,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -547,7 +513,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     public function getValueInteger(): null|FHIRInteger
     {
@@ -559,7 +525,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     public function setValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $valueInteger): self
     {
@@ -579,7 +545,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     public function getValueRange(): null|FHIRRange
     {
@@ -591,7 +557,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -609,7 +575,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     public function getValueRatio(): null|FHIRRatio
     {
@@ -622,7 +588,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     public function setValueRatio(null|FHIRRatio $valueRatio): self
     {
@@ -638,7 +604,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * A time during the day, with no date specified
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     public function getValueTime(): null|FHIRTime
     {
@@ -649,7 +615,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * A time during the day, with no date specified
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     public function setValueTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $valueTime): self
     {
@@ -673,7 +639,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     public function getValueDateTime(): null|FHIRDateTime
     {
@@ -689,7 +655,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime): self
     {
@@ -709,7 +675,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     public function getValuePeriod(): null|FHIRPeriod
     {
@@ -721,7 +687,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     public function setValuePeriod(null|FHIRPeriod $valuePeriod): self
     {
@@ -738,7 +704,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * A stream of bytes, base64 encoded
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     public function getValueBase64Binary(): null|FHIRBase64Binary
     {
@@ -750,7 +716,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      * A stream of bytes, base64 encoded
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the extra detail.
+     * The value of the extra detail. (choose any one of value*, but only one)
      */
     public function setValueBase64Binary(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $valueBase64Binary): self
     {
@@ -1028,7 +994,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
             || isset($decoded->_valueString)
             || property_exists($decoded, self::FIELD_VALUE_STRING)
             || property_exists($decoded, self::FIELD_VALUE_STRING_EXT)) {
-            $v = $decoded->_valueString ?? new \stdClass();
+            $v = isset($decoded->_valueString) ? clone $decoded->_valueString : new \stdClass();
             $v->value = $decoded->valueString ?? null;
             $type->setValueString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1036,7 +1002,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
             || isset($decoded->_valueBoolean)
             || property_exists($decoded, self::FIELD_VALUE_BOOLEAN)
             || property_exists($decoded, self::FIELD_VALUE_BOOLEAN_EXT)) {
-            $v = $decoded->_valueBoolean ?? new \stdClass();
+            $v = isset($decoded->_valueBoolean) ? clone $decoded->_valueBoolean : new \stdClass();
             $v->value = $decoded->valueBoolean ?? null;
             $type->setValueBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1044,7 +1010,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
             || isset($decoded->_valueInteger)
             || property_exists($decoded, self::FIELD_VALUE_INTEGER)
             || property_exists($decoded, self::FIELD_VALUE_INTEGER_EXT)) {
-            $v = $decoded->_valueInteger ?? new \stdClass();
+            $v = isset($decoded->_valueInteger) ? clone $decoded->_valueInteger : new \stdClass();
             $v->value = $decoded->valueInteger ?? null;
             $type->setValueInteger(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -1066,7 +1032,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
             || isset($decoded->_valueTime)
             || property_exists($decoded, self::FIELD_VALUE_TIME)
             || property_exists($decoded, self::FIELD_VALUE_TIME_EXT)) {
-            $v = $decoded->_valueTime ?? new \stdClass();
+            $v = isset($decoded->_valueTime) ? clone $decoded->_valueTime : new \stdClass();
             $v->value = $decoded->valueTime ?? null;
             $type->setValueTime(FHIRTime::jsonUnserialize($v, $config));
         }
@@ -1074,7 +1040,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
             || isset($decoded->_valueDateTime)
             || property_exists($decoded, self::FIELD_VALUE_DATE_TIME)
             || property_exists($decoded, self::FIELD_VALUE_DATE_TIME_EXT)) {
-            $v = $decoded->_valueDateTime ?? new \stdClass();
+            $v = isset($decoded->_valueDateTime) ? clone $decoded->_valueDateTime : new \stdClass();
             $v->value = $decoded->valueDateTime ?? null;
             $type->setValueDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1089,7 +1055,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
             || isset($decoded->_valueBase64Binary)
             || property_exists($decoded, self::FIELD_VALUE_BASE_64BINARY)
             || property_exists($decoded, self::FIELD_VALUE_BASE_64BINARY_EXT)) {
-            $v = $decoded->_valueBase64Binary ?? new \stdClass();
+            $v = isset($decoded->_valueBase64Binary) ? clone $decoded->_valueBase64Binary : new \stdClass();
             $v->value = $decoded->valueBase64Binary ?? null;
             $type->setValueBase64Binary(FHIRBase64Binary::jsonUnserialize($v, $config));
         }

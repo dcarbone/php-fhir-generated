@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -63,7 +63,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive;
@@ -116,7 +115,7 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
-            ValuePatternMatchRule::NAME => '/^[a-z0-9\\-\\.]{1,36}$/',
+            'value_pattern_match' => '/^[a-z0-9\\-\\.]{1,36}$/',
         ],
     ];
 
@@ -1021,7 +1020,7 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
             || isset($decoded->_text)
             || property_exists($decoded, self::FIELD_TEXT)
             || property_exists($decoded, self::FIELD_TEXT_EXT)) {
-            $v = $decoded->_text ?? new \stdClass();
+            $v = isset($decoded->_text) ? clone $decoded->_text : new \stdClass();
             $v->value = $decoded->text ?? null;
             $type->setText(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1036,7 +1035,7 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
             || isset($decoded->_timingDateTime)
             || property_exists($decoded, self::FIELD_TIMING_DATE_TIME)
             || property_exists($decoded, self::FIELD_TIMING_DATE_TIME_EXT)) {
-            $v = $decoded->_timingDateTime ?? new \stdClass();
+            $v = isset($decoded->_timingDateTime) ? clone $decoded->_timingDateTime : new \stdClass();
             $v->value = $decoded->timingDateTime ?? null;
             $type->setTimingDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1058,7 +1057,7 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
             || isset($decoded->_asNeededBoolean)
             || property_exists($decoded, self::FIELD_AS_NEEDED_BOOLEAN)
             || property_exists($decoded, self::FIELD_AS_NEEDED_BOOLEAN_EXT)) {
-            $v = $decoded->_asNeededBoolean ?? new \stdClass();
+            $v = isset($decoded->_asNeededBoolean) ? clone $decoded->_asNeededBoolean : new \stdClass();
             $v->value = $decoded->asNeededBoolean ?? null;
             $type->setAsNeededBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }

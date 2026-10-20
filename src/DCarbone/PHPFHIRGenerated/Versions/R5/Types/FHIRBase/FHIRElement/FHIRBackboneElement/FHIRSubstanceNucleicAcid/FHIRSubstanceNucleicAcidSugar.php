@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -434,7 +434,7 @@ class FHIRSubstanceNucleicAcidSugar extends FHIRBackboneElement
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -442,7 +442,7 @@ class FHIRSubstanceNucleicAcidSugar extends FHIRBackboneElement
             || isset($decoded->_residueSite)
             || property_exists($decoded, self::FIELD_RESIDUE_SITE)
             || property_exists($decoded, self::FIELD_RESIDUE_SITE_EXT)) {
-            $v = $decoded->_residueSite ?? new \stdClass();
+            $v = isset($decoded->_residueSite) ? clone $decoded->_residueSite : new \stdClass();
             $v->value = $decoded->residueSite ?? null;
             $type->setResidueSite(FHIRString::jsonUnserialize($v, $config));
         }

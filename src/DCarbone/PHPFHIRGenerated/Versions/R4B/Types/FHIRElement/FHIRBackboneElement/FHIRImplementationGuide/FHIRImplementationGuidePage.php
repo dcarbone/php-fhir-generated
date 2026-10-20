@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRGuidePageGenerationEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
@@ -130,16 +129,16 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_NAME_URL => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_NAME_REFERENCE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_TITLE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_GENERATION => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -585,7 +584,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
             || isset($decoded->_nameUrl)
             || property_exists($decoded, self::FIELD_NAME_URL)
             || property_exists($decoded, self::FIELD_NAME_URL_EXT)) {
-            $v = $decoded->_nameUrl ?? new \stdClass();
+            $v = isset($decoded->_nameUrl) ? clone $decoded->_nameUrl : new \stdClass();
             $v->value = $decoded->nameUrl ?? null;
             $type->setNameUrl(FHIRUrl::jsonUnserialize($v, $config));
         }
@@ -600,7 +599,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
             || isset($decoded->_title)
             || property_exists($decoded, self::FIELD_TITLE)
             || property_exists($decoded, self::FIELD_TITLE_EXT)) {
-            $v = $decoded->_title ?? new \stdClass();
+            $v = isset($decoded->_title) ? clone $decoded->_title : new \stdClass();
             $v->value = $decoded->title ?? null;
             $type->setTitle(FHIRString::jsonUnserialize($v, $config));
         }
@@ -608,7 +607,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
             || isset($decoded->_generation)
             || property_exists($decoded, self::FIELD_GENERATION)
             || property_exists($decoded, self::FIELD_GENERATION_EXT)) {
-            $v = $decoded->_generation ?? new \stdClass();
+            $v = isset($decoded->_generation) ? clone $decoded->_generation : new \stdClass();
             $v->value = $decoded->generation ?? null;
             $type->setGeneration(FHIRGuidePageGeneration::jsonUnserialize($v, $config));
         }

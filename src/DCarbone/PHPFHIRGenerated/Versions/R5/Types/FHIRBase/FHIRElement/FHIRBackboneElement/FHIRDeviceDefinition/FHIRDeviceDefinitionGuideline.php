@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -845,7 +845,7 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
             || isset($decoded->_usageInstruction)
             || property_exists($decoded, self::FIELD_USAGE_INSTRUCTION)
             || property_exists($decoded, self::FIELD_USAGE_INSTRUCTION_EXT)) {
-            $v = $decoded->_usageInstruction ?? new \stdClass();
+            $v = isset($decoded->_usageInstruction) ? clone $decoded->_usageInstruction : new \stdClass();
             $v->value = $decoded->usageInstruction ?? null;
             $type->setUsageInstruction(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -897,7 +897,7 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
             || isset($decoded->_intendedUse)
             || property_exists($decoded, self::FIELD_INTENDED_USE)
             || property_exists($decoded, self::FIELD_INTENDED_USE_EXT)) {
-            $v = $decoded->_intendedUse ?? new \stdClass();
+            $v = isset($decoded->_intendedUse) ? clone $decoded->_intendedUse : new \stdClass();
             $v->value = $decoded->intendedUse ?? null;
             $type->setIntendedUse(FHIRString::jsonUnserialize($v, $config));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -62,7 +62,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3;
  *
  */
 use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\OnProfileViolationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ProfileResolutionEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
+use DCarbone\PHPFHIRGenerated\Types\ProfileTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Profiles\ProfileMap;
 use DCarbone\PHPFHIRGenerated\Versions\VersionTypeMapInterface;
 
 class VersionTypeMap implements VersionTypeMapInterface
@@ -1129,9 +1134,9 @@ class VersionTypeMap implements VersionTypeMapInterface
         if (is_string($input)) {
             return self::_TYPE_MAP[$input] ?? null;
         } else if ($input instanceof \SimpleXMLElement) {
-            return self::_TYPE_MAP[$input->getName()] ?? null;
+            return self::_TYPE_MAP[(string)$input->getName()] ?? null;
         } else if (isset($input->resourceType)) {
-            return self::_TYPE_MAP[$input->resourceType] ?? null;
+            return self::_TYPE_MAP[(string)$input->resourceType] ?? null;
         } else {
             return null;
         }
@@ -1201,6 +1206,112 @@ class VersionTypeMap implements VersionTypeMapInterface
             return self::_CONTAINABLE_TYPES[$decoded->resourceType];
         }
         throw self::createdInvalidContainedTypeException($decoded->resourceType);
+    }
+
+    /**
+     * @param class-string $className
+     */
+    public static function jsonUnserializeResource(string $className,
+                                                   \stdClass $decoded,
+                                                   UnserializeConfig $config): TypeInterface
+    {
+        $declared = $decoded->meta->profile ?? [];
+        if (!is_array($declared)) {
+            $declared = [];
+        }
+        /** @var null|class-string<ProfileTypeInterface> $profileClass */
+        $profileClass = self::_resolveProfileClassname($className, $declared, $config);
+        if (null === $profileClass) {
+            return $className::jsonUnserialize($decoded, $config);
+        }
+        $profiled = $profileClass::jsonUnserialize($decoded, $config);
+        if ($config->getOnProfileViolation() !== OnProfileViolationEnum::KEEP) {
+            $violations = $profiled->_getProfileValidationErrors();
+            if ([] !== $violations) {
+                if ($config->getOnProfileViolation() === OnProfileViolationEnum::FALLBACK) {
+                    return $className::jsonUnserialize($decoded, $config);
+                }
+                throw self::_createProfileViolationException($profileClass, $violations);
+            }
+        }
+        return $profiled;
+    }
+
+    /**
+     * @param class-string $className
+     */
+    public static function xmlUnserializeResource(string $className,
+                                                  \SimpleXMLElement $element,
+                                                  UnserializeConfig $config): TypeInterface
+    {
+        $declared = [];
+        if ($config->getProfileResolution() === ProfileResolutionEnum::AUTO) {
+            foreach ($element->children() as $child) {
+                if ('meta' !== $child->getName()) {
+                    continue;
+                }
+                foreach ($child->children() as $metaChild) {
+                    if ('profile' === $metaChild->getName() && isset($metaChild['value'])) {
+                        $declared[] = (string)$metaChild['value'];
+                    }
+                }
+            }
+        }
+        /** @var null|class-string<ProfileTypeInterface> $profileClass */
+        $profileClass = self::_resolveProfileClassname($className, $declared, $config);
+        if (null === $profileClass) {
+            return $className::xmlUnserialize($element, $config);
+        }
+        $profiled = $profileClass::xmlUnserialize($element, $config);
+        if ($config->getOnProfileViolation() !== OnProfileViolationEnum::KEEP) {
+            $violations = $profiled->_getProfileValidationErrors();
+            if ([] !== $violations) {
+                if ($config->getOnProfileViolation() === OnProfileViolationEnum::FALLBACK) {
+                    return $className::xmlUnserialize($element, $config);
+                }
+                throw self::_createProfileViolationException($profileClass, $violations);
+            }
+        }
+        return $profiled;
+    }
+
+    /**
+     * @param class-string $className
+     * @param string[] $declared
+     * @return null|class-string<ProfileTypeInterface> Null if the resource should be unserialized into $className
+     */
+    private static function _resolveProfileClassname(string $className, array $declared, UnserializeConfig $config): null|string
+    {
+        if ([] === $declared
+            || $config->getProfileResolution() !== ProfileResolutionEnum::AUTO
+            || !class_exists(ProfileMap::class)) {
+            return null;
+        }
+        return ProfileMap::resolve(
+            $className,
+            $declared,
+            $config->getOnUnknownProfile(),
+            $config->getOnAmbiguousProfile(),
+            $config->getOnProfileVersionMismatch(),
+        );
+    }
+
+    /**
+     * @param class-string<ProfileTypeInterface> $profileClass
+     */
+    private static function _createProfileViolationException(string $profileClass, array $violations): \UnexpectedValueException
+    {
+        $parts = [];
+        foreach ($violations as $path => $errs) {
+            foreach ($errs as $rule => $message) {
+                $parts[] = sprintf('%s [%s]: %s', $path, $rule, $message);
+            }
+        }
+        return new \UnexpectedValueException(sprintf(
+            'Resource violates profile "%s": %s',
+            $profileClass::_getProfileUrl(),
+            implode('; ', $parts)
+        ));
     }
 
     private static function createdInvalidContainedTypeException(string $typeName): \UnexpectedValueException

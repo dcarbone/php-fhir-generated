@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -63,8 +63,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement;
@@ -111,13 +109,13 @@ class FHIRProfileBinding extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
-            ValuePatternMatchRule::NAME => '/^[a-z0-9\\-\\.]{1,36}$/',
+            'value_pattern_match' => '/^[a-z0-9\\-\\.]{1,36}$/',
         ],
         self::FIELD_NAME => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_IS_EXTENSIBLE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -614,7 +612,7 @@ class FHIRProfileBinding extends FHIRBackboneElement
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -622,7 +620,7 @@ class FHIRProfileBinding extends FHIRBackboneElement
             || isset($decoded->_isExtensible)
             || property_exists($decoded, self::FIELD_IS_EXTENSIBLE)
             || property_exists($decoded, self::FIELD_IS_EXTENSIBLE_EXT)) {
-            $v = $decoded->_isExtensible ?? new \stdClass();
+            $v = isset($decoded->_isExtensible) ? clone $decoded->_isExtensible : new \stdClass();
             $v->value = $decoded->isExtensible ?? null;
             $type->setIsExtensible(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -630,7 +628,7 @@ class FHIRProfileBinding extends FHIRBackboneElement
             || isset($decoded->_conformance)
             || property_exists($decoded, self::FIELD_CONFORMANCE)
             || property_exists($decoded, self::FIELD_CONFORMANCE_EXT)) {
-            $v = $decoded->_conformance ?? new \stdClass();
+            $v = isset($decoded->_conformance) ? clone $decoded->_conformance : new \stdClass();
             $v->value = $decoded->conformance ?? null;
             $type->setConformance(FHIRBindingConformance::jsonUnserialize($v, $config));
         }
@@ -638,7 +636,7 @@ class FHIRProfileBinding extends FHIRBackboneElement
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
@@ -646,7 +644,7 @@ class FHIRProfileBinding extends FHIRBackboneElement
             || isset($decoded->_referenceUri)
             || property_exists($decoded, self::FIELD_REFERENCE_URI)
             || property_exists($decoded, self::FIELD_REFERENCE_URI_EXT)) {
-            $v = $decoded->_referenceUri ?? new \stdClass();
+            $v = isset($decoded->_referenceUri) ? clone $decoded->_referenceUri : new \stdClass();
             $v->value = $decoded->referenceUri ?? null;
             $type->setReferenceUri(FHIRUri::jsonUnserialize($v, $config));
         }

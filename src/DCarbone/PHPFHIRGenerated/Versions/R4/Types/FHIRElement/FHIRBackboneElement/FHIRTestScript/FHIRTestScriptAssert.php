@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive;
@@ -153,7 +152,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_WARNING_ONLY => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1771,7 +1770,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             || isset($decoded->_label)
             || property_exists($decoded, self::FIELD_LABEL)
             || property_exists($decoded, self::FIELD_LABEL_EXT)) {
-            $v = $decoded->_label ?? new \stdClass();
+            $v = isset($decoded->_label) ? clone $decoded->_label : new \stdClass();
             $v->value = $decoded->label ?? null;
             $type->setLabel(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1779,7 +1778,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1787,7 +1786,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             || isset($decoded->_direction)
             || property_exists($decoded, self::FIELD_DIRECTION)
             || property_exists($decoded, self::FIELD_DIRECTION_EXT)) {
-            $v = $decoded->_direction ?? new \stdClass();
+            $v = isset($decoded->_direction) ? clone $decoded->_direction : new \stdClass();
             $v->value = $decoded->direction ?? null;
             $type->setDirection(FHIRAssertionDirectionType::jsonUnserialize($v, $config));
         }
@@ -1795,7 +1794,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             || isset($decoded->_compareToSourceId)
             || property_exists($decoded, self::FIELD_COMPARE_TO_SOURCE_ID)
             || property_exists($decoded, self::FIELD_COMPARE_TO_SOURCE_ID_EXT)) {
-            $v = $decoded->_compareToSourceId ?? new \stdClass();
+            $v = isset($decoded->_compareToSourceId) ? clone $decoded->_compareToSourceId : new \stdClass();
             $v->value = $decoded->compareToSourceId ?? null;
             $type->setCompareToSourceId(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1803,7 +1802,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             || isset($decoded->_compareToSourceExpression)
             || property_exists($decoded, self::FIELD_COMPARE_TO_SOURCE_EXPRESSION)
             || property_exists($decoded, self::FIELD_COMPARE_TO_SOURCE_EXPRESSION_EXT)) {
-            $v = $decoded->_compareToSourceExpression ?? new \stdClass();
+            $v = isset($decoded->_compareToSourceExpression) ? clone $decoded->_compareToSourceExpression : new \stdClass();
             $v->value = $decoded->compareToSourceExpression ?? null;
             $type->setCompareToSourceExpression(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1811,7 +1810,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             || isset($decoded->_compareToSourcePath)
             || property_exists($decoded, self::FIELD_COMPARE_TO_SOURCE_PATH)
             || property_exists($decoded, self::FIELD_COMPARE_TO_SOURCE_PATH_EXT)) {
-            $v = $decoded->_compareToSourcePath ?? new \stdClass();
+            $v = isset($decoded->_compareToSourcePath) ? clone $decoded->_compareToSourcePath : new \stdClass();
             $v->value = $decoded->compareToSourcePath ?? null;
             $type->setCompareToSourcePath(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1819,7 +1818,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             || isset($decoded->_contentType)
             || property_exists($decoded, self::FIELD_CONTENT_TYPE)
             || property_exists($decoded, self::FIELD_CONTENT_TYPE_EXT)) {
-            $v = $decoded->_contentType ?? new \stdClass();
+            $v = isset($decoded->_contentType) ? clone $decoded->_contentType : new \stdClass();
             $v->value = $decoded->contentType ?? null;
             $type->setContentType(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -1827,7 +1826,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             || isset($decoded->_expression)
             || property_exists($decoded, self::FIELD_EXPRESSION)
             || property_exists($decoded, self::FIELD_EXPRESSION_EXT)) {
-            $v = $decoded->_expression ?? new \stdClass();
+            $v = isset($decoded->_expression) ? clone $decoded->_expression : new \stdClass();
             $v->value = $decoded->expression ?? null;
             $type->setExpression(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1835,7 +1834,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             || isset($decoded->_headerField)
             || property_exists($decoded, self::FIELD_HEADER_FIELD)
             || property_exists($decoded, self::FIELD_HEADER_FIELD_EXT)) {
-            $v = $decoded->_headerField ?? new \stdClass();
+            $v = isset($decoded->_headerField) ? clone $decoded->_headerField : new \stdClass();
             $v->value = $decoded->headerField ?? null;
             $type->setHeaderField(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1843,7 +1842,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             || isset($decoded->_minimumId)
             || property_exists($decoded, self::FIELD_MINIMUM_ID)
             || property_exists($decoded, self::FIELD_MINIMUM_ID_EXT)) {
-            $v = $decoded->_minimumId ?? new \stdClass();
+            $v = isset($decoded->_minimumId) ? clone $decoded->_minimumId : new \stdClass();
             $v->value = $decoded->minimumId ?? null;
             $type->setMinimumId(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1851,7 +1850,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             || isset($decoded->_navigationLinks)
             || property_exists($decoded, self::FIELD_NAVIGATION_LINKS)
             || property_exists($decoded, self::FIELD_NAVIGATION_LINKS_EXT)) {
-            $v = $decoded->_navigationLinks ?? new \stdClass();
+            $v = isset($decoded->_navigationLinks) ? clone $decoded->_navigationLinks : new \stdClass();
             $v->value = $decoded->navigationLinks ?? null;
             $type->setNavigationLinks(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1859,7 +1858,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             || isset($decoded->_operator)
             || property_exists($decoded, self::FIELD_OPERATOR)
             || property_exists($decoded, self::FIELD_OPERATOR_EXT)) {
-            $v = $decoded->_operator ?? new \stdClass();
+            $v = isset($decoded->_operator) ? clone $decoded->_operator : new \stdClass();
             $v->value = $decoded->operator ?? null;
             $type->setOperator(FHIRAssertionOperatorType::jsonUnserialize($v, $config));
         }
@@ -1867,7 +1866,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             || isset($decoded->_path)
             || property_exists($decoded, self::FIELD_PATH)
             || property_exists($decoded, self::FIELD_PATH_EXT)) {
-            $v = $decoded->_path ?? new \stdClass();
+            $v = isset($decoded->_path) ? clone $decoded->_path : new \stdClass();
             $v->value = $decoded->path ?? null;
             $type->setPath(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1875,7 +1874,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             || isset($decoded->_requestMethod)
             || property_exists($decoded, self::FIELD_REQUEST_METHOD)
             || property_exists($decoded, self::FIELD_REQUEST_METHOD_EXT)) {
-            $v = $decoded->_requestMethod ?? new \stdClass();
+            $v = isset($decoded->_requestMethod) ? clone $decoded->_requestMethod : new \stdClass();
             $v->value = $decoded->requestMethod ?? null;
             $type->setRequestMethod(FHIRTestScriptRequestMethodCode::jsonUnserialize($v, $config));
         }
@@ -1883,7 +1882,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             || isset($decoded->_requestURL)
             || property_exists($decoded, self::FIELD_REQUEST_URL)
             || property_exists($decoded, self::FIELD_REQUEST_URL_EXT)) {
-            $v = $decoded->_requestURL ?? new \stdClass();
+            $v = isset($decoded->_requestURL) ? clone $decoded->_requestURL : new \stdClass();
             $v->value = $decoded->requestURL ?? null;
             $type->setRequestURL(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1891,7 +1890,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             || isset($decoded->_resource)
             || property_exists($decoded, self::FIELD_RESOURCE)
             || property_exists($decoded, self::FIELD_RESOURCE_EXT)) {
-            $v = $decoded->_resource ?? new \stdClass();
+            $v = isset($decoded->_resource) ? clone $decoded->_resource : new \stdClass();
             $v->value = $decoded->resource ?? null;
             $type->setResource(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -1899,7 +1898,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             || isset($decoded->_response)
             || property_exists($decoded, self::FIELD_RESPONSE)
             || property_exists($decoded, self::FIELD_RESPONSE_EXT)) {
-            $v = $decoded->_response ?? new \stdClass();
+            $v = isset($decoded->_response) ? clone $decoded->_response : new \stdClass();
             $v->value = $decoded->response ?? null;
             $type->setResponse(FHIRAssertionResponseTypes::jsonUnserialize($v, $config));
         }
@@ -1907,7 +1906,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             || isset($decoded->_responseCode)
             || property_exists($decoded, self::FIELD_RESPONSE_CODE)
             || property_exists($decoded, self::FIELD_RESPONSE_CODE_EXT)) {
-            $v = $decoded->_responseCode ?? new \stdClass();
+            $v = isset($decoded->_responseCode) ? clone $decoded->_responseCode : new \stdClass();
             $v->value = $decoded->responseCode ?? null;
             $type->setResponseCode(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1915,7 +1914,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             || isset($decoded->_sourceId)
             || property_exists($decoded, self::FIELD_SOURCE_ID)
             || property_exists($decoded, self::FIELD_SOURCE_ID_EXT)) {
-            $v = $decoded->_sourceId ?? new \stdClass();
+            $v = isset($decoded->_sourceId) ? clone $decoded->_sourceId : new \stdClass();
             $v->value = $decoded->sourceId ?? null;
             $type->setSourceId(FHIRId::jsonUnserialize($v, $config));
         }
@@ -1923,7 +1922,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             || isset($decoded->_validateProfileId)
             || property_exists($decoded, self::FIELD_VALIDATE_PROFILE_ID)
             || property_exists($decoded, self::FIELD_VALIDATE_PROFILE_ID_EXT)) {
-            $v = $decoded->_validateProfileId ?? new \stdClass();
+            $v = isset($decoded->_validateProfileId) ? clone $decoded->_validateProfileId : new \stdClass();
             $v->value = $decoded->validateProfileId ?? null;
             $type->setValidateProfileId(FHIRId::jsonUnserialize($v, $config));
         }
@@ -1931,7 +1930,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             || isset($decoded->_value)
             || property_exists($decoded, self::FIELD_VALUE)
             || property_exists($decoded, self::FIELD_VALUE_EXT)) {
-            $v = $decoded->_value ?? new \stdClass();
+            $v = isset($decoded->_value) ? clone $decoded->_value : new \stdClass();
             $v->value = $decoded->value ?? null;
             $type->setValue(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1939,7 +1938,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
             || isset($decoded->_warningOnly)
             || property_exists($decoded, self::FIELD_WARNING_ONLY)
             || property_exists($decoded, self::FIELD_WARNING_ONLY_EXT)) {
-            $v = $decoded->_warningOnly ?? new \stdClass();
+            $v = isset($decoded->_warningOnly) ? clone $decoded->_warningOnly : new \stdClass();
             $v->value = $decoded->warningOnly ?? null;
             $type->setWarningOnly(FHIRBoolean::jsonUnserialize($v, $config));
         }

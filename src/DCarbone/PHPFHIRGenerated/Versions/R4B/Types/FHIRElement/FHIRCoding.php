@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -587,7 +587,7 @@ class FHIRCoding extends FHIRElement
             || isset($decoded->_system)
             || property_exists($decoded, self::FIELD_SYSTEM)
             || property_exists($decoded, self::FIELD_SYSTEM_EXT)) {
-            $v = $decoded->_system ?? new \stdClass();
+            $v = isset($decoded->_system) ? clone $decoded->_system : new \stdClass();
             $v->value = $decoded->system ?? null;
             $type->setSystem(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -595,7 +595,7 @@ class FHIRCoding extends FHIRElement
             || isset($decoded->_version)
             || property_exists($decoded, self::FIELD_VERSION)
             || property_exists($decoded, self::FIELD_VERSION_EXT)) {
-            $v = $decoded->_version ?? new \stdClass();
+            $v = isset($decoded->_version) ? clone $decoded->_version : new \stdClass();
             $v->value = $decoded->version ?? null;
             $type->setVersion(FHIRString::jsonUnserialize($v, $config));
         }
@@ -603,7 +603,7 @@ class FHIRCoding extends FHIRElement
             || isset($decoded->_code)
             || property_exists($decoded, self::FIELD_CODE)
             || property_exists($decoded, self::FIELD_CODE_EXT)) {
-            $v = $decoded->_code ?? new \stdClass();
+            $v = isset($decoded->_code) ? clone $decoded->_code : new \stdClass();
             $v->value = $decoded->code ?? null;
             $type->setCode(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -611,7 +611,7 @@ class FHIRCoding extends FHIRElement
             || isset($decoded->_display)
             || property_exists($decoded, self::FIELD_DISPLAY)
             || property_exists($decoded, self::FIELD_DISPLAY_EXT)) {
-            $v = $decoded->_display ?? new \stdClass();
+            $v = isset($decoded->_display) ? clone $decoded->_display : new \stdClass();
             $v->value = $decoded->display ?? null;
             $type->setDisplay(FHIRString::jsonUnserialize($v, $config));
         }
@@ -619,7 +619,7 @@ class FHIRCoding extends FHIRElement
             || isset($decoded->_userSelected)
             || property_exists($decoded, self::FIELD_USER_SELECTED)
             || property_exists($decoded, self::FIELD_USER_SELECTED_EXT)) {
-            $v = $decoded->_userSelected ?? new \stdClass();
+            $v = isset($decoded->_userSelected) ? clone $decoded->_userSelected : new \stdClass();
             $v->value = $decoded->userSelected ?? null;
             $type->setUserSelected(FHIRBoolean::jsonUnserialize($v, $config));
         }

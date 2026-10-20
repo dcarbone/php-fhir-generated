@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -441,7 +441,7 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
             || isset($decoded->_productRelatedness)
             || property_exists($decoded, self::FIELD_PRODUCT_RELATEDNESS)
             || property_exists($decoded, self::FIELD_PRODUCT_RELATEDNESS_EXT)) {
-            $v = $decoded->_productRelatedness ?? new \stdClass();
+            $v = isset($decoded->_productRelatedness) ? clone $decoded->_productRelatedness : new \stdClass();
             $v->value = $decoded->productRelatedness ?? null;
             $type->setProductRelatedness(FHIRString::jsonUnserialize($v, $config));
         }

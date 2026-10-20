@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical;
@@ -130,15 +129,6 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
 
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
-        self::FIELD_VALUE_CODING => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_URI => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_CANONICAL => [
-            MinOccursRule::NAME => 1,
-        ],
     ];
 
     /* class_default.php:96 */
@@ -153,7 +143,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Code|uri|canonical.
+     * Code|uri|canonical. (choose any one of value*, but only one)
      */
     #[FHIRCoding]
     protected FHIRCoding $valueCoding;
@@ -162,7 +152,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Code|uri|canonical.
+     * Code|uri|canonical. (choose any one of value*, but only one)
      */
     #[FHIRUri]
     protected FHIRUri $valueUri;
@@ -172,7 +162,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Code|uri|canonical.
+     * Code|uri|canonical. (choose any one of value*, but only one)
      */
     #[FHIRCanonical]
     protected FHIRCanonical $valueCanonical;
@@ -219,7 +209,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Code|uri|canonical.
+     * Code|uri|canonical. (choose any one of value*, but only one)
      */
     public function getValueCoding(): null|FHIRCoding
     {
@@ -231,7 +221,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Code|uri|canonical.
+     * Code|uri|canonical. (choose any one of value*, but only one)
      */
     public function setValueCoding(null|FHIRCoding $valueCoding): self
     {
@@ -248,7 +238,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Code|uri|canonical.
+     * Code|uri|canonical. (choose any one of value*, but only one)
      */
     public function getValueUri(): null|FHIRUri
     {
@@ -260,7 +250,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Code|uri|canonical.
+     * Code|uri|canonical. (choose any one of value*, but only one)
      */
     public function setValueUri(null|string|FHIRUriPrimitive|FHIRUri $valueUri): self
     {
@@ -281,7 +271,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Code|uri|canonical.
+     * Code|uri|canonical. (choose any one of value*, but only one)
      */
     public function getValueCanonical(): null|FHIRCanonical
     {
@@ -294,7 +284,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Code|uri|canonical.
+     * Code|uri|canonical. (choose any one of value*, but only one)
      */
     public function setValueCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $valueCanonical): self
     {
@@ -443,7 +433,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
             || isset($decoded->_valueUri)
             || property_exists($decoded, self::FIELD_VALUE_URI)
             || property_exists($decoded, self::FIELD_VALUE_URI_EXT)) {
-            $v = $decoded->_valueUri ?? new \stdClass();
+            $v = isset($decoded->_valueUri) ? clone $decoded->_valueUri : new \stdClass();
             $v->value = $decoded->valueUri ?? null;
             $type->setValueUri(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -451,7 +441,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
             || isset($decoded->_valueCanonical)
             || property_exists($decoded, self::FIELD_VALUE_CANONICAL)
             || property_exists($decoded, self::FIELD_VALUE_CANONICAL_EXT)) {
-            $v = $decoded->_valueCanonical ?? new \stdClass();
+            $v = isset($decoded->_valueCanonical) ? clone $decoded->_valueCanonical : new \stdClass();
             $v->value = $decoded->valueCanonical ?? null;
             $type->setValueCanonical(FHIRCanonical::jsonUnserialize($v, $config));
         }

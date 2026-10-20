@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -453,7 +453,7 @@ class FHIRCitationAffiliationInfo extends FHIRBackboneElement
             || isset($decoded->_affiliation)
             || property_exists($decoded, self::FIELD_AFFILIATION)
             || property_exists($decoded, self::FIELD_AFFILIATION_EXT)) {
-            $v = $decoded->_affiliation ?? new \stdClass();
+            $v = isset($decoded->_affiliation) ? clone $decoded->_affiliation : new \stdClass();
             $v->value = $decoded->affiliation ?? null;
             $type->setAffiliation(FHIRString::jsonUnserialize($v, $config));
         }
@@ -461,7 +461,7 @@ class FHIRCitationAffiliationInfo extends FHIRBackboneElement
             || isset($decoded->_role)
             || property_exists($decoded, self::FIELD_ROLE)
             || property_exists($decoded, self::FIELD_ROLE_EXT)) {
-            $v = $decoded->_role ?? new \stdClass();
+            $v = isset($decoded->_role) ? clone $decoded->_role : new \stdClass();
             $v->value = $decoded->role ?? null;
             $type->setRole(FHIRString::jsonUnserialize($v, $config));
         }

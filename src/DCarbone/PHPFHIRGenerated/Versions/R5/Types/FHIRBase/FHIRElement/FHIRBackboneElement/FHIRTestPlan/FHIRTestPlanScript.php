@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -142,7 +142,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual content of the cases - references to TestScripts or externally
-     * defined content.
+     * defined content. (choose any one of source*, but only one)
      */
     #[FHIRString]
     protected FHIRString $sourceString;
@@ -152,7 +152,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual content of the cases - references to TestScripts or externally
-     * defined content.
+     * defined content. (choose any one of source*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $sourceReference;
@@ -231,7 +231,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual content of the cases - references to TestScripts or externally
-     * defined content.
+     * defined content. (choose any one of source*, but only one)
      */
     public function getSourceString(): null|FHIRString
     {
@@ -244,7 +244,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual content of the cases - references to TestScripts or externally
-     * defined content.
+     * defined content. (choose any one of source*, but only one)
      */
     public function setSourceString(null|string|FHIRStringPrimitive|FHIRString $sourceString): self
     {
@@ -265,7 +265,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual content of the cases - references to TestScripts or externally
-     * defined content.
+     * defined content. (choose any one of source*, but only one)
      */
     public function getSourceReference(): null|FHIRReference
     {
@@ -278,7 +278,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual content of the cases - references to TestScripts or externally
-     * defined content.
+     * defined content. (choose any one of source*, but only one)
      */
     public function setSourceReference(null|FHIRReference $sourceReference): self
     {
@@ -411,7 +411,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
             || isset($decoded->_sourceString)
             || property_exists($decoded, self::FIELD_SOURCE_STRING)
             || property_exists($decoded, self::FIELD_SOURCE_STRING_EXT)) {
-            $v = $decoded->_sourceString ?? new \stdClass();
+            $v = isset($decoded->_sourceString) ? clone $decoded->_sourceString : new \stdClass();
             $v->value = $decoded->sourceString ?? null;
             $type->setSourceString(FHIRString::jsonUnserialize($v, $config));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -729,7 +729,7 @@ class FHIRDeviceUdi extends FHIRBackboneElement
             || isset($decoded->_deviceIdentifier)
             || property_exists($decoded, self::FIELD_DEVICE_IDENTIFIER)
             || property_exists($decoded, self::FIELD_DEVICE_IDENTIFIER_EXT)) {
-            $v = $decoded->_deviceIdentifier ?? new \stdClass();
+            $v = isset($decoded->_deviceIdentifier) ? clone $decoded->_deviceIdentifier : new \stdClass();
             $v->value = $decoded->deviceIdentifier ?? null;
             $type->setDeviceIdentifier(FHIRString::jsonUnserialize($v, $config));
         }
@@ -737,7 +737,7 @@ class FHIRDeviceUdi extends FHIRBackboneElement
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -745,7 +745,7 @@ class FHIRDeviceUdi extends FHIRBackboneElement
             || isset($decoded->_jurisdiction)
             || property_exists($decoded, self::FIELD_JURISDICTION)
             || property_exists($decoded, self::FIELD_JURISDICTION_EXT)) {
-            $v = $decoded->_jurisdiction ?? new \stdClass();
+            $v = isset($decoded->_jurisdiction) ? clone $decoded->_jurisdiction : new \stdClass();
             $v->value = $decoded->jurisdiction ?? null;
             $type->setJurisdiction(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -753,7 +753,7 @@ class FHIRDeviceUdi extends FHIRBackboneElement
             || isset($decoded->_carrierHRF)
             || property_exists($decoded, self::FIELD_CARRIER_HRF)
             || property_exists($decoded, self::FIELD_CARRIER_HRF_EXT)) {
-            $v = $decoded->_carrierHRF ?? new \stdClass();
+            $v = isset($decoded->_carrierHRF) ? clone $decoded->_carrierHRF : new \stdClass();
             $v->value = $decoded->carrierHRF ?? null;
             $type->setCarrierHRF(FHIRString::jsonUnserialize($v, $config));
         }
@@ -761,7 +761,7 @@ class FHIRDeviceUdi extends FHIRBackboneElement
             || isset($decoded->_carrierAIDC)
             || property_exists($decoded, self::FIELD_CARRIER_AIDC)
             || property_exists($decoded, self::FIELD_CARRIER_AIDC_EXT)) {
-            $v = $decoded->_carrierAIDC ?? new \stdClass();
+            $v = isset($decoded->_carrierAIDC) ? clone $decoded->_carrierAIDC : new \stdClass();
             $v->value = $decoded->carrierAIDC ?? null;
             $type->setCarrierAIDC(FHIRBase64Binary::jsonUnserialize($v, $config));
         }
@@ -769,7 +769,7 @@ class FHIRDeviceUdi extends FHIRBackboneElement
             || isset($decoded->_issuer)
             || property_exists($decoded, self::FIELD_ISSUER)
             || property_exists($decoded, self::FIELD_ISSUER_EXT)) {
-            $v = $decoded->_issuer ?? new \stdClass();
+            $v = isset($decoded->_issuer) ? clone $decoded->_issuer : new \stdClass();
             $v->value = $decoded->issuer ?? null;
             $type->setIssuer(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -777,7 +777,7 @@ class FHIRDeviceUdi extends FHIRBackboneElement
             || isset($decoded->_entryType)
             || property_exists($decoded, self::FIELD_ENTRY_TYPE)
             || property_exists($decoded, self::FIELD_ENTRY_TYPE_EXT)) {
-            $v = $decoded->_entryType ?? new \stdClass();
+            $v = isset($decoded->_entryType) ? clone $decoded->_entryType : new \stdClass();
             $v->value = $decoded->entryType ?? null;
             $type->setEntryType(FHIRUDIEntryType::jsonUnserialize($v, $config));
         }

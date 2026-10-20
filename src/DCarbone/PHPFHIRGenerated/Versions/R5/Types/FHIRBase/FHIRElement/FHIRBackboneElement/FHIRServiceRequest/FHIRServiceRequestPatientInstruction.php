@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -135,7 +135,8 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Instructions in terms that are understood by the patient or consumer.
+     * Instructions in terms that are understood by the patient or consumer. (choose
+     * any one of instruction*, but only one)
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $instructionMarkdown;
@@ -144,7 +145,8 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Instructions in terms that are understood by the patient or consumer.
+     * Instructions in terms that are understood by the patient or consumer. (choose
+     * any one of instruction*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $instructionReference;
@@ -191,7 +193,8 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Instructions in terms that are understood by the patient or consumer.
+     * Instructions in terms that are understood by the patient or consumer. (choose
+     * any one of instruction*, but only one)
      */
     public function getInstructionMarkdown(): null|FHIRMarkdown
     {
@@ -207,7 +210,8 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Instructions in terms that are understood by the patient or consumer.
+     * Instructions in terms that are understood by the patient or consumer. (choose
+     * any one of instruction*, but only one)
      */
     public function setInstructionMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $instructionMarkdown): self
     {
@@ -227,7 +231,8 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Instructions in terms that are understood by the patient or consumer.
+     * Instructions in terms that are understood by the patient or consumer. (choose
+     * any one of instruction*, but only one)
      */
     public function getInstructionReference(): null|FHIRReference
     {
@@ -239,7 +244,8 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Instructions in terms that are understood by the patient or consumer.
+     * Instructions in terms that are understood by the patient or consumer. (choose
+     * any one of instruction*, but only one)
      */
     public function setInstructionReference(null|FHIRReference $instructionReference): self
     {
@@ -358,7 +364,7 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
             || isset($decoded->_instructionMarkdown)
             || property_exists($decoded, self::FIELD_INSTRUCTION_MARKDOWN)
             || property_exists($decoded, self::FIELD_INSTRUCTION_MARKDOWN_EXT)) {
-            $v = $decoded->_instructionMarkdown ?? new \stdClass();
+            $v = isset($decoded->_instructionMarkdown) ? clone $decoded->_instructionMarkdown : new \stdClass();
             $v->value = $decoded->instructionMarkdown ?? null;
             $type->setInstructionMarkdown(FHIRMarkdown::jsonUnserialize($v, $config));
         }

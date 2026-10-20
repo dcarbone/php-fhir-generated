@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive;
@@ -141,22 +140,22 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_PATIENT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_EFFECTIVE_TIME_DATE_TIME => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_EFFECTIVE_TIME_PERIOD => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_MEDICATION_CODEABLE_CONCEPT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_MEDICATION_REFERENCE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1167,7 +1166,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1455,7 +1454,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRMedicationAdministrationStatus::jsonUnserialize($v, $config));
         }
@@ -1491,7 +1490,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
             || isset($decoded->_wasNotGiven)
             || property_exists($decoded, self::FIELD_WAS_NOT_GIVEN)
             || property_exists($decoded, self::FIELD_WAS_NOT_GIVEN_EXT)) {
-            $v = $decoded->_wasNotGiven ?? new \stdClass();
+            $v = isset($decoded->_wasNotGiven) ? clone $decoded->_wasNotGiven : new \stdClass();
             $v->value = $decoded->wasNotGiven ?? null;
             $type->setWasNotGiven(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1521,7 +1520,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
             || isset($decoded->_effectiveTimeDateTime)
             || property_exists($decoded, self::FIELD_EFFECTIVE_TIME_DATE_TIME)
             || property_exists($decoded, self::FIELD_EFFECTIVE_TIME_DATE_TIME_EXT)) {
-            $v = $decoded->_effectiveTimeDateTime ?? new \stdClass();
+            $v = isset($decoded->_effectiveTimeDateTime) ? clone $decoded->_effectiveTimeDateTime : new \stdClass();
             $v->value = $decoded->effectiveTimeDateTime ?? null;
             $type->setEffectiveTimeDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1561,7 +1560,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
             || isset($decoded->_note)
             || property_exists($decoded, self::FIELD_NOTE)
             || property_exists($decoded, self::FIELD_NOTE_EXT)) {
-            $v = $decoded->_note ?? new \stdClass();
+            $v = isset($decoded->_note) ? clone $decoded->_note : new \stdClass();
             $v->value = $decoded->note ?? null;
             $type->setNote(FHIRString::jsonUnserialize($v, $config));
         }

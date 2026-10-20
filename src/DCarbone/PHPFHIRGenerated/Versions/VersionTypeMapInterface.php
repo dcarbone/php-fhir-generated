@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -26,6 +26,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions;
  *
  */
 
+use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
 
 interface VersionTypeMapInterface
@@ -71,4 +72,24 @@ interface VersionTypeMapInterface
      * @return string Fully qualified class name of contained resource type
      */
     public static function mustGetContainedTypeClassnameFromJSON(\stdClass $decoded): string;
+
+    /**
+     * Must unserialize the decoded JSON resource into the provided class, or into a generated profile class derived
+     * from it when profile resolution is enabled in the provided config.
+     *
+     * @param class-string $className
+     */
+    public static function jsonUnserializeResource(string $className,
+                                                   \stdClass $decoded,
+                                                   UnserializeConfig $config): TypeInterface;
+
+    /**
+     * Must unserialize the XML resource into the provided class, or into a generated profile class derived
+     * from it when profile resolution is enabled in the provided config.
+     *
+     * @param class-string $className
+     */
+    public static function xmlUnserializeResource(string $className,
+                                                  \SimpleXMLElement $element,
+                                                  UnserializeConfig $config): TypeInterface;
 }

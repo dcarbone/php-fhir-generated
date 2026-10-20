@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -947,7 +947,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
             || isset($decoded->_detailString)
             || property_exists($decoded, self::FIELD_DETAIL_STRING)
             || property_exists($decoded, self::FIELD_DETAIL_STRING_EXT)) {
-            $v = $decoded->_detailString ?? new \stdClass();
+            $v = isset($decoded->_detailString) ? clone $decoded->_detailString : new \stdClass();
             $v->value = $decoded->detailString ?? null;
             $type->setDetailString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -955,7 +955,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
             || isset($decoded->_detailBoolean)
             || property_exists($decoded, self::FIELD_DETAIL_BOOLEAN)
             || property_exists($decoded, self::FIELD_DETAIL_BOOLEAN_EXT)) {
-            $v = $decoded->_detailBoolean ?? new \stdClass();
+            $v = isset($decoded->_detailBoolean) ? clone $decoded->_detailBoolean : new \stdClass();
             $v->value = $decoded->detailBoolean ?? null;
             $type->setDetailBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -963,7 +963,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
             || isset($decoded->_detailInteger)
             || property_exists($decoded, self::FIELD_DETAIL_INTEGER)
             || property_exists($decoded, self::FIELD_DETAIL_INTEGER_EXT)) {
-            $v = $decoded->_detailInteger ?? new \stdClass();
+            $v = isset($decoded->_detailInteger) ? clone $decoded->_detailInteger : new \stdClass();
             $v->value = $decoded->detailInteger ?? null;
             $type->setDetailInteger(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -978,7 +978,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
             || isset($decoded->_dueDate)
             || property_exists($decoded, self::FIELD_DUE_DATE)
             || property_exists($decoded, self::FIELD_DUE_DATE_EXT)) {
-            $v = $decoded->_dueDate ?? new \stdClass();
+            $v = isset($decoded->_dueDate) ? clone $decoded->_dueDate : new \stdClass();
             $v->value = $decoded->dueDate ?? null;
             $type->setDueDate(FHIRDate::jsonUnserialize($v, $config));
         }

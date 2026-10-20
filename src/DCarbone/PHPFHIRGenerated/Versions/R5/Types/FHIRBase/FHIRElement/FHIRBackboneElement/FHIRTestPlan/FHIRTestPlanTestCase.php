@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -698,7 +698,7 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
             || isset($decoded->_sequence)
             || property_exists($decoded, self::FIELD_SEQUENCE)
             || property_exists($decoded, self::FIELD_SEQUENCE_EXT)) {
-            $v = $decoded->_sequence ?? new \stdClass();
+            $v = isset($decoded->_sequence) ? clone $decoded->_sequence : new \stdClass();
             $v->value = $decoded->sequence ?? null;
             $type->setSequence(FHIRInteger::jsonUnserialize($v, $config));
         }

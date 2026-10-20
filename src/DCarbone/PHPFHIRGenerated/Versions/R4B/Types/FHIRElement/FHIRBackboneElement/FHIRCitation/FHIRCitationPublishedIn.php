@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -580,7 +580,7 @@ class FHIRCitationPublishedIn extends FHIRBackboneElement
             || isset($decoded->_title)
             || property_exists($decoded, self::FIELD_TITLE)
             || property_exists($decoded, self::FIELD_TITLE_EXT)) {
-            $v = $decoded->_title ?? new \stdClass();
+            $v = isset($decoded->_title) ? clone $decoded->_title : new \stdClass();
             $v->value = $decoded->title ?? null;
             $type->setTitle(FHIRString::jsonUnserialize($v, $config));
         }
@@ -595,7 +595,7 @@ class FHIRCitationPublishedIn extends FHIRBackboneElement
             || isset($decoded->_publisherLocation)
             || property_exists($decoded, self::FIELD_PUBLISHER_LOCATION)
             || property_exists($decoded, self::FIELD_PUBLISHER_LOCATION_EXT)) {
-            $v = $decoded->_publisherLocation ?? new \stdClass();
+            $v = isset($decoded->_publisherLocation) ? clone $decoded->_publisherLocation : new \stdClass();
             $v->value = $decoded->publisherLocation ?? null;
             $type->setPublisherLocation(FHIRString::jsonUnserialize($v, $config));
         }

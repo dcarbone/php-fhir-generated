@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept;
@@ -123,13 +122,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_COST_MONEY => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_COST_CODEABLE_CONCEPT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -176,7 +169,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The price or representation of the cost (for example, Band A, Band B or $, $$)
-     * of the medication.
+     * of the medication. (choose any one of cost*, but only one)
      */
     #[FHIRMoney]
     protected FHIRMoney $costMoney;
@@ -187,7 +180,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The price or representation of the cost (for example, Band A, Band B or $, $$)
-     * of the medication.
+     * of the medication. (choose any one of cost*, but only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $costCodeableConcept;
@@ -367,7 +360,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The price or representation of the cost (for example, Band A, Band B or $, $$)
-     * of the medication.
+     * of the medication. (choose any one of cost*, but only one)
      */
     public function getCostMoney(): null|FHIRMoney
     {
@@ -380,7 +373,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The price or representation of the cost (for example, Band A, Band B or $, $$)
-     * of the medication.
+     * of the medication. (choose any one of cost*, but only one)
      */
     public function setCostMoney(null|FHIRMoney $costMoney): self
     {
@@ -399,7 +392,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The price or representation of the cost (for example, Band A, Band B or $, $$)
-     * of the medication.
+     * of the medication. (choose any one of cost*, but only one)
      */
     public function getCostCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -413,7 +406,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The price or representation of the cost (for example, Band A, Band B or $, $$)
-     * of the medication.
+     * of the medication. (choose any one of cost*, but only one)
      */
     public function setCostCodeableConcept(null|FHIRCodeableConcept $costCodeableConcept): self
     {
@@ -573,7 +566,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
             || isset($decoded->_source)
             || property_exists($decoded, self::FIELD_SOURCE)
             || property_exists($decoded, self::FIELD_SOURCE_EXT)) {
-            $v = $decoded->_source ?? new \stdClass();
+            $v = isset($decoded->_source) ? clone $decoded->_source : new \stdClass();
             $v->value = $decoded->source ?? null;
             $type->setSource(FHIRString::jsonUnserialize($v, $config));
         }

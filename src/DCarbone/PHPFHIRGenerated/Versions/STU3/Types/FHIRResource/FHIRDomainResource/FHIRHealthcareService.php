@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -1760,7 +1760,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -2161,7 +2161,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
             || isset($decoded->_active)
             || property_exists($decoded, self::FIELD_ACTIVE)
             || property_exists($decoded, self::FIELD_ACTIVE_EXT)) {
-            $v = $decoded->_active ?? new \stdClass();
+            $v = isset($decoded->_active) ? clone $decoded->_active : new \stdClass();
             $v->value = $decoded->active ?? null;
             $type->setActive(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -2216,7 +2216,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2224,7 +2224,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
             || isset($decoded->_comment)
             || property_exists($decoded, self::FIELD_COMMENT)
             || property_exists($decoded, self::FIELD_COMMENT_EXT)) {
-            $v = $decoded->_comment ?? new \stdClass();
+            $v = isset($decoded->_comment) ? clone $decoded->_comment : new \stdClass();
             $v->value = $decoded->comment ?? null;
             $type->setComment(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2232,7 +2232,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
             || isset($decoded->_extraDetails)
             || property_exists($decoded, self::FIELD_EXTRA_DETAILS)
             || property_exists($decoded, self::FIELD_EXTRA_DETAILS_EXT)) {
-            $v = $decoded->_extraDetails ?? new \stdClass();
+            $v = isset($decoded->_extraDetails) ? clone $decoded->_extraDetails : new \stdClass();
             $v->value = $decoded->extraDetails ?? null;
             $type->setExtraDetails(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2287,7 +2287,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
             || isset($decoded->_eligibilityNote)
             || property_exists($decoded, self::FIELD_ELIGIBILITY_NOTE)
             || property_exists($decoded, self::FIELD_ELIGIBILITY_NOTE_EXT)) {
-            $v = $decoded->_eligibilityNote ?? new \stdClass();
+            $v = isset($decoded->_eligibilityNote) ? clone $decoded->_eligibilityNote : new \stdClass();
             $v->value = $decoded->eligibilityNote ?? null;
             $type->setEligibilityNote(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2303,7 +2303,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addProgramName(FHIRString::jsonUnserialize($v, $config));
             }
@@ -2334,7 +2334,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
             || isset($decoded->_appointmentRequired)
             || property_exists($decoded, self::FIELD_APPOINTMENT_REQUIRED)
             || property_exists($decoded, self::FIELD_APPOINTMENT_REQUIRED_EXT)) {
-            $v = $decoded->_appointmentRequired ?? new \stdClass();
+            $v = isset($decoded->_appointmentRequired) ? clone $decoded->_appointmentRequired : new \stdClass();
             $v->value = $decoded->appointmentRequired ?? null;
             $type->setAppointmentRequired(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -2364,7 +2364,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
             || isset($decoded->_availabilityExceptions)
             || property_exists($decoded, self::FIELD_AVAILABILITY_EXCEPTIONS)
             || property_exists($decoded, self::FIELD_AVAILABILITY_EXCEPTIONS_EXT)) {
-            $v = $decoded->_availabilityExceptions ?? new \stdClass();
+            $v = isset($decoded->_availabilityExceptions) ? clone $decoded->_availabilityExceptions : new \stdClass();
             $v->value = $decoded->availabilityExceptions ?? null;
             $type->setAvailabilityExceptions(FHIRString::jsonUnserialize($v, $config));
         }

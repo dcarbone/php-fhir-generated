@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
@@ -138,7 +137,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_REQUESTOR => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1026,7 +1025,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
             || isset($decoded->_altId)
             || property_exists($decoded, self::FIELD_ALT_ID)
             || property_exists($decoded, self::FIELD_ALT_ID_EXT)) {
-            $v = $decoded->_altId ?? new \stdClass();
+            $v = isset($decoded->_altId) ? clone $decoded->_altId : new \stdClass();
             $v->value = $decoded->altId ?? null;
             $type->setAltId(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1034,7 +1033,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1042,7 +1041,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
             || isset($decoded->_requestor)
             || property_exists($decoded, self::FIELD_REQUESTOR)
             || property_exists($decoded, self::FIELD_REQUESTOR_EXT)) {
-            $v = $decoded->_requestor ?? new \stdClass();
+            $v = isset($decoded->_requestor) ? clone $decoded->_requestor : new \stdClass();
             $v->value = $decoded->requestor ?? null;
             $type->setRequestor(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1065,7 +1064,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addPolicy(FHIRUri::jsonUnserialize($v, $config));
             }

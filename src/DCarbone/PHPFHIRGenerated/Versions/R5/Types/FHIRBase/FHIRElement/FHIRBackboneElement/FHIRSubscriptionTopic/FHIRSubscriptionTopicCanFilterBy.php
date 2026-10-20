@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
@@ -135,7 +134,7 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_FILTER_PARAMETER => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -720,7 +719,7 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -728,7 +727,7 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
             || isset($decoded->_resource)
             || property_exists($decoded, self::FIELD_RESOURCE)
             || property_exists($decoded, self::FIELD_RESOURCE_EXT)) {
-            $v = $decoded->_resource ?? new \stdClass();
+            $v = isset($decoded->_resource) ? clone $decoded->_resource : new \stdClass();
             $v->value = $decoded->resource ?? null;
             $type->setResource(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -736,7 +735,7 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
             || isset($decoded->_filterParameter)
             || property_exists($decoded, self::FIELD_FILTER_PARAMETER)
             || property_exists($decoded, self::FIELD_FILTER_PARAMETER_EXT)) {
-            $v = $decoded->_filterParameter ?? new \stdClass();
+            $v = isset($decoded->_filterParameter) ? clone $decoded->_filterParameter : new \stdClass();
             $v->value = $decoded->filterParameter ?? null;
             $type->setFilterParameter(FHIRString::jsonUnserialize($v, $config));
         }
@@ -744,7 +743,7 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
             || isset($decoded->_filterDefinition)
             || property_exists($decoded, self::FIELD_FILTER_DEFINITION)
             || property_exists($decoded, self::FIELD_FILTER_DEFINITION_EXT)) {
-            $v = $decoded->_filterDefinition ?? new \stdClass();
+            $v = isset($decoded->_filterDefinition) ? clone $decoded->_filterDefinition : new \stdClass();
             $v->value = $decoded->filterDefinition ?? null;
             $type->setFilterDefinition(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -760,7 +759,7 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addComparator(FHIRSearchComparator::jsonUnserialize($v, $config));
             }
@@ -777,7 +776,7 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addModifier(FHIRSearchModifierCode::jsonUnserialize($v, $config));
             }

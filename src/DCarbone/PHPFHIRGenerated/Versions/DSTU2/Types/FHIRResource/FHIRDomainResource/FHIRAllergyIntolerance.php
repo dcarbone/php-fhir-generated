@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive;
@@ -141,10 +140,10 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_PATIENT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_SUBSTANCE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -974,7 +973,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1283,7 +1282,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
             || isset($decoded->_onset)
             || property_exists($decoded, self::FIELD_ONSET)
             || property_exists($decoded, self::FIELD_ONSET_EXT)) {
-            $v = $decoded->_onset ?? new \stdClass();
+            $v = isset($decoded->_onset) ? clone $decoded->_onset : new \stdClass();
             $v->value = $decoded->onset ?? null;
             $type->setOnset(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1291,7 +1290,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
             || isset($decoded->_recordedDate)
             || property_exists($decoded, self::FIELD_RECORDED_DATE)
             || property_exists($decoded, self::FIELD_RECORDED_DATE_EXT)) {
-            $v = $decoded->_recordedDate ?? new \stdClass();
+            $v = isset($decoded->_recordedDate) ? clone $decoded->_recordedDate : new \stdClass();
             $v->value = $decoded->recordedDate ?? null;
             $type->setRecordedDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1327,7 +1326,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRAllergyIntoleranceStatus::jsonUnserialize($v, $config));
         }
@@ -1335,7 +1334,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
             || isset($decoded->_criticality)
             || property_exists($decoded, self::FIELD_CRITICALITY)
             || property_exists($decoded, self::FIELD_CRITICALITY_EXT)) {
-            $v = $decoded->_criticality ?? new \stdClass();
+            $v = isset($decoded->_criticality) ? clone $decoded->_criticality : new \stdClass();
             $v->value = $decoded->criticality ?? null;
             $type->setCriticality(FHIRAllergyIntoleranceCriticality::jsonUnserialize($v, $config));
         }
@@ -1343,7 +1342,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
             || isset($decoded->_type)
             || property_exists($decoded, self::FIELD_TYPE)
             || property_exists($decoded, self::FIELD_TYPE_EXT)) {
-            $v = $decoded->_type ?? new \stdClass();
+            $v = isset($decoded->_type) ? clone $decoded->_type : new \stdClass();
             $v->value = $decoded->type ?? null;
             $type->setType(FHIRAllergyIntoleranceType::jsonUnserialize($v, $config));
         }
@@ -1351,7 +1350,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
             || isset($decoded->_category)
             || property_exists($decoded, self::FIELD_CATEGORY)
             || property_exists($decoded, self::FIELD_CATEGORY_EXT)) {
-            $v = $decoded->_category ?? new \stdClass();
+            $v = isset($decoded->_category) ? clone $decoded->_category : new \stdClass();
             $v->value = $decoded->category ?? null;
             $type->setCategory(FHIRAllergyIntoleranceCategory::jsonUnserialize($v, $config));
         }
@@ -1359,7 +1358,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
             || isset($decoded->_lastOccurence)
             || property_exists($decoded, self::FIELD_LAST_OCCURENCE)
             || property_exists($decoded, self::FIELD_LAST_OCCURENCE_EXT)) {
-            $v = $decoded->_lastOccurence ?? new \stdClass();
+            $v = isset($decoded->_lastOccurence) ? clone $decoded->_lastOccurence : new \stdClass();
             $v->value = $decoded->lastOccurence ?? null;
             $type->setLastOccurence(FHIRDateTime::jsonUnserialize($v, $config));
         }

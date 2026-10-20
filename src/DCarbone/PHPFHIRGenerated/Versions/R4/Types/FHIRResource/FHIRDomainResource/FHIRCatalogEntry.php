@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive;
@@ -132,10 +131,10 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ORDERABLE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_REFERENCED_ITEM => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1023,7 +1022,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1301,7 +1300,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_orderable)
             || property_exists($decoded, self::FIELD_ORDERABLE)
             || property_exists($decoded, self::FIELD_ORDERABLE_EXT)) {
-            $v = $decoded->_orderable ?? new \stdClass();
+            $v = isset($decoded->_orderable) ? clone $decoded->_orderable : new \stdClass();
             $v->value = $decoded->orderable ?? null;
             $type->setOrderable(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1338,7 +1337,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRPublicationStatus::jsonUnserialize($v, $config));
         }
@@ -1353,7 +1352,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_validTo)
             || property_exists($decoded, self::FIELD_VALID_TO)
             || property_exists($decoded, self::FIELD_VALID_TO_EXT)) {
-            $v = $decoded->_validTo ?? new \stdClass();
+            $v = isset($decoded->_validTo) ? clone $decoded->_validTo : new \stdClass();
             $v->value = $decoded->validTo ?? null;
             $type->setValidTo(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1361,7 +1360,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_lastUpdated)
             || property_exists($decoded, self::FIELD_LAST_UPDATED)
             || property_exists($decoded, self::FIELD_LAST_UPDATED_EXT)) {
-            $v = $decoded->_lastUpdated ?? new \stdClass();
+            $v = isset($decoded->_lastUpdated) ? clone $decoded->_lastUpdated : new \stdClass();
             $v->value = $decoded->lastUpdated ?? null;
             $type->setLastUpdated(FHIRDateTime::jsonUnserialize($v, $config));
         }

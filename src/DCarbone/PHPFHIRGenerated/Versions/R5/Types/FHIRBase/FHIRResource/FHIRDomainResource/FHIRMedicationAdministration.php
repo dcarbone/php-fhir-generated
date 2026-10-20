@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationPerformer;
@@ -170,22 +169,13 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_MEDICATION => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_SUBJECT => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_OCCURENCE_DATE_TIME => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_OCCURENCE_PERIOD => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_OCCURENCE_TIMING => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -328,7 +318,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A specific date/time or interval of time during which the administration took
      * place (or did not take place). For many administrations, such as swallowing a
-     * tablet the use of dateTime is more appropriate.
+     * tablet the use of dateTime is more appropriate. (choose any one of occurence*,
+     * but only one)
      */
     #[FHIRDateTime]
     protected FHIRDateTime $occurenceDateTime;
@@ -339,7 +330,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A specific date/time or interval of time during which the administration took
      * place (or did not take place). For many administrations, such as swallowing a
-     * tablet the use of dateTime is more appropriate.
+     * tablet the use of dateTime is more appropriate. (choose any one of occurence*,
+     * but only one)
      */
     #[FHIRPeriod]
     protected FHIRPeriod $occurencePeriod;
@@ -354,7 +346,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A specific date/time or interval of time during which the administration took
      * place (or did not take place). For many administrations, such as swallowing a
-     * tablet the use of dateTime is more appropriate.
+     * tablet the use of dateTime is more appropriate. (choose any one of occurence*,
+     * but only one)
      */
     #[FHIRTiming]
     protected FHIRTiming $occurenceTiming;
@@ -1151,7 +1144,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A specific date/time or interval of time during which the administration took
      * place (or did not take place). For many administrations, such as swallowing a
-     * tablet the use of dateTime is more appropriate.
+     * tablet the use of dateTime is more appropriate. (choose any one of occurence*,
+     * but only one)
      */
     public function getOccurenceDateTime(): null|FHIRDateTime
     {
@@ -1169,7 +1163,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A specific date/time or interval of time during which the administration took
      * place (or did not take place). For many administrations, such as swallowing a
-     * tablet the use of dateTime is more appropriate.
+     * tablet the use of dateTime is more appropriate. (choose any one of occurence*,
+     * but only one)
      */
     public function setOccurenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurenceDateTime): self
     {
@@ -1191,7 +1186,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A specific date/time or interval of time during which the administration took
      * place (or did not take place). For many administrations, such as swallowing a
-     * tablet the use of dateTime is more appropriate.
+     * tablet the use of dateTime is more appropriate. (choose any one of occurence*,
+     * but only one)
      */
     public function getOccurencePeriod(): null|FHIRPeriod
     {
@@ -1205,7 +1201,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A specific date/time or interval of time during which the administration took
      * place (or did not take place). For many administrations, such as swallowing a
-     * tablet the use of dateTime is more appropriate.
+     * tablet the use of dateTime is more appropriate. (choose any one of occurence*,
+     * but only one)
      */
     public function setOccurencePeriod(null|FHIRPeriod $occurencePeriod): self
     {
@@ -1228,7 +1225,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A specific date/time or interval of time during which the administration took
      * place (or did not take place). For many administrations, such as swallowing a
-     * tablet the use of dateTime is more appropriate.
+     * tablet the use of dateTime is more appropriate. (choose any one of occurence*,
+     * but only one)
      */
     public function getOccurenceTiming(): null|FHIRTiming
     {
@@ -1246,7 +1244,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A specific date/time or interval of time during which the administration took
      * place (or did not take place). For many administrations, such as swallowing a
-     * tablet the use of dateTime is more appropriate.
+     * tablet the use of dateTime is more appropriate. (choose any one of occurence*,
+     * but only one)
      */
     public function setOccurenceTiming(null|FHIRTiming $occurenceTiming): self
     {
@@ -1825,7 +1824,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -2200,7 +2199,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRMedicationAdministrationStatusCodes::jsonUnserialize($v, $config));
         }
@@ -2262,7 +2261,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
             || isset($decoded->_occurenceDateTime)
             || property_exists($decoded, self::FIELD_OCCURENCE_DATE_TIME)
             || property_exists($decoded, self::FIELD_OCCURENCE_DATE_TIME_EXT)) {
-            $v = $decoded->_occurenceDateTime ?? new \stdClass();
+            $v = isset($decoded->_occurenceDateTime) ? clone $decoded->_occurenceDateTime : new \stdClass();
             $v->value = $decoded->occurenceDateTime ?? null;
             $type->setOccurenceDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -2284,7 +2283,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
             || isset($decoded->_recorded)
             || property_exists($decoded, self::FIELD_RECORDED)
             || property_exists($decoded, self::FIELD_RECORDED_EXT)) {
-            $v = $decoded->_recorded ?? new \stdClass();
+            $v = isset($decoded->_recorded) ? clone $decoded->_recorded : new \stdClass();
             $v->value = $decoded->recorded ?? null;
             $type->setRecorded(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -2292,7 +2291,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
             || isset($decoded->_isSubPotent)
             || property_exists($decoded, self::FIELD_IS_SUB_POTENT)
             || property_exists($decoded, self::FIELD_IS_SUB_POTENT_EXT)) {
-            $v = $decoded->_isSubPotent ?? new \stdClass();
+            $v = isset($decoded->_isSubPotent) ? clone $decoded->_isSubPotent : new \stdClass();
             $v->value = $decoded->isSubPotent ?? null;
             $type->setIsSubPotent(FHIRBoolean::jsonUnserialize($v, $config));
         }

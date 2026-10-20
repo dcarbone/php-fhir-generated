@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdverseEventActuality;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdverseEventStatus;
@@ -187,13 +186,13 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_ACTUALITY => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_SUBJECT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -287,7 +286,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The date (and perhaps time) when the adverse event occurred.
+     * The date (and perhaps time) when the adverse event occurred. (choose any one of
+     * occurrence*, but only one)
      */
     #[FHIRDateTime]
     protected FHIRDateTime $occurrenceDateTime;
@@ -296,7 +296,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The date (and perhaps time) when the adverse event occurred.
+     * The date (and perhaps time) when the adverse event occurred. (choose any one of
+     * occurrence*, but only one)
      */
     #[FHIRPeriod]
     protected FHIRPeriod $occurrencePeriod;
@@ -309,7 +310,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The date (and perhaps time) when the adverse event occurred.
+     * The date (and perhaps time) when the adverse event occurred. (choose any one of
+     * occurrence*, but only one)
      */
     #[FHIRTiming]
     protected FHIRTiming $occurrenceTiming;
@@ -996,7 +998,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The date (and perhaps time) when the adverse event occurred.
+     * The date (and perhaps time) when the adverse event occurred. (choose any one of
+     * occurrence*, but only one)
      */
     public function getOccurrenceDateTime(): null|FHIRDateTime
     {
@@ -1012,7 +1015,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The date (and perhaps time) when the adverse event occurred.
+     * The date (and perhaps time) when the adverse event occurred. (choose any one of
+     * occurrence*, but only one)
      */
     public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime): self
     {
@@ -1032,7 +1036,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The date (and perhaps time) when the adverse event occurred.
+     * The date (and perhaps time) when the adverse event occurred. (choose any one of
+     * occurrence*, but only one)
      */
     public function getOccurrencePeriod(): null|FHIRPeriod
     {
@@ -1044,7 +1049,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The date (and perhaps time) when the adverse event occurred.
+     * The date (and perhaps time) when the adverse event occurred. (choose any one of
+     * occurrence*, but only one)
      */
     public function setOccurrencePeriod(null|FHIRPeriod $occurrencePeriod): self
     {
@@ -1065,7 +1071,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The date (and perhaps time) when the adverse event occurred.
+     * The date (and perhaps time) when the adverse event occurred. (choose any one of
+     * occurrence*, but only one)
      */
     public function getOccurrenceTiming(): null|FHIRTiming
     {
@@ -1081,7 +1088,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The date (and perhaps time) when the adverse event occurred.
+     * The date (and perhaps time) when the adverse event occurred. (choose any one of
+     * occurrence*, but only one)
      */
     public function setOccurrenceTiming(null|FHIRTiming $occurrenceTiming): self
     {
@@ -2111,7 +2119,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -2511,7 +2519,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRAdverseEventStatus::jsonUnserialize($v, $config));
         }
@@ -2519,7 +2527,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_actuality)
             || property_exists($decoded, self::FIELD_ACTUALITY)
             || property_exists($decoded, self::FIELD_ACTUALITY_EXT)) {
-            $v = $decoded->_actuality ?? new \stdClass();
+            $v = isset($decoded->_actuality) ? clone $decoded->_actuality : new \stdClass();
             $v->value = $decoded->actuality ?? null;
             $type->setActuality(FHIRAdverseEventActuality::jsonUnserialize($v, $config));
         }
@@ -2559,7 +2567,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_occurrenceDateTime)
             || property_exists($decoded, self::FIELD_OCCURRENCE_DATE_TIME)
             || property_exists($decoded, self::FIELD_OCCURRENCE_DATE_TIME_EXT)) {
-            $v = $decoded->_occurrenceDateTime ?? new \stdClass();
+            $v = isset($decoded->_occurrenceDateTime) ? clone $decoded->_occurrenceDateTime : new \stdClass();
             $v->value = $decoded->occurrenceDateTime ?? null;
             $type->setOccurrenceDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -2581,7 +2589,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_detected)
             || property_exists($decoded, self::FIELD_DETECTED)
             || property_exists($decoded, self::FIELD_DETECTED_EXT)) {
-            $v = $decoded->_detected ?? new \stdClass();
+            $v = isset($decoded->_detected) ? clone $decoded->_detected : new \stdClass();
             $v->value = $decoded->detected ?? null;
             $type->setDetected(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -2589,7 +2597,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_recordedDate)
             || property_exists($decoded, self::FIELD_RECORDED_DATE)
             || property_exists($decoded, self::FIELD_RECORDED_DATE_EXT)) {
-            $v = $decoded->_recordedDate ?? new \stdClass();
+            $v = isset($decoded->_recordedDate) ? clone $decoded->_recordedDate : new \stdClass();
             $v->value = $decoded->recordedDate ?? null;
             $type->setRecordedDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -2662,7 +2670,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_expectedInResearchStudy)
             || property_exists($decoded, self::FIELD_EXPECTED_IN_RESEARCH_STUDY)
             || property_exists($decoded, self::FIELD_EXPECTED_IN_RESEARCH_STUDY_EXT)) {
-            $v = $decoded->_expectedInResearchStudy ?? new \stdClass();
+            $v = isset($decoded->_expectedInResearchStudy) ? clone $decoded->_expectedInResearchStudy : new \stdClass();
             $v->value = $decoded->expectedInResearchStudy ?? null;
             $type->setExpectedInResearchStudy(FHIRBoolean::jsonUnserialize($v, $config));
         }

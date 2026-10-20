@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept;
@@ -120,7 +119,7 @@ class FHIRMedicationKnowledgePatientCharacteristic extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -146,7 +145,8 @@ class FHIRMedicationKnowledgePatientCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The specific characteristic (e.g. height, weight, gender, etc.).
+     * The specific characteristic (e.g. height, weight, gender, etc.). (choose any one
+     * of value*, but only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
@@ -157,7 +157,8 @@ class FHIRMedicationKnowledgePatientCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The specific characteristic (e.g. height, weight, gender, etc.).
+     * The specific characteristic (e.g. height, weight, gender, etc.). (choose any one
+     * of value*, but only one)
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -166,7 +167,8 @@ class FHIRMedicationKnowledgePatientCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The specific characteristic (e.g. height, weight, gender, etc.).
+     * The specific characteristic (e.g. height, weight, gender, etc.). (choose any one
+     * of value*, but only one)
      */
     #[FHIRRange]
     protected FHIRRange $valueRange;
@@ -251,7 +253,8 @@ class FHIRMedicationKnowledgePatientCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The specific characteristic (e.g. height, weight, gender, etc.).
+     * The specific characteristic (e.g. height, weight, gender, etc.). (choose any one
+     * of value*, but only one)
      */
     public function getValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -264,7 +267,8 @@ class FHIRMedicationKnowledgePatientCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The specific characteristic (e.g. height, weight, gender, etc.).
+     * The specific characteristic (e.g. height, weight, gender, etc.). (choose any one
+     * of value*, but only one)
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -283,7 +287,8 @@ class FHIRMedicationKnowledgePatientCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The specific characteristic (e.g. height, weight, gender, etc.).
+     * The specific characteristic (e.g. height, weight, gender, etc.). (choose any one
+     * of value*, but only one)
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -297,7 +302,8 @@ class FHIRMedicationKnowledgePatientCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The specific characteristic (e.g. height, weight, gender, etc.).
+     * The specific characteristic (e.g. height, weight, gender, etc.). (choose any one
+     * of value*, but only one)
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -314,7 +320,8 @@ class FHIRMedicationKnowledgePatientCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The specific characteristic (e.g. height, weight, gender, etc.).
+     * The specific characteristic (e.g. height, weight, gender, etc.). (choose any one
+     * of value*, but only one)
      */
     public function getValueRange(): null|FHIRRange
     {
@@ -326,7 +333,8 @@ class FHIRMedicationKnowledgePatientCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The specific characteristic (e.g. height, weight, gender, etc.).
+     * The specific characteristic (e.g. height, weight, gender, etc.). (choose any one
+     * of value*, but only one)
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {

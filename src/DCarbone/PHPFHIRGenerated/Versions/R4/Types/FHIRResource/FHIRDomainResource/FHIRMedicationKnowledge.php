@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -1673,7 +1673,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1995,7 +1995,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -2032,7 +2032,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addSynonym(FHIRString::jsonUnserialize($v, $config));
             }
@@ -2096,7 +2096,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
             || isset($decoded->_preparationInstruction)
             || property_exists($decoded, self::FIELD_PREPARATION_INSTRUCTION)
             || property_exists($decoded, self::FIELD_PREPARATION_INSTRUCTION_EXT)) {
-            $v = $decoded->_preparationInstruction ?? new \stdClass();
+            $v = isset($decoded->_preparationInstruction) ? clone $decoded->_preparationInstruction : new \stdClass();
             $v->value = $decoded->preparationInstruction ?? null;
             $type->setPreparationInstruction(FHIRMarkdown::jsonUnserialize($v, $config));
         }

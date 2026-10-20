@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureFocalDevice;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer;
@@ -191,10 +190,10 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_SUBJECT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -365,6 +364,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
+     * (choose any one of occurrence*, but only one)
      */
     #[FHIRDateTime]
     protected FHIRDateTime $occurrenceDateTime;
@@ -376,6 +376,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
+     * (choose any one of occurrence*, but only one)
      */
     #[FHIRPeriod]
     protected FHIRPeriod $occurrencePeriod;
@@ -387,6 +388,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
+     * (choose any one of occurrence*, but only one)
      */
     #[FHIRString]
     protected FHIRString $occurrenceString;
@@ -398,6 +400,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
+     * (choose any one of occurrence*, but only one)
      */
     #[FHIRAge]
     protected FHIRAge $occurrenceAge;
@@ -409,6 +412,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
+     * (choose any one of occurrence*, but only one)
      */
     #[FHIRRange]
     protected FHIRRange $occurrenceRange;
@@ -424,6 +428,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
+     * (choose any one of occurrence*, but only one)
      */
     #[FHIRTiming]
     protected FHIRTiming $occurrenceTiming;
@@ -456,7 +461,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Indicates if this record was captured as a secondary 'reported' record rather
      * than as an original primary source-of-truth record. It may also indicate the
-     * source of the report.
+     * source of the report. (choose any one of reported*, but only one)
      */
     #[FHIRBoolean]
     protected FHIRBoolean $reportedBoolean;
@@ -467,7 +472,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Indicates if this record was captured as a secondary 'reported' record rather
      * than as an original primary source-of-truth record. It may also indicate the
-     * source of the report.
+     * source of the report. (choose any one of reported*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $reportedReference;
@@ -1439,6 +1444,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
+     * (choose any one of occurrence*, but only one)
      */
     public function getOccurrenceDateTime(): null|FHIRDateTime
     {
@@ -1457,6 +1463,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
+     * (choose any one of occurrence*, but only one)
      */
     public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime): self
     {
@@ -1479,6 +1486,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
+     * (choose any one of occurrence*, but only one)
      */
     public function getOccurrencePeriod(): null|FHIRPeriod
     {
@@ -1493,6 +1501,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
+     * (choose any one of occurrence*, but only one)
      */
     public function setOccurrencePeriod(null|FHIRPeriod $occurrencePeriod): self
     {
@@ -1512,6 +1521,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
+     * (choose any one of occurrence*, but only one)
      */
     public function getOccurrenceString(): null|FHIRString
     {
@@ -1526,6 +1536,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
+     * (choose any one of occurrence*, but only one)
      */
     public function setOccurrenceString(null|string|FHIRStringPrimitive|FHIRString $occurrenceString): self
     {
@@ -1548,6 +1559,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
+     * (choose any one of occurrence*, but only one)
      */
     public function getOccurrenceAge(): null|FHIRAge
     {
@@ -1562,6 +1574,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
+     * (choose any one of occurrence*, but only one)
      */
     public function setOccurrenceAge(null|FHIRAge $occurrenceAge): self
     {
@@ -1581,6 +1594,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
+     * (choose any one of occurrence*, but only one)
      */
     public function getOccurrenceRange(): null|FHIRRange
     {
@@ -1595,6 +1609,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
+     * (choose any one of occurrence*, but only one)
      */
     public function setOccurrenceRange(null|FHIRRange $occurrenceRange): self
     {
@@ -1618,6 +1633,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
+     * (choose any one of occurrence*, but only one)
      */
     public function getOccurrenceTiming(): null|FHIRTiming
     {
@@ -1636,6 +1652,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
+     * (choose any one of occurrence*, but only one)
      */
     public function setOccurrenceTiming(null|FHIRTiming $occurrenceTiming): self
     {
@@ -1724,7 +1741,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Indicates if this record was captured as a secondary 'reported' record rather
      * than as an original primary source-of-truth record. It may also indicate the
-     * source of the report.
+     * source of the report. (choose any one of reported*, but only one)
      */
     public function getReportedBoolean(): null|FHIRBoolean
     {
@@ -1737,7 +1754,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Indicates if this record was captured as a secondary 'reported' record rather
      * than as an original primary source-of-truth record. It may also indicate the
-     * source of the report.
+     * source of the report. (choose any one of reported*, but only one)
      */
     public function setReportedBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $reportedBoolean): self
     {
@@ -1759,7 +1776,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Indicates if this record was captured as a secondary 'reported' record rather
      * than as an original primary source-of-truth record. It may also indicate the
-     * source of the report.
+     * source of the report. (choose any one of reported*, but only one)
      */
     public function getReportedReference(): null|FHIRReference
     {
@@ -1773,7 +1790,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Indicates if this record was captured as a secondary 'reported' record rather
      * than as an original primary source-of-truth record. It may also indicate the
-     * source of the report.
+     * source of the report. (choose any one of reported*, but only one)
      */
     public function setReportedReference(null|FHIRReference $reportedReference): self
     {
@@ -2551,7 +2568,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -3010,7 +3027,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addInstantiatesCanonical(FHIRCanonical::jsonUnserialize($v, $config));
             }
@@ -3027,7 +3044,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addInstantiatesUri(FHIRUri::jsonUnserialize($v, $config));
             }
@@ -3058,7 +3075,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIREventStatus::jsonUnserialize($v, $config));
         }
@@ -3112,7 +3129,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
             || isset($decoded->_occurrenceDateTime)
             || property_exists($decoded, self::FIELD_OCCURRENCE_DATE_TIME)
             || property_exists($decoded, self::FIELD_OCCURRENCE_DATE_TIME_EXT)) {
-            $v = $decoded->_occurrenceDateTime ?? new \stdClass();
+            $v = isset($decoded->_occurrenceDateTime) ? clone $decoded->_occurrenceDateTime : new \stdClass();
             $v->value = $decoded->occurrenceDateTime ?? null;
             $type->setOccurrenceDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -3127,7 +3144,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
             || isset($decoded->_occurrenceString)
             || property_exists($decoded, self::FIELD_OCCURRENCE_STRING)
             || property_exists($decoded, self::FIELD_OCCURRENCE_STRING_EXT)) {
-            $v = $decoded->_occurrenceString ?? new \stdClass();
+            $v = isset($decoded->_occurrenceString) ? clone $decoded->_occurrenceString : new \stdClass();
             $v->value = $decoded->occurrenceString ?? null;
             $type->setOccurrenceString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -3156,7 +3173,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
             || isset($decoded->_recorded)
             || property_exists($decoded, self::FIELD_RECORDED)
             || property_exists($decoded, self::FIELD_RECORDED_EXT)) {
-            $v = $decoded->_recorded ?? new \stdClass();
+            $v = isset($decoded->_recorded) ? clone $decoded->_recorded : new \stdClass();
             $v->value = $decoded->recorded ?? null;
             $type->setRecorded(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -3171,7 +3188,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
             || isset($decoded->_reportedBoolean)
             || property_exists($decoded, self::FIELD_REPORTED_BOOLEAN)
             || property_exists($decoded, self::FIELD_REPORTED_BOOLEAN_EXT)) {
-            $v = $decoded->_reportedBoolean ?? new \stdClass();
+            $v = isset($decoded->_reportedBoolean) ? clone $decoded->_reportedBoolean : new \stdClass();
             $v->value = $decoded->reportedBoolean ?? null;
             $type->setReportedBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept;
@@ -136,7 +135,7 @@ class FHIRContractTerm extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_OFFER => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -185,7 +184,7 @@ class FHIRContractTerm extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The entity that the term applies to.
+     * The entity that the term applies to. (choose any one of topic*, but only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $topicCodeableConcept;
@@ -194,7 +193,7 @@ class FHIRContractTerm extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The entity that the term applies to.
+     * The entity that the term applies to. (choose any one of topic*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $topicReference;
@@ -468,7 +467,7 @@ class FHIRContractTerm extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The entity that the term applies to.
+     * The entity that the term applies to. (choose any one of topic*, but only one)
      */
     public function getTopicCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -481,7 +480,7 @@ class FHIRContractTerm extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The entity that the term applies to.
+     * The entity that the term applies to. (choose any one of topic*, but only one)
      */
     public function setTopicCodeableConcept(null|FHIRCodeableConcept $topicCodeableConcept): self
     {
@@ -498,7 +497,7 @@ class FHIRContractTerm extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The entity that the term applies to.
+     * The entity that the term applies to. (choose any one of topic*, but only one)
      */
     public function getTopicReference(): null|FHIRReference
     {
@@ -510,7 +509,7 @@ class FHIRContractTerm extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The entity that the term applies to.
+     * The entity that the term applies to. (choose any one of topic*, but only one)
      */
     public function setTopicReference(null|FHIRReference $topicReference): self
     {
@@ -1087,7 +1086,7 @@ class FHIRContractTerm extends FHIRBackboneElement
             || isset($decoded->_issued)
             || property_exists($decoded, self::FIELD_ISSUED)
             || property_exists($decoded, self::FIELD_ISSUED_EXT)) {
-            $v = $decoded->_issued ?? new \stdClass();
+            $v = isset($decoded->_issued) ? clone $decoded->_issued : new \stdClass();
             $v->value = $decoded->issued ?? null;
             $type->setIssued(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1130,7 +1129,7 @@ class FHIRContractTerm extends FHIRBackboneElement
             || isset($decoded->_text)
             || property_exists($decoded, self::FIELD_TEXT)
             || property_exists($decoded, self::FIELD_TEXT_EXT)) {
-            $v = $decoded->_text ?? new \stdClass();
+            $v = isset($decoded->_text) ? clone $decoded->_text : new \stdClass();
             $v->value = $decoded->text ?? null;
             $type->setText(FHIRString::jsonUnserialize($v, $config));
         }

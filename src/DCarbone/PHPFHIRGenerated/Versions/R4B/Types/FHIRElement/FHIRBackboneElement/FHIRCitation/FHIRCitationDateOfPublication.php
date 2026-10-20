@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -641,7 +641,7 @@ class FHIRCitationDateOfPublication extends FHIRBackboneElement
             || isset($decoded->_date)
             || property_exists($decoded, self::FIELD_DATE)
             || property_exists($decoded, self::FIELD_DATE_EXT)) {
-            $v = $decoded->_date ?? new \stdClass();
+            $v = isset($decoded->_date) ? clone $decoded->_date : new \stdClass();
             $v->value = $decoded->date ?? null;
             $type->setDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -649,7 +649,7 @@ class FHIRCitationDateOfPublication extends FHIRBackboneElement
             || isset($decoded->_year)
             || property_exists($decoded, self::FIELD_YEAR)
             || property_exists($decoded, self::FIELD_YEAR_EXT)) {
-            $v = $decoded->_year ?? new \stdClass();
+            $v = isset($decoded->_year) ? clone $decoded->_year : new \stdClass();
             $v->value = $decoded->year ?? null;
             $type->setYear(FHIRString::jsonUnserialize($v, $config));
         }
@@ -657,7 +657,7 @@ class FHIRCitationDateOfPublication extends FHIRBackboneElement
             || isset($decoded->_month)
             || property_exists($decoded, self::FIELD_MONTH)
             || property_exists($decoded, self::FIELD_MONTH_EXT)) {
-            $v = $decoded->_month ?? new \stdClass();
+            $v = isset($decoded->_month) ? clone $decoded->_month : new \stdClass();
             $v->value = $decoded->month ?? null;
             $type->setMonth(FHIRString::jsonUnserialize($v, $config));
         }
@@ -665,7 +665,7 @@ class FHIRCitationDateOfPublication extends FHIRBackboneElement
             || isset($decoded->_day)
             || property_exists($decoded, self::FIELD_DAY)
             || property_exists($decoded, self::FIELD_DAY_EXT)) {
-            $v = $decoded->_day ?? new \stdClass();
+            $v = isset($decoded->_day) ? clone $decoded->_day : new \stdClass();
             $v->value = $decoded->day ?? null;
             $type->setDay(FHIRString::jsonUnserialize($v, $config));
         }
@@ -673,7 +673,7 @@ class FHIRCitationDateOfPublication extends FHIRBackboneElement
             || isset($decoded->_season)
             || property_exists($decoded, self::FIELD_SEASON)
             || property_exists($decoded, self::FIELD_SEASON_EXT)) {
-            $v = $decoded->_season ?? new \stdClass();
+            $v = isset($decoded->_season) ? clone $decoded->_season : new \stdClass();
             $v->value = $decoded->season ?? null;
             $type->setSeason(FHIRString::jsonUnserialize($v, $config));
         }
@@ -681,7 +681,7 @@ class FHIRCitationDateOfPublication extends FHIRBackboneElement
             || isset($decoded->_text)
             || property_exists($decoded, self::FIELD_TEXT)
             || property_exists($decoded, self::FIELD_TEXT_EXT)) {
-            $v = $decoded->_text ?? new \stdClass();
+            $v = isset($decoded->_text) ? clone $decoded->_text : new \stdClass();
             $v->value = $decoded->text ?? null;
             $type->setText(FHIRString::jsonUnserialize($v, $config));
         }

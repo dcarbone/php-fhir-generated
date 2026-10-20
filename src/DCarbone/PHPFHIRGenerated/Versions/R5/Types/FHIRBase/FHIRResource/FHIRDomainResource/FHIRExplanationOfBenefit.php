@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAccident;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAddItem;
@@ -216,22 +215,22 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_USE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_PATIENT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_CREATED => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_OUTCOME => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -3156,7 +3155,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -3740,7 +3739,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRExplanationOfBenefitStatus::jsonUnserialize($v, $config));
         }
@@ -3762,7 +3761,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
             || isset($decoded->_use)
             || property_exists($decoded, self::FIELD_USE)
             || property_exists($decoded, self::FIELD_USE_EXT)) {
-            $v = $decoded->_use ?? new \stdClass();
+            $v = isset($decoded->_use) ? clone $decoded->_use : new \stdClass();
             $v->value = $decoded->use ?? null;
             $type->setUse(FHIRUse::jsonUnserialize($v, $config));
         }
@@ -3784,7 +3783,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
             || isset($decoded->_created)
             || property_exists($decoded, self::FIELD_CREATED)
             || property_exists($decoded, self::FIELD_CREATED_EXT)) {
-            $v = $decoded->_created ?? new \stdClass();
+            $v = isset($decoded->_created) ? clone $decoded->_created : new \stdClass();
             $v->value = $decoded->created ?? null;
             $type->setCreated(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -3916,7 +3915,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
             || isset($decoded->_outcome)
             || property_exists($decoded, self::FIELD_OUTCOME)
             || property_exists($decoded, self::FIELD_OUTCOME_EXT)) {
-            $v = $decoded->_outcome ?? new \stdClass();
+            $v = isset($decoded->_outcome) ? clone $decoded->_outcome : new \stdClass();
             $v->value = $decoded->outcome ?? null;
             $type->setOutcome(FHIRClaimProcessingCodes::jsonUnserialize($v, $config));
         }
@@ -3931,7 +3930,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
             || isset($decoded->_disposition)
             || property_exists($decoded, self::FIELD_DISPOSITION)
             || property_exists($decoded, self::FIELD_DISPOSITION_EXT)) {
-            $v = $decoded->_disposition ?? new \stdClass();
+            $v = isset($decoded->_disposition) ? clone $decoded->_disposition : new \stdClass();
             $v->value = $decoded->disposition ?? null;
             $type->setDisposition(FHIRString::jsonUnserialize($v, $config));
         }
@@ -3947,7 +3946,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addPreAuthRef(FHIRString::jsonUnserialize($v, $config));
             }
@@ -4018,7 +4017,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
             || isset($decoded->_precedence)
             || property_exists($decoded, self::FIELD_PRECEDENCE)
             || property_exists($decoded, self::FIELD_PRECEDENCE_EXT)) {
-            $v = $decoded->_precedence ?? new \stdClass();
+            $v = isset($decoded->_precedence) ? clone $decoded->_precedence : new \stdClass();
             $v->value = $decoded->precedence ?? null;
             $type->setPrecedence(FHIRPositiveInt::jsonUnserialize($v, $config));
         }

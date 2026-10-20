@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -63,7 +63,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement;
@@ -103,7 +102,7 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
-            ValuePatternMatchRule::NAME => '/^[a-z0-9\\-\\.]{1,36}$/',
+            'value_pattern_match' => '/^[a-z0-9\\-\\.]{1,36}$/',
         ],
     ];
 
@@ -471,7 +470,7 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
             || isset($decoded->_date)
             || property_exists($decoded, self::FIELD_DATE)
             || property_exists($decoded, self::FIELD_DATE_EXT)) {
-            $v = $decoded->_date ?? new \stdClass();
+            $v = isset($decoded->_date) ? clone $decoded->_date : new \stdClass();
             $v->value = $decoded->date ?? null;
             $type->setDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -479,7 +478,7 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
             || isset($decoded->_type)
             || property_exists($decoded, self::FIELD_TYPE)
             || property_exists($decoded, self::FIELD_TYPE_EXT)) {
-            $v = $decoded->_type ?? new \stdClass();
+            $v = isset($decoded->_type) ? clone $decoded->_type : new \stdClass();
             $v->value = $decoded->type ?? null;
             $type->setType(FHIRExposureType::jsonUnserialize($v, $config));
         }
@@ -487,7 +486,7 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
             || isset($decoded->_causalityExpectation)
             || property_exists($decoded, self::FIELD_CAUSALITY_EXPECTATION)
             || property_exists($decoded, self::FIELD_CAUSALITY_EXPECTATION_EXT)) {
-            $v = $decoded->_causalityExpectation ?? new \stdClass();
+            $v = isset($decoded->_causalityExpectation) ? clone $decoded->_causalityExpectation : new \stdClass();
             $v->value = $decoded->causalityExpectation ?? null;
             $type->setCausalityExpectation(FHIRCausalityExpectation::jsonUnserialize($v, $config));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderDestination;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderResponse;
@@ -147,14 +146,8 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
 
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
-        self::FIELD_EVENT_CODING => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_EVENT_CANONICAL => [
-            MinOccursRule::NAME => 1,
-        ],
         self::FIELD_SOURCE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -172,7 +165,8 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification are defined by the
-     * implementation. Alternatively a canonical uri to the EventDefinition.
+     * implementation. Alternatively a canonical uri to the EventDefinition. (choose
+     * any one of event*, but only one)
      */
     #[FHIRCoding]
     protected FHIRCoding $eventCoding;
@@ -184,7 +178,8 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification are defined by the
-     * implementation. Alternatively a canonical uri to the EventDefinition.
+     * implementation. Alternatively a canonical uri to the EventDefinition. (choose
+     * any one of event*, but only one)
      */
     #[FHIRCanonical]
     protected FHIRCanonical $eventCanonical;
@@ -381,7 +376,8 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification are defined by the
-     * implementation. Alternatively a canonical uri to the EventDefinition.
+     * implementation. Alternatively a canonical uri to the EventDefinition. (choose
+     * any one of event*, but only one)
      */
     public function getEventCoding(): null|FHIRCoding
     {
@@ -395,7 +391,8 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification are defined by the
-     * implementation. Alternatively a canonical uri to the EventDefinition.
+     * implementation. Alternatively a canonical uri to the EventDefinition. (choose
+     * any one of event*, but only one)
      */
     public function setEventCoding(null|FHIRCoding $eventCoding): self
     {
@@ -415,7 +412,8 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification are defined by the
-     * implementation. Alternatively a canonical uri to the EventDefinition.
+     * implementation. Alternatively a canonical uri to the EventDefinition. (choose
+     * any one of event*, but only one)
      */
     public function getEventCanonical(): null|FHIRCanonical
     {
@@ -430,7 +428,8 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification are defined by the
-     * implementation. Alternatively a canonical uri to the EventDefinition.
+     * implementation. Alternatively a canonical uri to the EventDefinition. (choose
+     * any one of event*, but only one)
      */
     public function setEventCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $eventCanonical): self
     {
@@ -837,7 +836,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1056,7 +1055,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
             || isset($decoded->_eventCanonical)
             || property_exists($decoded, self::FIELD_EVENT_CANONICAL)
             || property_exists($decoded, self::FIELD_EVENT_CANONICAL_EXT)) {
-            $v = $decoded->_eventCanonical ?? new \stdClass();
+            $v = isset($decoded->_eventCanonical) ? clone $decoded->_eventCanonical : new \stdClass();
             $v->value = $decoded->eventCanonical ?? null;
             $type->setEventCanonical(FHIRCanonical::jsonUnserialize($v, $config));
         }
@@ -1128,7 +1127,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
             || isset($decoded->_definition)
             || property_exists($decoded, self::FIELD_DEFINITION)
             || property_exists($decoded, self::FIELD_DEFINITION_EXT)) {
-            $v = $decoded->_definition ?? new \stdClass();
+            $v = isset($decoded->_definition) ? clone $decoded->_definition : new \stdClass();
             $v->value = $decoded->definition ?? null;
             $type->setDefinition(FHIRCanonical::jsonUnserialize($v, $config));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
@@ -126,7 +125,7 @@ class FHIRCoverageEligibilityRequestInsurance extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_COVERAGE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -431,7 +430,7 @@ class FHIRCoverageEligibilityRequestInsurance extends FHIRBackboneElement
             || isset($decoded->_focal)
             || property_exists($decoded, self::FIELD_FOCAL)
             || property_exists($decoded, self::FIELD_FOCAL_EXT)) {
-            $v = $decoded->_focal ?? new \stdClass();
+            $v = isset($decoded->_focal) ? clone $decoded->_focal : new \stdClass();
             $v->value = $decoded->focal ?? null;
             $type->setFocal(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -446,7 +445,7 @@ class FHIRCoverageEligibilityRequestInsurance extends FHIRBackboneElement
             || isset($decoded->_businessArrangement)
             || property_exists($decoded, self::FIELD_BUSINESS_ARRANGEMENT)
             || property_exists($decoded, self::FIELD_BUSINESS_ARRANGEMENT_EXT)) {
-            $v = $decoded->_businessArrangement ?? new \stdClass();
+            $v = isset($decoded->_businessArrangement) ? clone $decoded->_businessArrangement : new \stdClass();
             $v->value = $decoded->businessArrangement ?? null;
             $type->setBusinessArrangement(FHIRString::jsonUnserialize($v, $config));
         }

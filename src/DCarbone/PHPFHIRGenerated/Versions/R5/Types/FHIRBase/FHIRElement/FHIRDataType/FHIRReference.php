@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -540,7 +540,7 @@ class FHIRReference extends FHIRDataType
             || isset($decoded->_reference)
             || property_exists($decoded, self::FIELD_REFERENCE)
             || property_exists($decoded, self::FIELD_REFERENCE_EXT)) {
-            $v = $decoded->_reference ?? new \stdClass();
+            $v = isset($decoded->_reference) ? clone $decoded->_reference : new \stdClass();
             $v->value = $decoded->reference ?? null;
             $type->setReference(FHIRString::jsonUnserialize($v, $config));
         }
@@ -548,7 +548,7 @@ class FHIRReference extends FHIRDataType
             || isset($decoded->_type)
             || property_exists($decoded, self::FIELD_TYPE)
             || property_exists($decoded, self::FIELD_TYPE_EXT)) {
-            $v = $decoded->_type ?? new \stdClass();
+            $v = isset($decoded->_type) ? clone $decoded->_type : new \stdClass();
             $v->value = $decoded->type ?? null;
             $type->setType(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -563,7 +563,7 @@ class FHIRReference extends FHIRDataType
             || isset($decoded->_display)
             || property_exists($decoded, self::FIELD_DISPLAY)
             || property_exists($decoded, self::FIELD_DISPLAY_EXT)) {
-            $v = $decoded->_display ?? new \stdClass();
+            $v = isset($decoded->_display) ? clone $decoded->_display : new \stdClass();
             $v->value = $decoded->display ?? null;
             $type->setDisplay(FHIRString::jsonUnserialize($v, $config));
         }

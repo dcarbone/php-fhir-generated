@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept;
@@ -118,12 +117,6 @@ class FHIRSubstanceIngredient extends FHIRBackboneElement
 
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
-        self::FIELD_SUBSTANCE_CODEABLE_CONCEPT => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_SUBSTANCE_REFERENCE => [
-            MinOccursRule::NAME => 1,
-        ],
     ];
 
     /* class_default.php:96 */
@@ -147,7 +140,8 @@ class FHIRSubstanceIngredient extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Another substance that is a component of this substance.
+     * Another substance that is a component of this substance. (choose any one of
+     * substance*, but only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $substanceCodeableConcept;
@@ -156,7 +150,8 @@ class FHIRSubstanceIngredient extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Another substance that is a component of this substance.
+     * Another substance that is a component of this substance. (choose any one of
+     * substance*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $substanceReference;
@@ -235,7 +230,8 @@ class FHIRSubstanceIngredient extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Another substance that is a component of this substance.
+     * Another substance that is a component of this substance. (choose any one of
+     * substance*, but only one)
      */
     public function getSubstanceCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -248,7 +244,8 @@ class FHIRSubstanceIngredient extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Another substance that is a component of this substance.
+     * Another substance that is a component of this substance. (choose any one of
+     * substance*, but only one)
      */
     public function setSubstanceCodeableConcept(null|FHIRCodeableConcept $substanceCodeableConcept): self
     {
@@ -265,7 +262,8 @@ class FHIRSubstanceIngredient extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Another substance that is a component of this substance.
+     * Another substance that is a component of this substance. (choose any one of
+     * substance*, but only one)
      */
     public function getSubstanceReference(): null|FHIRReference
     {
@@ -277,7 +275,8 @@ class FHIRSubstanceIngredient extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Another substance that is a component of this substance.
+     * Another substance that is a component of this substance. (choose any one of
+     * substance*, but only one)
      */
     public function setSubstanceReference(null|FHIRReference $substanceReference): self
     {

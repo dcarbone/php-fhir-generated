@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,8 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension;
@@ -106,10 +104,10 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
-            ValuePatternMatchRule::NAME => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
+            'value_pattern_match' => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
         ],
         self::FIELD_NAME => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -506,7 +504,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -514,7 +512,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
             || isset($decoded->_headerField)
             || property_exists($decoded, self::FIELD_HEADER_FIELD)
             || property_exists($decoded, self::FIELD_HEADER_FIELD_EXT)) {
-            $v = $decoded->_headerField ?? new \stdClass();
+            $v = isset($decoded->_headerField) ? clone $decoded->_headerField : new \stdClass();
             $v->value = $decoded->headerField ?? null;
             $type->setHeaderField(FHIRString::jsonUnserialize($v, $config));
         }
@@ -522,7 +520,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
             || isset($decoded->_path)
             || property_exists($decoded, self::FIELD_PATH)
             || property_exists($decoded, self::FIELD_PATH_EXT)) {
-            $v = $decoded->_path ?? new \stdClass();
+            $v = isset($decoded->_path) ? clone $decoded->_path : new \stdClass();
             $v->value = $decoded->path ?? null;
             $type->setPath(FHIRString::jsonUnserialize($v, $config));
         }
@@ -530,7 +528,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
             || isset($decoded->_sourceId)
             || property_exists($decoded, self::FIELD_SOURCE_ID)
             || property_exists($decoded, self::FIELD_SOURCE_ID_EXT)) {
-            $v = $decoded->_sourceId ?? new \stdClass();
+            $v = isset($decoded->_sourceId) ? clone $decoded->_sourceId : new \stdClass();
             $v->value = $decoded->sourceId ?? null;
             $type->setSourceId(FHIRId::jsonUnserialize($v, $config));
         }

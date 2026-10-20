@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment;
@@ -117,12 +116,6 @@ class FHIRContractFriendly extends FHIRBackboneElement
 
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
-        self::FIELD_CONTENT_ATTACHMENT => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_CONTENT_REFERENCE => [
-            MinOccursRule::NAME => 1,
-        ],
     ];
 
     /* class_default.php:96 */
@@ -136,7 +129,8 @@ class FHIRContractFriendly extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Human readable rendering of this Contract in a format and representation
-     * intended to enhance comprehension and ensure understandability.
+     * intended to enhance comprehension and ensure understandability. (choose any one
+     * of content*, but only one)
      */
     #[FHIRAttachment]
     protected FHIRAttachment $contentAttachment;
@@ -146,7 +140,8 @@ class FHIRContractFriendly extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Human readable rendering of this Contract in a format and representation
-     * intended to enhance comprehension and ensure understandability.
+     * intended to enhance comprehension and ensure understandability. (choose any one
+     * of content*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $contentReference;
@@ -190,7 +185,8 @@ class FHIRContractFriendly extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Human readable rendering of this Contract in a format and representation
-     * intended to enhance comprehension and ensure understandability.
+     * intended to enhance comprehension and ensure understandability. (choose any one
+     * of content*, but only one)
      */
     public function getContentAttachment(): null|FHIRAttachment
     {
@@ -203,7 +199,8 @@ class FHIRContractFriendly extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Human readable rendering of this Contract in a format and representation
-     * intended to enhance comprehension and ensure understandability.
+     * intended to enhance comprehension and ensure understandability. (choose any one
+     * of content*, but only one)
      */
     public function setContentAttachment(null|FHIRAttachment $contentAttachment): self
     {
@@ -221,7 +218,8 @@ class FHIRContractFriendly extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Human readable rendering of this Contract in a format and representation
-     * intended to enhance comprehension and ensure understandability.
+     * intended to enhance comprehension and ensure understandability. (choose any one
+     * of content*, but only one)
      */
     public function getContentReference(): null|FHIRReference
     {
@@ -234,7 +232,8 @@ class FHIRContractFriendly extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Human readable rendering of this Contract in a format and representation
-     * intended to enhance comprehension and ensure understandability.
+     * intended to enhance comprehension and ensure understandability. (choose any one
+     * of content*, but only one)
      */
     public function setContentReference(null|FHIRReference $contentReference): self
     {

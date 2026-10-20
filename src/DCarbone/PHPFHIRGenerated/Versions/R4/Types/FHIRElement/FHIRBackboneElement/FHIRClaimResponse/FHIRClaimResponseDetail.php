@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
@@ -102,10 +101,10 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_DETAIL_SEQUENCE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_ADJUDICATION => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -541,7 +540,7 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
             || isset($decoded->_detailSequence)
             || property_exists($decoded, self::FIELD_DETAIL_SEQUENCE)
             || property_exists($decoded, self::FIELD_DETAIL_SEQUENCE_EXT)) {
-            $v = $decoded->_detailSequence ?? new \stdClass();
+            $v = isset($decoded->_detailSequence) ? clone $decoded->_detailSequence : new \stdClass();
             $v->value = $decoded->detailSequence ?? null;
             $type->setDetailSequence(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
@@ -557,7 +556,7 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addNoteNumber(FHIRPositiveInt::jsonUnserialize($v, $config));
             }

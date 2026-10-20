@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -514,7 +514,7 @@ class FHIRMedication extends FHIRResource implements VersionContainedTypeInterfa
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -701,7 +701,7 @@ class FHIRMedication extends FHIRResource implements VersionContainedTypeInterfa
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -716,7 +716,7 @@ class FHIRMedication extends FHIRResource implements VersionContainedTypeInterfa
             || isset($decoded->_isBrand)
             || property_exists($decoded, self::FIELD_IS_BRAND)
             || property_exists($decoded, self::FIELD_IS_BRAND_EXT)) {
-            $v = $decoded->_isBrand ?? new \stdClass();
+            $v = isset($decoded->_isBrand) ? clone $decoded->_isBrand : new \stdClass();
             $v->value = $decoded->isBrand ?? null;
             $type->setIsBrand(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -731,7 +731,7 @@ class FHIRMedication extends FHIRResource implements VersionContainedTypeInterfa
             || isset($decoded->_kind)
             || property_exists($decoded, self::FIELD_KIND)
             || property_exists($decoded, self::FIELD_KIND_EXT)) {
-            $v = $decoded->_kind ?? new \stdClass();
+            $v = isset($decoded->_kind) ? clone $decoded->_kind : new \stdClass();
             $v->value = $decoded->kind ?? null;
             $type->setKind(FHIRMedicationKind::jsonUnserialize($v, $config));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive;
@@ -141,10 +140,10 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_SUBJECT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_CODE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1197,7 +1196,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1549,7 +1548,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
             || isset($decoded->_scheduledDateTime)
             || property_exists($decoded, self::FIELD_SCHEDULED_DATE_TIME)
             || property_exists($decoded, self::FIELD_SCHEDULED_DATE_TIME_EXT)) {
-            $v = $decoded->_scheduledDateTime ?? new \stdClass();
+            $v = isset($decoded->_scheduledDateTime) ? clone $decoded->_scheduledDateTime : new \stdClass();
             $v->value = $decoded->scheduledDateTime ?? null;
             $type->setScheduledDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1585,7 +1584,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRProcedureRequestStatus::jsonUnserialize($v, $config));
         }
@@ -1604,7 +1603,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
             || isset($decoded->_asNeededBoolean)
             || property_exists($decoded, self::FIELD_AS_NEEDED_BOOLEAN)
             || property_exists($decoded, self::FIELD_AS_NEEDED_BOOLEAN_EXT)) {
-            $v = $decoded->_asNeededBoolean ?? new \stdClass();
+            $v = isset($decoded->_asNeededBoolean) ? clone $decoded->_asNeededBoolean : new \stdClass();
             $v->value = $decoded->asNeededBoolean ?? null;
             $type->setAsNeededBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1619,7 +1618,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
             || isset($decoded->_orderedOn)
             || property_exists($decoded, self::FIELD_ORDERED_ON)
             || property_exists($decoded, self::FIELD_ORDERED_ON_EXT)) {
-            $v = $decoded->_orderedOn ?? new \stdClass();
+            $v = isset($decoded->_orderedOn) ? clone $decoded->_orderedOn : new \stdClass();
             $v->value = $decoded->orderedOn ?? null;
             $type->setOrderedOn(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1634,7 +1633,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
             || isset($decoded->_priority)
             || property_exists($decoded, self::FIELD_PRIORITY)
             || property_exists($decoded, self::FIELD_PRIORITY_EXT)) {
-            $v = $decoded->_priority ?? new \stdClass();
+            $v = isset($decoded->_priority) ? clone $decoded->_priority : new \stdClass();
             $v->value = $decoded->priority ?? null;
             $type->setPriority(FHIRProcedureRequestPriority::jsonUnserialize($v, $config));
         }

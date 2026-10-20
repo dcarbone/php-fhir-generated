@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRActionRelationshipTypeList;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionRelationshipType;
@@ -108,10 +107,10 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ACTION_ID => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_RELATIONSHIP => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -468,7 +467,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
             || isset($decoded->_actionId)
             || property_exists($decoded, self::FIELD_ACTION_ID)
             || property_exists($decoded, self::FIELD_ACTION_ID_EXT)) {
-            $v = $decoded->_actionId ?? new \stdClass();
+            $v = isset($decoded->_actionId) ? clone $decoded->_actionId : new \stdClass();
             $v->value = $decoded->actionId ?? null;
             $type->setActionId(FHIRId::jsonUnserialize($v, $config));
         }
@@ -476,7 +475,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
             || isset($decoded->_relationship)
             || property_exists($decoded, self::FIELD_RELATIONSHIP)
             || property_exists($decoded, self::FIELD_RELATIONSHIP_EXT)) {
-            $v = $decoded->_relationship ?? new \stdClass();
+            $v = isset($decoded->_relationship) ? clone $decoded->_relationship : new \stdClass();
             $v->value = $decoded->relationship ?? null;
             $type->setRelationship(FHIRActionRelationshipType::jsonUnserialize($v, $config));
         }

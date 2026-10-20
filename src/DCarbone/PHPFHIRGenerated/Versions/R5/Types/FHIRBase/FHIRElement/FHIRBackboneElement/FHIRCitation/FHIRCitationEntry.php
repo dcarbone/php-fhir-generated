@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean;
@@ -134,7 +133,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_CONTRIBUTOR => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -816,7 +815,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
             || isset($decoded->_forenameInitials)
             || property_exists($decoded, self::FIELD_FORENAME_INITIALS)
             || property_exists($decoded, self::FIELD_FORENAME_INITIALS_EXT)) {
-            $v = $decoded->_forenameInitials ?? new \stdClass();
+            $v = isset($decoded->_forenameInitials) ? clone $decoded->_forenameInitials : new \stdClass();
             $v->value = $decoded->forenameInitials ?? null;
             $type->setForenameInitials(FHIRString::jsonUnserialize($v, $config));
         }
@@ -864,7 +863,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
             || isset($decoded->_correspondingContact)
             || property_exists($decoded, self::FIELD_CORRESPONDING_CONTACT)
             || property_exists($decoded, self::FIELD_CORRESPONDING_CONTACT_EXT)) {
-            $v = $decoded->_correspondingContact ?? new \stdClass();
+            $v = isset($decoded->_correspondingContact) ? clone $decoded->_correspondingContact : new \stdClass();
             $v->value = $decoded->correspondingContact ?? null;
             $type->setCorrespondingContact(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -872,7 +871,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
             || isset($decoded->_rankingOrder)
             || property_exists($decoded, self::FIELD_RANKING_ORDER)
             || property_exists($decoded, self::FIELD_RANKING_ORDER_EXT)) {
-            $v = $decoded->_rankingOrder ?? new \stdClass();
+            $v = isset($decoded->_rankingOrder) ? clone $decoded->_rankingOrder : new \stdClass();
             $v->value = $decoded->rankingOrder ?? null;
             $type->setRankingOrder(FHIRPositiveInt::jsonUnserialize($v, $config));
         }

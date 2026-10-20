@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink;
@@ -144,7 +143,7 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -232,6 +231,8 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
     #[FHIRSignature]
     protected FHIRSignature $signature;
     /**
+     * (choose any one of the elements, but only one)
+     *
      * Captures issues and warnings that relate to the construction of the Bundle and
      * the content within it.
      */
@@ -587,6 +588,8 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
     }
 
     /**
+     * (choose any one of the elements, but only one)
+     *
      * Captures issues and warnings that relate to the construction of the Bundle and
      * the content within it.
      */
@@ -596,6 +599,8 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
     }
 
     /**
+     * (choose any one of the elements, but only one)
+     *
      * Captures issues and warnings that relate to the construction of the Bundle and
      * the content within it.
      */
@@ -668,7 +673,7 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->setIssues($cn::xmlUnserialize($cen, $config));
+                    $type->setIssues(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             }
         }
@@ -861,7 +866,7 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
             || isset($decoded->_type)
             || property_exists($decoded, self::FIELD_TYPE)
             || property_exists($decoded, self::FIELD_TYPE_EXT)) {
-            $v = $decoded->_type ?? new \stdClass();
+            $v = isset($decoded->_type) ? clone $decoded->_type : new \stdClass();
             $v->value = $decoded->type ?? null;
             $type->setType(FHIRBundleType::jsonUnserialize($v, $config));
         }
@@ -869,7 +874,7 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
             || isset($decoded->_timestamp)
             || property_exists($decoded, self::FIELD_TIMESTAMP)
             || property_exists($decoded, self::FIELD_TIMESTAMP_EXT)) {
-            $v = $decoded->_timestamp ?? new \stdClass();
+            $v = isset($decoded->_timestamp) ? clone $decoded->_timestamp : new \stdClass();
             $v->value = $decoded->timestamp ?? null;
             $type->setTimestamp(FHIRInstant::jsonUnserialize($v, $config));
         }
@@ -877,7 +882,7 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
             || isset($decoded->_total)
             || property_exists($decoded, self::FIELD_TOTAL)
             || property_exists($decoded, self::FIELD_TOTAL_EXT)) {
-            $v = $decoded->_total ?? new \stdClass();
+            $v = isset($decoded->_total) ? clone $decoded->_total : new \stdClass();
             $v->value = $decoded->total ?? null;
             $type->setTotal(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
@@ -912,9 +917,7 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
         }
         if (isset($decoded->issues)) {
             $typeClassName = VersionTypeMap::mustGetContainedTypeClassnameFromJSON($decoded->issues);
-            $v = $decoded->issues;
-            unset($v->resourceType);
-            $type->setIssues($typeClassName::jsonUnserialize($v, $config));
+            $type->setIssues(VersionTypeMap::jsonUnserializeResource($typeClassName, $decoded->issues, $config));
         }
         return $type;
     }

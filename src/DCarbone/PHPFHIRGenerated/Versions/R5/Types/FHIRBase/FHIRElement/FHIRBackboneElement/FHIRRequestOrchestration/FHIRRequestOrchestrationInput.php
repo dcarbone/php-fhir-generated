@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -433,7 +433,7 @@ class FHIRRequestOrchestrationInput extends FHIRBackboneElement
             || isset($decoded->_title)
             || property_exists($decoded, self::FIELD_TITLE)
             || property_exists($decoded, self::FIELD_TITLE_EXT)) {
-            $v = $decoded->_title ?? new \stdClass();
+            $v = isset($decoded->_title) ? clone $decoded->_title : new \stdClass();
             $v->value = $decoded->title ?? null;
             $type->setTitle(FHIRString::jsonUnserialize($v, $config));
         }
@@ -448,7 +448,7 @@ class FHIRRequestOrchestrationInput extends FHIRBackboneElement
             || isset($decoded->_relatedData)
             || property_exists($decoded, self::FIELD_RELATED_DATA)
             || property_exists($decoded, self::FIELD_RELATED_DATA_EXT)) {
-            $v = $decoded->_relatedData ?? new \stdClass();
+            $v = isset($decoded->_relatedData) ? clone $decoded->_relatedData : new \stdClass();
             $v->value = $decoded->relatedData ?? null;
             $type->setRelatedData(FHIRId::jsonUnserialize($v, $config));
         }

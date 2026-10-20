@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -535,7 +535,7 @@ class FHIRMolecularSequenceEdit extends FHIRBackboneElement
             || isset($decoded->_start)
             || property_exists($decoded, self::FIELD_START)
             || property_exists($decoded, self::FIELD_START_EXT)) {
-            $v = $decoded->_start ?? new \stdClass();
+            $v = isset($decoded->_start) ? clone $decoded->_start : new \stdClass();
             $v->value = $decoded->start ?? null;
             $type->setStart(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -543,7 +543,7 @@ class FHIRMolecularSequenceEdit extends FHIRBackboneElement
             || isset($decoded->_end)
             || property_exists($decoded, self::FIELD_END)
             || property_exists($decoded, self::FIELD_END_EXT)) {
-            $v = $decoded->_end ?? new \stdClass();
+            $v = isset($decoded->_end) ? clone $decoded->_end : new \stdClass();
             $v->value = $decoded->end ?? null;
             $type->setEnd(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -551,7 +551,7 @@ class FHIRMolecularSequenceEdit extends FHIRBackboneElement
             || isset($decoded->_replacementSequence)
             || property_exists($decoded, self::FIELD_REPLACEMENT_SEQUENCE)
             || property_exists($decoded, self::FIELD_REPLACEMENT_SEQUENCE_EXT)) {
-            $v = $decoded->_replacementSequence ?? new \stdClass();
+            $v = isset($decoded->_replacementSequence) ? clone $decoded->_replacementSequence : new \stdClass();
             $v->value = $decoded->replacementSequence ?? null;
             $type->setReplacementSequence(FHIRString::jsonUnserialize($v, $config));
         }
@@ -559,7 +559,7 @@ class FHIRMolecularSequenceEdit extends FHIRBackboneElement
             || isset($decoded->_replacedSequence)
             || property_exists($decoded, self::FIELD_REPLACED_SEQUENCE)
             || property_exists($decoded, self::FIELD_REPLACED_SEQUENCE_EXT)) {
-            $v = $decoded->_replacedSequence ?? new \stdClass();
+            $v = isset($decoded->_replacedSequence) ? clone $decoded->_replacedSequence : new \stdClass();
             $v->value = $decoded->replacedSequence ?? null;
             $type->setReplacedSequence(FHIRString::jsonUnserialize($v, $config));
         }

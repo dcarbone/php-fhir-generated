@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -1262,7 +1262,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
             || isset($decoded->_effectiveTime)
             || property_exists($decoded, self::FIELD_EFFECTIVE_TIME)
             || property_exists($decoded, self::FIELD_EFFECTIVE_TIME_EXT)) {
-            $v = $decoded->_effectiveTime ?? new \stdClass();
+            $v = isset($decoded->_effectiveTime) ? clone $decoded->_effectiveTime : new \stdClass();
             $v->value = $decoded->effectiveTime ?? null;
             $type->setEffectiveTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1284,7 +1284,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
             || isset($decoded->_factor)
             || property_exists($decoded, self::FIELD_FACTOR)
             || property_exists($decoded, self::FIELD_FACTOR_EXT)) {
-            $v = $decoded->_factor ?? new \stdClass();
+            $v = isset($decoded->_factor) ? clone $decoded->_factor : new \stdClass();
             $v->value = $decoded->factor ?? null;
             $type->setFactor(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -1292,7 +1292,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
             || isset($decoded->_points)
             || property_exists($decoded, self::FIELD_POINTS)
             || property_exists($decoded, self::FIELD_POINTS_EXT)) {
-            $v = $decoded->_points ?? new \stdClass();
+            $v = isset($decoded->_points) ? clone $decoded->_points : new \stdClass();
             $v->value = $decoded->points ?? null;
             $type->setPoints(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -1307,7 +1307,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
             || isset($decoded->_payment)
             || property_exists($decoded, self::FIELD_PAYMENT)
             || property_exists($decoded, self::FIELD_PAYMENT_EXT)) {
-            $v = $decoded->_payment ?? new \stdClass();
+            $v = isset($decoded->_payment) ? clone $decoded->_payment : new \stdClass();
             $v->value = $decoded->payment ?? null;
             $type->setPayment(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1315,7 +1315,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
             || isset($decoded->_paymentDate)
             || property_exists($decoded, self::FIELD_PAYMENT_DATE)
             || property_exists($decoded, self::FIELD_PAYMENT_DATE_EXT)) {
-            $v = $decoded->_paymentDate ?? new \stdClass();
+            $v = isset($decoded->_paymentDate) ? clone $decoded->_paymentDate : new \stdClass();
             $v->value = $decoded->paymentDate ?? null;
             $type->setPaymentDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1345,7 +1345,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addLinkId(FHIRString::jsonUnserialize($v, $config));
             }
@@ -1362,7 +1362,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addSecurityLabelNumber(FHIRUnsignedInt::jsonUnserialize($v, $config));
             }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -143,7 +143,8 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement
      *
      * Identifies the medication, substance, device or biologically derived product
      * being supplied. This is either a link to a resource representing the details of
-     * the item or a code that identifies the item from a known list.
+     * the item or a code that identifies the item from a known list. (choose any one
+     * of item*, but only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $itemCodeableConcept;
@@ -154,7 +155,8 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement
      *
      * Identifies the medication, substance, device or biologically derived product
      * being supplied. This is either a link to a resource representing the details of
-     * the item or a code that identifies the item from a known list.
+     * the item or a code that identifies the item from a known list. (choose any one
+     * of item*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $itemReference;
@@ -237,7 +239,8 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement
      *
      * Identifies the medication, substance, device or biologically derived product
      * being supplied. This is either a link to a resource representing the details of
-     * the item or a code that identifies the item from a known list.
+     * the item or a code that identifies the item from a known list. (choose any one
+     * of item*, but only one)
      */
     public function getItemCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -252,7 +255,8 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement
      *
      * Identifies the medication, substance, device or biologically derived product
      * being supplied. This is either a link to a resource representing the details of
-     * the item or a code that identifies the item from a known list.
+     * the item or a code that identifies the item from a known list. (choose any one
+     * of item*, but only one)
      */
     public function setItemCodeableConcept(null|FHIRCodeableConcept $itemCodeableConcept): self
     {
@@ -271,7 +275,8 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement
      *
      * Identifies the medication, substance, device or biologically derived product
      * being supplied. This is either a link to a resource representing the details of
-     * the item or a code that identifies the item from a known list.
+     * the item or a code that identifies the item from a known list. (choose any one
+     * of item*, but only one)
      */
     public function getItemReference(): null|FHIRReference
     {
@@ -285,7 +290,8 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement
      *
      * Identifies the medication, substance, device or biologically derived product
      * being supplied. This is either a link to a resource representing the details of
-     * the item or a code that identifies the item from a known list.
+     * the item or a code that identifies the item from a known list. (choose any one
+     * of item*, but only one)
      */
     public function setItemReference(null|FHIRReference $itemReference): self
     {

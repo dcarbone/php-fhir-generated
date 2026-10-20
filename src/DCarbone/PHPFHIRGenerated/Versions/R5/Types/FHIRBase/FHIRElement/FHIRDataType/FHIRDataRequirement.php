@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode;
@@ -140,7 +139,7 @@ class FHIRDataRequirement extends FHIRDataType
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -182,7 +181,7 @@ class FHIRDataRequirement extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended subjects of the data requirement. If this element is not provided,
-     * a Patient subject is assumed.
+     * a Patient subject is assumed. (choose any one of subject*, but only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $subjectCodeableConcept;
@@ -192,7 +191,7 @@ class FHIRDataRequirement extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended subjects of the data requirement. If this element is not provided,
-     * a Patient subject is assumed.
+     * a Patient subject is assumed. (choose any one of subject*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $subjectReference;
@@ -464,7 +463,7 @@ class FHIRDataRequirement extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended subjects of the data requirement. If this element is not provided,
-     * a Patient subject is assumed.
+     * a Patient subject is assumed. (choose any one of subject*, but only one)
      */
     public function getSubjectCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -478,7 +477,7 @@ class FHIRDataRequirement extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended subjects of the data requirement. If this element is not provided,
-     * a Patient subject is assumed.
+     * a Patient subject is assumed. (choose any one of subject*, but only one)
      */
     public function setSubjectCodeableConcept(null|FHIRCodeableConcept $subjectCodeableConcept): self
     {
@@ -496,7 +495,7 @@ class FHIRDataRequirement extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended subjects of the data requirement. If this element is not provided,
-     * a Patient subject is assumed.
+     * a Patient subject is assumed. (choose any one of subject*, but only one)
      */
     public function getSubjectReference(): null|FHIRReference
     {
@@ -509,7 +508,7 @@ class FHIRDataRequirement extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended subjects of the data requirement. If this element is not provided,
-     * a Patient subject is assumed.
+     * a Patient subject is assumed. (choose any one of subject*, but only one)
      */
     public function setSubjectReference(null|FHIRReference $subjectReference): self
     {
@@ -1092,7 +1091,7 @@ class FHIRDataRequirement extends FHIRDataType
             || isset($decoded->_type)
             || property_exists($decoded, self::FIELD_TYPE)
             || property_exists($decoded, self::FIELD_TYPE_EXT)) {
-            $v = $decoded->_type ?? new \stdClass();
+            $v = isset($decoded->_type) ? clone $decoded->_type : new \stdClass();
             $v->value = $decoded->type ?? null;
             $type->setType(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -1108,7 +1107,7 @@ class FHIRDataRequirement extends FHIRDataType
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addProfile(FHIRCanonical::jsonUnserialize($v, $config));
             }
@@ -1139,7 +1138,7 @@ class FHIRDataRequirement extends FHIRDataType
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addMustSupport(FHIRString::jsonUnserialize($v, $config));
             }
@@ -1181,7 +1180,7 @@ class FHIRDataRequirement extends FHIRDataType
             || isset($decoded->_limit)
             || property_exists($decoded, self::FIELD_LIMIT)
             || property_exists($decoded, self::FIELD_LIMIT_EXT)) {
-            $v = $decoded->_limit ?? new \stdClass();
+            $v = isset($decoded->_limit) ? clone $decoded->_limit : new \stdClass();
             $v->value = $decoded->limit ?? null;
             $type->setLimit(FHIRPositiveInt::jsonUnserialize($v, $config));
         }

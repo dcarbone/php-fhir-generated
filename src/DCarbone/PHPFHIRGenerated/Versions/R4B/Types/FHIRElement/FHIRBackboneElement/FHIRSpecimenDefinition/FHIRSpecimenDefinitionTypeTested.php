@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSpecimenContainedPreferenceEnum;
@@ -131,7 +130,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_PREFERENCE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -751,7 +750,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
             || isset($decoded->_isDerived)
             || property_exists($decoded, self::FIELD_IS_DERIVED)
             || property_exists($decoded, self::FIELD_IS_DERIVED_EXT)) {
-            $v = $decoded->_isDerived ?? new \stdClass();
+            $v = isset($decoded->_isDerived) ? clone $decoded->_isDerived : new \stdClass();
             $v->value = $decoded->isDerived ?? null;
             $type->setIsDerived(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -766,7 +765,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
             || isset($decoded->_preference)
             || property_exists($decoded, self::FIELD_PREFERENCE)
             || property_exists($decoded, self::FIELD_PREFERENCE_EXT)) {
-            $v = $decoded->_preference ?? new \stdClass();
+            $v = isset($decoded->_preference) ? clone $decoded->_preference : new \stdClass();
             $v->value = $decoded->preference ?? null;
             $type->setPreference(FHIRSpecimenContainedPreference::jsonUnserialize($v, $config));
         }
@@ -781,7 +780,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
             || isset($decoded->_requirement)
             || property_exists($decoded, self::FIELD_REQUIREMENT)
             || property_exists($decoded, self::FIELD_REQUIREMENT_EXT)) {
-            $v = $decoded->_requirement ?? new \stdClass();
+            $v = isset($decoded->_requirement) ? clone $decoded->_requirement : new \stdClass();
             $v->value = $decoded->requirement ?? null;
             $type->setRequirement(FHIRString::jsonUnserialize($v, $config));
         }

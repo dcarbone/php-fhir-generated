@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept;
@@ -130,7 +129,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -666,7 +665,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
             || isset($decoded->_allowedUnsignedInt)
             || property_exists($decoded, self::FIELD_ALLOWED_UNSIGNED_INT)
             || property_exists($decoded, self::FIELD_ALLOWED_UNSIGNED_INT_EXT)) {
-            $v = $decoded->_allowedUnsignedInt ?? new \stdClass();
+            $v = isset($decoded->_allowedUnsignedInt) ? clone $decoded->_allowedUnsignedInt : new \stdClass();
             $v->value = $decoded->allowedUnsignedInt ?? null;
             $type->setAllowedUnsignedInt(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
@@ -674,7 +673,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
             || isset($decoded->_allowedString)
             || property_exists($decoded, self::FIELD_ALLOWED_STRING)
             || property_exists($decoded, self::FIELD_ALLOWED_STRING_EXT)) {
-            $v = $decoded->_allowedString ?? new \stdClass();
+            $v = isset($decoded->_allowedString) ? clone $decoded->_allowedString : new \stdClass();
             $v->value = $decoded->allowedString ?? null;
             $type->setAllowedString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -689,7 +688,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
             || isset($decoded->_usedUnsignedInt)
             || property_exists($decoded, self::FIELD_USED_UNSIGNED_INT)
             || property_exists($decoded, self::FIELD_USED_UNSIGNED_INT_EXT)) {
-            $v = $decoded->_usedUnsignedInt ?? new \stdClass();
+            $v = isset($decoded->_usedUnsignedInt) ? clone $decoded->_usedUnsignedInt : new \stdClass();
             $v->value = $decoded->usedUnsignedInt ?? null;
             $type->setUsedUnsignedInt(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
@@ -697,7 +696,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
             || isset($decoded->_usedString)
             || property_exists($decoded, self::FIELD_USED_STRING)
             || property_exists($decoded, self::FIELD_USED_STRING_EXT)) {
-            $v = $decoded->_usedString ?? new \stdClass();
+            $v = isset($decoded->_usedString) ? clone $decoded->_usedString : new \stdClass();
             $v->value = $decoded->usedString ?? null;
             $type->setUsedString(FHIRString::jsonUnserialize($v, $config));
         }

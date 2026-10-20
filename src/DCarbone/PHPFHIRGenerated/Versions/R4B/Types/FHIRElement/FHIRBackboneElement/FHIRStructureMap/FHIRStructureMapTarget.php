@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -819,7 +819,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
             || isset($decoded->_context)
             || property_exists($decoded, self::FIELD_CONTEXT)
             || property_exists($decoded, self::FIELD_CONTEXT_EXT)) {
-            $v = $decoded->_context ?? new \stdClass();
+            $v = isset($decoded->_context) ? clone $decoded->_context : new \stdClass();
             $v->value = $decoded->context ?? null;
             $type->setContext(FHIRId::jsonUnserialize($v, $config));
         }
@@ -827,7 +827,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
             || isset($decoded->_contextType)
             || property_exists($decoded, self::FIELD_CONTEXT_TYPE)
             || property_exists($decoded, self::FIELD_CONTEXT_TYPE_EXT)) {
-            $v = $decoded->_contextType ?? new \stdClass();
+            $v = isset($decoded->_contextType) ? clone $decoded->_contextType : new \stdClass();
             $v->value = $decoded->contextType ?? null;
             $type->setContextType(FHIRStructureMapContextType::jsonUnserialize($v, $config));
         }
@@ -835,7 +835,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
             || isset($decoded->_element)
             || property_exists($decoded, self::FIELD_ELEMENT)
             || property_exists($decoded, self::FIELD_ELEMENT_EXT)) {
-            $v = $decoded->_element ?? new \stdClass();
+            $v = isset($decoded->_element) ? clone $decoded->_element : new \stdClass();
             $v->value = $decoded->element ?? null;
             $type->setElement(FHIRString::jsonUnserialize($v, $config));
         }
@@ -843,7 +843,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
             || isset($decoded->_variable)
             || property_exists($decoded, self::FIELD_VARIABLE)
             || property_exists($decoded, self::FIELD_VARIABLE_EXT)) {
-            $v = $decoded->_variable ?? new \stdClass();
+            $v = isset($decoded->_variable) ? clone $decoded->_variable : new \stdClass();
             $v->value = $decoded->variable ?? null;
             $type->setVariable(FHIRId::jsonUnserialize($v, $config));
         }
@@ -859,7 +859,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addListMode(FHIRStructureMapTargetListMode::jsonUnserialize($v, $config));
             }
@@ -868,7 +868,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
             || isset($decoded->_listRuleId)
             || property_exists($decoded, self::FIELD_LIST_RULE_ID)
             || property_exists($decoded, self::FIELD_LIST_RULE_ID_EXT)) {
-            $v = $decoded->_listRuleId ?? new \stdClass();
+            $v = isset($decoded->_listRuleId) ? clone $decoded->_listRuleId : new \stdClass();
             $v->value = $decoded->listRuleId ?? null;
             $type->setListRuleId(FHIRId::jsonUnserialize($v, $config));
         }
@@ -876,7 +876,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
             || isset($decoded->_transform)
             || property_exists($decoded, self::FIELD_TRANSFORM)
             || property_exists($decoded, self::FIELD_TRANSFORM_EXT)) {
-            $v = $decoded->_transform ?? new \stdClass();
+            $v = isset($decoded->_transform) ? clone $decoded->_transform : new \stdClass();
             $v->value = $decoded->transform ?? null;
             $type->setTransform(FHIRStructureMapTransform::jsonUnserialize($v, $config));
         }

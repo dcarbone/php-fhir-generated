@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -185,7 +185,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred.
+     * incurred. (choose any one of targetItem*, but only one)
      */
     #[FHIRString]
     protected FHIRString $targetItemString;
@@ -197,7 +197,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred.
+     * incurred. (choose any one of targetItem*, but only one)
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $targetItemIdentifier;
@@ -208,7 +208,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred.
+     * incurred. (choose any one of targetItem*, but only one)
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $targetItemPositiveInt;
@@ -482,7 +482,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred.
+     * incurred. (choose any one of targetItem*, but only one)
      */
     public function getTargetItemString(): null|FHIRString
     {
@@ -496,7 +496,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred.
+     * incurred. (choose any one of targetItem*, but only one)
      */
     public function setTargetItemString(null|string|FHIRStringPrimitive|FHIRString $targetItemString): self
     {
@@ -519,7 +519,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred.
+     * incurred. (choose any one of targetItem*, but only one)
      */
     public function getTargetItemIdentifier(): null|FHIRIdentifier
     {
@@ -534,7 +534,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred.
+     * incurred. (choose any one of targetItem*, but only one)
      */
     public function setTargetItemIdentifier(null|FHIRIdentifier $targetItemIdentifier): self
     {
@@ -553,7 +553,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred.
+     * incurred. (choose any one of targetItem*, but only one)
      */
     public function getTargetItemPositiveInt(): null|FHIRPositiveInt
     {
@@ -567,7 +567,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred.
+     * incurred. (choose any one of targetItem*, but only one)
      */
     public function setTargetItemPositiveInt(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $targetItemPositiveInt): self
     {
@@ -1101,7 +1101,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
             || isset($decoded->_targetItemString)
             || property_exists($decoded, self::FIELD_TARGET_ITEM_STRING)
             || property_exists($decoded, self::FIELD_TARGET_ITEM_STRING_EXT)) {
-            $v = $decoded->_targetItemString ?? new \stdClass();
+            $v = isset($decoded->_targetItemString) ? clone $decoded->_targetItemString : new \stdClass();
             $v->value = $decoded->targetItemString ?? null;
             $type->setTargetItemString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1116,7 +1116,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
             || isset($decoded->_targetItemPositiveInt)
             || property_exists($decoded, self::FIELD_TARGET_ITEM_POSITIVE_INT)
             || property_exists($decoded, self::FIELD_TARGET_ITEM_POSITIVE_INT_EXT)) {
-            $v = $decoded->_targetItemPositiveInt ?? new \stdClass();
+            $v = isset($decoded->_targetItemPositiveInt) ? clone $decoded->_targetItemPositiveInt : new \stdClass();
             $v->value = $decoded->targetItemPositiveInt ?? null;
             $type->setTargetItemPositiveInt(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
@@ -1159,7 +1159,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
             || isset($decoded->_date)
             || property_exists($decoded, self::FIELD_DATE)
             || property_exists($decoded, self::FIELD_DATE_EXT)) {
-            $v = $decoded->_date ?? new \stdClass();
+            $v = isset($decoded->_date) ? clone $decoded->_date : new \stdClass();
             $v->value = $decoded->date ?? null;
             $type->setDate(FHIRDate::jsonUnserialize($v, $config));
         }

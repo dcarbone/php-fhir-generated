@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -848,7 +848,7 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
             || isset($decoded->_intraspecificDescription)
             || property_exists($decoded, self::FIELD_INTRASPECIFIC_DESCRIPTION)
             || property_exists($decoded, self::FIELD_INTRASPECIFIC_DESCRIPTION_EXT)) {
-            $v = $decoded->_intraspecificDescription ?? new \stdClass();
+            $v = isset($decoded->_intraspecificDescription) ? clone $decoded->_intraspecificDescription : new \stdClass();
             $v->value = $decoded->intraspecificDescription ?? null;
             $type->setIntraspecificDescription(FHIRString::jsonUnserialize($v, $config));
         }

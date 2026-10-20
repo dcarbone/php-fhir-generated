@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Validation;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -26,9 +26,15 @@ namespace DCarbone\PHPFHIRGenerated\Validation;
  *
  */
 
+use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\ChoiceOccursRule;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\CodeBindingRule;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\FixedValueRule;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MaxOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\PatternValueRule;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\SliceOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMaxLengthRule;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMinLengthRule;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueOneOfRule;
@@ -88,6 +94,34 @@ class Validator
         throw new \OutOfBoundsException(sprintf('No rule named "%s" registered.', $rule));
     }
 
+    /**
+     * Applies the rules of a constraining definition, such as a profile, on top of the rules of its base.  Unlike a
+     * plain override, a constraint may only narrow its base: the greater of two minimums and the lesser of two
+     * maximums win.  Any other rule present in both is replaced by the constraining definition's.
+     *
+     * @param array $base Map of ["rule" => {constraint}] of the base definition.
+     * @param array $constraining Map of ["rule" => {constraint}] of the constraining definition.
+     */
+    public static function tighten(array $base, array $constraining): array
+    {
+        foreach ($constraining as $rule => $constraint) {
+            if (!array_key_exists($rule, $base)) {
+                $base[$rule] = $constraint;
+            } elseif (MinOccursRule::NAME === $rule) {
+                $base[$rule] = max($base[$rule], $constraint);
+            } elseif (MaxOccursRule::NAME === $rule) {
+                $base[$rule] = match (true) {
+                    Constants::UNLIMITED === $base[$rule] => $constraint,
+                    Constants::UNLIMITED === $constraint => $base[$rule],
+                    default => min($base[$rule], $constraint),
+                };
+            } else {
+                $base[$rule] = $constraint;
+            }
+        }
+        return $base;
+    }
+
     public static function _init(): void
     {
         if (self::$_initialized) {
@@ -100,6 +134,11 @@ class Validator
         self::$_rules[ValuePatternMatchRule::NAME] = new ValuePatternMatchRule();
         self::$_rules[MinOccursRule::NAME] = new MinOccursRule();
         self::$_rules[MaxOccursRule::NAME] = new MaxOccursRule();
+        self::$_rules[FixedValueRule::NAME] = new FixedValueRule();
+        self::$_rules[PatternValueRule::NAME] = new PatternValueRule();
+        self::$_rules[SliceOccursRule::NAME] = new SliceOccursRule();
+        self::$_rules[ChoiceOccursRule::NAME] = new ChoiceOccursRule();
+        self::$_rules[CodeBindingRule::NAME] = new CodeBindingRule();
     }
 }
 

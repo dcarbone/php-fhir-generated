@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRAdverseEventActualityList;
@@ -139,10 +138,10 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ACTUALITY => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_SUBJECT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1413,7 +1412,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1731,7 +1730,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_actuality)
             || property_exists($decoded, self::FIELD_ACTUALITY)
             || property_exists($decoded, self::FIELD_ACTUALITY_EXT)) {
-            $v = $decoded->_actuality ?? new \stdClass();
+            $v = isset($decoded->_actuality) ? clone $decoded->_actuality : new \stdClass();
             $v->value = $decoded->actuality ?? null;
             $type->setActuality(FHIRAdverseEventActuality::jsonUnserialize($v, $config));
         }
@@ -1771,7 +1770,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_date)
             || property_exists($decoded, self::FIELD_DATE)
             || property_exists($decoded, self::FIELD_DATE_EXT)) {
-            $v = $decoded->_date ?? new \stdClass();
+            $v = isset($decoded->_date) ? clone $decoded->_date : new \stdClass();
             $v->value = $decoded->date ?? null;
             $type->setDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1779,7 +1778,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_detected)
             || property_exists($decoded, self::FIELD_DETECTED)
             || property_exists($decoded, self::FIELD_DETECTED_EXT)) {
-            $v = $decoded->_detected ?? new \stdClass();
+            $v = isset($decoded->_detected) ? clone $decoded->_detected : new \stdClass();
             $v->value = $decoded->detected ?? null;
             $type->setDetected(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1787,7 +1786,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_recordedDate)
             || property_exists($decoded, self::FIELD_RECORDED_DATE)
             || property_exists($decoded, self::FIELD_RECORDED_DATE_EXT)) {
-            $v = $decoded->_recordedDate ?? new \stdClass();
+            $v = isset($decoded->_recordedDate) ? clone $decoded->_recordedDate : new \stdClass();
             $v->value = $decoded->recordedDate ?? null;
             $type->setRecordedDate(FHIRDateTime::jsonUnserialize($v, $config));
         }

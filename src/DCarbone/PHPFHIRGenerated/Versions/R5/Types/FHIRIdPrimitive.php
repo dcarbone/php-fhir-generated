@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -85,9 +85,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\PrimitiveTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMaxLengthRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMinLengthRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -107,9 +104,9 @@ class FHIRIdPrimitive implements PrimitiveTypeInterface
     /* class_primitive.php:79 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
-            ValuePatternMatchRule::NAME => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
-            ValueMinLengthRule::NAME => 1,
-            ValueMaxLengthRule::NAME => 64,
+            'value_pattern_match' => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
+            'value_min_length' => 1,
+            'value_max_length' => 64,
         ],
     ];
 

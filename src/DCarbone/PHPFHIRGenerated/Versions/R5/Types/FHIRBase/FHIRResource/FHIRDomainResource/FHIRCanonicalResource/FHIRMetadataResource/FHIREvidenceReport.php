@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -89,7 +89,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\SourceXMLNamespaceTrait;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportRelatesTo;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportSection;
@@ -167,10 +166,10 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_SUBJECT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -254,7 +253,8 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Citation Resource or display of suggested citation for this report.
+     * Citation Resource or display of suggested citation for this report. (choose any
+     * one of citeAs*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $citeAsReference;
@@ -267,7 +267,8 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Citation Resource or display of suggested citation for this report.
+     * Citation Resource or display of suggested citation for this report. (choose any
+     * one of citeAs*, but only one)
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $citeAsMarkdown;
@@ -825,7 +826,8 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Citation Resource or display of suggested citation for this report.
+     * Citation Resource or display of suggested citation for this report. (choose any
+     * one of citeAs*, but only one)
      */
     public function getCiteAsReference(): null|FHIRReference
     {
@@ -837,7 +839,8 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Citation Resource or display of suggested citation for this report.
+     * Citation Resource or display of suggested citation for this report. (choose any
+     * one of citeAs*, but only one)
      */
     public function setCiteAsReference(null|FHIRReference $citeAsReference): self
     {
@@ -858,7 +861,8 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Citation Resource or display of suggested citation for this report.
+     * Citation Resource or display of suggested citation for this report. (choose any
+     * one of citeAs*, but only one)
      */
     public function getCiteAsMarkdown(): null|FHIRMarkdown
     {
@@ -874,7 +878,8 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Citation Resource or display of suggested citation for this report.
+     * Citation Resource or display of suggested citation for this report. (choose any
+     * one of citeAs*, but only one)
      */
     public function setCiteAsMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $citeAsMarkdown): self
     {
@@ -1577,7 +1582,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1891,7 +1896,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
             || isset($decoded->_url)
             || property_exists($decoded, self::FIELD_URL)
             || property_exists($decoded, self::FIELD_URL_EXT)) {
-            $v = $decoded->_url ?? new \stdClass();
+            $v = isset($decoded->_url) ? clone $decoded->_url : new \stdClass();
             $v->value = $decoded->url ?? null;
             $type->setUrl(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -1899,7 +1904,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRPublicationStatus::jsonUnserialize($v, $config));
         }
@@ -1947,7 +1952,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
             || isset($decoded->_citeAsMarkdown)
             || property_exists($decoded, self::FIELD_CITE_AS_MARKDOWN)
             || property_exists($decoded, self::FIELD_CITE_AS_MARKDOWN_EXT)) {
-            $v = $decoded->_citeAsMarkdown ?? new \stdClass();
+            $v = isset($decoded->_citeAsMarkdown) ? clone $decoded->_citeAsMarkdown : new \stdClass();
             $v->value = $decoded->citeAsMarkdown ?? null;
             $type->setCiteAsMarkdown(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -1991,7 +1996,7 @@ class FHIREvidenceReport extends FHIRMetadataResource implements VersionContaine
             || isset($decoded->_publisher)
             || property_exists($decoded, self::FIELD_PUBLISHER)
             || property_exists($decoded, self::FIELD_PUBLISHER_EXT)) {
-            $v = $decoded->_publisher ?? new \stdClass();
+            $v = isset($decoded->_publisher) ? clone $decoded->_publisher : new \stdClass();
             $v->value = $decoded->publisher ?? null;
             $type->setPublisher(FHIRString::jsonUnserialize($v, $config));
         }

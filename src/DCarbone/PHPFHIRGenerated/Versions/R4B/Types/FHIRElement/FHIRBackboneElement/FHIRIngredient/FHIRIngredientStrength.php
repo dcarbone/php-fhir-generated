@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -875,7 +875,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
             || isset($decoded->_textPresentation)
             || property_exists($decoded, self::FIELD_TEXT_PRESENTATION)
             || property_exists($decoded, self::FIELD_TEXT_PRESENTATION_EXT)) {
-            $v = $decoded->_textPresentation ?? new \stdClass();
+            $v = isset($decoded->_textPresentation) ? clone $decoded->_textPresentation : new \stdClass();
             $v->value = $decoded->textPresentation ?? null;
             $type->setTextPresentation(FHIRString::jsonUnserialize($v, $config));
         }
@@ -897,7 +897,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
             || isset($decoded->_textConcentration)
             || property_exists($decoded, self::FIELD_TEXT_CONCENTRATION)
             || property_exists($decoded, self::FIELD_TEXT_CONCENTRATION_EXT)) {
-            $v = $decoded->_textConcentration ?? new \stdClass();
+            $v = isset($decoded->_textConcentration) ? clone $decoded->_textConcentration : new \stdClass();
             $v->value = $decoded->textConcentration ?? null;
             $type->setTextConcentration(FHIRString::jsonUnserialize($v, $config));
         }
@@ -905,7 +905,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
             || isset($decoded->_measurementPoint)
             || property_exists($decoded, self::FIELD_MEASUREMENT_POINT)
             || property_exists($decoded, self::FIELD_MEASUREMENT_POINT_EXT)) {
-            $v = $decoded->_measurementPoint ?? new \stdClass();
+            $v = isset($decoded->_measurementPoint) ? clone $decoded->_measurementPoint : new \stdClass();
             $v->value = $decoded->measurementPoint ?? null;
             $type->setMeasurementPoint(FHIRString::jsonUnserialize($v, $config));
         }

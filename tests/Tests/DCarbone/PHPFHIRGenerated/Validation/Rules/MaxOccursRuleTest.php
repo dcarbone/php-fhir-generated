@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Validation\Rules;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,5 +81,15 @@ class MaxOccursRuleTest extends TestCase
         $rule = new MaxOccursRule();
         $err = $rule->assert($type, 'stuff', 2, $type->getStuff());
         $this->assertNotNull($err);
+    }
+
+    public function testZeroMaximumProhibitsSingleValue()
+    {
+        $type = new MockResourceType(name: 'mock');
+        $rule = new MaxOccursRule();
+        $this->assertNull($rule->assert($type, 'stuff', 0, null));
+        $this->assertNull($rule->assert($type, 'stuff', 0, []));
+        $this->assertNotNull($rule->assert($type, 'stuff', 0, new MockStringPrimitiveType(value: 'x')));
+        $this->assertNotNull($rule->assert($type, 'stuff', 0, [new MockStringPrimitiveType(value: 'x')]));
     }
 }

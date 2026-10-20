@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -538,7 +538,7 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
             || isset($decoded->_classifierCopyright)
             || property_exists($decoded, self::FIELD_CLASSIFIER_COPYRIGHT)
             || property_exists($decoded, self::FIELD_CLASSIFIER_COPYRIGHT_EXT)) {
-            $v = $decoded->_classifierCopyright ?? new \stdClass();
+            $v = isset($decoded->_classifierCopyright) ? clone $decoded->_classifierCopyright : new \stdClass();
             $v->value = $decoded->classifierCopyright ?? null;
             $type->setClassifierCopyright(FHIRString::jsonUnserialize($v, $config));
         }
@@ -546,7 +546,7 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
             || isset($decoded->_freeToShare)
             || property_exists($decoded, self::FIELD_FREE_TO_SHARE)
             || property_exists($decoded, self::FIELD_FREE_TO_SHARE_EXT)) {
-            $v = $decoded->_freeToShare ?? new \stdClass();
+            $v = isset($decoded->_freeToShare) ? clone $decoded->_freeToShare : new \stdClass();
             $v->value = $decoded->freeToShare ?? null;
             $type->setFreeToShare(FHIRBoolean::jsonUnserialize($v, $config));
         }

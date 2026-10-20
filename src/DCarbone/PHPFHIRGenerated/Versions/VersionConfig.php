@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -58,6 +58,11 @@ class VersionConfig implements VersionConfigInterface
                 libxmlOpts: $config['libxmlOpts'] ?? null,
                 jsonDecodeMaxDepth: $config['jsonDecodeMaxDepth'] ?? null,
                 jsonDecodeOpts: $config['jsonDecodeOpts'] ?? null,
+                profileResolution: $config['profileResolution'] ?? null,
+                onUnknownProfile: $config['onUnknownProfile'] ?? null,
+                onAmbiguousProfile: $config['onAmbiguousProfile'] ?? null,
+                onProfileVersionMismatch: $config['onProfileVersionMismatch'] ?? null,
+                onProfileViolation: $config['onProfileViolation'] ?? null,
             );
         }
         $this->_unserializeConfig = $config;

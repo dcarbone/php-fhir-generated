@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept;
@@ -127,12 +126,6 @@ class FHIRAdverseEventContributingFactor extends FHIRBackboneElement
 
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
-        self::FIELD_ITEM_REFERENCE => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_ITEM_CODEABLE_CONCEPT => [
-            MinOccursRule::NAME => 1,
-        ],
     ];
 
     /* class_default.php:96 */
@@ -146,7 +139,7 @@ class FHIRAdverseEventContributingFactor extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The item that is suspected to have increased the probability or severity of the
-     * adverse event.
+     * adverse event. (choose any one of item*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $itemReference;
@@ -157,7 +150,7 @@ class FHIRAdverseEventContributingFactor extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The item that is suspected to have increased the probability or severity of the
-     * adverse event.
+     * adverse event. (choose any one of item*, but only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $itemCodeableConcept;
@@ -201,7 +194,7 @@ class FHIRAdverseEventContributingFactor extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The item that is suspected to have increased the probability or severity of the
-     * adverse event.
+     * adverse event. (choose any one of item*, but only one)
      */
     public function getItemReference(): null|FHIRReference
     {
@@ -214,7 +207,7 @@ class FHIRAdverseEventContributingFactor extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The item that is suspected to have increased the probability or severity of the
-     * adverse event.
+     * adverse event. (choose any one of item*, but only one)
      */
     public function setItemReference(null|FHIRReference $itemReference): self
     {
@@ -233,7 +226,7 @@ class FHIRAdverseEventContributingFactor extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The item that is suspected to have increased the probability or severity of the
-     * adverse event.
+     * adverse event. (choose any one of item*, but only one)
      */
     public function getItemCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -247,7 +240,7 @@ class FHIRAdverseEventContributingFactor extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The item that is suspected to have increased the probability or severity of the
-     * adverse event.
+     * adverse event. (choose any one of item*, but only one)
      */
     public function setItemCodeableConcept(null|FHIRCodeableConcept $itemCodeableConcept): self
     {

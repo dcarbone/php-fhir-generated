@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -63,7 +63,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive;
  */
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueOneOfRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
@@ -83,36 +82,36 @@ class FHIRIssueTypeList extends FHIRCodePrimitive
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
-            ValueOneOfRule::NAME => [
-                0 => 'invalid',
-                1 => 'structure',
-                2 => 'required',
-                3 => 'value',
-                4 => 'invariant',
-                5 => 'security',
-                6 => 'login',
-                7 => 'unknown',
-                8 => 'expired',
-                9 => 'forbidden',
-                10 => 'suppressed',
-                11 => 'processing',
-                12 => 'not-supported',
-                13 => 'duplicate',
-                14 => 'not-found',
-                15 => 'too-long',
-                16 => 'code-invalid',
-                17 => 'extension',
-                18 => 'too-costly',
-                19 => 'business-rule',
-                20 => 'conflict',
-                21 => 'incomplete',
-                22 => 'transient',
-                23 => 'lock-error',
-                24 => 'no-store',
-                25 => 'exception',
-                26 => 'timeout',
-                27 => 'throttled',
-                28 => 'informational',
+            'value_one_of' => [
+                'invalid',
+                'structure',
+                'required',
+                'value',
+                'invariant',
+                'security',
+                'login',
+                'unknown',
+                'expired',
+                'forbidden',
+                'suppressed',
+                'processing',
+                'not-supported',
+                'duplicate',
+                'not-found',
+                'too-long',
+                'code-invalid',
+                'extension',
+                'too-costly',
+                'business-rule',
+                'conflict',
+                'incomplete',
+                'transient',
+                'lock-error',
+                'no-store',
+                'exception',
+                'timeout',
+                'throttled',
+                'informational',
             ],
         ],
     ];

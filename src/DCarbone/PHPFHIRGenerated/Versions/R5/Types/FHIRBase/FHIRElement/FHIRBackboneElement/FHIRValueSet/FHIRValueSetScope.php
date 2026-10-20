@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -364,7 +364,7 @@ class FHIRValueSetScope extends FHIRBackboneElement
             || isset($decoded->_inclusionCriteria)
             || property_exists($decoded, self::FIELD_INCLUSION_CRITERIA)
             || property_exists($decoded, self::FIELD_INCLUSION_CRITERIA_EXT)) {
-            $v = $decoded->_inclusionCriteria ?? new \stdClass();
+            $v = isset($decoded->_inclusionCriteria) ? clone $decoded->_inclusionCriteria : new \stdClass();
             $v->value = $decoded->inclusionCriteria ?? null;
             $type->setInclusionCriteria(FHIRString::jsonUnserialize($v, $config));
         }
@@ -372,7 +372,7 @@ class FHIRValueSetScope extends FHIRBackboneElement
             || isset($decoded->_exclusionCriteria)
             || property_exists($decoded, self::FIELD_EXCLUSION_CRITERIA)
             || property_exists($decoded, self::FIELD_EXCLUSION_CRITERIA_EXT)) {
-            $v = $decoded->_exclusionCriteria ?? new \stdClass();
+            $v = isset($decoded->_exclusionCriteria) ? clone $decoded->_exclusionCriteria : new \stdClass();
             $v->value = $decoded->exclusionCriteria ?? null;
             $type->setExclusionCriteria(FHIRString::jsonUnserialize($v, $config));
         }

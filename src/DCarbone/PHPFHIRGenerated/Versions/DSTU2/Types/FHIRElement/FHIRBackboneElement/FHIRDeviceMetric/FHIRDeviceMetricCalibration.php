@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDeviceMetricCalibrationState;
@@ -105,7 +104,7 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
-            ValuePatternMatchRule::NAME => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
+            'value_pattern_match' => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
         ],
     ];
 
@@ -418,7 +417,7 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
             || isset($decoded->_type)
             || property_exists($decoded, self::FIELD_TYPE)
             || property_exists($decoded, self::FIELD_TYPE_EXT)) {
-            $v = $decoded->_type ?? new \stdClass();
+            $v = isset($decoded->_type) ? clone $decoded->_type : new \stdClass();
             $v->value = $decoded->type ?? null;
             $type->setType(FHIRDeviceMetricCalibrationType::jsonUnserialize($v, $config));
         }
@@ -426,7 +425,7 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
             || isset($decoded->_state)
             || property_exists($decoded, self::FIELD_STATE)
             || property_exists($decoded, self::FIELD_STATE_EXT)) {
-            $v = $decoded->_state ?? new \stdClass();
+            $v = isset($decoded->_state) ? clone $decoded->_state : new \stdClass();
             $v->value = $decoded->state ?? null;
             $type->setState(FHIRDeviceMetricCalibrationState::jsonUnserialize($v, $config));
         }
@@ -434,7 +433,7 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
             || isset($decoded->_time)
             || property_exists($decoded, self::FIELD_TIME)
             || property_exists($decoded, self::FIELD_TIME_EXT)) {
-            $v = $decoded->_time ?? new \stdClass();
+            $v = isset($decoded->_time) ? clone $decoded->_time : new \stdClass();
             $v->value = $decoded->time ?? null;
             $type->setTime(FHIRInstant::jsonUnserialize($v, $config));
         }

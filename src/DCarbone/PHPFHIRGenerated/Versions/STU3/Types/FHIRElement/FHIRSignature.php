@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBase64BinaryPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive;
@@ -114,16 +113,16 @@ class FHIRSignature extends FHIRElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_WHEN => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_WHO_URI => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_WHO_REFERENCE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -793,7 +792,7 @@ class FHIRSignature extends FHIRElement
             || isset($decoded->_when)
             || property_exists($decoded, self::FIELD_WHEN)
             || property_exists($decoded, self::FIELD_WHEN_EXT)) {
-            $v = $decoded->_when ?? new \stdClass();
+            $v = isset($decoded->_when) ? clone $decoded->_when : new \stdClass();
             $v->value = $decoded->when ?? null;
             $type->setWhen(FHIRInstant::jsonUnserialize($v, $config));
         }
@@ -801,7 +800,7 @@ class FHIRSignature extends FHIRElement
             || isset($decoded->_whoUri)
             || property_exists($decoded, self::FIELD_WHO_URI)
             || property_exists($decoded, self::FIELD_WHO_URI_EXT)) {
-            $v = $decoded->_whoUri ?? new \stdClass();
+            $v = isset($decoded->_whoUri) ? clone $decoded->_whoUri : new \stdClass();
             $v->value = $decoded->whoUri ?? null;
             $type->setWhoUri(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -816,7 +815,7 @@ class FHIRSignature extends FHIRElement
             || isset($decoded->_onBehalfOfUri)
             || property_exists($decoded, self::FIELD_ON_BEHALF_OF_URI)
             || property_exists($decoded, self::FIELD_ON_BEHALF_OF_URI_EXT)) {
-            $v = $decoded->_onBehalfOfUri ?? new \stdClass();
+            $v = isset($decoded->_onBehalfOfUri) ? clone $decoded->_onBehalfOfUri : new \stdClass();
             $v->value = $decoded->onBehalfOfUri ?? null;
             $type->setOnBehalfOfUri(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -831,7 +830,7 @@ class FHIRSignature extends FHIRElement
             || isset($decoded->_contentType)
             || property_exists($decoded, self::FIELD_CONTENT_TYPE)
             || property_exists($decoded, self::FIELD_CONTENT_TYPE_EXT)) {
-            $v = $decoded->_contentType ?? new \stdClass();
+            $v = isset($decoded->_contentType) ? clone $decoded->_contentType : new \stdClass();
             $v->value = $decoded->contentType ?? null;
             $type->setContentType(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -839,7 +838,7 @@ class FHIRSignature extends FHIRElement
             || isset($decoded->_blob)
             || property_exists($decoded, self::FIELD_BLOB)
             || property_exists($decoded, self::FIELD_BLOB_EXT)) {
-            $v = $decoded->_blob ?? new \stdClass();
+            $v = isset($decoded->_blob) ? clone $decoded->_blob : new \stdClass();
             $v->value = $decoded->blob ?? null;
             $type->setBlob(FHIRBase64Binary::jsonUnserialize($v, $config));
         }

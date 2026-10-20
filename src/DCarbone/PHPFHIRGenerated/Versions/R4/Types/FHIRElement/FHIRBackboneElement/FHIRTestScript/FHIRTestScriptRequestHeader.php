@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
@@ -99,10 +98,10 @@ class FHIRTestScriptRequestHeader extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_FIELD => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -349,7 +348,7 @@ class FHIRTestScriptRequestHeader extends FHIRBackboneElement
             || isset($decoded->_field)
             || property_exists($decoded, self::FIELD_FIELD)
             || property_exists($decoded, self::FIELD_FIELD_EXT)) {
-            $v = $decoded->_field ?? new \stdClass();
+            $v = isset($decoded->_field) ? clone $decoded->_field : new \stdClass();
             $v->value = $decoded->field ?? null;
             $type->setField(FHIRString::jsonUnserialize($v, $config));
         }
@@ -357,7 +356,7 @@ class FHIRTestScriptRequestHeader extends FHIRBackboneElement
             || isset($decoded->_value)
             || property_exists($decoded, self::FIELD_VALUE)
             || property_exists($decoded, self::FIELD_VALUE_EXT)) {
-            $v = $decoded->_value ?? new \stdClass();
+            $v = isset($decoded->_value) ? clone $decoded->_value : new \stdClass();
             $v->value = $decoded->value ?? null;
             $type->setValue(FHIRString::jsonUnserialize($v, $config));
         }

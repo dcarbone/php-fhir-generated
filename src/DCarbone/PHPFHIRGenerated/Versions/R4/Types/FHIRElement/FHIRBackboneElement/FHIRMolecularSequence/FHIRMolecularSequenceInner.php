@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -351,7 +351,7 @@ class FHIRMolecularSequenceInner extends FHIRBackboneElement
             || isset($decoded->_start)
             || property_exists($decoded, self::FIELD_START)
             || property_exists($decoded, self::FIELD_START_EXT)) {
-            $v = $decoded->_start ?? new \stdClass();
+            $v = isset($decoded->_start) ? clone $decoded->_start : new \stdClass();
             $v->value = $decoded->start ?? null;
             $type->setStart(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -359,7 +359,7 @@ class FHIRMolecularSequenceInner extends FHIRBackboneElement
             || isset($decoded->_end)
             || property_exists($decoded, self::FIELD_END)
             || property_exists($decoded, self::FIELD_END_EXT)) {
-            $v = $decoded->_end ?? new \stdClass();
+            $v = isset($decoded->_end) ? clone $decoded->_end : new \stdClass();
             $v->value = $decoded->end ?? null;
             $type->setEnd(FHIRInteger::jsonUnserialize($v, $config));
         }

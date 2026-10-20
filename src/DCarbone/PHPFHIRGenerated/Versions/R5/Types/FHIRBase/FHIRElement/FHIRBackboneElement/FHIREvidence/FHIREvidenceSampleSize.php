@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -604,7 +604,7 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -623,7 +623,7 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
             || isset($decoded->_numberOfStudies)
             || property_exists($decoded, self::FIELD_NUMBER_OF_STUDIES)
             || property_exists($decoded, self::FIELD_NUMBER_OF_STUDIES_EXT)) {
-            $v = $decoded->_numberOfStudies ?? new \stdClass();
+            $v = isset($decoded->_numberOfStudies) ? clone $decoded->_numberOfStudies : new \stdClass();
             $v->value = $decoded->numberOfStudies ?? null;
             $type->setNumberOfStudies(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
@@ -631,7 +631,7 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
             || isset($decoded->_numberOfParticipants)
             || property_exists($decoded, self::FIELD_NUMBER_OF_PARTICIPANTS)
             || property_exists($decoded, self::FIELD_NUMBER_OF_PARTICIPANTS_EXT)) {
-            $v = $decoded->_numberOfParticipants ?? new \stdClass();
+            $v = isset($decoded->_numberOfParticipants) ? clone $decoded->_numberOfParticipants : new \stdClass();
             $v->value = $decoded->numberOfParticipants ?? null;
             $type->setNumberOfParticipants(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
@@ -639,7 +639,7 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
             || isset($decoded->_knownDataCount)
             || property_exists($decoded, self::FIELD_KNOWN_DATA_COUNT)
             || property_exists($decoded, self::FIELD_KNOWN_DATA_COUNT_EXT)) {
-            $v = $decoded->_knownDataCount ?? new \stdClass();
+            $v = isset($decoded->_knownDataCount) ? clone $decoded->_knownDataCount : new \stdClass();
             $v->value = $decoded->knownDataCount ?? null;
             $type->setKnownDataCount(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }

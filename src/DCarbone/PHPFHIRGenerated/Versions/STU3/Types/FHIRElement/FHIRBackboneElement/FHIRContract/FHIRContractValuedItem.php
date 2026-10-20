@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -793,7 +793,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
             || isset($decoded->_effectiveTime)
             || property_exists($decoded, self::FIELD_EFFECTIVE_TIME)
             || property_exists($decoded, self::FIELD_EFFECTIVE_TIME_EXT)) {
-            $v = $decoded->_effectiveTime ?? new \stdClass();
+            $v = isset($decoded->_effectiveTime) ? clone $decoded->_effectiveTime : new \stdClass();
             $v->value = $decoded->effectiveTime ?? null;
             $type->setEffectiveTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -815,7 +815,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
             || isset($decoded->_factor)
             || property_exists($decoded, self::FIELD_FACTOR)
             || property_exists($decoded, self::FIELD_FACTOR_EXT)) {
-            $v = $decoded->_factor ?? new \stdClass();
+            $v = isset($decoded->_factor) ? clone $decoded->_factor : new \stdClass();
             $v->value = $decoded->factor ?? null;
             $type->setFactor(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -823,7 +823,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
             || isset($decoded->_points)
             || property_exists($decoded, self::FIELD_POINTS)
             || property_exists($decoded, self::FIELD_POINTS_EXT)) {
-            $v = $decoded->_points ?? new \stdClass();
+            $v = isset($decoded->_points) ? clone $decoded->_points : new \stdClass();
             $v->value = $decoded->points ?? null;
             $type->setPoints(FHIRDecimal::jsonUnserialize($v, $config));
         }

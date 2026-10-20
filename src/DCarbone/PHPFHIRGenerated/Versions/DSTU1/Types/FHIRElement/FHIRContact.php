@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -63,7 +63,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive;
@@ -100,7 +99,7 @@ class FHIRContact extends FHIRElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
-            ValuePatternMatchRule::NAME => '/^[a-z0-9\\-\\.]{1,36}$/',
+            'value_pattern_match' => '/^[a-z0-9\\-\\.]{1,36}$/',
         ],
     ];
 
@@ -454,7 +453,7 @@ class FHIRContact extends FHIRElement
             || isset($decoded->_system)
             || property_exists($decoded, self::FIELD_SYSTEM)
             || property_exists($decoded, self::FIELD_SYSTEM_EXT)) {
-            $v = $decoded->_system ?? new \stdClass();
+            $v = isset($decoded->_system) ? clone $decoded->_system : new \stdClass();
             $v->value = $decoded->system ?? null;
             $type->setSystem(FHIRContactSystem::jsonUnserialize($v, $config));
         }
@@ -462,7 +461,7 @@ class FHIRContact extends FHIRElement
             || isset($decoded->_value)
             || property_exists($decoded, self::FIELD_VALUE)
             || property_exists($decoded, self::FIELD_VALUE_EXT)) {
-            $v = $decoded->_value ?? new \stdClass();
+            $v = isset($decoded->_value) ? clone $decoded->_value : new \stdClass();
             $v->value = $decoded->value ?? null;
             $type->setValue(FHIRString::jsonUnserialize($v, $config));
         }
@@ -470,7 +469,7 @@ class FHIRContact extends FHIRElement
             || isset($decoded->_use)
             || property_exists($decoded, self::FIELD_USE)
             || property_exists($decoded, self::FIELD_USE_EXT)) {
-            $v = $decoded->_use ?? new \stdClass();
+            $v = isset($decoded->_use) ? clone $decoded->_use : new \stdClass();
             $v->value = $decoded->use ?? null;
             $type->setUse(FHIRContactUse::jsonUnserialize($v, $config));
         }

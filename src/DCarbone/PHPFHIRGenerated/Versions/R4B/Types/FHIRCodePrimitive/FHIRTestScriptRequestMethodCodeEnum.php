@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -83,9 +83,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
  */
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMinLengthRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueOneOfRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
@@ -104,16 +101,16 @@ class FHIRTestScriptRequestMethodCodeEnum extends FHIRCodePrimitive
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
-            ValuePatternMatchRule::NAME => '/^[^\\s]+(\\s[^\\s]+)*$/',
-            ValueMinLengthRule::NAME => 1,
-            ValueOneOfRule::NAME => [
-                0 => 'delete',
-                1 => 'get',
-                2 => 'options',
-                3 => 'patch',
-                4 => 'post',
-                5 => 'put',
-                6 => 'head',
+            'value_pattern_match' => '/^[^\\s]+(\\s[^\\s]+)*$/',
+            'value_min_length' => 1,
+            'value_one_of' => [
+                'delete',
+                'get',
+                'options',
+                'patch',
+                'post',
+                'put',
+                'head',
             ],
         ],
     ];

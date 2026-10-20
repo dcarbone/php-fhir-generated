@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseError;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseEvent;
@@ -168,25 +167,25 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_PURPOSE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_PATIENT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_CREATED => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_REQUEST => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_OUTCOME => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_INSURER => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -260,7 +259,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      */
     #[FHIRDate]
     protected FHIRDate $servicedDate;
@@ -270,7 +269,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      */
     #[FHIRPeriod]
     protected FHIRPeriod $servicedPeriod;
@@ -744,7 +743,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      */
     public function getServicedDate(): null|FHIRDate
     {
@@ -758,7 +757,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      */
     public function setServicedDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $servicedDate): self
     {
@@ -779,7 +778,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      */
     public function getServicedPeriod(): null|FHIRPeriod
     {
@@ -792,7 +791,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      */
     public function setServicedPeriod(null|FHIRPeriod $servicedPeriod): self
     {
@@ -1215,7 +1214,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1538,7 +1537,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRFinancialResourceStatusCodes::jsonUnserialize($v, $config));
         }
@@ -1554,7 +1553,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addPurpose(FHIREligibilityResponsePurpose::jsonUnserialize($v, $config));
             }
@@ -1581,7 +1580,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
             || isset($decoded->_servicedDate)
             || property_exists($decoded, self::FIELD_SERVICED_DATE)
             || property_exists($decoded, self::FIELD_SERVICED_DATE_EXT)) {
-            $v = $decoded->_servicedDate ?? new \stdClass();
+            $v = isset($decoded->_servicedDate) ? clone $decoded->_servicedDate : new \stdClass();
             $v->value = $decoded->servicedDate ?? null;
             $type->setServicedDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -1596,7 +1595,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
             || isset($decoded->_created)
             || property_exists($decoded, self::FIELD_CREATED)
             || property_exists($decoded, self::FIELD_CREATED_EXT)) {
-            $v = $decoded->_created ?? new \stdClass();
+            $v = isset($decoded->_created) ? clone $decoded->_created : new \stdClass();
             $v->value = $decoded->created ?? null;
             $type->setCreated(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1618,7 +1617,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
             || isset($decoded->_outcome)
             || property_exists($decoded, self::FIELD_OUTCOME)
             || property_exists($decoded, self::FIELD_OUTCOME_EXT)) {
-            $v = $decoded->_outcome ?? new \stdClass();
+            $v = isset($decoded->_outcome) ? clone $decoded->_outcome : new \stdClass();
             $v->value = $decoded->outcome ?? null;
             $type->setOutcome(FHIREligibilityOutcome::jsonUnserialize($v, $config));
         }
@@ -1626,7 +1625,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
             || isset($decoded->_disposition)
             || property_exists($decoded, self::FIELD_DISPOSITION)
             || property_exists($decoded, self::FIELD_DISPOSITION_EXT)) {
-            $v = $decoded->_disposition ?? new \stdClass();
+            $v = isset($decoded->_disposition) ? clone $decoded->_disposition : new \stdClass();
             $v->value = $decoded->disposition ?? null;
             $type->setDisposition(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1652,7 +1651,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
             || isset($decoded->_preAuthRef)
             || property_exists($decoded, self::FIELD_PRE_AUTH_REF)
             || property_exists($decoded, self::FIELD_PRE_AUTH_REF_EXT)) {
-            $v = $decoded->_preAuthRef ?? new \stdClass();
+            $v = isset($decoded->_preAuthRef) ? clone $decoded->_preAuthRef : new \stdClass();
             $v->value = $decoded->preAuthRef ?? null;
             $type->setPreAuthRef(FHIRString::jsonUnserialize($v, $config));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -1208,7 +1208,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1457,7 +1457,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
             || isset($decoded->_organismName)
             || property_exists($decoded, self::FIELD_ORGANISM_NAME)
             || property_exists($decoded, self::FIELD_ORGANISM_NAME_EXT)) {
-            $v = $decoded->_organismName ?? new \stdClass();
+            $v = isset($decoded->_organismName) ? clone $decoded->_organismName : new \stdClass();
             $v->value = $decoded->organismName ?? null;
             $type->setOrganismName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1484,7 +1484,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addParentSubstanceName(FHIRString::jsonUnserialize($v, $config));
             }
@@ -1512,7 +1512,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addGeographicalLocation(FHIRString::jsonUnserialize($v, $config));
             }

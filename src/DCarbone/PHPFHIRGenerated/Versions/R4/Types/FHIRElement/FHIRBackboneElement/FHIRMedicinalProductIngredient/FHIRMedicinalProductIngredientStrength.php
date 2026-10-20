@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
@@ -104,7 +103,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_PRESENTATION => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -695,7 +694,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
             || isset($decoded->_measurementPoint)
             || property_exists($decoded, self::FIELD_MEASUREMENT_POINT)
             || property_exists($decoded, self::FIELD_MEASUREMENT_POINT_EXT)) {
-            $v = $decoded->_measurementPoint ?? new \stdClass();
+            $v = isset($decoded->_measurementPoint) ? clone $decoded->_measurementPoint : new \stdClass();
             $v->value = $decoded->measurementPoint ?? null;
             $type->setMeasurementPoint(FHIRString::jsonUnserialize($v, $config));
         }

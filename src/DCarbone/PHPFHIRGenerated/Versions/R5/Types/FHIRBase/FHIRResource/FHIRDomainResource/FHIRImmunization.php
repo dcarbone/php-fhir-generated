@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationPerformer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationProgramEligibility;
@@ -181,19 +180,13 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VACCINE_CODE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_PATIENT => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_OCCURRENCE_DATE_TIME => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_OCCURRENCE_STRING => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -347,7 +340,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Date vaccine administered or was to be administered.
+     * Date vaccine administered or was to be administered. (choose any one of
+     * occurrence*, but only one)
      */
     #[FHIRDateTime]
     protected FHIRDateTime $occurrenceDateTime;
@@ -356,7 +350,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Date vaccine administered or was to be administered.
+     * Date vaccine administered or was to be administered. (choose any one of
+     * occurrence*, but only one)
      */
     #[FHIRString]
     protected FHIRString $occurrenceString;
@@ -1185,7 +1180,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Date vaccine administered or was to be administered.
+     * Date vaccine administered or was to be administered. (choose any one of
+     * occurrence*, but only one)
      */
     public function getOccurrenceDateTime(): null|FHIRDateTime
     {
@@ -1201,7 +1197,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Date vaccine administered or was to be administered.
+     * Date vaccine administered or was to be administered. (choose any one of
+     * occurrence*, but only one)
      */
     public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime): self
     {
@@ -1221,7 +1218,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Date vaccine administered or was to be administered.
+     * Date vaccine administered or was to be administered. (choose any one of
+     * occurrence*, but only one)
      */
     public function getOccurrenceString(): null|FHIRString
     {
@@ -1233,7 +1231,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Date vaccine administered or was to be administered.
+     * Date vaccine administered or was to be administered. (choose any one of
+     * occurrence*, but only one)
      */
     public function setOccurrenceString(null|string|FHIRStringPrimitive|FHIRString $occurrenceString): self
     {
@@ -1974,7 +1973,7 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -2415,7 +2414,7 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRImmunizationStatusCodes::jsonUnserialize($v, $config));
         }
@@ -2451,7 +2450,7 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_lotNumber)
             || property_exists($decoded, self::FIELD_LOT_NUMBER)
             || property_exists($decoded, self::FIELD_LOT_NUMBER_EXT)) {
-            $v = $decoded->_lotNumber ?? new \stdClass();
+            $v = isset($decoded->_lotNumber) ? clone $decoded->_lotNumber : new \stdClass();
             $v->value = $decoded->lotNumber ?? null;
             $type->setLotNumber(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2459,7 +2458,7 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_expirationDate)
             || property_exists($decoded, self::FIELD_EXPIRATION_DATE)
             || property_exists($decoded, self::FIELD_EXPIRATION_DATE_EXT)) {
-            $v = $decoded->_expirationDate ?? new \stdClass();
+            $v = isset($decoded->_expirationDate) ? clone $decoded->_expirationDate : new \stdClass();
             $v->value = $decoded->expirationDate ?? null;
             $type->setExpirationDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -2492,7 +2491,7 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_occurrenceDateTime)
             || property_exists($decoded, self::FIELD_OCCURRENCE_DATE_TIME)
             || property_exists($decoded, self::FIELD_OCCURRENCE_DATE_TIME_EXT)) {
-            $v = $decoded->_occurrenceDateTime ?? new \stdClass();
+            $v = isset($decoded->_occurrenceDateTime) ? clone $decoded->_occurrenceDateTime : new \stdClass();
             $v->value = $decoded->occurrenceDateTime ?? null;
             $type->setOccurrenceDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -2500,7 +2499,7 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_occurrenceString)
             || property_exists($decoded, self::FIELD_OCCURRENCE_STRING)
             || property_exists($decoded, self::FIELD_OCCURRENCE_STRING_EXT)) {
-            $v = $decoded->_occurrenceString ?? new \stdClass();
+            $v = isset($decoded->_occurrenceString) ? clone $decoded->_occurrenceString : new \stdClass();
             $v->value = $decoded->occurrenceString ?? null;
             $type->setOccurrenceString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2508,7 +2507,7 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_primarySource)
             || property_exists($decoded, self::FIELD_PRIMARY_SOURCE)
             || property_exists($decoded, self::FIELD_PRIMARY_SOURCE_EXT)) {
-            $v = $decoded->_primarySource ?? new \stdClass();
+            $v = isset($decoded->_primarySource) ? clone $decoded->_primarySource : new \stdClass();
             $v->value = $decoded->primarySource ?? null;
             $type->setPrimarySource(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -2584,7 +2583,7 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_isSubpotent)
             || property_exists($decoded, self::FIELD_IS_SUBPOTENT)
             || property_exists($decoded, self::FIELD_IS_SUBPOTENT_EXT)) {
-            $v = $decoded->_isSubpotent ?? new \stdClass();
+            $v = isset($decoded->_isSubpotent) ? clone $decoded->_isSubpotent : new \stdClass();
             $v->value = $decoded->isSubpotent ?? null;
             $type->setIsSubpotent(FHIRBoolean::jsonUnserialize($v, $config));
         }

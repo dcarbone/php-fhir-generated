@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -63,7 +63,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive;
@@ -141,13 +140,13 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_SUBJECT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_CODE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1294,7 +1293,7 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1651,7 +1650,7 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
             || isset($decoded->_dateAsserted)
             || property_exists($decoded, self::FIELD_DATE_ASSERTED)
             || property_exists($decoded, self::FIELD_DATE_ASSERTED_EXT)) {
-            $v = $decoded->_dateAsserted ?? new \stdClass();
+            $v = isset($decoded->_dateAsserted) ? clone $decoded->_dateAsserted : new \stdClass();
             $v->value = $decoded->dateAsserted ?? null;
             $type->setDateAsserted(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -1673,7 +1672,7 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRConditionStatus::jsonUnserialize($v, $config));
         }
@@ -1695,7 +1694,7 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
             || isset($decoded->_onsetDate)
             || property_exists($decoded, self::FIELD_ONSET_DATE)
             || property_exists($decoded, self::FIELD_ONSET_DATE_EXT)) {
-            $v = $decoded->_onsetDate ?? new \stdClass();
+            $v = isset($decoded->_onsetDate) ? clone $decoded->_onsetDate : new \stdClass();
             $v->value = $decoded->onsetDate ?? null;
             $type->setOnsetDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -1710,7 +1709,7 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
             || isset($decoded->_abatementDate)
             || property_exists($decoded, self::FIELD_ABATEMENT_DATE)
             || property_exists($decoded, self::FIELD_ABATEMENT_DATE_EXT)) {
-            $v = $decoded->_abatementDate ?? new \stdClass();
+            $v = isset($decoded->_abatementDate) ? clone $decoded->_abatementDate : new \stdClass();
             $v->value = $decoded->abatementDate ?? null;
             $type->setAbatementDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -1725,7 +1724,7 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
             || isset($decoded->_abatementBoolean)
             || property_exists($decoded, self::FIELD_ABATEMENT_BOOLEAN)
             || property_exists($decoded, self::FIELD_ABATEMENT_BOOLEAN_EXT)) {
-            $v = $decoded->_abatementBoolean ?? new \stdClass();
+            $v = isset($decoded->_abatementBoolean) ? clone $decoded->_abatementBoolean : new \stdClass();
             $v->value = $decoded->abatementBoolean ?? null;
             $type->setAbatementBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1773,7 +1772,7 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
             || isset($decoded->_notes)
             || property_exists($decoded, self::FIELD_NOTES)
             || property_exists($decoded, self::FIELD_NOTES_EXT)) {
-            $v = $decoded->_notes ?? new \stdClass();
+            $v = isset($decoded->_notes) ? clone $decoded->_notes : new \stdClass();
             $v->value = $decoded->notes ?? null;
             $type->setNotes(FHIRString::jsonUnserialize($v, $config));
         }

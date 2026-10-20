@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -144,7 +144,7 @@ class FHIREvidenceVariableCategory extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Definition of the grouping.
+     * Definition of the grouping. (choose any one of value*, but only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
@@ -155,7 +155,7 @@ class FHIREvidenceVariableCategory extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Definition of the grouping.
+     * Definition of the grouping. (choose any one of value*, but only one)
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -164,7 +164,7 @@ class FHIREvidenceVariableCategory extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Definition of the grouping.
+     * Definition of the grouping. (choose any one of value*, but only one)
      */
     #[FHIRRange]
     protected FHIRRange $valueRange;
@@ -248,7 +248,7 @@ class FHIREvidenceVariableCategory extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Definition of the grouping.
+     * Definition of the grouping. (choose any one of value*, but only one)
      */
     public function getValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -261,7 +261,7 @@ class FHIREvidenceVariableCategory extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Definition of the grouping.
+     * Definition of the grouping. (choose any one of value*, but only one)
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -280,7 +280,7 @@ class FHIREvidenceVariableCategory extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Definition of the grouping.
+     * Definition of the grouping. (choose any one of value*, but only one)
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -294,7 +294,7 @@ class FHIREvidenceVariableCategory extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Definition of the grouping.
+     * Definition of the grouping. (choose any one of value*, but only one)
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -311,7 +311,7 @@ class FHIREvidenceVariableCategory extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Definition of the grouping.
+     * Definition of the grouping. (choose any one of value*, but only one)
      */
     public function getValueRange(): null|FHIRRange
     {
@@ -323,7 +323,7 @@ class FHIREvidenceVariableCategory extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Definition of the grouping.
+     * Definition of the grouping. (choose any one of value*, but only one)
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -456,7 +456,7 @@ class FHIREvidenceVariableCategory extends FHIRBackboneElement
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }

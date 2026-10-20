@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -601,7 +601,7 @@ class FHIRConceptMapElement extends FHIRBackboneElement
             || isset($decoded->_code)
             || property_exists($decoded, self::FIELD_CODE)
             || property_exists($decoded, self::FIELD_CODE_EXT)) {
-            $v = $decoded->_code ?? new \stdClass();
+            $v = isset($decoded->_code) ? clone $decoded->_code : new \stdClass();
             $v->value = $decoded->code ?? null;
             $type->setCode(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -609,7 +609,7 @@ class FHIRConceptMapElement extends FHIRBackboneElement
             || isset($decoded->_display)
             || property_exists($decoded, self::FIELD_DISPLAY)
             || property_exists($decoded, self::FIELD_DISPLAY_EXT)) {
-            $v = $decoded->_display ?? new \stdClass();
+            $v = isset($decoded->_display) ? clone $decoded->_display : new \stdClass();
             $v->value = $decoded->display ?? null;
             $type->setDisplay(FHIRString::jsonUnserialize($v, $config));
         }
@@ -617,7 +617,7 @@ class FHIRConceptMapElement extends FHIRBackboneElement
             || isset($decoded->_valueSet)
             || property_exists($decoded, self::FIELD_VALUE_SET)
             || property_exists($decoded, self::FIELD_VALUE_SET_EXT)) {
-            $v = $decoded->_valueSet ?? new \stdClass();
+            $v = isset($decoded->_valueSet) ? clone $decoded->_valueSet : new \stdClass();
             $v->value = $decoded->valueSet ?? null;
             $type->setValueSet(FHIRCanonical::jsonUnserialize($v, $config));
         }
@@ -625,7 +625,7 @@ class FHIRConceptMapElement extends FHIRBackboneElement
             || isset($decoded->_noMap)
             || property_exists($decoded, self::FIELD_NO_MAP)
             || property_exists($decoded, self::FIELD_NO_MAP_EXT)) {
-            $v = $decoded->_noMap ?? new \stdClass();
+            $v = isset($decoded->_noMap) ? clone $decoded->_noMap : new \stdClass();
             $v->value = $decoded->noMap ?? null;
             $type->setNoMap(FHIRBoolean::jsonUnserialize($v, $config));
         }

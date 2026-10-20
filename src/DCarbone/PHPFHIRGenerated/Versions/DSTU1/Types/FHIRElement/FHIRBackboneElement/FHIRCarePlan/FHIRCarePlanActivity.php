@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -63,8 +63,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement;
@@ -109,13 +107,13 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
-            ValuePatternMatchRule::NAME => '/^[a-z0-9\\-\\.]{1,36}$/',
+            'value_pattern_match' => '/^[a-z0-9\\-\\.]{1,36}$/',
         ],
         self::FIELD_GOAL => [
-            ValuePatternMatchRule::NAME => '/^[a-z0-9\\-\\.]{1,36}$/',
+            'value_pattern_match' => '/^[a-z0-9\\-\\.]{1,36}$/',
         ],
         self::FIELD_PROHIBITED => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -701,7 +699,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRCarePlanActivityStatus::jsonUnserialize($v, $config));
         }
@@ -709,7 +707,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
             || isset($decoded->_prohibited)
             || property_exists($decoded, self::FIELD_PROHIBITED)
             || property_exists($decoded, self::FIELD_PROHIBITED_EXT)) {
-            $v = $decoded->_prohibited ?? new \stdClass();
+            $v = isset($decoded->_prohibited) ? clone $decoded->_prohibited : new \stdClass();
             $v->value = $decoded->prohibited ?? null;
             $type->setProhibited(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -728,7 +726,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
             || isset($decoded->_notes)
             || property_exists($decoded, self::FIELD_NOTES)
             || property_exists($decoded, self::FIELD_NOTES_EXT)) {
-            $v = $decoded->_notes ?? new \stdClass();
+            $v = isset($decoded->_notes) ? clone $decoded->_notes : new \stdClass();
             $v->value = $decoded->notes ?? null;
             $type->setNotes(FHIRString::jsonUnserialize($v, $config));
         }

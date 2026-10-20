@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -171,7 +171,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * can be specified. When a low value is missing, it indicates that the goal is
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
-     * low value.
+     * low value. (choose any one of detail*, but only one)
      */
     #[FHIRQuantity]
     protected FHIRQuantity $detailQuantity;
@@ -186,7 +186,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * can be specified. When a low value is missing, it indicates that the goal is
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
-     * low value.
+     * low value. (choose any one of detail*, but only one)
      */
     #[FHIRRange]
     protected FHIRRange $detailRange;
@@ -202,7 +202,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * can be specified. When a low value is missing, it indicates that the goal is
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
-     * low value.
+     * low value. (choose any one of detail*, but only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $detailCodeableConcept;
@@ -217,7 +217,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * can be specified. When a low value is missing, it indicates that the goal is
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
-     * low value.
+     * low value. (choose any one of detail*, but only one)
      */
     #[FHIRString]
     protected FHIRString $detailString;
@@ -231,7 +231,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * can be specified. When a low value is missing, it indicates that the goal is
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
-     * low value.
+     * low value. (choose any one of detail*, but only one)
      */
     #[FHIRBoolean]
     protected FHIRBoolean $detailBoolean;
@@ -246,7 +246,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * can be specified. When a low value is missing, it indicates that the goal is
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
-     * low value.
+     * low value. (choose any one of detail*, but only one)
      */
     #[FHIRInteger]
     protected FHIRInteger $detailInteger;
@@ -262,7 +262,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * can be specified. When a low value is missing, it indicates that the goal is
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
-     * low value.
+     * low value. (choose any one of detail*, but only one)
      */
     #[FHIRRatio]
     protected FHIRRatio $detailRatio;
@@ -384,7 +384,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * can be specified. When a low value is missing, it indicates that the goal is
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
-     * low value.
+     * low value. (choose any one of detail*, but only one)
      */
     public function getDetailQuantity(): null|FHIRQuantity
     {
@@ -404,7 +404,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * can be specified. When a low value is missing, it indicates that the goal is
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
-     * low value.
+     * low value. (choose any one of detail*, but only one)
      */
     public function setDetailQuantity(null|FHIRQuantity $detailQuantity): self
     {
@@ -427,7 +427,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * can be specified. When a low value is missing, it indicates that the goal is
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
-     * low value.
+     * low value. (choose any one of detail*, but only one)
      */
     public function getDetailRange(): null|FHIRRange
     {
@@ -445,7 +445,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * can be specified. When a low value is missing, it indicates that the goal is
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
-     * low value.
+     * low value. (choose any one of detail*, but only one)
      */
     public function setDetailRange(null|FHIRRange $detailRange): self
     {
@@ -469,7 +469,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * can be specified. When a low value is missing, it indicates that the goal is
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
-     * low value.
+     * low value. (choose any one of detail*, but only one)
      */
     public function getDetailCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -488,7 +488,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * can be specified. When a low value is missing, it indicates that the goal is
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
-     * low value.
+     * low value. (choose any one of detail*, but only one)
      */
     public function setDetailCodeableConcept(null|FHIRCodeableConcept $detailCodeableConcept): self
     {
@@ -511,7 +511,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * can be specified. When a low value is missing, it indicates that the goal is
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
-     * low value.
+     * low value. (choose any one of detail*, but only one)
      */
     public function getDetailString(): null|FHIRString
     {
@@ -529,7 +529,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * can be specified. When a low value is missing, it indicates that the goal is
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
-     * low value.
+     * low value. (choose any one of detail*, but only one)
      */
     public function setDetailString(null|string|FHIRStringPrimitive|FHIRString $detailString): self
     {
@@ -554,7 +554,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * can be specified. When a low value is missing, it indicates that the goal is
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
-     * low value.
+     * low value. (choose any one of detail*, but only one)
      */
     public function getDetailBoolean(): null|FHIRBoolean
     {
@@ -571,7 +571,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * can be specified. When a low value is missing, it indicates that the goal is
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
-     * low value.
+     * low value. (choose any one of detail*, but only one)
      */
     public function setDetailBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $detailBoolean): self
     {
@@ -597,7 +597,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * can be specified. When a low value is missing, it indicates that the goal is
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
-     * low value.
+     * low value. (choose any one of detail*, but only one)
      */
     public function getDetailInteger(): null|FHIRInteger
     {
@@ -615,7 +615,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * can be specified. When a low value is missing, it indicates that the goal is
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
-     * low value.
+     * low value. (choose any one of detail*, but only one)
      */
     public function setDetailInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $detailInteger): self
     {
@@ -642,7 +642,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * can be specified. When a low value is missing, it indicates that the goal is
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
-     * low value.
+     * low value. (choose any one of detail*, but only one)
      */
     public function getDetailRatio(): null|FHIRRatio
     {
@@ -661,7 +661,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * can be specified. When a low value is missing, it indicates that the goal is
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
-     * low value.
+     * low value. (choose any one of detail*, but only one)
      */
     public function setDetailRatio(null|FHIRRatio $detailRatio): self
     {
@@ -914,7 +914,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
             || isset($decoded->_detailString)
             || property_exists($decoded, self::FIELD_DETAIL_STRING)
             || property_exists($decoded, self::FIELD_DETAIL_STRING_EXT)) {
-            $v = $decoded->_detailString ?? new \stdClass();
+            $v = isset($decoded->_detailString) ? clone $decoded->_detailString : new \stdClass();
             $v->value = $decoded->detailString ?? null;
             $type->setDetailString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -922,7 +922,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
             || isset($decoded->_detailBoolean)
             || property_exists($decoded, self::FIELD_DETAIL_BOOLEAN)
             || property_exists($decoded, self::FIELD_DETAIL_BOOLEAN_EXT)) {
-            $v = $decoded->_detailBoolean ?? new \stdClass();
+            $v = isset($decoded->_detailBoolean) ? clone $decoded->_detailBoolean : new \stdClass();
             $v->value = $decoded->detailBoolean ?? null;
             $type->setDetailBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -930,7 +930,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
             || isset($decoded->_detailInteger)
             || property_exists($decoded, self::FIELD_DETAIL_INTEGER)
             || property_exists($decoded, self::FIELD_DETAIL_INTEGER_EXT)) {
-            $v = $decoded->_detailInteger ?? new \stdClass();
+            $v = isset($decoded->_detailInteger) ? clone $decoded->_detailInteger : new \stdClass();
             $v->value = $decoded->detailInteger ?? null;
             $type->setDetailInteger(FHIRInteger::jsonUnserialize($v, $config));
         }

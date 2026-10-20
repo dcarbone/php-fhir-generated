@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive;
@@ -139,16 +138,16 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_DEFINITION_CODEABLE_CONCEPT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_DEFINITION_CANONICAL => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_DEFINITION_EXPRESSION => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_DEFINITION_DATA_REQUIREMENT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1572,7 +1571,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             || isset($decoded->_definitionCanonical)
             || property_exists($decoded, self::FIELD_DEFINITION_CANONICAL)
             || property_exists($decoded, self::FIELD_DEFINITION_CANONICAL_EXT)) {
-            $v = $decoded->_definitionCanonical ?? new \stdClass();
+            $v = isset($decoded->_definitionCanonical) ? clone $decoded->_definitionCanonical : new \stdClass();
             $v->value = $decoded->definitionCanonical ?? null;
             $type->setDefinitionCanonical(FHIRCanonical::jsonUnserialize($v, $config));
         }
@@ -1605,7 +1604,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             || isset($decoded->_exclude)
             || property_exists($decoded, self::FIELD_EXCLUDE)
             || property_exists($decoded, self::FIELD_EXCLUDE_EXT)) {
-            $v = $decoded->_exclude ?? new \stdClass();
+            $v = isset($decoded->_exclude) ? clone $decoded->_exclude : new \stdClass();
             $v->value = $decoded->exclude ?? null;
             $type->setExclude(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1620,7 +1619,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             || isset($decoded->_studyEffectiveDescription)
             || property_exists($decoded, self::FIELD_STUDY_EFFECTIVE_DESCRIPTION)
             || property_exists($decoded, self::FIELD_STUDY_EFFECTIVE_DESCRIPTION_EXT)) {
-            $v = $decoded->_studyEffectiveDescription ?? new \stdClass();
+            $v = isset($decoded->_studyEffectiveDescription) ? clone $decoded->_studyEffectiveDescription : new \stdClass();
             $v->value = $decoded->studyEffectiveDescription ?? null;
             $type->setStudyEffectiveDescription(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1628,7 +1627,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             || isset($decoded->_studyEffectiveDateTime)
             || property_exists($decoded, self::FIELD_STUDY_EFFECTIVE_DATE_TIME)
             || property_exists($decoded, self::FIELD_STUDY_EFFECTIVE_DATE_TIME_EXT)) {
-            $v = $decoded->_studyEffectiveDateTime ?? new \stdClass();
+            $v = isset($decoded->_studyEffectiveDateTime) ? clone $decoded->_studyEffectiveDateTime : new \stdClass();
             $v->value = $decoded->studyEffectiveDateTime ?? null;
             $type->setStudyEffectiveDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1664,7 +1663,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             || isset($decoded->_studyEffectiveGroupMeasure)
             || property_exists($decoded, self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE)
             || property_exists($decoded, self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE_EXT)) {
-            $v = $decoded->_studyEffectiveGroupMeasure ?? new \stdClass();
+            $v = isset($decoded->_studyEffectiveGroupMeasure) ? clone $decoded->_studyEffectiveGroupMeasure : new \stdClass();
             $v->value = $decoded->studyEffectiveGroupMeasure ?? null;
             $type->setStudyEffectiveGroupMeasure(FHIRGroupMeasure::jsonUnserialize($v, $config));
         }
@@ -1672,7 +1671,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             || isset($decoded->_participantEffectiveDescription)
             || property_exists($decoded, self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION)
             || property_exists($decoded, self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION_EXT)) {
-            $v = $decoded->_participantEffectiveDescription ?? new \stdClass();
+            $v = isset($decoded->_participantEffectiveDescription) ? clone $decoded->_participantEffectiveDescription : new \stdClass();
             $v->value = $decoded->participantEffectiveDescription ?? null;
             $type->setParticipantEffectiveDescription(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1680,7 +1679,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             || isset($decoded->_participantEffectiveDateTime)
             || property_exists($decoded, self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME)
             || property_exists($decoded, self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME_EXT)) {
-            $v = $decoded->_participantEffectiveDateTime ?? new \stdClass();
+            $v = isset($decoded->_participantEffectiveDateTime) ? clone $decoded->_participantEffectiveDateTime : new \stdClass();
             $v->value = $decoded->participantEffectiveDateTime ?? null;
             $type->setParticipantEffectiveDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1716,7 +1715,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             || isset($decoded->_participantEffectiveGroupMeasure)
             || property_exists($decoded, self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE)
             || property_exists($decoded, self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE_EXT)) {
-            $v = $decoded->_participantEffectiveGroupMeasure ?? new \stdClass();
+            $v = isset($decoded->_participantEffectiveGroupMeasure) ? clone $decoded->_participantEffectiveGroupMeasure : new \stdClass();
             $v->value = $decoded->participantEffectiveGroupMeasure ?? null;
             $type->setParticipantEffectiveGroupMeasure(FHIRGroupMeasure::jsonUnserialize($v, $config));
         }

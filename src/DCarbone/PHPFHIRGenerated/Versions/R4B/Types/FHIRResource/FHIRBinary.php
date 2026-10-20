@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBase64BinaryPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
@@ -131,7 +130,7 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_CONTENT_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -517,7 +516,7 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
             || isset($decoded->_contentType)
             || property_exists($decoded, self::FIELD_CONTENT_TYPE)
             || property_exists($decoded, self::FIELD_CONTENT_TYPE_EXT)) {
-            $v = $decoded->_contentType ?? new \stdClass();
+            $v = isset($decoded->_contentType) ? clone $decoded->_contentType : new \stdClass();
             $v->value = $decoded->contentType ?? null;
             $type->setContentType(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -532,7 +531,7 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
             || isset($decoded->_data)
             || property_exists($decoded, self::FIELD_DATA)
             || property_exists($decoded, self::FIELD_DATA_EXT)) {
-            $v = $decoded->_data ?? new \stdClass();
+            $v = isset($decoded->_data) ? clone $decoded->_data : new \stdClass();
             $v->value = $decoded->data ?? null;
             $type->setData(FHIRBase64Binary::jsonUnserialize($v, $config));
         }

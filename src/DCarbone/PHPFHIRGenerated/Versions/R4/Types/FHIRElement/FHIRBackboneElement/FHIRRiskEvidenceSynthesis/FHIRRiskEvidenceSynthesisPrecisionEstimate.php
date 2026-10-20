@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -482,7 +482,7 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
             || isset($decoded->_level)
             || property_exists($decoded, self::FIELD_LEVEL)
             || property_exists($decoded, self::FIELD_LEVEL_EXT)) {
-            $v = $decoded->_level ?? new \stdClass();
+            $v = isset($decoded->_level) ? clone $decoded->_level : new \stdClass();
             $v->value = $decoded->level ?? null;
             $type->setLevel(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -490,7 +490,7 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
             || isset($decoded->_from)
             || property_exists($decoded, self::FIELD_FROM)
             || property_exists($decoded, self::FIELD_FROM_EXT)) {
-            $v = $decoded->_from ?? new \stdClass();
+            $v = isset($decoded->_from) ? clone $decoded->_from : new \stdClass();
             $v->value = $decoded->from ?? null;
             $type->setFrom(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -498,7 +498,7 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
             || isset($decoded->_to)
             || property_exists($decoded, self::FIELD_TO)
             || property_exists($decoded, self::FIELD_TO_EXT)) {
-            $v = $decoded->_to ?? new \stdClass();
+            $v = isset($decoded->_to) ? clone $decoded->_to : new \stdClass();
             $v->value = $decoded->to ?? null;
             $type->setTo(FHIRDecimal::jsonUnserialize($v, $config));
         }

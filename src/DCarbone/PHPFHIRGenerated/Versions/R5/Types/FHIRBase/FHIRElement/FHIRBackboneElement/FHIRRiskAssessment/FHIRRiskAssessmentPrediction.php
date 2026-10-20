@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -156,7 +156,8 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Indicates how likely the outcome is (in the specified timeframe).
+     * Indicates how likely the outcome is (in the specified timeframe). (choose any
+     * one of probability*, but only one)
      */
     #[FHIRDecimal]
     protected FHIRDecimal $probabilityDecimal;
@@ -165,7 +166,8 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Indicates how likely the outcome is (in the specified timeframe).
+     * Indicates how likely the outcome is (in the specified timeframe). (choose any
+     * one of probability*, but only one)
      */
     #[FHIRRange]
     protected FHIRRange $probabilityRange;
@@ -199,7 +201,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the period of time or age range of the subject to which the specified
-     * probability applies.
+     * probability applies. (choose any one of when*, but only one)
      */
     #[FHIRPeriod]
     protected FHIRPeriod $whenPeriod;
@@ -209,7 +211,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the period of time or age range of the subject to which the specified
-     * probability applies.
+     * probability applies. (choose any one of when*, but only one)
      */
     #[FHIRRange]
     protected FHIRRange $whenRange;
@@ -319,7 +321,8 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Indicates how likely the outcome is (in the specified timeframe).
+     * Indicates how likely the outcome is (in the specified timeframe). (choose any
+     * one of probability*, but only one)
      */
     public function getProbabilityDecimal(): null|FHIRDecimal
     {
@@ -332,7 +335,8 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Indicates how likely the outcome is (in the specified timeframe).
+     * Indicates how likely the outcome is (in the specified timeframe). (choose any
+     * one of probability*, but only one)
      */
     public function setProbabilityDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $probabilityDecimal): self
     {
@@ -352,7 +356,8 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Indicates how likely the outcome is (in the specified timeframe).
+     * Indicates how likely the outcome is (in the specified timeframe). (choose any
+     * one of probability*, but only one)
      */
     public function getProbabilityRange(): null|FHIRRange
     {
@@ -364,7 +369,8 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Indicates how likely the outcome is (in the specified timeframe).
+     * Indicates how likely the outcome is (in the specified timeframe). (choose any
+     * one of probability*, but only one)
      */
     public function setProbabilityRange(null|FHIRRange $probabilityRange): self
     {
@@ -455,7 +461,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the period of time or age range of the subject to which the specified
-     * probability applies.
+     * probability applies. (choose any one of when*, but only one)
      */
     public function getWhenPeriod(): null|FHIRPeriod
     {
@@ -468,7 +474,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the period of time or age range of the subject to which the specified
-     * probability applies.
+     * probability applies. (choose any one of when*, but only one)
      */
     public function setWhenPeriod(null|FHIRPeriod $whenPeriod): self
     {
@@ -486,7 +492,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the period of time or age range of the subject to which the specified
-     * probability applies.
+     * probability applies. (choose any one of when*, but only one)
      */
     public function getWhenRange(): null|FHIRRange
     {
@@ -499,7 +505,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the period of time or age range of the subject to which the specified
-     * probability applies.
+     * probability applies. (choose any one of when*, but only one)
      */
     public function setWhenRange(null|FHIRRange $whenRange): self
     {
@@ -725,7 +731,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
             || isset($decoded->_probabilityDecimal)
             || property_exists($decoded, self::FIELD_PROBABILITY_DECIMAL)
             || property_exists($decoded, self::FIELD_PROBABILITY_DECIMAL_EXT)) {
-            $v = $decoded->_probabilityDecimal ?? new \stdClass();
+            $v = isset($decoded->_probabilityDecimal) ? clone $decoded->_probabilityDecimal : new \stdClass();
             $v->value = $decoded->probabilityDecimal ?? null;
             $type->setProbabilityDecimal(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -747,7 +753,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
             || isset($decoded->_relativeRisk)
             || property_exists($decoded, self::FIELD_RELATIVE_RISK)
             || property_exists($decoded, self::FIELD_RELATIVE_RISK_EXT)) {
-            $v = $decoded->_relativeRisk ?? new \stdClass();
+            $v = isset($decoded->_relativeRisk) ? clone $decoded->_relativeRisk : new \stdClass();
             $v->value = $decoded->relativeRisk ?? null;
             $type->setRelativeRisk(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -769,7 +775,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
             || isset($decoded->_rationale)
             || property_exists($decoded, self::FIELD_RATIONALE)
             || property_exists($decoded, self::FIELD_RATIONALE_EXT)) {
-            $v = $decoded->_rationale ?? new \stdClass();
+            $v = isset($decoded->_rationale) ? clone $decoded->_rationale : new \stdClass();
             $v->value = $decoded->rationale ?? null;
             $type->setRationale(FHIRString::jsonUnserialize($v, $config));
         }

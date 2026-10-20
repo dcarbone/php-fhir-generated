@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -83,9 +83,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
  */
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMinLengthRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueOneOfRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -104,21 +101,21 @@ class FHIRAssertionOperatorTypeEnum extends FHIRCodePrimitive
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
-            ValuePatternMatchRule::NAME => '/^[^\\s]+( [^\\s]+)*$/',
-            ValueMinLengthRule::NAME => 1,
-            ValueOneOfRule::NAME => [
-                0 => 'equals',
-                1 => 'notEquals',
-                2 => 'in',
-                3 => 'notIn',
-                4 => 'greaterThan',
-                5 => 'lessThan',
-                6 => 'empty',
-                7 => 'notEmpty',
-                8 => 'contains',
-                9 => 'notContains',
-                10 => 'eval',
-                11 => 'manualEval',
+            'value_pattern_match' => '/^[^\\s]+( [^\\s]+)*$/',
+            'value_min_length' => 1,
+            'value_one_of' => [
+                'equals',
+                'notEquals',
+                'in',
+                'notIn',
+                'greaterThan',
+                'lessThan',
+                'empty',
+                'notEmpty',
+                'contains',
+                'notContains',
+                'eval',
+                'manualEval',
             ],
         ],
     ];

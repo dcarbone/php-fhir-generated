@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -626,7 +626,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
             || isset($decoded->_amountString)
             || property_exists($decoded, self::FIELD_AMOUNT_STRING)
             || property_exists($decoded, self::FIELD_AMOUNT_STRING_EXT)) {
-            $v = $decoded->_amountString ?? new \stdClass();
+            $v = isset($decoded->_amountString) ? clone $decoded->_amountString : new \stdClass();
             $v->value = $decoded->amountString ?? null;
             $type->setAmountString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -641,7 +641,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
             || isset($decoded->_amountText)
             || property_exists($decoded, self::FIELD_AMOUNT_TEXT)
             || property_exists($decoded, self::FIELD_AMOUNT_TEXT_EXT)) {
-            $v = $decoded->_amountText ?? new \stdClass();
+            $v = isset($decoded->_amountText) ? clone $decoded->_amountText : new \stdClass();
             $v->value = $decoded->amountText ?? null;
             $type->setAmountText(FHIRString::jsonUnserialize($v, $config));
         }

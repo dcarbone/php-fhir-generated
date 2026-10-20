@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -89,7 +89,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\SourceXMLNamespaceTrait;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation;
@@ -207,19 +206,19 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_DATE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_KIND => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_FHIR_VERSION => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_FORMAT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -292,7 +291,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current.
+     * current. (choose any one of versionAlgorithm*, but only one)
      */
     #[FHIRString]
     protected FHIRString $versionAlgorithmString;
@@ -302,7 +301,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current.
+     * current. (choose any one of versionAlgorithm*, but only one)
      */
     #[FHIRCoding]
     protected FHIRCoding $versionAlgorithmCoding;
@@ -969,7 +968,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current.
+     * current. (choose any one of versionAlgorithm*, but only one)
      */
     public function getVersionAlgorithmString(): null|FHIRString
     {
@@ -982,7 +981,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current.
+     * current. (choose any one of versionAlgorithm*, but only one)
      */
     public function setVersionAlgorithmString(null|string|FHIRStringPrimitive|FHIRString $versionAlgorithmString): self
     {
@@ -1003,7 +1002,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current.
+     * current. (choose any one of versionAlgorithm*, but only one)
      */
     public function getVersionAlgorithmCoding(): null|FHIRCoding
     {
@@ -1016,7 +1015,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current.
+     * current. (choose any one of versionAlgorithm*, but only one)
      */
     public function setVersionAlgorithmCoding(null|FHIRCoding $versionAlgorithmCoding): self
     {
@@ -2432,7 +2431,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -2975,7 +2974,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
             || isset($decoded->_url)
             || property_exists($decoded, self::FIELD_URL)
             || property_exists($decoded, self::FIELD_URL_EXT)) {
-            $v = $decoded->_url ?? new \stdClass();
+            $v = isset($decoded->_url) ? clone $decoded->_url : new \stdClass();
             $v->value = $decoded->url ?? null;
             $type->setUrl(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -2994,7 +2993,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
             || isset($decoded->_version)
             || property_exists($decoded, self::FIELD_VERSION)
             || property_exists($decoded, self::FIELD_VERSION_EXT)) {
-            $v = $decoded->_version ?? new \stdClass();
+            $v = isset($decoded->_version) ? clone $decoded->_version : new \stdClass();
             $v->value = $decoded->version ?? null;
             $type->setVersion(FHIRString::jsonUnserialize($v, $config));
         }
@@ -3002,7 +3001,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
             || isset($decoded->_versionAlgorithmString)
             || property_exists($decoded, self::FIELD_VERSION_ALGORITHM_STRING)
             || property_exists($decoded, self::FIELD_VERSION_ALGORITHM_STRING_EXT)) {
-            $v = $decoded->_versionAlgorithmString ?? new \stdClass();
+            $v = isset($decoded->_versionAlgorithmString) ? clone $decoded->_versionAlgorithmString : new \stdClass();
             $v->value = $decoded->versionAlgorithmString ?? null;
             $type->setVersionAlgorithmString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -3017,7 +3016,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -3025,7 +3024,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
             || isset($decoded->_title)
             || property_exists($decoded, self::FIELD_TITLE)
             || property_exists($decoded, self::FIELD_TITLE_EXT)) {
-            $v = $decoded->_title ?? new \stdClass();
+            $v = isset($decoded->_title) ? clone $decoded->_title : new \stdClass();
             $v->value = $decoded->title ?? null;
             $type->setTitle(FHIRString::jsonUnserialize($v, $config));
         }
@@ -3033,7 +3032,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRPublicationStatus::jsonUnserialize($v, $config));
         }
@@ -3041,7 +3040,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
             || isset($decoded->_experimental)
             || property_exists($decoded, self::FIELD_EXPERIMENTAL)
             || property_exists($decoded, self::FIELD_EXPERIMENTAL_EXT)) {
-            $v = $decoded->_experimental ?? new \stdClass();
+            $v = isset($decoded->_experimental) ? clone $decoded->_experimental : new \stdClass();
             $v->value = $decoded->experimental ?? null;
             $type->setExperimental(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -3049,7 +3048,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
             || isset($decoded->_date)
             || property_exists($decoded, self::FIELD_DATE)
             || property_exists($decoded, self::FIELD_DATE_EXT)) {
-            $v = $decoded->_date ?? new \stdClass();
+            $v = isset($decoded->_date) ? clone $decoded->_date : new \stdClass();
             $v->value = $decoded->date ?? null;
             $type->setDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -3057,7 +3056,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
             || isset($decoded->_publisher)
             || property_exists($decoded, self::FIELD_PUBLISHER)
             || property_exists($decoded, self::FIELD_PUBLISHER_EXT)) {
-            $v = $decoded->_publisher ?? new \stdClass();
+            $v = isset($decoded->_publisher) ? clone $decoded->_publisher : new \stdClass();
             $v->value = $decoded->publisher ?? null;
             $type->setPublisher(FHIRString::jsonUnserialize($v, $config));
         }
@@ -3076,7 +3075,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -3106,7 +3105,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
             || isset($decoded->_purpose)
             || property_exists($decoded, self::FIELD_PURPOSE)
             || property_exists($decoded, self::FIELD_PURPOSE_EXT)) {
-            $v = $decoded->_purpose ?? new \stdClass();
+            $v = isset($decoded->_purpose) ? clone $decoded->_purpose : new \stdClass();
             $v->value = $decoded->purpose ?? null;
             $type->setPurpose(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -3114,7 +3113,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
             || isset($decoded->_copyright)
             || property_exists($decoded, self::FIELD_COPYRIGHT)
             || property_exists($decoded, self::FIELD_COPYRIGHT_EXT)) {
-            $v = $decoded->_copyright ?? new \stdClass();
+            $v = isset($decoded->_copyright) ? clone $decoded->_copyright : new \stdClass();
             $v->value = $decoded->copyright ?? null;
             $type->setCopyright(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -3122,7 +3121,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
             || isset($decoded->_copyrightLabel)
             || property_exists($decoded, self::FIELD_COPYRIGHT_LABEL)
             || property_exists($decoded, self::FIELD_COPYRIGHT_LABEL_EXT)) {
-            $v = $decoded->_copyrightLabel ?? new \stdClass();
+            $v = isset($decoded->_copyrightLabel) ? clone $decoded->_copyrightLabel : new \stdClass();
             $v->value = $decoded->copyrightLabel ?? null;
             $type->setCopyrightLabel(FHIRString::jsonUnserialize($v, $config));
         }
@@ -3130,7 +3129,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
             || isset($decoded->_kind)
             || property_exists($decoded, self::FIELD_KIND)
             || property_exists($decoded, self::FIELD_KIND_EXT)) {
-            $v = $decoded->_kind ?? new \stdClass();
+            $v = isset($decoded->_kind) ? clone $decoded->_kind : new \stdClass();
             $v->value = $decoded->kind ?? null;
             $type->setKind(FHIRCapabilityStatementKind::jsonUnserialize($v, $config));
         }
@@ -3146,7 +3145,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addInstantiates(FHIRCanonical::jsonUnserialize($v, $config));
             }
@@ -3163,7 +3162,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addImports(FHIRCanonical::jsonUnserialize($v, $config));
             }
@@ -3186,7 +3185,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
             || isset($decoded->_fhirVersion)
             || property_exists($decoded, self::FIELD_FHIR_VERSION)
             || property_exists($decoded, self::FIELD_FHIR_VERSION_EXT)) {
-            $v = $decoded->_fhirVersion ?? new \stdClass();
+            $v = isset($decoded->_fhirVersion) ? clone $decoded->_fhirVersion : new \stdClass();
             $v->value = $decoded->fhirVersion ?? null;
             $type->setFhirVersion(FHIRFHIRVersion::jsonUnserialize($v, $config));
         }
@@ -3202,7 +3201,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addFormat(FHIRCode::jsonUnserialize($v, $config));
             }
@@ -3219,7 +3218,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addPatchFormat(FHIRCode::jsonUnserialize($v, $config));
             }
@@ -3236,7 +3235,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addAcceptLanguage(FHIRCode::jsonUnserialize($v, $config));
             }
@@ -3253,7 +3252,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addImplementationGuide(FHIRCanonical::jsonUnserialize($v, $config));
             }

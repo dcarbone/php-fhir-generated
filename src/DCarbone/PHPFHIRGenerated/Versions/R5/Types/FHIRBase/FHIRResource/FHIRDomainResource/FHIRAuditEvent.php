@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAuditEventAction;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAuditEventSeverity;
@@ -159,16 +158,16 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_CODE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_RECORDED => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_AGENT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_SOURCE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -227,7 +226,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The time or period during which the activity occurred.
+     * The time or period during which the activity occurred. (choose any one of
+     * occurred*, but only one)
      */
     #[FHIRPeriod]
     protected FHIRPeriod $occurredPeriod;
@@ -240,7 +240,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The time or period during which the activity occurred.
+     * The time or period during which the activity occurred. (choose any one of
+     * occurred*, but only one)
      */
     #[FHIRDateTime]
     protected FHIRDateTime $occurredDateTime;
@@ -610,7 +611,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The time or period during which the activity occurred.
+     * The time or period during which the activity occurred. (choose any one of
+     * occurred*, but only one)
      */
     public function getOccurredPeriod(): null|FHIRPeriod
     {
@@ -622,7 +624,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The time or period during which the activity occurred.
+     * The time or period during which the activity occurred. (choose any one of
+     * occurred*, but only one)
      */
     public function setOccurredPeriod(null|FHIRPeriod $occurredPeriod): self
     {
@@ -643,7 +646,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The time or period during which the activity occurred.
+     * The time or period during which the activity occurred. (choose any one of
+     * occurred*, but only one)
      */
     public function getOccurredDateTime(): null|FHIRDateTime
     {
@@ -659,7 +663,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The time or period during which the activity occurred.
+     * The time or period during which the activity occurred. (choose any one of
+     * occurred*, but only one)
      */
     public function setOccurredDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurredDateTime): self
     {
@@ -1111,7 +1116,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1401,7 +1406,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
             || isset($decoded->_action)
             || property_exists($decoded, self::FIELD_ACTION)
             || property_exists($decoded, self::FIELD_ACTION_EXT)) {
-            $v = $decoded->_action ?? new \stdClass();
+            $v = isset($decoded->_action) ? clone $decoded->_action : new \stdClass();
             $v->value = $decoded->action ?? null;
             $type->setAction(FHIRAuditEventAction::jsonUnserialize($v, $config));
         }
@@ -1409,7 +1414,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
             || isset($decoded->_severity)
             || property_exists($decoded, self::FIELD_SEVERITY)
             || property_exists($decoded, self::FIELD_SEVERITY_EXT)) {
-            $v = $decoded->_severity ?? new \stdClass();
+            $v = isset($decoded->_severity) ? clone $decoded->_severity : new \stdClass();
             $v->value = $decoded->severity ?? null;
             $type->setSeverity(FHIRAuditEventSeverity::jsonUnserialize($v, $config));
         }
@@ -1424,7 +1429,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
             || isset($decoded->_occurredDateTime)
             || property_exists($decoded, self::FIELD_OCCURRED_DATE_TIME)
             || property_exists($decoded, self::FIELD_OCCURRED_DATE_TIME_EXT)) {
-            $v = $decoded->_occurredDateTime ?? new \stdClass();
+            $v = isset($decoded->_occurredDateTime) ? clone $decoded->_occurredDateTime : new \stdClass();
             $v->value = $decoded->occurredDateTime ?? null;
             $type->setOccurredDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1432,7 +1437,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
             || isset($decoded->_recorded)
             || property_exists($decoded, self::FIELD_RECORDED)
             || property_exists($decoded, self::FIELD_RECORDED_EXT)) {
-            $v = $decoded->_recorded ?? new \stdClass();
+            $v = isset($decoded->_recorded) ? clone $decoded->_recorded : new \stdClass();
             $v->value = $decoded->recorded ?? null;
             $type->setRecorded(FHIRInstant::jsonUnserialize($v, $config));
         }

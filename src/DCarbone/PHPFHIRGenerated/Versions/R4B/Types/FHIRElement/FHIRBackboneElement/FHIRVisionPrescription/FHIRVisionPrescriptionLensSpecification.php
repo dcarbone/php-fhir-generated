@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRVisionEyesEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive;
@@ -148,10 +147,10 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_PRODUCT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_EYE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1221,7 +1220,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
             || isset($decoded->_eye)
             || property_exists($decoded, self::FIELD_EYE)
             || property_exists($decoded, self::FIELD_EYE_EXT)) {
-            $v = $decoded->_eye ?? new \stdClass();
+            $v = isset($decoded->_eye) ? clone $decoded->_eye : new \stdClass();
             $v->value = $decoded->eye ?? null;
             $type->setEye(FHIRVisionEyes::jsonUnserialize($v, $config));
         }
@@ -1229,7 +1228,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
             || isset($decoded->_sphere)
             || property_exists($decoded, self::FIELD_SPHERE)
             || property_exists($decoded, self::FIELD_SPHERE_EXT)) {
-            $v = $decoded->_sphere ?? new \stdClass();
+            $v = isset($decoded->_sphere) ? clone $decoded->_sphere : new \stdClass();
             $v->value = $decoded->sphere ?? null;
             $type->setSphere(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -1237,7 +1236,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
             || isset($decoded->_cylinder)
             || property_exists($decoded, self::FIELD_CYLINDER)
             || property_exists($decoded, self::FIELD_CYLINDER_EXT)) {
-            $v = $decoded->_cylinder ?? new \stdClass();
+            $v = isset($decoded->_cylinder) ? clone $decoded->_cylinder : new \stdClass();
             $v->value = $decoded->cylinder ?? null;
             $type->setCylinder(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -1245,7 +1244,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
             || isset($decoded->_axis)
             || property_exists($decoded, self::FIELD_AXIS)
             || property_exists($decoded, self::FIELD_AXIS_EXT)) {
-            $v = $decoded->_axis ?? new \stdClass();
+            $v = isset($decoded->_axis) ? clone $decoded->_axis : new \stdClass();
             $v->value = $decoded->axis ?? null;
             $type->setAxis(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -1264,7 +1263,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
             || isset($decoded->_add)
             || property_exists($decoded, self::FIELD_ADD)
             || property_exists($decoded, self::FIELD_ADD_EXT)) {
-            $v = $decoded->_add ?? new \stdClass();
+            $v = isset($decoded->_add) ? clone $decoded->_add : new \stdClass();
             $v->value = $decoded->add ?? null;
             $type->setAdd(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -1272,7 +1271,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
             || isset($decoded->_power)
             || property_exists($decoded, self::FIELD_POWER)
             || property_exists($decoded, self::FIELD_POWER_EXT)) {
-            $v = $decoded->_power ?? new \stdClass();
+            $v = isset($decoded->_power) ? clone $decoded->_power : new \stdClass();
             $v->value = $decoded->power ?? null;
             $type->setPower(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -1280,7 +1279,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
             || isset($decoded->_backCurve)
             || property_exists($decoded, self::FIELD_BACK_CURVE)
             || property_exists($decoded, self::FIELD_BACK_CURVE_EXT)) {
-            $v = $decoded->_backCurve ?? new \stdClass();
+            $v = isset($decoded->_backCurve) ? clone $decoded->_backCurve : new \stdClass();
             $v->value = $decoded->backCurve ?? null;
             $type->setBackCurve(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -1288,7 +1287,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
             || isset($decoded->_diameter)
             || property_exists($decoded, self::FIELD_DIAMETER)
             || property_exists($decoded, self::FIELD_DIAMETER_EXT)) {
-            $v = $decoded->_diameter ?? new \stdClass();
+            $v = isset($decoded->_diameter) ? clone $decoded->_diameter : new \stdClass();
             $v->value = $decoded->diameter ?? null;
             $type->setDiameter(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -1303,7 +1302,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
             || isset($decoded->_color)
             || property_exists($decoded, self::FIELD_COLOR)
             || property_exists($decoded, self::FIELD_COLOR_EXT)) {
-            $v = $decoded->_color ?? new \stdClass();
+            $v = isset($decoded->_color) ? clone $decoded->_color : new \stdClass();
             $v->value = $decoded->color ?? null;
             $type->setColor(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1311,7 +1310,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
             || isset($decoded->_brand)
             || property_exists($decoded, self::FIELD_BRAND)
             || property_exists($decoded, self::FIELD_BRAND_EXT)) {
-            $v = $decoded->_brand ?? new \stdClass();
+            $v = isset($decoded->_brand) ? clone $decoded->_brand : new \stdClass();
             $v->value = $decoded->brand ?? null;
             $type->setBrand(FHIRString::jsonUnserialize($v, $config));
         }

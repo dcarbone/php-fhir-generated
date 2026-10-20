@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -204,7 +204,7 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Quantitative value for this moiety.
+     * Quantitative value for this moiety. (choose any one of amount*, but only one)
      */
     #[FHIRQuantity]
     protected FHIRQuantity $amountQuantity;
@@ -213,7 +213,7 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Quantitative value for this moiety.
+     * Quantitative value for this moiety. (choose any one of amount*, but only one)
      */
     #[FHIRString]
     protected FHIRString $amountString;
@@ -488,7 +488,7 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Quantitative value for this moiety.
+     * Quantitative value for this moiety. (choose any one of amount*, but only one)
      */
     public function getAmountQuantity(): null|FHIRQuantity
     {
@@ -502,7 +502,7 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Quantitative value for this moiety.
+     * Quantitative value for this moiety. (choose any one of amount*, but only one)
      */
     public function setAmountQuantity(null|FHIRQuantity $amountQuantity): self
     {
@@ -519,7 +519,7 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Quantitative value for this moiety.
+     * Quantitative value for this moiety. (choose any one of amount*, but only one)
      */
     public function getAmountString(): null|FHIRString
     {
@@ -531,7 +531,7 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Quantitative value for this moiety.
+     * Quantitative value for this moiety. (choose any one of amount*, but only one)
      */
     public function setAmountString(null|string|FHIRStringPrimitive|FHIRString $amountString): self
     {
@@ -777,7 +777,7 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -799,7 +799,7 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
             || isset($decoded->_molecularFormula)
             || property_exists($decoded, self::FIELD_MOLECULAR_FORMULA)
             || property_exists($decoded, self::FIELD_MOLECULAR_FORMULA_EXT)) {
-            $v = $decoded->_molecularFormula ?? new \stdClass();
+            $v = isset($decoded->_molecularFormula) ? clone $decoded->_molecularFormula : new \stdClass();
             $v->value = $decoded->molecularFormula ?? null;
             $type->setMolecularFormula(FHIRString::jsonUnserialize($v, $config));
         }
@@ -814,7 +814,7 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
             || isset($decoded->_amountString)
             || property_exists($decoded, self::FIELD_AMOUNT_STRING)
             || property_exists($decoded, self::FIELD_AMOUNT_STRING_EXT)) {
-            $v = $decoded->_amountString ?? new \stdClass();
+            $v = isset($decoded->_amountString) ? clone $decoded->_amountString : new \stdClass();
             $v->value = $decoded->amountString ?? null;
             $type->setAmountString(FHIRString::jsonUnserialize($v, $config));
         }

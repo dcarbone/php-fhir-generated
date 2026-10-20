@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -63,7 +63,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive;
  */
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueOneOfRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
@@ -83,20 +82,20 @@ class FHIRGoalStatusList extends FHIRCodePrimitive
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
-            ValueOneOfRule::NAME => [
-                0 => 'proposed',
-                1 => 'accepted',
-                2 => 'planned',
-                3 => 'in-progress',
-                4 => 'on-target',
-                5 => 'ahead-of-target',
-                6 => 'behind-target',
-                7 => 'sustaining',
-                8 => 'achieved',
-                9 => 'on-hold',
-                10 => 'cancelled',
-                11 => 'entered-in-error',
-                12 => 'rejected',
+            'value_one_of' => [
+                'proposed',
+                'accepted',
+                'planned',
+                'in-progress',
+                'on-target',
+                'ahead-of-target',
+                'behind-target',
+                'sustaining',
+                'achieved',
+                'on-hold',
+                'cancelled',
+                'entered-in-error',
+                'rejected',
             ],
         ],
     ];

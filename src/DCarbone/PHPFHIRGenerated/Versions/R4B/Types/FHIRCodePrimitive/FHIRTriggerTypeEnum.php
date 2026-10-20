@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -83,9 +83,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
  */
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMinLengthRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueOneOfRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\VersionConstants;
@@ -104,17 +101,17 @@ class FHIRTriggerTypeEnum extends FHIRCodePrimitive
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
-            ValuePatternMatchRule::NAME => '/^[^\\s]+(\\s[^\\s]+)*$/',
-            ValueMinLengthRule::NAME => 1,
-            ValueOneOfRule::NAME => [
-                0 => 'named-event',
-                1 => 'periodic',
-                2 => 'data-changed',
-                3 => 'data-added',
-                4 => 'data-modified',
-                5 => 'data-removed',
-                6 => 'data-accessed',
-                7 => 'data-access-ended',
+            'value_pattern_match' => '/^[^\\s]+(\\s[^\\s]+)*$/',
+            'value_min_length' => 1,
+            'value_one_of' => [
+                'named-event',
+                'periodic',
+                'data-changed',
+                'data-added',
+                'data-modified',
+                'data-removed',
+                'data-accessed',
+                'data-access-ended',
             ],
         ],
     ];

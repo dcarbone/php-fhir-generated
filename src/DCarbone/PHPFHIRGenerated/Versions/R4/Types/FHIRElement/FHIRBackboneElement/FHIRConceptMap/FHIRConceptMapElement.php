@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -435,7 +435,7 @@ class FHIRConceptMapElement extends FHIRBackboneElement
             || isset($decoded->_code)
             || property_exists($decoded, self::FIELD_CODE)
             || property_exists($decoded, self::FIELD_CODE_EXT)) {
-            $v = $decoded->_code ?? new \stdClass();
+            $v = isset($decoded->_code) ? clone $decoded->_code : new \stdClass();
             $v->value = $decoded->code ?? null;
             $type->setCode(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -443,7 +443,7 @@ class FHIRConceptMapElement extends FHIRBackboneElement
             || isset($decoded->_display)
             || property_exists($decoded, self::FIELD_DISPLAY)
             || property_exists($decoded, self::FIELD_DISPLAY_EXT)) {
-            $v = $decoded->_display ?? new \stdClass();
+            $v = isset($decoded->_display) ? clone $decoded->_display : new \stdClass();
             $v->value = $decoded->display ?? null;
             $type->setDisplay(FHIRString::jsonUnserialize($v, $config));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive;
@@ -141,7 +140,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_SEQUENCE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -2142,7 +2141,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
             || isset($decoded->_sequence)
             || property_exists($decoded, self::FIELD_SEQUENCE)
             || property_exists($decoded, self::FIELD_SEQUENCE_EXT)) {
-            $v = $decoded->_sequence ?? new \stdClass();
+            $v = isset($decoded->_sequence) ? clone $decoded->_sequence : new \stdClass();
             $v->value = $decoded->sequence ?? null;
             $type->setSequence(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
@@ -2158,7 +2157,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addCareTeamLinkId(FHIRPositiveInt::jsonUnserialize($v, $config));
             }
@@ -2175,7 +2174,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addDiagnosisLinkId(FHIRPositiveInt::jsonUnserialize($v, $config));
             }
@@ -2192,7 +2191,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addProcedureLinkId(FHIRPositiveInt::jsonUnserialize($v, $config));
             }
@@ -2209,7 +2208,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addInformationLinkId(FHIRPositiveInt::jsonUnserialize($v, $config));
             }
@@ -2261,7 +2260,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
             || isset($decoded->_servicedDate)
             || property_exists($decoded, self::FIELD_SERVICED_DATE)
             || property_exists($decoded, self::FIELD_SERVICED_DATE_EXT)) {
-            $v = $decoded->_servicedDate ?? new \stdClass();
+            $v = isset($decoded->_servicedDate) ? clone $decoded->_servicedDate : new \stdClass();
             $v->value = $decoded->servicedDate ?? null;
             $type->setServicedDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -2311,7 +2310,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
             || isset($decoded->_factor)
             || property_exists($decoded, self::FIELD_FACTOR)
             || property_exists($decoded, self::FIELD_FACTOR_EXT)) {
-            $v = $decoded->_factor ?? new \stdClass();
+            $v = isset($decoded->_factor) ? clone $decoded->_factor : new \stdClass();
             $v->value = $decoded->factor ?? null;
             $type->setFactor(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -2374,7 +2373,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addNoteNumber(FHIRPositiveInt::jsonUnserialize($v, $config));
             }

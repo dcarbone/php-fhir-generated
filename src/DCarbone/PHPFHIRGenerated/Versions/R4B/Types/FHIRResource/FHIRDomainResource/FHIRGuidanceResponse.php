@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
@@ -158,16 +157,16 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_MODULE_URI => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_MODULE_CANONICAL => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_MODULE_CODEABLE_CONCEPT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1296,7 +1295,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1602,7 +1601,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
             || isset($decoded->_moduleUri)
             || property_exists($decoded, self::FIELD_MODULE_URI)
             || property_exists($decoded, self::FIELD_MODULE_URI_EXT)) {
-            $v = $decoded->_moduleUri ?? new \stdClass();
+            $v = isset($decoded->_moduleUri) ? clone $decoded->_moduleUri : new \stdClass();
             $v->value = $decoded->moduleUri ?? null;
             $type->setModuleUri(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -1610,7 +1609,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
             || isset($decoded->_moduleCanonical)
             || property_exists($decoded, self::FIELD_MODULE_CANONICAL)
             || property_exists($decoded, self::FIELD_MODULE_CANONICAL_EXT)) {
-            $v = $decoded->_moduleCanonical ?? new \stdClass();
+            $v = isset($decoded->_moduleCanonical) ? clone $decoded->_moduleCanonical : new \stdClass();
             $v->value = $decoded->moduleCanonical ?? null;
             $type->setModuleCanonical(FHIRCanonical::jsonUnserialize($v, $config));
         }
@@ -1625,7 +1624,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRGuidanceResponseStatus::jsonUnserialize($v, $config));
         }
@@ -1647,7 +1646,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
             || isset($decoded->_occurrenceDateTime)
             || property_exists($decoded, self::FIELD_OCCURRENCE_DATE_TIME)
             || property_exists($decoded, self::FIELD_OCCURRENCE_DATE_TIME_EXT)) {
-            $v = $decoded->_occurrenceDateTime ?? new \stdClass();
+            $v = isset($decoded->_occurrenceDateTime) ? clone $decoded->_occurrenceDateTime : new \stdClass();
             $v->value = $decoded->occurrenceDateTime ?? null;
             $type->setOccurrenceDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }

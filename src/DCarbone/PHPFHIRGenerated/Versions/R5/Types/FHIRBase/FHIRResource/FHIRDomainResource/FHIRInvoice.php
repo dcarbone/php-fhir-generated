@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoiceLineItem;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoiceParticipant;
@@ -169,7 +168,7 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -276,7 +275,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Date/time(s) range of services included in this invoice.
+     * Date/time(s) range of services included in this invoice. (choose any one of
+     * period*, but only one)
      */
     #[FHIRDate]
     protected FHIRDate $periodDate;
@@ -285,7 +285,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Date/time(s) range of services included in this invoice.
+     * Date/time(s) range of services included in this invoice. (choose any one of
+     * period*, but only one)
      */
     #[FHIRPeriod]
     protected FHIRPeriod $periodPeriod;
@@ -816,7 +817,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Date/time(s) range of services included in this invoice.
+     * Date/time(s) range of services included in this invoice. (choose any one of
+     * period*, but only one)
      */
     public function getPeriodDate(): null|FHIRDate
     {
@@ -829,7 +831,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Date/time(s) range of services included in this invoice.
+     * Date/time(s) range of services included in this invoice. (choose any one of
+     * period*, but only one)
      */
     public function setPeriodDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $periodDate): self
     {
@@ -849,7 +852,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Date/time(s) range of services included in this invoice.
+     * Date/time(s) range of services included in this invoice. (choose any one of
+     * period*, but only one)
      */
     public function getPeriodPeriod(): null|FHIRPeriod
     {
@@ -861,7 +865,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Date/time(s) range of services included in this invoice.
+     * Date/time(s) range of services included in this invoice. (choose any one of
+     * period*, but only one)
      */
     public function setPeriodPeriod(null|FHIRPeriod $periodPeriod): self
     {
@@ -1319,7 +1324,7 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1656,7 +1661,7 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRInvoiceStatus::jsonUnserialize($v, $config));
         }
@@ -1664,7 +1669,7 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
             || isset($decoded->_cancelledReason)
             || property_exists($decoded, self::FIELD_CANCELLED_REASON)
             || property_exists($decoded, self::FIELD_CANCELLED_REASON_EXT)) {
-            $v = $decoded->_cancelledReason ?? new \stdClass();
+            $v = isset($decoded->_cancelledReason) ? clone $decoded->_cancelledReason : new \stdClass();
             $v->value = $decoded->cancelledReason ?? null;
             $type->setCancelledReason(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1693,7 +1698,7 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
             || isset($decoded->_date)
             || property_exists($decoded, self::FIELD_DATE)
             || property_exists($decoded, self::FIELD_DATE_EXT)) {
-            $v = $decoded->_date ?? new \stdClass();
+            $v = isset($decoded->_date) ? clone $decoded->_date : new \stdClass();
             $v->value = $decoded->date ?? null;
             $type->setDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1701,7 +1706,7 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
             || isset($decoded->_creation)
             || property_exists($decoded, self::FIELD_CREATION)
             || property_exists($decoded, self::FIELD_CREATION_EXT)) {
-            $v = $decoded->_creation ?? new \stdClass();
+            $v = isset($decoded->_creation) ? clone $decoded->_creation : new \stdClass();
             $v->value = $decoded->creation ?? null;
             $type->setCreation(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1709,7 +1714,7 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
             || isset($decoded->_periodDate)
             || property_exists($decoded, self::FIELD_PERIOD_DATE)
             || property_exists($decoded, self::FIELD_PERIOD_DATE_EXT)) {
-            $v = $decoded->_periodDate ?? new \stdClass();
+            $v = isset($decoded->_periodDate) ? clone $decoded->_periodDate : new \stdClass();
             $v->value = $decoded->periodDate ?? null;
             $type->setPeriodDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -1785,7 +1790,7 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
             || isset($decoded->_paymentTerms)
             || property_exists($decoded, self::FIELD_PAYMENT_TERMS)
             || property_exists($decoded, self::FIELD_PAYMENT_TERMS_EXT)) {
-            $v = $decoded->_paymentTerms ?? new \stdClass();
+            $v = isset($decoded->_paymentTerms) ? clone $decoded->_paymentTerms : new \stdClass();
             $v->value = $decoded->paymentTerms ?? null;
             $type->setPaymentTerms(FHIRMarkdown::jsonUnserialize($v, $config));
         }

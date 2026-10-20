@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept;
@@ -122,7 +121,7 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ITEM => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -161,7 +160,8 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet.
+     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
+     * only one)
      */
     #[FHIRRatio]
     protected FHIRRatio $strengthRatio;
@@ -174,7 +174,8 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet.
+     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
+     * only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $strengthCodeableConcept;
@@ -188,7 +189,8 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet.
+     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
+     * only one)
      */
     #[FHIRQuantity]
     protected FHIRQuantity $strengthQuantity;
@@ -311,7 +313,8 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet.
+     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
+     * only one)
      */
     public function getStrengthRatio(): null|FHIRRatio
     {
@@ -327,7 +330,8 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet.
+     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
+     * only one)
      */
     public function setStrengthRatio(null|FHIRRatio $strengthRatio): self
     {
@@ -348,7 +352,8 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet.
+     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
+     * only one)
      */
     public function getStrengthCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -364,7 +369,8 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet.
+     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
+     * only one)
      */
     public function setStrengthCodeableConcept(null|FHIRCodeableConcept $strengthCodeableConcept): self
     {
@@ -386,7 +392,8 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet.
+     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
+     * only one)
      */
     public function getStrengthQuantity(): null|FHIRQuantity
     {
@@ -403,7 +410,8 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet.
+     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
+     * only one)
      */
     public function setStrengthQuantity(null|FHIRQuantity $strengthQuantity): self
     {

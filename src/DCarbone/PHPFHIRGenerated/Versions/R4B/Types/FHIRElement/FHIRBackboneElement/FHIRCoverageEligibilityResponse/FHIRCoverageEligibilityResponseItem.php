@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -1195,7 +1195,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
             || isset($decoded->_excluded)
             || property_exists($decoded, self::FIELD_EXCLUDED)
             || property_exists($decoded, self::FIELD_EXCLUDED_EXT)) {
-            $v = $decoded->_excluded ?? new \stdClass();
+            $v = isset($decoded->_excluded) ? clone $decoded->_excluded : new \stdClass();
             $v->value = $decoded->excluded ?? null;
             $type->setExcluded(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1203,7 +1203,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1211,7 +1211,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1251,7 +1251,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
             || isset($decoded->_authorizationRequired)
             || property_exists($decoded, self::FIELD_AUTHORIZATION_REQUIRED)
             || property_exists($decoded, self::FIELD_AUTHORIZATION_REQUIRED_EXT)) {
-            $v = $decoded->_authorizationRequired ?? new \stdClass();
+            $v = isset($decoded->_authorizationRequired) ? clone $decoded->_authorizationRequired : new \stdClass();
             $v->value = $decoded->authorizationRequired ?? null;
             $type->setAuthorizationRequired(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1270,7 +1270,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
             || isset($decoded->_authorizationUrl)
             || property_exists($decoded, self::FIELD_AUTHORIZATION_URL)
             || property_exists($decoded, self::FIELD_AUTHORIZATION_URL_EXT)) {
-            $v = $decoded->_authorizationUrl ?? new \stdClass();
+            $v = isset($decoded->_authorizationUrl) ? clone $decoded->_authorizationUrl : new \stdClass();
             $v->value = $decoded->authorizationUrl ?? null;
             $type->setAuthorizationUrl(FHIRUri::jsonUnserialize($v, $config));
         }

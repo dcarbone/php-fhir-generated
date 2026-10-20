@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept;
@@ -104,7 +103,7 @@ class FHIRClaimResponseError extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_CODE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -487,7 +486,7 @@ class FHIRClaimResponseError extends FHIRBackboneElement
             || isset($decoded->_sequenceLinkId)
             || property_exists($decoded, self::FIELD_SEQUENCE_LINK_ID)
             || property_exists($decoded, self::FIELD_SEQUENCE_LINK_ID_EXT)) {
-            $v = $decoded->_sequenceLinkId ?? new \stdClass();
+            $v = isset($decoded->_sequenceLinkId) ? clone $decoded->_sequenceLinkId : new \stdClass();
             $v->value = $decoded->sequenceLinkId ?? null;
             $type->setSequenceLinkId(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
@@ -495,7 +494,7 @@ class FHIRClaimResponseError extends FHIRBackboneElement
             || isset($decoded->_detailSequenceLinkId)
             || property_exists($decoded, self::FIELD_DETAIL_SEQUENCE_LINK_ID)
             || property_exists($decoded, self::FIELD_DETAIL_SEQUENCE_LINK_ID_EXT)) {
-            $v = $decoded->_detailSequenceLinkId ?? new \stdClass();
+            $v = isset($decoded->_detailSequenceLinkId) ? clone $decoded->_detailSequenceLinkId : new \stdClass();
             $v->value = $decoded->detailSequenceLinkId ?? null;
             $type->setDetailSequenceLinkId(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
@@ -503,7 +502,7 @@ class FHIRClaimResponseError extends FHIRBackboneElement
             || isset($decoded->_subdetailSequenceLinkId)
             || property_exists($decoded, self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID)
             || property_exists($decoded, self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID_EXT)) {
-            $v = $decoded->_subdetailSequenceLinkId ?? new \stdClass();
+            $v = isset($decoded->_subdetailSequenceLinkId) ? clone $decoded->_subdetailSequenceLinkId : new \stdClass();
             $v->value = $decoded->subdetailSequenceLinkId ?? null;
             $type->setSubdetailSequenceLinkId(FHIRPositiveInt::jsonUnserialize($v, $config));
         }

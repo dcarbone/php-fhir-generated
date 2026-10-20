@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean;
@@ -145,10 +144,10 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_SEQUENCE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_CATEGORY => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -199,7 +198,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The date when or period to which this information refers.
+     * The date when or period to which this information refers. (choose any one of
+     * timing*, but only one)
      */
     #[FHIRDate]
     protected FHIRDate $timingDate;
@@ -208,7 +208,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The date when or period to which this information refers.
+     * The date when or period to which this information refers. (choose any one of
+     * timing*, but only one)
      */
     #[FHIRPeriod]
     protected FHIRPeriod $timingPeriod;
@@ -217,7 +218,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data.
+     * including references to the data or the actual inclusion of the data. (choose
+     * any one of value*, but only one)
      */
     #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
@@ -227,7 +229,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data.
+     * including references to the data or the actual inclusion of the data. (choose
+     * any one of value*, but only one)
      */
     #[FHIRString]
     protected FHIRString $valueString;
@@ -239,7 +242,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data.
+     * including references to the data or the actual inclusion of the data. (choose
+     * any one of value*, but only one)
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -249,7 +253,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data.
+     * including references to the data or the actual inclusion of the data. (choose
+     * any one of value*, but only one)
      */
     #[FHIRAttachment]
     protected FHIRAttachment $valueAttachment;
@@ -259,7 +264,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data.
+     * including references to the data or the actual inclusion of the data. (choose
+     * any one of value*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $valueReference;
@@ -270,7 +276,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data.
+     * including references to the data or the actual inclusion of the data. (choose
+     * any one of value*, but only one)
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $valueIdentifier;
@@ -464,7 +471,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The date when or period to which this information refers.
+     * The date when or period to which this information refers. (choose any one of
+     * timing*, but only one)
      */
     public function getTimingDate(): null|FHIRDate
     {
@@ -477,7 +485,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The date when or period to which this information refers.
+     * The date when or period to which this information refers. (choose any one of
+     * timing*, but only one)
      */
     public function setTimingDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $timingDate): self
     {
@@ -497,7 +506,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The date when or period to which this information refers.
+     * The date when or period to which this information refers. (choose any one of
+     * timing*, but only one)
      */
     public function getTimingPeriod(): null|FHIRPeriod
     {
@@ -509,7 +519,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The date when or period to which this information refers.
+     * The date when or period to which this information refers. (choose any one of
+     * timing*, but only one)
      */
     public function setTimingPeriod(null|FHIRPeriod $timingPeriod): self
     {
@@ -526,7 +537,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data.
+     * including references to the data or the actual inclusion of the data. (choose
+     * any one of value*, but only one)
      */
     public function getValueBoolean(): null|FHIRBoolean
     {
@@ -538,7 +550,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data.
+     * including references to the data or the actual inclusion of the data. (choose
+     * any one of value*, but only one)
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -559,7 +572,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data.
+     * including references to the data or the actual inclusion of the data. (choose
+     * any one of value*, but only one)
      */
     public function getValueString(): null|FHIRString
     {
@@ -572,7 +586,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data.
+     * including references to the data or the actual inclusion of the data. (choose
+     * any one of value*, but only one)
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -595,7 +610,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data.
+     * including references to the data or the actual inclusion of the data. (choose
+     * any one of value*, but only one)
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -610,7 +626,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data.
+     * including references to the data or the actual inclusion of the data. (choose
+     * any one of value*, but only one)
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -628,7 +645,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data.
+     * including references to the data or the actual inclusion of the data. (choose
+     * any one of value*, but only one)
      */
     public function getValueAttachment(): null|FHIRAttachment
     {
@@ -641,7 +659,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data.
+     * including references to the data or the actual inclusion of the data. (choose
+     * any one of value*, but only one)
      */
     public function setValueAttachment(null|FHIRAttachment $valueAttachment): self
     {
@@ -659,7 +678,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data.
+     * including references to the data or the actual inclusion of the data. (choose
+     * any one of value*, but only one)
      */
     public function getValueReference(): null|FHIRReference
     {
@@ -672,7 +692,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data.
+     * including references to the data or the actual inclusion of the data. (choose
+     * any one of value*, but only one)
      */
     public function setValueReference(null|FHIRReference $valueReference): self
     {
@@ -691,7 +712,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data.
+     * including references to the data or the actual inclusion of the data. (choose
+     * any one of value*, but only one)
      */
     public function getValueIdentifier(): null|FHIRIdentifier
     {
@@ -705,7 +727,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data.
+     * including references to the data or the actual inclusion of the data. (choose
+     * any one of value*, but only one)
      */
     public function setValueIdentifier(null|FHIRIdentifier $valueIdentifier): self
     {
@@ -964,7 +987,7 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
             || isset($decoded->_sequence)
             || property_exists($decoded, self::FIELD_SEQUENCE)
             || property_exists($decoded, self::FIELD_SEQUENCE_EXT)) {
-            $v = $decoded->_sequence ?? new \stdClass();
+            $v = isset($decoded->_sequence) ? clone $decoded->_sequence : new \stdClass();
             $v->value = $decoded->sequence ?? null;
             $type->setSequence(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
@@ -986,7 +1009,7 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
             || isset($decoded->_timingDate)
             || property_exists($decoded, self::FIELD_TIMING_DATE)
             || property_exists($decoded, self::FIELD_TIMING_DATE_EXT)) {
-            $v = $decoded->_timingDate ?? new \stdClass();
+            $v = isset($decoded->_timingDate) ? clone $decoded->_timingDate : new \stdClass();
             $v->value = $decoded->timingDate ?? null;
             $type->setTimingDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -1001,7 +1024,7 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
             || isset($decoded->_valueBoolean)
             || property_exists($decoded, self::FIELD_VALUE_BOOLEAN)
             || property_exists($decoded, self::FIELD_VALUE_BOOLEAN_EXT)) {
-            $v = $decoded->_valueBoolean ?? new \stdClass();
+            $v = isset($decoded->_valueBoolean) ? clone $decoded->_valueBoolean : new \stdClass();
             $v->value = $decoded->valueBoolean ?? null;
             $type->setValueBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1009,7 +1032,7 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
             || isset($decoded->_valueString)
             || property_exists($decoded, self::FIELD_VALUE_STRING)
             || property_exists($decoded, self::FIELD_VALUE_STRING_EXT)) {
-            $v = $decoded->_valueString ?? new \stdClass();
+            $v = isset($decoded->_valueString) ? clone $decoded->_valueString : new \stdClass();
             $v->value = $decoded->valueString ?? null;
             $type->setValueString(FHIRString::jsonUnserialize($v, $config));
         }

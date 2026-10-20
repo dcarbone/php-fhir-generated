@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAppointmentResponseStatus;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean;
@@ -160,10 +159,10 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_APPOINTMENT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_PARTICIPANT_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -935,7 +934,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1250,7 +1249,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
             || isset($decoded->_proposedNewTime)
             || property_exists($decoded, self::FIELD_PROPOSED_NEW_TIME)
             || property_exists($decoded, self::FIELD_PROPOSED_NEW_TIME_EXT)) {
-            $v = $decoded->_proposedNewTime ?? new \stdClass();
+            $v = isset($decoded->_proposedNewTime) ? clone $decoded->_proposedNewTime : new \stdClass();
             $v->value = $decoded->proposedNewTime ?? null;
             $type->setProposedNewTime(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1258,7 +1257,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
             || isset($decoded->_start)
             || property_exists($decoded, self::FIELD_START)
             || property_exists($decoded, self::FIELD_START_EXT)) {
-            $v = $decoded->_start ?? new \stdClass();
+            $v = isset($decoded->_start) ? clone $decoded->_start : new \stdClass();
             $v->value = $decoded->start ?? null;
             $type->setStart(FHIRInstant::jsonUnserialize($v, $config));
         }
@@ -1266,7 +1265,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
             || isset($decoded->_end)
             || property_exists($decoded, self::FIELD_END)
             || property_exists($decoded, self::FIELD_END_EXT)) {
-            $v = $decoded->_end ?? new \stdClass();
+            $v = isset($decoded->_end) ? clone $decoded->_end : new \stdClass();
             $v->value = $decoded->end ?? null;
             $type->setEnd(FHIRInstant::jsonUnserialize($v, $config));
         }
@@ -1292,7 +1291,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
             || isset($decoded->_participantStatus)
             || property_exists($decoded, self::FIELD_PARTICIPANT_STATUS)
             || property_exists($decoded, self::FIELD_PARTICIPANT_STATUS_EXT)) {
-            $v = $decoded->_participantStatus ?? new \stdClass();
+            $v = isset($decoded->_participantStatus) ? clone $decoded->_participantStatus : new \stdClass();
             $v->value = $decoded->participantStatus ?? null;
             $type->setParticipantStatus(FHIRAppointmentResponseStatus::jsonUnserialize($v, $config));
         }
@@ -1300,7 +1299,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
             || isset($decoded->_comment)
             || property_exists($decoded, self::FIELD_COMMENT)
             || property_exists($decoded, self::FIELD_COMMENT_EXT)) {
-            $v = $decoded->_comment ?? new \stdClass();
+            $v = isset($decoded->_comment) ? clone $decoded->_comment : new \stdClass();
             $v->value = $decoded->comment ?? null;
             $type->setComment(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -1308,7 +1307,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
             || isset($decoded->_recurring)
             || property_exists($decoded, self::FIELD_RECURRING)
             || property_exists($decoded, self::FIELD_RECURRING_EXT)) {
-            $v = $decoded->_recurring ?? new \stdClass();
+            $v = isset($decoded->_recurring) ? clone $decoded->_recurring : new \stdClass();
             $v->value = $decoded->recurring ?? null;
             $type->setRecurring(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1316,7 +1315,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
             || isset($decoded->_occurrenceDate)
             || property_exists($decoded, self::FIELD_OCCURRENCE_DATE)
             || property_exists($decoded, self::FIELD_OCCURRENCE_DATE_EXT)) {
-            $v = $decoded->_occurrenceDate ?? new \stdClass();
+            $v = isset($decoded->_occurrenceDate) ? clone $decoded->_occurrenceDate : new \stdClass();
             $v->value = $decoded->occurrenceDate ?? null;
             $type->setOccurrenceDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -1324,7 +1323,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
             || isset($decoded->_recurrenceId)
             || property_exists($decoded, self::FIELD_RECURRENCE_ID)
             || property_exists($decoded, self::FIELD_RECURRENCE_ID_EXT)) {
-            $v = $decoded->_recurrenceId ?? new \stdClass();
+            $v = isset($decoded->_recurrenceId) ? clone $decoded->_recurrenceId : new \stdClass();
             $v->value = $decoded->recurrenceId ?? null;
             $type->setRecurrenceId(FHIRPositiveInt::jsonUnserialize($v, $config));
         }

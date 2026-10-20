@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -510,7 +510,7 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
             || isset($decoded->_exact)
             || property_exists($decoded, self::FIELD_EXACT)
             || property_exists($decoded, self::FIELD_EXACT_EXT)) {
-            $v = $decoded->_exact ?? new \stdClass();
+            $v = isset($decoded->_exact) ? clone $decoded->_exact : new \stdClass();
             $v->value = $decoded->exact ?? null;
             $type->setExact(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -518,7 +518,7 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
             || isset($decoded->_length)
             || property_exists($decoded, self::FIELD_LENGTH)
             || property_exists($decoded, self::FIELD_LENGTH_EXT)) {
-            $v = $decoded->_length ?? new \stdClass();
+            $v = isset($decoded->_length) ? clone $decoded->_length : new \stdClass();
             $v->value = $decoded->length ?? null;
             $type->setLength(FHIRInteger::jsonUnserialize($v, $config));
         }

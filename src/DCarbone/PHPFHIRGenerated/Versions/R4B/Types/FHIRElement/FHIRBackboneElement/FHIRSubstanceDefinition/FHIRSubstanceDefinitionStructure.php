@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -790,7 +790,7 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
             || isset($decoded->_molecularFormula)
             || property_exists($decoded, self::FIELD_MOLECULAR_FORMULA)
             || property_exists($decoded, self::FIELD_MOLECULAR_FORMULA_EXT)) {
-            $v = $decoded->_molecularFormula ?? new \stdClass();
+            $v = isset($decoded->_molecularFormula) ? clone $decoded->_molecularFormula : new \stdClass();
             $v->value = $decoded->molecularFormula ?? null;
             $type->setMolecularFormula(FHIRString::jsonUnserialize($v, $config));
         }
@@ -798,7 +798,7 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
             || isset($decoded->_molecularFormulaByMoiety)
             || property_exists($decoded, self::FIELD_MOLECULAR_FORMULA_BY_MOIETY)
             || property_exists($decoded, self::FIELD_MOLECULAR_FORMULA_BY_MOIETY_EXT)) {
-            $v = $decoded->_molecularFormulaByMoiety ?? new \stdClass();
+            $v = isset($decoded->_molecularFormulaByMoiety) ? clone $decoded->_molecularFormulaByMoiety : new \stdClass();
             $v->value = $decoded->molecularFormulaByMoiety ?? null;
             $type->setMolecularFormulaByMoiety(FHIRString::jsonUnserialize($v, $config));
         }

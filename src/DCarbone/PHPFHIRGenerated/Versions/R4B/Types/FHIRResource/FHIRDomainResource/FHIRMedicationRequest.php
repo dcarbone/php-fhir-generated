@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive;
@@ -189,19 +188,19 @@ class FHIRMedicationRequest extends FHIRDomainResource implements VersionContain
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_INTENT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_MEDICATION_CODEABLE_CONCEPT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_MEDICATION_REFERENCE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_SUBJECT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -2375,7 +2374,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements VersionContain
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -2833,7 +2832,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements VersionContain
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRMedicationrequestStatus::jsonUnserialize($v, $config));
         }
@@ -2848,7 +2847,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements VersionContain
             || isset($decoded->_intent)
             || property_exists($decoded, self::FIELD_INTENT)
             || property_exists($decoded, self::FIELD_INTENT_EXT)) {
-            $v = $decoded->_intent ?? new \stdClass();
+            $v = isset($decoded->_intent) ? clone $decoded->_intent : new \stdClass();
             $v->value = $decoded->intent ?? null;
             $type->setIntent(FHIRMedicationRequestIntent::jsonUnserialize($v, $config));
         }
@@ -2867,7 +2866,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements VersionContain
             || isset($decoded->_priority)
             || property_exists($decoded, self::FIELD_PRIORITY)
             || property_exists($decoded, self::FIELD_PRIORITY_EXT)) {
-            $v = $decoded->_priority ?? new \stdClass();
+            $v = isset($decoded->_priority) ? clone $decoded->_priority : new \stdClass();
             $v->value = $decoded->priority ?? null;
             $type->setPriority(FHIRRequestPriority::jsonUnserialize($v, $config));
         }
@@ -2875,7 +2874,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements VersionContain
             || isset($decoded->_doNotPerform)
             || property_exists($decoded, self::FIELD_DO_NOT_PERFORM)
             || property_exists($decoded, self::FIELD_DO_NOT_PERFORM_EXT)) {
-            $v = $decoded->_doNotPerform ?? new \stdClass();
+            $v = isset($decoded->_doNotPerform) ? clone $decoded->_doNotPerform : new \stdClass();
             $v->value = $decoded->doNotPerform ?? null;
             $type->setDoNotPerform(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -2883,7 +2882,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements VersionContain
             || isset($decoded->_reportedBoolean)
             || property_exists($decoded, self::FIELD_REPORTED_BOOLEAN)
             || property_exists($decoded, self::FIELD_REPORTED_BOOLEAN_EXT)) {
-            $v = $decoded->_reportedBoolean ?? new \stdClass();
+            $v = isset($decoded->_reportedBoolean) ? clone $decoded->_reportedBoolean : new \stdClass();
             $v->value = $decoded->reportedBoolean ?? null;
             $type->setReportedBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -2937,7 +2936,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements VersionContain
             || isset($decoded->_authoredOn)
             || property_exists($decoded, self::FIELD_AUTHORED_ON)
             || property_exists($decoded, self::FIELD_AUTHORED_ON_EXT)) {
-            $v = $decoded->_authoredOn ?? new \stdClass();
+            $v = isset($decoded->_authoredOn) ? clone $decoded->_authoredOn : new \stdClass();
             $v->value = $decoded->authoredOn ?? null;
             $type->setAuthoredOn(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -3003,7 +3002,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements VersionContain
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addInstantiatesCanonical(FHIRCanonical::jsonUnserialize($v, $config));
             }
@@ -3020,7 +3019,7 @@ class FHIRMedicationRequest extends FHIRDomainResource implements VersionContain
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addInstantiatesUri(FHIRUri::jsonUnserialize($v, $config));
             }

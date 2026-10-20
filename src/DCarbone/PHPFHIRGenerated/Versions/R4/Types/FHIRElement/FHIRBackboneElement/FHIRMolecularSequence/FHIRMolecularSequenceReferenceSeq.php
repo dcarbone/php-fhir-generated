@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -826,7 +826,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
             || isset($decoded->_genomeBuild)
             || property_exists($decoded, self::FIELD_GENOME_BUILD)
             || property_exists($decoded, self::FIELD_GENOME_BUILD_EXT)) {
-            $v = $decoded->_genomeBuild ?? new \stdClass();
+            $v = isset($decoded->_genomeBuild) ? clone $decoded->_genomeBuild : new \stdClass();
             $v->value = $decoded->genomeBuild ?? null;
             $type->setGenomeBuild(FHIRString::jsonUnserialize($v, $config));
         }
@@ -834,7 +834,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
             || isset($decoded->_orientation)
             || property_exists($decoded, self::FIELD_ORIENTATION)
             || property_exists($decoded, self::FIELD_ORIENTATION_EXT)) {
-            $v = $decoded->_orientation ?? new \stdClass();
+            $v = isset($decoded->_orientation) ? clone $decoded->_orientation : new \stdClass();
             $v->value = $decoded->orientation ?? null;
             $type->setOrientation(FHIROrientationType::jsonUnserialize($v, $config));
         }
@@ -856,7 +856,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
             || isset($decoded->_referenceSeqString)
             || property_exists($decoded, self::FIELD_REFERENCE_SEQ_STRING)
             || property_exists($decoded, self::FIELD_REFERENCE_SEQ_STRING_EXT)) {
-            $v = $decoded->_referenceSeqString ?? new \stdClass();
+            $v = isset($decoded->_referenceSeqString) ? clone $decoded->_referenceSeqString : new \stdClass();
             $v->value = $decoded->referenceSeqString ?? null;
             $type->setReferenceSeqString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -864,7 +864,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
             || isset($decoded->_strand)
             || property_exists($decoded, self::FIELD_STRAND)
             || property_exists($decoded, self::FIELD_STRAND_EXT)) {
-            $v = $decoded->_strand ?? new \stdClass();
+            $v = isset($decoded->_strand) ? clone $decoded->_strand : new \stdClass();
             $v->value = $decoded->strand ?? null;
             $type->setStrand(FHIRStrandType::jsonUnserialize($v, $config));
         }
@@ -872,7 +872,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
             || isset($decoded->_windowStart)
             || property_exists($decoded, self::FIELD_WINDOW_START)
             || property_exists($decoded, self::FIELD_WINDOW_START_EXT)) {
-            $v = $decoded->_windowStart ?? new \stdClass();
+            $v = isset($decoded->_windowStart) ? clone $decoded->_windowStart : new \stdClass();
             $v->value = $decoded->windowStart ?? null;
             $type->setWindowStart(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -880,7 +880,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
             || isset($decoded->_windowEnd)
             || property_exists($decoded, self::FIELD_WINDOW_END)
             || property_exists($decoded, self::FIELD_WINDOW_END_EXT)) {
-            $v = $decoded->_windowEnd ?? new \stdClass();
+            $v = isset($decoded->_windowEnd) ? clone $decoded->_windowEnd : new \stdClass();
             $v->value = $decoded->windowEnd ?? null;
             $type->setWindowEnd(FHIRInteger::jsonUnserialize($v, $config));
         }

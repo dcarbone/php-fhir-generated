@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRClinicalImpressionStatusList;
@@ -150,10 +149,10 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_SUBJECT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1565,7 +1564,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1911,7 +1910,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRClinicalImpressionStatus::jsonUnserialize($v, $config));
         }
@@ -1933,7 +1932,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1955,7 +1954,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
             || isset($decoded->_effectiveDateTime)
             || property_exists($decoded, self::FIELD_EFFECTIVE_DATE_TIME)
             || property_exists($decoded, self::FIELD_EFFECTIVE_DATE_TIME_EXT)) {
-            $v = $decoded->_effectiveDateTime ?? new \stdClass();
+            $v = isset($decoded->_effectiveDateTime) ? clone $decoded->_effectiveDateTime : new \stdClass();
             $v->value = $decoded->effectiveDateTime ?? null;
             $type->setEffectiveDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1970,7 +1969,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
             || isset($decoded->_date)
             || property_exists($decoded, self::FIELD_DATE)
             || property_exists($decoded, self::FIELD_DATE_EXT)) {
-            $v = $decoded->_date ?? new \stdClass();
+            $v = isset($decoded->_date) ? clone $decoded->_date : new \stdClass();
             $v->value = $decoded->date ?? null;
             $type->setDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -2022,7 +2021,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addProtocol(FHIRUri::jsonUnserialize($v, $config));
             }
@@ -2031,7 +2030,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
             || isset($decoded->_summary)
             || property_exists($decoded, self::FIELD_SUMMARY)
             || property_exists($decoded, self::FIELD_SUMMARY_EXT)) {
-            $v = $decoded->_summary ?? new \stdClass();
+            $v = isset($decoded->_summary) ? clone $decoded->_summary : new \stdClass();
             $v->value = $decoded->summary ?? null;
             $type->setSummary(FHIRString::jsonUnserialize($v, $config));
         }

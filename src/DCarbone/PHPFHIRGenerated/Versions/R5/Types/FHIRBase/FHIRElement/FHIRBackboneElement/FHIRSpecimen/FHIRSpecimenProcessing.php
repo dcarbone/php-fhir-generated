@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -174,7 +174,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement
      *
      * A record of the time or period when the specimen processing occurred. For
      * example the time of sample fixation or the period of time the sample was in
-     * formalin.
+     * formalin. (choose any one of time*, but only one)
      */
     #[FHIRDateTime]
     protected FHIRDateTime $timeDateTime;
@@ -185,7 +185,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement
      *
      * A record of the time or period when the specimen processing occurred. For
      * example the time of sample fixation or the period of time the sample was in
-     * formalin.
+     * formalin. (choose any one of time*, but only one)
      */
     #[FHIRPeriod]
     protected FHIRPeriod $timePeriod;
@@ -368,7 +368,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement
      *
      * A record of the time or period when the specimen processing occurred. For
      * example the time of sample fixation or the period of time the sample was in
-     * formalin.
+     * formalin. (choose any one of time*, but only one)
      */
     public function getTimeDateTime(): null|FHIRDateTime
     {
@@ -386,7 +386,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement
      *
      * A record of the time or period when the specimen processing occurred. For
      * example the time of sample fixation or the period of time the sample was in
-     * formalin.
+     * formalin. (choose any one of time*, but only one)
      */
     public function setTimeDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timeDateTime): self
     {
@@ -408,7 +408,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement
      *
      * A record of the time or period when the specimen processing occurred. For
      * example the time of sample fixation or the period of time the sample was in
-     * formalin.
+     * formalin. (choose any one of time*, but only one)
      */
     public function getTimePeriod(): null|FHIRPeriod
     {
@@ -422,7 +422,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement
      *
      * A record of the time or period when the specimen processing occurred. For
      * example the time of sample fixation or the period of time the sample was in
-     * formalin.
+     * formalin. (choose any one of time*, but only one)
      */
     public function setTimePeriod(null|FHIRPeriod $timePeriod): self
     {
@@ -577,7 +577,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
@@ -603,7 +603,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement
             || isset($decoded->_timeDateTime)
             || property_exists($decoded, self::FIELD_TIME_DATE_TIME)
             || property_exists($decoded, self::FIELD_TIME_DATE_TIME_EXT)) {
-            $v = $decoded->_timeDateTime ?? new \stdClass();
+            $v = isset($decoded->_timeDateTime) ? clone $decoded->_timeDateTime : new \stdClass();
             $v->value = $decoded->timeDateTime ?? null;
             $type->setTimeDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }

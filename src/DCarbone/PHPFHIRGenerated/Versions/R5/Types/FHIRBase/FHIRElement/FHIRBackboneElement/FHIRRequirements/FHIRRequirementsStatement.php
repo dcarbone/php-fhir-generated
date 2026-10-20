@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean;
@@ -145,10 +144,10 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_KEY => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_REQUIREMENT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1060,7 +1059,7 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
             || isset($decoded->_key)
             || property_exists($decoded, self::FIELD_KEY)
             || property_exists($decoded, self::FIELD_KEY_EXT)) {
-            $v = $decoded->_key ?? new \stdClass();
+            $v = isset($decoded->_key) ? clone $decoded->_key : new \stdClass();
             $v->value = $decoded->key ?? null;
             $type->setKey(FHIRId::jsonUnserialize($v, $config));
         }
@@ -1068,7 +1067,7 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
             || isset($decoded->_label)
             || property_exists($decoded, self::FIELD_LABEL)
             || property_exists($decoded, self::FIELD_LABEL_EXT)) {
-            $v = $decoded->_label ?? new \stdClass();
+            $v = isset($decoded->_label) ? clone $decoded->_label : new \stdClass();
             $v->value = $decoded->label ?? null;
             $type->setLabel(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1084,7 +1083,7 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addConformance(FHIRConformanceExpectation::jsonUnserialize($v, $config));
             }
@@ -1093,7 +1092,7 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
             || isset($decoded->_conditionality)
             || property_exists($decoded, self::FIELD_CONDITIONALITY)
             || property_exists($decoded, self::FIELD_CONDITIONALITY_EXT)) {
-            $v = $decoded->_conditionality ?? new \stdClass();
+            $v = isset($decoded->_conditionality) ? clone $decoded->_conditionality : new \stdClass();
             $v->value = $decoded->conditionality ?? null;
             $type->setConditionality(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1101,7 +1100,7 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
             || isset($decoded->_requirement)
             || property_exists($decoded, self::FIELD_REQUIREMENT)
             || property_exists($decoded, self::FIELD_REQUIREMENT_EXT)) {
-            $v = $decoded->_requirement ?? new \stdClass();
+            $v = isset($decoded->_requirement) ? clone $decoded->_requirement : new \stdClass();
             $v->value = $decoded->requirement ?? null;
             $type->setRequirement(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -1109,7 +1108,7 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
             || isset($decoded->_derivedFrom)
             || property_exists($decoded, self::FIELD_DERIVED_FROM)
             || property_exists($decoded, self::FIELD_DERIVED_FROM_EXT)) {
-            $v = $decoded->_derivedFrom ?? new \stdClass();
+            $v = isset($decoded->_derivedFrom) ? clone $decoded->_derivedFrom : new \stdClass();
             $v->value = $decoded->derivedFrom ?? null;
             $type->setDerivedFrom(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1117,7 +1116,7 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
             || isset($decoded->_parent)
             || property_exists($decoded, self::FIELD_PARENT)
             || property_exists($decoded, self::FIELD_PARENT_EXT)) {
-            $v = $decoded->_parent ?? new \stdClass();
+            $v = isset($decoded->_parent) ? clone $decoded->_parent : new \stdClass();
             $v->value = $decoded->parent ?? null;
             $type->setParent(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1133,7 +1132,7 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addSatisfiedBy(FHIRUrl::jsonUnserialize($v, $config));
             }
@@ -1150,7 +1149,7 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addReference(FHIRUrl::jsonUnserialize($v, $config));
             }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean;
@@ -166,7 +165,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1695,7 +1694,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             || isset($decoded->_type)
             || property_exists($decoded, self::FIELD_TYPE)
             || property_exists($decoded, self::FIELD_TYPE_EXT)) {
-            $v = $decoded->_type ?? new \stdClass();
+            $v = isset($decoded->_type) ? clone $decoded->_type : new \stdClass();
             $v->value = $decoded->type ?? null;
             $type->setType(FHIRResourceType::jsonUnserialize($v, $config));
         }
@@ -1703,7 +1702,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             || isset($decoded->_profile)
             || property_exists($decoded, self::FIELD_PROFILE)
             || property_exists($decoded, self::FIELD_PROFILE_EXT)) {
-            $v = $decoded->_profile ?? new \stdClass();
+            $v = isset($decoded->_profile) ? clone $decoded->_profile : new \stdClass();
             $v->value = $decoded->profile ?? null;
             $type->setProfile(FHIRCanonical::jsonUnserialize($v, $config));
         }
@@ -1719,7 +1718,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addSupportedProfile(FHIRCanonical::jsonUnserialize($v, $config));
             }
@@ -1728,7 +1727,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             || isset($decoded->_documentation)
             || property_exists($decoded, self::FIELD_DOCUMENTATION)
             || property_exists($decoded, self::FIELD_DOCUMENTATION_EXT)) {
-            $v = $decoded->_documentation ?? new \stdClass();
+            $v = isset($decoded->_documentation) ? clone $decoded->_documentation : new \stdClass();
             $v->value = $decoded->documentation ?? null;
             $type->setDocumentation(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -1747,7 +1746,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             || isset($decoded->_versioning)
             || property_exists($decoded, self::FIELD_VERSIONING)
             || property_exists($decoded, self::FIELD_VERSIONING_EXT)) {
-            $v = $decoded->_versioning ?? new \stdClass();
+            $v = isset($decoded->_versioning) ? clone $decoded->_versioning : new \stdClass();
             $v->value = $decoded->versioning ?? null;
             $type->setVersioning(FHIRResourceVersionPolicy::jsonUnserialize($v, $config));
         }
@@ -1755,7 +1754,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             || isset($decoded->_readHistory)
             || property_exists($decoded, self::FIELD_READ_HISTORY)
             || property_exists($decoded, self::FIELD_READ_HISTORY_EXT)) {
-            $v = $decoded->_readHistory ?? new \stdClass();
+            $v = isset($decoded->_readHistory) ? clone $decoded->_readHistory : new \stdClass();
             $v->value = $decoded->readHistory ?? null;
             $type->setReadHistory(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1763,7 +1762,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             || isset($decoded->_updateCreate)
             || property_exists($decoded, self::FIELD_UPDATE_CREATE)
             || property_exists($decoded, self::FIELD_UPDATE_CREATE_EXT)) {
-            $v = $decoded->_updateCreate ?? new \stdClass();
+            $v = isset($decoded->_updateCreate) ? clone $decoded->_updateCreate : new \stdClass();
             $v->value = $decoded->updateCreate ?? null;
             $type->setUpdateCreate(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1771,7 +1770,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             || isset($decoded->_conditionalCreate)
             || property_exists($decoded, self::FIELD_CONDITIONAL_CREATE)
             || property_exists($decoded, self::FIELD_CONDITIONAL_CREATE_EXT)) {
-            $v = $decoded->_conditionalCreate ?? new \stdClass();
+            $v = isset($decoded->_conditionalCreate) ? clone $decoded->_conditionalCreate : new \stdClass();
             $v->value = $decoded->conditionalCreate ?? null;
             $type->setConditionalCreate(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1779,7 +1778,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             || isset($decoded->_conditionalRead)
             || property_exists($decoded, self::FIELD_CONDITIONAL_READ)
             || property_exists($decoded, self::FIELD_CONDITIONAL_READ_EXT)) {
-            $v = $decoded->_conditionalRead ?? new \stdClass();
+            $v = isset($decoded->_conditionalRead) ? clone $decoded->_conditionalRead : new \stdClass();
             $v->value = $decoded->conditionalRead ?? null;
             $type->setConditionalRead(FHIRConditionalReadStatus::jsonUnserialize($v, $config));
         }
@@ -1787,7 +1786,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             || isset($decoded->_conditionalUpdate)
             || property_exists($decoded, self::FIELD_CONDITIONAL_UPDATE)
             || property_exists($decoded, self::FIELD_CONDITIONAL_UPDATE_EXT)) {
-            $v = $decoded->_conditionalUpdate ?? new \stdClass();
+            $v = isset($decoded->_conditionalUpdate) ? clone $decoded->_conditionalUpdate : new \stdClass();
             $v->value = $decoded->conditionalUpdate ?? null;
             $type->setConditionalUpdate(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1795,7 +1794,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             || isset($decoded->_conditionalPatch)
             || property_exists($decoded, self::FIELD_CONDITIONAL_PATCH)
             || property_exists($decoded, self::FIELD_CONDITIONAL_PATCH_EXT)) {
-            $v = $decoded->_conditionalPatch ?? new \stdClass();
+            $v = isset($decoded->_conditionalPatch) ? clone $decoded->_conditionalPatch : new \stdClass();
             $v->value = $decoded->conditionalPatch ?? null;
             $type->setConditionalPatch(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1803,7 +1802,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             || isset($decoded->_conditionalDelete)
             || property_exists($decoded, self::FIELD_CONDITIONAL_DELETE)
             || property_exists($decoded, self::FIELD_CONDITIONAL_DELETE_EXT)) {
-            $v = $decoded->_conditionalDelete ?? new \stdClass();
+            $v = isset($decoded->_conditionalDelete) ? clone $decoded->_conditionalDelete : new \stdClass();
             $v->value = $decoded->conditionalDelete ?? null;
             $type->setConditionalDelete(FHIRConditionalDeleteStatus::jsonUnserialize($v, $config));
         }
@@ -1819,7 +1818,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addReferencePolicy(FHIRReferenceHandlingPolicy::jsonUnserialize($v, $config));
             }
@@ -1836,7 +1835,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addSearchInclude(FHIRString::jsonUnserialize($v, $config));
             }
@@ -1853,7 +1852,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addSearchRevInclude(FHIRString::jsonUnserialize($v, $config));
             }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -748,7 +748,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
             || isset($decoded->_date)
             || property_exists($decoded, self::FIELD_DATE)
             || property_exists($decoded, self::FIELD_DATE_EXT)) {
-            $v = $decoded->_date ?? new \stdClass();
+            $v = isset($decoded->_date) ? clone $decoded->_date : new \stdClass();
             $v->value = $decoded->date ?? null;
             $type->setDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -756,7 +756,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
             || isset($decoded->_sourceIdentityCertificate)
             || property_exists($decoded, self::FIELD_SOURCE_IDENTITY_CERTIFICATE)
             || property_exists($decoded, self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT)) {
-            $v = $decoded->_sourceIdentityCertificate ?? new \stdClass();
+            $v = isset($decoded->_sourceIdentityCertificate) ? clone $decoded->_sourceIdentityCertificate : new \stdClass();
             $v->value = $decoded->sourceIdentityCertificate ?? null;
             $type->setSourceIdentityCertificate(FHIRString::jsonUnserialize($v, $config));
         }
@@ -764,7 +764,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
             || isset($decoded->_proxyIdentityCertificate)
             || property_exists($decoded, self::FIELD_PROXY_IDENTITY_CERTIFICATE)
             || property_exists($decoded, self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT)) {
-            $v = $decoded->_proxyIdentityCertificate ?? new \stdClass();
+            $v = isset($decoded->_proxyIdentityCertificate) ? clone $decoded->_proxyIdentityCertificate : new \stdClass();
             $v->value = $decoded->proxyIdentityCertificate ?? null;
             $type->setProxyIdentityCertificate(FHIRString::jsonUnserialize($v, $config));
         }

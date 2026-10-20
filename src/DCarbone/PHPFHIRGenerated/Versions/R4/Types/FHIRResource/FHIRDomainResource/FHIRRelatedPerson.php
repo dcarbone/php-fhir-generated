@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive;
@@ -136,7 +135,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_PATIENT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1000,7 +999,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1253,7 +1252,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
             || isset($decoded->_active)
             || property_exists($decoded, self::FIELD_ACTIVE)
             || property_exists($decoded, self::FIELD_ACTIVE_EXT)) {
-            $v = $decoded->_active ?? new \stdClass();
+            $v = isset($decoded->_active) ? clone $decoded->_active : new \stdClass();
             $v->value = $decoded->active ?? null;
             $type->setActive(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1301,7 +1300,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
             || isset($decoded->_gender)
             || property_exists($decoded, self::FIELD_GENDER)
             || property_exists($decoded, self::FIELD_GENDER_EXT)) {
-            $v = $decoded->_gender ?? new \stdClass();
+            $v = isset($decoded->_gender) ? clone $decoded->_gender : new \stdClass();
             $v->value = $decoded->gender ?? null;
             $type->setGender(FHIRAdministrativeGender::jsonUnserialize($v, $config));
         }
@@ -1309,7 +1308,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
             || isset($decoded->_birthDate)
             || property_exists($decoded, self::FIELD_BIRTH_DATE)
             || property_exists($decoded, self::FIELD_BIRTH_DATE_EXT)) {
-            $v = $decoded->_birthDate ?? new \stdClass();
+            $v = isset($decoded->_birthDate) ? clone $decoded->_birthDate : new \stdClass();
             $v->value = $decoded->birthDate ?? null;
             $type->setBirthDate(FHIRDate::jsonUnserialize($v, $config));
         }

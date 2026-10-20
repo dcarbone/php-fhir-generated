@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -1037,7 +1037,7 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1331,7 +1331,7 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRFinancialResourceStatusCodes::jsonUnserialize($v, $config));
         }
@@ -1339,7 +1339,7 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
             || isset($decoded->_action)
             || property_exists($decoded, self::FIELD_ACTION)
             || property_exists($decoded, self::FIELD_ACTION_EXT)) {
-            $v = $decoded->_action ?? new \stdClass();
+            $v = isset($decoded->_action) ? clone $decoded->_action : new \stdClass();
             $v->value = $decoded->action ?? null;
             $type->setAction(FHIRActionList::jsonUnserialize($v, $config));
         }
@@ -1354,7 +1354,7 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
             || isset($decoded->_created)
             || property_exists($decoded, self::FIELD_CREATED)
             || property_exists($decoded, self::FIELD_CREATED_EXT)) {
-            $v = $decoded->_created ?? new \stdClass();
+            $v = isset($decoded->_created) ? clone $decoded->_created : new \stdClass();
             $v->value = $decoded->created ?? null;
             $type->setCreated(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1390,7 +1390,7 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
             || isset($decoded->_nullify)
             || property_exists($decoded, self::FIELD_NULLIFY)
             || property_exists($decoded, self::FIELD_NULLIFY_EXT)) {
-            $v = $decoded->_nullify ?? new \stdClass();
+            $v = isset($decoded->_nullify) ? clone $decoded->_nullify : new \stdClass();
             $v->value = $decoded->nullify ?? null;
             $type->setNullify(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1398,7 +1398,7 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
             || isset($decoded->_reference)
             || property_exists($decoded, self::FIELD_REFERENCE)
             || property_exists($decoded, self::FIELD_REFERENCE_EXT)) {
-            $v = $decoded->_reference ?? new \stdClass();
+            $v = isset($decoded->_reference) ? clone $decoded->_reference : new \stdClass();
             $v->value = $decoded->reference ?? null;
             $type->setReference(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1425,7 +1425,7 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addInclude(FHIRString::jsonUnserialize($v, $config));
             }
@@ -1442,7 +1442,7 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addExclude(FHIRString::jsonUnserialize($v, $config));
             }

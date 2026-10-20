@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode;
@@ -145,13 +144,13 @@ class FHIRSampledData extends FHIRDataType
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ORIGIN => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_INTERVAL_UNIT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_DIMENSIONS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -965,7 +964,7 @@ class FHIRSampledData extends FHIRDataType
             || isset($decoded->_interval)
             || property_exists($decoded, self::FIELD_INTERVAL)
             || property_exists($decoded, self::FIELD_INTERVAL_EXT)) {
-            $v = $decoded->_interval ?? new \stdClass();
+            $v = isset($decoded->_interval) ? clone $decoded->_interval : new \stdClass();
             $v->value = $decoded->interval ?? null;
             $type->setInterval(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -973,7 +972,7 @@ class FHIRSampledData extends FHIRDataType
             || isset($decoded->_intervalUnit)
             || property_exists($decoded, self::FIELD_INTERVAL_UNIT)
             || property_exists($decoded, self::FIELD_INTERVAL_UNIT_EXT)) {
-            $v = $decoded->_intervalUnit ?? new \stdClass();
+            $v = isset($decoded->_intervalUnit) ? clone $decoded->_intervalUnit : new \stdClass();
             $v->value = $decoded->intervalUnit ?? null;
             $type->setIntervalUnit(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -981,7 +980,7 @@ class FHIRSampledData extends FHIRDataType
             || isset($decoded->_factor)
             || property_exists($decoded, self::FIELD_FACTOR)
             || property_exists($decoded, self::FIELD_FACTOR_EXT)) {
-            $v = $decoded->_factor ?? new \stdClass();
+            $v = isset($decoded->_factor) ? clone $decoded->_factor : new \stdClass();
             $v->value = $decoded->factor ?? null;
             $type->setFactor(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -989,7 +988,7 @@ class FHIRSampledData extends FHIRDataType
             || isset($decoded->_lowerLimit)
             || property_exists($decoded, self::FIELD_LOWER_LIMIT)
             || property_exists($decoded, self::FIELD_LOWER_LIMIT_EXT)) {
-            $v = $decoded->_lowerLimit ?? new \stdClass();
+            $v = isset($decoded->_lowerLimit) ? clone $decoded->_lowerLimit : new \stdClass();
             $v->value = $decoded->lowerLimit ?? null;
             $type->setLowerLimit(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -997,7 +996,7 @@ class FHIRSampledData extends FHIRDataType
             || isset($decoded->_upperLimit)
             || property_exists($decoded, self::FIELD_UPPER_LIMIT)
             || property_exists($decoded, self::FIELD_UPPER_LIMIT_EXT)) {
-            $v = $decoded->_upperLimit ?? new \stdClass();
+            $v = isset($decoded->_upperLimit) ? clone $decoded->_upperLimit : new \stdClass();
             $v->value = $decoded->upperLimit ?? null;
             $type->setUpperLimit(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -1005,7 +1004,7 @@ class FHIRSampledData extends FHIRDataType
             || isset($decoded->_dimensions)
             || property_exists($decoded, self::FIELD_DIMENSIONS)
             || property_exists($decoded, self::FIELD_DIMENSIONS_EXT)) {
-            $v = $decoded->_dimensions ?? new \stdClass();
+            $v = isset($decoded->_dimensions) ? clone $decoded->_dimensions : new \stdClass();
             $v->value = $decoded->dimensions ?? null;
             $type->setDimensions(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
@@ -1013,7 +1012,7 @@ class FHIRSampledData extends FHIRDataType
             || isset($decoded->_codeMap)
             || property_exists($decoded, self::FIELD_CODE_MAP)
             || property_exists($decoded, self::FIELD_CODE_MAP_EXT)) {
-            $v = $decoded->_codeMap ?? new \stdClass();
+            $v = isset($decoded->_codeMap) ? clone $decoded->_codeMap : new \stdClass();
             $v->value = $decoded->codeMap ?? null;
             $type->setCodeMap(FHIRCanonical::jsonUnserialize($v, $config));
         }
@@ -1021,7 +1020,7 @@ class FHIRSampledData extends FHIRDataType
             || isset($decoded->_offsets)
             || property_exists($decoded, self::FIELD_OFFSETS)
             || property_exists($decoded, self::FIELD_OFFSETS_EXT)) {
-            $v = $decoded->_offsets ?? new \stdClass();
+            $v = isset($decoded->_offsets) ? clone $decoded->_offsets : new \stdClass();
             $v->value = $decoded->offsets ?? null;
             $type->setOffsets(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1029,7 +1028,7 @@ class FHIRSampledData extends FHIRDataType
             || isset($decoded->_data)
             || property_exists($decoded, self::FIELD_DATA)
             || property_exists($decoded, self::FIELD_DATA_EXT)) {
-            $v = $decoded->_data ?? new \stdClass();
+            $v = isset($decoded->_data) ? clone $decoded->_data : new \stdClass();
             $v->value = $decoded->data ?? null;
             $type->setData(FHIRSampledDataDataType::jsonUnserialize($v, $config));
         }

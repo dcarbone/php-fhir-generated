@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -306,7 +306,7 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      */
     #[FHIRDate]
     protected FHIRDate $servicedDate;
@@ -316,7 +316,7 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      */
     #[FHIRPeriod]
     protected FHIRPeriod $servicedPeriod;
@@ -326,7 +326,8 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $locationCodeableConcept;
@@ -340,7 +341,8 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      */
     #[FHIRAddress]
     protected FHIRAddress $locationAddress;
@@ -349,7 +351,8 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      */
     #[FHIRReference]
     protected FHIRReference $locationReference;
@@ -1228,7 +1231,7 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      */
     public function getServicedDate(): null|FHIRDate
     {
@@ -1242,7 +1245,7 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      */
     public function setServicedDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $servicedDate): self
     {
@@ -1263,7 +1266,7 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      */
     public function getServicedPeriod(): null|FHIRPeriod
     {
@@ -1276,7 +1279,7 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed.
+     * completed. (choose any one of serviced*, but only one)
      */
     public function setServicedPeriod(null|FHIRPeriod $servicedPeriod): self
     {
@@ -1294,7 +1297,8 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      */
     public function getLocationCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -1307,7 +1311,8 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      */
     public function setLocationCodeableConcept(null|FHIRCodeableConcept $locationCodeableConcept): self
     {
@@ -1329,7 +1334,8 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      */
     public function getLocationAddress(): null|FHIRAddress
     {
@@ -1346,7 +1352,8 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      */
     public function setLocationAddress(null|FHIRAddress $locationAddress): self
     {
@@ -1363,7 +1370,8 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      */
     public function getLocationReference(): null|FHIRReference
     {
@@ -1375,7 +1383,8 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided.
+     * Where the product or service was provided. (choose any one of location*, but
+     * only one)
      */
     public function setLocationReference(null|FHIRReference $locationReference): self
     {
@@ -2132,7 +2141,7 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addItemSequence(FHIRPositiveInt::jsonUnserialize($v, $config));
             }
@@ -2149,7 +2158,7 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addDetailSequence(FHIRPositiveInt::jsonUnserialize($v, $config));
             }
@@ -2166,7 +2175,7 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addSubdetailSequence(FHIRPositiveInt::jsonUnserialize($v, $config));
             }
@@ -2251,7 +2260,7 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
             || isset($decoded->_servicedDate)
             || property_exists($decoded, self::FIELD_SERVICED_DATE)
             || property_exists($decoded, self::FIELD_SERVICED_DATE_EXT)) {
-            $v = $decoded->_servicedDate ?? new \stdClass();
+            $v = isset($decoded->_servicedDate) ? clone $decoded->_servicedDate : new \stdClass();
             $v->value = $decoded->servicedDate ?? null;
             $type->setServicedDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -2301,7 +2310,7 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
             || isset($decoded->_factor)
             || property_exists($decoded, self::FIELD_FACTOR)
             || property_exists($decoded, self::FIELD_FACTOR_EXT)) {
-            $v = $decoded->_factor ?? new \stdClass();
+            $v = isset($decoded->_factor) ? clone $decoded->_factor : new \stdClass();
             $v->value = $decoded->factor ?? null;
             $type->setFactor(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -2342,7 +2351,7 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addNoteNumber(FHIRPositiveInt::jsonUnserialize($v, $config));
             }

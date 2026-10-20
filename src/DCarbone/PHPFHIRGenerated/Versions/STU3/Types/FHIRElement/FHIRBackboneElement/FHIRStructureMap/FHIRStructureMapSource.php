@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBase64BinaryPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive;
@@ -220,7 +219,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_CONTEXT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -3207,7 +3206,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             || isset($decoded->_context)
             || property_exists($decoded, self::FIELD_CONTEXT)
             || property_exists($decoded, self::FIELD_CONTEXT_EXT)) {
-            $v = $decoded->_context ?? new \stdClass();
+            $v = isset($decoded->_context) ? clone $decoded->_context : new \stdClass();
             $v->value = $decoded->context ?? null;
             $type->setContext(FHIRId::jsonUnserialize($v, $config));
         }
@@ -3215,7 +3214,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             || isset($decoded->_min)
             || property_exists($decoded, self::FIELD_MIN)
             || property_exists($decoded, self::FIELD_MIN_EXT)) {
-            $v = $decoded->_min ?? new \stdClass();
+            $v = isset($decoded->_min) ? clone $decoded->_min : new \stdClass();
             $v->value = $decoded->min ?? null;
             $type->setMin(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -3223,7 +3222,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             || isset($decoded->_max)
             || property_exists($decoded, self::FIELD_MAX)
             || property_exists($decoded, self::FIELD_MAX_EXT)) {
-            $v = $decoded->_max ?? new \stdClass();
+            $v = isset($decoded->_max) ? clone $decoded->_max : new \stdClass();
             $v->value = $decoded->max ?? null;
             $type->setMax(FHIRString::jsonUnserialize($v, $config));
         }
@@ -3231,7 +3230,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             || isset($decoded->_type)
             || property_exists($decoded, self::FIELD_TYPE)
             || property_exists($decoded, self::FIELD_TYPE_EXT)) {
-            $v = $decoded->_type ?? new \stdClass();
+            $v = isset($decoded->_type) ? clone $decoded->_type : new \stdClass();
             $v->value = $decoded->type ?? null;
             $type->setType(FHIRString::jsonUnserialize($v, $config));
         }
@@ -3239,7 +3238,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             || isset($decoded->_defaultValueBase64Binary)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_BASE_64BINARY)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_BASE_64BINARY_EXT)) {
-            $v = $decoded->_defaultValueBase64Binary ?? new \stdClass();
+            $v = isset($decoded->_defaultValueBase64Binary) ? clone $decoded->_defaultValueBase64Binary : new \stdClass();
             $v->value = $decoded->defaultValueBase64Binary ?? null;
             $type->setDefaultValueBase64Binary(FHIRBase64Binary::jsonUnserialize($v, $config));
         }
@@ -3247,7 +3246,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             || isset($decoded->_defaultValueBoolean)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_BOOLEAN)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_BOOLEAN_EXT)) {
-            $v = $decoded->_defaultValueBoolean ?? new \stdClass();
+            $v = isset($decoded->_defaultValueBoolean) ? clone $decoded->_defaultValueBoolean : new \stdClass();
             $v->value = $decoded->defaultValueBoolean ?? null;
             $type->setDefaultValueBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -3255,7 +3254,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             || isset($decoded->_defaultValueCode)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_CODE)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_CODE_EXT)) {
-            $v = $decoded->_defaultValueCode ?? new \stdClass();
+            $v = isset($decoded->_defaultValueCode) ? clone $decoded->_defaultValueCode : new \stdClass();
             $v->value = $decoded->defaultValueCode ?? null;
             $type->setDefaultValueCode(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -3263,7 +3262,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             || isset($decoded->_defaultValueDate)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_DATE)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_DATE_EXT)) {
-            $v = $decoded->_defaultValueDate ?? new \stdClass();
+            $v = isset($decoded->_defaultValueDate) ? clone $decoded->_defaultValueDate : new \stdClass();
             $v->value = $decoded->defaultValueDate ?? null;
             $type->setDefaultValueDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -3271,7 +3270,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             || isset($decoded->_defaultValueDateTime)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_DATE_TIME)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_DATE_TIME_EXT)) {
-            $v = $decoded->_defaultValueDateTime ?? new \stdClass();
+            $v = isset($decoded->_defaultValueDateTime) ? clone $decoded->_defaultValueDateTime : new \stdClass();
             $v->value = $decoded->defaultValueDateTime ?? null;
             $type->setDefaultValueDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -3279,7 +3278,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             || isset($decoded->_defaultValueDecimal)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_DECIMAL)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_DECIMAL_EXT)) {
-            $v = $decoded->_defaultValueDecimal ?? new \stdClass();
+            $v = isset($decoded->_defaultValueDecimal) ? clone $decoded->_defaultValueDecimal : new \stdClass();
             $v->value = $decoded->defaultValueDecimal ?? null;
             $type->setDefaultValueDecimal(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -3287,7 +3286,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             || isset($decoded->_defaultValueId)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_ID)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_ID_EXT)) {
-            $v = $decoded->_defaultValueId ?? new \stdClass();
+            $v = isset($decoded->_defaultValueId) ? clone $decoded->_defaultValueId : new \stdClass();
             $v->value = $decoded->defaultValueId ?? null;
             $type->setDefaultValueId(FHIRId::jsonUnserialize($v, $config));
         }
@@ -3295,7 +3294,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             || isset($decoded->_defaultValueInstant)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_INSTANT)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_INSTANT_EXT)) {
-            $v = $decoded->_defaultValueInstant ?? new \stdClass();
+            $v = isset($decoded->_defaultValueInstant) ? clone $decoded->_defaultValueInstant : new \stdClass();
             $v->value = $decoded->defaultValueInstant ?? null;
             $type->setDefaultValueInstant(FHIRInstant::jsonUnserialize($v, $config));
         }
@@ -3303,7 +3302,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             || isset($decoded->_defaultValueInteger)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_INTEGER)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_INTEGER_EXT)) {
-            $v = $decoded->_defaultValueInteger ?? new \stdClass();
+            $v = isset($decoded->_defaultValueInteger) ? clone $decoded->_defaultValueInteger : new \stdClass();
             $v->value = $decoded->defaultValueInteger ?? null;
             $type->setDefaultValueInteger(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -3311,7 +3310,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             || isset($decoded->_defaultValueMarkdown)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_MARKDOWN)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_MARKDOWN_EXT)) {
-            $v = $decoded->_defaultValueMarkdown ?? new \stdClass();
+            $v = isset($decoded->_defaultValueMarkdown) ? clone $decoded->_defaultValueMarkdown : new \stdClass();
             $v->value = $decoded->defaultValueMarkdown ?? null;
             $type->setDefaultValueMarkdown(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -3319,7 +3318,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             || isset($decoded->_defaultValueOid)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_OID)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_OID_EXT)) {
-            $v = $decoded->_defaultValueOid ?? new \stdClass();
+            $v = isset($decoded->_defaultValueOid) ? clone $decoded->_defaultValueOid : new \stdClass();
             $v->value = $decoded->defaultValueOid ?? null;
             $type->setDefaultValueOid(FHIROid::jsonUnserialize($v, $config));
         }
@@ -3327,7 +3326,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             || isset($decoded->_defaultValuePositiveInt)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_POSITIVE_INT)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_POSITIVE_INT_EXT)) {
-            $v = $decoded->_defaultValuePositiveInt ?? new \stdClass();
+            $v = isset($decoded->_defaultValuePositiveInt) ? clone $decoded->_defaultValuePositiveInt : new \stdClass();
             $v->value = $decoded->defaultValuePositiveInt ?? null;
             $type->setDefaultValuePositiveInt(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
@@ -3335,7 +3334,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             || isset($decoded->_defaultValueString)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_STRING)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_STRING_EXT)) {
-            $v = $decoded->_defaultValueString ?? new \stdClass();
+            $v = isset($decoded->_defaultValueString) ? clone $decoded->_defaultValueString : new \stdClass();
             $v->value = $decoded->defaultValueString ?? null;
             $type->setDefaultValueString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -3343,7 +3342,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             || isset($decoded->_defaultValueTime)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_TIME)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_TIME_EXT)) {
-            $v = $decoded->_defaultValueTime ?? new \stdClass();
+            $v = isset($decoded->_defaultValueTime) ? clone $decoded->_defaultValueTime : new \stdClass();
             $v->value = $decoded->defaultValueTime ?? null;
             $type->setDefaultValueTime(FHIRTime::jsonUnserialize($v, $config));
         }
@@ -3351,7 +3350,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             || isset($decoded->_defaultValueUnsignedInt)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_UNSIGNED_INT)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_UNSIGNED_INT_EXT)) {
-            $v = $decoded->_defaultValueUnsignedInt ?? new \stdClass();
+            $v = isset($decoded->_defaultValueUnsignedInt) ? clone $decoded->_defaultValueUnsignedInt : new \stdClass();
             $v->value = $decoded->defaultValueUnsignedInt ?? null;
             $type->setDefaultValueUnsignedInt(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
@@ -3359,7 +3358,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             || isset($decoded->_defaultValueUri)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_URI)
             || property_exists($decoded, self::FIELD_DEFAULT_VALUE_URI_EXT)) {
-            $v = $decoded->_defaultValueUri ?? new \stdClass();
+            $v = isset($decoded->_defaultValueUri) ? clone $decoded->_defaultValueUri : new \stdClass();
             $v->value = $decoded->defaultValueUri ?? null;
             $type->setDefaultValueUri(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -3521,7 +3520,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             || isset($decoded->_element)
             || property_exists($decoded, self::FIELD_ELEMENT)
             || property_exists($decoded, self::FIELD_ELEMENT_EXT)) {
-            $v = $decoded->_element ?? new \stdClass();
+            $v = isset($decoded->_element) ? clone $decoded->_element : new \stdClass();
             $v->value = $decoded->element ?? null;
             $type->setElement(FHIRString::jsonUnserialize($v, $config));
         }
@@ -3529,7 +3528,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             || isset($decoded->_listMode)
             || property_exists($decoded, self::FIELD_LIST_MODE)
             || property_exists($decoded, self::FIELD_LIST_MODE_EXT)) {
-            $v = $decoded->_listMode ?? new \stdClass();
+            $v = isset($decoded->_listMode) ? clone $decoded->_listMode : new \stdClass();
             $v->value = $decoded->listMode ?? null;
             $type->setListMode(FHIRStructureMapSourceListMode::jsonUnserialize($v, $config));
         }
@@ -3537,7 +3536,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             || isset($decoded->_variable)
             || property_exists($decoded, self::FIELD_VARIABLE)
             || property_exists($decoded, self::FIELD_VARIABLE_EXT)) {
-            $v = $decoded->_variable ?? new \stdClass();
+            $v = isset($decoded->_variable) ? clone $decoded->_variable : new \stdClass();
             $v->value = $decoded->variable ?? null;
             $type->setVariable(FHIRId::jsonUnserialize($v, $config));
         }
@@ -3545,7 +3544,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             || isset($decoded->_condition)
             || property_exists($decoded, self::FIELD_CONDITION)
             || property_exists($decoded, self::FIELD_CONDITION_EXT)) {
-            $v = $decoded->_condition ?? new \stdClass();
+            $v = isset($decoded->_condition) ? clone $decoded->_condition : new \stdClass();
             $v->value = $decoded->condition ?? null;
             $type->setCondition(FHIRString::jsonUnserialize($v, $config));
         }
@@ -3553,7 +3552,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             || isset($decoded->_check)
             || property_exists($decoded, self::FIELD_CHECK)
             || property_exists($decoded, self::FIELD_CHECK_EXT)) {
-            $v = $decoded->_check ?? new \stdClass();
+            $v = isset($decoded->_check) ? clone $decoded->_check : new \stdClass();
             $v->value = $decoded->check ?? null;
             $type->setCheck(FHIRString::jsonUnserialize($v, $config));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -666,7 +666,7 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
             || isset($decoded->_start)
             || property_exists($decoded, self::FIELD_START)
             || property_exists($decoded, self::FIELD_START_EXT)) {
-            $v = $decoded->_start ?? new \stdClass();
+            $v = isset($decoded->_start) ? clone $decoded->_start : new \stdClass();
             $v->value = $decoded->start ?? null;
             $type->setStart(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -674,7 +674,7 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
             || isset($decoded->_end)
             || property_exists($decoded, self::FIELD_END)
             || property_exists($decoded, self::FIELD_END_EXT)) {
-            $v = $decoded->_end ?? new \stdClass();
+            $v = isset($decoded->_end) ? clone $decoded->_end : new \stdClass();
             $v->value = $decoded->end ?? null;
             $type->setEnd(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -682,7 +682,7 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
             || isset($decoded->_observedAllele)
             || property_exists($decoded, self::FIELD_OBSERVED_ALLELE)
             || property_exists($decoded, self::FIELD_OBSERVED_ALLELE_EXT)) {
-            $v = $decoded->_observedAllele ?? new \stdClass();
+            $v = isset($decoded->_observedAllele) ? clone $decoded->_observedAllele : new \stdClass();
             $v->value = $decoded->observedAllele ?? null;
             $type->setObservedAllele(FHIRString::jsonUnserialize($v, $config));
         }
@@ -690,7 +690,7 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
             || isset($decoded->_referenceAllele)
             || property_exists($decoded, self::FIELD_REFERENCE_ALLELE)
             || property_exists($decoded, self::FIELD_REFERENCE_ALLELE_EXT)) {
-            $v = $decoded->_referenceAllele ?? new \stdClass();
+            $v = isset($decoded->_referenceAllele) ? clone $decoded->_referenceAllele : new \stdClass();
             $v->value = $decoded->referenceAllele ?? null;
             $type->setReferenceAllele(FHIRString::jsonUnserialize($v, $config));
         }
@@ -698,7 +698,7 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
             || isset($decoded->_cigar)
             || property_exists($decoded, self::FIELD_CIGAR)
             || property_exists($decoded, self::FIELD_CIGAR_EXT)) {
-            $v = $decoded->_cigar ?? new \stdClass();
+            $v = isset($decoded->_cigar) ? clone $decoded->_cigar : new \stdClass();
             $v->value = $decoded->cigar ?? null;
             $type->setCigar(FHIRString::jsonUnserialize($v, $config));
         }

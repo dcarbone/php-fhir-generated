@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -677,7 +677,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
@@ -692,7 +692,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
             || isset($decoded->_value)
             || property_exists($decoded, self::FIELD_VALUE)
             || property_exists($decoded, self::FIELD_VALUE_EXT)) {
-            $v = $decoded->_value ?? new \stdClass();
+            $v = isset($decoded->_value) ? clone $decoded->_value : new \stdClass();
             $v->value = $decoded->value ?? null;
             $type->setValue(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -707,7 +707,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
             || isset($decoded->_denominatorCount)
             || property_exists($decoded, self::FIELD_DENOMINATOR_COUNT)
             || property_exists($decoded, self::FIELD_DENOMINATOR_COUNT_EXT)) {
-            $v = $decoded->_denominatorCount ?? new \stdClass();
+            $v = isset($decoded->_denominatorCount) ? clone $decoded->_denominatorCount : new \stdClass();
             $v->value = $decoded->denominatorCount ?? null;
             $type->setDenominatorCount(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -715,7 +715,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
             || isset($decoded->_numeratorCount)
             || property_exists($decoded, self::FIELD_NUMERATOR_COUNT)
             || property_exists($decoded, self::FIELD_NUMERATOR_COUNT_EXT)) {
-            $v = $decoded->_numeratorCount ?? new \stdClass();
+            $v = isset($decoded->_numeratorCount) ? clone $decoded->_numeratorCount : new \stdClass();
             $v->value = $decoded->numeratorCount ?? null;
             $type->setNumeratorCount(FHIRInteger::jsonUnserialize($v, $config));
         }

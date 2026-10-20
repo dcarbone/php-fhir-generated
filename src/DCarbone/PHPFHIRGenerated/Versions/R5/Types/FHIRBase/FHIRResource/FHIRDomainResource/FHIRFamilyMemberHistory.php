@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryParticipant;
@@ -187,13 +186,13 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_PATIENT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_RELATIONSHIP => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -340,7 +339,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The actual or approximate date of birth of the relative.
+     * The actual or approximate date of birth of the relative. (choose any one of
+     * born*, but only one)
      */
     #[FHIRPeriod]
     protected FHIRPeriod $bornPeriod;
@@ -350,7 +350,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The actual or approximate date of birth of the relative.
+     * The actual or approximate date of birth of the relative. (choose any one of
+     * born*, but only one)
      */
     #[FHIRDate]
     protected FHIRDate $bornDate;
@@ -359,7 +360,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The actual or approximate date of birth of the relative.
+     * The actual or approximate date of birth of the relative. (choose any one of
+     * born*, but only one)
      */
     #[FHIRString]
     protected FHIRString $bornString;
@@ -369,6 +371,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
+     * (choose any one of age*, but only one)
      */
     #[FHIRAge]
     protected FHIRAge $ageAge;
@@ -378,6 +381,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
+     * (choose any one of age*, but only one)
      */
     #[FHIRRange]
     protected FHIRRange $ageRange;
@@ -387,6 +391,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
+     * (choose any one of age*, but only one)
      */
     #[FHIRString]
     protected FHIRString $ageString;
@@ -403,7 +408,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record.
+     * death for the family member history record. (choose any one of deceased*, but
+     * only one)
      */
     #[FHIRBoolean]
     protected FHIRBoolean $deceasedBoolean;
@@ -413,7 +419,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record.
+     * death for the family member history record. (choose any one of deceased*, but
+     * only one)
      */
     #[FHIRAge]
     protected FHIRAge $deceasedAge;
@@ -423,7 +430,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record.
+     * death for the family member history record. (choose any one of deceased*, but
+     * only one)
      */
     #[FHIRRange]
     protected FHIRRange $deceasedRange;
@@ -434,7 +442,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record.
+     * death for the family member history record. (choose any one of deceased*, but
+     * only one)
      */
     #[FHIRDate]
     protected FHIRDate $deceasedDate;
@@ -444,7 +453,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record.
+     * death for the family member history record. (choose any one of deceased*, but
+     * only one)
      */
     #[FHIRString]
     protected FHIRString $deceasedString;
@@ -1169,7 +1179,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The actual or approximate date of birth of the relative.
+     * The actual or approximate date of birth of the relative. (choose any one of
+     * born*, but only one)
      */
     public function getBornPeriod(): null|FHIRPeriod
     {
@@ -1181,7 +1192,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The actual or approximate date of birth of the relative.
+     * The actual or approximate date of birth of the relative. (choose any one of
+     * born*, but only one)
      */
     public function setBornPeriod(null|FHIRPeriod $bornPeriod): self
     {
@@ -1199,7 +1211,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The actual or approximate date of birth of the relative.
+     * The actual or approximate date of birth of the relative. (choose any one of
+     * born*, but only one)
      */
     public function getBornDate(): null|FHIRDate
     {
@@ -1212,7 +1225,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The actual or approximate date of birth of the relative.
+     * The actual or approximate date of birth of the relative. (choose any one of
+     * born*, but only one)
      */
     public function setBornDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $bornDate): self
     {
@@ -1232,7 +1246,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The actual or approximate date of birth of the relative.
+     * The actual or approximate date of birth of the relative. (choose any one of
+     * born*, but only one)
      */
     public function getBornString(): null|FHIRString
     {
@@ -1244,7 +1259,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The actual or approximate date of birth of the relative.
+     * The actual or approximate date of birth of the relative. (choose any one of
+     * born*, but only one)
      */
     public function setBornString(null|string|FHIRStringPrimitive|FHIRString $bornString): self
     {
@@ -1265,6 +1281,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
+     * (choose any one of age*, but only one)
      */
     public function getAgeAge(): null|FHIRAge
     {
@@ -1277,6 +1294,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
+     * (choose any one of age*, but only one)
      */
     public function setAgeAge(null|FHIRAge $ageAge): self
     {
@@ -1294,6 +1312,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
+     * (choose any one of age*, but only one)
      */
     public function getAgeRange(): null|FHIRRange
     {
@@ -1306,6 +1325,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
+     * (choose any one of age*, but only one)
      */
     public function setAgeRange(null|FHIRRange $ageRange): self
     {
@@ -1323,6 +1343,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
+     * (choose any one of age*, but only one)
      */
     public function getAgeString(): null|FHIRString
     {
@@ -1335,6 +1356,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
+     * (choose any one of age*, but only one)
      */
     public function setAgeString(null|string|FHIRStringPrimitive|FHIRString $ageString): self
     {
@@ -1384,7 +1406,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record.
+     * death for the family member history record. (choose any one of deceased*, but
+     * only one)
      */
     public function getDeceasedBoolean(): null|FHIRBoolean
     {
@@ -1396,7 +1419,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record.
+     * death for the family member history record. (choose any one of deceased*, but
+     * only one)
      */
     public function setDeceasedBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $deceasedBoolean): self
     {
@@ -1417,7 +1441,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record.
+     * death for the family member history record. (choose any one of deceased*, but
+     * only one)
      */
     public function getDeceasedAge(): null|FHIRAge
     {
@@ -1430,7 +1455,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record.
+     * death for the family member history record. (choose any one of deceased*, but
+     * only one)
      */
     public function setDeceasedAge(null|FHIRAge $deceasedAge): self
     {
@@ -1448,7 +1474,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record.
+     * death for the family member history record. (choose any one of deceased*, but
+     * only one)
      */
     public function getDeceasedRange(): null|FHIRRange
     {
@@ -1461,7 +1488,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record.
+     * death for the family member history record. (choose any one of deceased*, but
+     * only one)
      */
     public function setDeceasedRange(null|FHIRRange $deceasedRange): self
     {
@@ -1480,7 +1508,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record.
+     * death for the family member history record. (choose any one of deceased*, but
+     * only one)
      */
     public function getDeceasedDate(): null|FHIRDate
     {
@@ -1494,7 +1523,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record.
+     * death for the family member history record. (choose any one of deceased*, but
+     * only one)
      */
     public function setDeceasedDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $deceasedDate): self
     {
@@ -1515,7 +1545,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record.
+     * death for the family member history record. (choose any one of deceased*, but
+     * only one)
      */
     public function getDeceasedString(): null|FHIRString
     {
@@ -1528,7 +1559,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
-     * death for the family member history record.
+     * death for the family member history record. (choose any one of deceased*, but
+     * only one)
      */
     public function setDeceasedString(null|string|FHIRStringPrimitive|FHIRString $deceasedString): self
     {
@@ -1849,7 +1881,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -2308,7 +2340,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addInstantiatesCanonical(FHIRCanonical::jsonUnserialize($v, $config));
             }
@@ -2325,7 +2357,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addInstantiatesUri(FHIRUri::jsonUnserialize($v, $config));
             }
@@ -2334,7 +2366,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRFamilyHistoryStatus::jsonUnserialize($v, $config));
         }
@@ -2356,7 +2388,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             || isset($decoded->_date)
             || property_exists($decoded, self::FIELD_DATE)
             || property_exists($decoded, self::FIELD_DATE_EXT)) {
-            $v = $decoded->_date ?? new \stdClass();
+            $v = isset($decoded->_date) ? clone $decoded->_date : new \stdClass();
             $v->value = $decoded->date ?? null;
             $type->setDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -2375,7 +2407,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2404,7 +2436,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             || isset($decoded->_bornDate)
             || property_exists($decoded, self::FIELD_BORN_DATE)
             || property_exists($decoded, self::FIELD_BORN_DATE_EXT)) {
-            $v = $decoded->_bornDate ?? new \stdClass();
+            $v = isset($decoded->_bornDate) ? clone $decoded->_bornDate : new \stdClass();
             $v->value = $decoded->bornDate ?? null;
             $type->setBornDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -2412,7 +2444,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             || isset($decoded->_bornString)
             || property_exists($decoded, self::FIELD_BORN_STRING)
             || property_exists($decoded, self::FIELD_BORN_STRING_EXT)) {
-            $v = $decoded->_bornString ?? new \stdClass();
+            $v = isset($decoded->_bornString) ? clone $decoded->_bornString : new \stdClass();
             $v->value = $decoded->bornString ?? null;
             $type->setBornString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2434,7 +2466,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             || isset($decoded->_ageString)
             || property_exists($decoded, self::FIELD_AGE_STRING)
             || property_exists($decoded, self::FIELD_AGE_STRING_EXT)) {
-            $v = $decoded->_ageString ?? new \stdClass();
+            $v = isset($decoded->_ageString) ? clone $decoded->_ageString : new \stdClass();
             $v->value = $decoded->ageString ?? null;
             $type->setAgeString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2442,7 +2474,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             || isset($decoded->_estimatedAge)
             || property_exists($decoded, self::FIELD_ESTIMATED_AGE)
             || property_exists($decoded, self::FIELD_ESTIMATED_AGE_EXT)) {
-            $v = $decoded->_estimatedAge ?? new \stdClass();
+            $v = isset($decoded->_estimatedAge) ? clone $decoded->_estimatedAge : new \stdClass();
             $v->value = $decoded->estimatedAge ?? null;
             $type->setEstimatedAge(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -2450,7 +2482,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             || isset($decoded->_deceasedBoolean)
             || property_exists($decoded, self::FIELD_DECEASED_BOOLEAN)
             || property_exists($decoded, self::FIELD_DECEASED_BOOLEAN_EXT)) {
-            $v = $decoded->_deceasedBoolean ?? new \stdClass();
+            $v = isset($decoded->_deceasedBoolean) ? clone $decoded->_deceasedBoolean : new \stdClass();
             $v->value = $decoded->deceasedBoolean ?? null;
             $type->setDeceasedBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -2472,7 +2504,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             || isset($decoded->_deceasedDate)
             || property_exists($decoded, self::FIELD_DECEASED_DATE)
             || property_exists($decoded, self::FIELD_DECEASED_DATE_EXT)) {
-            $v = $decoded->_deceasedDate ?? new \stdClass();
+            $v = isset($decoded->_deceasedDate) ? clone $decoded->_deceasedDate : new \stdClass();
             $v->value = $decoded->deceasedDate ?? null;
             $type->setDeceasedDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -2480,7 +2512,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             || isset($decoded->_deceasedString)
             || property_exists($decoded, self::FIELD_DECEASED_STRING)
             || property_exists($decoded, self::FIELD_DECEASED_STRING_EXT)) {
-            $v = $decoded->_deceasedString ?? new \stdClass();
+            $v = isset($decoded->_deceasedString) ? clone $decoded->_deceasedString : new \stdClass();
             $v->value = $decoded->deceasedString ?? null;
             $type->setDeceasedString(FHIRString::jsonUnserialize($v, $config));
         }

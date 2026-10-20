@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -191,7 +191,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * A reference to the actual participant.
+     * A reference to the actual participant. (choose any one of actor*, but only one)
      */
     #[FHIRCanonical]
     protected FHIRCanonical $actorCanonical;
@@ -200,7 +200,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A reference to the actual participant.
+     * A reference to the actual participant. (choose any one of actor*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $actorReference;
@@ -419,7 +419,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * A reference to the actual participant.
+     * A reference to the actual participant. (choose any one of actor*, but only one)
      */
     public function getActorCanonical(): null|FHIRCanonical
     {
@@ -432,7 +432,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * A reference to the actual participant.
+     * A reference to the actual participant. (choose any one of actor*, but only one)
      */
     public function setActorCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $actorCanonical): self
     {
@@ -452,7 +452,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A reference to the actual participant.
+     * A reference to the actual participant. (choose any one of actor*, but only one)
      */
     public function getActorReference(): null|FHIRReference
     {
@@ -464,7 +464,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A reference to the actual participant.
+     * A reference to the actual participant. (choose any one of actor*, but only one)
      */
     public function setActorReference(null|FHIRReference $actorReference): self
     {
@@ -644,7 +644,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
             || isset($decoded->_type)
             || property_exists($decoded, self::FIELD_TYPE)
             || property_exists($decoded, self::FIELD_TYPE_EXT)) {
-            $v = $decoded->_type ?? new \stdClass();
+            $v = isset($decoded->_type) ? clone $decoded->_type : new \stdClass();
             $v->value = $decoded->type ?? null;
             $type->setType(FHIRActionParticipantType::jsonUnserialize($v, $config));
         }
@@ -652,7 +652,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
             || isset($decoded->_typeCanonical)
             || property_exists($decoded, self::FIELD_TYPE_CANONICAL)
             || property_exists($decoded, self::FIELD_TYPE_CANONICAL_EXT)) {
-            $v = $decoded->_typeCanonical ?? new \stdClass();
+            $v = isset($decoded->_typeCanonical) ? clone $decoded->_typeCanonical : new \stdClass();
             $v->value = $decoded->typeCanonical ?? null;
             $type->setTypeCanonical(FHIRCanonical::jsonUnserialize($v, $config));
         }
@@ -681,7 +681,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
             || isset($decoded->_actorCanonical)
             || property_exists($decoded, self::FIELD_ACTOR_CANONICAL)
             || property_exists($decoded, self::FIELD_ACTOR_CANONICAL_EXT)) {
-            $v = $decoded->_actorCanonical ?? new \stdClass();
+            $v = isset($decoded->_actorCanonical) ? clone $decoded->_actorCanonical : new \stdClass();
             $v->value = $decoded->actorCanonical ?? null;
             $type->setActorCanonical(FHIRCanonical::jsonUnserialize($v, $config));
         }

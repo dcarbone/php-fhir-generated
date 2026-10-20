@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept;
@@ -130,7 +129,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -158,7 +157,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The quantity of the benefit which is permitted under the coverage.
+     * The quantity of the benefit which is permitted under the coverage. (choose any
+     * one of allowed*, but only one)
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $allowedUnsignedInt;
@@ -167,7 +167,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The quantity of the benefit which is permitted under the coverage.
+     * The quantity of the benefit which is permitted under the coverage. (choose any
+     * one of allowed*, but only one)
      */
     #[FHIRString]
     protected FHIRString $allowedString;
@@ -176,7 +177,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The quantity of the benefit which is permitted under the coverage.
+     * The quantity of the benefit which is permitted under the coverage. (choose any
+     * one of allowed*, but only one)
      */
     #[FHIRMoney]
     protected FHIRMoney $allowedMoney;
@@ -185,7 +187,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The quantity of the benefit which have been consumed to date.
+     * The quantity of the benefit which have been consumed to date. (choose any one of
+     * used*, but only one)
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $usedUnsignedInt;
@@ -194,7 +197,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The quantity of the benefit which have been consumed to date.
+     * The quantity of the benefit which have been consumed to date. (choose any one of
+     * used*, but only one)
      */
     #[FHIRString]
     protected FHIRString $usedString;
@@ -203,7 +207,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The quantity of the benefit which have been consumed to date.
+     * The quantity of the benefit which have been consumed to date. (choose any one of
+     * used*, but only one)
      */
     #[FHIRMoney]
     protected FHIRMoney $usedMoney;
@@ -297,7 +302,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The quantity of the benefit which is permitted under the coverage.
+     * The quantity of the benefit which is permitted under the coverage. (choose any
+     * one of allowed*, but only one)
      */
     public function getAllowedUnsignedInt(): null|FHIRUnsignedInt
     {
@@ -309,7 +315,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The quantity of the benefit which is permitted under the coverage.
+     * The quantity of the benefit which is permitted under the coverage. (choose any
+     * one of allowed*, but only one)
      */
     public function setAllowedUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $allowedUnsignedInt): self
     {
@@ -329,7 +336,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The quantity of the benefit which is permitted under the coverage.
+     * The quantity of the benefit which is permitted under the coverage. (choose any
+     * one of allowed*, but only one)
      */
     public function getAllowedString(): null|FHIRString
     {
@@ -341,7 +349,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The quantity of the benefit which is permitted under the coverage.
+     * The quantity of the benefit which is permitted under the coverage. (choose any
+     * one of allowed*, but only one)
      */
     public function setAllowedString(null|string|FHIRStringPrimitive|FHIRString $allowedString): self
     {
@@ -361,7 +370,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The quantity of the benefit which is permitted under the coverage.
+     * The quantity of the benefit which is permitted under the coverage. (choose any
+     * one of allowed*, but only one)
      */
     public function getAllowedMoney(): null|FHIRMoney
     {
@@ -373,7 +383,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The quantity of the benefit which is permitted under the coverage.
+     * The quantity of the benefit which is permitted under the coverage. (choose any
+     * one of allowed*, but only one)
      */
     public function setAllowedMoney(null|FHIRMoney $allowedMoney): self
     {
@@ -390,7 +401,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The quantity of the benefit which have been consumed to date.
+     * The quantity of the benefit which have been consumed to date. (choose any one of
+     * used*, but only one)
      */
     public function getUsedUnsignedInt(): null|FHIRUnsignedInt
     {
@@ -402,7 +414,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The quantity of the benefit which have been consumed to date.
+     * The quantity of the benefit which have been consumed to date. (choose any one of
+     * used*, but only one)
      */
     public function setUsedUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $usedUnsignedInt): self
     {
@@ -422,7 +435,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The quantity of the benefit which have been consumed to date.
+     * The quantity of the benefit which have been consumed to date. (choose any one of
+     * used*, but only one)
      */
     public function getUsedString(): null|FHIRString
     {
@@ -434,7 +448,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The quantity of the benefit which have been consumed to date.
+     * The quantity of the benefit which have been consumed to date. (choose any one of
+     * used*, but only one)
      */
     public function setUsedString(null|string|FHIRStringPrimitive|FHIRString $usedString): self
     {
@@ -454,7 +469,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The quantity of the benefit which have been consumed to date.
+     * The quantity of the benefit which have been consumed to date. (choose any one of
+     * used*, but only one)
      */
     public function getUsedMoney(): null|FHIRMoney
     {
@@ -466,7 +482,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The quantity of the benefit which have been consumed to date.
+     * The quantity of the benefit which have been consumed to date. (choose any one of
+     * used*, but only one)
      */
     public function setUsedMoney(null|FHIRMoney $usedMoney): self
     {
@@ -666,7 +683,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
             || isset($decoded->_allowedUnsignedInt)
             || property_exists($decoded, self::FIELD_ALLOWED_UNSIGNED_INT)
             || property_exists($decoded, self::FIELD_ALLOWED_UNSIGNED_INT_EXT)) {
-            $v = $decoded->_allowedUnsignedInt ?? new \stdClass();
+            $v = isset($decoded->_allowedUnsignedInt) ? clone $decoded->_allowedUnsignedInt : new \stdClass();
             $v->value = $decoded->allowedUnsignedInt ?? null;
             $type->setAllowedUnsignedInt(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
@@ -674,7 +691,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
             || isset($decoded->_allowedString)
             || property_exists($decoded, self::FIELD_ALLOWED_STRING)
             || property_exists($decoded, self::FIELD_ALLOWED_STRING_EXT)) {
-            $v = $decoded->_allowedString ?? new \stdClass();
+            $v = isset($decoded->_allowedString) ? clone $decoded->_allowedString : new \stdClass();
             $v->value = $decoded->allowedString ?? null;
             $type->setAllowedString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -689,7 +706,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
             || isset($decoded->_usedUnsignedInt)
             || property_exists($decoded, self::FIELD_USED_UNSIGNED_INT)
             || property_exists($decoded, self::FIELD_USED_UNSIGNED_INT_EXT)) {
-            $v = $decoded->_usedUnsignedInt ?? new \stdClass();
+            $v = isset($decoded->_usedUnsignedInt) ? clone $decoded->_usedUnsignedInt : new \stdClass();
             $v->value = $decoded->usedUnsignedInt ?? null;
             $type->setUsedUnsignedInt(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
@@ -697,7 +714,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
             || isset($decoded->_usedString)
             || property_exists($decoded, self::FIELD_USED_STRING)
             || property_exists($decoded, self::FIELD_USED_STRING_EXT)) {
-            $v = $decoded->_usedString ?? new \stdClass();
+            $v = isset($decoded->_usedString) ? clone $decoded->_usedString : new \stdClass();
             $v->value = $decoded->usedString ?? null;
             $type->setUsedString(FHIRString::jsonUnserialize($v, $config));
         }

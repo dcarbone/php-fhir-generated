@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -83,9 +83,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
  */
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMinLengthRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueOneOfRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -104,47 +101,47 @@ class FHIRRelatedArtifactTypeExpandedEnum extends FHIRCodePrimitive
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
-            ValuePatternMatchRule::NAME => '/^[^\\s]+( [^\\s]+)*$/',
-            ValueMinLengthRule::NAME => 1,
-            ValueOneOfRule::NAME => [
-                0 => 'documentation',
-                1 => 'justification',
-                2 => 'citation',
-                3 => 'predecessor',
-                4 => 'successor',
-                5 => 'derived-from',
-                6 => 'depends-on',
-                7 => 'composed-of',
-                8 => 'part-of',
-                9 => 'amends',
-                10 => 'amended-with',
-                11 => 'appends',
-                12 => 'appended-with',
-                13 => 'cites',
-                14 => 'cited-by',
-                15 => 'comments-on',
-                16 => 'comment-in',
-                17 => 'contains',
-                18 => 'contained-in',
-                19 => 'corrects',
-                20 => 'correction-in',
-                21 => 'replaces',
-                22 => 'replaced-with',
-                23 => 'retracts',
-                24 => 'retracted-by',
-                25 => 'signs',
-                26 => 'similar-to',
-                27 => 'supports',
-                28 => 'supported-with',
-                29 => 'transforms',
-                30 => 'transformed-into',
-                31 => 'transformed-with',
-                32 => 'documents',
-                33 => 'specification-of',
-                34 => 'created-with',
-                35 => 'cite-as',
-                36 => 'reprint',
-                37 => 'reprint-of',
+            'value_pattern_match' => '/^[^\\s]+( [^\\s]+)*$/',
+            'value_min_length' => 1,
+            'value_one_of' => [
+                'documentation',
+                'justification',
+                'citation',
+                'predecessor',
+                'successor',
+                'derived-from',
+                'depends-on',
+                'composed-of',
+                'part-of',
+                'amends',
+                'amended-with',
+                'appends',
+                'appended-with',
+                'cites',
+                'cited-by',
+                'comments-on',
+                'comment-in',
+                'contains',
+                'contained-in',
+                'corrects',
+                'correction-in',
+                'replaces',
+                'replaced-with',
+                'retracts',
+                'retracted-by',
+                'signs',
+                'similar-to',
+                'supports',
+                'supported-with',
+                'transforms',
+                'transformed-into',
+                'transformed-with',
+                'documents',
+                'specification-of',
+                'created-with',
+                'cite-as',
+                'reprint',
+                'reprint-of',
             ],
         ],
     ];

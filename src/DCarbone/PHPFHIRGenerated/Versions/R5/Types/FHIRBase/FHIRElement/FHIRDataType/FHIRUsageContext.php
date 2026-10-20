@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
@@ -122,19 +121,7 @@ class FHIRUsageContext extends FHIRDataType
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_CODE => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_CODEABLE_CONCEPT => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_QUANTITY => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_RANGE => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_REFERENCE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -160,7 +147,8 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
@@ -172,7 +160,8 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -182,7 +171,8 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      */
     #[FHIRRange]
     protected FHIRRange $valueRange;
@@ -192,7 +182,8 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      */
     #[FHIRReference]
     protected FHIRReference $valueReference;
@@ -277,7 +268,8 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      */
     public function getValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -291,7 +283,8 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -311,7 +304,8 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -326,7 +320,8 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -344,7 +339,8 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      */
     public function getValueRange(): null|FHIRRange
     {
@@ -357,7 +353,8 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -375,7 +372,8 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      */
     public function getValueReference(): null|FHIRReference
     {
@@ -388,7 +386,8 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code.
+     * interpretation of the value is defined by the code. (choose any one of value*,
+     * but only one)
      */
     public function setValueReference(null|FHIRReference $valueReference): self
     {

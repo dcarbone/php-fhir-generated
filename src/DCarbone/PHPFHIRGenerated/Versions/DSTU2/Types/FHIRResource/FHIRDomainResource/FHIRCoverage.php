@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -943,7 +943,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1261,7 +1261,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_group)
             || property_exists($decoded, self::FIELD_GROUP)
             || property_exists($decoded, self::FIELD_GROUP_EXT)) {
-            $v = $decoded->_group ?? new \stdClass();
+            $v = isset($decoded->_group) ? clone $decoded->_group : new \stdClass();
             $v->value = $decoded->group ?? null;
             $type->setGroup(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1269,7 +1269,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_plan)
             || property_exists($decoded, self::FIELD_PLAN)
             || property_exists($decoded, self::FIELD_PLAN_EXT)) {
-            $v = $decoded->_plan ?? new \stdClass();
+            $v = isset($decoded->_plan) ? clone $decoded->_plan : new \stdClass();
             $v->value = $decoded->plan ?? null;
             $type->setPlan(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1277,7 +1277,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_subPlan)
             || property_exists($decoded, self::FIELD_SUB_PLAN)
             || property_exists($decoded, self::FIELD_SUB_PLAN_EXT)) {
-            $v = $decoded->_subPlan ?? new \stdClass();
+            $v = isset($decoded->_subPlan) ? clone $decoded->_subPlan : new \stdClass();
             $v->value = $decoded->subPlan ?? null;
             $type->setSubPlan(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1285,7 +1285,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_dependent)
             || property_exists($decoded, self::FIELD_DEPENDENT)
             || property_exists($decoded, self::FIELD_DEPENDENT_EXT)) {
-            $v = $decoded->_dependent ?? new \stdClass();
+            $v = isset($decoded->_dependent) ? clone $decoded->_dependent : new \stdClass();
             $v->value = $decoded->dependent ?? null;
             $type->setDependent(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
@@ -1293,7 +1293,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_sequence)
             || property_exists($decoded, self::FIELD_SEQUENCE)
             || property_exists($decoded, self::FIELD_SEQUENCE_EXT)) {
-            $v = $decoded->_sequence ?? new \stdClass();
+            $v = isset($decoded->_sequence) ? clone $decoded->_sequence : new \stdClass();
             $v->value = $decoded->sequence ?? null;
             $type->setSequence(FHIRPositiveInt::jsonUnserialize($v, $config));
         }

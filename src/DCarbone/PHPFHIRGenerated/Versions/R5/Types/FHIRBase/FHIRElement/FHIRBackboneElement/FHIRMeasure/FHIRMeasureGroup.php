@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -206,6 +206,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
+     * (choose any one of subject*, but only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $subjectCodeableConcept;
@@ -216,6 +217,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
+     * (choose any one of subject*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $subjectReference;
@@ -582,6 +584,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
+     * (choose any one of subject*, but only one)
      */
     public function getSubjectCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -596,6 +599,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
+     * (choose any one of subject*, but only one)
      */
     public function setSubjectCodeableConcept(null|FHIRCodeableConcept $subjectCodeableConcept): self
     {
@@ -614,6 +618,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
+     * (choose any one of subject*, but only one)
      */
     public function getSubjectReference(): null|FHIRReference
     {
@@ -627,6 +632,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
+     * (choose any one of subject*, but only one)
      */
     public function setSubjectReference(null|FHIRReference $subjectReference): self
     {
@@ -1247,7 +1253,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
             || isset($decoded->_linkId)
             || property_exists($decoded, self::FIELD_LINK_ID)
             || property_exists($decoded, self::FIELD_LINK_ID_EXT)) {
-            $v = $decoded->_linkId ?? new \stdClass();
+            $v = isset($decoded->_linkId) ? clone $decoded->_linkId : new \stdClass();
             $v->value = $decoded->linkId ?? null;
             $type->setLinkId(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1262,7 +1268,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -1295,7 +1301,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
             || isset($decoded->_basis)
             || property_exists($decoded, self::FIELD_BASIS)
             || property_exists($decoded, self::FIELD_BASIS_EXT)) {
-            $v = $decoded->_basis ?? new \stdClass();
+            $v = isset($decoded->_basis) ? clone $decoded->_basis : new \stdClass();
             $v->value = $decoded->basis ?? null;
             $type->setBasis(FHIRFHIRTypes::jsonUnserialize($v, $config));
         }
@@ -1317,7 +1323,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
             || isset($decoded->_rateAggregation)
             || property_exists($decoded, self::FIELD_RATE_AGGREGATION)
             || property_exists($decoded, self::FIELD_RATE_AGGREGATION_EXT)) {
-            $v = $decoded->_rateAggregation ?? new \stdClass();
+            $v = isset($decoded->_rateAggregation) ? clone $decoded->_rateAggregation : new \stdClass();
             $v->value = $decoded->rateAggregation ?? null;
             $type->setRateAggregation(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -1340,7 +1346,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addLibrary(FHIRCanonical::jsonUnserialize($v, $config));
             }

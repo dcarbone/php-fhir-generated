@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive;
@@ -136,10 +135,10 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_LINK_ID => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1467,7 +1466,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
             || isset($decoded->_linkId)
             || property_exists($decoded, self::FIELD_LINK_ID)
             || property_exists($decoded, self::FIELD_LINK_ID_EXT)) {
-            $v = $decoded->_linkId ?? new \stdClass();
+            $v = isset($decoded->_linkId) ? clone $decoded->_linkId : new \stdClass();
             $v->value = $decoded->linkId ?? null;
             $type->setLinkId(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1475,7 +1474,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
             || isset($decoded->_definition)
             || property_exists($decoded, self::FIELD_DEFINITION)
             || property_exists($decoded, self::FIELD_DEFINITION_EXT)) {
-            $v = $decoded->_definition ?? new \stdClass();
+            $v = isset($decoded->_definition) ? clone $decoded->_definition : new \stdClass();
             $v->value = $decoded->definition ?? null;
             $type->setDefinition(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -1494,7 +1493,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
             || isset($decoded->_prefix)
             || property_exists($decoded, self::FIELD_PREFIX)
             || property_exists($decoded, self::FIELD_PREFIX_EXT)) {
-            $v = $decoded->_prefix ?? new \stdClass();
+            $v = isset($decoded->_prefix) ? clone $decoded->_prefix : new \stdClass();
             $v->value = $decoded->prefix ?? null;
             $type->setPrefix(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1502,7 +1501,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
             || isset($decoded->_text)
             || property_exists($decoded, self::FIELD_TEXT)
             || property_exists($decoded, self::FIELD_TEXT_EXT)) {
-            $v = $decoded->_text ?? new \stdClass();
+            $v = isset($decoded->_text) ? clone $decoded->_text : new \stdClass();
             $v->value = $decoded->text ?? null;
             $type->setText(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1510,7 +1509,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
             || isset($decoded->_type)
             || property_exists($decoded, self::FIELD_TYPE)
             || property_exists($decoded, self::FIELD_TYPE_EXT)) {
-            $v = $decoded->_type ?? new \stdClass();
+            $v = isset($decoded->_type) ? clone $decoded->_type : new \stdClass();
             $v->value = $decoded->type ?? null;
             $type->setType(FHIRQuestionnaireItemType::jsonUnserialize($v, $config));
         }
@@ -1529,7 +1528,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
             || isset($decoded->_enableBehavior)
             || property_exists($decoded, self::FIELD_ENABLE_BEHAVIOR)
             || property_exists($decoded, self::FIELD_ENABLE_BEHAVIOR_EXT)) {
-            $v = $decoded->_enableBehavior ?? new \stdClass();
+            $v = isset($decoded->_enableBehavior) ? clone $decoded->_enableBehavior : new \stdClass();
             $v->value = $decoded->enableBehavior ?? null;
             $type->setEnableBehavior(FHIREnableWhenBehavior::jsonUnserialize($v, $config));
         }
@@ -1537,7 +1536,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
             || isset($decoded->_required)
             || property_exists($decoded, self::FIELD_REQUIRED)
             || property_exists($decoded, self::FIELD_REQUIRED_EXT)) {
-            $v = $decoded->_required ?? new \stdClass();
+            $v = isset($decoded->_required) ? clone $decoded->_required : new \stdClass();
             $v->value = $decoded->required ?? null;
             $type->setRequired(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1545,7 +1544,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
             || isset($decoded->_repeats)
             || property_exists($decoded, self::FIELD_REPEATS)
             || property_exists($decoded, self::FIELD_REPEATS_EXT)) {
-            $v = $decoded->_repeats ?? new \stdClass();
+            $v = isset($decoded->_repeats) ? clone $decoded->_repeats : new \stdClass();
             $v->value = $decoded->repeats ?? null;
             $type->setRepeats(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1553,7 +1552,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
             || isset($decoded->_readOnly)
             || property_exists($decoded, self::FIELD_READ_ONLY)
             || property_exists($decoded, self::FIELD_READ_ONLY_EXT)) {
-            $v = $decoded->_readOnly ?? new \stdClass();
+            $v = isset($decoded->_readOnly) ? clone $decoded->_readOnly : new \stdClass();
             $v->value = $decoded->readOnly ?? null;
             $type->setReadOnly(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1561,7 +1560,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
             || isset($decoded->_maxLength)
             || property_exists($decoded, self::FIELD_MAX_LENGTH)
             || property_exists($decoded, self::FIELD_MAX_LENGTH_EXT)) {
-            $v = $decoded->_maxLength ?? new \stdClass();
+            $v = isset($decoded->_maxLength) ? clone $decoded->_maxLength : new \stdClass();
             $v->value = $decoded->maxLength ?? null;
             $type->setMaxLength(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -1569,7 +1568,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
             || isset($decoded->_answerValueSet)
             || property_exists($decoded, self::FIELD_ANSWER_VALUE_SET)
             || property_exists($decoded, self::FIELD_ANSWER_VALUE_SET_EXT)) {
-            $v = $decoded->_answerValueSet ?? new \stdClass();
+            $v = isset($decoded->_answerValueSet) ? clone $decoded->_answerValueSet : new \stdClass();
             $v->value = $decoded->answerValueSet ?? null;
             $type->setAnswerValueSet(FHIRCanonical::jsonUnserialize($v, $config));
         }

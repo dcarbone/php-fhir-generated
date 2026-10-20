@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -153,7 +153,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * mass) of the single pharmaceutical product or manufactured item. Unit of
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
-     * normalized as a unitary unit, which would be 'per mg').
+     * normalized as a unitary unit, which would be 'per mg'). (choose any one of
+     * presentation*, but only one)
      */
     #[FHIRRatio]
     protected FHIRRatio $presentationRatio;
@@ -166,7 +167,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * mass) of the single pharmaceutical product or manufactured item. Unit of
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
-     * normalized as a unitary unit, which would be 'per mg').
+     * normalized as a unitary unit, which would be 'per mg'). (choose any one of
+     * presentation*, but only one)
      */
     #[FHIRRatioRange]
     protected FHIRRatioRange $presentationRatioRange;
@@ -180,7 +182,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * mass) of the single pharmaceutical product or manufactured item. Unit of
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
-     * normalized as a unitary unit, which would be 'per mg').
+     * normalized as a unitary unit, which would be 'per mg'). (choose any one of
+     * presentation*, but only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $presentationCodeableConcept;
@@ -195,7 +198,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * mass) of the single pharmaceutical product or manufactured item. Unit of
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
-     * normalized as a unitary unit, which would be 'per mg').
+     * normalized as a unitary unit, which would be 'per mg'). (choose any one of
+     * presentation*, but only one)
      */
     #[FHIRQuantity]
     protected FHIRQuantity $presentationQuantity;
@@ -215,7 +219,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The strength per unitary volume (or mass).
+     * The strength per unitary volume (or mass). (choose any one of concentration*,
+     * but only one)
      */
     #[FHIRRatio]
     protected FHIRRatio $concentrationRatio;
@@ -224,7 +229,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The strength per unitary volume (or mass).
+     * The strength per unitary volume (or mass). (choose any one of concentration*,
+     * but only one)
      */
     #[FHIRRatioRange]
     protected FHIRRatioRange $concentrationRatioRange;
@@ -234,7 +240,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The strength per unitary volume (or mass).
+     * The strength per unitary volume (or mass). (choose any one of concentration*,
+     * but only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $concentrationCodeableConcept;
@@ -245,7 +252,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The strength per unitary volume (or mass).
+     * The strength per unitary volume (or mass). (choose any one of concentration*,
+     * but only one)
      */
     #[FHIRQuantity]
     protected FHIRQuantity $concentrationQuantity;
@@ -402,7 +410,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * mass) of the single pharmaceutical product or manufactured item. Unit of
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
-     * normalized as a unitary unit, which would be 'per mg').
+     * normalized as a unitary unit, which would be 'per mg'). (choose any one of
+     * presentation*, but only one)
      */
     public function getPresentationRatio(): null|FHIRRatio
     {
@@ -419,7 +428,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * mass) of the single pharmaceutical product or manufactured item. Unit of
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
-     * normalized as a unitary unit, which would be 'per mg').
+     * normalized as a unitary unit, which would be 'per mg'). (choose any one of
+     * presentation*, but only one)
      */
     public function setPresentationRatio(null|FHIRRatio $presentationRatio): self
     {
@@ -440,7 +450,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * mass) of the single pharmaceutical product or manufactured item. Unit of
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
-     * normalized as a unitary unit, which would be 'per mg').
+     * normalized as a unitary unit, which would be 'per mg'). (choose any one of
+     * presentation*, but only one)
      */
     public function getPresentationRatioRange(): null|FHIRRatioRange
     {
@@ -456,7 +467,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * mass) of the single pharmaceutical product or manufactured item. Unit of
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
-     * normalized as a unitary unit, which would be 'per mg').
+     * normalized as a unitary unit, which would be 'per mg'). (choose any one of
+     * presentation*, but only one)
      */
     public function setPresentationRatioRange(null|FHIRRatioRange $presentationRatioRange): self
     {
@@ -478,7 +490,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * mass) of the single pharmaceutical product or manufactured item. Unit of
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
-     * normalized as a unitary unit, which would be 'per mg').
+     * normalized as a unitary unit, which would be 'per mg'). (choose any one of
+     * presentation*, but only one)
      */
     public function getPresentationCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -495,7 +508,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * mass) of the single pharmaceutical product or manufactured item. Unit of
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
-     * normalized as a unitary unit, which would be 'per mg').
+     * normalized as a unitary unit, which would be 'per mg'). (choose any one of
+     * presentation*, but only one)
      */
     public function setPresentationCodeableConcept(null|FHIRCodeableConcept $presentationCodeableConcept): self
     {
@@ -518,7 +532,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * mass) of the single pharmaceutical product or manufactured item. Unit of
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
-     * normalized as a unitary unit, which would be 'per mg').
+     * normalized as a unitary unit, which would be 'per mg'). (choose any one of
+     * presentation*, but only one)
      */
     public function getPresentationQuantity(): null|FHIRQuantity
     {
@@ -536,7 +551,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * mass) of the single pharmaceutical product or manufactured item. Unit of
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
-     * normalized as a unitary unit, which would be 'per mg').
+     * normalized as a unitary unit, which would be 'per mg'). (choose any one of
+     * presentation*, but only one)
      */
     public function setPresentationQuantity(null|FHIRQuantity $presentationQuantity): self
     {
@@ -588,7 +604,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The strength per unitary volume (or mass).
+     * The strength per unitary volume (or mass). (choose any one of concentration*,
+     * but only one)
      */
     public function getConcentrationRatio(): null|FHIRRatio
     {
@@ -601,7 +618,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The strength per unitary volume (or mass).
+     * The strength per unitary volume (or mass). (choose any one of concentration*,
+     * but only one)
      */
     public function setConcentrationRatio(null|FHIRRatio $concentrationRatio): self
     {
@@ -618,7 +636,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The strength per unitary volume (or mass).
+     * The strength per unitary volume (or mass). (choose any one of concentration*,
+     * but only one)
      */
     public function getConcentrationRatioRange(): null|FHIRRatioRange
     {
@@ -630,7 +649,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The strength per unitary volume (or mass).
+     * The strength per unitary volume (or mass). (choose any one of concentration*,
+     * but only one)
      */
     public function setConcentrationRatioRange(null|FHIRRatioRange $concentrationRatioRange): self
     {
@@ -648,7 +668,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The strength per unitary volume (or mass).
+     * The strength per unitary volume (or mass). (choose any one of concentration*,
+     * but only one)
      */
     public function getConcentrationCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -661,7 +682,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The strength per unitary volume (or mass).
+     * The strength per unitary volume (or mass). (choose any one of concentration*,
+     * but only one)
      */
     public function setConcentrationCodeableConcept(null|FHIRCodeableConcept $concentrationCodeableConcept): self
     {
@@ -680,7 +702,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The strength per unitary volume (or mass).
+     * The strength per unitary volume (or mass). (choose any one of concentration*,
+     * but only one)
      */
     public function getConcentrationQuantity(): null|FHIRQuantity
     {
@@ -694,7 +717,8 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The strength per unitary volume (or mass).
+     * The strength per unitary volume (or mass). (choose any one of concentration*,
+     * but only one)
      */
     public function setConcentrationQuantity(null|FHIRQuantity $concentrationQuantity): self
     {
@@ -1188,7 +1212,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
             || isset($decoded->_textPresentation)
             || property_exists($decoded, self::FIELD_TEXT_PRESENTATION)
             || property_exists($decoded, self::FIELD_TEXT_PRESENTATION_EXT)) {
-            $v = $decoded->_textPresentation ?? new \stdClass();
+            $v = isset($decoded->_textPresentation) ? clone $decoded->_textPresentation : new \stdClass();
             $v->value = $decoded->textPresentation ?? null;
             $type->setTextPresentation(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1224,7 +1248,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
             || isset($decoded->_textConcentration)
             || property_exists($decoded, self::FIELD_TEXT_CONCENTRATION)
             || property_exists($decoded, self::FIELD_TEXT_CONCENTRATION_EXT)) {
-            $v = $decoded->_textConcentration ?? new \stdClass();
+            $v = isset($decoded->_textConcentration) ? clone $decoded->_textConcentration : new \stdClass();
             $v->value = $decoded->textConcentration ?? null;
             $type->setTextConcentration(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1239,7 +1263,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
             || isset($decoded->_measurementPoint)
             || property_exists($decoded, self::FIELD_MEASUREMENT_POINT)
             || property_exists($decoded, self::FIELD_MEASUREMENT_POINT_EXT)) {
-            $v = $decoded->_measurementPoint ?? new \stdClass();
+            $v = isset($decoded->_measurementPoint) ? clone $decoded->_measurementPoint : new \stdClass();
             $v->value = $decoded->measurementPoint ?? null;
             $type->setMeasurementPoint(FHIRString::jsonUnserialize($v, $config));
         }

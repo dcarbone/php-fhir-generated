@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceComponent\FHIRDeviceComponentProductionSpecification;
@@ -125,13 +124,13 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_IDENTIFIER => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_LAST_SYSTEM_CHANGE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -763,7 +762,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -982,7 +981,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
             || isset($decoded->_lastSystemChange)
             || property_exists($decoded, self::FIELD_LAST_SYSTEM_CHANGE)
             || property_exists($decoded, self::FIELD_LAST_SYSTEM_CHANGE_EXT)) {
-            $v = $decoded->_lastSystemChange ?? new \stdClass();
+            $v = isset($decoded->_lastSystemChange) ? clone $decoded->_lastSystemChange : new \stdClass();
             $v->value = $decoded->lastSystemChange ?? null;
             $type->setLastSystemChange(FHIRInstant::jsonUnserialize($v, $config));
         }
@@ -1022,7 +1021,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
             || isset($decoded->_measurementPrinciple)
             || property_exists($decoded, self::FIELD_MEASUREMENT_PRINCIPLE)
             || property_exists($decoded, self::FIELD_MEASUREMENT_PRINCIPLE_EXT)) {
-            $v = $decoded->_measurementPrinciple ?? new \stdClass();
+            $v = isset($decoded->_measurementPrinciple) ? clone $decoded->_measurementPrinciple : new \stdClass();
             $v->value = $decoded->measurementPrinciple ?? null;
             $type->setMeasurementPrinciple(FHIRMeasmnt_Principle::jsonUnserialize($v, $config));
         }

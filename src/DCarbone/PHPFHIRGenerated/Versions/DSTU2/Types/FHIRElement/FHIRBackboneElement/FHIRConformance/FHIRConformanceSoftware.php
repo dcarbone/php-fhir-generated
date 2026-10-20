@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,8 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement;
@@ -106,10 +104,10 @@ class FHIRConformanceSoftware extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
-            ValuePatternMatchRule::NAME => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
+            'value_pattern_match' => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
         ],
         self::FIELD_NAME => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -431,7 +429,7 @@ class FHIRConformanceSoftware extends FHIRBackboneElement
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -439,7 +437,7 @@ class FHIRConformanceSoftware extends FHIRBackboneElement
             || isset($decoded->_version)
             || property_exists($decoded, self::FIELD_VERSION)
             || property_exists($decoded, self::FIELD_VERSION_EXT)) {
-            $v = $decoded->_version ?? new \stdClass();
+            $v = isset($decoded->_version) ? clone $decoded->_version : new \stdClass();
             $v->value = $decoded->version ?? null;
             $type->setVersion(FHIRString::jsonUnserialize($v, $config));
         }
@@ -447,7 +445,7 @@ class FHIRConformanceSoftware extends FHIRBackboneElement
             || isset($decoded->_releaseDate)
             || property_exists($decoded, self::FIELD_RELEASE_DATE)
             || property_exists($decoded, self::FIELD_RELEASE_DATE_EXT)) {
-            $v = $decoded->_releaseDate ?? new \stdClass();
+            $v = isset($decoded->_releaseDate) ? clone $decoded->_releaseDate : new \stdClass();
             $v->value = $decoded->releaseDate ?? null;
             $type->setReleaseDate(FHIRDateTime::jsonUnserialize($v, $config));
         }

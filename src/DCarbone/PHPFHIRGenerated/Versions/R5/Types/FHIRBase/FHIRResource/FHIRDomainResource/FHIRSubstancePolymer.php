@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -627,7 +627,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -832,7 +832,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
             || isset($decoded->_modification)
             || property_exists($decoded, self::FIELD_MODIFICATION)
             || property_exists($decoded, self::FIELD_MODIFICATION_EXT)) {
-            $v = $decoded->_modification ?? new \stdClass();
+            $v = isset($decoded->_modification) ? clone $decoded->_modification : new \stdClass();
             $v->value = $decoded->modification ?? null;
             $type->setModification(FHIRString::jsonUnserialize($v, $config));
         }

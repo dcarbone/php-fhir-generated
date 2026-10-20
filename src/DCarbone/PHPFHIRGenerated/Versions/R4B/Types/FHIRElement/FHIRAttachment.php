@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -796,7 +796,7 @@ class FHIRAttachment extends FHIRElement
             || isset($decoded->_contentType)
             || property_exists($decoded, self::FIELD_CONTENT_TYPE)
             || property_exists($decoded, self::FIELD_CONTENT_TYPE_EXT)) {
-            $v = $decoded->_contentType ?? new \stdClass();
+            $v = isset($decoded->_contentType) ? clone $decoded->_contentType : new \stdClass();
             $v->value = $decoded->contentType ?? null;
             $type->setContentType(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -804,7 +804,7 @@ class FHIRAttachment extends FHIRElement
             || isset($decoded->_language)
             || property_exists($decoded, self::FIELD_LANGUAGE)
             || property_exists($decoded, self::FIELD_LANGUAGE_EXT)) {
-            $v = $decoded->_language ?? new \stdClass();
+            $v = isset($decoded->_language) ? clone $decoded->_language : new \stdClass();
             $v->value = $decoded->language ?? null;
             $type->setLanguage(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -812,7 +812,7 @@ class FHIRAttachment extends FHIRElement
             || isset($decoded->_data)
             || property_exists($decoded, self::FIELD_DATA)
             || property_exists($decoded, self::FIELD_DATA_EXT)) {
-            $v = $decoded->_data ?? new \stdClass();
+            $v = isset($decoded->_data) ? clone $decoded->_data : new \stdClass();
             $v->value = $decoded->data ?? null;
             $type->setData(FHIRBase64Binary::jsonUnserialize($v, $config));
         }
@@ -820,7 +820,7 @@ class FHIRAttachment extends FHIRElement
             || isset($decoded->_url)
             || property_exists($decoded, self::FIELD_URL)
             || property_exists($decoded, self::FIELD_URL_EXT)) {
-            $v = $decoded->_url ?? new \stdClass();
+            $v = isset($decoded->_url) ? clone $decoded->_url : new \stdClass();
             $v->value = $decoded->url ?? null;
             $type->setUrl(FHIRUrl::jsonUnserialize($v, $config));
         }
@@ -828,7 +828,7 @@ class FHIRAttachment extends FHIRElement
             || isset($decoded->_size)
             || property_exists($decoded, self::FIELD_SIZE)
             || property_exists($decoded, self::FIELD_SIZE_EXT)) {
-            $v = $decoded->_size ?? new \stdClass();
+            $v = isset($decoded->_size) ? clone $decoded->_size : new \stdClass();
             $v->value = $decoded->size ?? null;
             $type->setSize(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
@@ -836,7 +836,7 @@ class FHIRAttachment extends FHIRElement
             || isset($decoded->_hash)
             || property_exists($decoded, self::FIELD_HASH)
             || property_exists($decoded, self::FIELD_HASH_EXT)) {
-            $v = $decoded->_hash ?? new \stdClass();
+            $v = isset($decoded->_hash) ? clone $decoded->_hash : new \stdClass();
             $v->value = $decoded->hash ?? null;
             $type->setHash(FHIRBase64Binary::jsonUnserialize($v, $config));
         }
@@ -844,7 +844,7 @@ class FHIRAttachment extends FHIRElement
             || isset($decoded->_title)
             || property_exists($decoded, self::FIELD_TITLE)
             || property_exists($decoded, self::FIELD_TITLE_EXT)) {
-            $v = $decoded->_title ?? new \stdClass();
+            $v = isset($decoded->_title) ? clone $decoded->_title : new \stdClass();
             $v->value = $decoded->title ?? null;
             $type->setTitle(FHIRString::jsonUnserialize($v, $config));
         }
@@ -852,7 +852,7 @@ class FHIRAttachment extends FHIRElement
             || isset($decoded->_creation)
             || property_exists($decoded, self::FIELD_CREATION)
             || property_exists($decoded, self::FIELD_CREATION_EXT)) {
-            $v = $decoded->_creation ?? new \stdClass();
+            $v = isset($decoded->_creation) ? clone $decoded->_creation : new \stdClass();
             $v->value = $decoded->creation ?? null;
             $type->setCreation(FHIRDateTime::jsonUnserialize($v, $config));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean;
@@ -134,7 +133,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TITLE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -799,7 +798,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
             || isset($decoded->_title)
             || property_exists($decoded, self::FIELD_TITLE)
             || property_exists($decoded, self::FIELD_TITLE_EXT)) {
-            $v = $decoded->_title ?? new \stdClass();
+            $v = isset($decoded->_title) ? clone $decoded->_title : new \stdClass();
             $v->value = $decoded->title ?? null;
             $type->setTitle(FHIRString::jsonUnserialize($v, $config));
         }
@@ -807,7 +806,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
             || isset($decoded->_initiator)
             || property_exists($decoded, self::FIELD_INITIATOR)
             || property_exists($decoded, self::FIELD_INITIATOR_EXT)) {
-            $v = $decoded->_initiator ?? new \stdClass();
+            $v = isset($decoded->_initiator) ? clone $decoded->_initiator : new \stdClass();
             $v->value = $decoded->initiator ?? null;
             $type->setInitiator(FHIRString::jsonUnserialize($v, $config));
         }
@@ -815,7 +814,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
             || isset($decoded->_receiver)
             || property_exists($decoded, self::FIELD_RECEIVER)
             || property_exists($decoded, self::FIELD_RECEIVER_EXT)) {
-            $v = $decoded->_receiver ?? new \stdClass();
+            $v = isset($decoded->_receiver) ? clone $decoded->_receiver : new \stdClass();
             $v->value = $decoded->receiver ?? null;
             $type->setReceiver(FHIRString::jsonUnserialize($v, $config));
         }
@@ -823,7 +822,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -831,7 +830,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
             || isset($decoded->_initiatorActive)
             || property_exists($decoded, self::FIELD_INITIATOR_ACTIVE)
             || property_exists($decoded, self::FIELD_INITIATOR_ACTIVE_EXT)) {
-            $v = $decoded->_initiatorActive ?? new \stdClass();
+            $v = isset($decoded->_initiatorActive) ? clone $decoded->_initiatorActive : new \stdClass();
             $v->value = $decoded->initiatorActive ?? null;
             $type->setInitiatorActive(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -839,7 +838,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
             || isset($decoded->_receiverActive)
             || property_exists($decoded, self::FIELD_RECEIVER_ACTIVE)
             || property_exists($decoded, self::FIELD_RECEIVER_ACTIVE_EXT)) {
-            $v = $decoded->_receiverActive ?? new \stdClass();
+            $v = isset($decoded->_receiverActive) ? clone $decoded->_receiverActive : new \stdClass();
             $v->value = $decoded->receiverActive ?? null;
             $type->setReceiverActive(FHIRBoolean::jsonUnserialize($v, $config));
         }

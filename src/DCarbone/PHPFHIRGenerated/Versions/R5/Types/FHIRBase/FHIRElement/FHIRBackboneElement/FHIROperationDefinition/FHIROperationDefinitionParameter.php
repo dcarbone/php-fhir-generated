@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical;
@@ -154,16 +153,16 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_NAME => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_USE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_MIN => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_MAX => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1257,7 +1256,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -1265,7 +1264,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
             || isset($decoded->_use)
             || property_exists($decoded, self::FIELD_USE)
             || property_exists($decoded, self::FIELD_USE_EXT)) {
-            $v = $decoded->_use ?? new \stdClass();
+            $v = isset($decoded->_use) ? clone $decoded->_use : new \stdClass();
             $v->value = $decoded->use ?? null;
             $type->setUse(FHIROperationParameterUse::jsonUnserialize($v, $config));
         }
@@ -1281,7 +1280,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addScope(FHIROperationParameterScope::jsonUnserialize($v, $config));
             }
@@ -1290,7 +1289,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
             || isset($decoded->_min)
             || property_exists($decoded, self::FIELD_MIN)
             || property_exists($decoded, self::FIELD_MIN_EXT)) {
-            $v = $decoded->_min ?? new \stdClass();
+            $v = isset($decoded->_min) ? clone $decoded->_min : new \stdClass();
             $v->value = $decoded->min ?? null;
             $type->setMin(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -1298,7 +1297,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
             || isset($decoded->_max)
             || property_exists($decoded, self::FIELD_MAX)
             || property_exists($decoded, self::FIELD_MAX_EXT)) {
-            $v = $decoded->_max ?? new \stdClass();
+            $v = isset($decoded->_max) ? clone $decoded->_max : new \stdClass();
             $v->value = $decoded->max ?? null;
             $type->setMax(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1306,7 +1305,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
             || isset($decoded->_documentation)
             || property_exists($decoded, self::FIELD_DOCUMENTATION)
             || property_exists($decoded, self::FIELD_DOCUMENTATION_EXT)) {
-            $v = $decoded->_documentation ?? new \stdClass();
+            $v = isset($decoded->_documentation) ? clone $decoded->_documentation : new \stdClass();
             $v->value = $decoded->documentation ?? null;
             $type->setDocumentation(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -1314,7 +1313,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
             || isset($decoded->_type)
             || property_exists($decoded, self::FIELD_TYPE)
             || property_exists($decoded, self::FIELD_TYPE_EXT)) {
-            $v = $decoded->_type ?? new \stdClass();
+            $v = isset($decoded->_type) ? clone $decoded->_type : new \stdClass();
             $v->value = $decoded->type ?? null;
             $type->setType(FHIRFHIRTypes::jsonUnserialize($v, $config));
         }
@@ -1330,7 +1329,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addAllowedType(FHIRFHIRTypes::jsonUnserialize($v, $config));
             }
@@ -1347,7 +1346,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addTargetProfile(FHIRCanonical::jsonUnserialize($v, $config));
             }
@@ -1356,7 +1355,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
             || isset($decoded->_searchType)
             || property_exists($decoded, self::FIELD_SEARCH_TYPE)
             || property_exists($decoded, self::FIELD_SEARCH_TYPE_EXT)) {
-            $v = $decoded->_searchType ?? new \stdClass();
+            $v = isset($decoded->_searchType) ? clone $decoded->_searchType : new \stdClass();
             $v->value = $decoded->searchType ?? null;
             $type->setSearchType(FHIRSearchParamType::jsonUnserialize($v, $config));
         }

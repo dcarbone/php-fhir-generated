@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -714,7 +714,7 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
             || isset($decoded->_code)
             || property_exists($decoded, self::FIELD_CODE)
             || property_exists($decoded, self::FIELD_CODE_EXT)) {
-            $v = $decoded->_code ?? new \stdClass();
+            $v = isset($decoded->_code) ? clone $decoded->_code : new \stdClass();
             $v->value = $decoded->code ?? null;
             $type->setCode(FHIRString::jsonUnserialize($v, $config));
         }
@@ -722,7 +722,7 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
             || isset($decoded->_isDefault)
             || property_exists($decoded, self::FIELD_IS_DEFAULT)
             || property_exists($decoded, self::FIELD_IS_DEFAULT_EXT)) {
-            $v = $decoded->_isDefault ?? new \stdClass();
+            $v = isset($decoded->_isDefault) ? clone $decoded->_isDefault : new \stdClass();
             $v->value = $decoded->isDefault ?? null;
             $type->setIsDefault(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -730,7 +730,7 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
             || isset($decoded->_compositional)
             || property_exists($decoded, self::FIELD_COMPOSITIONAL)
             || property_exists($decoded, self::FIELD_COMPOSITIONAL_EXT)) {
-            $v = $decoded->_compositional ?? new \stdClass();
+            $v = isset($decoded->_compositional) ? clone $decoded->_compositional : new \stdClass();
             $v->value = $decoded->compositional ?? null;
             $type->setCompositional(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -746,7 +746,7 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addLanguage(FHIRCode::jsonUnserialize($v, $config));
             }
@@ -774,7 +774,7 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addProperty(FHIRCode::jsonUnserialize($v, $config));
             }

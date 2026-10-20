@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
@@ -130,7 +129,7 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_RESOURCE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -618,7 +617,7 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -626,7 +625,7 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
             || isset($decoded->_resource)
             || property_exists($decoded, self::FIELD_RESOURCE)
             || property_exists($decoded, self::FIELD_RESOURCE_EXT)) {
-            $v = $decoded->_resource ?? new \stdClass();
+            $v = isset($decoded->_resource) ? clone $decoded->_resource : new \stdClass();
             $v->value = $decoded->resource ?? null;
             $type->setResource(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -642,7 +641,7 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addSupportedInteraction(FHIRInteractionTrigger::jsonUnserialize($v, $config));
             }
@@ -658,7 +657,7 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
             || isset($decoded->_fhirPathCriteria)
             || property_exists($decoded, self::FIELD_FHIR_PATH_CRITERIA)
             || property_exists($decoded, self::FIELD_FHIR_PATH_CRITERIA_EXT)) {
-            $v = $decoded->_fhirPathCriteria ?? new \stdClass();
+            $v = isset($decoded->_fhirPathCriteria) ? clone $decoded->_fhirPathCriteria : new \stdClass();
             $v->value = $decoded->fhirPathCriteria ?? null;
             $type->setFhirPathCriteria(FHIRString::jsonUnserialize($v, $config));
         }

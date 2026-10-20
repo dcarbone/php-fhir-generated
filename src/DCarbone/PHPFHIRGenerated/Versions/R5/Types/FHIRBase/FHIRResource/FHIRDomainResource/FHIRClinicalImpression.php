@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode;
@@ -168,10 +167,10 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_SUBJECT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -254,7 +253,8 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The point in time or period over which the subject was assessed.
+     * The point in time or period over which the subject was assessed. (choose any one
+     * of effective*, but only one)
      */
     #[FHIRDateTime]
     protected FHIRDateTime $effectiveDateTime;
@@ -263,7 +263,8 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The point in time or period over which the subject was assessed.
+     * The point in time or period over which the subject was assessed. (choose any one
+     * of effective*, but only one)
      */
     #[FHIRPeriod]
     protected FHIRPeriod $effectivePeriod;
@@ -769,7 +770,8 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The point in time or period over which the subject was assessed.
+     * The point in time or period over which the subject was assessed. (choose any one
+     * of effective*, but only one)
      */
     public function getEffectiveDateTime(): null|FHIRDateTime
     {
@@ -785,7 +787,8 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The point in time or period over which the subject was assessed.
+     * The point in time or period over which the subject was assessed. (choose any one
+     * of effective*, but only one)
      */
     public function setEffectiveDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $effectiveDateTime): self
     {
@@ -805,7 +808,8 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The point in time or period over which the subject was assessed.
+     * The point in time or period over which the subject was assessed. (choose any one
+     * of effective*, but only one)
      */
     public function getEffectivePeriod(): null|FHIRPeriod
     {
@@ -817,7 +821,8 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The point in time or period over which the subject was assessed.
+     * The point in time or period over which the subject was assessed. (choose any one
+     * of effective*, but only one)
      */
     public function setEffectivePeriod(null|FHIRPeriod $effectivePeriod): self
     {
@@ -1490,7 +1495,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1827,7 +1832,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIREventStatus::jsonUnserialize($v, $config));
         }
@@ -1842,7 +1847,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1864,7 +1869,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
             || isset($decoded->_effectiveDateTime)
             || property_exists($decoded, self::FIELD_EFFECTIVE_DATE_TIME)
             || property_exists($decoded, self::FIELD_EFFECTIVE_DATE_TIME_EXT)) {
-            $v = $decoded->_effectiveDateTime ?? new \stdClass();
+            $v = isset($decoded->_effectiveDateTime) ? clone $decoded->_effectiveDateTime : new \stdClass();
             $v->value = $decoded->effectiveDateTime ?? null;
             $type->setEffectiveDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1879,7 +1884,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
             || isset($decoded->_date)
             || property_exists($decoded, self::FIELD_DATE)
             || property_exists($decoded, self::FIELD_DATE_EXT)) {
-            $v = $decoded->_date ?? new \stdClass();
+            $v = isset($decoded->_date) ? clone $decoded->_date : new \stdClass();
             $v->value = $decoded->date ?? null;
             $type->setDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1927,7 +1932,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addProtocol(FHIRUri::jsonUnserialize($v, $config));
             }
@@ -1936,7 +1941,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
             || isset($decoded->_summary)
             || property_exists($decoded, self::FIELD_SUMMARY)
             || property_exists($decoded, self::FIELD_SUMMARY_EXT)) {
-            $v = $decoded->_summary ?? new \stdClass();
+            $v = isset($decoded->_summary) ? clone $decoded->_summary : new \stdClass();
             $v->value = $decoded->summary ?? null;
             $type->setSummary(FHIRString::jsonUnserialize($v, $config));
         }

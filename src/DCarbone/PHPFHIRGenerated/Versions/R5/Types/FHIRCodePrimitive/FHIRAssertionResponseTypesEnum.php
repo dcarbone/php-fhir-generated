@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -83,9 +83,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
  */
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMinLengthRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueOneOfRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -104,53 +101,53 @@ class FHIRAssertionResponseTypesEnum extends FHIRCodePrimitive
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
-            ValuePatternMatchRule::NAME => '/^[^\\s]+( [^\\s]+)*$/',
-            ValueMinLengthRule::NAME => 1,
-            ValueOneOfRule::NAME => [
-                0 => 'continue',
-                1 => 'switchingProtocols',
-                2 => 'okay',
-                3 => 'created',
-                4 => 'accepted',
-                5 => 'nonAuthoritativeInformation',
-                6 => 'noContent',
-                7 => 'resetContent',
-                8 => 'partialContent',
-                9 => 'multipleChoices',
-                10 => 'movedPermanently',
-                11 => 'found',
-                12 => 'seeOther',
-                13 => 'notModified',
-                14 => 'useProxy',
-                15 => 'temporaryRedirect',
-                16 => 'permanentRedirect',
-                17 => 'badRequest',
-                18 => 'unauthorized',
-                19 => 'paymentRequired',
-                20 => 'forbidden',
-                21 => 'notFound',
-                22 => 'methodNotAllowed',
-                23 => 'notAcceptable',
-                24 => 'proxyAuthenticationRequired',
-                25 => 'requestTimeout',
-                26 => 'conflict',
-                27 => 'gone',
-                28 => 'lengthRequired',
-                29 => 'preconditionFailed',
-                30 => 'contentTooLarge',
-                31 => 'uriTooLong',
-                32 => 'unsupportedMediaType',
-                33 => 'rangeNotSatisfiable',
-                34 => 'expectationFailed',
-                35 => 'misdirectedRequest',
-                36 => 'unprocessableContent',
-                37 => 'upgradeRequired',
-                38 => 'internalServerError',
-                39 => 'notImplemented',
-                40 => 'badGateway',
-                41 => 'serviceUnavailable',
-                42 => 'gatewayTimeout',
-                43 => 'httpVersionNotSupported',
+            'value_pattern_match' => '/^[^\\s]+( [^\\s]+)*$/',
+            'value_min_length' => 1,
+            'value_one_of' => [
+                'continue',
+                'switchingProtocols',
+                'okay',
+                'created',
+                'accepted',
+                'nonAuthoritativeInformation',
+                'noContent',
+                'resetContent',
+                'partialContent',
+                'multipleChoices',
+                'movedPermanently',
+                'found',
+                'seeOther',
+                'notModified',
+                'useProxy',
+                'temporaryRedirect',
+                'permanentRedirect',
+                'badRequest',
+                'unauthorized',
+                'paymentRequired',
+                'forbidden',
+                'notFound',
+                'methodNotAllowed',
+                'notAcceptable',
+                'proxyAuthenticationRequired',
+                'requestTimeout',
+                'conflict',
+                'gone',
+                'lengthRequired',
+                'preconditionFailed',
+                'contentTooLarge',
+                'uriTooLong',
+                'unsupportedMediaType',
+                'rangeNotSatisfiable',
+                'expectationFailed',
+                'misdirectedRequest',
+                'unprocessableContent',
+                'upgradeRequired',
+                'internalServerError',
+                'notImplemented',
+                'badGateway',
+                'serviceUnavailable',
+                'gatewayTimeout',
+                'httpVersionNotSupported',
             ],
         ],
     ];

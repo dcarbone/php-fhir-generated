@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -354,7 +354,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource.
+     * or PackagedProductDefinition resource. (choose any one of subject*, but only
+     * one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $subjectCodeableConcept;
@@ -368,7 +369,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource.
+     * or PackagedProductDefinition resource. (choose any one of subject*, but only
+     * one)
      */
     #[FHIRReference]
     protected FHIRReference $subjectReference;
@@ -383,7 +385,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource.
+     * or PackagedProductDefinition resource. (choose any one of subject*, but only
+     * one)
      */
     #[FHIRCanonical]
     protected FHIRCanonical $subjectCanonical;
@@ -459,7 +462,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      */
     #[FHIRAge]
     protected FHIRAge $timingAge;
@@ -468,7 +472,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      */
     #[FHIRDuration]
     protected FHIRDuration $timingDuration;
@@ -477,7 +482,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      */
     #[FHIRRange]
     protected FHIRRange $timingRange;
@@ -490,7 +496,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      */
     #[FHIRTiming]
     protected FHIRTiming $timingTiming;
@@ -574,6 +581,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * that describes a series of actions to be taken, a Questionnaire that should be
      * filled out, a SpecimenDefinition describing a specimen to be collected, or an
      * ObservationDefinition that specifies what observation should be captured.
+     * (choose any one of definition*, but only one)
      */
     #[FHIRCanonical]
     protected FHIRCanonical $definitionCanonical;
@@ -587,6 +595,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * that describes a series of actions to be taken, a Questionnaire that should be
      * filled out, a SpecimenDefinition describing a specimen to be collected, or an
      * ObservationDefinition that specifies what observation should be captured.
+     * (choose any one of definition*, but only one)
      */
     #[FHIRUri]
     protected FHIRUri $definitionUri;
@@ -1296,7 +1305,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource.
+     * or PackagedProductDefinition resource. (choose any one of subject*, but only
+     * one)
      */
     public function getSubjectCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -1314,7 +1324,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource.
+     * or PackagedProductDefinition resource. (choose any one of subject*, but only
+     * one)
      */
     public function setSubjectCodeableConcept(null|FHIRCodeableConcept $subjectCodeableConcept): self
     {
@@ -1336,7 +1347,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource.
+     * or PackagedProductDefinition resource. (choose any one of subject*, but only
+     * one)
      */
     public function getSubjectReference(): null|FHIRReference
     {
@@ -1353,7 +1365,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource.
+     * or PackagedProductDefinition resource. (choose any one of subject*, but only
+     * one)
      */
     public function setSubjectReference(null|FHIRReference $subjectReference): self
     {
@@ -1376,7 +1389,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource.
+     * or PackagedProductDefinition resource. (choose any one of subject*, but only
+     * one)
      */
     public function getSubjectCanonical(): null|FHIRCanonical
     {
@@ -1394,7 +1408,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource.
+     * or PackagedProductDefinition resource. (choose any one of subject*, but only
+     * one)
      */
     public function setSubjectCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $subjectCanonical): self
     {
@@ -1740,7 +1755,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      */
     public function getTimingAge(): null|FHIRAge
     {
@@ -1752,7 +1768,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      */
     public function setTimingAge(null|FHIRAge $timingAge): self
     {
@@ -1769,7 +1786,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      */
     public function getTimingDuration(): null|FHIRDuration
     {
@@ -1781,7 +1799,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      */
     public function setTimingDuration(null|FHIRDuration $timingDuration): self
     {
@@ -1798,7 +1817,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      */
     public function getTimingRange(): null|FHIRRange
     {
@@ -1810,7 +1830,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      */
     public function setTimingRange(null|FHIRRange $timingRange): self
     {
@@ -1831,7 +1852,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      */
     public function getTimingTiming(): null|FHIRTiming
     {
@@ -1847,7 +1869,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed.
+     * An optional value describing when the action should be performed. (choose any
+     * one of timing*, but only one)
      */
     public function setTimingTiming(null|FHIRTiming $timingTiming): self
     {
@@ -2138,6 +2161,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * that describes a series of actions to be taken, a Questionnaire that should be
      * filled out, a SpecimenDefinition describing a specimen to be collected, or an
      * ObservationDefinition that specifies what observation should be captured.
+     * (choose any one of definition*, but only one)
      */
     public function getDefinitionCanonical(): null|FHIRCanonical
     {
@@ -2155,6 +2179,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * that describes a series of actions to be taken, a Questionnaire that should be
      * filled out, a SpecimenDefinition describing a specimen to be collected, or an
      * ObservationDefinition that specifies what observation should be captured.
+     * (choose any one of definition*, but only one)
      */
     public function setDefinitionCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $definitionCanonical): self
     {
@@ -2179,6 +2204,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * that describes a series of actions to be taken, a Questionnaire that should be
      * filled out, a SpecimenDefinition describing a specimen to be collected, or an
      * ObservationDefinition that specifies what observation should be captured.
+     * (choose any one of definition*, but only one)
      */
     public function getDefinitionUri(): null|FHIRUri
     {
@@ -2195,6 +2221,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * that describes a series of actions to be taken, a Questionnaire that should be
      * filled out, a SpecimenDefinition describing a specimen to be collected, or an
      * ObservationDefinition that specifies what observation should be captured.
+     * (choose any one of definition*, but only one)
      */
     public function setDefinitionUri(null|string|FHIRUriPrimitive|FHIRUri $definitionUri): self
     {
@@ -2935,7 +2962,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
             || isset($decoded->_linkId)
             || property_exists($decoded, self::FIELD_LINK_ID)
             || property_exists($decoded, self::FIELD_LINK_ID_EXT)) {
-            $v = $decoded->_linkId ?? new \stdClass();
+            $v = isset($decoded->_linkId) ? clone $decoded->_linkId : new \stdClass();
             $v->value = $decoded->linkId ?? null;
             $type->setLinkId(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2943,7 +2970,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
             || isset($decoded->_prefix)
             || property_exists($decoded, self::FIELD_PREFIX)
             || property_exists($decoded, self::FIELD_PREFIX_EXT)) {
-            $v = $decoded->_prefix ?? new \stdClass();
+            $v = isset($decoded->_prefix) ? clone $decoded->_prefix : new \stdClass();
             $v->value = $decoded->prefix ?? null;
             $type->setPrefix(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2951,7 +2978,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
             || isset($decoded->_title)
             || property_exists($decoded, self::FIELD_TITLE)
             || property_exists($decoded, self::FIELD_TITLE_EXT)) {
-            $v = $decoded->_title ?? new \stdClass();
+            $v = isset($decoded->_title) ? clone $decoded->_title : new \stdClass();
             $v->value = $decoded->title ?? null;
             $type->setTitle(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2959,7 +2986,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -2967,7 +2994,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
             || isset($decoded->_textEquivalent)
             || property_exists($decoded, self::FIELD_TEXT_EQUIVALENT)
             || property_exists($decoded, self::FIELD_TEXT_EQUIVALENT_EXT)) {
-            $v = $decoded->_textEquivalent ?? new \stdClass();
+            $v = isset($decoded->_textEquivalent) ? clone $decoded->_textEquivalent : new \stdClass();
             $v->value = $decoded->textEquivalent ?? null;
             $type->setTextEquivalent(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -2975,7 +3002,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
             || isset($decoded->_priority)
             || property_exists($decoded, self::FIELD_PRIORITY)
             || property_exists($decoded, self::FIELD_PRIORITY_EXT)) {
-            $v = $decoded->_priority ?? new \stdClass();
+            $v = isset($decoded->_priority) ? clone $decoded->_priority : new \stdClass();
             $v->value = $decoded->priority ?? null;
             $type->setPriority(FHIRRequestPriority::jsonUnserialize($v, $config));
         }
@@ -3020,7 +3047,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addGoalId(FHIRId::jsonUnserialize($v, $config));
             }
@@ -3043,7 +3070,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
             || isset($decoded->_subjectCanonical)
             || property_exists($decoded, self::FIELD_SUBJECT_CANONICAL)
             || property_exists($decoded, self::FIELD_SUBJECT_CANONICAL_EXT)) {
-            $v = $decoded->_subjectCanonical ?? new \stdClass();
+            $v = isset($decoded->_subjectCanonical) ? clone $decoded->_subjectCanonical : new \stdClass();
             $v->value = $decoded->subjectCanonical ?? null;
             $type->setSubjectCanonical(FHIRCanonical::jsonUnserialize($v, $config));
         }
@@ -3159,7 +3186,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
             || isset($decoded->_groupingBehavior)
             || property_exists($decoded, self::FIELD_GROUPING_BEHAVIOR)
             || property_exists($decoded, self::FIELD_GROUPING_BEHAVIOR_EXT)) {
-            $v = $decoded->_groupingBehavior ?? new \stdClass();
+            $v = isset($decoded->_groupingBehavior) ? clone $decoded->_groupingBehavior : new \stdClass();
             $v->value = $decoded->groupingBehavior ?? null;
             $type->setGroupingBehavior(FHIRActionGroupingBehavior::jsonUnserialize($v, $config));
         }
@@ -3167,7 +3194,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
             || isset($decoded->_selectionBehavior)
             || property_exists($decoded, self::FIELD_SELECTION_BEHAVIOR)
             || property_exists($decoded, self::FIELD_SELECTION_BEHAVIOR_EXT)) {
-            $v = $decoded->_selectionBehavior ?? new \stdClass();
+            $v = isset($decoded->_selectionBehavior) ? clone $decoded->_selectionBehavior : new \stdClass();
             $v->value = $decoded->selectionBehavior ?? null;
             $type->setSelectionBehavior(FHIRActionSelectionBehavior::jsonUnserialize($v, $config));
         }
@@ -3175,7 +3202,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
             || isset($decoded->_requiredBehavior)
             || property_exists($decoded, self::FIELD_REQUIRED_BEHAVIOR)
             || property_exists($decoded, self::FIELD_REQUIRED_BEHAVIOR_EXT)) {
-            $v = $decoded->_requiredBehavior ?? new \stdClass();
+            $v = isset($decoded->_requiredBehavior) ? clone $decoded->_requiredBehavior : new \stdClass();
             $v->value = $decoded->requiredBehavior ?? null;
             $type->setRequiredBehavior(FHIRActionRequiredBehavior::jsonUnserialize($v, $config));
         }
@@ -3183,7 +3210,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
             || isset($decoded->_precheckBehavior)
             || property_exists($decoded, self::FIELD_PRECHECK_BEHAVIOR)
             || property_exists($decoded, self::FIELD_PRECHECK_BEHAVIOR_EXT)) {
-            $v = $decoded->_precheckBehavior ?? new \stdClass();
+            $v = isset($decoded->_precheckBehavior) ? clone $decoded->_precheckBehavior : new \stdClass();
             $v->value = $decoded->precheckBehavior ?? null;
             $type->setPrecheckBehavior(FHIRActionPrecheckBehavior::jsonUnserialize($v, $config));
         }
@@ -3191,7 +3218,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
             || isset($decoded->_cardinalityBehavior)
             || property_exists($decoded, self::FIELD_CARDINALITY_BEHAVIOR)
             || property_exists($decoded, self::FIELD_CARDINALITY_BEHAVIOR_EXT)) {
-            $v = $decoded->_cardinalityBehavior ?? new \stdClass();
+            $v = isset($decoded->_cardinalityBehavior) ? clone $decoded->_cardinalityBehavior : new \stdClass();
             $v->value = $decoded->cardinalityBehavior ?? null;
             $type->setCardinalityBehavior(FHIRActionCardinalityBehavior::jsonUnserialize($v, $config));
         }
@@ -3199,7 +3226,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
             || isset($decoded->_definitionCanonical)
             || property_exists($decoded, self::FIELD_DEFINITION_CANONICAL)
             || property_exists($decoded, self::FIELD_DEFINITION_CANONICAL_EXT)) {
-            $v = $decoded->_definitionCanonical ?? new \stdClass();
+            $v = isset($decoded->_definitionCanonical) ? clone $decoded->_definitionCanonical : new \stdClass();
             $v->value = $decoded->definitionCanonical ?? null;
             $type->setDefinitionCanonical(FHIRCanonical::jsonUnserialize($v, $config));
         }
@@ -3207,7 +3234,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
             || isset($decoded->_definitionUri)
             || property_exists($decoded, self::FIELD_DEFINITION_URI)
             || property_exists($decoded, self::FIELD_DEFINITION_URI_EXT)) {
-            $v = $decoded->_definitionUri ?? new \stdClass();
+            $v = isset($decoded->_definitionUri) ? clone $decoded->_definitionUri : new \stdClass();
             $v->value = $decoded->definitionUri ?? null;
             $type->setDefinitionUri(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -3215,7 +3242,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
             || isset($decoded->_transform)
             || property_exists($decoded, self::FIELD_TRANSFORM)
             || property_exists($decoded, self::FIELD_TRANSFORM_EXT)) {
-            $v = $decoded->_transform ?? new \stdClass();
+            $v = isset($decoded->_transform) ? clone $decoded->_transform : new \stdClass();
             $v->value = $decoded->transform ?? null;
             $type->setTransform(FHIRCanonical::jsonUnserialize($v, $config));
         }

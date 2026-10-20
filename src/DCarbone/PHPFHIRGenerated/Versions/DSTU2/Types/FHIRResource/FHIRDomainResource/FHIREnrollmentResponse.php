@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -699,7 +699,7 @@ class FHIREnrollmentResponse extends FHIRDomainResource implements VersionContai
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -933,7 +933,7 @@ class FHIREnrollmentResponse extends FHIRDomainResource implements VersionContai
             || isset($decoded->_outcome)
             || property_exists($decoded, self::FIELD_OUTCOME)
             || property_exists($decoded, self::FIELD_OUTCOME_EXT)) {
-            $v = $decoded->_outcome ?? new \stdClass();
+            $v = isset($decoded->_outcome) ? clone $decoded->_outcome : new \stdClass();
             $v->value = $decoded->outcome ?? null;
             $type->setOutcome(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -941,7 +941,7 @@ class FHIREnrollmentResponse extends FHIRDomainResource implements VersionContai
             || isset($decoded->_disposition)
             || property_exists($decoded, self::FIELD_DISPOSITION)
             || property_exists($decoded, self::FIELD_DISPOSITION_EXT)) {
-            $v = $decoded->_disposition ?? new \stdClass();
+            $v = isset($decoded->_disposition) ? clone $decoded->_disposition : new \stdClass();
             $v->value = $decoded->disposition ?? null;
             $type->setDisposition(FHIRString::jsonUnserialize($v, $config));
         }
@@ -963,7 +963,7 @@ class FHIREnrollmentResponse extends FHIRDomainResource implements VersionContai
             || isset($decoded->_created)
             || property_exists($decoded, self::FIELD_CREATED)
             || property_exists($decoded, self::FIELD_CREATED_EXT)) {
-            $v = $decoded->_created ?? new \stdClass();
+            $v = isset($decoded->_created) ? clone $decoded->_created : new \stdClass();
             $v->value = $decoded->created ?? null;
             $type->setCreated(FHIRDateTime::jsonUnserialize($v, $config));
         }

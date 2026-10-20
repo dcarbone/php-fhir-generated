@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRChargeItem\FHIRChargeItemPerformer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical;
@@ -177,13 +176,13 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_CODE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_SUBJECT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -288,7 +287,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied.
+     * Date/time(s) or duration when the charged service was applied. (choose any one
+     * of occurrence*, but only one)
      */
     #[FHIRDateTime]
     protected FHIRDateTime $occurrenceDateTime;
@@ -297,7 +297,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied.
+     * Date/time(s) or duration when the charged service was applied. (choose any one
+     * of occurrence*, but only one)
      */
     #[FHIRPeriod]
     protected FHIRPeriod $occurrencePeriod;
@@ -310,7 +311,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied.
+     * Date/time(s) or duration when the charged service was applied. (choose any one
+     * of occurrence*, but only one)
      */
     #[FHIRTiming]
     protected FHIRTiming $occurrenceTiming;
@@ -1059,7 +1061,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied.
+     * Date/time(s) or duration when the charged service was applied. (choose any one
+     * of occurrence*, but only one)
      */
     public function getOccurrenceDateTime(): null|FHIRDateTime
     {
@@ -1075,7 +1078,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied.
+     * Date/time(s) or duration when the charged service was applied. (choose any one
+     * of occurrence*, but only one)
      */
     public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime): self
     {
@@ -1095,7 +1099,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied.
+     * Date/time(s) or duration when the charged service was applied. (choose any one
+     * of occurrence*, but only one)
      */
     public function getOccurrencePeriod(): null|FHIRPeriod
     {
@@ -1107,7 +1112,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied.
+     * Date/time(s) or duration when the charged service was applied. (choose any one
+     * of occurrence*, but only one)
      */
     public function setOccurrencePeriod(null|FHIRPeriod $occurrencePeriod): self
     {
@@ -1128,7 +1134,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied.
+     * Date/time(s) or duration when the charged service was applied. (choose any one
+     * of occurrence*, but only one)
      */
     public function getOccurrenceTiming(): null|FHIRTiming
     {
@@ -1144,7 +1151,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Date/time(s) or duration when the charged service was applied.
+     * Date/time(s) or duration when the charged service was applied. (choose any one
+     * of occurrence*, but only one)
      */
     public function setOccurrenceTiming(null|FHIRTiming $occurrenceTiming): self
     {
@@ -1970,7 +1978,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -2353,7 +2361,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addDefinitionUri(FHIRUri::jsonUnserialize($v, $config));
             }
@@ -2370,7 +2378,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addDefinitionCanonical(FHIRCanonical::jsonUnserialize($v, $config));
             }
@@ -2379,7 +2387,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRChargeItemStatus::jsonUnserialize($v, $config));
         }
@@ -2419,7 +2427,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
             || isset($decoded->_occurrenceDateTime)
             || property_exists($decoded, self::FIELD_OCCURRENCE_DATE_TIME)
             || property_exists($decoded, self::FIELD_OCCURRENCE_DATE_TIME_EXT)) {
-            $v = $decoded->_occurrenceDateTime ?? new \stdClass();
+            $v = isset($decoded->_occurrenceDateTime) ? clone $decoded->_occurrenceDateTime : new \stdClass();
             $v->value = $decoded->occurrenceDateTime ?? null;
             $type->setOccurrenceDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -2519,7 +2527,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
             || isset($decoded->_enteredDate)
             || property_exists($decoded, self::FIELD_ENTERED_DATE)
             || property_exists($decoded, self::FIELD_ENTERED_DATE_EXT)) {
-            $v = $decoded->_enteredDate ?? new \stdClass();
+            $v = isset($decoded->_enteredDate) ? clone $decoded->_enteredDate : new \stdClass();
             $v->value = $decoded->enteredDate ?? null;
             $type->setEnteredDate(FHIRDateTime::jsonUnserialize($v, $config));
         }

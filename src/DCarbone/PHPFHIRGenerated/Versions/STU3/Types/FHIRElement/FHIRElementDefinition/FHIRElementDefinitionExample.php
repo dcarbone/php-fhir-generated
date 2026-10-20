@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBase64BinaryPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive;
@@ -204,121 +203,121 @@ class FHIRElementDefinitionExample extends FHIRElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_LABEL => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_BASE_64BINARY => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_BOOLEAN => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_CODE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_DATE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_DATE_TIME => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_DECIMAL => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_ID => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_INSTANT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_INTEGER => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_MARKDOWN => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_OID => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_POSITIVE_INT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_STRING => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_TIME => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_UNSIGNED_INT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_URI => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_ADDRESS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_AGE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_ANNOTATION => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_ATTACHMENT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_CODEABLE_CONCEPT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_CODING => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_CONTACT_POINT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_COUNT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_DISTANCE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_DURATION => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_HUMAN_NAME => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_IDENTIFIER => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_MONEY => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_PERIOD => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_QUANTITY => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_RANGE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_RATIO => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_REFERENCE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_SAMPLED_DATA => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_SIGNATURE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_TIMING => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE_META => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -2856,7 +2855,7 @@ class FHIRElementDefinitionExample extends FHIRElement
             || isset($decoded->_label)
             || property_exists($decoded, self::FIELD_LABEL)
             || property_exists($decoded, self::FIELD_LABEL_EXT)) {
-            $v = $decoded->_label ?? new \stdClass();
+            $v = isset($decoded->_label) ? clone $decoded->_label : new \stdClass();
             $v->value = $decoded->label ?? null;
             $type->setLabel(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2864,7 +2863,7 @@ class FHIRElementDefinitionExample extends FHIRElement
             || isset($decoded->_valueBase64Binary)
             || property_exists($decoded, self::FIELD_VALUE_BASE_64BINARY)
             || property_exists($decoded, self::FIELD_VALUE_BASE_64BINARY_EXT)) {
-            $v = $decoded->_valueBase64Binary ?? new \stdClass();
+            $v = isset($decoded->_valueBase64Binary) ? clone $decoded->_valueBase64Binary : new \stdClass();
             $v->value = $decoded->valueBase64Binary ?? null;
             $type->setValueBase64Binary(FHIRBase64Binary::jsonUnserialize($v, $config));
         }
@@ -2872,7 +2871,7 @@ class FHIRElementDefinitionExample extends FHIRElement
             || isset($decoded->_valueBoolean)
             || property_exists($decoded, self::FIELD_VALUE_BOOLEAN)
             || property_exists($decoded, self::FIELD_VALUE_BOOLEAN_EXT)) {
-            $v = $decoded->_valueBoolean ?? new \stdClass();
+            $v = isset($decoded->_valueBoolean) ? clone $decoded->_valueBoolean : new \stdClass();
             $v->value = $decoded->valueBoolean ?? null;
             $type->setValueBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -2880,7 +2879,7 @@ class FHIRElementDefinitionExample extends FHIRElement
             || isset($decoded->_valueCode)
             || property_exists($decoded, self::FIELD_VALUE_CODE)
             || property_exists($decoded, self::FIELD_VALUE_CODE_EXT)) {
-            $v = $decoded->_valueCode ?? new \stdClass();
+            $v = isset($decoded->_valueCode) ? clone $decoded->_valueCode : new \stdClass();
             $v->value = $decoded->valueCode ?? null;
             $type->setValueCode(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -2888,7 +2887,7 @@ class FHIRElementDefinitionExample extends FHIRElement
             || isset($decoded->_valueDate)
             || property_exists($decoded, self::FIELD_VALUE_DATE)
             || property_exists($decoded, self::FIELD_VALUE_DATE_EXT)) {
-            $v = $decoded->_valueDate ?? new \stdClass();
+            $v = isset($decoded->_valueDate) ? clone $decoded->_valueDate : new \stdClass();
             $v->value = $decoded->valueDate ?? null;
             $type->setValueDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -2896,7 +2895,7 @@ class FHIRElementDefinitionExample extends FHIRElement
             || isset($decoded->_valueDateTime)
             || property_exists($decoded, self::FIELD_VALUE_DATE_TIME)
             || property_exists($decoded, self::FIELD_VALUE_DATE_TIME_EXT)) {
-            $v = $decoded->_valueDateTime ?? new \stdClass();
+            $v = isset($decoded->_valueDateTime) ? clone $decoded->_valueDateTime : new \stdClass();
             $v->value = $decoded->valueDateTime ?? null;
             $type->setValueDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -2904,7 +2903,7 @@ class FHIRElementDefinitionExample extends FHIRElement
             || isset($decoded->_valueDecimal)
             || property_exists($decoded, self::FIELD_VALUE_DECIMAL)
             || property_exists($decoded, self::FIELD_VALUE_DECIMAL_EXT)) {
-            $v = $decoded->_valueDecimal ?? new \stdClass();
+            $v = isset($decoded->_valueDecimal) ? clone $decoded->_valueDecimal : new \stdClass();
             $v->value = $decoded->valueDecimal ?? null;
             $type->setValueDecimal(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -2912,7 +2911,7 @@ class FHIRElementDefinitionExample extends FHIRElement
             || isset($decoded->_valueId)
             || property_exists($decoded, self::FIELD_VALUE_ID)
             || property_exists($decoded, self::FIELD_VALUE_ID_EXT)) {
-            $v = $decoded->_valueId ?? new \stdClass();
+            $v = isset($decoded->_valueId) ? clone $decoded->_valueId : new \stdClass();
             $v->value = $decoded->valueId ?? null;
             $type->setValueId(FHIRId::jsonUnserialize($v, $config));
         }
@@ -2920,7 +2919,7 @@ class FHIRElementDefinitionExample extends FHIRElement
             || isset($decoded->_valueInstant)
             || property_exists($decoded, self::FIELD_VALUE_INSTANT)
             || property_exists($decoded, self::FIELD_VALUE_INSTANT_EXT)) {
-            $v = $decoded->_valueInstant ?? new \stdClass();
+            $v = isset($decoded->_valueInstant) ? clone $decoded->_valueInstant : new \stdClass();
             $v->value = $decoded->valueInstant ?? null;
             $type->setValueInstant(FHIRInstant::jsonUnserialize($v, $config));
         }
@@ -2928,7 +2927,7 @@ class FHIRElementDefinitionExample extends FHIRElement
             || isset($decoded->_valueInteger)
             || property_exists($decoded, self::FIELD_VALUE_INTEGER)
             || property_exists($decoded, self::FIELD_VALUE_INTEGER_EXT)) {
-            $v = $decoded->_valueInteger ?? new \stdClass();
+            $v = isset($decoded->_valueInteger) ? clone $decoded->_valueInteger : new \stdClass();
             $v->value = $decoded->valueInteger ?? null;
             $type->setValueInteger(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -2936,7 +2935,7 @@ class FHIRElementDefinitionExample extends FHIRElement
             || isset($decoded->_valueMarkdown)
             || property_exists($decoded, self::FIELD_VALUE_MARKDOWN)
             || property_exists($decoded, self::FIELD_VALUE_MARKDOWN_EXT)) {
-            $v = $decoded->_valueMarkdown ?? new \stdClass();
+            $v = isset($decoded->_valueMarkdown) ? clone $decoded->_valueMarkdown : new \stdClass();
             $v->value = $decoded->valueMarkdown ?? null;
             $type->setValueMarkdown(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -2944,7 +2943,7 @@ class FHIRElementDefinitionExample extends FHIRElement
             || isset($decoded->_valueOid)
             || property_exists($decoded, self::FIELD_VALUE_OID)
             || property_exists($decoded, self::FIELD_VALUE_OID_EXT)) {
-            $v = $decoded->_valueOid ?? new \stdClass();
+            $v = isset($decoded->_valueOid) ? clone $decoded->_valueOid : new \stdClass();
             $v->value = $decoded->valueOid ?? null;
             $type->setValueOid(FHIROid::jsonUnserialize($v, $config));
         }
@@ -2952,7 +2951,7 @@ class FHIRElementDefinitionExample extends FHIRElement
             || isset($decoded->_valuePositiveInt)
             || property_exists($decoded, self::FIELD_VALUE_POSITIVE_INT)
             || property_exists($decoded, self::FIELD_VALUE_POSITIVE_INT_EXT)) {
-            $v = $decoded->_valuePositiveInt ?? new \stdClass();
+            $v = isset($decoded->_valuePositiveInt) ? clone $decoded->_valuePositiveInt : new \stdClass();
             $v->value = $decoded->valuePositiveInt ?? null;
             $type->setValuePositiveInt(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
@@ -2960,7 +2959,7 @@ class FHIRElementDefinitionExample extends FHIRElement
             || isset($decoded->_valueString)
             || property_exists($decoded, self::FIELD_VALUE_STRING)
             || property_exists($decoded, self::FIELD_VALUE_STRING_EXT)) {
-            $v = $decoded->_valueString ?? new \stdClass();
+            $v = isset($decoded->_valueString) ? clone $decoded->_valueString : new \stdClass();
             $v->value = $decoded->valueString ?? null;
             $type->setValueString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2968,7 +2967,7 @@ class FHIRElementDefinitionExample extends FHIRElement
             || isset($decoded->_valueTime)
             || property_exists($decoded, self::FIELD_VALUE_TIME)
             || property_exists($decoded, self::FIELD_VALUE_TIME_EXT)) {
-            $v = $decoded->_valueTime ?? new \stdClass();
+            $v = isset($decoded->_valueTime) ? clone $decoded->_valueTime : new \stdClass();
             $v->value = $decoded->valueTime ?? null;
             $type->setValueTime(FHIRTime::jsonUnserialize($v, $config));
         }
@@ -2976,7 +2975,7 @@ class FHIRElementDefinitionExample extends FHIRElement
             || isset($decoded->_valueUnsignedInt)
             || property_exists($decoded, self::FIELD_VALUE_UNSIGNED_INT)
             || property_exists($decoded, self::FIELD_VALUE_UNSIGNED_INT_EXT)) {
-            $v = $decoded->_valueUnsignedInt ?? new \stdClass();
+            $v = isset($decoded->_valueUnsignedInt) ? clone $decoded->_valueUnsignedInt : new \stdClass();
             $v->value = $decoded->valueUnsignedInt ?? null;
             $type->setValueUnsignedInt(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
@@ -2984,7 +2983,7 @@ class FHIRElementDefinitionExample extends FHIRElement
             || isset($decoded->_valueUri)
             || property_exists($decoded, self::FIELD_VALUE_URI)
             || property_exists($decoded, self::FIELD_VALUE_URI_EXT)) {
-            $v = $decoded->_valueUri ?? new \stdClass();
+            $v = isset($decoded->_valueUri) ? clone $decoded->_valueUri : new \stdClass();
             $v->value = $decoded->valueUri ?? null;
             $type->setValueUri(FHIRUri::jsonUnserialize($v, $config));
         }

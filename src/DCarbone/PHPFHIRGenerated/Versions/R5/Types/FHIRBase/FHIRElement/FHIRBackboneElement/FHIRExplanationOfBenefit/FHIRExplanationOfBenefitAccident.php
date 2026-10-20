@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -164,7 +164,8 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The physical location of the accident event.
+     * The physical location of the accident event. (choose any one of location*, but
+     * only one)
      */
     #[FHIRAddress]
     protected FHIRAddress $locationAddress;
@@ -173,7 +174,8 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The physical location of the accident event.
+     * The physical location of the accident event. (choose any one of location*, but
+     * only one)
      */
     #[FHIRReference]
     protected FHIRReference $locationReference;
@@ -300,7 +302,8 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The physical location of the accident event.
+     * The physical location of the accident event. (choose any one of location*, but
+     * only one)
      */
     public function getLocationAddress(): null|FHIRAddress
     {
@@ -317,7 +320,8 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The physical location of the accident event.
+     * The physical location of the accident event. (choose any one of location*, but
+     * only one)
      */
     public function setLocationAddress(null|FHIRAddress $locationAddress): self
     {
@@ -334,7 +338,8 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The physical location of the accident event.
+     * The physical location of the accident event. (choose any one of location*, but
+     * only one)
      */
     public function getLocationReference(): null|FHIRReference
     {
@@ -346,7 +351,8 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The physical location of the accident event.
+     * The physical location of the accident event. (choose any one of location*, but
+     * only one)
      */
     public function setLocationReference(null|FHIRReference $locationReference): self
     {
@@ -479,7 +485,7 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement
             || isset($decoded->_date)
             || property_exists($decoded, self::FIELD_DATE)
             || property_exists($decoded, self::FIELD_DATE_EXT)) {
-            $v = $decoded->_date ?? new \stdClass();
+            $v = isset($decoded->_date) ? clone $decoded->_date : new \stdClass();
             $v->value = $decoded->date ?? null;
             $type->setDate(FHIRDate::jsonUnserialize($v, $config));
         }

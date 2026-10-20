@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRFilterOperatorList;
@@ -103,13 +102,13 @@ class FHIRValueSetFilter extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_PROPERTY => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_OP => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALUE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -434,7 +433,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement
             || isset($decoded->_property)
             || property_exists($decoded, self::FIELD_PROPERTY)
             || property_exists($decoded, self::FIELD_PROPERTY_EXT)) {
-            $v = $decoded->_property ?? new \stdClass();
+            $v = isset($decoded->_property) ? clone $decoded->_property : new \stdClass();
             $v->value = $decoded->property ?? null;
             $type->setProperty(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -442,7 +441,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement
             || isset($decoded->_op)
             || property_exists($decoded, self::FIELD_OP)
             || property_exists($decoded, self::FIELD_OP_EXT)) {
-            $v = $decoded->_op ?? new \stdClass();
+            $v = isset($decoded->_op) ? clone $decoded->_op : new \stdClass();
             $v->value = $decoded->op ?? null;
             $type->setOp(FHIRFilterOperator::jsonUnserialize($v, $config));
         }
@@ -450,7 +449,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement
             || isset($decoded->_value)
             || property_exists($decoded, self::FIELD_VALUE)
             || property_exists($decoded, self::FIELD_VALUE_EXT)) {
-            $v = $decoded->_value ?? new \stdClass();
+            $v = isset($decoded->_value) ? clone $decoded->_value : new \stdClass();
             $v->value = $decoded->value ?? null;
             $type->setValue(FHIRCode::jsonUnserialize($v, $config));
         }

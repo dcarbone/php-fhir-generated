@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Validation;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -26,7 +26,10 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Validation;
  *
  */
 
+use DCarbone\PHPFHIRGenerated\Validation\Rules\ChoiceOccursRule;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\MaxOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\SliceOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use Tests\DCarbone\PHPFHIRGenerated\Mock\MockElementType;
 use Tests\DCarbone\PHPFHIRGenerated\Mock\MockPrimitiveContainerType;
@@ -174,5 +177,147 @@ class TypeValidationsTraitTest extends TestCase
         );
         $errs = $type->_getValidationErrors();
         $this->assertCount(2, $errs, var_export($errs, true));
+    }
+
+    public function testUnsetCollectionFieldViolatesMinOccurs()
+    {
+        $type = new MockElementType(
+            name: 'mock',
+            validationRuleMap: [
+                'code' => [MinOccursRule::NAME => 1],
+            ],
+        );
+        $errs = $type->_getValidationErrors();
+        $this->assertCount(1, $errs, var_export($errs, true));
+        $this->assertArrayHasKey('code', $errs);
+        $this->assertArrayHasKey(MinOccursRule::NAME, $errs['code']);
+    }
+
+    public function testUnsetCollectionFieldWithoutMinimumHasNoErrors()
+    {
+        $type = new MockElementType(
+            name: 'mock',
+            validationRuleMap: [
+                'code' => [
+                    MinOccursRule::NAME => 0,
+                    MaxOccursRule::NAME => 2,
+                ],
+            ],
+        );
+        $errs = $type->_getValidationErrors();
+        $this->assertEmpty($errs, var_export($errs, true));
+    }
+
+    public function testUnsetCollectionFieldOnlyRunsMinOccurs()
+    {
+        $type = new MockElementType(
+            name: 'mock',
+            validationRuleMap: [
+                'code' => [
+                    MinOccursRule::NAME => 1,
+                    ValuePatternMatchRule::NAME => '/^[a-z]+$/',
+                ],
+            ],
+        );
+        $errs = $type->_getValidationErrors();
+        $this->assertSame([MinOccursRule::NAME], array_keys($errs['code'] ?? []), var_export($errs, true));
+    }
+
+    private function buildContactResource(array $contactCodes, array $rules): MockResourceType
+    {
+        $contacts = [];
+        foreach ($contactCodes as $codes) {
+            $values = [];
+            foreach ($codes as $code) {
+                $values[] = new MockStringPrimitiveType(value: $code);
+            }
+            $fields = [
+                'code' => [
+                    'class' => MockStringPrimitiveType::class,
+                    'collection' => true,
+                    'value' => [] === $values ? null : $values,
+                ],
+            ];
+            $contacts[] = new MockElementType(name: 'contact', fields: $fields);
+        }
+        return new MockResourceType(
+            name: 'mock',
+            fields: [
+                'contact' => [
+                    'class' => MockElementType::class,
+                    'collection' => true,
+                    'value' => $contacts,
+                ],
+            ],
+            validationRuleMap: $rules,
+        );
+    }
+
+    public function testNestedPathRuleNoErrors()
+    {
+        $type = $this->buildContactResource([['a'], ['b', 'c']], ['contact.code' => [MinOccursRule::NAME => 1]]);
+        $errs = $type->_getValidationErrors();
+        $this->assertEmpty($errs, var_export($errs, true));
+    }
+
+    public function testNestedPathRuleReportsConcretePath()
+    {
+        $type = $this->buildContactResource([['a'], [], ['b']], ['contact.code' => [MinOccursRule::NAME => 1]]);
+        $errs = $type->_getValidationErrors();
+        $this->assertSame(['contact.1.code'], array_keys($errs), var_export($errs, true));
+        $this->assertArrayHasKey(MinOccursRule::NAME, $errs['contact.1.code']);
+    }
+
+    public function testNestedPathRuleRunsPerInstance()
+    {
+        $type = $this->buildContactResource([['a', 'b'], ['c'], ['d', 'e', 'f']], ['contact.code' => [MaxOccursRule::NAME => 2]]);
+        $errs = $type->_getValidationErrors();
+        $this->assertSame(['contact.2.code'], array_keys($errs), var_export($errs, true));
+    }
+
+    public function testNestedPathWithMissingIntermediateHasNoErrors()
+    {
+        $type = new MockResourceType(
+            name: 'mock',
+            fields: ['contact' => ['class' => MockElementType::class, 'collection' => true]],
+            validationRuleMap: ['contact.code' => [MinOccursRule::NAME => 1]],
+        );
+        $errs = $type->_getValidationErrors();
+        $this->assertEmpty($errs, var_export($errs, true));
+    }
+
+    public function testCanSetNestedPathRuleAtRuntime()
+    {
+        $type = $this->buildContactResource([[], ['a']], []);
+        $this->assertEmpty($type->_getValidationErrors());
+        $type->_setFieldValidationRule('contact.code', MinOccursRule::NAME, 1);
+        $errs = $type->_getValidationErrors();
+        $this->assertSame(['contact.0.code'], array_keys($errs), var_export($errs, true));
+    }
+
+    public function testChoiceKeyRunsEvenWhenNoVariantIsSet()
+    {
+        $type = new MockResourceType(
+            name: 'mock',
+            fields: ['valueString' => ['class' => MockStringPrimitiveType::class]],
+            validationRuleMap: [
+                'value[x]' => [ChoiceOccursRule::NAME => ['fields' => ['valueString'], 'min' => 1]],
+            ],
+        );
+        $errs = $type->_getValidationErrors();
+        $this->assertSame(['value[x]'], array_keys($errs), var_export($errs, true));
+        $this->assertArrayHasKey(ChoiceOccursRule::NAME, $errs['value[x]']);
+    }
+
+    public function testUnsetCollectionFieldRunsSliceOccurs()
+    {
+        $type = new MockElementType(
+            name: 'mock',
+            validationRuleMap: [
+                'code' => [SliceOccursRule::NAME => [['name' => 'a', 'match' => 'x', 'min' => 1]]],
+            ],
+        );
+        $errs = $type->_getValidationErrors();
+        $this->assertSame([SliceOccursRule::NAME], array_keys($errs['code'] ?? []), var_export($errs, true));
     }
 }

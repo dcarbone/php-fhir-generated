@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -83,9 +83,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
  */
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMinLengthRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueOneOfRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -104,26 +101,26 @@ class FHIRRequestResourceTypesEnum extends FHIRCodePrimitive
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
-            ValuePatternMatchRule::NAME => '/^[^\\s]+( [^\\s]+)*$/',
-            ValueMinLengthRule::NAME => 1,
-            ValueOneOfRule::NAME => [
-                0 => 'Appointment',
-                1 => 'AppointmentResponse',
-                2 => 'CarePlan',
-                3 => 'Claim',
-                4 => 'CommunicationRequest',
-                5 => 'CoverageEligibilityRequest',
-                6 => 'DeviceRequest',
-                7 => 'EnrollmentRequest',
-                8 => 'ImmunizationRecommendation',
-                9 => 'MedicationRequest',
-                10 => 'NutritionOrder',
-                11 => 'RequestOrchestration',
-                12 => 'ServiceRequest',
-                13 => 'SupplyRequest',
-                14 => 'Task',
-                15 => 'Transport',
-                16 => 'VisionPrescription',
+            'value_pattern_match' => '/^[^\\s]+( [^\\s]+)*$/',
+            'value_min_length' => 1,
+            'value_one_of' => [
+                'Appointment',
+                'AppointmentResponse',
+                'CarePlan',
+                'Claim',
+                'CommunicationRequest',
+                'CoverageEligibilityRequest',
+                'DeviceRequest',
+                'EnrollmentRequest',
+                'ImmunizationRecommendation',
+                'MedicationRequest',
+                'NutritionOrder',
+                'RequestOrchestration',
+                'ServiceRequest',
+                'SupplyRequest',
+                'Task',
+                'Transport',
+                'VisionPrescription',
             ],
         ],
     ];

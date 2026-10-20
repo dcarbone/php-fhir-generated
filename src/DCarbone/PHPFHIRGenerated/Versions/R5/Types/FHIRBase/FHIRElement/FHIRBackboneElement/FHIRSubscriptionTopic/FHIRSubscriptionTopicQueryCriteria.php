@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -582,7 +582,7 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
             || isset($decoded->_previous)
             || property_exists($decoded, self::FIELD_PREVIOUS)
             || property_exists($decoded, self::FIELD_PREVIOUS_EXT)) {
-            $v = $decoded->_previous ?? new \stdClass();
+            $v = isset($decoded->_previous) ? clone $decoded->_previous : new \stdClass();
             $v->value = $decoded->previous ?? null;
             $type->setPrevious(FHIRString::jsonUnserialize($v, $config));
         }
@@ -590,7 +590,7 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
             || isset($decoded->_resultForCreate)
             || property_exists($decoded, self::FIELD_RESULT_FOR_CREATE)
             || property_exists($decoded, self::FIELD_RESULT_FOR_CREATE_EXT)) {
-            $v = $decoded->_resultForCreate ?? new \stdClass();
+            $v = isset($decoded->_resultForCreate) ? clone $decoded->_resultForCreate : new \stdClass();
             $v->value = $decoded->resultForCreate ?? null;
             $type->setResultForCreate(FHIRCriteriaNotExistsBehavior::jsonUnserialize($v, $config));
         }
@@ -598,7 +598,7 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
             || isset($decoded->_current)
             || property_exists($decoded, self::FIELD_CURRENT)
             || property_exists($decoded, self::FIELD_CURRENT_EXT)) {
-            $v = $decoded->_current ?? new \stdClass();
+            $v = isset($decoded->_current) ? clone $decoded->_current : new \stdClass();
             $v->value = $decoded->current ?? null;
             $type->setCurrent(FHIRString::jsonUnserialize($v, $config));
         }
@@ -606,7 +606,7 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
             || isset($decoded->_resultForDelete)
             || property_exists($decoded, self::FIELD_RESULT_FOR_DELETE)
             || property_exists($decoded, self::FIELD_RESULT_FOR_DELETE_EXT)) {
-            $v = $decoded->_resultForDelete ?? new \stdClass();
+            $v = isset($decoded->_resultForDelete) ? clone $decoded->_resultForDelete : new \stdClass();
             $v->value = $decoded->resultForDelete ?? null;
             $type->setResultForDelete(FHIRCriteriaNotExistsBehavior::jsonUnserialize($v, $config));
         }
@@ -614,7 +614,7 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
             || isset($decoded->_requireBoth)
             || property_exists($decoded, self::FIELD_REQUIRE_BOTH)
             || property_exists($decoded, self::FIELD_REQUIRE_BOTH_EXT)) {
-            $v = $decoded->_requireBoth ?? new \stdClass();
+            $v = isset($decoded->_requireBoth) ? clone $decoded->_requireBoth : new \stdClass();
             $v->value = $decoded->requireBoth ?? null;
             $type->setRequireBoth(FHIRBoolean::jsonUnserialize($v, $config));
         }

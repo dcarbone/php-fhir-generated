@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRExpressionLanguageEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
@@ -129,7 +128,7 @@ class FHIRExpression extends FHIRElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_LANGUAGE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -581,7 +580,7 @@ class FHIRExpression extends FHIRElement
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
@@ -589,7 +588,7 @@ class FHIRExpression extends FHIRElement
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRId::jsonUnserialize($v, $config));
         }
@@ -597,7 +596,7 @@ class FHIRExpression extends FHIRElement
             || isset($decoded->_language)
             || property_exists($decoded, self::FIELD_LANGUAGE)
             || property_exists($decoded, self::FIELD_LANGUAGE_EXT)) {
-            $v = $decoded->_language ?? new \stdClass();
+            $v = isset($decoded->_language) ? clone $decoded->_language : new \stdClass();
             $v->value = $decoded->language ?? null;
             $type->setLanguage(FHIRExpressionLanguage::jsonUnserialize($v, $config));
         }
@@ -605,7 +604,7 @@ class FHIRExpression extends FHIRElement
             || isset($decoded->_expression)
             || property_exists($decoded, self::FIELD_EXPRESSION)
             || property_exists($decoded, self::FIELD_EXPRESSION_EXT)) {
-            $v = $decoded->_expression ?? new \stdClass();
+            $v = isset($decoded->_expression) ? clone $decoded->_expression : new \stdClass();
             $v->value = $decoded->expression ?? null;
             $type->setExpression(FHIRString::jsonUnserialize($v, $config));
         }
@@ -613,7 +612,7 @@ class FHIRExpression extends FHIRElement
             || isset($decoded->_reference)
             || property_exists($decoded, self::FIELD_REFERENCE)
             || property_exists($decoded, self::FIELD_REFERENCE_EXT)) {
-            $v = $decoded->_reference ?? new \stdClass();
+            $v = isset($decoded->_reference) ? clone $decoded->_reference : new \stdClass();
             $v->value = $decoded->reference ?? null;
             $type->setReference(FHIRUri::jsonUnserialize($v, $config));
         }

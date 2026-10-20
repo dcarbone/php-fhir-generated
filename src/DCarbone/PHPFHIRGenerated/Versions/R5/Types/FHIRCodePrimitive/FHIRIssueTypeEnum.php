@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -83,9 +83,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
  */
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMinLengthRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueOneOfRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -104,42 +101,42 @@ class FHIRIssueTypeEnum extends FHIRCodePrimitive
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
-            ValuePatternMatchRule::NAME => '/^[^\\s]+( [^\\s]+)*$/',
-            ValueMinLengthRule::NAME => 1,
-            ValueOneOfRule::NAME => [
-                0 => 'invalid',
-                1 => 'structure',
-                2 => 'required',
-                3 => 'value',
-                4 => 'invariant',
-                5 => 'security',
-                6 => 'login',
-                7 => 'unknown',
-                8 => 'expired',
-                9 => 'forbidden',
-                10 => 'suppressed',
-                11 => 'processing',
-                12 => 'not-supported',
-                13 => 'duplicate',
-                14 => 'multiple-matches',
-                15 => 'not-found',
-                16 => 'deleted',
-                17 => 'too-long',
-                18 => 'code-invalid',
-                19 => 'extension',
-                20 => 'too-costly',
-                21 => 'business-rule',
-                22 => 'conflict',
-                23 => 'limited-filter',
-                24 => 'transient',
-                25 => 'lock-error',
-                26 => 'no-store',
-                27 => 'exception',
-                28 => 'timeout',
-                29 => 'incomplete',
-                30 => 'throttled',
-                31 => 'informational',
-                32 => 'success',
+            'value_pattern_match' => '/^[^\\s]+( [^\\s]+)*$/',
+            'value_min_length' => 1,
+            'value_one_of' => [
+                'invalid',
+                'structure',
+                'required',
+                'value',
+                'invariant',
+                'security',
+                'login',
+                'unknown',
+                'expired',
+                'forbidden',
+                'suppressed',
+                'processing',
+                'not-supported',
+                'duplicate',
+                'multiple-matches',
+                'not-found',
+                'deleted',
+                'too-long',
+                'code-invalid',
+                'extension',
+                'too-costly',
+                'business-rule',
+                'conflict',
+                'limited-filter',
+                'transient',
+                'lock-error',
+                'no-store',
+                'exception',
+                'timeout',
+                'incomplete',
+                'throttled',
+                'informational',
+                'success',
             ],
         ],
     ];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -798,7 +798,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements VersionContain
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1018,7 +1018,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements VersionContain
             || isset($decoded->_type)
             || property_exists($decoded, self::FIELD_TYPE)
             || property_exists($decoded, self::FIELD_TYPE_EXT)) {
-            $v = $decoded->_type ?? new \stdClass();
+            $v = isset($decoded->_type) ? clone $decoded->_type : new \stdClass();
             $v->value = $decoded->type ?? null;
             $type->setType(FHIRSequenceType::jsonUnserialize($v, $config));
         }
@@ -1065,7 +1065,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements VersionContain
             || isset($decoded->_literal)
             || property_exists($decoded, self::FIELD_LITERAL)
             || property_exists($decoded, self::FIELD_LITERAL_EXT)) {
-            $v = $decoded->_literal ?? new \stdClass();
+            $v = isset($decoded->_literal) ? clone $decoded->_literal : new \stdClass();
             $v->value = $decoded->literal ?? null;
             $type->setLiteral(FHIRString::jsonUnserialize($v, $config));
         }

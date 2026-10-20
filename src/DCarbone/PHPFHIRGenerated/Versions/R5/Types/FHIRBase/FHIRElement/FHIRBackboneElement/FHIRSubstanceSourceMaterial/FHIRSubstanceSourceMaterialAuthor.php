@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -381,7 +381,7 @@ class FHIRSubstanceSourceMaterialAuthor extends FHIRBackboneElement
             || isset($decoded->_authorDescription)
             || property_exists($decoded, self::FIELD_AUTHOR_DESCRIPTION)
             || property_exists($decoded, self::FIELD_AUTHOR_DESCRIPTION_EXT)) {
-            $v = $decoded->_authorDescription ?? new \stdClass();
+            $v = isset($decoded->_authorDescription) ? clone $decoded->_authorDescription : new \stdClass();
             $v->value = $decoded->authorDescription ?? null;
             $type->setAuthorDescription(FHIRString::jsonUnserialize($v, $config));
         }

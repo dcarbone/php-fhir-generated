@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -63,7 +63,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive;
@@ -121,16 +120,16 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_SENSITIVITY_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_SUBJECT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_SUBSTANCE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -757,7 +756,7 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -995,7 +994,7 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
             || isset($decoded->_criticality)
             || property_exists($decoded, self::FIELD_CRITICALITY)
             || property_exists($decoded, self::FIELD_CRITICALITY_EXT)) {
-            $v = $decoded->_criticality ?? new \stdClass();
+            $v = isset($decoded->_criticality) ? clone $decoded->_criticality : new \stdClass();
             $v->value = $decoded->criticality ?? null;
             $type->setCriticality(FHIRCriticality::jsonUnserialize($v, $config));
         }
@@ -1003,7 +1002,7 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
             || isset($decoded->_sensitivityType)
             || property_exists($decoded, self::FIELD_SENSITIVITY_TYPE)
             || property_exists($decoded, self::FIELD_SENSITIVITY_TYPE_EXT)) {
-            $v = $decoded->_sensitivityType ?? new \stdClass();
+            $v = isset($decoded->_sensitivityType) ? clone $decoded->_sensitivityType : new \stdClass();
             $v->value = $decoded->sensitivityType ?? null;
             $type->setSensitivityType(FHIRSensitivityType::jsonUnserialize($v, $config));
         }
@@ -1011,7 +1010,7 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
             || isset($decoded->_recordedDate)
             || property_exists($decoded, self::FIELD_RECORDED_DATE)
             || property_exists($decoded, self::FIELD_RECORDED_DATE_EXT)) {
-            $v = $decoded->_recordedDate ?? new \stdClass();
+            $v = isset($decoded->_recordedDate) ? clone $decoded->_recordedDate : new \stdClass();
             $v->value = $decoded->recordedDate ?? null;
             $type->setRecordedDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1019,7 +1018,7 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRSensitivityStatus::jsonUnserialize($v, $config));
         }

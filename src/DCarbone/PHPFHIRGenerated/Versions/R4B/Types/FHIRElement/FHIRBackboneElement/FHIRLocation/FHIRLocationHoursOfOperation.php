@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -522,7 +522,7 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addDaysOfWeek(FHIRDaysOfWeek::jsonUnserialize($v, $config));
             }
@@ -531,7 +531,7 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
             || isset($decoded->_allDay)
             || property_exists($decoded, self::FIELD_ALL_DAY)
             || property_exists($decoded, self::FIELD_ALL_DAY_EXT)) {
-            $v = $decoded->_allDay ?? new \stdClass();
+            $v = isset($decoded->_allDay) ? clone $decoded->_allDay : new \stdClass();
             $v->value = $decoded->allDay ?? null;
             $type->setAllDay(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -539,7 +539,7 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
             || isset($decoded->_openingTime)
             || property_exists($decoded, self::FIELD_OPENING_TIME)
             || property_exists($decoded, self::FIELD_OPENING_TIME_EXT)) {
-            $v = $decoded->_openingTime ?? new \stdClass();
+            $v = isset($decoded->_openingTime) ? clone $decoded->_openingTime : new \stdClass();
             $v->value = $decoded->openingTime ?? null;
             $type->setOpeningTime(FHIRTime::jsonUnserialize($v, $config));
         }
@@ -547,7 +547,7 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
             || isset($decoded->_closingTime)
             || property_exists($decoded, self::FIELD_CLOSING_TIME)
             || property_exists($decoded, self::FIELD_CLOSING_TIME_EXT)) {
-            $v = $decoded->_closingTime ?? new \stdClass();
+            $v = isset($decoded->_closingTime) ? clone $decoded->_closingTime : new \stdClass();
             $v->value = $decoded->closingTime ?? null;
             $type->setClosingTime(FHIRTime::jsonUnserialize($v, $config));
         }

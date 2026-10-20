@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -468,7 +468,7 @@ class FHIRSubstanceDefinitionRepresentation extends FHIRBackboneElement
             || isset($decoded->_representation)
             || property_exists($decoded, self::FIELD_REPRESENTATION)
             || property_exists($decoded, self::FIELD_REPRESENTATION_EXT)) {
-            $v = $decoded->_representation ?? new \stdClass();
+            $v = isset($decoded->_representation) ? clone $decoded->_representation : new \stdClass();
             $v->value = $decoded->representation ?? null;
             $type->setRepresentation(FHIRString::jsonUnserialize($v, $config));
         }

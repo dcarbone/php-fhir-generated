@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension;
@@ -107,7 +106,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ELEMENT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -627,7 +626,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
             || isset($decoded->_source)
             || property_exists($decoded, self::FIELD_SOURCE)
             || property_exists($decoded, self::FIELD_SOURCE_EXT)) {
-            $v = $decoded->_source ?? new \stdClass();
+            $v = isset($decoded->_source) ? clone $decoded->_source : new \stdClass();
             $v->value = $decoded->source ?? null;
             $type->setSource(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -635,7 +634,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
             || isset($decoded->_sourceVersion)
             || property_exists($decoded, self::FIELD_SOURCE_VERSION)
             || property_exists($decoded, self::FIELD_SOURCE_VERSION_EXT)) {
-            $v = $decoded->_sourceVersion ?? new \stdClass();
+            $v = isset($decoded->_sourceVersion) ? clone $decoded->_sourceVersion : new \stdClass();
             $v->value = $decoded->sourceVersion ?? null;
             $type->setSourceVersion(FHIRString::jsonUnserialize($v, $config));
         }
@@ -643,7 +642,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
             || isset($decoded->_target)
             || property_exists($decoded, self::FIELD_TARGET)
             || property_exists($decoded, self::FIELD_TARGET_EXT)) {
-            $v = $decoded->_target ?? new \stdClass();
+            $v = isset($decoded->_target) ? clone $decoded->_target : new \stdClass();
             $v->value = $decoded->target ?? null;
             $type->setTarget(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -651,7 +650,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
             || isset($decoded->_targetVersion)
             || property_exists($decoded, self::FIELD_TARGET_VERSION)
             || property_exists($decoded, self::FIELD_TARGET_VERSION_EXT)) {
-            $v = $decoded->_targetVersion ?? new \stdClass();
+            $v = isset($decoded->_targetVersion) ? clone $decoded->_targetVersion : new \stdClass();
             $v->value = $decoded->targetVersion ?? null;
             $type->setTargetVersion(FHIRString::jsonUnserialize($v, $config));
         }

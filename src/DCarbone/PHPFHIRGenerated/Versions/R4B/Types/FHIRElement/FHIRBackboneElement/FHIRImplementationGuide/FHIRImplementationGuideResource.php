@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive;
@@ -139,7 +138,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_REFERENCE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -768,7 +767,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addFhirVersion(FHIRFHIRVersion::jsonUnserialize($v, $config));
             }
@@ -777,7 +776,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -785,7 +784,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
@@ -793,7 +792,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
             || isset($decoded->_exampleBoolean)
             || property_exists($decoded, self::FIELD_EXAMPLE_BOOLEAN)
             || property_exists($decoded, self::FIELD_EXAMPLE_BOOLEAN_EXT)) {
-            $v = $decoded->_exampleBoolean ?? new \stdClass();
+            $v = isset($decoded->_exampleBoolean) ? clone $decoded->_exampleBoolean : new \stdClass();
             $v->value = $decoded->exampleBoolean ?? null;
             $type->setExampleBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -801,7 +800,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
             || isset($decoded->_exampleCanonical)
             || property_exists($decoded, self::FIELD_EXAMPLE_CANONICAL)
             || property_exists($decoded, self::FIELD_EXAMPLE_CANONICAL_EXT)) {
-            $v = $decoded->_exampleCanonical ?? new \stdClass();
+            $v = isset($decoded->_exampleCanonical) ? clone $decoded->_exampleCanonical : new \stdClass();
             $v->value = $decoded->exampleCanonical ?? null;
             $type->setExampleCanonical(FHIRCanonical::jsonUnserialize($v, $config));
         }
@@ -809,7 +808,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
             || isset($decoded->_groupingId)
             || property_exists($decoded, self::FIELD_GROUPING_ID)
             || property_exists($decoded, self::FIELD_GROUPING_ID_EXT)) {
-            $v = $decoded->_groupingId ?? new \stdClass();
+            $v = isset($decoded->_groupingId) ? clone $decoded->_groupingId : new \stdClass();
             $v->value = $decoded->groupingId ?? null;
             $type->setGroupingId(FHIRId::jsonUnserialize($v, $config));
         }

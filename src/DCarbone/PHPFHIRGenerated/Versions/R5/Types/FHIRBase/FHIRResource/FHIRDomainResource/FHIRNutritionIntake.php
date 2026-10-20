@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionIntake\FHIRNutritionIntakeConsumedItem;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionIntake\FHIRNutritionIntakeIngredientLabel;
@@ -177,13 +176,13 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_SUBJECT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_CONSUMED_ITEM => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -316,7 +315,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The interval of time during which it is being asserted that the patient is/was
-     * consuming the food or fluid.
+     * consuming the food or fluid. (choose any one of occurrence*, but only one)
      */
     #[FHIRDateTime]
     protected FHIRDateTime $occurrenceDateTime;
@@ -326,7 +325,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The interval of time during which it is being asserted that the patient is/was
-     * consuming the food or fluid.
+     * consuming the food or fluid. (choose any one of occurrence*, but only one)
      */
     #[FHIRPeriod]
     protected FHIRPeriod $occurrencePeriod;
@@ -349,7 +348,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      *
      * The person or organization that provided the information about the consumption
      * of this food or fluid. Note: Use derivedFrom when a NutritionIntake is derived
-     * from other resources.
+     * from other resources. (choose any one of reported*, but only one)
      */
     #[FHIRBoolean]
     protected FHIRBoolean $reportedBoolean;
@@ -360,7 +359,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      *
      * The person or organization that provided the information about the consumption
      * of this food or fluid. Note: Use derivedFrom when a NutritionIntake is derived
-     * from other resources.
+     * from other resources. (choose any one of reported*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $reportedReference;
@@ -1125,7 +1124,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The interval of time during which it is being asserted that the patient is/was
-     * consuming the food or fluid.
+     * consuming the food or fluid. (choose any one of occurrence*, but only one)
      */
     public function getOccurrenceDateTime(): null|FHIRDateTime
     {
@@ -1142,7 +1141,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The interval of time during which it is being asserted that the patient is/was
-     * consuming the food or fluid.
+     * consuming the food or fluid. (choose any one of occurrence*, but only one)
      */
     public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime): self
     {
@@ -1163,7 +1162,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The interval of time during which it is being asserted that the patient is/was
-     * consuming the food or fluid.
+     * consuming the food or fluid. (choose any one of occurrence*, but only one)
      */
     public function getOccurrencePeriod(): null|FHIRPeriod
     {
@@ -1176,7 +1175,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The interval of time during which it is being asserted that the patient is/was
-     * consuming the food or fluid.
+     * consuming the food or fluid. (choose any one of occurrence*, but only one)
      */
     public function setOccurrencePeriod(null|FHIRPeriod $occurrencePeriod): self
     {
@@ -1234,7 +1233,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      *
      * The person or organization that provided the information about the consumption
      * of this food or fluid. Note: Use derivedFrom when a NutritionIntake is derived
-     * from other resources.
+     * from other resources. (choose any one of reported*, but only one)
      */
     public function getReportedBoolean(): null|FHIRBoolean
     {
@@ -1247,7 +1246,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      *
      * The person or organization that provided the information about the consumption
      * of this food or fluid. Note: Use derivedFrom when a NutritionIntake is derived
-     * from other resources.
+     * from other resources. (choose any one of reported*, but only one)
      */
     public function setReportedBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $reportedBoolean): self
     {
@@ -1269,7 +1268,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      *
      * The person or organization that provided the information about the consumption
      * of this food or fluid. Note: Use derivedFrom when a NutritionIntake is derived
-     * from other resources.
+     * from other resources. (choose any one of reported*, but only one)
      */
     public function getReportedReference(): null|FHIRReference
     {
@@ -1283,7 +1282,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      *
      * The person or organization that provided the information about the consumption
      * of this food or fluid. Note: Use derivedFrom when a NutritionIntake is derived
-     * from other resources.
+     * from other resources. (choose any one of reported*, but only one)
      */
     public function setReportedReference(null|FHIRReference $reportedReference): self
     {
@@ -1785,7 +1784,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -2139,7 +2138,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addInstantiatesCanonical(FHIRCanonical::jsonUnserialize($v, $config));
             }
@@ -2156,7 +2155,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addInstantiatesUri(FHIRUri::jsonUnserialize($v, $config));
             }
@@ -2187,7 +2186,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIREventStatus::jsonUnserialize($v, $config));
         }
@@ -2227,7 +2226,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
             || isset($decoded->_occurrenceDateTime)
             || property_exists($decoded, self::FIELD_OCCURRENCE_DATE_TIME)
             || property_exists($decoded, self::FIELD_OCCURRENCE_DATE_TIME_EXT)) {
-            $v = $decoded->_occurrenceDateTime ?? new \stdClass();
+            $v = isset($decoded->_occurrenceDateTime) ? clone $decoded->_occurrenceDateTime : new \stdClass();
             $v->value = $decoded->occurrenceDateTime ?? null;
             $type->setOccurrenceDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -2242,7 +2241,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
             || isset($decoded->_recorded)
             || property_exists($decoded, self::FIELD_RECORDED)
             || property_exists($decoded, self::FIELD_RECORDED_EXT)) {
-            $v = $decoded->_recorded ?? new \stdClass();
+            $v = isset($decoded->_recorded) ? clone $decoded->_recorded : new \stdClass();
             $v->value = $decoded->recorded ?? null;
             $type->setRecorded(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -2250,7 +2249,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
             || isset($decoded->_reportedBoolean)
             || property_exists($decoded, self::FIELD_REPORTED_BOOLEAN)
             || property_exists($decoded, self::FIELD_REPORTED_BOOLEAN_EXT)) {
-            $v = $decoded->_reportedBoolean ?? new \stdClass();
+            $v = isset($decoded->_reportedBoolean) ? clone $decoded->_reportedBoolean : new \stdClass();
             $v->value = $decoded->reportedBoolean ?? null;
             $type->setReportedBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }

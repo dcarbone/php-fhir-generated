@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -835,7 +835,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
             || isset($decoded->_baseFormulaProductName)
             || property_exists($decoded, self::FIELD_BASE_FORMULA_PRODUCT_NAME)
             || property_exists($decoded, self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT)) {
-            $v = $decoded->_baseFormulaProductName ?? new \stdClass();
+            $v = isset($decoded->_baseFormulaProductName) ? clone $decoded->_baseFormulaProductName : new \stdClass();
             $v->value = $decoded->baseFormulaProductName ?? null;
             $type->setBaseFormulaProductName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -850,7 +850,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
             || isset($decoded->_additiveProductName)
             || property_exists($decoded, self::FIELD_ADDITIVE_PRODUCT_NAME)
             || property_exists($decoded, self::FIELD_ADDITIVE_PRODUCT_NAME_EXT)) {
-            $v = $decoded->_additiveProductName ?? new \stdClass();
+            $v = isset($decoded->_additiveProductName) ? clone $decoded->_additiveProductName : new \stdClass();
             $v->value = $decoded->additiveProductName ?? null;
             $type->setAdditiveProductName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -890,7 +890,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
             || isset($decoded->_administrationInstruction)
             || property_exists($decoded, self::FIELD_ADMINISTRATION_INSTRUCTION)
             || property_exists($decoded, self::FIELD_ADMINISTRATION_INSTRUCTION_EXT)) {
-            $v = $decoded->_administrationInstruction ?? new \stdClass();
+            $v = isset($decoded->_administrationInstruction) ? clone $decoded->_administrationInstruction : new \stdClass();
             $v->value = $decoded->administrationInstruction ?? null;
             $type->setAdministrationInstruction(FHIRString::jsonUnserialize($v, $config));
         }

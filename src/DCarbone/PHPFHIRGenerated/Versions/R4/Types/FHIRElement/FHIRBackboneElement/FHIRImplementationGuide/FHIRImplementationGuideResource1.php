@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive;
@@ -110,7 +109,7 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_REFERENCE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -491,7 +490,7 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
             || isset($decoded->_exampleBoolean)
             || property_exists($decoded, self::FIELD_EXAMPLE_BOOLEAN)
             || property_exists($decoded, self::FIELD_EXAMPLE_BOOLEAN_EXT)) {
-            $v = $decoded->_exampleBoolean ?? new \stdClass();
+            $v = isset($decoded->_exampleBoolean) ? clone $decoded->_exampleBoolean : new \stdClass();
             $v->value = $decoded->exampleBoolean ?? null;
             $type->setExampleBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -499,7 +498,7 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
             || isset($decoded->_exampleCanonical)
             || property_exists($decoded, self::FIELD_EXAMPLE_CANONICAL)
             || property_exists($decoded, self::FIELD_EXAMPLE_CANONICAL_EXT)) {
-            $v = $decoded->_exampleCanonical ?? new \stdClass();
+            $v = isset($decoded->_exampleCanonical) ? clone $decoded->_exampleCanonical : new \stdClass();
             $v->value = $decoded->exampleCanonical ?? null;
             $type->setExampleCanonical(FHIRCanonical::jsonUnserialize($v, $config));
         }
@@ -507,7 +506,7 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
             || isset($decoded->_relativePath)
             || property_exists($decoded, self::FIELD_RELATIVE_PATH)
             || property_exists($decoded, self::FIELD_RELATIVE_PATH_EXT)) {
-            $v = $decoded->_relativePath ?? new \stdClass();
+            $v = isset($decoded->_relativePath) ? clone $decoded->_relativePath : new \stdClass();
             $v->value = $decoded->relativePath ?? null;
             $type->setRelativePath(FHIRUrl::jsonUnserialize($v, $config));
         }

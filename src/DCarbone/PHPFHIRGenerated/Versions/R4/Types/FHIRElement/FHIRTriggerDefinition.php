@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRTriggerTypeList;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDatePrimitive;
@@ -111,7 +110,7 @@ class FHIRTriggerDefinition extends FHIRElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -759,7 +758,7 @@ class FHIRTriggerDefinition extends FHIRElement
             || isset($decoded->_type)
             || property_exists($decoded, self::FIELD_TYPE)
             || property_exists($decoded, self::FIELD_TYPE_EXT)) {
-            $v = $decoded->_type ?? new \stdClass();
+            $v = isset($decoded->_type) ? clone $decoded->_type : new \stdClass();
             $v->value = $decoded->type ?? null;
             $type->setType(FHIRTriggerType::jsonUnserialize($v, $config));
         }
@@ -767,7 +766,7 @@ class FHIRTriggerDefinition extends FHIRElement
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -789,7 +788,7 @@ class FHIRTriggerDefinition extends FHIRElement
             || isset($decoded->_timingDate)
             || property_exists($decoded, self::FIELD_TIMING_DATE)
             || property_exists($decoded, self::FIELD_TIMING_DATE_EXT)) {
-            $v = $decoded->_timingDate ?? new \stdClass();
+            $v = isset($decoded->_timingDate) ? clone $decoded->_timingDate : new \stdClass();
             $v->value = $decoded->timingDate ?? null;
             $type->setTimingDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -797,7 +796,7 @@ class FHIRTriggerDefinition extends FHIRElement
             || isset($decoded->_timingDateTime)
             || property_exists($decoded, self::FIELD_TIMING_DATE_TIME)
             || property_exists($decoded, self::FIELD_TIMING_DATE_TIME_EXT)) {
-            $v = $decoded->_timingDateTime ?? new \stdClass();
+            $v = isset($decoded->_timingDateTime) ? clone $decoded->_timingDateTime : new \stdClass();
             $v->value = $decoded->timingDateTime ?? null;
             $type->setTimingDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }

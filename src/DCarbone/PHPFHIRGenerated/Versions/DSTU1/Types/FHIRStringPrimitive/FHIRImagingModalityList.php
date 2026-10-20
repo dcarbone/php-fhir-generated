@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -58,7 +58,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive;
  */
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueOneOfRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
@@ -78,43 +77,43 @@ class FHIRImagingModalityList extends FHIRStringPrimitive
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
-            ValueOneOfRule::NAME => [
-                0 => 'AR',
-                1 => 'BMD',
-                2 => 'BDUS',
-                3 => 'EPS',
-                4 => 'CR',
-                5 => 'CT',
-                6 => 'DX',
-                7 => 'ECG',
-                8 => 'ES',
-                9 => 'XC',
-                10 => 'GM',
-                11 => 'HD',
-                12 => 'IO',
-                13 => 'IVOCT',
-                14 => 'IVUS',
-                15 => 'KER',
-                16 => 'LEN',
-                17 => 'MR',
-                18 => 'MG',
-                19 => 'NM',
-                20 => 'OAM',
-                21 => 'OCT',
-                22 => 'OPM',
-                23 => 'OP',
-                24 => 'OPR',
-                25 => 'OPT',
-                26 => 'OPV',
-                27 => 'PX',
-                28 => 'PT',
-                29 => 'RF',
-                30 => 'RG',
-                31 => 'SM',
-                32 => 'SRF',
-                33 => 'US',
-                34 => 'VA',
-                35 => 'XA',
+            'value_one_of' => [
+                'AR',
+                'BMD',
+                'BDUS',
+                'EPS',
+                'CR',
+                'CT',
+                'DX',
+                'ECG',
+                'ES',
+                'XC',
+                'GM',
+                'HD',
+                'IO',
+                'IVOCT',
+                'IVUS',
+                'KER',
+                'LEN',
+                'MR',
+                'MG',
+                'NM',
+                'OAM',
+                'OCT',
+                'OPM',
+                'OP',
+                'OPR',
+                'OPT',
+                'OPV',
+                'PX',
+                'PT',
+                'RF',
+                'RG',
+                'SM',
+                'SRF',
+                'US',
+                'VA',
+                'XA',
             ],
         ],
     ];

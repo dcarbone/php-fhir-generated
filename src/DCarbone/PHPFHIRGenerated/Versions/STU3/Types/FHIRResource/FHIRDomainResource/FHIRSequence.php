@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality;
@@ -134,7 +133,7 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_COORDINATE_SYSTEM => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1065,7 +1064,7 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1348,7 +1347,7 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_type)
             || property_exists($decoded, self::FIELD_TYPE)
             || property_exists($decoded, self::FIELD_TYPE_EXT)) {
-            $v = $decoded->_type ?? new \stdClass();
+            $v = isset($decoded->_type) ? clone $decoded->_type : new \stdClass();
             $v->value = $decoded->type ?? null;
             $type->setType(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -1356,7 +1355,7 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_coordinateSystem)
             || property_exists($decoded, self::FIELD_COORDINATE_SYSTEM)
             || property_exists($decoded, self::FIELD_COORDINATE_SYSTEM_EXT)) {
-            $v = $decoded->_coordinateSystem ?? new \stdClass();
+            $v = isset($decoded->_coordinateSystem) ? clone $decoded->_coordinateSystem : new \stdClass();
             $v->value = $decoded->coordinateSystem ?? null;
             $type->setCoordinateSystem(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -1417,7 +1416,7 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_observedSeq)
             || property_exists($decoded, self::FIELD_OBSERVED_SEQ)
             || property_exists($decoded, self::FIELD_OBSERVED_SEQ_EXT)) {
-            $v = $decoded->_observedSeq ?? new \stdClass();
+            $v = isset($decoded->_observedSeq) ? clone $decoded->_observedSeq : new \stdClass();
             $v->value = $decoded->observedSeq ?? null;
             $type->setObservedSeq(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1436,7 +1435,7 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_readCoverage)
             || property_exists($decoded, self::FIELD_READ_COVERAGE)
             || property_exists($decoded, self::FIELD_READ_COVERAGE_EXT)) {
-            $v = $decoded->_readCoverage ?? new \stdClass();
+            $v = isset($decoded->_readCoverage) ? clone $decoded->_readCoverage : new \stdClass();
             $v->value = $decoded->readCoverage ?? null;
             $type->setReadCoverage(FHIRInteger::jsonUnserialize($v, $config));
         }

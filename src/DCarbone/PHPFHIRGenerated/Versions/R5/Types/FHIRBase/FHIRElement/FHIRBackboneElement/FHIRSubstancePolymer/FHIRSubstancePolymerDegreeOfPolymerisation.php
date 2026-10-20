@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -494,7 +494,7 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
             || isset($decoded->_average)
             || property_exists($decoded, self::FIELD_AVERAGE)
             || property_exists($decoded, self::FIELD_AVERAGE_EXT)) {
-            $v = $decoded->_average ?? new \stdClass();
+            $v = isset($decoded->_average) ? clone $decoded->_average : new \stdClass();
             $v->value = $decoded->average ?? null;
             $type->setAverage(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -502,7 +502,7 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
             || isset($decoded->_low)
             || property_exists($decoded, self::FIELD_LOW)
             || property_exists($decoded, self::FIELD_LOW_EXT)) {
-            $v = $decoded->_low ?? new \stdClass();
+            $v = isset($decoded->_low) ? clone $decoded->_low : new \stdClass();
             $v->value = $decoded->low ?? null;
             $type->setLow(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -510,7 +510,7 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
             || isset($decoded->_high)
             || property_exists($decoded, self::FIELD_HIGH)
             || property_exists($decoded, self::FIELD_HIGH_EXT)) {
-            $v = $decoded->_high ?? new \stdClass();
+            $v = isset($decoded->_high) ? clone $decoded->_high : new \stdClass();
             $v->value = $decoded->high ?? null;
             $type->setHigh(FHIRInteger::jsonUnserialize($v, $config));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRHTTPVerbEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
@@ -132,10 +131,10 @@ class FHIRBundleRequest extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_METHOD => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_URL => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -673,7 +672,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
             || isset($decoded->_method)
             || property_exists($decoded, self::FIELD_METHOD)
             || property_exists($decoded, self::FIELD_METHOD_EXT)) {
-            $v = $decoded->_method ?? new \stdClass();
+            $v = isset($decoded->_method) ? clone $decoded->_method : new \stdClass();
             $v->value = $decoded->method ?? null;
             $type->setMethod(FHIRHTTPVerb::jsonUnserialize($v, $config));
         }
@@ -681,7 +680,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
             || isset($decoded->_url)
             || property_exists($decoded, self::FIELD_URL)
             || property_exists($decoded, self::FIELD_URL_EXT)) {
-            $v = $decoded->_url ?? new \stdClass();
+            $v = isset($decoded->_url) ? clone $decoded->_url : new \stdClass();
             $v->value = $decoded->url ?? null;
             $type->setUrl(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -689,7 +688,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
             || isset($decoded->_ifNoneMatch)
             || property_exists($decoded, self::FIELD_IF_NONE_MATCH)
             || property_exists($decoded, self::FIELD_IF_NONE_MATCH_EXT)) {
-            $v = $decoded->_ifNoneMatch ?? new \stdClass();
+            $v = isset($decoded->_ifNoneMatch) ? clone $decoded->_ifNoneMatch : new \stdClass();
             $v->value = $decoded->ifNoneMatch ?? null;
             $type->setIfNoneMatch(FHIRString::jsonUnserialize($v, $config));
         }
@@ -697,7 +696,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
             || isset($decoded->_ifModifiedSince)
             || property_exists($decoded, self::FIELD_IF_MODIFIED_SINCE)
             || property_exists($decoded, self::FIELD_IF_MODIFIED_SINCE_EXT)) {
-            $v = $decoded->_ifModifiedSince ?? new \stdClass();
+            $v = isset($decoded->_ifModifiedSince) ? clone $decoded->_ifModifiedSince : new \stdClass();
             $v->value = $decoded->ifModifiedSince ?? null;
             $type->setIfModifiedSince(FHIRInstant::jsonUnserialize($v, $config));
         }
@@ -705,7 +704,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
             || isset($decoded->_ifMatch)
             || property_exists($decoded, self::FIELD_IF_MATCH)
             || property_exists($decoded, self::FIELD_IF_MATCH_EXT)) {
-            $v = $decoded->_ifMatch ?? new \stdClass();
+            $v = isset($decoded->_ifMatch) ? clone $decoded->_ifMatch : new \stdClass();
             $v->value = $decoded->ifMatch ?? null;
             $type->setIfMatch(FHIRString::jsonUnserialize($v, $config));
         }
@@ -713,7 +712,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
             || isset($decoded->_ifNoneExist)
             || property_exists($decoded, self::FIELD_IF_NONE_EXIST)
             || property_exists($decoded, self::FIELD_IF_NONE_EXIST_EXT)) {
-            $v = $decoded->_ifNoneExist ?? new \stdClass();
+            $v = isset($decoded->_ifNoneExist) ? clone $decoded->_ifNoneExist : new \stdClass();
             $v->value = $decoded->ifNoneExist ?? null;
             $type->setIfNoneExist(FHIRString::jsonUnserialize($v, $config));
         }

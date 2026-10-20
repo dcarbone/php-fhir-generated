@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -622,7 +622,7 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
             || isset($decoded->_lotNumber)
             || property_exists($decoded, self::FIELD_LOT_NUMBER)
             || property_exists($decoded, self::FIELD_LOT_NUMBER_EXT)) {
-            $v = $decoded->_lotNumber ?? new \stdClass();
+            $v = isset($decoded->_lotNumber) ? clone $decoded->_lotNumber : new \stdClass();
             $v->value = $decoded->lotNumber ?? null;
             $type->setLotNumber(FHIRString::jsonUnserialize($v, $config));
         }
@@ -630,7 +630,7 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
             || isset($decoded->_expiry)
             || property_exists($decoded, self::FIELD_EXPIRY)
             || property_exists($decoded, self::FIELD_EXPIRY_EXT)) {
-            $v = $decoded->_expiry ?? new \stdClass();
+            $v = isset($decoded->_expiry) ? clone $decoded->_expiry : new \stdClass();
             $v->value = $decoded->expiry ?? null;
             $type->setExpiry(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -638,7 +638,7 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
             || isset($decoded->_useBy)
             || property_exists($decoded, self::FIELD_USE_BY)
             || property_exists($decoded, self::FIELD_USE_BY_EXT)) {
-            $v = $decoded->_useBy ?? new \stdClass();
+            $v = isset($decoded->_useBy) ? clone $decoded->_useBy : new \stdClass();
             $v->value = $decoded->useBy ?? null;
             $type->setUseBy(FHIRDateTime::jsonUnserialize($v, $config));
         }

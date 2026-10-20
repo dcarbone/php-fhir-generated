@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement;
@@ -113,7 +112,7 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
-            ValuePatternMatchRule::NAME => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
+            'value_pattern_match' => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
         ],
     ];
 
@@ -825,7 +824,7 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
             || isset($decoded->_linkId)
             || property_exists($decoded, self::FIELD_LINK_ID)
             || property_exists($decoded, self::FIELD_LINK_ID_EXT)) {
-            $v = $decoded->_linkId ?? new \stdClass();
+            $v = isset($decoded->_linkId) ? clone $decoded->_linkId : new \stdClass();
             $v->value = $decoded->linkId ?? null;
             $type->setLinkId(FHIRString::jsonUnserialize($v, $config));
         }
@@ -833,7 +832,7 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
             || isset($decoded->_title)
             || property_exists($decoded, self::FIELD_TITLE)
             || property_exists($decoded, self::FIELD_TITLE_EXT)) {
-            $v = $decoded->_title ?? new \stdClass();
+            $v = isset($decoded->_title) ? clone $decoded->_title : new \stdClass();
             $v->value = $decoded->title ?? null;
             $type->setTitle(FHIRString::jsonUnserialize($v, $config));
         }
@@ -852,7 +851,7 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
             || isset($decoded->_text)
             || property_exists($decoded, self::FIELD_TEXT)
             || property_exists($decoded, self::FIELD_TEXT_EXT)) {
-            $v = $decoded->_text ?? new \stdClass();
+            $v = isset($decoded->_text) ? clone $decoded->_text : new \stdClass();
             $v->value = $decoded->text ?? null;
             $type->setText(FHIRString::jsonUnserialize($v, $config));
         }
@@ -860,7 +859,7 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
             || isset($decoded->_required)
             || property_exists($decoded, self::FIELD_REQUIRED)
             || property_exists($decoded, self::FIELD_REQUIRED_EXT)) {
-            $v = $decoded->_required ?? new \stdClass();
+            $v = isset($decoded->_required) ? clone $decoded->_required : new \stdClass();
             $v->value = $decoded->required ?? null;
             $type->setRequired(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -868,7 +867,7 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
             || isset($decoded->_repeats)
             || property_exists($decoded, self::FIELD_REPEATS)
             || property_exists($decoded, self::FIELD_REPEATS_EXT)) {
-            $v = $decoded->_repeats ?? new \stdClass();
+            $v = isset($decoded->_repeats) ? clone $decoded->_repeats : new \stdClass();
             $v->value = $decoded->repeats ?? null;
             $type->setRepeats(FHIRBoolean::jsonUnserialize($v, $config));
         }

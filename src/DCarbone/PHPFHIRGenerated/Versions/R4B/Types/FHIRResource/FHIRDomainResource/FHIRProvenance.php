@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive;
@@ -156,13 +155,13 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TARGET => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_RECORDED => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_AGENT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1049,7 +1048,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1287,7 +1286,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
             || isset($decoded->_occurredDateTime)
             || property_exists($decoded, self::FIELD_OCCURRED_DATE_TIME)
             || property_exists($decoded, self::FIELD_OCCURRED_DATE_TIME_EXT)) {
-            $v = $decoded->_occurredDateTime ?? new \stdClass();
+            $v = isset($decoded->_occurredDateTime) ? clone $decoded->_occurredDateTime : new \stdClass();
             $v->value = $decoded->occurredDateTime ?? null;
             $type->setOccurredDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1295,7 +1294,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
             || isset($decoded->_recorded)
             || property_exists($decoded, self::FIELD_RECORDED)
             || property_exists($decoded, self::FIELD_RECORDED_EXT)) {
-            $v = $decoded->_recorded ?? new \stdClass();
+            $v = isset($decoded->_recorded) ? clone $decoded->_recorded : new \stdClass();
             $v->value = $decoded->recorded ?? null;
             $type->setRecorded(FHIRInstant::jsonUnserialize($v, $config));
         }
@@ -1311,7 +1310,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addPolicy(FHIRUri::jsonUnserialize($v, $config));
             }

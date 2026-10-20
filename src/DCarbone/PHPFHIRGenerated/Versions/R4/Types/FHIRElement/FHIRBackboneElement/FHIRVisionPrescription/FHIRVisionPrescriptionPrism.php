@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRVisionBaseList;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive;
@@ -102,10 +101,10 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_AMOUNT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_BASE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -352,7 +351,7 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
             || isset($decoded->_amount)
             || property_exists($decoded, self::FIELD_AMOUNT)
             || property_exists($decoded, self::FIELD_AMOUNT_EXT)) {
-            $v = $decoded->_amount ?? new \stdClass();
+            $v = isset($decoded->_amount) ? clone $decoded->_amount : new \stdClass();
             $v->value = $decoded->amount ?? null;
             $type->setAmount(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -360,7 +359,7 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
             || isset($decoded->_base)
             || property_exists($decoded, self::FIELD_BASE)
             || property_exists($decoded, self::FIELD_BASE_EXT)) {
-            $v = $decoded->_base ?? new \stdClass();
+            $v = isset($decoded->_base) ? clone $decoded->_base : new \stdClass();
             $v->value = $decoded->base ?? null;
             $type->setBase(FHIRVisionBase::jsonUnserialize($v, $config));
         }

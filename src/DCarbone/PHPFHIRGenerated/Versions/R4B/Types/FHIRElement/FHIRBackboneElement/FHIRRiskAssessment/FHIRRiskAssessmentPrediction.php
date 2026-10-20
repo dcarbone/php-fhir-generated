@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -725,7 +725,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
             || isset($decoded->_probabilityDecimal)
             || property_exists($decoded, self::FIELD_PROBABILITY_DECIMAL)
             || property_exists($decoded, self::FIELD_PROBABILITY_DECIMAL_EXT)) {
-            $v = $decoded->_probabilityDecimal ?? new \stdClass();
+            $v = isset($decoded->_probabilityDecimal) ? clone $decoded->_probabilityDecimal : new \stdClass();
             $v->value = $decoded->probabilityDecimal ?? null;
             $type->setProbabilityDecimal(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -747,7 +747,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
             || isset($decoded->_relativeRisk)
             || property_exists($decoded, self::FIELD_RELATIVE_RISK)
             || property_exists($decoded, self::FIELD_RELATIVE_RISK_EXT)) {
-            $v = $decoded->_relativeRisk ?? new \stdClass();
+            $v = isset($decoded->_relativeRisk) ? clone $decoded->_relativeRisk : new \stdClass();
             $v->value = $decoded->relativeRisk ?? null;
             $type->setRelativeRisk(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -769,7 +769,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
             || isset($decoded->_rationale)
             || property_exists($decoded, self::FIELD_RATIONALE)
             || property_exists($decoded, self::FIELD_RATIONALE_EXT)) {
-            $v = $decoded->_rationale ?? new \stdClass();
+            $v = isset($decoded->_rationale) ? clone $decoded->_rationale : new \stdClass();
             $v->value = $decoded->rationale ?? null;
             $type->setRationale(FHIRString::jsonUnserialize($v, $config));
         }

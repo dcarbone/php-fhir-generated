@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -467,7 +467,7 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
             || isset($decoded->_targetNumber)
             || property_exists($decoded, self::FIELD_TARGET_NUMBER)
             || property_exists($decoded, self::FIELD_TARGET_NUMBER_EXT)) {
-            $v = $decoded->_targetNumber ?? new \stdClass();
+            $v = isset($decoded->_targetNumber) ? clone $decoded->_targetNumber : new \stdClass();
             $v->value = $decoded->targetNumber ?? null;
             $type->setTargetNumber(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
@@ -475,7 +475,7 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
             || isset($decoded->_actualNumber)
             || property_exists($decoded, self::FIELD_ACTUAL_NUMBER)
             || property_exists($decoded, self::FIELD_ACTUAL_NUMBER_EXT)) {
-            $v = $decoded->_actualNumber ?? new \stdClass();
+            $v = isset($decoded->_actualNumber) ? clone $decoded->_actualNumber : new \stdClass();
             $v->value = $decoded->actualNumber ?? null;
             $type->setActualNumber(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }

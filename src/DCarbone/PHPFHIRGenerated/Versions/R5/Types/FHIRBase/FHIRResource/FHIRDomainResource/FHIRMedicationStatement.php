@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationStatement\FHIRMedicationStatementAdherence;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode;
@@ -182,13 +181,13 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_MEDICATION => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_SUBJECT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -290,7 +289,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      *
      * The interval of time during which it is being asserted that the patient
      * is/was/will be taking the medication (or was not taking, when the
-     * MedicationStatement.adherence element is Not Taking).
+     * MedicationStatement.adherence element is Not Taking). (choose any one of
+     * effective*, but only one)
      */
     #[FHIRDateTime]
     protected FHIRDateTime $effectiveDateTime;
@@ -301,7 +301,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      *
      * The interval of time during which it is being asserted that the patient
      * is/was/will be taking the medication (or was not taking, when the
-     * MedicationStatement.adherence element is Not Taking).
+     * MedicationStatement.adherence element is Not Taking). (choose any one of
+     * effective*, but only one)
      */
     #[FHIRPeriod]
     protected FHIRPeriod $effectivePeriod;
@@ -316,7 +317,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      *
      * The interval of time during which it is being asserted that the patient
      * is/was/will be taking the medication (or was not taking, when the
-     * MedicationStatement.adherence element is Not Taking).
+     * MedicationStatement.adherence element is Not Taking). (choose any one of
+     * effective*, but only one)
      */
     #[FHIRTiming]
     protected FHIRTiming $effectiveTiming;
@@ -907,7 +909,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      *
      * The interval of time during which it is being asserted that the patient
      * is/was/will be taking the medication (or was not taking, when the
-     * MedicationStatement.adherence element is Not Taking).
+     * MedicationStatement.adherence element is Not Taking). (choose any one of
+     * effective*, but only one)
      */
     public function getEffectiveDateTime(): null|FHIRDateTime
     {
@@ -925,7 +928,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      *
      * The interval of time during which it is being asserted that the patient
      * is/was/will be taking the medication (or was not taking, when the
-     * MedicationStatement.adherence element is Not Taking).
+     * MedicationStatement.adherence element is Not Taking). (choose any one of
+     * effective*, but only one)
      */
     public function setEffectiveDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $effectiveDateTime): self
     {
@@ -947,7 +951,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      *
      * The interval of time during which it is being asserted that the patient
      * is/was/will be taking the medication (or was not taking, when the
-     * MedicationStatement.adherence element is Not Taking).
+     * MedicationStatement.adherence element is Not Taking). (choose any one of
+     * effective*, but only one)
      */
     public function getEffectivePeriod(): null|FHIRPeriod
     {
@@ -961,7 +966,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      *
      * The interval of time during which it is being asserted that the patient
      * is/was/will be taking the medication (or was not taking, when the
-     * MedicationStatement.adherence element is Not Taking).
+     * MedicationStatement.adherence element is Not Taking). (choose any one of
+     * effective*, but only one)
      */
     public function setEffectivePeriod(null|FHIRPeriod $effectivePeriod): self
     {
@@ -984,7 +990,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      *
      * The interval of time during which it is being asserted that the patient
      * is/was/will be taking the medication (or was not taking, when the
-     * MedicationStatement.adherence element is Not Taking).
+     * MedicationStatement.adherence element is Not Taking). (choose any one of
+     * effective*, but only one)
      */
     public function getEffectiveTiming(): null|FHIRTiming
     {
@@ -1002,7 +1009,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      *
      * The interval of time during which it is being asserted that the patient
      * is/was/will be taking the medication (or was not taking, when the
-     * MedicationStatement.adherence element is Not Taking).
+     * MedicationStatement.adherence element is Not Taking). (choose any one of
+     * effective*, but only one)
      */
     public function setEffectiveTiming(null|FHIRTiming $effectiveTiming): self
     {
@@ -1579,7 +1587,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1909,7 +1917,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRMedicationStatementStatusCodes::jsonUnserialize($v, $config));
         }
@@ -1949,7 +1957,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
             || isset($decoded->_effectiveDateTime)
             || property_exists($decoded, self::FIELD_EFFECTIVE_DATE_TIME)
             || property_exists($decoded, self::FIELD_EFFECTIVE_DATE_TIME_EXT)) {
-            $v = $decoded->_effectiveDateTime ?? new \stdClass();
+            $v = isset($decoded->_effectiveDateTime) ? clone $decoded->_effectiveDateTime : new \stdClass();
             $v->value = $decoded->effectiveDateTime ?? null;
             $type->setEffectiveDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1971,7 +1979,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
             || isset($decoded->_dateAsserted)
             || property_exists($decoded, self::FIELD_DATE_ASSERTED)
             || property_exists($decoded, self::FIELD_DATE_ASSERTED_EXT)) {
-            $v = $decoded->_dateAsserted ?? new \stdClass();
+            $v = isset($decoded->_dateAsserted) ? clone $decoded->_dateAsserted : new \stdClass();
             $v->value = $decoded->dateAsserted ?? null;
             $type->setDateAsserted(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -2034,7 +2042,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
             || isset($decoded->_renderedDosageInstruction)
             || property_exists($decoded, self::FIELD_RENDERED_DOSAGE_INSTRUCTION)
             || property_exists($decoded, self::FIELD_RENDERED_DOSAGE_INSTRUCTION_EXT)) {
-            $v = $decoded->_renderedDosageInstruction ?? new \stdClass();
+            $v = isset($decoded->_renderedDosageInstruction) ? clone $decoded->_renderedDosageInstruction : new \stdClass();
             $v->value = $decoded->renderedDosageInstruction ?? null;
             $type->setRenderedDosageInstruction(FHIRMarkdown::jsonUnserialize($v, $config));
         }

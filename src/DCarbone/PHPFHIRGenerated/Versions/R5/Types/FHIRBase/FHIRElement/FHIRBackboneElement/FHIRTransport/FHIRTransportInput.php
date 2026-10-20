@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase64BinaryPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
@@ -261,169 +260,7 @@ class FHIRTransportInput extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_BASE_64BINARY => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_BOOLEAN => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_CANONICAL => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_CODE => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_DATE => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_DATE_TIME => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_DECIMAL => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_ID => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_INSTANT => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_INTEGER => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_INTEGER_64 => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_MARKDOWN => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_OID => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_POSITIVE_INT => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_STRING => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_TIME => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_UNSIGNED_INT => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_URI => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_URL => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_UUID => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_ADDRESS => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_AGE => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_ANNOTATION => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_ATTACHMENT => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_CODEABLE_CONCEPT => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_CODEABLE_REFERENCE => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_CODING => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_CONTACT_POINT => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_COUNT => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_DISTANCE => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_DURATION => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_HUMAN_NAME => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_IDENTIFIER => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_MONEY => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_PERIOD => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_QUANTITY => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_RANGE => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_RATIO => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_RATIO_RANGE => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_REFERENCE => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_SAMPLED_DATA => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_SIGNATURE => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_TIMING => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_CONTACT_DETAIL => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_DATA_REQUIREMENT => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_EXPRESSION => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_PARAMETER_DEFINITION => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_RELATED_ARTIFACT => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_TRIGGER_DEFINITION => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_USAGE_CONTEXT => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_AVAILABILITY => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_EXTENDED_CONTACT_DETAIL => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_DOSAGE => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_META => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -468,7 +305,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * A stream of bytes, base64 encoded
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRBase64Binary]
     protected FHIRBase64Binary $valueBase64Binary;
@@ -476,7 +314,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
@@ -486,7 +325,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRCanonical]
     protected FHIRCanonical $valueCanonical;
@@ -496,7 +336,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRCode]
     protected FHIRCode $valueCode;
@@ -506,7 +347,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRDate]
     protected FHIRDate $valueDate;
@@ -519,7 +361,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRDateTime]
     protected FHIRDateTime $valueDateTime;
@@ -529,7 +372,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRDecimal]
     protected FHIRDecimal $valueDecimal;
@@ -541,7 +385,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRId]
     protected FHIRId $valueId;
@@ -553,7 +398,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * below. UTC offset is always required
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRInstant]
     protected FHIRInstant $valueInstant;
@@ -562,7 +408,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRInteger]
     protected FHIRInteger $valueInteger;
@@ -571,7 +418,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * Typically this is used for record counters (e.g. database keys)
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRInteger64]
     protected FHIRInteger64 $valueInteger64;
@@ -584,7 +432,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $valueMarkdown;
@@ -594,7 +443,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIROid]
     protected FHIROid $valueOid;
@@ -603,7 +453,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $valuePositiveInt;
@@ -612,7 +463,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRString]
     protected FHIRString $valueString;
@@ -620,7 +472,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * A time during the day, with no date specified
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRTime]
     protected FHIRTime $valueTime;
@@ -629,7 +482,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $valueUnsignedInt;
@@ -638,7 +492,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRUri]
     protected FHIRUri $valueUri;
@@ -647,7 +502,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRUrl]
     protected FHIRUrl $valueUrl;
@@ -657,7 +513,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRUuid]
     protected FHIRUuid $valueUuid;
@@ -671,7 +528,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRAddress]
     protected FHIRAddress $valueAddress;
@@ -680,7 +538,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRAge]
     protected FHIRAge $valueAge;
@@ -690,7 +549,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRAnnotation]
     protected FHIRAnnotation $valueAnnotation;
@@ -699,7 +559,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRAttachment]
     protected FHIRAttachment $valueAttachment;
@@ -709,7 +570,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
@@ -719,7 +581,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $valueCodeableReference;
@@ -728,7 +591,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRCoding]
     protected FHIRCoding $valueCoding;
@@ -738,7 +602,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRContactPoint]
     protected FHIRContactPoint $valueContactPoint;
@@ -749,7 +614,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRCount]
     protected FHIRCount $valueCount;
@@ -758,7 +624,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRDistance]
     protected FHIRDistance $valueDistance;
@@ -767,7 +634,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRDuration]
     protected FHIRDuration $valueDuration;
@@ -778,7 +646,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRHumanName]
     protected FHIRHumanName $valueHumanName;
@@ -788,7 +657,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $valueIdentifier;
@@ -797,7 +667,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRMoney]
     protected FHIRMoney $valueMoney;
@@ -806,7 +677,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRPeriod]
     protected FHIRPeriod $valuePeriod;
@@ -817,7 +689,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -826,7 +699,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRRange]
     protected FHIRRange $valueRange;
@@ -836,7 +710,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRRatio]
     protected FHIRRatio $valueRatio;
@@ -845,7 +720,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRRatioRange]
     protected FHIRRatioRange $valueRatioRange;
@@ -854,7 +730,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRReference]
     protected FHIRReference $valueReference;
@@ -864,7 +741,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRSampledData]
     protected FHIRSampledData $valueSampledData;
@@ -877,7 +755,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRSignature]
     protected FHIRSignature $valueSignature;
@@ -890,7 +769,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRTiming]
     protected FHIRTiming $valueTiming;
@@ -899,7 +779,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRContactDetail]
     protected FHIRContactDetail $valueContactDetail;
@@ -909,7 +790,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRDataRequirement]
     protected FHIRDataRequirement $valueDataRequirement;
@@ -920,7 +802,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRExpression]
     protected FHIRExpression $valueExpression;
@@ -931,7 +814,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRParameterDefinition]
     protected FHIRParameterDefinition $valueParameterDefinition;
@@ -941,7 +825,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRRelatedArtifact]
     protected FHIRRelatedArtifact $valueRelatedArtifact;
@@ -951,7 +836,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRTriggerDefinition]
     protected FHIRTriggerDefinition $valueTriggerDefinition;
@@ -963,7 +849,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRUsageContext]
     protected FHIRUsageContext $valueUsageContext;
@@ -972,7 +859,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRAvailability]
     protected FHIRAvailability $valueAvailability;
@@ -982,7 +870,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRExtendedContactDetail]
     protected FHIRExtendedContactDetail $valueExtendedContactDetail;
@@ -991,7 +880,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRDosage]
     protected FHIRDosage $valueDosage;
@@ -1002,7 +892,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     #[FHIRMeta]
     protected FHIRMeta $valueMeta;
@@ -1290,7 +1181,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * A stream of bytes, base64 encoded
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueBase64Binary(): null|FHIRBase64Binary
     {
@@ -1302,7 +1194,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * A stream of bytes, base64 encoded
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueBase64Binary(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $valueBase64Binary): self
     {
@@ -1321,7 +1214,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueBoolean(): null|FHIRBoolean
     {
@@ -1332,7 +1226,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -1353,7 +1248,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueCanonical(): null|FHIRCanonical
     {
@@ -1366,7 +1262,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $valueCanonical): self
     {
@@ -1387,7 +1284,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueCode(): null|FHIRCode
     {
@@ -1400,7 +1298,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueCode(null|string|FHIRCodePrimitive|FHIRCode $valueCode): self
     {
@@ -1421,7 +1320,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueDate(): null|FHIRDate
     {
@@ -1434,7 +1334,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $valueDate): self
     {
@@ -1458,7 +1359,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueDateTime(): null|FHIRDateTime
     {
@@ -1474,7 +1376,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime): self
     {
@@ -1495,7 +1398,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueDecimal(): null|FHIRDecimal
     {
@@ -1508,7 +1412,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $valueDecimal): self
     {
@@ -1531,7 +1436,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueId(): null|FHIRId
     {
@@ -1546,7 +1452,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueId(null|string|FHIRIdPrimitive|FHIRId $valueId): self
     {
@@ -1569,7 +1476,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * below. UTC offset is always required
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueInstant(): null|FHIRInstant
     {
@@ -1584,7 +1492,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * below. UTC offset is always required
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueInstant(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $valueInstant): self
     {
@@ -1604,7 +1513,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueInteger(): null|FHIRInteger
     {
@@ -1616,7 +1526,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $valueInteger): self
     {
@@ -1636,7 +1547,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * Typically this is used for record counters (e.g. database keys)
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueInteger64(): null|FHIRInteger64
     {
@@ -1648,7 +1560,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * Typically this is used for record counters (e.g. database keys)
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueInteger64(null|string|float|FHIRInteger64Primitive|FHIRInteger64 $valueInteger64): self
     {
@@ -1672,7 +1585,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueMarkdown(): null|FHIRMarkdown
     {
@@ -1688,7 +1602,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $valueMarkdown): self
     {
@@ -1709,7 +1624,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueOid(): null|FHIROid
     {
@@ -1722,7 +1638,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueOid(null|string|FHIROidPrimitive|FHIROid $valueOid): self
     {
@@ -1742,7 +1659,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValuePositiveInt(): null|FHIRPositiveInt
     {
@@ -1754,7 +1672,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValuePositiveInt(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $valuePositiveInt): self
     {
@@ -1774,7 +1693,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueString(): null|FHIRString
     {
@@ -1786,7 +1706,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -1805,7 +1726,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * A time during the day, with no date specified
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueTime(): null|FHIRTime
     {
@@ -1816,7 +1738,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * A time during the day, with no date specified
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $valueTime): self
     {
@@ -1836,7 +1759,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueUnsignedInt(): null|FHIRUnsignedInt
     {
@@ -1848,7 +1772,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $valueUnsignedInt): self
     {
@@ -1868,7 +1793,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueUri(): null|FHIRUri
     {
@@ -1880,7 +1806,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueUri(null|string|FHIRUriPrimitive|FHIRUri $valueUri): self
     {
@@ -1900,7 +1827,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueUrl(): null|FHIRUrl
     {
@@ -1912,7 +1840,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueUrl(null|string|FHIRUrlPrimitive|FHIRUrl $valueUrl): self
     {
@@ -1933,7 +1862,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueUuid(): null|FHIRUuid
     {
@@ -1946,7 +1876,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueUuid(null|string|FHIRUuidPrimitive|FHIRUuid $valueUuid): self
     {
@@ -1971,7 +1902,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueAddress(): null|FHIRAddress
     {
@@ -1988,7 +1920,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueAddress(null|FHIRAddress $valueAddress): self
     {
@@ -2005,7 +1938,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueAge(): null|FHIRAge
     {
@@ -2017,7 +1951,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueAge(null|FHIRAge $valueAge): self
     {
@@ -2035,7 +1970,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueAnnotation(): null|FHIRAnnotation
     {
@@ -2048,7 +1984,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueAnnotation(null|FHIRAnnotation $valueAnnotation): self
     {
@@ -2065,7 +2002,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueAttachment(): null|FHIRAttachment
     {
@@ -2077,7 +2015,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueAttachment(null|FHIRAttachment $valueAttachment): self
     {
@@ -2095,7 +2034,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -2108,7 +2048,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -2126,7 +2067,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueCodeableReference(): null|FHIRCodeableReference
     {
@@ -2139,7 +2081,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueCodeableReference(null|FHIRCodeableReference $valueCodeableReference): self
     {
@@ -2156,7 +2099,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueCoding(): null|FHIRCoding
     {
@@ -2168,7 +2112,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueCoding(null|FHIRCoding $valueCoding): self
     {
@@ -2186,7 +2131,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueContactPoint(): null|FHIRContactPoint
     {
@@ -2199,7 +2145,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueContactPoint(null|FHIRContactPoint $valueContactPoint): self
     {
@@ -2218,7 +2165,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueCount(): null|FHIRCount
     {
@@ -2232,7 +2180,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueCount(null|FHIRCount $valueCount): self
     {
@@ -2249,7 +2198,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueDistance(): null|FHIRDistance
     {
@@ -2261,7 +2211,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueDistance(null|FHIRDistance $valueDistance): self
     {
@@ -2278,7 +2229,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueDuration(): null|FHIRDuration
     {
@@ -2290,7 +2242,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueDuration(null|FHIRDuration $valueDuration): self
     {
@@ -2309,7 +2262,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueHumanName(): null|FHIRHumanName
     {
@@ -2323,7 +2277,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueHumanName(null|FHIRHumanName $valueHumanName): self
     {
@@ -2341,7 +2296,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueIdentifier(): null|FHIRIdentifier
     {
@@ -2354,7 +2310,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueIdentifier(null|FHIRIdentifier $valueIdentifier): self
     {
@@ -2371,7 +2328,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueMoney(): null|FHIRMoney
     {
@@ -2383,7 +2341,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueMoney(null|FHIRMoney $valueMoney): self
     {
@@ -2400,7 +2359,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValuePeriod(): null|FHIRPeriod
     {
@@ -2412,7 +2372,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValuePeriod(null|FHIRPeriod $valuePeriod): self
     {
@@ -2431,7 +2392,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -2445,7 +2407,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -2462,7 +2425,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueRange(): null|FHIRRange
     {
@@ -2474,7 +2438,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -2492,7 +2457,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueRatio(): null|FHIRRatio
     {
@@ -2505,7 +2471,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueRatio(null|FHIRRatio $valueRatio): self
     {
@@ -2522,7 +2489,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueRatioRange(): null|FHIRRatioRange
     {
@@ -2534,7 +2502,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueRatioRange(null|FHIRRatioRange $valueRatioRange): self
     {
@@ -2551,7 +2520,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueReference(): null|FHIRReference
     {
@@ -2563,7 +2533,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueReference(null|FHIRReference $valueReference): self
     {
@@ -2581,7 +2552,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueSampledData(): null|FHIRSampledData
     {
@@ -2594,7 +2566,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueSampledData(null|FHIRSampledData $valueSampledData): self
     {
@@ -2615,7 +2588,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueSignature(): null|FHIRSignature
     {
@@ -2631,7 +2605,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueSignature(null|FHIRSignature $valueSignature): self
     {
@@ -2652,7 +2627,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueTiming(): null|FHIRTiming
     {
@@ -2668,7 +2644,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueTiming(null|FHIRTiming $valueTiming): self
     {
@@ -2685,7 +2662,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueContactDetail(): null|FHIRContactDetail
     {
@@ -2697,7 +2675,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueContactDetail(null|FHIRContactDetail $valueContactDetail): self
     {
@@ -2715,7 +2694,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueDataRequirement(): null|FHIRDataRequirement
     {
@@ -2728,7 +2708,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueDataRequirement(null|FHIRDataRequirement $valueDataRequirement): self
     {
@@ -2747,7 +2728,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueExpression(): null|FHIRExpression
     {
@@ -2761,7 +2743,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueExpression(null|FHIRExpression $valueExpression): self
     {
@@ -2780,7 +2763,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueParameterDefinition(): null|FHIRParameterDefinition
     {
@@ -2794,7 +2778,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueParameterDefinition(null|FHIRParameterDefinition $valueParameterDefinition): self
     {
@@ -2812,7 +2797,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueRelatedArtifact(): null|FHIRRelatedArtifact
     {
@@ -2825,7 +2811,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueRelatedArtifact(null|FHIRRelatedArtifact $valueRelatedArtifact): self
     {
@@ -2843,7 +2830,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueTriggerDefinition(): null|FHIRTriggerDefinition
     {
@@ -2856,7 +2844,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueTriggerDefinition(null|FHIRTriggerDefinition $valueTriggerDefinition): self
     {
@@ -2876,7 +2865,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueUsageContext(): null|FHIRUsageContext
     {
@@ -2891,7 +2881,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueUsageContext(null|FHIRUsageContext $valueUsageContext): self
     {
@@ -2908,7 +2899,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueAvailability(): null|FHIRAvailability
     {
@@ -2920,7 +2912,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueAvailability(null|FHIRAvailability $valueAvailability): self
     {
@@ -2938,7 +2931,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueExtendedContactDetail(): null|FHIRExtendedContactDetail
     {
@@ -2951,7 +2945,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueExtendedContactDetail(null|FHIRExtendedContactDetail $valueExtendedContactDetail): self
     {
@@ -2968,7 +2963,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueDosage(): null|FHIRDosage
     {
@@ -2980,7 +2976,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueDosage(null|FHIRDosage $valueDosage): self
     {
@@ -2999,7 +2996,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function getValueMeta(): null|FHIRMeta
     {
@@ -3013,7 +3011,8 @@ class FHIRTransportInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the input parameter as a basic type.
+     * The value of the input parameter as a basic type. (choose any one of value*, but
+     * only one)
      */
     public function setValueMeta(null|FHIRMeta $valueMeta): self
     {
@@ -3757,7 +3756,7 @@ class FHIRTransportInput extends FHIRBackboneElement
             || isset($decoded->_valueBase64Binary)
             || property_exists($decoded, self::FIELD_VALUE_BASE_64BINARY)
             || property_exists($decoded, self::FIELD_VALUE_BASE_64BINARY_EXT)) {
-            $v = $decoded->_valueBase64Binary ?? new \stdClass();
+            $v = isset($decoded->_valueBase64Binary) ? clone $decoded->_valueBase64Binary : new \stdClass();
             $v->value = $decoded->valueBase64Binary ?? null;
             $type->setValueBase64Binary(FHIRBase64Binary::jsonUnserialize($v, $config));
         }
@@ -3765,7 +3764,7 @@ class FHIRTransportInput extends FHIRBackboneElement
             || isset($decoded->_valueBoolean)
             || property_exists($decoded, self::FIELD_VALUE_BOOLEAN)
             || property_exists($decoded, self::FIELD_VALUE_BOOLEAN_EXT)) {
-            $v = $decoded->_valueBoolean ?? new \stdClass();
+            $v = isset($decoded->_valueBoolean) ? clone $decoded->_valueBoolean : new \stdClass();
             $v->value = $decoded->valueBoolean ?? null;
             $type->setValueBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -3773,7 +3772,7 @@ class FHIRTransportInput extends FHIRBackboneElement
             || isset($decoded->_valueCanonical)
             || property_exists($decoded, self::FIELD_VALUE_CANONICAL)
             || property_exists($decoded, self::FIELD_VALUE_CANONICAL_EXT)) {
-            $v = $decoded->_valueCanonical ?? new \stdClass();
+            $v = isset($decoded->_valueCanonical) ? clone $decoded->_valueCanonical : new \stdClass();
             $v->value = $decoded->valueCanonical ?? null;
             $type->setValueCanonical(FHIRCanonical::jsonUnserialize($v, $config));
         }
@@ -3781,7 +3780,7 @@ class FHIRTransportInput extends FHIRBackboneElement
             || isset($decoded->_valueCode)
             || property_exists($decoded, self::FIELD_VALUE_CODE)
             || property_exists($decoded, self::FIELD_VALUE_CODE_EXT)) {
-            $v = $decoded->_valueCode ?? new \stdClass();
+            $v = isset($decoded->_valueCode) ? clone $decoded->_valueCode : new \stdClass();
             $v->value = $decoded->valueCode ?? null;
             $type->setValueCode(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -3789,7 +3788,7 @@ class FHIRTransportInput extends FHIRBackboneElement
             || isset($decoded->_valueDate)
             || property_exists($decoded, self::FIELD_VALUE_DATE)
             || property_exists($decoded, self::FIELD_VALUE_DATE_EXT)) {
-            $v = $decoded->_valueDate ?? new \stdClass();
+            $v = isset($decoded->_valueDate) ? clone $decoded->_valueDate : new \stdClass();
             $v->value = $decoded->valueDate ?? null;
             $type->setValueDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -3797,7 +3796,7 @@ class FHIRTransportInput extends FHIRBackboneElement
             || isset($decoded->_valueDateTime)
             || property_exists($decoded, self::FIELD_VALUE_DATE_TIME)
             || property_exists($decoded, self::FIELD_VALUE_DATE_TIME_EXT)) {
-            $v = $decoded->_valueDateTime ?? new \stdClass();
+            $v = isset($decoded->_valueDateTime) ? clone $decoded->_valueDateTime : new \stdClass();
             $v->value = $decoded->valueDateTime ?? null;
             $type->setValueDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -3805,7 +3804,7 @@ class FHIRTransportInput extends FHIRBackboneElement
             || isset($decoded->_valueDecimal)
             || property_exists($decoded, self::FIELD_VALUE_DECIMAL)
             || property_exists($decoded, self::FIELD_VALUE_DECIMAL_EXT)) {
-            $v = $decoded->_valueDecimal ?? new \stdClass();
+            $v = isset($decoded->_valueDecimal) ? clone $decoded->_valueDecimal : new \stdClass();
             $v->value = $decoded->valueDecimal ?? null;
             $type->setValueDecimal(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -3813,7 +3812,7 @@ class FHIRTransportInput extends FHIRBackboneElement
             || isset($decoded->_valueId)
             || property_exists($decoded, self::FIELD_VALUE_ID)
             || property_exists($decoded, self::FIELD_VALUE_ID_EXT)) {
-            $v = $decoded->_valueId ?? new \stdClass();
+            $v = isset($decoded->_valueId) ? clone $decoded->_valueId : new \stdClass();
             $v->value = $decoded->valueId ?? null;
             $type->setValueId(FHIRId::jsonUnserialize($v, $config));
         }
@@ -3821,7 +3820,7 @@ class FHIRTransportInput extends FHIRBackboneElement
             || isset($decoded->_valueInstant)
             || property_exists($decoded, self::FIELD_VALUE_INSTANT)
             || property_exists($decoded, self::FIELD_VALUE_INSTANT_EXT)) {
-            $v = $decoded->_valueInstant ?? new \stdClass();
+            $v = isset($decoded->_valueInstant) ? clone $decoded->_valueInstant : new \stdClass();
             $v->value = $decoded->valueInstant ?? null;
             $type->setValueInstant(FHIRInstant::jsonUnserialize($v, $config));
         }
@@ -3829,7 +3828,7 @@ class FHIRTransportInput extends FHIRBackboneElement
             || isset($decoded->_valueInteger)
             || property_exists($decoded, self::FIELD_VALUE_INTEGER)
             || property_exists($decoded, self::FIELD_VALUE_INTEGER_EXT)) {
-            $v = $decoded->_valueInteger ?? new \stdClass();
+            $v = isset($decoded->_valueInteger) ? clone $decoded->_valueInteger : new \stdClass();
             $v->value = $decoded->valueInteger ?? null;
             $type->setValueInteger(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -3837,7 +3836,7 @@ class FHIRTransportInput extends FHIRBackboneElement
             || isset($decoded->_valueInteger64)
             || property_exists($decoded, self::FIELD_VALUE_INTEGER_64)
             || property_exists($decoded, self::FIELD_VALUE_INTEGER_64_EXT)) {
-            $v = $decoded->_valueInteger64 ?? new \stdClass();
+            $v = isset($decoded->_valueInteger64) ? clone $decoded->_valueInteger64 : new \stdClass();
             $v->value = $decoded->valueInteger64 ?? null;
             $type->setValueInteger64(FHIRInteger64::jsonUnserialize($v, $config));
         }
@@ -3845,7 +3844,7 @@ class FHIRTransportInput extends FHIRBackboneElement
             || isset($decoded->_valueMarkdown)
             || property_exists($decoded, self::FIELD_VALUE_MARKDOWN)
             || property_exists($decoded, self::FIELD_VALUE_MARKDOWN_EXT)) {
-            $v = $decoded->_valueMarkdown ?? new \stdClass();
+            $v = isset($decoded->_valueMarkdown) ? clone $decoded->_valueMarkdown : new \stdClass();
             $v->value = $decoded->valueMarkdown ?? null;
             $type->setValueMarkdown(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -3853,7 +3852,7 @@ class FHIRTransportInput extends FHIRBackboneElement
             || isset($decoded->_valueOid)
             || property_exists($decoded, self::FIELD_VALUE_OID)
             || property_exists($decoded, self::FIELD_VALUE_OID_EXT)) {
-            $v = $decoded->_valueOid ?? new \stdClass();
+            $v = isset($decoded->_valueOid) ? clone $decoded->_valueOid : new \stdClass();
             $v->value = $decoded->valueOid ?? null;
             $type->setValueOid(FHIROid::jsonUnserialize($v, $config));
         }
@@ -3861,7 +3860,7 @@ class FHIRTransportInput extends FHIRBackboneElement
             || isset($decoded->_valuePositiveInt)
             || property_exists($decoded, self::FIELD_VALUE_POSITIVE_INT)
             || property_exists($decoded, self::FIELD_VALUE_POSITIVE_INT_EXT)) {
-            $v = $decoded->_valuePositiveInt ?? new \stdClass();
+            $v = isset($decoded->_valuePositiveInt) ? clone $decoded->_valuePositiveInt : new \stdClass();
             $v->value = $decoded->valuePositiveInt ?? null;
             $type->setValuePositiveInt(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
@@ -3869,7 +3868,7 @@ class FHIRTransportInput extends FHIRBackboneElement
             || isset($decoded->_valueString)
             || property_exists($decoded, self::FIELD_VALUE_STRING)
             || property_exists($decoded, self::FIELD_VALUE_STRING_EXT)) {
-            $v = $decoded->_valueString ?? new \stdClass();
+            $v = isset($decoded->_valueString) ? clone $decoded->_valueString : new \stdClass();
             $v->value = $decoded->valueString ?? null;
             $type->setValueString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -3877,7 +3876,7 @@ class FHIRTransportInput extends FHIRBackboneElement
             || isset($decoded->_valueTime)
             || property_exists($decoded, self::FIELD_VALUE_TIME)
             || property_exists($decoded, self::FIELD_VALUE_TIME_EXT)) {
-            $v = $decoded->_valueTime ?? new \stdClass();
+            $v = isset($decoded->_valueTime) ? clone $decoded->_valueTime : new \stdClass();
             $v->value = $decoded->valueTime ?? null;
             $type->setValueTime(FHIRTime::jsonUnserialize($v, $config));
         }
@@ -3885,7 +3884,7 @@ class FHIRTransportInput extends FHIRBackboneElement
             || isset($decoded->_valueUnsignedInt)
             || property_exists($decoded, self::FIELD_VALUE_UNSIGNED_INT)
             || property_exists($decoded, self::FIELD_VALUE_UNSIGNED_INT_EXT)) {
-            $v = $decoded->_valueUnsignedInt ?? new \stdClass();
+            $v = isset($decoded->_valueUnsignedInt) ? clone $decoded->_valueUnsignedInt : new \stdClass();
             $v->value = $decoded->valueUnsignedInt ?? null;
             $type->setValueUnsignedInt(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
@@ -3893,7 +3892,7 @@ class FHIRTransportInput extends FHIRBackboneElement
             || isset($decoded->_valueUri)
             || property_exists($decoded, self::FIELD_VALUE_URI)
             || property_exists($decoded, self::FIELD_VALUE_URI_EXT)) {
-            $v = $decoded->_valueUri ?? new \stdClass();
+            $v = isset($decoded->_valueUri) ? clone $decoded->_valueUri : new \stdClass();
             $v->value = $decoded->valueUri ?? null;
             $type->setValueUri(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -3901,7 +3900,7 @@ class FHIRTransportInput extends FHIRBackboneElement
             || isset($decoded->_valueUrl)
             || property_exists($decoded, self::FIELD_VALUE_URL)
             || property_exists($decoded, self::FIELD_VALUE_URL_EXT)) {
-            $v = $decoded->_valueUrl ?? new \stdClass();
+            $v = isset($decoded->_valueUrl) ? clone $decoded->_valueUrl : new \stdClass();
             $v->value = $decoded->valueUrl ?? null;
             $type->setValueUrl(FHIRUrl::jsonUnserialize($v, $config));
         }
@@ -3909,7 +3908,7 @@ class FHIRTransportInput extends FHIRBackboneElement
             || isset($decoded->_valueUuid)
             || property_exists($decoded, self::FIELD_VALUE_UUID)
             || property_exists($decoded, self::FIELD_VALUE_UUID_EXT)) {
-            $v = $decoded->_valueUuid ?? new \stdClass();
+            $v = isset($decoded->_valueUuid) ? clone $decoded->_valueUuid : new \stdClass();
             $v->value = $decoded->valueUuid ?? null;
             $type->setValueUuid(FHIRUuid::jsonUnserialize($v, $config));
         }

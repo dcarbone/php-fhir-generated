@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -63,7 +63,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive;
  */
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueOneOfRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
@@ -83,16 +82,16 @@ class FHIRBundleTypeList extends FHIRCodePrimitive
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
-            ValueOneOfRule::NAME => [
-                0 => 'document',
-                1 => 'message',
-                2 => 'transaction',
-                3 => 'transaction-response',
-                4 => 'batch',
-                5 => 'batch-response',
-                6 => 'history',
-                7 => 'searchset',
-                8 => 'collection',
+            'value_one_of' => [
+                'document',
+                'message',
+                'transaction',
+                'transaction-response',
+                'batch',
+                'batch-response',
+                'history',
+                'searchset',
+                'collection',
             ],
         ],
     ];

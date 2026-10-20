@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -135,7 +135,7 @@ class FHIRTestScriptRequirement extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Link or reference providing traceability to the testing requirement for this
-     * test.
+     * test. (choose any one of link*, but only one)
      */
     #[FHIRUri]
     protected FHIRUri $linkUri;
@@ -146,7 +146,7 @@ class FHIRTestScriptRequirement extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Link or reference providing traceability to the testing requirement for this
-     * test.
+     * test. (choose any one of link*, but only one)
      */
     #[FHIRCanonical]
     protected FHIRCanonical $linkCanonical;
@@ -190,7 +190,7 @@ class FHIRTestScriptRequirement extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Link or reference providing traceability to the testing requirement for this
-     * test.
+     * test. (choose any one of link*, but only one)
      */
     public function getLinkUri(): null|FHIRUri
     {
@@ -203,7 +203,7 @@ class FHIRTestScriptRequirement extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Link or reference providing traceability to the testing requirement for this
-     * test.
+     * test. (choose any one of link*, but only one)
      */
     public function setLinkUri(null|string|FHIRUriPrimitive|FHIRUri $linkUri): self
     {
@@ -225,7 +225,7 @@ class FHIRTestScriptRequirement extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Link or reference providing traceability to the testing requirement for this
-     * test.
+     * test. (choose any one of link*, but only one)
      */
     public function getLinkCanonical(): null|FHIRCanonical
     {
@@ -239,7 +239,7 @@ class FHIRTestScriptRequirement extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Link or reference providing traceability to the testing requirement for this
-     * test.
+     * test. (choose any one of link*, but only one)
      */
     public function setLinkCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $linkCanonical): self
     {
@@ -374,7 +374,7 @@ class FHIRTestScriptRequirement extends FHIRBackboneElement
             || isset($decoded->_linkUri)
             || property_exists($decoded, self::FIELD_LINK_URI)
             || property_exists($decoded, self::FIELD_LINK_URI_EXT)) {
-            $v = $decoded->_linkUri ?? new \stdClass();
+            $v = isset($decoded->_linkUri) ? clone $decoded->_linkUri : new \stdClass();
             $v->value = $decoded->linkUri ?? null;
             $type->setLinkUri(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -382,7 +382,7 @@ class FHIRTestScriptRequirement extends FHIRBackboneElement
             || isset($decoded->_linkCanonical)
             || property_exists($decoded, self::FIELD_LINK_CANONICAL)
             || property_exists($decoded, self::FIELD_LINK_CANONICAL_EXT)) {
-            $v = $decoded->_linkCanonical ?? new \stdClass();
+            $v = isset($decoded->_linkCanonical) ? clone $decoded->_linkCanonical : new \stdClass();
             $v->value = $decoded->linkCanonical ?? null;
             $type->setLinkCanonical(FHIRCanonical::jsonUnserialize($v, $config));
         }

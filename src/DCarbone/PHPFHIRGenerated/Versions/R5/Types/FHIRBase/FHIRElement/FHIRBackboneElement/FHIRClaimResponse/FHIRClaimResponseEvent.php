@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept;
@@ -122,13 +121,7 @@ class FHIRClaimResponseEvent extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_WHEN_DATE_TIME => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_WHEN_PERIOD => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -158,7 +151,7 @@ class FHIRClaimResponseEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A date or period in the past or future indicating when the event occurred or is
-     * expectd to occur.
+     * expectd to occur. (choose any one of when*, but only one)
      */
     #[FHIRDateTime]
     protected FHIRDateTime $whenDateTime;
@@ -168,7 +161,7 @@ class FHIRClaimResponseEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A date or period in the past or future indicating when the event occurred or is
-     * expectd to occur.
+     * expectd to occur. (choose any one of when*, but only one)
      */
     #[FHIRPeriod]
     protected FHIRPeriod $whenPeriod;
@@ -251,7 +244,7 @@ class FHIRClaimResponseEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A date or period in the past or future indicating when the event occurred or is
-     * expectd to occur.
+     * expectd to occur. (choose any one of when*, but only one)
      */
     public function getWhenDateTime(): null|FHIRDateTime
     {
@@ -268,7 +261,7 @@ class FHIRClaimResponseEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A date or period in the past or future indicating when the event occurred or is
-     * expectd to occur.
+     * expectd to occur. (choose any one of when*, but only one)
      */
     public function setWhenDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $whenDateTime): self
     {
@@ -289,7 +282,7 @@ class FHIRClaimResponseEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A date or period in the past or future indicating when the event occurred or is
-     * expectd to occur.
+     * expectd to occur. (choose any one of when*, but only one)
      */
     public function getWhenPeriod(): null|FHIRPeriod
     {
@@ -302,7 +295,7 @@ class FHIRClaimResponseEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A date or period in the past or future indicating when the event occurred or is
-     * expectd to occur.
+     * expectd to occur. (choose any one of when*, but only one)
      */
     public function setWhenPeriod(null|FHIRPeriod $whenPeriod): self
     {
@@ -435,7 +428,7 @@ class FHIRClaimResponseEvent extends FHIRBackboneElement
             || isset($decoded->_whenDateTime)
             || property_exists($decoded, self::FIELD_WHEN_DATE_TIME)
             || property_exists($decoded, self::FIELD_WHEN_DATE_TIME_EXT)) {
-            $v = $decoded->_whenDateTime ?? new \stdClass();
+            $v = isset($decoded->_whenDateTime) ? clone $decoded->_whenDateTime : new \stdClass();
             $v->value = $decoded->whenDateTime ?? null;
             $type->setWhenDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }

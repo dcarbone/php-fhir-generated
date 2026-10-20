@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean;
@@ -122,10 +121,10 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_AUTOCREATE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_AUTODELETE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -436,7 +435,7 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
             || isset($decoded->_autocreate)
             || property_exists($decoded, self::FIELD_AUTOCREATE)
             || property_exists($decoded, self::FIELD_AUTOCREATE_EXT)) {
-            $v = $decoded->_autocreate ?? new \stdClass();
+            $v = isset($decoded->_autocreate) ? clone $decoded->_autocreate : new \stdClass();
             $v->value = $decoded->autocreate ?? null;
             $type->setAutocreate(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -444,7 +443,7 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
             || isset($decoded->_autodelete)
             || property_exists($decoded, self::FIELD_AUTODELETE)
             || property_exists($decoded, self::FIELD_AUTODELETE_EXT)) {
-            $v = $decoded->_autodelete ?? new \stdClass();
+            $v = isset($decoded->_autodelete) ? clone $decoded->_autodelete : new \stdClass();
             $v->value = $decoded->autodelete ?? null;
             $type->setAutodelete(FHIRBoolean::jsonUnserialize($v, $config));
         }

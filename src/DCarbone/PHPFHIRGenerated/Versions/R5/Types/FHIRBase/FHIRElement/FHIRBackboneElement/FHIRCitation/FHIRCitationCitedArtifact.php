@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -1488,7 +1488,7 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
             || isset($decoded->_dateAccessed)
             || property_exists($decoded, self::FIELD_DATE_ACCESSED)
             || property_exists($decoded, self::FIELD_DATE_ACCESSED_EXT)) {
-            $v = $decoded->_dateAccessed ?? new \stdClass();
+            $v = isset($decoded->_dateAccessed) ? clone $decoded->_dateAccessed : new \stdClass();
             $v->value = $decoded->dateAccessed ?? null;
             $type->setDateAccessed(FHIRDateTime::jsonUnserialize($v, $config));
         }

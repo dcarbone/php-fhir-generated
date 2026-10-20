@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDataRequir
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -592,7 +592,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement
             || isset($decoded->_path)
             || property_exists($decoded, self::FIELD_PATH)
             || property_exists($decoded, self::FIELD_PATH_EXT)) {
-            $v = $decoded->_path ?? new \stdClass();
+            $v = isset($decoded->_path) ? clone $decoded->_path : new \stdClass();
             $v->value = $decoded->path ?? null;
             $type->setPath(FHIRString::jsonUnserialize($v, $config));
         }
@@ -600,7 +600,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement
             || isset($decoded->_searchParam)
             || property_exists($decoded, self::FIELD_SEARCH_PARAM)
             || property_exists($decoded, self::FIELD_SEARCH_PARAM_EXT)) {
-            $v = $decoded->_searchParam ?? new \stdClass();
+            $v = isset($decoded->_searchParam) ? clone $decoded->_searchParam : new \stdClass();
             $v->value = $decoded->searchParam ?? null;
             $type->setSearchParam(FHIRString::jsonUnserialize($v, $config));
         }
@@ -608,7 +608,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement
             || isset($decoded->_valueDateTime)
             || property_exists($decoded, self::FIELD_VALUE_DATE_TIME)
             || property_exists($decoded, self::FIELD_VALUE_DATE_TIME_EXT)) {
-            $v = $decoded->_valueDateTime ?? new \stdClass();
+            $v = isset($decoded->_valueDateTime) ? clone $decoded->_valueDateTime : new \stdClass();
             $v->value = $decoded->valueDateTime ?? null;
             $type->setValueDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }

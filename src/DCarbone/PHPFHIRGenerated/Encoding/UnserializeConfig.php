@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Encoding;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -26,15 +26,26 @@ namespace DCarbone\PHPFHIRGenerated\Encoding;
  *
  */
 
+
 class UnserializeConfig
 {
     private int $_libxmlOpts = LIBXML_NONET | LIBXML_BIGLINES | LIBXML_PARSEHUGE | LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD | LIBXML_NOXMLDECL;
     private int $_jsonDecodeMaxDepth = 512;
     private int $_jsonDecodeOpts = JSON_BIGINT_AS_STRING;
+    private ProfileResolutionEnum $_profileResolution = ProfileResolutionEnum::OFF;
+    private OnUnknownProfileEnum $_onUnknownProfile = OnUnknownProfileEnum::FALLBACK;
+    private OnAmbiguousProfileEnum $_onAmbiguousProfile = OnAmbiguousProfileEnum::FIRST_DECLARED;
+    private OnProfileVersionMismatchEnum $_onProfileVersionMismatch = OnProfileVersionMismatchEnum::IGNORE_VERSION;
+    private OnProfileViolationEnum $_onProfileViolation = OnProfileViolationEnum::KEEP;
 
     public function __construct(null|int $libxmlOpts = null,
                                 null|int $jsonDecodeMaxDepth = null,
-                                null|int $jsonDecodeOpts = null)
+                                null|int $jsonDecodeOpts = null,
+                                null|string|ProfileResolutionEnum $profileResolution = null,
+                                null|string|OnUnknownProfileEnum $onUnknownProfile = null,
+                                null|string|OnAmbiguousProfileEnum $onAmbiguousProfile = null,
+                                null|string|OnProfileVersionMismatchEnum $onProfileVersionMismatch = null,
+                                null|string|OnProfileViolationEnum $onProfileViolation = null)
     {
         if (null !== $libxmlOpts) {
             $this->setLibxmlOpts($libxmlOpts);
@@ -44,6 +55,21 @@ class UnserializeConfig
         }
         if (null !== $jsonDecodeOpts) {
             $this->setJSONDecodeOpts($jsonDecodeOpts);
+        }
+        if (null !== $profileResolution) {
+            $this->setProfileResolution($profileResolution);
+        }
+        if (null !== $onUnknownProfile) {
+            $this->setOnUnknownProfile($onUnknownProfile);
+        }
+        if (null !== $onAmbiguousProfile) {
+            $this->setOnAmbiguousProfile($onAmbiguousProfile);
+        }
+        if (null !== $onProfileVersionMismatch) {
+            $this->setOnProfileVersionMismatch($onProfileVersionMismatch);
+        }
+        if (null !== $onProfileViolation) {
+            $this->setOnProfileViolation($onProfileViolation);
         }
     }
 
@@ -96,5 +122,125 @@ class UnserializeConfig
     public function getJSONDecodeOpts(): int
     {
         return $this->_jsonDecodeOpts;
+    }
+
+    /**
+     * Whether to unserialize resources into generated profile classes based on their "meta.profile" values.  One of "off" (default) or "auto".
+     */
+    public function setProfileResolution(string|ProfileResolutionEnum $value): self
+    {
+        if (is_string($value)) {
+            $enum = ProfileResolutionEnum::tryFrom($value);
+            if (null === $enum) {
+                throw new \InvalidArgumentException(sprintf(
+                    'profileResolution must be one of ["%s"], "%s" provided',
+                    implode('","', array_column(ProfileResolutionEnum::cases(), 'value')),
+                    $value
+                ));
+            }
+            $value = $enum;
+        }
+        $this->_profileResolution = $value;
+        return $this;
+    }
+
+    public function getProfileResolution(): ProfileResolutionEnum    {
+        return $this->_profileResolution;
+    }
+
+    /**
+     * What to do when a declared profile has no generated class (or constrains a different type).  One of "fallback" (default; ignore it) or "exception".
+     */
+    public function setOnUnknownProfile(string|OnUnknownProfileEnum $value): self
+    {
+        if (is_string($value)) {
+            $enum = OnUnknownProfileEnum::tryFrom($value);
+            if (null === $enum) {
+                throw new \InvalidArgumentException(sprintf(
+                    'onUnknownProfile must be one of ["%s"], "%s" provided',
+                    implode('","', array_column(OnUnknownProfileEnum::cases(), 'value')),
+                    $value
+                ));
+            }
+            $value = $enum;
+        }
+        $this->_onUnknownProfile = $value;
+        return $this;
+    }
+
+    public function getOnUnknownProfile(): OnUnknownProfileEnum    {
+        return $this->_onUnknownProfile;
+    }
+
+    /**
+     * What to do when several declared profiles match and none is a refinement of all the others.  One of "firstDeclared" (default), "fallback" (use the base type) or "exception".
+     */
+    public function setOnAmbiguousProfile(string|OnAmbiguousProfileEnum $value): self
+    {
+        if (is_string($value)) {
+            $enum = OnAmbiguousProfileEnum::tryFrom($value);
+            if (null === $enum) {
+                throw new \InvalidArgumentException(sprintf(
+                    'onAmbiguousProfile must be one of ["%s"], "%s" provided',
+                    implode('","', array_column(OnAmbiguousProfileEnum::cases(), 'value')),
+                    $value
+                ));
+            }
+            $value = $enum;
+        }
+        $this->_onAmbiguousProfile = $value;
+        return $this;
+    }
+
+    public function getOnAmbiguousProfile(): OnAmbiguousProfileEnum    {
+        return $this->_onAmbiguousProfile;
+    }
+
+    /**
+     * What to do when a declared "url|version" does not match the generated profile version.  One of "ignoreVersion" (default), "fallback" (ignore the profile) or "exception".
+     */
+    public function setOnProfileVersionMismatch(string|OnProfileVersionMismatchEnum $value): self
+    {
+        if (is_string($value)) {
+            $enum = OnProfileVersionMismatchEnum::tryFrom($value);
+            if (null === $enum) {
+                throw new \InvalidArgumentException(sprintf(
+                    'onProfileVersionMismatch must be one of ["%s"], "%s" provided',
+                    implode('","', array_column(OnProfileVersionMismatchEnum::cases(), 'value')),
+                    $value
+                ));
+            }
+            $value = $enum;
+        }
+        $this->_onProfileVersionMismatch = $value;
+        return $this;
+    }
+
+    public function getOnProfileVersionMismatch(): OnProfileVersionMismatchEnum    {
+        return $this->_onProfileVersionMismatch;
+    }
+
+    /**
+     * What to do when a resource unserialized into a profile class violates its constraints.  One of "keep" (default; keep the profile type), "fallback" (use the base type) or "exception".
+     */
+    public function setOnProfileViolation(string|OnProfileViolationEnum $value): self
+    {
+        if (is_string($value)) {
+            $enum = OnProfileViolationEnum::tryFrom($value);
+            if (null === $enum) {
+                throw new \InvalidArgumentException(sprintf(
+                    'onProfileViolation must be one of ["%s"], "%s" provided',
+                    implode('","', array_column(OnProfileViolationEnum::cases(), 'value')),
+                    $value
+                ));
+            }
+            $value = $enum;
+        }
+        $this->_onProfileViolation = $value;
+        return $this;
+    }
+
+    public function getOnProfileViolation(): OnProfileViolationEnum    {
+        return $this->_onProfileViolation;
     }
 }

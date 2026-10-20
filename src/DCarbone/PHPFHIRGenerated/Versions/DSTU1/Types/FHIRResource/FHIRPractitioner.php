@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -1090,7 +1090,7 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1359,7 +1359,7 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
             || isset($decoded->_birthDate)
             || property_exists($decoded, self::FIELD_BIRTH_DATE)
             || property_exists($decoded, self::FIELD_BIRTH_DATE_EXT)) {
-            $v = $decoded->_birthDate ?? new \stdClass();
+            $v = isset($decoded->_birthDate) ? clone $decoded->_birthDate : new \stdClass();
             $v->value = $decoded->birthDate ?? null;
             $type->setBirthDate(FHIRDateTime::jsonUnserialize($v, $config));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean;
@@ -132,22 +131,7 @@ class FHIREvidenceReportCharacteristic extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_CODE => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_REFERENCE => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_CODEABLE_CONCEPT => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_BOOLEAN => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_QUANTITY => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_VALUE_RANGE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -173,7 +157,7 @@ class FHIREvidenceReportCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Characteristic value.
+     * Characteristic value. (choose any one of value*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $valueReference;
@@ -183,7 +167,7 @@ class FHIREvidenceReportCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Characteristic value.
+     * Characteristic value. (choose any one of value*, but only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
@@ -191,7 +175,7 @@ class FHIREvidenceReportCharacteristic extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Characteristic value.
+     * Characteristic value. (choose any one of value*, but only one)
      */
     #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
@@ -202,7 +186,7 @@ class FHIREvidenceReportCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Characteristic value.
+     * Characteristic value. (choose any one of value*, but only one)
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -211,7 +195,7 @@ class FHIREvidenceReportCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Characteristic value.
+     * Characteristic value. (choose any one of value*, but only one)
      */
     #[FHIRRange]
     protected FHIRRange $valueRange;
@@ -326,7 +310,7 @@ class FHIREvidenceReportCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Characteristic value.
+     * Characteristic value. (choose any one of value*, but only one)
      */
     public function getValueReference(): null|FHIRReference
     {
@@ -338,7 +322,7 @@ class FHIREvidenceReportCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Characteristic value.
+     * Characteristic value. (choose any one of value*, but only one)
      */
     public function setValueReference(null|FHIRReference $valueReference): self
     {
@@ -356,7 +340,7 @@ class FHIREvidenceReportCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Characteristic value.
+     * Characteristic value. (choose any one of value*, but only one)
      */
     public function getValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -369,7 +353,7 @@ class FHIREvidenceReportCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Characteristic value.
+     * Characteristic value. (choose any one of value*, but only one)
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -385,7 +369,7 @@ class FHIREvidenceReportCharacteristic extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Characteristic value.
+     * Characteristic value. (choose any one of value*, but only one)
      */
     public function getValueBoolean(): null|FHIRBoolean
     {
@@ -396,7 +380,7 @@ class FHIREvidenceReportCharacteristic extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Characteristic value.
+     * Characteristic value. (choose any one of value*, but only one)
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -418,7 +402,7 @@ class FHIREvidenceReportCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Characteristic value.
+     * Characteristic value. (choose any one of value*, but only one)
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -432,7 +416,7 @@ class FHIREvidenceReportCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Characteristic value.
+     * Characteristic value. (choose any one of value*, but only one)
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -449,7 +433,7 @@ class FHIREvidenceReportCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Characteristic value.
+     * Characteristic value. (choose any one of value*, but only one)
      */
     public function getValueRange(): null|FHIRRange
     {
@@ -461,7 +445,7 @@ class FHIREvidenceReportCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Characteristic value.
+     * Characteristic value. (choose any one of value*, but only one)
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -715,7 +699,7 @@ class FHIREvidenceReportCharacteristic extends FHIRBackboneElement
             || isset($decoded->_valueBoolean)
             || property_exists($decoded, self::FIELD_VALUE_BOOLEAN)
             || property_exists($decoded, self::FIELD_VALUE_BOOLEAN_EXT)) {
-            $v = $decoded->_valueBoolean ?? new \stdClass();
+            $v = isset($decoded->_valueBoolean) ? clone $decoded->_valueBoolean : new \stdClass();
             $v->value = $decoded->valueBoolean ?? null;
             $type->setValueBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -737,7 +721,7 @@ class FHIREvidenceReportCharacteristic extends FHIRBackboneElement
             || isset($decoded->_exclude)
             || property_exists($decoded, self::FIELD_EXCLUDE)
             || property_exists($decoded, self::FIELD_EXCLUDE_EXT)) {
-            $v = $decoded->_exclude ?? new \stdClass();
+            $v = isset($decoded->_exclude) ? clone $decoded->_exclude : new \stdClass();
             $v->value = $decoded->exclude ?? null;
             $type->setExclude(FHIRBoolean::jsonUnserialize($v, $config));
         }

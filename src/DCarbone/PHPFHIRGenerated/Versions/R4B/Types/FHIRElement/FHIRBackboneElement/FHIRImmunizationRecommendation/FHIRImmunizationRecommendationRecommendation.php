@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept;
@@ -139,7 +138,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_FORECAST_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1345,7 +1344,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1353,7 +1352,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
             || isset($decoded->_series)
             || property_exists($decoded, self::FIELD_SERIES)
             || property_exists($decoded, self::FIELD_SERIES_EXT)) {
-            $v = $decoded->_series ?? new \stdClass();
+            $v = isset($decoded->_series) ? clone $decoded->_series : new \stdClass();
             $v->value = $decoded->series ?? null;
             $type->setSeries(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1361,7 +1360,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
             || isset($decoded->_doseNumberPositiveInt)
             || property_exists($decoded, self::FIELD_DOSE_NUMBER_POSITIVE_INT)
             || property_exists($decoded, self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT)) {
-            $v = $decoded->_doseNumberPositiveInt ?? new \stdClass();
+            $v = isset($decoded->_doseNumberPositiveInt) ? clone $decoded->_doseNumberPositiveInt : new \stdClass();
             $v->value = $decoded->doseNumberPositiveInt ?? null;
             $type->setDoseNumberPositiveInt(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
@@ -1369,7 +1368,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
             || isset($decoded->_doseNumberString)
             || property_exists($decoded, self::FIELD_DOSE_NUMBER_STRING)
             || property_exists($decoded, self::FIELD_DOSE_NUMBER_STRING_EXT)) {
-            $v = $decoded->_doseNumberString ?? new \stdClass();
+            $v = isset($decoded->_doseNumberString) ? clone $decoded->_doseNumberString : new \stdClass();
             $v->value = $decoded->doseNumberString ?? null;
             $type->setDoseNumberString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1377,7 +1376,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
             || isset($decoded->_seriesDosesPositiveInt)
             || property_exists($decoded, self::FIELD_SERIES_DOSES_POSITIVE_INT)
             || property_exists($decoded, self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT)) {
-            $v = $decoded->_seriesDosesPositiveInt ?? new \stdClass();
+            $v = isset($decoded->_seriesDosesPositiveInt) ? clone $decoded->_seriesDosesPositiveInt : new \stdClass();
             $v->value = $decoded->seriesDosesPositiveInt ?? null;
             $type->setSeriesDosesPositiveInt(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
@@ -1385,7 +1384,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
             || isset($decoded->_seriesDosesString)
             || property_exists($decoded, self::FIELD_SERIES_DOSES_STRING)
             || property_exists($decoded, self::FIELD_SERIES_DOSES_STRING_EXT)) {
-            $v = $decoded->_seriesDosesString ?? new \stdClass();
+            $v = isset($decoded->_seriesDosesString) ? clone $decoded->_seriesDosesString : new \stdClass();
             $v->value = $decoded->seriesDosesString ?? null;
             $type->setSeriesDosesString(FHIRString::jsonUnserialize($v, $config));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -702,7 +702,7 @@ class FHIRMedicationStatement extends FHIRResource implements VersionContainedTy
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -896,7 +896,7 @@ class FHIRMedicationStatement extends FHIRResource implements VersionContainedTy
             || isset($decoded->_wasNotGiven)
             || property_exists($decoded, self::FIELD_WAS_NOT_GIVEN)
             || property_exists($decoded, self::FIELD_WAS_NOT_GIVEN_EXT)) {
-            $v = $decoded->_wasNotGiven ?? new \stdClass();
+            $v = isset($decoded->_wasNotGiven) ? clone $decoded->_wasNotGiven : new \stdClass();
             $v->value = $decoded->wasNotGiven ?? null;
             $type->setWasNotGiven(FHIRBoolean::jsonUnserialize($v, $config));
         }

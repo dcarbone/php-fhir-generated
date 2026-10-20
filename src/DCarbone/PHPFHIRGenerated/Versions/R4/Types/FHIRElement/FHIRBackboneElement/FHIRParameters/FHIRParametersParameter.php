@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBase64BinaryPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive;
@@ -239,7 +238,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_NAME => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -2899,7 +2898,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->setResource($cn::xmlUnserialize($cen, $config));
+                    $type->setResource(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_PART === $cen) {
                 $type->addPart(FHIRParametersParameter::xmlUnserialize($ce, $config));
@@ -3478,7 +3477,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -3486,7 +3485,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
             || isset($decoded->_valueBase64Binary)
             || property_exists($decoded, self::FIELD_VALUE_BASE_64BINARY)
             || property_exists($decoded, self::FIELD_VALUE_BASE_64BINARY_EXT)) {
-            $v = $decoded->_valueBase64Binary ?? new \stdClass();
+            $v = isset($decoded->_valueBase64Binary) ? clone $decoded->_valueBase64Binary : new \stdClass();
             $v->value = $decoded->valueBase64Binary ?? null;
             $type->setValueBase64Binary(FHIRBase64Binary::jsonUnserialize($v, $config));
         }
@@ -3494,7 +3493,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
             || isset($decoded->_valueBoolean)
             || property_exists($decoded, self::FIELD_VALUE_BOOLEAN)
             || property_exists($decoded, self::FIELD_VALUE_BOOLEAN_EXT)) {
-            $v = $decoded->_valueBoolean ?? new \stdClass();
+            $v = isset($decoded->_valueBoolean) ? clone $decoded->_valueBoolean : new \stdClass();
             $v->value = $decoded->valueBoolean ?? null;
             $type->setValueBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -3502,7 +3501,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
             || isset($decoded->_valueCanonical)
             || property_exists($decoded, self::FIELD_VALUE_CANONICAL)
             || property_exists($decoded, self::FIELD_VALUE_CANONICAL_EXT)) {
-            $v = $decoded->_valueCanonical ?? new \stdClass();
+            $v = isset($decoded->_valueCanonical) ? clone $decoded->_valueCanonical : new \stdClass();
             $v->value = $decoded->valueCanonical ?? null;
             $type->setValueCanonical(FHIRCanonical::jsonUnserialize($v, $config));
         }
@@ -3510,7 +3509,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
             || isset($decoded->_valueCode)
             || property_exists($decoded, self::FIELD_VALUE_CODE)
             || property_exists($decoded, self::FIELD_VALUE_CODE_EXT)) {
-            $v = $decoded->_valueCode ?? new \stdClass();
+            $v = isset($decoded->_valueCode) ? clone $decoded->_valueCode : new \stdClass();
             $v->value = $decoded->valueCode ?? null;
             $type->setValueCode(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -3518,7 +3517,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
             || isset($decoded->_valueDate)
             || property_exists($decoded, self::FIELD_VALUE_DATE)
             || property_exists($decoded, self::FIELD_VALUE_DATE_EXT)) {
-            $v = $decoded->_valueDate ?? new \stdClass();
+            $v = isset($decoded->_valueDate) ? clone $decoded->_valueDate : new \stdClass();
             $v->value = $decoded->valueDate ?? null;
             $type->setValueDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -3526,7 +3525,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
             || isset($decoded->_valueDateTime)
             || property_exists($decoded, self::FIELD_VALUE_DATE_TIME)
             || property_exists($decoded, self::FIELD_VALUE_DATE_TIME_EXT)) {
-            $v = $decoded->_valueDateTime ?? new \stdClass();
+            $v = isset($decoded->_valueDateTime) ? clone $decoded->_valueDateTime : new \stdClass();
             $v->value = $decoded->valueDateTime ?? null;
             $type->setValueDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -3534,7 +3533,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
             || isset($decoded->_valueDecimal)
             || property_exists($decoded, self::FIELD_VALUE_DECIMAL)
             || property_exists($decoded, self::FIELD_VALUE_DECIMAL_EXT)) {
-            $v = $decoded->_valueDecimal ?? new \stdClass();
+            $v = isset($decoded->_valueDecimal) ? clone $decoded->_valueDecimal : new \stdClass();
             $v->value = $decoded->valueDecimal ?? null;
             $type->setValueDecimal(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -3542,7 +3541,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
             || isset($decoded->_valueId)
             || property_exists($decoded, self::FIELD_VALUE_ID)
             || property_exists($decoded, self::FIELD_VALUE_ID_EXT)) {
-            $v = $decoded->_valueId ?? new \stdClass();
+            $v = isset($decoded->_valueId) ? clone $decoded->_valueId : new \stdClass();
             $v->value = $decoded->valueId ?? null;
             $type->setValueId(FHIRId::jsonUnserialize($v, $config));
         }
@@ -3550,7 +3549,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
             || isset($decoded->_valueInstant)
             || property_exists($decoded, self::FIELD_VALUE_INSTANT)
             || property_exists($decoded, self::FIELD_VALUE_INSTANT_EXT)) {
-            $v = $decoded->_valueInstant ?? new \stdClass();
+            $v = isset($decoded->_valueInstant) ? clone $decoded->_valueInstant : new \stdClass();
             $v->value = $decoded->valueInstant ?? null;
             $type->setValueInstant(FHIRInstant::jsonUnserialize($v, $config));
         }
@@ -3558,7 +3557,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
             || isset($decoded->_valueInteger)
             || property_exists($decoded, self::FIELD_VALUE_INTEGER)
             || property_exists($decoded, self::FIELD_VALUE_INTEGER_EXT)) {
-            $v = $decoded->_valueInteger ?? new \stdClass();
+            $v = isset($decoded->_valueInteger) ? clone $decoded->_valueInteger : new \stdClass();
             $v->value = $decoded->valueInteger ?? null;
             $type->setValueInteger(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -3566,7 +3565,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
             || isset($decoded->_valueMarkdown)
             || property_exists($decoded, self::FIELD_VALUE_MARKDOWN)
             || property_exists($decoded, self::FIELD_VALUE_MARKDOWN_EXT)) {
-            $v = $decoded->_valueMarkdown ?? new \stdClass();
+            $v = isset($decoded->_valueMarkdown) ? clone $decoded->_valueMarkdown : new \stdClass();
             $v->value = $decoded->valueMarkdown ?? null;
             $type->setValueMarkdown(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -3574,7 +3573,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
             || isset($decoded->_valueOid)
             || property_exists($decoded, self::FIELD_VALUE_OID)
             || property_exists($decoded, self::FIELD_VALUE_OID_EXT)) {
-            $v = $decoded->_valueOid ?? new \stdClass();
+            $v = isset($decoded->_valueOid) ? clone $decoded->_valueOid : new \stdClass();
             $v->value = $decoded->valueOid ?? null;
             $type->setValueOid(FHIROid::jsonUnserialize($v, $config));
         }
@@ -3582,7 +3581,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
             || isset($decoded->_valuePositiveInt)
             || property_exists($decoded, self::FIELD_VALUE_POSITIVE_INT)
             || property_exists($decoded, self::FIELD_VALUE_POSITIVE_INT_EXT)) {
-            $v = $decoded->_valuePositiveInt ?? new \stdClass();
+            $v = isset($decoded->_valuePositiveInt) ? clone $decoded->_valuePositiveInt : new \stdClass();
             $v->value = $decoded->valuePositiveInt ?? null;
             $type->setValuePositiveInt(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
@@ -3590,7 +3589,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
             || isset($decoded->_valueString)
             || property_exists($decoded, self::FIELD_VALUE_STRING)
             || property_exists($decoded, self::FIELD_VALUE_STRING_EXT)) {
-            $v = $decoded->_valueString ?? new \stdClass();
+            $v = isset($decoded->_valueString) ? clone $decoded->_valueString : new \stdClass();
             $v->value = $decoded->valueString ?? null;
             $type->setValueString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -3598,7 +3597,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
             || isset($decoded->_valueTime)
             || property_exists($decoded, self::FIELD_VALUE_TIME)
             || property_exists($decoded, self::FIELD_VALUE_TIME_EXT)) {
-            $v = $decoded->_valueTime ?? new \stdClass();
+            $v = isset($decoded->_valueTime) ? clone $decoded->_valueTime : new \stdClass();
             $v->value = $decoded->valueTime ?? null;
             $type->setValueTime(FHIRTime::jsonUnserialize($v, $config));
         }
@@ -3606,7 +3605,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
             || isset($decoded->_valueUnsignedInt)
             || property_exists($decoded, self::FIELD_VALUE_UNSIGNED_INT)
             || property_exists($decoded, self::FIELD_VALUE_UNSIGNED_INT_EXT)) {
-            $v = $decoded->_valueUnsignedInt ?? new \stdClass();
+            $v = isset($decoded->_valueUnsignedInt) ? clone $decoded->_valueUnsignedInt : new \stdClass();
             $v->value = $decoded->valueUnsignedInt ?? null;
             $type->setValueUnsignedInt(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
@@ -3614,7 +3613,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
             || isset($decoded->_valueUri)
             || property_exists($decoded, self::FIELD_VALUE_URI)
             || property_exists($decoded, self::FIELD_VALUE_URI_EXT)) {
-            $v = $decoded->_valueUri ?? new \stdClass();
+            $v = isset($decoded->_valueUri) ? clone $decoded->_valueUri : new \stdClass();
             $v->value = $decoded->valueUri ?? null;
             $type->setValueUri(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -3622,7 +3621,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
             || isset($decoded->_valueUrl)
             || property_exists($decoded, self::FIELD_VALUE_URL)
             || property_exists($decoded, self::FIELD_VALUE_URL_EXT)) {
-            $v = $decoded->_valueUrl ?? new \stdClass();
+            $v = isset($decoded->_valueUrl) ? clone $decoded->_valueUrl : new \stdClass();
             $v->value = $decoded->valueUrl ?? null;
             $type->setValueUrl(FHIRUrl::jsonUnserialize($v, $config));
         }
@@ -3630,7 +3629,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
             || isset($decoded->_valueUuid)
             || property_exists($decoded, self::FIELD_VALUE_UUID)
             || property_exists($decoded, self::FIELD_VALUE_UUID_EXT)) {
-            $v = $decoded->_valueUuid ?? new \stdClass();
+            $v = isset($decoded->_valueUuid) ? clone $decoded->_valueUuid : new \stdClass();
             $v->value = $decoded->valueUuid ?? null;
             $type->setValueUuid(FHIRUuid::jsonUnserialize($v, $config));
         }
@@ -3853,9 +3852,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
         }
         if (isset($decoded->resource)) {
             $typeClassName = VersionTypeMap::mustGetContainedTypeClassnameFromJSON($decoded->resource);
-            $v = $decoded->resource;
-            unset($v->resourceType);
-            $type->setResource($typeClassName::jsonUnserialize($v, $config));
+            $type->setResource(VersionTypeMap::jsonUnserializeResource($typeClassName, $decoded->resource, $config));
         }
         if (isset($decoded->part) || property_exists($decoded, self::FIELD_PART)) {
             if (is_object($decoded->part)) {

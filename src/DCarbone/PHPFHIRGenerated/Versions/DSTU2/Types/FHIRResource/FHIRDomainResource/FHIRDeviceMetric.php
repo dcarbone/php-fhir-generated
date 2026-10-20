@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceMetric\FHIRDeviceMetricCalibration;
@@ -128,13 +127,13 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_IDENTIFIER => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_CATEGORY => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -768,7 +767,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1019,7 +1018,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_operationalStatus)
             || property_exists($decoded, self::FIELD_OPERATIONAL_STATUS)
             || property_exists($decoded, self::FIELD_OPERATIONAL_STATUS_EXT)) {
-            $v = $decoded->_operationalStatus ?? new \stdClass();
+            $v = isset($decoded->_operationalStatus) ? clone $decoded->_operationalStatus : new \stdClass();
             $v->value = $decoded->operationalStatus ?? null;
             $type->setOperationalStatus(FHIRDeviceMetricOperationalStatus::jsonUnserialize($v, $config));
         }
@@ -1027,7 +1026,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_color)
             || property_exists($decoded, self::FIELD_COLOR)
             || property_exists($decoded, self::FIELD_COLOR_EXT)) {
-            $v = $decoded->_color ?? new \stdClass();
+            $v = isset($decoded->_color) ? clone $decoded->_color : new \stdClass();
             $v->value = $decoded->color ?? null;
             $type->setColor(FHIRDeviceMetricColor::jsonUnserialize($v, $config));
         }
@@ -1035,7 +1034,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_category)
             || property_exists($decoded, self::FIELD_CATEGORY)
             || property_exists($decoded, self::FIELD_CATEGORY_EXT)) {
-            $v = $decoded->_category ?? new \stdClass();
+            $v = isset($decoded->_category) ? clone $decoded->_category : new \stdClass();
             $v->value = $decoded->category ?? null;
             $type->setCategory(FHIRDeviceMetricCategory::jsonUnserialize($v, $config));
         }

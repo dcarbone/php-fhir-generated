@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -771,7 +771,7 @@ class FHIRHumanName extends FHIRElement
             || isset($decoded->_use)
             || property_exists($decoded, self::FIELD_USE)
             || property_exists($decoded, self::FIELD_USE_EXT)) {
-            $v = $decoded->_use ?? new \stdClass();
+            $v = isset($decoded->_use) ? clone $decoded->_use : new \stdClass();
             $v->value = $decoded->use ?? null;
             $type->setUse(FHIRNameUse::jsonUnserialize($v, $config));
         }
@@ -779,7 +779,7 @@ class FHIRHumanName extends FHIRElement
             || isset($decoded->_text)
             || property_exists($decoded, self::FIELD_TEXT)
             || property_exists($decoded, self::FIELD_TEXT_EXT)) {
-            $v = $decoded->_text ?? new \stdClass();
+            $v = isset($decoded->_text) ? clone $decoded->_text : new \stdClass();
             $v->value = $decoded->text ?? null;
             $type->setText(FHIRString::jsonUnserialize($v, $config));
         }
@@ -787,7 +787,7 @@ class FHIRHumanName extends FHIRElement
             || isset($decoded->_family)
             || property_exists($decoded, self::FIELD_FAMILY)
             || property_exists($decoded, self::FIELD_FAMILY_EXT)) {
-            $v = $decoded->_family ?? new \stdClass();
+            $v = isset($decoded->_family) ? clone $decoded->_family : new \stdClass();
             $v->value = $decoded->family ?? null;
             $type->setFamily(FHIRString::jsonUnserialize($v, $config));
         }
@@ -803,7 +803,7 @@ class FHIRHumanName extends FHIRElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addGiven(FHIRString::jsonUnserialize($v, $config));
             }
@@ -820,7 +820,7 @@ class FHIRHumanName extends FHIRElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addPrefix(FHIRString::jsonUnserialize($v, $config));
             }
@@ -837,7 +837,7 @@ class FHIRHumanName extends FHIRElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addSuffix(FHIRString::jsonUnserialize($v, $config));
             }

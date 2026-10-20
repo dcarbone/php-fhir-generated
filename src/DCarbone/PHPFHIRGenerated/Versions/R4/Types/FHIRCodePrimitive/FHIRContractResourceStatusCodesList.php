@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -63,7 +63,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive;
  */
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueOneOfRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
@@ -83,22 +82,22 @@ class FHIRContractResourceStatusCodesList extends FHIRCodePrimitive
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
-            ValueOneOfRule::NAME => [
-                0 => 'amended',
-                1 => 'appended',
-                2 => 'cancelled',
-                3 => 'disputed',
-                4 => 'entered-in-error',
-                5 => 'executable',
-                6 => 'executed',
-                7 => 'negotiable',
-                8 => 'offered',
-                9 => 'policy',
-                10 => 'rejected',
-                11 => 'renewed',
-                12 => 'revoked',
-                13 => 'resolved',
-                14 => 'terminated',
+            'value_one_of' => [
+                'amended',
+                'appended',
+                'cancelled',
+                'disputed',
+                'entered-in-error',
+                'executable',
+                'executed',
+                'negotiable',
+                'offered',
+                'policy',
+                'rejected',
+                'renewed',
+                'revoked',
+                'resolved',
+                'terminated',
             ],
         ],
     ];

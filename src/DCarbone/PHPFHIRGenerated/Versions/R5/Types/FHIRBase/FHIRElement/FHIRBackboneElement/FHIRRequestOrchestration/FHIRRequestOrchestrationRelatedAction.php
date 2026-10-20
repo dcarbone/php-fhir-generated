@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionRelationshipType;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
@@ -128,10 +127,10 @@ class FHIRRequestOrchestrationRelatedAction extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TARGET_ID => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_RELATIONSHIP => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -175,7 +174,7 @@ class FHIRRequestOrchestrationRelatedAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A duration or range of durations to apply to the relationship. For example,
-     * 30-60 minutes before.
+     * 30-60 minutes before. (choose any one of offset*, but only one)
      */
     #[FHIRDuration]
     protected FHIRDuration $offsetDuration;
@@ -185,7 +184,7 @@ class FHIRRequestOrchestrationRelatedAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A duration or range of durations to apply to the relationship. For example,
-     * 30-60 minutes before.
+     * 30-60 minutes before. (choose any one of offset*, but only one)
      */
     #[FHIRRange]
     protected FHIRRange $offsetRange;
@@ -335,7 +334,7 @@ class FHIRRequestOrchestrationRelatedAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A duration or range of durations to apply to the relationship. For example,
-     * 30-60 minutes before.
+     * 30-60 minutes before. (choose any one of offset*, but only one)
      */
     public function getOffsetDuration(): null|FHIRDuration
     {
@@ -348,7 +347,7 @@ class FHIRRequestOrchestrationRelatedAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A duration or range of durations to apply to the relationship. For example,
-     * 30-60 minutes before.
+     * 30-60 minutes before. (choose any one of offset*, but only one)
      */
     public function setOffsetDuration(null|FHIRDuration $offsetDuration): self
     {
@@ -366,7 +365,7 @@ class FHIRRequestOrchestrationRelatedAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A duration or range of durations to apply to the relationship. For example,
-     * 30-60 minutes before.
+     * 30-60 minutes before. (choose any one of offset*, but only one)
      */
     public function getOffsetRange(): null|FHIRRange
     {
@@ -379,7 +378,7 @@ class FHIRRequestOrchestrationRelatedAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A duration or range of durations to apply to the relationship. For example,
-     * 30-60 minutes before.
+     * 30-60 minutes before. (choose any one of offset*, but only one)
      */
     public function setOffsetRange(null|FHIRRange $offsetRange): self
     {
@@ -545,7 +544,7 @@ class FHIRRequestOrchestrationRelatedAction extends FHIRBackboneElement
             || isset($decoded->_targetId)
             || property_exists($decoded, self::FIELD_TARGET_ID)
             || property_exists($decoded, self::FIELD_TARGET_ID_EXT)) {
-            $v = $decoded->_targetId ?? new \stdClass();
+            $v = isset($decoded->_targetId) ? clone $decoded->_targetId : new \stdClass();
             $v->value = $decoded->targetId ?? null;
             $type->setTargetId(FHIRId::jsonUnserialize($v, $config));
         }
@@ -553,7 +552,7 @@ class FHIRRequestOrchestrationRelatedAction extends FHIRBackboneElement
             || isset($decoded->_relationship)
             || property_exists($decoded, self::FIELD_RELATIONSHIP)
             || property_exists($decoded, self::FIELD_RELATIONSHIP_EXT)) {
-            $v = $decoded->_relationship ?? new \stdClass();
+            $v = isset($decoded->_relationship) ? clone $decoded->_relationship : new \stdClass();
             $v->value = $decoded->relationship ?? null;
             $type->setRelationship(FHIRActionRelationshipType::jsonUnserialize($v, $config));
         }
@@ -561,7 +560,7 @@ class FHIRRequestOrchestrationRelatedAction extends FHIRBackboneElement
             || isset($decoded->_endRelationship)
             || property_exists($decoded, self::FIELD_END_RELATIONSHIP)
             || property_exists($decoded, self::FIELD_END_RELATIONSHIP_EXT)) {
-            $v = $decoded->_endRelationship ?? new \stdClass();
+            $v = isset($decoded->_endRelationship) ? clone $decoded->_endRelationship : new \stdClass();
             $v->value = $decoded->endRelationship ?? null;
             $type->setEndRelationship(FHIRActionRelationshipType::jsonUnserialize($v, $config));
         }

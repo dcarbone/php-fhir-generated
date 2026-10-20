@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -63,8 +63,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension;
@@ -104,10 +102,10 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
-            ValuePatternMatchRule::NAME => '/^[a-z0-9\\-\\.]{1,36}$/',
+            'value_pattern_match' => '/^[a-z0-9\\-\\.]{1,36}$/',
         ],
         self::FIELD_EVENT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -503,7 +501,7 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
             || isset($decoded->_endpoint)
             || property_exists($decoded, self::FIELD_ENDPOINT)
             || property_exists($decoded, self::FIELD_ENDPOINT_EXT)) {
-            $v = $decoded->_endpoint ?? new \stdClass();
+            $v = isset($decoded->_endpoint) ? clone $decoded->_endpoint : new \stdClass();
             $v->value = $decoded->endpoint ?? null;
             $type->setEndpoint(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -511,7 +509,7 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
             || isset($decoded->_reliableCache)
             || property_exists($decoded, self::FIELD_RELIABLE_CACHE)
             || property_exists($decoded, self::FIELD_RELIABLE_CACHE_EXT)) {
-            $v = $decoded->_reliableCache ?? new \stdClass();
+            $v = isset($decoded->_reliableCache) ? clone $decoded->_reliableCache : new \stdClass();
             $v->value = $decoded->reliableCache ?? null;
             $type->setReliableCache(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -519,7 +517,7 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
             || isset($decoded->_documentation)
             || property_exists($decoded, self::FIELD_DOCUMENTATION)
             || property_exists($decoded, self::FIELD_DOCUMENTATION_EXT)) {
-            $v = $decoded->_documentation ?? new \stdClass();
+            $v = isset($decoded->_documentation) ? clone $decoded->_documentation : new \stdClass();
             $v->value = $decoded->documentation ?? null;
             $type->setDocumentation(FHIRString::jsonUnserialize($v, $config));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -111,7 +111,11 @@ class Version implements VersionInterface
     public function __construct(null|array|VersionConfigInterface $config = null)
     {
         if (!is_object($config)) {
-            $config = new VersionConfig(array_merge(self::_GENERATED_CONFIG, (array)$config));
+            $config = array_merge(self::_GENERATED_CONFIG, (array)$config);
+            $config = new VersionConfig(
+                unserializeConfig: $config['unserializeConfig'] ?? null,
+                serializeConfig: $config['serializeConfig'] ?? null,
+            );
         } else if (!($config instanceof VersionConfig)) {
             throw new \InvalidArgumentException(sprintf(
                 '$config must be an instance of \\%s, %s given',

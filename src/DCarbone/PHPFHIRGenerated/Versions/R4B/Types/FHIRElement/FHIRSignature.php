@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBase64BinaryPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
@@ -132,13 +131,13 @@ class FHIRSignature extends FHIRElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_WHEN => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_WHO => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -745,7 +744,7 @@ class FHIRSignature extends FHIRElement
             || isset($decoded->_when)
             || property_exists($decoded, self::FIELD_WHEN)
             || property_exists($decoded, self::FIELD_WHEN_EXT)) {
-            $v = $decoded->_when ?? new \stdClass();
+            $v = isset($decoded->_when) ? clone $decoded->_when : new \stdClass();
             $v->value = $decoded->when ?? null;
             $type->setWhen(FHIRInstant::jsonUnserialize($v, $config));
         }
@@ -767,7 +766,7 @@ class FHIRSignature extends FHIRElement
             || isset($decoded->_targetFormat)
             || property_exists($decoded, self::FIELD_TARGET_FORMAT)
             || property_exists($decoded, self::FIELD_TARGET_FORMAT_EXT)) {
-            $v = $decoded->_targetFormat ?? new \stdClass();
+            $v = isset($decoded->_targetFormat) ? clone $decoded->_targetFormat : new \stdClass();
             $v->value = $decoded->targetFormat ?? null;
             $type->setTargetFormat(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -775,7 +774,7 @@ class FHIRSignature extends FHIRElement
             || isset($decoded->_sigFormat)
             || property_exists($decoded, self::FIELD_SIG_FORMAT)
             || property_exists($decoded, self::FIELD_SIG_FORMAT_EXT)) {
-            $v = $decoded->_sigFormat ?? new \stdClass();
+            $v = isset($decoded->_sigFormat) ? clone $decoded->_sigFormat : new \stdClass();
             $v->value = $decoded->sigFormat ?? null;
             $type->setSigFormat(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -783,7 +782,7 @@ class FHIRSignature extends FHIRElement
             || isset($decoded->_data)
             || property_exists($decoded, self::FIELD_DATA)
             || property_exists($decoded, self::FIELD_DATA_EXT)) {
-            $v = $decoded->_data ?? new \stdClass();
+            $v = isset($decoded->_data) ? clone $decoded->_data : new \stdClass();
             $v->value = $decoded->data ?? null;
             $type->setData(FHIRBase64Binary::jsonUnserialize($v, $config));
         }

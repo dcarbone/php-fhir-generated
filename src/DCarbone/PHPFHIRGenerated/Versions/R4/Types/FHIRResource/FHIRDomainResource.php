@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -526,7 +526,7 @@ class FHIRDomainResource extends FHIRResource
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -671,8 +671,7 @@ class FHIRDomainResource extends FHIRResource
             }
             foreach($vals as $v) {
                 $typeClassName = VersionTypeMap::mustGetContainedTypeClassnameFromJSON($v);
-                unset($v->resourceType);
-                $type->addContained($typeClassName::jsonUnserialize($v, $config));
+                $type->addContained(VersionTypeMap::jsonUnserializeResource($typeClassName, $v, $config));
             }
         }
         if (isset($decoded->extension) || property_exists($decoded, self::FIELD_EXTENSION)) {

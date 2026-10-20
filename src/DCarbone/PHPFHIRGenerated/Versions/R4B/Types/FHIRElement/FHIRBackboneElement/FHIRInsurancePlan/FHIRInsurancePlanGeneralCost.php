@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -475,7 +475,7 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
             || isset($decoded->_groupSize)
             || property_exists($decoded, self::FIELD_GROUP_SIZE)
             || property_exists($decoded, self::FIELD_GROUP_SIZE_EXT)) {
-            $v = $decoded->_groupSize ?? new \stdClass();
+            $v = isset($decoded->_groupSize) ? clone $decoded->_groupSize : new \stdClass();
             $v->value = $decoded->groupSize ?? null;
             $type->setGroupSize(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
@@ -490,7 +490,7 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
             || isset($decoded->_comment)
             || property_exists($decoded, self::FIELD_COMMENT)
             || property_exists($decoded, self::FIELD_COMMENT_EXT)) {
-            $v = $decoded->_comment ?? new \stdClass();
+            $v = isset($decoded->_comment) ? clone $decoded->_comment : new \stdClass();
             $v->value = $decoded->comment ?? null;
             $type->setComment(FHIRString::jsonUnserialize($v, $config));
         }

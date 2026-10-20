@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRElement
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,8 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement;
@@ -110,10 +108,10 @@ class FHIRElementDefinitionSlicing extends FHIRElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
-            ValuePatternMatchRule::NAME => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
+            'value_pattern_match' => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
         ],
         self::FIELD_RULES => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -544,7 +542,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addDiscriminator(FHIRString::jsonUnserialize($v, $config));
             }
@@ -553,7 +551,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
@@ -561,7 +559,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement
             || isset($decoded->_ordered)
             || property_exists($decoded, self::FIELD_ORDERED)
             || property_exists($decoded, self::FIELD_ORDERED_EXT)) {
-            $v = $decoded->_ordered ?? new \stdClass();
+            $v = isset($decoded->_ordered) ? clone $decoded->_ordered : new \stdClass();
             $v->value = $decoded->ordered ?? null;
             $type->setOrdered(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -569,7 +567,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement
             || isset($decoded->_rules)
             || property_exists($decoded, self::FIELD_RULES)
             || property_exists($decoded, self::FIELD_RULES_EXT)) {
-            $v = $decoded->_rules ?? new \stdClass();
+            $v = isset($decoded->_rules) ? clone $decoded->_rules : new \stdClass();
             $v->value = $decoded->rules ?? null;
             $type->setRules(FHIRSlicingRules::jsonUnserialize($v, $config));
         }

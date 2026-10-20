@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -695,7 +695,7 @@ class FHIRSubstanceSpecificationMoiety extends FHIRBackboneElement
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -717,7 +717,7 @@ class FHIRSubstanceSpecificationMoiety extends FHIRBackboneElement
             || isset($decoded->_molecularFormula)
             || property_exists($decoded, self::FIELD_MOLECULAR_FORMULA)
             || property_exists($decoded, self::FIELD_MOLECULAR_FORMULA_EXT)) {
-            $v = $decoded->_molecularFormula ?? new \stdClass();
+            $v = isset($decoded->_molecularFormula) ? clone $decoded->_molecularFormula : new \stdClass();
             $v->value = $decoded->molecularFormula ?? null;
             $type->setMolecularFormula(FHIRString::jsonUnserialize($v, $config));
         }
@@ -732,7 +732,7 @@ class FHIRSubstanceSpecificationMoiety extends FHIRBackboneElement
             || isset($decoded->_amountString)
             || property_exists($decoded, self::FIELD_AMOUNT_STRING)
             || property_exists($decoded, self::FIELD_AMOUNT_STRING_EXT)) {
-            $v = $decoded->_amountString ?? new \stdClass();
+            $v = isset($decoded->_amountString) ? clone $decoded->_amountString : new \stdClass();
             $v->value = $decoded->amountString ?? null;
             $type->setAmountString(FHIRString::jsonUnserialize($v, $config));
         }

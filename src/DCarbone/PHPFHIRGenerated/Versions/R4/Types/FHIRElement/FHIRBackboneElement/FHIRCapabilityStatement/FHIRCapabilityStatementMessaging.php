@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -559,7 +559,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
             || isset($decoded->_reliableCache)
             || property_exists($decoded, self::FIELD_RELIABLE_CACHE)
             || property_exists($decoded, self::FIELD_RELIABLE_CACHE_EXT)) {
-            $v = $decoded->_reliableCache ?? new \stdClass();
+            $v = isset($decoded->_reliableCache) ? clone $decoded->_reliableCache : new \stdClass();
             $v->value = $decoded->reliableCache ?? null;
             $type->setReliableCache(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
@@ -567,7 +567,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
             || isset($decoded->_documentation)
             || property_exists($decoded, self::FIELD_DOCUMENTATION)
             || property_exists($decoded, self::FIELD_DOCUMENTATION_EXT)) {
-            $v = $decoded->_documentation ?? new \stdClass();
+            $v = isset($decoded->_documentation) ? clone $decoded->_documentation : new \stdClass();
             $v->value = $decoded->documentation ?? null;
             $type->setDocumentation(FHIRMarkdown::jsonUnserialize($v, $config));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -235,7 +235,8 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Indicates if the practitioner is deceased or not.
+     * Indicates if the practitioner is deceased or not. (choose any one of deceased*,
+     * but only one)
      */
     #[FHIRBoolean]
     protected FHIRBoolean $deceasedBoolean;
@@ -248,7 +249,8 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Indicates if the practitioner is deceased or not.
+     * Indicates if the practitioner is deceased or not. (choose any one of deceased*,
+     * but only one)
      */
     #[FHIRDateTime]
     protected FHIRDateTime $deceasedDateTime;
@@ -693,7 +695,8 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Indicates if the practitioner is deceased or not.
+     * Indicates if the practitioner is deceased or not. (choose any one of deceased*,
+     * but only one)
      */
     public function getDeceasedBoolean(): null|FHIRBoolean
     {
@@ -704,7 +707,8 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Indicates if the practitioner is deceased or not.
+     * Indicates if the practitioner is deceased or not. (choose any one of deceased*,
+     * but only one)
      */
     public function setDeceasedBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $deceasedBoolean): self
     {
@@ -728,7 +732,8 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Indicates if the practitioner is deceased or not.
+     * Indicates if the practitioner is deceased or not. (choose any one of deceased*,
+     * but only one)
      */
     public function getDeceasedDateTime(): null|FHIRDateTime
     {
@@ -744,7 +749,8 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Indicates if the practitioner is deceased or not.
+     * Indicates if the practitioner is deceased or not. (choose any one of deceased*,
+     * but only one)
      */
     public function setDeceasedDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $deceasedDateTime): self
     {
@@ -1071,7 +1077,7 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1350,7 +1356,7 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_active)
             || property_exists($decoded, self::FIELD_ACTIVE)
             || property_exists($decoded, self::FIELD_ACTIVE_EXT)) {
-            $v = $decoded->_active ?? new \stdClass();
+            $v = isset($decoded->_active) ? clone $decoded->_active : new \stdClass();
             $v->value = $decoded->active ?? null;
             $type->setActive(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1380,7 +1386,7 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_gender)
             || property_exists($decoded, self::FIELD_GENDER)
             || property_exists($decoded, self::FIELD_GENDER_EXT)) {
-            $v = $decoded->_gender ?? new \stdClass();
+            $v = isset($decoded->_gender) ? clone $decoded->_gender : new \stdClass();
             $v->value = $decoded->gender ?? null;
             $type->setGender(FHIRAdministrativeGender::jsonUnserialize($v, $config));
         }
@@ -1388,7 +1394,7 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_birthDate)
             || property_exists($decoded, self::FIELD_BIRTH_DATE)
             || property_exists($decoded, self::FIELD_BIRTH_DATE_EXT)) {
-            $v = $decoded->_birthDate ?? new \stdClass();
+            $v = isset($decoded->_birthDate) ? clone $decoded->_birthDate : new \stdClass();
             $v->value = $decoded->birthDate ?? null;
             $type->setBirthDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -1396,7 +1402,7 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_deceasedBoolean)
             || property_exists($decoded, self::FIELD_DECEASED_BOOLEAN)
             || property_exists($decoded, self::FIELD_DECEASED_BOOLEAN_EXT)) {
-            $v = $decoded->_deceasedBoolean ?? new \stdClass();
+            $v = isset($decoded->_deceasedBoolean) ? clone $decoded->_deceasedBoolean : new \stdClass();
             $v->value = $decoded->deceasedBoolean ?? null;
             $type->setDeceasedBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1404,7 +1410,7 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_deceasedDateTime)
             || property_exists($decoded, self::FIELD_DECEASED_DATE_TIME)
             || property_exists($decoded, self::FIELD_DECEASED_DATE_TIME_EXT)) {
-            $v = $decoded->_deceasedDateTime ?? new \stdClass();
+            $v = isset($decoded->_deceasedDateTime) ? clone $decoded->_deceasedDateTime : new \stdClass();
             $v->value = $decoded->deceasedDateTime ?? null;
             $type->setDeceasedDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }

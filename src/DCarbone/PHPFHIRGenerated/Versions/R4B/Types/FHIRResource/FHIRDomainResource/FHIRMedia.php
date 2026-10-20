@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIREventStatusEnum;
@@ -174,10 +173,10 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_CONTENT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1511,7 +1510,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1924,7 +1923,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIREventStatus::jsonUnserialize($v, $config));
         }
@@ -1967,7 +1966,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
             || isset($decoded->_createdDateTime)
             || property_exists($decoded, self::FIELD_CREATED_DATE_TIME)
             || property_exists($decoded, self::FIELD_CREATED_DATE_TIME_EXT)) {
-            $v = $decoded->_createdDateTime ?? new \stdClass();
+            $v = isset($decoded->_createdDateTime) ? clone $decoded->_createdDateTime : new \stdClass();
             $v->value = $decoded->createdDateTime ?? null;
             $type->setCreatedDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1982,7 +1981,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
             || isset($decoded->_issued)
             || property_exists($decoded, self::FIELD_ISSUED)
             || property_exists($decoded, self::FIELD_ISSUED_EXT)) {
-            $v = $decoded->_issued ?? new \stdClass();
+            $v = isset($decoded->_issued) ? clone $decoded->_issued : new \stdClass();
             $v->value = $decoded->issued ?? null;
             $type->setIssued(FHIRInstant::jsonUnserialize($v, $config));
         }
@@ -2015,7 +2014,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
             || isset($decoded->_deviceName)
             || property_exists($decoded, self::FIELD_DEVICE_NAME)
             || property_exists($decoded, self::FIELD_DEVICE_NAME_EXT)) {
-            $v = $decoded->_deviceName ?? new \stdClass();
+            $v = isset($decoded->_deviceName) ? clone $decoded->_deviceName : new \stdClass();
             $v->value = $decoded->deviceName ?? null;
             $type->setDeviceName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2030,7 +2029,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
             || isset($decoded->_height)
             || property_exists($decoded, self::FIELD_HEIGHT)
             || property_exists($decoded, self::FIELD_HEIGHT_EXT)) {
-            $v = $decoded->_height ?? new \stdClass();
+            $v = isset($decoded->_height) ? clone $decoded->_height : new \stdClass();
             $v->value = $decoded->height ?? null;
             $type->setHeight(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
@@ -2038,7 +2037,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
             || isset($decoded->_width)
             || property_exists($decoded, self::FIELD_WIDTH)
             || property_exists($decoded, self::FIELD_WIDTH_EXT)) {
-            $v = $decoded->_width ?? new \stdClass();
+            $v = isset($decoded->_width) ? clone $decoded->_width : new \stdClass();
             $v->value = $decoded->width ?? null;
             $type->setWidth(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
@@ -2046,7 +2045,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
             || isset($decoded->_frames)
             || property_exists($decoded, self::FIELD_FRAMES)
             || property_exists($decoded, self::FIELD_FRAMES_EXT)) {
-            $v = $decoded->_frames ?? new \stdClass();
+            $v = isset($decoded->_frames) ? clone $decoded->_frames : new \stdClass();
             $v->value = $decoded->frames ?? null;
             $type->setFrames(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
@@ -2054,7 +2053,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
             || isset($decoded->_duration)
             || property_exists($decoded, self::FIELD_DURATION)
             || property_exists($decoded, self::FIELD_DURATION_EXT)) {
-            $v = $decoded->_duration ?? new \stdClass();
+            $v = isset($decoded->_duration) ? clone $decoded->_duration : new \stdClass();
             $v->value = $decoded->duration ?? null;
             $type->setDuration(FHIRDecimal::jsonUnserialize($v, $config));
         }

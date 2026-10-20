@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -63,8 +63,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement;
@@ -124,19 +122,19 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
-            ValuePatternMatchRule::NAME => '/^[a-z0-9\\-\\.]{1,36}$/',
+            'value_pattern_match' => '/^[a-z0-9\\-\\.]{1,36}$/',
         ],
         self::FIELD_MODALITY => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_UID => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_NUMBER_OF_INSTANCES => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_INSTANCE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -902,7 +900,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
             || isset($decoded->_number)
             || property_exists($decoded, self::FIELD_NUMBER)
             || property_exists($decoded, self::FIELD_NUMBER_EXT)) {
-            $v = $decoded->_number ?? new \stdClass();
+            $v = isset($decoded->_number) ? clone $decoded->_number : new \stdClass();
             $v->value = $decoded->number ?? null;
             $type->setNumber(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -910,7 +908,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
             || isset($decoded->_modality)
             || property_exists($decoded, self::FIELD_MODALITY)
             || property_exists($decoded, self::FIELD_MODALITY_EXT)) {
-            $v = $decoded->_modality ?? new \stdClass();
+            $v = isset($decoded->_modality) ? clone $decoded->_modality : new \stdClass();
             $v->value = $decoded->modality ?? null;
             $type->setModality(FHIRModality::jsonUnserialize($v, $config));
         }
@@ -918,7 +916,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
             || isset($decoded->_uid)
             || property_exists($decoded, self::FIELD_UID)
             || property_exists($decoded, self::FIELD_UID_EXT)) {
-            $v = $decoded->_uid ?? new \stdClass();
+            $v = isset($decoded->_uid) ? clone $decoded->_uid : new \stdClass();
             $v->value = $decoded->uid ?? null;
             $type->setUid(FHIROid::jsonUnserialize($v, $config));
         }
@@ -926,7 +924,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
@@ -934,7 +932,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
             || isset($decoded->_numberOfInstances)
             || property_exists($decoded, self::FIELD_NUMBER_OF_INSTANCES)
             || property_exists($decoded, self::FIELD_NUMBER_OF_INSTANCES_EXT)) {
-            $v = $decoded->_numberOfInstances ?? new \stdClass();
+            $v = isset($decoded->_numberOfInstances) ? clone $decoded->_numberOfInstances : new \stdClass();
             $v->value = $decoded->numberOfInstances ?? null;
             $type->setNumberOfInstances(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -942,7 +940,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
             || isset($decoded->_availability)
             || property_exists($decoded, self::FIELD_AVAILABILITY)
             || property_exists($decoded, self::FIELD_AVAILABILITY_EXT)) {
-            $v = $decoded->_availability ?? new \stdClass();
+            $v = isset($decoded->_availability) ? clone $decoded->_availability : new \stdClass();
             $v->value = $decoded->availability ?? null;
             $type->setAvailability(FHIRInstanceAvailability::jsonUnserialize($v, $config));
         }
@@ -950,7 +948,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
             || isset($decoded->_url)
             || property_exists($decoded, self::FIELD_URL)
             || property_exists($decoded, self::FIELD_URL_EXT)) {
-            $v = $decoded->_url ?? new \stdClass();
+            $v = isset($decoded->_url) ? clone $decoded->_url : new \stdClass();
             $v->value = $decoded->url ?? null;
             $type->setUrl(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -965,7 +963,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
             || isset($decoded->_dateTime)
             || property_exists($decoded, self::FIELD_DATE_TIME)
             || property_exists($decoded, self::FIELD_DATE_TIME_EXT)) {
-            $v = $decoded->_dateTime ?? new \stdClass();
+            $v = isset($decoded->_dateTime) ? clone $decoded->_dateTime : new \stdClass();
             $v->value = $decoded->dateTime ?? null;
             $type->setDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive;
@@ -177,25 +176,25 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_URL => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_NAME => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_DESCRIPTION => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_CODE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_BASE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1947,7 +1946,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -2473,7 +2472,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
             || isset($decoded->_url)
             || property_exists($decoded, self::FIELD_URL)
             || property_exists($decoded, self::FIELD_URL_EXT)) {
-            $v = $decoded->_url ?? new \stdClass();
+            $v = isset($decoded->_url) ? clone $decoded->_url : new \stdClass();
             $v->value = $decoded->url ?? null;
             $type->setUrl(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -2481,7 +2480,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
             || isset($decoded->_version)
             || property_exists($decoded, self::FIELD_VERSION)
             || property_exists($decoded, self::FIELD_VERSION_EXT)) {
-            $v = $decoded->_version ?? new \stdClass();
+            $v = isset($decoded->_version) ? clone $decoded->_version : new \stdClass();
             $v->value = $decoded->version ?? null;
             $type->setVersion(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2489,7 +2488,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2497,7 +2496,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
             || isset($decoded->_derivedFrom)
             || property_exists($decoded, self::FIELD_DERIVED_FROM)
             || property_exists($decoded, self::FIELD_DERIVED_FROM_EXT)) {
-            $v = $decoded->_derivedFrom ?? new \stdClass();
+            $v = isset($decoded->_derivedFrom) ? clone $decoded->_derivedFrom : new \stdClass();
             $v->value = $decoded->derivedFrom ?? null;
             $type->setDerivedFrom(FHIRCanonical::jsonUnserialize($v, $config));
         }
@@ -2505,7 +2504,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRPublicationStatus::jsonUnserialize($v, $config));
         }
@@ -2513,7 +2512,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
             || isset($decoded->_experimental)
             || property_exists($decoded, self::FIELD_EXPERIMENTAL)
             || property_exists($decoded, self::FIELD_EXPERIMENTAL_EXT)) {
-            $v = $decoded->_experimental ?? new \stdClass();
+            $v = isset($decoded->_experimental) ? clone $decoded->_experimental : new \stdClass();
             $v->value = $decoded->experimental ?? null;
             $type->setExperimental(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -2521,7 +2520,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
             || isset($decoded->_date)
             || property_exists($decoded, self::FIELD_DATE)
             || property_exists($decoded, self::FIELD_DATE_EXT)) {
-            $v = $decoded->_date ?? new \stdClass();
+            $v = isset($decoded->_date) ? clone $decoded->_date : new \stdClass();
             $v->value = $decoded->date ?? null;
             $type->setDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -2529,7 +2528,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
             || isset($decoded->_publisher)
             || property_exists($decoded, self::FIELD_PUBLISHER)
             || property_exists($decoded, self::FIELD_PUBLISHER_EXT)) {
-            $v = $decoded->_publisher ?? new \stdClass();
+            $v = isset($decoded->_publisher) ? clone $decoded->_publisher : new \stdClass();
             $v->value = $decoded->publisher ?? null;
             $type->setPublisher(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2548,7 +2547,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -2578,7 +2577,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
             || isset($decoded->_purpose)
             || property_exists($decoded, self::FIELD_PURPOSE)
             || property_exists($decoded, self::FIELD_PURPOSE_EXT)) {
-            $v = $decoded->_purpose ?? new \stdClass();
+            $v = isset($decoded->_purpose) ? clone $decoded->_purpose : new \stdClass();
             $v->value = $decoded->purpose ?? null;
             $type->setPurpose(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -2586,7 +2585,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
             || isset($decoded->_code)
             || property_exists($decoded, self::FIELD_CODE)
             || property_exists($decoded, self::FIELD_CODE_EXT)) {
-            $v = $decoded->_code ?? new \stdClass();
+            $v = isset($decoded->_code) ? clone $decoded->_code : new \stdClass();
             $v->value = $decoded->code ?? null;
             $type->setCode(FHIRCode::jsonUnserialize($v, $config));
         }
@@ -2602,7 +2601,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addBase(FHIRCode::jsonUnserialize($v, $config));
             }
@@ -2611,7 +2610,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
             || isset($decoded->_type)
             || property_exists($decoded, self::FIELD_TYPE)
             || property_exists($decoded, self::FIELD_TYPE_EXT)) {
-            $v = $decoded->_type ?? new \stdClass();
+            $v = isset($decoded->_type) ? clone $decoded->_type : new \stdClass();
             $v->value = $decoded->type ?? null;
             $type->setType(FHIRSearchParamType::jsonUnserialize($v, $config));
         }
@@ -2619,7 +2618,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
             || isset($decoded->_expression)
             || property_exists($decoded, self::FIELD_EXPRESSION)
             || property_exists($decoded, self::FIELD_EXPRESSION_EXT)) {
-            $v = $decoded->_expression ?? new \stdClass();
+            $v = isset($decoded->_expression) ? clone $decoded->_expression : new \stdClass();
             $v->value = $decoded->expression ?? null;
             $type->setExpression(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2627,7 +2626,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
             || isset($decoded->_xpath)
             || property_exists($decoded, self::FIELD_XPATH)
             || property_exists($decoded, self::FIELD_XPATH_EXT)) {
-            $v = $decoded->_xpath ?? new \stdClass();
+            $v = isset($decoded->_xpath) ? clone $decoded->_xpath : new \stdClass();
             $v->value = $decoded->xpath ?? null;
             $type->setXpath(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2635,7 +2634,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
             || isset($decoded->_xpathUsage)
             || property_exists($decoded, self::FIELD_XPATH_USAGE)
             || property_exists($decoded, self::FIELD_XPATH_USAGE_EXT)) {
-            $v = $decoded->_xpathUsage ?? new \stdClass();
+            $v = isset($decoded->_xpathUsage) ? clone $decoded->_xpathUsage : new \stdClass();
             $v->value = $decoded->xpathUsage ?? null;
             $type->setXpathUsage(FHIRXPathUsageType::jsonUnserialize($v, $config));
         }
@@ -2651,7 +2650,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addTarget(FHIRCode::jsonUnserialize($v, $config));
             }
@@ -2660,7 +2659,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
             || isset($decoded->_multipleOr)
             || property_exists($decoded, self::FIELD_MULTIPLE_OR)
             || property_exists($decoded, self::FIELD_MULTIPLE_OR_EXT)) {
-            $v = $decoded->_multipleOr ?? new \stdClass();
+            $v = isset($decoded->_multipleOr) ? clone $decoded->_multipleOr : new \stdClass();
             $v->value = $decoded->multipleOr ?? null;
             $type->setMultipleOr(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -2668,7 +2667,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
             || isset($decoded->_multipleAnd)
             || property_exists($decoded, self::FIELD_MULTIPLE_AND)
             || property_exists($decoded, self::FIELD_MULTIPLE_AND_EXT)) {
-            $v = $decoded->_multipleAnd ?? new \stdClass();
+            $v = isset($decoded->_multipleAnd) ? clone $decoded->_multipleAnd : new \stdClass();
             $v->value = $decoded->multipleAnd ?? null;
             $type->setMultipleAnd(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -2684,7 +2683,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addComparator(FHIRSearchComparator::jsonUnserialize($v, $config));
             }
@@ -2701,7 +2700,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addModifier(FHIRSearchModifierCode::jsonUnserialize($v, $config));
             }
@@ -2718,7 +2717,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addChain(FHIRString::jsonUnserialize($v, $config));
             }

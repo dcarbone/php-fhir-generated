@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean;
@@ -123,12 +122,6 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
 
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
-        self::FIELD_ALLOWED_BOOLEAN => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_ALLOWED_CODEABLE_CONCEPT => [
-            MinOccursRule::NAME => 1,
-        ],
     ];
 
     /* class_default.php:96 */
@@ -142,7 +135,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True if the prescriber allows a different drug to be dispensed from what was
-     * prescribed.
+     * prescribed. (choose any one of allowed*, but only one)
      */
     #[FHIRBoolean]
     protected FHIRBoolean $allowedBoolean;
@@ -153,7 +146,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * True if the prescriber allows a different drug to be dispensed from what was
-     * prescribed.
+     * prescribed. (choose any one of allowed*, but only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $allowedCodeableConcept;
@@ -211,7 +204,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True if the prescriber allows a different drug to be dispensed from what was
-     * prescribed.
+     * prescribed. (choose any one of allowed*, but only one)
      */
     public function getAllowedBoolean(): null|FHIRBoolean
     {
@@ -223,7 +216,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True if the prescriber allows a different drug to be dispensed from what was
-     * prescribed.
+     * prescribed. (choose any one of allowed*, but only one)
      */
     public function setAllowedBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $allowedBoolean): self
     {
@@ -245,7 +238,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * True if the prescriber allows a different drug to be dispensed from what was
-     * prescribed.
+     * prescribed. (choose any one of allowed*, but only one)
      */
     public function getAllowedCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -259,7 +252,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * True if the prescriber allows a different drug to be dispensed from what was
-     * prescribed.
+     * prescribed. (choose any one of allowed*, but only one)
      */
     public function setAllowedCodeableConcept(null|FHIRCodeableConcept $allowedCodeableConcept): self
     {
@@ -418,7 +411,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
             || isset($decoded->_allowedBoolean)
             || property_exists($decoded, self::FIELD_ALLOWED_BOOLEAN)
             || property_exists($decoded, self::FIELD_ALLOWED_BOOLEAN_EXT)) {
-            $v = $decoded->_allowedBoolean ?? new \stdClass();
+            $v = isset($decoded->_allowedBoolean) ? clone $decoded->_allowedBoolean : new \stdClass();
             $v->value = $decoded->allowedBoolean ?? null;
             $type->setAllowedBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean;
@@ -154,40 +153,10 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_QUESTION => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_OPERATOR => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_ANSWER_BOOLEAN => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_ANSWER_DECIMAL => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_ANSWER_INTEGER => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_ANSWER_DATE => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_ANSWER_DATE_TIME => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_ANSWER_TIME => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_ANSWER_STRING => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_ANSWER_CODING => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_ANSWER_QUANTITY => [
-            MinOccursRule::NAME => 1,
-        ],
-        self::FIELD_ANSWER_REFERENCE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -230,6 +199,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     #[FHIRBoolean]
     protected FHIRBoolean $answerBoolean;
@@ -243,6 +213,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     #[FHIRDecimal]
     protected FHIRDecimal $answerDecimal;
@@ -255,6 +226,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     #[FHIRInteger]
     protected FHIRInteger $answerInteger;
@@ -268,6 +240,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     #[FHIRDate]
     protected FHIRDate $answerDate;
@@ -284,6 +257,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     #[FHIRDateTime]
     protected FHIRDateTime $answerDateTime;
@@ -295,6 +269,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     #[FHIRTime]
     protected FHIRTime $answerTime;
@@ -307,6 +282,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     #[FHIRString]
     protected FHIRString $answerString;
@@ -319,6 +295,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     #[FHIRCoding]
     protected FHIRCoding $answerCoding;
@@ -333,6 +310,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     #[FHIRQuantity]
     protected FHIRQuantity $answerQuantity;
@@ -345,6 +323,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $answerReference;
@@ -492,6 +471,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     public function getAnswerBoolean(): null|FHIRBoolean
     {
@@ -506,6 +486,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     public function setAnswerBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $answerBoolean): self
     {
@@ -530,6 +511,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     public function getAnswerDecimal(): null|FHIRDecimal
     {
@@ -546,6 +528,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     public function setAnswerDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $answerDecimal): self
     {
@@ -569,6 +552,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     public function getAnswerInteger(): null|FHIRInteger
     {
@@ -584,6 +568,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     public function setAnswerInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $answerInteger): self
     {
@@ -608,6 +593,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     public function getAnswerDate(): null|FHIRDate
     {
@@ -624,6 +610,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     public function setAnswerDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $answerDate): self
     {
@@ -651,6 +638,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     public function getAnswerDateTime(): null|FHIRDateTime
     {
@@ -670,6 +658,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     public function setAnswerDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $answerDateTime): self
     {
@@ -692,6 +681,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     public function getAnswerTime(): null|FHIRTime
     {
@@ -706,6 +696,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     public function setAnswerTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $answerTime): self
     {
@@ -729,6 +720,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     public function getAnswerString(): null|FHIRString
     {
@@ -744,6 +736,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     public function setAnswerString(null|string|FHIRStringPrimitive|FHIRString $answerString): self
     {
@@ -767,6 +760,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     public function getAnswerCoding(): null|FHIRCoding
     {
@@ -782,6 +776,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     public function setAnswerCoding(null|FHIRCoding $answerCoding): self
     {
@@ -804,6 +799,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     public function getAnswerQuantity(): null|FHIRQuantity
     {
@@ -821,6 +817,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     public function setAnswerQuantity(null|FHIRQuantity $answerQuantity): self
     {
@@ -841,6 +838,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     public function getAnswerReference(): null|FHIRReference
     {
@@ -856,6 +854,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
+     * (choose any one of answer*, but only one)
      */
     public function setAnswerReference(null|FHIRReference $answerReference): self
     {
@@ -1148,7 +1147,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
             || isset($decoded->_question)
             || property_exists($decoded, self::FIELD_QUESTION)
             || property_exists($decoded, self::FIELD_QUESTION_EXT)) {
-            $v = $decoded->_question ?? new \stdClass();
+            $v = isset($decoded->_question) ? clone $decoded->_question : new \stdClass();
             $v->value = $decoded->question ?? null;
             $type->setQuestion(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1156,7 +1155,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
             || isset($decoded->_operator)
             || property_exists($decoded, self::FIELD_OPERATOR)
             || property_exists($decoded, self::FIELD_OPERATOR_EXT)) {
-            $v = $decoded->_operator ?? new \stdClass();
+            $v = isset($decoded->_operator) ? clone $decoded->_operator : new \stdClass();
             $v->value = $decoded->operator ?? null;
             $type->setOperator(FHIRQuestionnaireItemOperator::jsonUnserialize($v, $config));
         }
@@ -1164,7 +1163,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
             || isset($decoded->_answerBoolean)
             || property_exists($decoded, self::FIELD_ANSWER_BOOLEAN)
             || property_exists($decoded, self::FIELD_ANSWER_BOOLEAN_EXT)) {
-            $v = $decoded->_answerBoolean ?? new \stdClass();
+            $v = isset($decoded->_answerBoolean) ? clone $decoded->_answerBoolean : new \stdClass();
             $v->value = $decoded->answerBoolean ?? null;
             $type->setAnswerBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1172,7 +1171,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
             || isset($decoded->_answerDecimal)
             || property_exists($decoded, self::FIELD_ANSWER_DECIMAL)
             || property_exists($decoded, self::FIELD_ANSWER_DECIMAL_EXT)) {
-            $v = $decoded->_answerDecimal ?? new \stdClass();
+            $v = isset($decoded->_answerDecimal) ? clone $decoded->_answerDecimal : new \stdClass();
             $v->value = $decoded->answerDecimal ?? null;
             $type->setAnswerDecimal(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -1180,7 +1179,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
             || isset($decoded->_answerInteger)
             || property_exists($decoded, self::FIELD_ANSWER_INTEGER)
             || property_exists($decoded, self::FIELD_ANSWER_INTEGER_EXT)) {
-            $v = $decoded->_answerInteger ?? new \stdClass();
+            $v = isset($decoded->_answerInteger) ? clone $decoded->_answerInteger : new \stdClass();
             $v->value = $decoded->answerInteger ?? null;
             $type->setAnswerInteger(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -1188,7 +1187,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
             || isset($decoded->_answerDate)
             || property_exists($decoded, self::FIELD_ANSWER_DATE)
             || property_exists($decoded, self::FIELD_ANSWER_DATE_EXT)) {
-            $v = $decoded->_answerDate ?? new \stdClass();
+            $v = isset($decoded->_answerDate) ? clone $decoded->_answerDate : new \stdClass();
             $v->value = $decoded->answerDate ?? null;
             $type->setAnswerDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -1196,7 +1195,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
             || isset($decoded->_answerDateTime)
             || property_exists($decoded, self::FIELD_ANSWER_DATE_TIME)
             || property_exists($decoded, self::FIELD_ANSWER_DATE_TIME_EXT)) {
-            $v = $decoded->_answerDateTime ?? new \stdClass();
+            $v = isset($decoded->_answerDateTime) ? clone $decoded->_answerDateTime : new \stdClass();
             $v->value = $decoded->answerDateTime ?? null;
             $type->setAnswerDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1204,7 +1203,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
             || isset($decoded->_answerTime)
             || property_exists($decoded, self::FIELD_ANSWER_TIME)
             || property_exists($decoded, self::FIELD_ANSWER_TIME_EXT)) {
-            $v = $decoded->_answerTime ?? new \stdClass();
+            $v = isset($decoded->_answerTime) ? clone $decoded->_answerTime : new \stdClass();
             $v->value = $decoded->answerTime ?? null;
             $type->setAnswerTime(FHIRTime::jsonUnserialize($v, $config));
         }
@@ -1212,7 +1211,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
             || isset($decoded->_answerString)
             || property_exists($decoded, self::FIELD_ANSWER_STRING)
             || property_exists($decoded, self::FIELD_ANSWER_STRING_EXT)) {
-            $v = $decoded->_answerString ?? new \stdClass();
+            $v = isset($decoded->_answerString) ? clone $decoded->_answerString : new \stdClass();
             $v->value = $decoded->answerString ?? null;
             $type->setAnswerString(FHIRString::jsonUnserialize($v, $config));
         }

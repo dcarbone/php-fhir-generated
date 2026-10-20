@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -353,7 +353,7 @@ class FHIRTestPlanTestRun extends FHIRBackboneElement
             || isset($decoded->_narrative)
             || property_exists($decoded, self::FIELD_NARRATIVE)
             || property_exists($decoded, self::FIELD_NARRATIVE_EXT)) {
-            $v = $decoded->_narrative ?? new \stdClass();
+            $v = isset($decoded->_narrative) ? clone $decoded->_narrative : new \stdClass();
             $v->value = $decoded->narrative ?? null;
             $type->setNarrative(FHIRMarkdown::jsonUnserialize($v, $config));
         }

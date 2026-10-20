@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -483,7 +483,7 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
             || isset($decoded->_number)
             || property_exists($decoded, self::FIELD_NUMBER)
             || property_exists($decoded, self::FIELD_NUMBER_EXT)) {
-            $v = $decoded->_number ?? new \stdClass();
+            $v = isset($decoded->_number) ? clone $decoded->_number : new \stdClass();
             $v->value = $decoded->number ?? null;
             $type->setNumber(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
@@ -491,7 +491,7 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
             || isset($decoded->_type)
             || property_exists($decoded, self::FIELD_TYPE)
             || property_exists($decoded, self::FIELD_TYPE_EXT)) {
-            $v = $decoded->_type ?? new \stdClass();
+            $v = isset($decoded->_type) ? clone $decoded->_type : new \stdClass();
             $v->value = $decoded->type ?? null;
             $type->setType(FHIRNoteType::jsonUnserialize($v, $config));
         }
@@ -499,7 +499,7 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
             || isset($decoded->_text)
             || property_exists($decoded, self::FIELD_TEXT)
             || property_exists($decoded, self::FIELD_TEXT_EXT)) {
-            $v = $decoded->_text ?? new \stdClass();
+            $v = isset($decoded->_text) ? clone $decoded->_text : new \stdClass();
             $v->value = $decoded->text ?? null;
             $type->setText(FHIRString::jsonUnserialize($v, $config));
         }

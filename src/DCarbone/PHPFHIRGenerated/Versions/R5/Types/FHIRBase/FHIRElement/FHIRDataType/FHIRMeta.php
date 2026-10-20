@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -751,7 +751,7 @@ class FHIRMeta extends FHIRDataType
             || isset($decoded->_versionId)
             || property_exists($decoded, self::FIELD_VERSION_ID)
             || property_exists($decoded, self::FIELD_VERSION_ID_EXT)) {
-            $v = $decoded->_versionId ?? new \stdClass();
+            $v = isset($decoded->_versionId) ? clone $decoded->_versionId : new \stdClass();
             $v->value = $decoded->versionId ?? null;
             $type->setVersionId(FHIRId::jsonUnserialize($v, $config));
         }
@@ -759,7 +759,7 @@ class FHIRMeta extends FHIRDataType
             || isset($decoded->_lastUpdated)
             || property_exists($decoded, self::FIELD_LAST_UPDATED)
             || property_exists($decoded, self::FIELD_LAST_UPDATED_EXT)) {
-            $v = $decoded->_lastUpdated ?? new \stdClass();
+            $v = isset($decoded->_lastUpdated) ? clone $decoded->_lastUpdated : new \stdClass();
             $v->value = $decoded->lastUpdated ?? null;
             $type->setLastUpdated(FHIRInstant::jsonUnserialize($v, $config));
         }
@@ -767,7 +767,7 @@ class FHIRMeta extends FHIRDataType
             || isset($decoded->_source)
             || property_exists($decoded, self::FIELD_SOURCE)
             || property_exists($decoded, self::FIELD_SOURCE_EXT)) {
-            $v = $decoded->_source ?? new \stdClass();
+            $v = isset($decoded->_source) ? clone $decoded->_source : new \stdClass();
             $v->value = $decoded->source ?? null;
             $type->setSource(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -783,7 +783,7 @@ class FHIRMeta extends FHIRDataType
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addProfile(FHIRCanonical::jsonUnserialize($v, $config));
             }

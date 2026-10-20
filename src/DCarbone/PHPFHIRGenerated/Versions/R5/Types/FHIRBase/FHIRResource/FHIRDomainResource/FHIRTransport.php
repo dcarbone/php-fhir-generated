@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTransport\FHIRTransportInput;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTransport\FHIRTransportOutput;
@@ -185,13 +184,13 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_INTENT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_REQUESTED_LOCATION => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_CURRENT_LOCATION => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -2059,7 +2058,7 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -2534,7 +2533,7 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
             || isset($decoded->_instantiatesCanonical)
             || property_exists($decoded, self::FIELD_INSTANTIATES_CANONICAL)
             || property_exists($decoded, self::FIELD_INSTANTIATES_CANONICAL_EXT)) {
-            $v = $decoded->_instantiatesCanonical ?? new \stdClass();
+            $v = isset($decoded->_instantiatesCanonical) ? clone $decoded->_instantiatesCanonical : new \stdClass();
             $v->value = $decoded->instantiatesCanonical ?? null;
             $type->setInstantiatesCanonical(FHIRCanonical::jsonUnserialize($v, $config));
         }
@@ -2542,7 +2541,7 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
             || isset($decoded->_instantiatesUri)
             || property_exists($decoded, self::FIELD_INSTANTIATES_URI)
             || property_exists($decoded, self::FIELD_INSTANTIATES_URI_EXT)) {
-            $v = $decoded->_instantiatesUri ?? new \stdClass();
+            $v = isset($decoded->_instantiatesUri) ? clone $decoded->_instantiatesUri : new \stdClass();
             $v->value = $decoded->instantiatesUri ?? null;
             $type->setInstantiatesUri(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -2579,7 +2578,7 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRTransportStatus::jsonUnserialize($v, $config));
         }
@@ -2594,7 +2593,7 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
             || isset($decoded->_intent)
             || property_exists($decoded, self::FIELD_INTENT)
             || property_exists($decoded, self::FIELD_INTENT_EXT)) {
-            $v = $decoded->_intent ?? new \stdClass();
+            $v = isset($decoded->_intent) ? clone $decoded->_intent : new \stdClass();
             $v->value = $decoded->intent ?? null;
             $type->setIntent(FHIRTransportIntent::jsonUnserialize($v, $config));
         }
@@ -2602,7 +2601,7 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
             || isset($decoded->_priority)
             || property_exists($decoded, self::FIELD_PRIORITY)
             || property_exists($decoded, self::FIELD_PRIORITY_EXT)) {
-            $v = $decoded->_priority ?? new \stdClass();
+            $v = isset($decoded->_priority) ? clone $decoded->_priority : new \stdClass();
             $v->value = $decoded->priority ?? null;
             $type->setPriority(FHIRRequestPriority::jsonUnserialize($v, $config));
         }
@@ -2617,7 +2616,7 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2646,7 +2645,7 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
             || isset($decoded->_completionTime)
             || property_exists($decoded, self::FIELD_COMPLETION_TIME)
             || property_exists($decoded, self::FIELD_COMPLETION_TIME_EXT)) {
-            $v = $decoded->_completionTime ?? new \stdClass();
+            $v = isset($decoded->_completionTime) ? clone $decoded->_completionTime : new \stdClass();
             $v->value = $decoded->completionTime ?? null;
             $type->setCompletionTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -2654,7 +2653,7 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
             || isset($decoded->_authoredOn)
             || property_exists($decoded, self::FIELD_AUTHORED_ON)
             || property_exists($decoded, self::FIELD_AUTHORED_ON_EXT)) {
-            $v = $decoded->_authoredOn ?? new \stdClass();
+            $v = isset($decoded->_authoredOn) ? clone $decoded->_authoredOn : new \stdClass();
             $v->value = $decoded->authoredOn ?? null;
             $type->setAuthoredOn(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -2662,7 +2661,7 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
             || isset($decoded->_lastModified)
             || property_exists($decoded, self::FIELD_LAST_MODIFIED)
             || property_exists($decoded, self::FIELD_LAST_MODIFIED_EXT)) {
-            $v = $decoded->_lastModified ?? new \stdClass();
+            $v = isset($decoded->_lastModified) ? clone $decoded->_lastModified : new \stdClass();
             $v->value = $decoded->lastModified ?? null;
             $type->setLastModified(FHIRDateTime::jsonUnserialize($v, $config));
         }

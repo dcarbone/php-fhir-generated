@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -178,7 +178,7 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now.
+     * Duration before now. (choose any one of value*, but only one)
      */
     #[FHIRDateTime]
     protected FHIRDateTime $valueDateTime;
@@ -192,7 +192,7 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now.
+     * Duration before now. (choose any one of value*, but only one)
      */
     #[FHIRPeriod]
     protected FHIRPeriod $valuePeriod;
@@ -206,7 +206,7 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now.
+     * Duration before now. (choose any one of value*, but only one)
      */
     #[FHIRDuration]
     protected FHIRDuration $valueDuration;
@@ -349,7 +349,7 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now.
+     * Duration before now. (choose any one of value*, but only one)
      */
     public function getValueDateTime(): null|FHIRDateTime
     {
@@ -370,7 +370,7 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now.
+     * Duration before now. (choose any one of value*, but only one)
      */
     public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime): self
     {
@@ -395,7 +395,7 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now.
+     * Duration before now. (choose any one of value*, but only one)
      */
     public function getValuePeriod(): null|FHIRPeriod
     {
@@ -412,7 +412,7 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now.
+     * Duration before now. (choose any one of value*, but only one)
      */
     public function setValuePeriod(null|FHIRPeriod $valuePeriod): self
     {
@@ -434,7 +434,7 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now.
+     * Duration before now. (choose any one of value*, but only one)
      */
     public function getValueDuration(): null|FHIRDuration
     {
@@ -451,7 +451,7 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now.
+     * Duration before now. (choose any one of value*, but only one)
      */
     public function setValueDuration(null|FHIRDuration $valueDuration): self
     {
@@ -615,7 +615,7 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
             || isset($decoded->_path)
             || property_exists($decoded, self::FIELD_PATH)
             || property_exists($decoded, self::FIELD_PATH_EXT)) {
-            $v = $decoded->_path ?? new \stdClass();
+            $v = isset($decoded->_path) ? clone $decoded->_path : new \stdClass();
             $v->value = $decoded->path ?? null;
             $type->setPath(FHIRString::jsonUnserialize($v, $config));
         }
@@ -623,7 +623,7 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
             || isset($decoded->_searchParam)
             || property_exists($decoded, self::FIELD_SEARCH_PARAM)
             || property_exists($decoded, self::FIELD_SEARCH_PARAM_EXT)) {
-            $v = $decoded->_searchParam ?? new \stdClass();
+            $v = isset($decoded->_searchParam) ? clone $decoded->_searchParam : new \stdClass();
             $v->value = $decoded->searchParam ?? null;
             $type->setSearchParam(FHIRString::jsonUnserialize($v, $config));
         }
@@ -631,7 +631,7 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
             || isset($decoded->_valueDateTime)
             || property_exists($decoded, self::FIELD_VALUE_DATE_TIME)
             || property_exists($decoded, self::FIELD_VALUE_DATE_TIME_EXT)) {
-            $v = $decoded->_valueDateTime ?? new \stdClass();
+            $v = isset($decoded->_valueDateTime) ? clone $decoded->_valueDateTime : new \stdClass();
             $v->value = $decoded->valueDateTime ?? null;
             $type->setValueDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }

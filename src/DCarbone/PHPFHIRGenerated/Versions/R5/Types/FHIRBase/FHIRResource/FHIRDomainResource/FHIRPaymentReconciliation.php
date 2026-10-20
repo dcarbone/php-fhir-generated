@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationAllocation;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote;
@@ -182,19 +181,19 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_CREATED => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_DATE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_AMOUNT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1698,7 +1697,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -2173,7 +2172,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRFinancialResourceStatusCodes::jsonUnserialize($v, $config));
         }
@@ -2195,7 +2194,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
             || isset($decoded->_created)
             || property_exists($decoded, self::FIELD_CREATED)
             || property_exists($decoded, self::FIELD_CREATED_EXT)) {
-            $v = $decoded->_created ?? new \stdClass();
+            $v = isset($decoded->_created) ? clone $decoded->_created : new \stdClass();
             $v->value = $decoded->created ?? null;
             $type->setCreated(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -2238,7 +2237,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
             || isset($decoded->_outcome)
             || property_exists($decoded, self::FIELD_OUTCOME)
             || property_exists($decoded, self::FIELD_OUTCOME_EXT)) {
-            $v = $decoded->_outcome ?? new \stdClass();
+            $v = isset($decoded->_outcome) ? clone $decoded->_outcome : new \stdClass();
             $v->value = $decoded->outcome ?? null;
             $type->setOutcome(FHIRPaymentOutcome::jsonUnserialize($v, $config));
         }
@@ -2246,7 +2245,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
             || isset($decoded->_disposition)
             || property_exists($decoded, self::FIELD_DISPOSITION)
             || property_exists($decoded, self::FIELD_DISPOSITION_EXT)) {
-            $v = $decoded->_disposition ?? new \stdClass();
+            $v = isset($decoded->_disposition) ? clone $decoded->_disposition : new \stdClass();
             $v->value = $decoded->disposition ?? null;
             $type->setDisposition(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2254,7 +2253,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
             || isset($decoded->_date)
             || property_exists($decoded, self::FIELD_DATE)
             || property_exists($decoded, self::FIELD_DATE_EXT)) {
-            $v = $decoded->_date ?? new \stdClass();
+            $v = isset($decoded->_date) ? clone $decoded->_date : new \stdClass();
             $v->value = $decoded->date ?? null;
             $type->setDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -2276,7 +2275,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
             || isset($decoded->_cardBrand)
             || property_exists($decoded, self::FIELD_CARD_BRAND)
             || property_exists($decoded, self::FIELD_CARD_BRAND_EXT)) {
-            $v = $decoded->_cardBrand ?? new \stdClass();
+            $v = isset($decoded->_cardBrand) ? clone $decoded->_cardBrand : new \stdClass();
             $v->value = $decoded->cardBrand ?? null;
             $type->setCardBrand(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2284,7 +2283,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
             || isset($decoded->_accountNumber)
             || property_exists($decoded, self::FIELD_ACCOUNT_NUMBER)
             || property_exists($decoded, self::FIELD_ACCOUNT_NUMBER_EXT)) {
-            $v = $decoded->_accountNumber ?? new \stdClass();
+            $v = isset($decoded->_accountNumber) ? clone $decoded->_accountNumber : new \stdClass();
             $v->value = $decoded->accountNumber ?? null;
             $type->setAccountNumber(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2292,7 +2291,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
             || isset($decoded->_expirationDate)
             || property_exists($decoded, self::FIELD_EXPIRATION_DATE)
             || property_exists($decoded, self::FIELD_EXPIRATION_DATE_EXT)) {
-            $v = $decoded->_expirationDate ?? new \stdClass();
+            $v = isset($decoded->_expirationDate) ? clone $decoded->_expirationDate : new \stdClass();
             $v->value = $decoded->expirationDate ?? null;
             $type->setExpirationDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -2300,7 +2299,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
             || isset($decoded->_processor)
             || property_exists($decoded, self::FIELD_PROCESSOR)
             || property_exists($decoded, self::FIELD_PROCESSOR_EXT)) {
-            $v = $decoded->_processor ?? new \stdClass();
+            $v = isset($decoded->_processor) ? clone $decoded->_processor : new \stdClass();
             $v->value = $decoded->processor ?? null;
             $type->setProcessor(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2308,7 +2307,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
             || isset($decoded->_referenceNumber)
             || property_exists($decoded, self::FIELD_REFERENCE_NUMBER)
             || property_exists($decoded, self::FIELD_REFERENCE_NUMBER_EXT)) {
-            $v = $decoded->_referenceNumber ?? new \stdClass();
+            $v = isset($decoded->_referenceNumber) ? clone $decoded->_referenceNumber : new \stdClass();
             $v->value = $decoded->referenceNumber ?? null;
             $type->setReferenceNumber(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2316,7 +2315,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
             || isset($decoded->_authorization)
             || property_exists($decoded, self::FIELD_AUTHORIZATION)
             || property_exists($decoded, self::FIELD_AUTHORIZATION_EXT)) {
-            $v = $decoded->_authorization ?? new \stdClass();
+            $v = isset($decoded->_authorization) ? clone $decoded->_authorization : new \stdClass();
             $v->value = $decoded->authorization ?? null;
             $type->setAuthorization(FHIRString::jsonUnserialize($v, $config));
         }

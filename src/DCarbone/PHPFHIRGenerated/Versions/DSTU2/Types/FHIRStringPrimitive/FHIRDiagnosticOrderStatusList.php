@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -63,7 +63,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive;
  */
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueOneOfRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
@@ -83,20 +82,20 @@ class FHIRDiagnosticOrderStatusList extends FHIRStringPrimitive
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_VALUE => [
-            ValueOneOfRule::NAME => [
-                0 => 'proposed',
-                1 => 'draft',
-                2 => 'planned',
-                3 => 'requested',
-                4 => 'received',
-                5 => 'accepted',
-                6 => 'in-progress',
-                7 => 'review',
-                8 => 'completed',
-                9 => 'cancelled',
-                10 => 'suspended',
-                11 => 'rejected',
-                12 => 'failed',
+            'value_one_of' => [
+                'proposed',
+                'draft',
+                'planned',
+                'requested',
+                'received',
+                'accepted',
+                'in-progress',
+                'review',
+                'completed',
+                'cancelled',
+                'suspended',
+                'rejected',
+                'failed',
             ],
         ],
     ];

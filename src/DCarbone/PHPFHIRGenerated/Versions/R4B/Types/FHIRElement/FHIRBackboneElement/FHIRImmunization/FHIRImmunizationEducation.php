@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -523,7 +523,7 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
             || isset($decoded->_documentType)
             || property_exists($decoded, self::FIELD_DOCUMENT_TYPE)
             || property_exists($decoded, self::FIELD_DOCUMENT_TYPE_EXT)) {
-            $v = $decoded->_documentType ?? new \stdClass();
+            $v = isset($decoded->_documentType) ? clone $decoded->_documentType : new \stdClass();
             $v->value = $decoded->documentType ?? null;
             $type->setDocumentType(FHIRString::jsonUnserialize($v, $config));
         }
@@ -531,7 +531,7 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
             || isset($decoded->_reference)
             || property_exists($decoded, self::FIELD_REFERENCE)
             || property_exists($decoded, self::FIELD_REFERENCE_EXT)) {
-            $v = $decoded->_reference ?? new \stdClass();
+            $v = isset($decoded->_reference) ? clone $decoded->_reference : new \stdClass();
             $v->value = $decoded->reference ?? null;
             $type->setReference(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -539,7 +539,7 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
             || isset($decoded->_publicationDate)
             || property_exists($decoded, self::FIELD_PUBLICATION_DATE)
             || property_exists($decoded, self::FIELD_PUBLICATION_DATE_EXT)) {
-            $v = $decoded->_publicationDate ?? new \stdClass();
+            $v = isset($decoded->_publicationDate) ? clone $decoded->_publicationDate : new \stdClass();
             $v->value = $decoded->publicationDate ?? null;
             $type->setPublicationDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -547,7 +547,7 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
             || isset($decoded->_presentationDate)
             || property_exists($decoded, self::FIELD_PRESENTATION_DATE)
             || property_exists($decoded, self::FIELD_PRESENTATION_DATE_EXT)) {
-            $v = $decoded->_presentationDate ?? new \stdClass();
+            $v = isset($decoded->_presentationDate) ? clone $decoded->_presentationDate : new \stdClass();
             $v->value = $decoded->presentationDate ?? null;
             $type->setPresentationDate(FHIRDateTime::jsonUnserialize($v, $config));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -631,7 +631,7 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
             || isset($decoded->_startDate)
             || property_exists($decoded, self::FIELD_START_DATE)
             || property_exists($decoded, self::FIELD_START_DATE_EXT)) {
-            $v = $decoded->_startDate ?? new \stdClass();
+            $v = isset($decoded->_startDate) ? clone $decoded->_startDate : new \stdClass();
             $v->value = $decoded->startDate ?? null;
             $type->setStartDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -639,7 +639,7 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
             || isset($decoded->_endDate)
             || property_exists($decoded, self::FIELD_END_DATE)
             || property_exists($decoded, self::FIELD_END_DATE_EXT)) {
-            $v = $decoded->_endDate ?? new \stdClass();
+            $v = isset($decoded->_endDate) ? clone $decoded->_endDate : new \stdClass();
             $v->value = $decoded->endDate ?? null;
             $type->setEndDate(FHIRDateTime::jsonUnserialize($v, $config));
         }

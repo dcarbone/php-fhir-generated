@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryReport\FHIRInventoryReportInventoryListing;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode;
@@ -149,13 +148,13 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_COUNT_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_REPORTED_DATE_TIME => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -791,7 +790,7 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1022,7 +1021,7 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRInventoryReportStatus::jsonUnserialize($v, $config));
         }
@@ -1030,7 +1029,7 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
             || isset($decoded->_countType)
             || property_exists($decoded, self::FIELD_COUNT_TYPE)
             || property_exists($decoded, self::FIELD_COUNT_TYPE_EXT)) {
-            $v = $decoded->_countType ?? new \stdClass();
+            $v = isset($decoded->_countType) ? clone $decoded->_countType : new \stdClass();
             $v->value = $decoded->countType ?? null;
             $type->setCountType(FHIRInventoryCountType::jsonUnserialize($v, $config));
         }
@@ -1052,7 +1051,7 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
             || isset($decoded->_reportedDateTime)
             || property_exists($decoded, self::FIELD_REPORTED_DATE_TIME)
             || property_exists($decoded, self::FIELD_REPORTED_DATE_TIME_EXT)) {
-            $v = $decoded->_reportedDateTime ?? new \stdClass();
+            $v = isset($decoded->_reportedDateTime) ? clone $decoded->_reportedDateTime : new \stdClass();
             $v->value = $decoded->reportedDateTime ?? null;
             $type->setReportedDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }

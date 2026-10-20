@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRAuditEventActionList;
@@ -133,16 +132,16 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_RECORDED => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_AGENT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_SOURCE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -815,7 +814,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1068,7 +1067,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
             || isset($decoded->_action)
             || property_exists($decoded, self::FIELD_ACTION)
             || property_exists($decoded, self::FIELD_ACTION_EXT)) {
-            $v = $decoded->_action ?? new \stdClass();
+            $v = isset($decoded->_action) ? clone $decoded->_action : new \stdClass();
             $v->value = $decoded->action ?? null;
             $type->setAction(FHIRAuditEventAction::jsonUnserialize($v, $config));
         }
@@ -1076,7 +1075,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
             || isset($decoded->_recorded)
             || property_exists($decoded, self::FIELD_RECORDED)
             || property_exists($decoded, self::FIELD_RECORDED_EXT)) {
-            $v = $decoded->_recorded ?? new \stdClass();
+            $v = isset($decoded->_recorded) ? clone $decoded->_recorded : new \stdClass();
             $v->value = $decoded->recorded ?? null;
             $type->setRecorded(FHIRInstant::jsonUnserialize($v, $config));
         }
@@ -1084,7 +1083,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
             || isset($decoded->_outcome)
             || property_exists($decoded, self::FIELD_OUTCOME)
             || property_exists($decoded, self::FIELD_OUTCOME_EXT)) {
-            $v = $decoded->_outcome ?? new \stdClass();
+            $v = isset($decoded->_outcome) ? clone $decoded->_outcome : new \stdClass();
             $v->value = $decoded->outcome ?? null;
             $type->setOutcome(FHIRAuditEventOutcome::jsonUnserialize($v, $config));
         }
@@ -1092,7 +1091,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
             || isset($decoded->_outcomeDesc)
             || property_exists($decoded, self::FIELD_OUTCOME_DESC)
             || property_exists($decoded, self::FIELD_OUTCOME_DESC_EXT)) {
-            $v = $decoded->_outcomeDesc ?? new \stdClass();
+            $v = isset($decoded->_outcomeDesc) ? clone $decoded->_outcomeDesc : new \stdClass();
             $v->value = $decoded->outcomeDesc ?? null;
             $type->setOutcomeDesc(FHIRString::jsonUnserialize($v, $config));
         }

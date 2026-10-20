@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding;
@@ -121,7 +120,7 @@ class FHIRTestPlanTestData extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -155,7 +154,7 @@ class FHIRTestPlanTestData extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Pointer to a definition of test resources - narrative or structured e.g.
-     * synthetic data generation, etc.
+     * synthetic data generation, etc. (choose any one of source*, but only one)
      */
     #[FHIRString]
     protected FHIRString $sourceString;
@@ -165,7 +164,7 @@ class FHIRTestPlanTestData extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Pointer to a definition of test resources - narrative or structured e.g.
-     * synthetic data generation, etc.
+     * synthetic data generation, etc. (choose any one of source*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $sourceReference;
@@ -275,7 +274,7 @@ class FHIRTestPlanTestData extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Pointer to a definition of test resources - narrative or structured e.g.
-     * synthetic data generation, etc.
+     * synthetic data generation, etc. (choose any one of source*, but only one)
      */
     public function getSourceString(): null|FHIRString
     {
@@ -288,7 +287,7 @@ class FHIRTestPlanTestData extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Pointer to a definition of test resources - narrative or structured e.g.
-     * synthetic data generation, etc.
+     * synthetic data generation, etc. (choose any one of source*, but only one)
      */
     public function setSourceString(null|string|FHIRStringPrimitive|FHIRString $sourceString): self
     {
@@ -309,7 +308,7 @@ class FHIRTestPlanTestData extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Pointer to a definition of test resources - narrative or structured e.g.
-     * synthetic data generation, etc.
+     * synthetic data generation, etc. (choose any one of source*, but only one)
      */
     public function getSourceReference(): null|FHIRReference
     {
@@ -322,7 +321,7 @@ class FHIRTestPlanTestData extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Pointer to a definition of test resources - narrative or structured e.g.
-     * synthetic data generation, etc.
+     * synthetic data generation, etc. (choose any one of source*, but only one)
      */
     public function setSourceReference(null|FHIRReference $sourceReference): self
     {
@@ -469,7 +468,7 @@ class FHIRTestPlanTestData extends FHIRBackboneElement
             || isset($decoded->_sourceString)
             || property_exists($decoded, self::FIELD_SOURCE_STRING)
             || property_exists($decoded, self::FIELD_SOURCE_STRING_EXT)) {
-            $v = $decoded->_sourceString ?? new \stdClass();
+            $v = isset($decoded->_sourceString) ? clone $decoded->_sourceString : new \stdClass();
             $v->value = $decoded->sourceString ?? null;
             $type->setSourceString(FHIRString::jsonUnserialize($v, $config));
         }

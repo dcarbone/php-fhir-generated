@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept;
@@ -123,7 +122,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -151,7 +150,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Either a textual source of the classification or a reference to an online
-     * source.
+     * source. (choose any one of source*, but only one)
      */
     #[FHIRString]
     protected FHIRString $sourceString;
@@ -161,7 +160,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Either a textual source of the classification or a reference to an online
-     * source.
+     * source. (choose any one of source*, but only one)
      */
     #[FHIRUri]
     protected FHIRUri $sourceUri;
@@ -260,7 +259,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Either a textual source of the classification or a reference to an online
-     * source.
+     * source. (choose any one of source*, but only one)
      */
     public function getSourceString(): null|FHIRString
     {
@@ -273,7 +272,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Either a textual source of the classification or a reference to an online
-     * source.
+     * source. (choose any one of source*, but only one)
      */
     public function setSourceString(null|string|FHIRStringPrimitive|FHIRString $sourceString): self
     {
@@ -294,7 +293,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Either a textual source of the classification or a reference to an online
-     * source.
+     * source. (choose any one of source*, but only one)
      */
     public function getSourceUri(): null|FHIRUri
     {
@@ -307,7 +306,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Either a textual source of the classification or a reference to an online
-     * source.
+     * source. (choose any one of source*, but only one)
      */
     public function setSourceUri(null|string|FHIRUriPrimitive|FHIRUri $sourceUri): self
     {
@@ -529,7 +528,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
             || isset($decoded->_sourceString)
             || property_exists($decoded, self::FIELD_SOURCE_STRING)
             || property_exists($decoded, self::FIELD_SOURCE_STRING_EXT)) {
-            $v = $decoded->_sourceString ?? new \stdClass();
+            $v = isset($decoded->_sourceString) ? clone $decoded->_sourceString : new \stdClass();
             $v->value = $decoded->sourceString ?? null;
             $type->setSourceString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -537,7 +536,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
             || isset($decoded->_sourceUri)
             || property_exists($decoded, self::FIELD_SOURCE_URI)
             || property_exists($decoded, self::FIELD_SOURCE_URI_EXT)) {
-            $v = $decoded->_sourceUri ?? new \stdClass();
+            $v = isset($decoded->_sourceUri) ? clone $decoded->_sourceUri : new \stdClass();
             $v->value = $decoded->sourceUri ?? null;
             $type->setSourceUri(FHIRUri::jsonUnserialize($v, $config));
         }

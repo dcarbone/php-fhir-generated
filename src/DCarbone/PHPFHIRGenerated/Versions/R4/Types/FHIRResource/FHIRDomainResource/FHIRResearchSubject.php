@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRResearchSubjectStatusList;
@@ -123,13 +122,13 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_STUDY => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_INDIVIDUAL => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -612,7 +611,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -825,7 +824,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRResearchSubjectStatus::jsonUnserialize($v, $config));
         }
@@ -854,7 +853,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
             || isset($decoded->_assignedArm)
             || property_exists($decoded, self::FIELD_ASSIGNED_ARM)
             || property_exists($decoded, self::FIELD_ASSIGNED_ARM_EXT)) {
-            $v = $decoded->_assignedArm ?? new \stdClass();
+            $v = isset($decoded->_assignedArm) ? clone $decoded->_assignedArm : new \stdClass();
             $v->value = $decoded->assignedArm ?? null;
             $type->setAssignedArm(FHIRString::jsonUnserialize($v, $config));
         }
@@ -862,7 +861,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
             || isset($decoded->_actualArm)
             || property_exists($decoded, self::FIELD_ACTUAL_ARM)
             || property_exists($decoded, self::FIELD_ACTUAL_ARM_EXT)) {
-            $v = $decoded->_actualArm ?? new \stdClass();
+            $v = isset($decoded->_actualArm) ? clone $decoded->_actualArm : new \stdClass();
             $v->value = $decoded->actualArm ?? null;
             $type->setActualArm(FHIRString::jsonUnserialize($v, $config));
         }

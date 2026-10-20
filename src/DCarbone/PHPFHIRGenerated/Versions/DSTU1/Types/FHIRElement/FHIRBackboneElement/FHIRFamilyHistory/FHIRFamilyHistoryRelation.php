@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -63,8 +63,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDatePrimitive;
@@ -119,10 +117,10 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
-            ValuePatternMatchRule::NAME => '/^[a-z0-9\\-\\.]{1,36}$/',
+            'value_pattern_match' => '/^[a-z0-9\\-\\.]{1,36}$/',
         ],
         self::FIELD_RELATIONSHIP => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1040,7 +1038,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1062,7 +1060,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
             || isset($decoded->_bornDate)
             || property_exists($decoded, self::FIELD_BORN_DATE)
             || property_exists($decoded, self::FIELD_BORN_DATE_EXT)) {
-            $v = $decoded->_bornDate ?? new \stdClass();
+            $v = isset($decoded->_bornDate) ? clone $decoded->_bornDate : new \stdClass();
             $v->value = $decoded->bornDate ?? null;
             $type->setBornDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -1070,7 +1068,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
             || isset($decoded->_bornString)
             || property_exists($decoded, self::FIELD_BORN_STRING)
             || property_exists($decoded, self::FIELD_BORN_STRING_EXT)) {
-            $v = $decoded->_bornString ?? new \stdClass();
+            $v = isset($decoded->_bornString) ? clone $decoded->_bornString : new \stdClass();
             $v->value = $decoded->bornString ?? null;
             $type->setBornString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1078,7 +1076,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
             || isset($decoded->_deceasedBoolean)
             || property_exists($decoded, self::FIELD_DECEASED_BOOLEAN)
             || property_exists($decoded, self::FIELD_DECEASED_BOOLEAN_EXT)) {
-            $v = $decoded->_deceasedBoolean ?? new \stdClass();
+            $v = isset($decoded->_deceasedBoolean) ? clone $decoded->_deceasedBoolean : new \stdClass();
             $v->value = $decoded->deceasedBoolean ?? null;
             $type->setDeceasedBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1100,7 +1098,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
             || isset($decoded->_deceasedDate)
             || property_exists($decoded, self::FIELD_DECEASED_DATE)
             || property_exists($decoded, self::FIELD_DECEASED_DATE_EXT)) {
-            $v = $decoded->_deceasedDate ?? new \stdClass();
+            $v = isset($decoded->_deceasedDate) ? clone $decoded->_deceasedDate : new \stdClass();
             $v->value = $decoded->deceasedDate ?? null;
             $type->setDeceasedDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -1108,7 +1106,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
             || isset($decoded->_deceasedString)
             || property_exists($decoded, self::FIELD_DECEASED_STRING)
             || property_exists($decoded, self::FIELD_DECEASED_STRING_EXT)) {
-            $v = $decoded->_deceasedString ?? new \stdClass();
+            $v = isset($decoded->_deceasedString) ? clone $decoded->_deceasedString : new \stdClass();
             $v->value = $decoded->deceasedString ?? null;
             $type->setDeceasedString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1116,7 +1114,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
             || isset($decoded->_note)
             || property_exists($decoded, self::FIELD_NOTE)
             || property_exists($decoded, self::FIELD_NOTE_EXT)) {
-            $v = $decoded->_note ?? new \stdClass();
+            $v = isset($decoded->_note) ? clone $decoded->_note : new \stdClass();
             $v->value = $decoded->note ?? null;
             $type->setNote(FHIRString::jsonUnserialize($v, $config));
         }

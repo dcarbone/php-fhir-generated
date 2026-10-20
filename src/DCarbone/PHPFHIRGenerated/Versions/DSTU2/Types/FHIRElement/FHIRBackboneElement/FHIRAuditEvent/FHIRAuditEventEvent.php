@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,8 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAuditEventAction;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAuditEventOutcome;
@@ -116,13 +114,13 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
-            ValuePatternMatchRule::NAME => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
+            'value_pattern_match' => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
         ],
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_DATE_TIME => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -746,7 +744,7 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
             || isset($decoded->_action)
             || property_exists($decoded, self::FIELD_ACTION)
             || property_exists($decoded, self::FIELD_ACTION_EXT)) {
-            $v = $decoded->_action ?? new \stdClass();
+            $v = isset($decoded->_action) ? clone $decoded->_action : new \stdClass();
             $v->value = $decoded->action ?? null;
             $type->setAction(FHIRAuditEventAction::jsonUnserialize($v, $config));
         }
@@ -754,7 +752,7 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
             || isset($decoded->_dateTime)
             || property_exists($decoded, self::FIELD_DATE_TIME)
             || property_exists($decoded, self::FIELD_DATE_TIME_EXT)) {
-            $v = $decoded->_dateTime ?? new \stdClass();
+            $v = isset($decoded->_dateTime) ? clone $decoded->_dateTime : new \stdClass();
             $v->value = $decoded->dateTime ?? null;
             $type->setDateTime(FHIRInstant::jsonUnserialize($v, $config));
         }
@@ -762,7 +760,7 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
             || isset($decoded->_outcome)
             || property_exists($decoded, self::FIELD_OUTCOME)
             || property_exists($decoded, self::FIELD_OUTCOME_EXT)) {
-            $v = $decoded->_outcome ?? new \stdClass();
+            $v = isset($decoded->_outcome) ? clone $decoded->_outcome : new \stdClass();
             $v->value = $decoded->outcome ?? null;
             $type->setOutcome(FHIRAuditEventOutcome::jsonUnserialize($v, $config));
         }
@@ -770,7 +768,7 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
             || isset($decoded->_outcomeDesc)
             || property_exists($decoded, self::FIELD_OUTCOME_DESC)
             || property_exists($decoded, self::FIELD_OUTCOME_DESC_EXT)) {
-            $v = $decoded->_outcomeDesc ?? new \stdClass();
+            $v = isset($decoded->_outcomeDesc) ? clone $decoded->_outcomeDesc : new \stdClass();
             $v->value = $decoded->outcomeDesc ?? null;
             $type->setOutcomeDesc(FHIRString::jsonUnserialize($v, $config));
         }

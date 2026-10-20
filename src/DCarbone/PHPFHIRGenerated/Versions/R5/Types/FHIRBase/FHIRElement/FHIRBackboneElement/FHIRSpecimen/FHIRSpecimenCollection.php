@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -158,7 +158,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time when specimen was collected from subject - the physiologically relevant
-     * time.
+     * time. (choose any one of collected*, but only one)
      */
     #[FHIRDateTime]
     protected FHIRDateTime $collectedDateTime;
@@ -168,7 +168,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time when specimen was collected from subject - the physiologically relevant
-     * time.
+     * time. (choose any one of collected*, but only one)
      */
     #[FHIRPeriod]
     protected FHIRPeriod $collectedPeriod;
@@ -242,7 +242,8 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Abstinence or reduction from some or all food, drink, or both, for a period of
-     * time prior to sample collection.
+     * time prior to sample collection. (choose any one of fastingStatus*, but only
+     * one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $fastingStatusCodeableConcept;
@@ -252,7 +253,8 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Abstinence or reduction from some or all food, drink, or both, for a period of
-     * time prior to sample collection.
+     * time prior to sample collection. (choose any one of fastingStatus*, but only
+     * one)
      */
     #[FHIRDuration]
     protected FHIRDuration $fastingStatusDuration;
@@ -365,7 +367,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time when specimen was collected from subject - the physiologically relevant
-     * time.
+     * time. (choose any one of collected*, but only one)
      */
     public function getCollectedDateTime(): null|FHIRDateTime
     {
@@ -382,7 +384,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time when specimen was collected from subject - the physiologically relevant
-     * time.
+     * time. (choose any one of collected*, but only one)
      */
     public function setCollectedDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $collectedDateTime): self
     {
@@ -403,7 +405,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time when specimen was collected from subject - the physiologically relevant
-     * time.
+     * time. (choose any one of collected*, but only one)
      */
     public function getCollectedPeriod(): null|FHIRPeriod
     {
@@ -416,7 +418,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time when specimen was collected from subject - the physiologically relevant
-     * time.
+     * time. (choose any one of collected*, but only one)
      */
     public function setCollectedPeriod(null|FHIRPeriod $collectedPeriod): self
     {
@@ -627,7 +629,8 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Abstinence or reduction from some or all food, drink, or both, for a period of
-     * time prior to sample collection.
+     * time prior to sample collection. (choose any one of fastingStatus*, but only
+     * one)
      */
     public function getFastingStatusCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -641,7 +644,8 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Abstinence or reduction from some or all food, drink, or both, for a period of
-     * time prior to sample collection.
+     * time prior to sample collection. (choose any one of fastingStatus*, but only
+     * one)
      */
     public function setFastingStatusCodeableConcept(null|FHIRCodeableConcept $fastingStatusCodeableConcept): self
     {
@@ -659,7 +663,8 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Abstinence or reduction from some or all food, drink, or both, for a period of
-     * time prior to sample collection.
+     * time prior to sample collection. (choose any one of fastingStatus*, but only
+     * one)
      */
     public function getFastingStatusDuration(): null|FHIRDuration
     {
@@ -672,7 +677,8 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Abstinence or reduction from some or all food, drink, or both, for a period of
-     * time prior to sample collection.
+     * time prior to sample collection. (choose any one of fastingStatus*, but only
+     * one)
      */
     public function setFastingStatusDuration(null|FHIRDuration $fastingStatusDuration): self
     {
@@ -861,7 +867,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
             || isset($decoded->_collectedDateTime)
             || property_exists($decoded, self::FIELD_COLLECTED_DATE_TIME)
             || property_exists($decoded, self::FIELD_COLLECTED_DATE_TIME_EXT)) {
-            $v = $decoded->_collectedDateTime ?? new \stdClass();
+            $v = isset($decoded->_collectedDateTime) ? clone $decoded->_collectedDateTime : new \stdClass();
             $v->value = $decoded->collectedDateTime ?? null;
             $type->setCollectedDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }

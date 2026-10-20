@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -608,7 +608,7 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
             || isset($decoded->_number)
             || property_exists($decoded, self::FIELD_NUMBER)
             || property_exists($decoded, self::FIELD_NUMBER_EXT)) {
-            $v = $decoded->_number ?? new \stdClass();
+            $v = isset($decoded->_number) ? clone $decoded->_number : new \stdClass();
             $v->value = $decoded->number ?? null;
             $type->setNumber(FHIRString::jsonUnserialize($v, $config));
         }
@@ -623,7 +623,7 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
             || isset($decoded->_workflow)
             || property_exists($decoded, self::FIELD_WORKFLOW)
             || property_exists($decoded, self::FIELD_WORKFLOW_EXT)) {
-            $v = $decoded->_workflow ?? new \stdClass();
+            $v = isset($decoded->_workflow) ? clone $decoded->_workflow : new \stdClass();
             $v->value = $decoded->workflow ?? null;
             $type->setWorkflow(FHIRCanonical::jsonUnserialize($v, $config));
         }
@@ -649,7 +649,7 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
             || isset($decoded->_pause)
             || property_exists($decoded, self::FIELD_PAUSE)
             || property_exists($decoded, self::FIELD_PAUSE_EXT)) {
-            $v = $decoded->_pause ?? new \stdClass();
+            $v = isset($decoded->_pause) ? clone $decoded->_pause : new \stdClass();
             $v->value = $decoded->pause ?? null;
             $type->setPause(FHIRBoolean::jsonUnserialize($v, $config));
         }

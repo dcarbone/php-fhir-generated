@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDecimalPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement;
@@ -132,7 +131,7 @@ class FHIRTimingRepeat extends FHIRElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
-            ValuePatternMatchRule::NAME => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
+            'value_pattern_match' => '/^[A-Za-z0-9\\-\\.]{1,64}$/',
         ],
     ];
 
@@ -1085,7 +1084,7 @@ class FHIRTimingRepeat extends FHIRElement
             || isset($decoded->_count)
             || property_exists($decoded, self::FIELD_COUNT)
             || property_exists($decoded, self::FIELD_COUNT_EXT)) {
-            $v = $decoded->_count ?? new \stdClass();
+            $v = isset($decoded->_count) ? clone $decoded->_count : new \stdClass();
             $v->value = $decoded->count ?? null;
             $type->setCount(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -1093,7 +1092,7 @@ class FHIRTimingRepeat extends FHIRElement
             || isset($decoded->_duration)
             || property_exists($decoded, self::FIELD_DURATION)
             || property_exists($decoded, self::FIELD_DURATION_EXT)) {
-            $v = $decoded->_duration ?? new \stdClass();
+            $v = isset($decoded->_duration) ? clone $decoded->_duration : new \stdClass();
             $v->value = $decoded->duration ?? null;
             $type->setDuration(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -1101,7 +1100,7 @@ class FHIRTimingRepeat extends FHIRElement
             || isset($decoded->_durationMax)
             || property_exists($decoded, self::FIELD_DURATION_MAX)
             || property_exists($decoded, self::FIELD_DURATION_MAX_EXT)) {
-            $v = $decoded->_durationMax ?? new \stdClass();
+            $v = isset($decoded->_durationMax) ? clone $decoded->_durationMax : new \stdClass();
             $v->value = $decoded->durationMax ?? null;
             $type->setDurationMax(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -1109,7 +1108,7 @@ class FHIRTimingRepeat extends FHIRElement
             || isset($decoded->_durationUnits)
             || property_exists($decoded, self::FIELD_DURATION_UNITS)
             || property_exists($decoded, self::FIELD_DURATION_UNITS_EXT)) {
-            $v = $decoded->_durationUnits ?? new \stdClass();
+            $v = isset($decoded->_durationUnits) ? clone $decoded->_durationUnits : new \stdClass();
             $v->value = $decoded->durationUnits ?? null;
             $type->setDurationUnits(FHIRUnitsOfTime::jsonUnserialize($v, $config));
         }
@@ -1117,7 +1116,7 @@ class FHIRTimingRepeat extends FHIRElement
             || isset($decoded->_frequency)
             || property_exists($decoded, self::FIELD_FREQUENCY)
             || property_exists($decoded, self::FIELD_FREQUENCY_EXT)) {
-            $v = $decoded->_frequency ?? new \stdClass();
+            $v = isset($decoded->_frequency) ? clone $decoded->_frequency : new \stdClass();
             $v->value = $decoded->frequency ?? null;
             $type->setFrequency(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -1125,7 +1124,7 @@ class FHIRTimingRepeat extends FHIRElement
             || isset($decoded->_frequencyMax)
             || property_exists($decoded, self::FIELD_FREQUENCY_MAX)
             || property_exists($decoded, self::FIELD_FREQUENCY_MAX_EXT)) {
-            $v = $decoded->_frequencyMax ?? new \stdClass();
+            $v = isset($decoded->_frequencyMax) ? clone $decoded->_frequencyMax : new \stdClass();
             $v->value = $decoded->frequencyMax ?? null;
             $type->setFrequencyMax(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -1133,7 +1132,7 @@ class FHIRTimingRepeat extends FHIRElement
             || isset($decoded->_period)
             || property_exists($decoded, self::FIELD_PERIOD)
             || property_exists($decoded, self::FIELD_PERIOD_EXT)) {
-            $v = $decoded->_period ?? new \stdClass();
+            $v = isset($decoded->_period) ? clone $decoded->_period : new \stdClass();
             $v->value = $decoded->period ?? null;
             $type->setPeriod(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -1141,7 +1140,7 @@ class FHIRTimingRepeat extends FHIRElement
             || isset($decoded->_periodMax)
             || property_exists($decoded, self::FIELD_PERIOD_MAX)
             || property_exists($decoded, self::FIELD_PERIOD_MAX_EXT)) {
-            $v = $decoded->_periodMax ?? new \stdClass();
+            $v = isset($decoded->_periodMax) ? clone $decoded->_periodMax : new \stdClass();
             $v->value = $decoded->periodMax ?? null;
             $type->setPeriodMax(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -1149,7 +1148,7 @@ class FHIRTimingRepeat extends FHIRElement
             || isset($decoded->_periodUnits)
             || property_exists($decoded, self::FIELD_PERIOD_UNITS)
             || property_exists($decoded, self::FIELD_PERIOD_UNITS_EXT)) {
-            $v = $decoded->_periodUnits ?? new \stdClass();
+            $v = isset($decoded->_periodUnits) ? clone $decoded->_periodUnits : new \stdClass();
             $v->value = $decoded->periodUnits ?? null;
             $type->setPeriodUnits(FHIRUnitsOfTime::jsonUnserialize($v, $config));
         }
@@ -1157,7 +1156,7 @@ class FHIRTimingRepeat extends FHIRElement
             || isset($decoded->_when)
             || property_exists($decoded, self::FIELD_WHEN)
             || property_exists($decoded, self::FIELD_WHEN_EXT)) {
-            $v = $decoded->_when ?? new \stdClass();
+            $v = isset($decoded->_when) ? clone $decoded->_when : new \stdClass();
             $v->value = $decoded->when ?? null;
             $type->setWhen(FHIREventTiming::jsonUnserialize($v, $config));
         }

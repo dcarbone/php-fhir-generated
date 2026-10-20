@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -518,7 +518,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -693,7 +693,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
             || isset($decoded->_numberOfSubunits)
             || property_exists($decoded, self::FIELD_NUMBER_OF_SUBUNITS)
             || property_exists($decoded, self::FIELD_NUMBER_OF_SUBUNITS_EXT)) {
-            $v = $decoded->_numberOfSubunits ?? new \stdClass();
+            $v = isset($decoded->_numberOfSubunits) ? clone $decoded->_numberOfSubunits : new \stdClass();
             $v->value = $decoded->numberOfSubunits ?? null;
             $type->setNumberOfSubunits(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -701,7 +701,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
             || isset($decoded->_areaOfHybridisation)
             || property_exists($decoded, self::FIELD_AREA_OF_HYBRIDISATION)
             || property_exists($decoded, self::FIELD_AREA_OF_HYBRIDISATION_EXT)) {
-            $v = $decoded->_areaOfHybridisation ?? new \stdClass();
+            $v = isset($decoded->_areaOfHybridisation) ? clone $decoded->_areaOfHybridisation : new \stdClass();
             $v->value = $decoded->areaOfHybridisation ?? null;
             $type->setAreaOfHybridisation(FHIRString::jsonUnserialize($v, $config));
         }

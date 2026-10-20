@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -510,7 +510,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addDaysOfWeek(FHIRDaysOfWeek::jsonUnserialize($v, $config));
             }
@@ -519,7 +519,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
             || isset($decoded->_allDay)
             || property_exists($decoded, self::FIELD_ALL_DAY)
             || property_exists($decoded, self::FIELD_ALL_DAY_EXT)) {
-            $v = $decoded->_allDay ?? new \stdClass();
+            $v = isset($decoded->_allDay) ? clone $decoded->_allDay : new \stdClass();
             $v->value = $decoded->allDay ?? null;
             $type->setAllDay(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -527,7 +527,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
             || isset($decoded->_availableStartTime)
             || property_exists($decoded, self::FIELD_AVAILABLE_START_TIME)
             || property_exists($decoded, self::FIELD_AVAILABLE_START_TIME_EXT)) {
-            $v = $decoded->_availableStartTime ?? new \stdClass();
+            $v = isset($decoded->_availableStartTime) ? clone $decoded->_availableStartTime : new \stdClass();
             $v->value = $decoded->availableStartTime ?? null;
             $type->setAvailableStartTime(FHIRTime::jsonUnserialize($v, $config));
         }
@@ -535,7 +535,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
             || isset($decoded->_availableEndTime)
             || property_exists($decoded, self::FIELD_AVAILABLE_END_TIME)
             || property_exists($decoded, self::FIELD_AVAILABLE_END_TIME_EXT)) {
-            $v = $decoded->_availableEndTime ?? new \stdClass();
+            $v = isset($decoded->_availableEndTime) ? clone $decoded->_availableEndTime : new \stdClass();
             $v->value = $decoded->availableEndTime ?? null;
             $type->setAvailableEndTime(FHIRTime::jsonUnserialize($v, $config));
         }

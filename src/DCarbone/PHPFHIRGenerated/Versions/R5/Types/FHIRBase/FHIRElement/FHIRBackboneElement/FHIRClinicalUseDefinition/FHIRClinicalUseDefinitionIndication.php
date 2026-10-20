@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -186,7 +186,7 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      * Timing or duration information, that may be associated with use with the
      * indicated condition e.g. Adult patients suffering from myocardial infarction
      * (from a few days until less than 35 days), ischaemic stroke (from 7 days until
-     * less than 6 months).
+     * less than 6 months). (choose any one of duration*, but only one)
      */
     #[FHIRRange]
     protected FHIRRange $durationRange;
@@ -198,7 +198,7 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      * Timing or duration information, that may be associated with use with the
      * indicated condition e.g. Adult patients suffering from myocardial infarction
      * (from a few days until less than 35 days), ischaemic stroke (from 7 days until
-     * less than 6 months).
+     * less than 6 months). (choose any one of duration*, but only one)
      */
     #[FHIRString]
     protected FHIRString $durationString;
@@ -466,7 +466,7 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      * Timing or duration information, that may be associated with use with the
      * indicated condition e.g. Adult patients suffering from myocardial infarction
      * (from a few days until less than 35 days), ischaemic stroke (from 7 days until
-     * less than 6 months).
+     * less than 6 months). (choose any one of duration*, but only one)
      */
     public function getDurationRange(): null|FHIRRange
     {
@@ -481,7 +481,7 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      * Timing or duration information, that may be associated with use with the
      * indicated condition e.g. Adult patients suffering from myocardial infarction
      * (from a few days until less than 35 days), ischaemic stroke (from 7 days until
-     * less than 6 months).
+     * less than 6 months). (choose any one of duration*, but only one)
      */
     public function setDurationRange(null|FHIRRange $durationRange): self
     {
@@ -501,7 +501,7 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      * Timing or duration information, that may be associated with use with the
      * indicated condition e.g. Adult patients suffering from myocardial infarction
      * (from a few days until less than 35 days), ischaemic stroke (from 7 days until
-     * less than 6 months).
+     * less than 6 months). (choose any one of duration*, but only one)
      */
     public function getDurationString(): null|FHIRString
     {
@@ -516,7 +516,7 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      * Timing or duration information, that may be associated with use with the
      * indicated condition e.g. Adult patients suffering from myocardial infarction
      * (from a few days until less than 35 days), ischaemic stroke (from 7 days until
-     * less than 6 months).
+     * less than 6 months). (choose any one of duration*, but only one)
      */
     public function setDurationString(null|string|FHIRStringPrimitive|FHIRString $durationString): self
     {
@@ -886,7 +886,7 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
             || isset($decoded->_durationString)
             || property_exists($decoded, self::FIELD_DURATION_STRING)
             || property_exists($decoded, self::FIELD_DURATION_STRING_EXT)) {
-            $v = $decoded->_durationString ?? new \stdClass();
+            $v = isset($decoded->_durationString) ? clone $decoded->_durationString : new \stdClass();
             $v->value = $decoded->durationString ?? null;
             $type->setDurationString(FHIRString::jsonUnserialize($v, $config));
         }

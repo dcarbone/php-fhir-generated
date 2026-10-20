@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -481,7 +481,7 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
             || isset($decoded->_conversionFactor)
             || property_exists($decoded, self::FIELD_CONVERSION_FACTOR)
             || property_exists($decoded, self::FIELD_CONVERSION_FACTOR_EXT)) {
-            $v = $decoded->_conversionFactor ?? new \stdClass();
+            $v = isset($decoded->_conversionFactor) ? clone $decoded->_conversionFactor : new \stdClass();
             $v->value = $decoded->conversionFactor ?? null;
             $type->setConversionFactor(FHIRDecimal::jsonUnserialize($v, $config));
         }
@@ -489,7 +489,7 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
             || isset($decoded->_decimalPrecision)
             || property_exists($decoded, self::FIELD_DECIMAL_PRECISION)
             || property_exists($decoded, self::FIELD_DECIMAL_PRECISION_EXT)) {
-            $v = $decoded->_decimalPrecision ?? new \stdClass();
+            $v = isset($decoded->_decimalPrecision) ? clone $decoded->_decimalPrecision : new \stdClass();
             $v->value = $decoded->decimalPrecision ?? null;
             $type->setDecimalPrecision(FHIRInteger::jsonUnserialize($v, $config));
         }

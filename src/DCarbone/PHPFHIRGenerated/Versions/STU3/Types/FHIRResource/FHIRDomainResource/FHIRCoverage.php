@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -1088,7 +1088,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1400,7 +1400,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRFinancialResourceStatusCodes::jsonUnserialize($v, $config));
         }
@@ -1429,7 +1429,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_subscriberId)
             || property_exists($decoded, self::FIELD_SUBSCRIBER_ID)
             || property_exists($decoded, self::FIELD_SUBSCRIBER_ID_EXT)) {
-            $v = $decoded->_subscriberId ?? new \stdClass();
+            $v = isset($decoded->_subscriberId) ? clone $decoded->_subscriberId : new \stdClass();
             $v->value = $decoded->subscriberId ?? null;
             $type->setSubscriberId(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1476,7 +1476,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_dependent)
             || property_exists($decoded, self::FIELD_DEPENDENT)
             || property_exists($decoded, self::FIELD_DEPENDENT_EXT)) {
-            $v = $decoded->_dependent ?? new \stdClass();
+            $v = isset($decoded->_dependent) ? clone $decoded->_dependent : new \stdClass();
             $v->value = $decoded->dependent ?? null;
             $type->setDependent(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1484,7 +1484,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_sequence)
             || property_exists($decoded, self::FIELD_SEQUENCE)
             || property_exists($decoded, self::FIELD_SEQUENCE_EXT)) {
-            $v = $decoded->_sequence ?? new \stdClass();
+            $v = isset($decoded->_sequence) ? clone $decoded->_sequence : new \stdClass();
             $v->value = $decoded->sequence ?? null;
             $type->setSequence(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1492,7 +1492,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_order)
             || property_exists($decoded, self::FIELD_ORDER)
             || property_exists($decoded, self::FIELD_ORDER_EXT)) {
-            $v = $decoded->_order ?? new \stdClass();
+            $v = isset($decoded->_order) ? clone $decoded->_order : new \stdClass();
             $v->value = $decoded->order ?? null;
             $type->setOrder(FHIRPositiveInt::jsonUnserialize($v, $config));
         }
@@ -1500,7 +1500,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_network)
             || property_exists($decoded, self::FIELD_NETWORK)
             || property_exists($decoded, self::FIELD_NETWORK_EXT)) {
-            $v = $decoded->_network ?? new \stdClass();
+            $v = isset($decoded->_network) ? clone $decoded->_network : new \stdClass();
             $v->value = $decoded->network ?? null;
             $type->setNetwork(FHIRString::jsonUnserialize($v, $config));
         }

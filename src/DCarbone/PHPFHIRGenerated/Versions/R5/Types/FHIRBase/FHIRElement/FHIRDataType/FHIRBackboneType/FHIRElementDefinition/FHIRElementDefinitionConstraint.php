@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical;
@@ -140,13 +139,13 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneType
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_KEY => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_SEVERITY => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_HUMAN => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -759,7 +758,7 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneType
             || isset($decoded->_key)
             || property_exists($decoded, self::FIELD_KEY)
             || property_exists($decoded, self::FIELD_KEY_EXT)) {
-            $v = $decoded->_key ?? new \stdClass();
+            $v = isset($decoded->_key) ? clone $decoded->_key : new \stdClass();
             $v->value = $decoded->key ?? null;
             $type->setKey(FHIRId::jsonUnserialize($v, $config));
         }
@@ -767,7 +766,7 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneType
             || isset($decoded->_requirements)
             || property_exists($decoded, self::FIELD_REQUIREMENTS)
             || property_exists($decoded, self::FIELD_REQUIREMENTS_EXT)) {
-            $v = $decoded->_requirements ?? new \stdClass();
+            $v = isset($decoded->_requirements) ? clone $decoded->_requirements : new \stdClass();
             $v->value = $decoded->requirements ?? null;
             $type->setRequirements(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -775,7 +774,7 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneType
             || isset($decoded->_severity)
             || property_exists($decoded, self::FIELD_SEVERITY)
             || property_exists($decoded, self::FIELD_SEVERITY_EXT)) {
-            $v = $decoded->_severity ?? new \stdClass();
+            $v = isset($decoded->_severity) ? clone $decoded->_severity : new \stdClass();
             $v->value = $decoded->severity ?? null;
             $type->setSeverity(FHIRConstraintSeverity::jsonUnserialize($v, $config));
         }
@@ -783,7 +782,7 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneType
             || isset($decoded->_suppress)
             || property_exists($decoded, self::FIELD_SUPPRESS)
             || property_exists($decoded, self::FIELD_SUPPRESS_EXT)) {
-            $v = $decoded->_suppress ?? new \stdClass();
+            $v = isset($decoded->_suppress) ? clone $decoded->_suppress : new \stdClass();
             $v->value = $decoded->suppress ?? null;
             $type->setSuppress(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -791,7 +790,7 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneType
             || isset($decoded->_human)
             || property_exists($decoded, self::FIELD_HUMAN)
             || property_exists($decoded, self::FIELD_HUMAN_EXT)) {
-            $v = $decoded->_human ?? new \stdClass();
+            $v = isset($decoded->_human) ? clone $decoded->_human : new \stdClass();
             $v->value = $decoded->human ?? null;
             $type->setHuman(FHIRString::jsonUnserialize($v, $config));
         }
@@ -799,7 +798,7 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneType
             || isset($decoded->_expression)
             || property_exists($decoded, self::FIELD_EXPRESSION)
             || property_exists($decoded, self::FIELD_EXPRESSION_EXT)) {
-            $v = $decoded->_expression ?? new \stdClass();
+            $v = isset($decoded->_expression) ? clone $decoded->_expression : new \stdClass();
             $v->value = $decoded->expression ?? null;
             $type->setExpression(FHIRString::jsonUnserialize($v, $config));
         }
@@ -807,7 +806,7 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneType
             || isset($decoded->_source)
             || property_exists($decoded, self::FIELD_SOURCE)
             || property_exists($decoded, self::FIELD_SOURCE_EXT)) {
-            $v = $decoded->_source ?? new \stdClass();
+            $v = isset($decoded->_source) ? clone $decoded->_source : new \stdClass();
             $v->value = $decoded->source ?? null;
             $type->setSource(FHIRCanonical::jsonUnserialize($v, $config));
         }

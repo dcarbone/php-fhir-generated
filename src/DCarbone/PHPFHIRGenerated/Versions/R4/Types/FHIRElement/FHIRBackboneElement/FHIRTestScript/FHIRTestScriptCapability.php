@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive;
@@ -117,13 +116,13 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_REQUIRED => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_VALIDATED => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_CAPABILITIES => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -770,7 +769,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
             || isset($decoded->_required)
             || property_exists($decoded, self::FIELD_REQUIRED)
             || property_exists($decoded, self::FIELD_REQUIRED_EXT)) {
-            $v = $decoded->_required ?? new \stdClass();
+            $v = isset($decoded->_required) ? clone $decoded->_required : new \stdClass();
             $v->value = $decoded->required ?? null;
             $type->setRequired(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -778,7 +777,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
             || isset($decoded->_validated)
             || property_exists($decoded, self::FIELD_VALIDATED)
             || property_exists($decoded, self::FIELD_VALIDATED_EXT)) {
-            $v = $decoded->_validated ?? new \stdClass();
+            $v = isset($decoded->_validated) ? clone $decoded->_validated : new \stdClass();
             $v->value = $decoded->validated ?? null;
             $type->setValidated(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -786,7 +785,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }
@@ -802,7 +801,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addOrigin(FHIRInteger::jsonUnserialize($v, $config));
             }
@@ -811,7 +810,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
             || isset($decoded->_destination)
             || property_exists($decoded, self::FIELD_DESTINATION)
             || property_exists($decoded, self::FIELD_DESTINATION_EXT)) {
-            $v = $decoded->_destination ?? new \stdClass();
+            $v = isset($decoded->_destination) ? clone $decoded->_destination : new \stdClass();
             $v->value = $decoded->destination ?? null;
             $type->setDestination(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -827,7 +826,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addLink(FHIRUri::jsonUnserialize($v, $config));
             }
@@ -836,7 +835,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
             || isset($decoded->_capabilities)
             || property_exists($decoded, self::FIELD_CAPABILITIES)
             || property_exists($decoded, self::FIELD_CAPABILITIES_EXT)) {
-            $v = $decoded->_capabilities ?? new \stdClass();
+            $v = isset($decoded->_capabilities) ? clone $decoded->_capabilities : new \stdClass();
             $v->value = $decoded->capabilities ?? null;
             $type->setCapabilities(FHIRCanonical::jsonUnserialize($v, $config));
         }

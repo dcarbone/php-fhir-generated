@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -63,8 +63,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension;
@@ -104,10 +102,10 @@ class FHIRProfileMapping extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_ID => [
-            ValuePatternMatchRule::NAME => '/^[a-z0-9\\-\\.]{1,36}$/',
+            'value_pattern_match' => '/^[a-z0-9\\-\\.]{1,36}$/',
         ],
         self::FIELD_IDENTITY => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -489,7 +487,7 @@ class FHIRProfileMapping extends FHIRBackboneElement
             || isset($decoded->_identity)
             || property_exists($decoded, self::FIELD_IDENTITY)
             || property_exists($decoded, self::FIELD_IDENTITY_EXT)) {
-            $v = $decoded->_identity ?? new \stdClass();
+            $v = isset($decoded->_identity) ? clone $decoded->_identity : new \stdClass();
             $v->value = $decoded->identity ?? null;
             $type->setIdentity(FHIRId::jsonUnserialize($v, $config));
         }
@@ -497,7 +495,7 @@ class FHIRProfileMapping extends FHIRBackboneElement
             || isset($decoded->_uri)
             || property_exists($decoded, self::FIELD_URI)
             || property_exists($decoded, self::FIELD_URI_EXT)) {
-            $v = $decoded->_uri ?? new \stdClass();
+            $v = isset($decoded->_uri) ? clone $decoded->_uri : new \stdClass();
             $v->value = $decoded->uri ?? null;
             $type->setUri(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -505,7 +503,7 @@ class FHIRProfileMapping extends FHIRBackboneElement
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -513,7 +511,7 @@ class FHIRProfileMapping extends FHIRBackboneElement
             || isset($decoded->_comments)
             || property_exists($decoded, self::FIELD_COMMENTS)
             || property_exists($decoded, self::FIELD_COMMENTS_EXT)) {
-            $v = $decoded->_comments ?? new \stdClass();
+            $v = isset($decoded->_comments) ? clone $decoded->_comments : new \stdClass();
             $v->value = $decoded->comments ?? null;
             $type->setComments(FHIRString::jsonUnserialize($v, $config));
         }

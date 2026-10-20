@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -1705,7 +1705,7 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
             || isset($decoded->_instantiatesCanonical)
             || property_exists($decoded, self::FIELD_INSTANTIATES_CANONICAL)
             || property_exists($decoded, self::FIELD_INSTANTIATES_CANONICAL_EXT)) {
-            $v = $decoded->_instantiatesCanonical ?? new \stdClass();
+            $v = isset($decoded->_instantiatesCanonical) ? clone $decoded->_instantiatesCanonical : new \stdClass();
             $v->value = $decoded->instantiatesCanonical ?? null;
             $type->setInstantiatesCanonical(FHIRCanonical::jsonUnserialize($v, $config));
         }
@@ -1713,7 +1713,7 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
             || isset($decoded->_instantiatesUri)
             || property_exists($decoded, self::FIELD_INSTANTIATES_URI)
             || property_exists($decoded, self::FIELD_INSTANTIATES_URI_EXT)) {
-            $v = $decoded->_instantiatesUri ?? new \stdClass();
+            $v = isset($decoded->_instantiatesUri) ? clone $decoded->_instantiatesUri : new \stdClass();
             $v->value = $decoded->instantiatesUri ?? null;
             $type->setInstantiatesUri(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -1721,7 +1721,7 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
             || isset($decoded->_title)
             || property_exists($decoded, self::FIELD_TITLE)
             || property_exists($decoded, self::FIELD_TITLE_EXT)) {
-            $v = $decoded->_title ?? new \stdClass();
+            $v = isset($decoded->_title) ? clone $decoded->_title : new \stdClass();
             $v->value = $decoded->title ?? null;
             $type->setTitle(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1751,7 +1751,7 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
             || isset($decoded->_date)
             || property_exists($decoded, self::FIELD_DATE)
             || property_exists($decoded, self::FIELD_DATE_EXT)) {
-            $v = $decoded->_date ?? new \stdClass();
+            $v = isset($decoded->_date) ? clone $decoded->_date : new \stdClass();
             $v->value = $decoded->date ?? null;
             $type->setDate(FHIRDateTime::jsonUnserialize($v, $config));
         }

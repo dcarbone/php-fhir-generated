@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -175,7 +175,8 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The reference sequence that represents the starting sequence.
+     * The reference sequence that represents the starting sequence. (choose any one of
+     * sequence*, but only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $sequenceCodeableConcept;
@@ -184,7 +185,8 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The reference sequence that represents the starting sequence.
+     * The reference sequence that represents the starting sequence. (choose any one of
+     * sequence*, but only one)
      */
     #[FHIRString]
     protected FHIRString $sequenceString;
@@ -193,7 +195,8 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The reference sequence that represents the starting sequence.
+     * The reference sequence that represents the starting sequence. (choose any one of
+     * sequence*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $sequenceReference;
@@ -371,7 +374,8 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The reference sequence that represents the starting sequence.
+     * The reference sequence that represents the starting sequence. (choose any one of
+     * sequence*, but only one)
      */
     public function getSequenceCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -384,7 +388,8 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The reference sequence that represents the starting sequence.
+     * The reference sequence that represents the starting sequence. (choose any one of
+     * sequence*, but only one)
      */
     public function setSequenceCodeableConcept(null|FHIRCodeableConcept $sequenceCodeableConcept): self
     {
@@ -401,7 +406,8 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The reference sequence that represents the starting sequence.
+     * The reference sequence that represents the starting sequence. (choose any one of
+     * sequence*, but only one)
      */
     public function getSequenceString(): null|FHIRString
     {
@@ -413,7 +419,8 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The reference sequence that represents the starting sequence.
+     * The reference sequence that represents the starting sequence. (choose any one of
+     * sequence*, but only one)
      */
     public function setSequenceString(null|string|FHIRStringPrimitive|FHIRString $sequenceString): self
     {
@@ -433,7 +440,8 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The reference sequence that represents the starting sequence.
+     * The reference sequence that represents the starting sequence. (choose any one of
+     * sequence*, but only one)
      */
     public function getSequenceReference(): null|FHIRReference
     {
@@ -445,7 +453,8 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The reference sequence that represents the starting sequence.
+     * The reference sequence that represents the starting sequence. (choose any one of
+     * sequence*, but only one)
      */
     public function setSequenceReference(null|FHIRReference $sequenceReference): self
     {
@@ -818,7 +827,7 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
             || isset($decoded->_sequenceString)
             || property_exists($decoded, self::FIELD_SEQUENCE_STRING)
             || property_exists($decoded, self::FIELD_SEQUENCE_STRING_EXT)) {
-            $v = $decoded->_sequenceString ?? new \stdClass();
+            $v = isset($decoded->_sequenceString) ? clone $decoded->_sequenceString : new \stdClass();
             $v->value = $decoded->sequenceString ?? null;
             $type->setSequenceString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -833,7 +842,7 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
             || isset($decoded->_windowStart)
             || property_exists($decoded, self::FIELD_WINDOW_START)
             || property_exists($decoded, self::FIELD_WINDOW_START_EXT)) {
-            $v = $decoded->_windowStart ?? new \stdClass();
+            $v = isset($decoded->_windowStart) ? clone $decoded->_windowStart : new \stdClass();
             $v->value = $decoded->windowStart ?? null;
             $type->setWindowStart(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -841,7 +850,7 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
             || isset($decoded->_windowEnd)
             || property_exists($decoded, self::FIELD_WINDOW_END)
             || property_exists($decoded, self::FIELD_WINDOW_END_EXT)) {
-            $v = $decoded->_windowEnd ?? new \stdClass();
+            $v = isset($decoded->_windowEnd) ? clone $decoded->_windowEnd : new \stdClass();
             $v->value = $decoded->windowEnd ?? null;
             $type->setWindowEnd(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -849,7 +858,7 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
             || isset($decoded->_orientation)
             || property_exists($decoded, self::FIELD_ORIENTATION)
             || property_exists($decoded, self::FIELD_ORIENTATION_EXT)) {
-            $v = $decoded->_orientation ?? new \stdClass();
+            $v = isset($decoded->_orientation) ? clone $decoded->_orientation : new \stdClass();
             $v->value = $decoded->orientation ?? null;
             $type->setOrientation(FHIROrientationType::jsonUnserialize($v, $config));
         }
@@ -857,7 +866,7 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
             || isset($decoded->_strand)
             || property_exists($decoded, self::FIELD_STRAND)
             || property_exists($decoded, self::FIELD_STRAND_EXT)) {
-            $v = $decoded->_strand ?? new \stdClass();
+            $v = isset($decoded->_strand) ? clone $decoded->_strand : new \stdClass();
             $v->value = $decoded->strand ?? null;
             $type->setStrand(FHIRStrandType::jsonUnserialize($v, $config));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceUsage\FHIRDeviceUsageAdherence;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode;
@@ -159,13 +158,13 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_PATIENT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_DEVICE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -264,7 +263,7 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * How often the device was used.
+     * How often the device was used. (choose any one of timing*, but only one)
      */
     #[FHIRTiming]
     protected FHIRTiming $timingTiming;
@@ -273,7 +272,7 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * How often the device was used.
+     * How often the device was used. (choose any one of timing*, but only one)
      */
     #[FHIRPeriod]
     protected FHIRPeriod $timingPeriod;
@@ -286,7 +285,7 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * How often the device was used.
+     * How often the device was used. (choose any one of timing*, but only one)
      */
     #[FHIRDateTime]
     protected FHIRDateTime $timingDateTime;
@@ -869,7 +868,7 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * How often the device was used.
+     * How often the device was used. (choose any one of timing*, but only one)
      */
     public function getTimingTiming(): null|FHIRTiming
     {
@@ -885,7 +884,7 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * How often the device was used.
+     * How often the device was used. (choose any one of timing*, but only one)
      */
     public function setTimingTiming(null|FHIRTiming $timingTiming): self
     {
@@ -902,7 +901,7 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * How often the device was used.
+     * How often the device was used. (choose any one of timing*, but only one)
      */
     public function getTimingPeriod(): null|FHIRPeriod
     {
@@ -914,7 +913,7 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * How often the device was used.
+     * How often the device was used. (choose any one of timing*, but only one)
      */
     public function setTimingPeriod(null|FHIRPeriod $timingPeriod): self
     {
@@ -935,7 +934,7 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * How often the device was used.
+     * How often the device was used. (choose any one of timing*, but only one)
      */
     public function getTimingDateTime(): null|FHIRDateTime
     {
@@ -951,7 +950,7 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * How often the device was used.
+     * How often the device was used. (choose any one of timing*, but only one)
      */
     public function setTimingDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timingDateTime): self
     {
@@ -1398,7 +1397,7 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1711,7 +1710,7 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRDeviceUsageStatus::jsonUnserialize($v, $config));
         }
@@ -1769,7 +1768,7 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
             || isset($decoded->_timingDateTime)
             || property_exists($decoded, self::FIELD_TIMING_DATE_TIME)
             || property_exists($decoded, self::FIELD_TIMING_DATE_TIME_EXT)) {
-            $v = $decoded->_timingDateTime ?? new \stdClass();
+            $v = isset($decoded->_timingDateTime) ? clone $decoded->_timingDateTime : new \stdClass();
             $v->value = $decoded->timingDateTime ?? null;
             $type->setTimingDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1777,7 +1776,7 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
             || isset($decoded->_dateAsserted)
             || property_exists($decoded, self::FIELD_DATE_ASSERTED)
             || property_exists($decoded, self::FIELD_DATE_ASSERTED_EXT)) {
-            $v = $decoded->_dateAsserted ?? new \stdClass();
+            $v = isset($decoded->_dateAsserted) ? clone $decoded->_dateAsserted : new \stdClass();
             $v->value = $decoded->dateAsserted ?? null;
             $type->setDateAsserted(FHIRDateTime::jsonUnserialize($v, $config));
         }

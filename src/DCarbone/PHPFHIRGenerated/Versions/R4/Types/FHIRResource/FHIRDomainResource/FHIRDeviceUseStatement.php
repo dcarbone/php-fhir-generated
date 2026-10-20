@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRDeviceUseStatementStatusList;
@@ -133,13 +132,13 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_SUBJECT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_DEVICE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1136,7 +1135,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1419,7 +1418,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRDeviceUseStatementStatus::jsonUnserialize($v, $config));
         }
@@ -1459,7 +1458,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
             || isset($decoded->_timingDateTime)
             || property_exists($decoded, self::FIELD_TIMING_DATE_TIME)
             || property_exists($decoded, self::FIELD_TIMING_DATE_TIME_EXT)) {
-            $v = $decoded->_timingDateTime ?? new \stdClass();
+            $v = isset($decoded->_timingDateTime) ? clone $decoded->_timingDateTime : new \stdClass();
             $v->value = $decoded->timingDateTime ?? null;
             $type->setTimingDateTime(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1467,7 +1466,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
             || isset($decoded->_recordedOn)
             || property_exists($decoded, self::FIELD_RECORDED_ON)
             || property_exists($decoded, self::FIELD_RECORDED_ON_EXT)) {
-            $v = $decoded->_recordedOn ?? new \stdClass();
+            $v = isset($decoded->_recordedOn) ? clone $decoded->_recordedOn : new \stdClass();
             $v->value = $decoded->recordedOn ?? null;
             $type->setRecordedOn(FHIRDateTime::jsonUnserialize($v, $config));
         }

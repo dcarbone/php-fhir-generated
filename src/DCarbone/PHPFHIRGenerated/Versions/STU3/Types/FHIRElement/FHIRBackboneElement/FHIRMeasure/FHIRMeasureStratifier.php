@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -408,7 +408,7 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
             || isset($decoded->_criteria)
             || property_exists($decoded, self::FIELD_CRITERIA)
             || property_exists($decoded, self::FIELD_CRITERIA_EXT)) {
-            $v = $decoded->_criteria ?? new \stdClass();
+            $v = isset($decoded->_criteria) ? clone $decoded->_criteria : new \stdClass();
             $v->value = $decoded->criteria ?? null;
             $type->setCriteria(FHIRString::jsonUnserialize($v, $config));
         }
@@ -416,7 +416,7 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
             || isset($decoded->_path)
             || property_exists($decoded, self::FIELD_PATH)
             || property_exists($decoded, self::FIELD_PATH_EXT)) {
-            $v = $decoded->_path ?? new \stdClass();
+            $v = isset($decoded->_path) ? clone $decoded->_path : new \stdClass();
             $v->value = $decoded->path ?? null;
             $type->setPath(FHIRString::jsonUnserialize($v, $config));
         }

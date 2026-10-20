@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean;
@@ -141,7 +140,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -170,7 +169,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A value for the characteristic.text.
+     * A value for the characteristic.text. (choose any one of value*, but only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
@@ -183,7 +182,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * A value for the characteristic.text.
+     * A value for the characteristic.text. (choose any one of value*, but only one)
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $valueMarkdown;
@@ -194,7 +193,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A value for the characteristic.text.
+     * A value for the characteristic.text. (choose any one of value*, but only one)
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -203,7 +202,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A value for the characteristic.text.
+     * A value for the characteristic.text. (choose any one of value*, but only one)
      */
     #[FHIRInteger]
     protected FHIRInteger $valueInteger;
@@ -213,7 +212,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A value for the characteristic.text.
+     * A value for the characteristic.text. (choose any one of value*, but only one)
      */
     #[FHIRDate]
     protected FHIRDate $valueDate;
@@ -221,7 +220,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A value for the characteristic.text.
+     * A value for the characteristic.text. (choose any one of value*, but only one)
      */
     #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
@@ -230,7 +229,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A value for the characteristic.text.
+     * A value for the characteristic.text. (choose any one of value*, but only one)
      */
     #[FHIRAttachment]
     protected FHIRAttachment $valueAttachment;
@@ -329,7 +328,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A value for the characteristic.text.
+     * A value for the characteristic.text. (choose any one of value*, but only one)
      */
     public function getValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -342,7 +341,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A value for the characteristic.text.
+     * A value for the characteristic.text. (choose any one of value*, but only one)
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -363,7 +362,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * A value for the characteristic.text.
+     * A value for the characteristic.text. (choose any one of value*, but only one)
      */
     public function getValueMarkdown(): null|FHIRMarkdown
     {
@@ -379,7 +378,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * A value for the characteristic.text.
+     * A value for the characteristic.text. (choose any one of value*, but only one)
      */
     public function setValueMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $valueMarkdown): self
     {
@@ -401,7 +400,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A value for the characteristic.text.
+     * A value for the characteristic.text. (choose any one of value*, but only one)
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -415,7 +414,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A value for the characteristic.text.
+     * A value for the characteristic.text. (choose any one of value*, but only one)
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -432,7 +431,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A value for the characteristic.text.
+     * A value for the characteristic.text. (choose any one of value*, but only one)
      */
     public function getValueInteger(): null|FHIRInteger
     {
@@ -444,7 +443,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A value for the characteristic.text.
+     * A value for the characteristic.text. (choose any one of value*, but only one)
      */
     public function setValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $valueInteger): self
     {
@@ -465,7 +464,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A value for the characteristic.text.
+     * A value for the characteristic.text. (choose any one of value*, but only one)
      */
     public function getValueDate(): null|FHIRDate
     {
@@ -478,7 +477,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A value for the characteristic.text.
+     * A value for the characteristic.text. (choose any one of value*, but only one)
      */
     public function setValueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $valueDate): self
     {
@@ -497,7 +496,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A value for the characteristic.text.
+     * A value for the characteristic.text. (choose any one of value*, but only one)
      */
     public function getValueBoolean(): null|FHIRBoolean
     {
@@ -508,7 +507,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A value for the characteristic.text.
+     * A value for the characteristic.text. (choose any one of value*, but only one)
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -528,7 +527,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A value for the characteristic.text.
+     * A value for the characteristic.text. (choose any one of value*, but only one)
      */
     public function getValueAttachment(): null|FHIRAttachment
     {
@@ -540,7 +539,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A value for the characteristic.text.
+     * A value for the characteristic.text. (choose any one of value*, but only one)
      */
     public function setValueAttachment(null|FHIRAttachment $valueAttachment): self
     {
@@ -754,7 +753,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
             || isset($decoded->_valueMarkdown)
             || property_exists($decoded, self::FIELD_VALUE_MARKDOWN)
             || property_exists($decoded, self::FIELD_VALUE_MARKDOWN_EXT)) {
-            $v = $decoded->_valueMarkdown ?? new \stdClass();
+            $v = isset($decoded->_valueMarkdown) ? clone $decoded->_valueMarkdown : new \stdClass();
             $v->value = $decoded->valueMarkdown ?? null;
             $type->setValueMarkdown(FHIRMarkdown::jsonUnserialize($v, $config));
         }
@@ -769,7 +768,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
             || isset($decoded->_valueInteger)
             || property_exists($decoded, self::FIELD_VALUE_INTEGER)
             || property_exists($decoded, self::FIELD_VALUE_INTEGER_EXT)) {
-            $v = $decoded->_valueInteger ?? new \stdClass();
+            $v = isset($decoded->_valueInteger) ? clone $decoded->_valueInteger : new \stdClass();
             $v->value = $decoded->valueInteger ?? null;
             $type->setValueInteger(FHIRInteger::jsonUnserialize($v, $config));
         }
@@ -777,7 +776,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
             || isset($decoded->_valueDate)
             || property_exists($decoded, self::FIELD_VALUE_DATE)
             || property_exists($decoded, self::FIELD_VALUE_DATE_EXT)) {
-            $v = $decoded->_valueDate ?? new \stdClass();
+            $v = isset($decoded->_valueDate) ? clone $decoded->_valueDate : new \stdClass();
             $v->value = $decoded->valueDate ?? null;
             $type->setValueDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -785,7 +784,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
             || isset($decoded->_valueBoolean)
             || property_exists($decoded, self::FIELD_VALUE_BOOLEAN)
             || property_exists($decoded, self::FIELD_VALUE_BOOLEAN_EXT)) {
-            $v = $decoded->_valueBoolean ?? new \stdClass();
+            $v = isset($decoded->_valueBoolean) ? clone $decoded->_valueBoolean : new \stdClass();
             $v->value = $decoded->valueBoolean ?? null;
             $type->setValueBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }

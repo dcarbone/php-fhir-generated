@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -68,7 +68,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive;
@@ -146,7 +145,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1112,7 +1111,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1481,7 +1480,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRDeviceStatus::jsonUnserialize($v, $config));
         }
@@ -1489,7 +1488,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
             || isset($decoded->_manufacturer)
             || property_exists($decoded, self::FIELD_MANUFACTURER)
             || property_exists($decoded, self::FIELD_MANUFACTURER_EXT)) {
-            $v = $decoded->_manufacturer ?? new \stdClass();
+            $v = isset($decoded->_manufacturer) ? clone $decoded->_manufacturer : new \stdClass();
             $v->value = $decoded->manufacturer ?? null;
             $type->setManufacturer(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1497,7 +1496,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
             || isset($decoded->_model)
             || property_exists($decoded, self::FIELD_MODEL)
             || property_exists($decoded, self::FIELD_MODEL_EXT)) {
-            $v = $decoded->_model ?? new \stdClass();
+            $v = isset($decoded->_model) ? clone $decoded->_model : new \stdClass();
             $v->value = $decoded->model ?? null;
             $type->setModel(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1505,7 +1504,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
             || isset($decoded->_version)
             || property_exists($decoded, self::FIELD_VERSION)
             || property_exists($decoded, self::FIELD_VERSION_EXT)) {
-            $v = $decoded->_version ?? new \stdClass();
+            $v = isset($decoded->_version) ? clone $decoded->_version : new \stdClass();
             $v->value = $decoded->version ?? null;
             $type->setVersion(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1513,7 +1512,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
             || isset($decoded->_manufactureDate)
             || property_exists($decoded, self::FIELD_MANUFACTURE_DATE)
             || property_exists($decoded, self::FIELD_MANUFACTURE_DATE_EXT)) {
-            $v = $decoded->_manufactureDate ?? new \stdClass();
+            $v = isset($decoded->_manufactureDate) ? clone $decoded->_manufactureDate : new \stdClass();
             $v->value = $decoded->manufactureDate ?? null;
             $type->setManufactureDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1521,7 +1520,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
             || isset($decoded->_expiry)
             || property_exists($decoded, self::FIELD_EXPIRY)
             || property_exists($decoded, self::FIELD_EXPIRY_EXT)) {
-            $v = $decoded->_expiry ?? new \stdClass();
+            $v = isset($decoded->_expiry) ? clone $decoded->_expiry : new \stdClass();
             $v->value = $decoded->expiry ?? null;
             $type->setExpiry(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1529,7 +1528,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
             || isset($decoded->_udi)
             || property_exists($decoded, self::FIELD_UDI)
             || property_exists($decoded, self::FIELD_UDI_EXT)) {
-            $v = $decoded->_udi ?? new \stdClass();
+            $v = isset($decoded->_udi) ? clone $decoded->_udi : new \stdClass();
             $v->value = $decoded->udi ?? null;
             $type->setUdi(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1537,7 +1536,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
             || isset($decoded->_lotNumber)
             || property_exists($decoded, self::FIELD_LOT_NUMBER)
             || property_exists($decoded, self::FIELD_LOT_NUMBER_EXT)) {
-            $v = $decoded->_lotNumber ?? new \stdClass();
+            $v = isset($decoded->_lotNumber) ? clone $decoded->_lotNumber : new \stdClass();
             $v->value = $decoded->lotNumber ?? null;
             $type->setLotNumber(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1577,7 +1576,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
             || isset($decoded->_url)
             || property_exists($decoded, self::FIELD_URL)
             || property_exists($decoded, self::FIELD_URL_EXT)) {
-            $v = $decoded->_url ?? new \stdClass();
+            $v = isset($decoded->_url) ? clone $decoded->_url : new \stdClass();
             $v->value = $decoded->url ?? null;
             $type->setUrl(FHIRUri::jsonUnserialize($v, $config));
         }

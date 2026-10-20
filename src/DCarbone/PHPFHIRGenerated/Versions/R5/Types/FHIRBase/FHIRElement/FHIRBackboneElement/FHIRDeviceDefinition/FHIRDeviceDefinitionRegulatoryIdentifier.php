@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
@@ -127,16 +126,16 @@ class FHIRDeviceDefinitionRegulatoryIdentifier extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_TYPE => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_DEVICE_IDENTIFIER => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_ISSUER => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_JURISDICTION => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -509,7 +508,7 @@ class FHIRDeviceDefinitionRegulatoryIdentifier extends FHIRBackboneElement
             || isset($decoded->_type)
             || property_exists($decoded, self::FIELD_TYPE)
             || property_exists($decoded, self::FIELD_TYPE_EXT)) {
-            $v = $decoded->_type ?? new \stdClass();
+            $v = isset($decoded->_type) ? clone $decoded->_type : new \stdClass();
             $v->value = $decoded->type ?? null;
             $type->setType(FHIRDeviceDefinitionRegulatoryIdentifierType::jsonUnserialize($v, $config));
         }
@@ -517,7 +516,7 @@ class FHIRDeviceDefinitionRegulatoryIdentifier extends FHIRBackboneElement
             || isset($decoded->_deviceIdentifier)
             || property_exists($decoded, self::FIELD_DEVICE_IDENTIFIER)
             || property_exists($decoded, self::FIELD_DEVICE_IDENTIFIER_EXT)) {
-            $v = $decoded->_deviceIdentifier ?? new \stdClass();
+            $v = isset($decoded->_deviceIdentifier) ? clone $decoded->_deviceIdentifier : new \stdClass();
             $v->value = $decoded->deviceIdentifier ?? null;
             $type->setDeviceIdentifier(FHIRString::jsonUnserialize($v, $config));
         }
@@ -525,7 +524,7 @@ class FHIRDeviceDefinitionRegulatoryIdentifier extends FHIRBackboneElement
             || isset($decoded->_issuer)
             || property_exists($decoded, self::FIELD_ISSUER)
             || property_exists($decoded, self::FIELD_ISSUER_EXT)) {
-            $v = $decoded->_issuer ?? new \stdClass();
+            $v = isset($decoded->_issuer) ? clone $decoded->_issuer : new \stdClass();
             $v->value = $decoded->issuer ?? null;
             $type->setIssuer(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -533,7 +532,7 @@ class FHIRDeviceDefinitionRegulatoryIdentifier extends FHIRBackboneElement
             || isset($decoded->_jurisdiction)
             || property_exists($decoded, self::FIELD_JURISDICTION)
             || property_exists($decoded, self::FIELD_JURISDICTION_EXT)) {
-            $v = $decoded->_jurisdiction ?? new \stdClass();
+            $v = isset($decoded->_jurisdiction) ? clone $decoded->_jurisdiction : new \stdClass();
             $v->value = $decoded->jurisdiction ?? null;
             $type->setJurisdiction(FHIRUri::jsonUnserialize($v, $config));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -438,7 +438,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Narrows the range of legal concerns to focus on the achievement of specific
-     * contractual objectives.
+     * contractual objectives. (choose any one of topic*, but only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $topicCodeableConcept;
@@ -448,7 +448,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Narrows the range of legal concerns to focus on the achievement of specific
-     * contractual objectives.
+     * contractual objectives. (choose any one of topic*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $topicReference;
@@ -583,7 +583,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * Legally binding Contract: This is the signed and legally recognized
      * representation of the Contract, which is considered the "source of truth" and
      * which would be the basis for legal action related to enforcement of this
-     * Contract.
+     * Contract. (choose any one of legallyBinding*, but only one)
      */
     #[FHIRAttachment]
     protected FHIRAttachment $legallyBindingAttachment;
@@ -595,7 +595,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * Legally binding Contract: This is the signed and legally recognized
      * representation of the Contract, which is considered the "source of truth" and
      * which would be the basis for legal action related to enforcement of this
-     * Contract.
+     * Contract. (choose any one of legallyBinding*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $legallyBindingReference;
@@ -1692,7 +1692,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Narrows the range of legal concerns to focus on the achievement of specific
-     * contractual objectives.
+     * contractual objectives. (choose any one of topic*, but only one)
      */
     public function getTopicCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -1706,7 +1706,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Narrows the range of legal concerns to focus on the achievement of specific
-     * contractual objectives.
+     * contractual objectives. (choose any one of topic*, but only one)
      */
     public function setTopicCodeableConcept(null|FHIRCodeableConcept $topicCodeableConcept): self
     {
@@ -1724,7 +1724,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Narrows the range of legal concerns to focus on the achievement of specific
-     * contractual objectives.
+     * contractual objectives. (choose any one of topic*, but only one)
      */
     public function getTopicReference(): null|FHIRReference
     {
@@ -1737,7 +1737,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Narrows the range of legal concerns to focus on the achievement of specific
-     * contractual objectives.
+     * contractual objectives. (choose any one of topic*, but only one)
      */
     public function setTopicReference(null|FHIRReference $topicReference): self
     {
@@ -2324,7 +2324,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * Legally binding Contract: This is the signed and legally recognized
      * representation of the Contract, which is considered the "source of truth" and
      * which would be the basis for legal action related to enforcement of this
-     * Contract.
+     * Contract. (choose any one of legallyBinding*, but only one)
      */
     public function getLegallyBindingAttachment(): null|FHIRAttachment
     {
@@ -2339,7 +2339,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * Legally binding Contract: This is the signed and legally recognized
      * representation of the Contract, which is considered the "source of truth" and
      * which would be the basis for legal action related to enforcement of this
-     * Contract.
+     * Contract. (choose any one of legallyBinding*, but only one)
      */
     public function setLegallyBindingAttachment(null|FHIRAttachment $legallyBindingAttachment): self
     {
@@ -2359,7 +2359,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * Legally binding Contract: This is the signed and legally recognized
      * representation of the Contract, which is considered the "source of truth" and
      * which would be the basis for legal action related to enforcement of this
-     * Contract.
+     * Contract. (choose any one of legallyBinding*, but only one)
      */
     public function getLegallyBindingReference(): null|FHIRReference
     {
@@ -2374,7 +2374,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * Legally binding Contract: This is the signed and legally recognized
      * representation of the Contract, which is considered the "source of truth" and
      * which would be the basis for legal action related to enforcement of this
-     * Contract.
+     * Contract. (choose any one of legallyBinding*, but only one)
      */
     public function setLegallyBindingReference(null|FHIRReference $legallyBindingReference): self
     {
@@ -2430,7 +2430,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -2923,7 +2923,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_url)
             || property_exists($decoded, self::FIELD_URL)
             || property_exists($decoded, self::FIELD_URL_EXT)) {
-            $v = $decoded->_url ?? new \stdClass();
+            $v = isset($decoded->_url) ? clone $decoded->_url : new \stdClass();
             $v->value = $decoded->url ?? null;
             $type->setUrl(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -2931,7 +2931,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_version)
             || property_exists($decoded, self::FIELD_VERSION)
             || property_exists($decoded, self::FIELD_VERSION_EXT)) {
-            $v = $decoded->_version ?? new \stdClass();
+            $v = isset($decoded->_version) ? clone $decoded->_version : new \stdClass();
             $v->value = $decoded->version ?? null;
             $type->setVersion(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2939,7 +2939,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRContractResourceStatusCodes::jsonUnserialize($v, $config));
         }
@@ -2961,7 +2961,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_instantiatesUri)
             || property_exists($decoded, self::FIELD_INSTANTIATES_URI)
             || property_exists($decoded, self::FIELD_INSTANTIATES_URI_EXT)) {
-            $v = $decoded->_instantiatesUri ?? new \stdClass();
+            $v = isset($decoded->_instantiatesUri) ? clone $decoded->_instantiatesUri : new \stdClass();
             $v->value = $decoded->instantiatesUri ?? null;
             $type->setInstantiatesUri(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -2976,7 +2976,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_issued)
             || property_exists($decoded, self::FIELD_ISSUED)
             || property_exists($decoded, self::FIELD_ISSUED_EXT)) {
-            $v = $decoded->_issued ?? new \stdClass();
+            $v = isset($decoded->_issued) ? clone $decoded->_issued : new \stdClass();
             $v->value = $decoded->issued ?? null;
             $type->setIssued(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -3042,7 +3042,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -3050,7 +3050,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_title)
             || property_exists($decoded, self::FIELD_TITLE)
             || property_exists($decoded, self::FIELD_TITLE_EXT)) {
-            $v = $decoded->_title ?? new \stdClass();
+            $v = isset($decoded->_title) ? clone $decoded->_title : new \stdClass();
             $v->value = $decoded->title ?? null;
             $type->setTitle(FHIRString::jsonUnserialize($v, $config));
         }
@@ -3058,7 +3058,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
             || isset($decoded->_subtitle)
             || property_exists($decoded, self::FIELD_SUBTITLE)
             || property_exists($decoded, self::FIELD_SUBTITLE_EXT)) {
-            $v = $decoded->_subtitle ?? new \stdClass();
+            $v = isset($decoded->_subtitle) ? clone $decoded->_subtitle : new \stdClass();
             $v->value = $decoded->subtitle ?? null;
             $type->setSubtitle(FHIRString::jsonUnserialize($v, $config));
         }
@@ -3074,7 +3074,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addAlias(FHIRString::jsonUnserialize($v, $config));
             }

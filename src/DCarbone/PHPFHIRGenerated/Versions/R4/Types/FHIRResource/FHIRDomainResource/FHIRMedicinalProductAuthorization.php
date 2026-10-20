@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -1098,7 +1098,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1422,7 +1422,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
             || isset($decoded->_statusDate)
             || property_exists($decoded, self::FIELD_STATUS_DATE)
             || property_exists($decoded, self::FIELD_STATUS_DATE_EXT)) {
-            $v = $decoded->_statusDate ?? new \stdClass();
+            $v = isset($decoded->_statusDate) ? clone $decoded->_statusDate : new \stdClass();
             $v->value = $decoded->statusDate ?? null;
             $type->setStatusDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1430,7 +1430,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
             || isset($decoded->_restoreDate)
             || property_exists($decoded, self::FIELD_RESTORE_DATE)
             || property_exists($decoded, self::FIELD_RESTORE_DATE_EXT)) {
-            $v = $decoded->_restoreDate ?? new \stdClass();
+            $v = isset($decoded->_restoreDate) ? clone $decoded->_restoreDate : new \stdClass();
             $v->value = $decoded->restoreDate ?? null;
             $type->setRestoreDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1452,7 +1452,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
             || isset($decoded->_dateOfFirstAuthorization)
             || property_exists($decoded, self::FIELD_DATE_OF_FIRST_AUTHORIZATION)
             || property_exists($decoded, self::FIELD_DATE_OF_FIRST_AUTHORIZATION_EXT)) {
-            $v = $decoded->_dateOfFirstAuthorization ?? new \stdClass();
+            $v = isset($decoded->_dateOfFirstAuthorization) ? clone $decoded->_dateOfFirstAuthorization : new \stdClass();
             $v->value = $decoded->dateOfFirstAuthorization ?? null;
             $type->setDateOfFirstAuthorization(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1460,7 +1460,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
             || isset($decoded->_internationalBirthDate)
             || property_exists($decoded, self::FIELD_INTERNATIONAL_BIRTH_DATE)
             || property_exists($decoded, self::FIELD_INTERNATIONAL_BIRTH_DATE_EXT)) {
-            $v = $decoded->_internationalBirthDate ?? new \stdClass();
+            $v = isset($decoded->_internationalBirthDate) ? clone $decoded->_internationalBirthDate : new \stdClass();
             $v->value = $decoded->internationalBirthDate ?? null;
             $type->setInternationalBirthDate(FHIRDateTime::jsonUnserialize($v, $config));
         }

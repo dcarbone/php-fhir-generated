@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -1055,7 +1055,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
             || isset($decoded->_group)
             || property_exists($decoded, self::FIELD_GROUP)
             || property_exists($decoded, self::FIELD_GROUP_EXT)) {
-            $v = $decoded->_group ?? new \stdClass();
+            $v = isset($decoded->_group) ? clone $decoded->_group : new \stdClass();
             $v->value = $decoded->group ?? null;
             $type->setGroup(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1063,7 +1063,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
             || isset($decoded->_groupDisplay)
             || property_exists($decoded, self::FIELD_GROUP_DISPLAY)
             || property_exists($decoded, self::FIELD_GROUP_DISPLAY_EXT)) {
-            $v = $decoded->_groupDisplay ?? new \stdClass();
+            $v = isset($decoded->_groupDisplay) ? clone $decoded->_groupDisplay : new \stdClass();
             $v->value = $decoded->groupDisplay ?? null;
             $type->setGroupDisplay(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1071,7 +1071,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
             || isset($decoded->_subGroup)
             || property_exists($decoded, self::FIELD_SUB_GROUP)
             || property_exists($decoded, self::FIELD_SUB_GROUP_EXT)) {
-            $v = $decoded->_subGroup ?? new \stdClass();
+            $v = isset($decoded->_subGroup) ? clone $decoded->_subGroup : new \stdClass();
             $v->value = $decoded->subGroup ?? null;
             $type->setSubGroup(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1079,7 +1079,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
             || isset($decoded->_subGroupDisplay)
             || property_exists($decoded, self::FIELD_SUB_GROUP_DISPLAY)
             || property_exists($decoded, self::FIELD_SUB_GROUP_DISPLAY_EXT)) {
-            $v = $decoded->_subGroupDisplay ?? new \stdClass();
+            $v = isset($decoded->_subGroupDisplay) ? clone $decoded->_subGroupDisplay : new \stdClass();
             $v->value = $decoded->subGroupDisplay ?? null;
             $type->setSubGroupDisplay(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1087,7 +1087,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
             || isset($decoded->_plan)
             || property_exists($decoded, self::FIELD_PLAN)
             || property_exists($decoded, self::FIELD_PLAN_EXT)) {
-            $v = $decoded->_plan ?? new \stdClass();
+            $v = isset($decoded->_plan) ? clone $decoded->_plan : new \stdClass();
             $v->value = $decoded->plan ?? null;
             $type->setPlan(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1095,7 +1095,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
             || isset($decoded->_planDisplay)
             || property_exists($decoded, self::FIELD_PLAN_DISPLAY)
             || property_exists($decoded, self::FIELD_PLAN_DISPLAY_EXT)) {
-            $v = $decoded->_planDisplay ?? new \stdClass();
+            $v = isset($decoded->_planDisplay) ? clone $decoded->_planDisplay : new \stdClass();
             $v->value = $decoded->planDisplay ?? null;
             $type->setPlanDisplay(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1103,7 +1103,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
             || isset($decoded->_subPlan)
             || property_exists($decoded, self::FIELD_SUB_PLAN)
             || property_exists($decoded, self::FIELD_SUB_PLAN_EXT)) {
-            $v = $decoded->_subPlan ?? new \stdClass();
+            $v = isset($decoded->_subPlan) ? clone $decoded->_subPlan : new \stdClass();
             $v->value = $decoded->subPlan ?? null;
             $type->setSubPlan(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1111,7 +1111,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
             || isset($decoded->_subPlanDisplay)
             || property_exists($decoded, self::FIELD_SUB_PLAN_DISPLAY)
             || property_exists($decoded, self::FIELD_SUB_PLAN_DISPLAY_EXT)) {
-            $v = $decoded->_subPlanDisplay ?? new \stdClass();
+            $v = isset($decoded->_subPlanDisplay) ? clone $decoded->_subPlanDisplay : new \stdClass();
             $v->value = $decoded->subPlanDisplay ?? null;
             $type->setSubPlanDisplay(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1119,7 +1119,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
             || isset($decoded->_class)
             || property_exists($decoded, self::FIELD_CLASS)
             || property_exists($decoded, self::FIELD_CLASS_EXT)) {
-            $v = $decoded->_class ?? new \stdClass();
+            $v = isset($decoded->_class) ? clone $decoded->_class : new \stdClass();
             $v->value = $decoded->class ?? null;
             $type->setClass(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1127,7 +1127,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
             || isset($decoded->_classDisplay)
             || property_exists($decoded, self::FIELD_CLASS_DISPLAY)
             || property_exists($decoded, self::FIELD_CLASS_DISPLAY_EXT)) {
-            $v = $decoded->_classDisplay ?? new \stdClass();
+            $v = isset($decoded->_classDisplay) ? clone $decoded->_classDisplay : new \stdClass();
             $v->value = $decoded->classDisplay ?? null;
             $type->setClassDisplay(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1135,7 +1135,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
             || isset($decoded->_subClass)
             || property_exists($decoded, self::FIELD_SUB_CLASS)
             || property_exists($decoded, self::FIELD_SUB_CLASS_EXT)) {
-            $v = $decoded->_subClass ?? new \stdClass();
+            $v = isset($decoded->_subClass) ? clone $decoded->_subClass : new \stdClass();
             $v->value = $decoded->subClass ?? null;
             $type->setSubClass(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1143,7 +1143,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
             || isset($decoded->_subClassDisplay)
             || property_exists($decoded, self::FIELD_SUB_CLASS_DISPLAY)
             || property_exists($decoded, self::FIELD_SUB_CLASS_DISPLAY_EXT)) {
-            $v = $decoded->_subClassDisplay ?? new \stdClass();
+            $v = isset($decoded->_subClassDisplay) ? clone $decoded->_subClassDisplay : new \stdClass();
             $v->value = $decoded->subClassDisplay ?? null;
             $type->setSubClassDisplay(FHIRString::jsonUnserialize($v, $config));
         }

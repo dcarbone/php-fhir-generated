@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -1726,7 +1726,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -2092,7 +2092,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
             || isset($decoded->_manufacturerString)
             || property_exists($decoded, self::FIELD_MANUFACTURER_STRING)
             || property_exists($decoded, self::FIELD_MANUFACTURER_STRING_EXT)) {
-            $v = $decoded->_manufacturerString ?? new \stdClass();
+            $v = isset($decoded->_manufacturerString) ? clone $decoded->_manufacturerString : new \stdClass();
             $v->value = $decoded->manufacturerString ?? null;
             $type->setManufacturerString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2118,7 +2118,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
             || isset($decoded->_modelNumber)
             || property_exists($decoded, self::FIELD_MODEL_NUMBER)
             || property_exists($decoded, self::FIELD_MODEL_NUMBER_EXT)) {
-            $v = $decoded->_modelNumber ?? new \stdClass();
+            $v = isset($decoded->_modelNumber) ? clone $decoded->_modelNumber : new \stdClass();
             $v->value = $decoded->modelNumber ?? null;
             $type->setModelNumber(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2152,7 +2152,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addVersion(FHIRString::jsonUnserialize($v, $config));
             }
@@ -2241,7 +2241,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
             || isset($decoded->_url)
             || property_exists($decoded, self::FIELD_URL)
             || property_exists($decoded, self::FIELD_URL_EXT)) {
-            $v = $decoded->_url ?? new \stdClass();
+            $v = isset($decoded->_url) ? clone $decoded->_url : new \stdClass();
             $v->value = $decoded->url ?? null;
             $type->setUrl(FHIRUri::jsonUnserialize($v, $config));
         }
@@ -2249,7 +2249,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
             || isset($decoded->_onlineInformation)
             || property_exists($decoded, self::FIELD_ONLINE_INFORMATION)
             || property_exists($decoded, self::FIELD_ONLINE_INFORMATION_EXT)) {
-            $v = $decoded->_onlineInformation ?? new \stdClass();
+            $v = isset($decoded->_onlineInformation) ? clone $decoded->_onlineInformation : new \stdClass();
             $v->value = $decoded->onlineInformation ?? null;
             $type->setOnlineInformation(FHIRUri::jsonUnserialize($v, $config));
         }

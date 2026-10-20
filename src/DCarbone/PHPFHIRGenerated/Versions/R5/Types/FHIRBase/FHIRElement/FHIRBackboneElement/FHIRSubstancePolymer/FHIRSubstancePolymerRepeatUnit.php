@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -573,7 +573,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
             || isset($decoded->_unit)
             || property_exists($decoded, self::FIELD_UNIT)
             || property_exists($decoded, self::FIELD_UNIT_EXT)) {
-            $v = $decoded->_unit ?? new \stdClass();
+            $v = isset($decoded->_unit) ? clone $decoded->_unit : new \stdClass();
             $v->value = $decoded->unit ?? null;
             $type->setUnit(FHIRString::jsonUnserialize($v, $config));
         }
@@ -588,7 +588,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
             || isset($decoded->_amount)
             || property_exists($decoded, self::FIELD_AMOUNT)
             || property_exists($decoded, self::FIELD_AMOUNT_EXT)) {
-            $v = $decoded->_amount ?? new \stdClass();
+            $v = isset($decoded->_amount) ? clone $decoded->_amount : new \stdClass();
             $v->value = $decoded->amount ?? null;
             $type->setAmount(FHIRInteger::jsonUnserialize($v, $config));
         }

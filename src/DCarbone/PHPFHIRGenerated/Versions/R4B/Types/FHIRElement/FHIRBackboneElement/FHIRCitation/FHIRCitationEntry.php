@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -1160,7 +1160,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
             || isset($decoded->_initials)
             || property_exists($decoded, self::FIELD_INITIALS)
             || property_exists($decoded, self::FIELD_INITIALS_EXT)) {
-            $v = $decoded->_initials ?? new \stdClass();
+            $v = isset($decoded->_initials) ? clone $decoded->_initials : new \stdClass();
             $v->value = $decoded->initials ?? null;
             $type->setInitials(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1168,7 +1168,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
             || isset($decoded->_collectiveName)
             || property_exists($decoded, self::FIELD_COLLECTIVE_NAME)
             || property_exists($decoded, self::FIELD_COLLECTIVE_NAME_EXT)) {
-            $v = $decoded->_collectiveName ?? new \stdClass();
+            $v = isset($decoded->_collectiveName) ? clone $decoded->_collectiveName : new \stdClass();
             $v->value = $decoded->collectiveName ?? null;
             $type->setCollectiveName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -1249,7 +1249,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
             || isset($decoded->_correspondingContact)
             || property_exists($decoded, self::FIELD_CORRESPONDING_CONTACT)
             || property_exists($decoded, self::FIELD_CORRESPONDING_CONTACT_EXT)) {
-            $v = $decoded->_correspondingContact ?? new \stdClass();
+            $v = isset($decoded->_correspondingContact) ? clone $decoded->_correspondingContact : new \stdClass();
             $v->value = $decoded->correspondingContact ?? null;
             $type->setCorrespondingContact(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -1257,7 +1257,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
             || isset($decoded->_listOrder)
             || property_exists($decoded, self::FIELD_LIST_ORDER)
             || property_exists($decoded, self::FIELD_LIST_ORDER_EXT)) {
-            $v = $decoded->_listOrder ?? new \stdClass();
+            $v = isset($decoded->_listOrder) ? clone $decoded->_listOrder : new \stdClass();
             $v->value = $decoded->listOrder ?? null;
             $type->setListOrder(FHIRPositiveInt::jsonUnserialize($v, $config));
         }

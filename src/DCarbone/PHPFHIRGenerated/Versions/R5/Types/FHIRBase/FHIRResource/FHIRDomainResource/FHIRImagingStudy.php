@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode;
@@ -165,10 +164,10 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_SUBJECT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1433,7 +1432,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -1758,7 +1757,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRImagingStudyStatus::jsonUnserialize($v, $config));
         }
@@ -1791,7 +1790,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_started)
             || property_exists($decoded, self::FIELD_STARTED)
             || property_exists($decoded, self::FIELD_STARTED_EXT)) {
-            $v = $decoded->_started ?? new \stdClass();
+            $v = isset($decoded->_started) ? clone $decoded->_started : new \stdClass();
             $v->value = $decoded->started ?? null;
             $type->setStarted(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -1839,7 +1838,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_numberOfSeries)
             || property_exists($decoded, self::FIELD_NUMBER_OF_SERIES)
             || property_exists($decoded, self::FIELD_NUMBER_OF_SERIES_EXT)) {
-            $v = $decoded->_numberOfSeries ?? new \stdClass();
+            $v = isset($decoded->_numberOfSeries) ? clone $decoded->_numberOfSeries : new \stdClass();
             $v->value = $decoded->numberOfSeries ?? null;
             $type->setNumberOfSeries(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
@@ -1847,7 +1846,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_numberOfInstances)
             || property_exists($decoded, self::FIELD_NUMBER_OF_INSTANCES)
             || property_exists($decoded, self::FIELD_NUMBER_OF_INSTANCES_EXT)) {
-            $v = $decoded->_numberOfInstances ?? new \stdClass();
+            $v = isset($decoded->_numberOfInstances) ? clone $decoded->_numberOfInstances : new \stdClass();
             $v->value = $decoded->numberOfInstances ?? null;
             $type->setNumberOfInstances(FHIRUnsignedInt::jsonUnserialize($v, $config));
         }
@@ -1895,7 +1894,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
             || isset($decoded->_description)
             || property_exists($decoded, self::FIELD_DESCRIPTION)
             || property_exists($decoded, self::FIELD_DESCRIPTION_EXT)) {
-            $v = $decoded->_description ?? new \stdClass();
+            $v = isset($decoded->_description) ? clone $decoded->_description : new \stdClass();
             $v->value = $decoded->description ?? null;
             $type->setDescription(FHIRString::jsonUnserialize($v, $config));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive;
@@ -183,13 +182,13 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_STATUS => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_PATIENT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
         self::FIELD_RELATIONSHIP => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -1756,7 +1755,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
                 foreach ($ce->children() as $cen) {
                     /** @var \DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface $cn */
                     $cn = VersionTypeMap::mustGetContainedTypeClassnameFromXML($cen);
-                    $type->addContained($cn::xmlUnserialize($cen, $config));
+                    $type->addContained(VersionTypeMap::xmlUnserializeResource($cn, $cen, $config));
                 }
             } else if (self::FIELD_EXTENSION === $cen) {
                 $type->addExtension(FHIRExtension::xmlUnserialize($ce, $config));
@@ -2206,7 +2205,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addInstantiatesCanonical(FHIRCanonical::jsonUnserialize($v, $config));
             }
@@ -2223,7 +2222,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
                 $valCnt = $extCnt;
             }
             for ($i = 0; $i < $valCnt; $i++) {
-                $v = $exts[$i] ?? new \stdClass();
+                $v = isset($exts[$i]) ? clone $exts[$i] : new \stdClass();
                 $v->value = $vals[$i] ?? null;
                 $type->addInstantiatesUri(FHIRUri::jsonUnserialize($v, $config));
             }
@@ -2232,7 +2231,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             || isset($decoded->_status)
             || property_exists($decoded, self::FIELD_STATUS)
             || property_exists($decoded, self::FIELD_STATUS_EXT)) {
-            $v = $decoded->_status ?? new \stdClass();
+            $v = isset($decoded->_status) ? clone $decoded->_status : new \stdClass();
             $v->value = $decoded->status ?? null;
             $type->setStatus(FHIRFamilyHistoryStatus::jsonUnserialize($v, $config));
         }
@@ -2254,7 +2253,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             || isset($decoded->_date)
             || property_exists($decoded, self::FIELD_DATE)
             || property_exists($decoded, self::FIELD_DATE_EXT)) {
-            $v = $decoded->_date ?? new \stdClass();
+            $v = isset($decoded->_date) ? clone $decoded->_date : new \stdClass();
             $v->value = $decoded->date ?? null;
             $type->setDate(FHIRDateTime::jsonUnserialize($v, $config));
         }
@@ -2262,7 +2261,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             || isset($decoded->_name)
             || property_exists($decoded, self::FIELD_NAME)
             || property_exists($decoded, self::FIELD_NAME_EXT)) {
-            $v = $decoded->_name ?? new \stdClass();
+            $v = isset($decoded->_name) ? clone $decoded->_name : new \stdClass();
             $v->value = $decoded->name ?? null;
             $type->setName(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2291,7 +2290,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             || isset($decoded->_bornDate)
             || property_exists($decoded, self::FIELD_BORN_DATE)
             || property_exists($decoded, self::FIELD_BORN_DATE_EXT)) {
-            $v = $decoded->_bornDate ?? new \stdClass();
+            $v = isset($decoded->_bornDate) ? clone $decoded->_bornDate : new \stdClass();
             $v->value = $decoded->bornDate ?? null;
             $type->setBornDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -2299,7 +2298,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             || isset($decoded->_bornString)
             || property_exists($decoded, self::FIELD_BORN_STRING)
             || property_exists($decoded, self::FIELD_BORN_STRING_EXT)) {
-            $v = $decoded->_bornString ?? new \stdClass();
+            $v = isset($decoded->_bornString) ? clone $decoded->_bornString : new \stdClass();
             $v->value = $decoded->bornString ?? null;
             $type->setBornString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2321,7 +2320,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             || isset($decoded->_ageString)
             || property_exists($decoded, self::FIELD_AGE_STRING)
             || property_exists($decoded, self::FIELD_AGE_STRING_EXT)) {
-            $v = $decoded->_ageString ?? new \stdClass();
+            $v = isset($decoded->_ageString) ? clone $decoded->_ageString : new \stdClass();
             $v->value = $decoded->ageString ?? null;
             $type->setAgeString(FHIRString::jsonUnserialize($v, $config));
         }
@@ -2329,7 +2328,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             || isset($decoded->_estimatedAge)
             || property_exists($decoded, self::FIELD_ESTIMATED_AGE)
             || property_exists($decoded, self::FIELD_ESTIMATED_AGE_EXT)) {
-            $v = $decoded->_estimatedAge ?? new \stdClass();
+            $v = isset($decoded->_estimatedAge) ? clone $decoded->_estimatedAge : new \stdClass();
             $v->value = $decoded->estimatedAge ?? null;
             $type->setEstimatedAge(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -2337,7 +2336,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             || isset($decoded->_deceasedBoolean)
             || property_exists($decoded, self::FIELD_DECEASED_BOOLEAN)
             || property_exists($decoded, self::FIELD_DECEASED_BOOLEAN_EXT)) {
-            $v = $decoded->_deceasedBoolean ?? new \stdClass();
+            $v = isset($decoded->_deceasedBoolean) ? clone $decoded->_deceasedBoolean : new \stdClass();
             $v->value = $decoded->deceasedBoolean ?? null;
             $type->setDeceasedBoolean(FHIRBoolean::jsonUnserialize($v, $config));
         }
@@ -2359,7 +2358,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             || isset($decoded->_deceasedDate)
             || property_exists($decoded, self::FIELD_DECEASED_DATE)
             || property_exists($decoded, self::FIELD_DECEASED_DATE_EXT)) {
-            $v = $decoded->_deceasedDate ?? new \stdClass();
+            $v = isset($decoded->_deceasedDate) ? clone $decoded->_deceasedDate : new \stdClass();
             $v->value = $decoded->deceasedDate ?? null;
             $type->setDeceasedDate(FHIRDate::jsonUnserialize($v, $config));
         }
@@ -2367,7 +2366,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             || isset($decoded->_deceasedString)
             || property_exists($decoded, self::FIELD_DECEASED_STRING)
             || property_exists($decoded, self::FIELD_DECEASED_STRING_EXT)) {
-            $v = $decoded->_deceasedString ?? new \stdClass();
+            $v = isset($decoded->_deceasedString) ? clone $decoded->_deceasedString : new \stdClass();
             $v->value = $decoded->deceasedString ?? null;
             $type->setDeceasedString(FHIRString::jsonUnserialize($v, $config));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: September 27th, 2026 01:45+0000
+ * Class creation date: October 20th, 2026 01:17+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean;
@@ -128,7 +127,7 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
         self::FIELD_CONTENT => [
-            MinOccursRule::NAME => 1,
+            'min_occurs' => 1,
         ],
     ];
 
@@ -521,7 +520,7 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
             || isset($decoded->_uri)
             || property_exists($decoded, self::FIELD_URI)
             || property_exists($decoded, self::FIELD_URI_EXT)) {
-            $v = $decoded->_uri ?? new \stdClass();
+            $v = isset($decoded->_uri) ? clone $decoded->_uri : new \stdClass();
             $v->value = $decoded->uri ?? null;
             $type->setUri(FHIRCanonical::jsonUnserialize($v, $config));
         }
@@ -540,7 +539,7 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
             || isset($decoded->_content)
             || property_exists($decoded, self::FIELD_CONTENT)
             || property_exists($decoded, self::FIELD_CONTENT_EXT)) {
-            $v = $decoded->_content ?? new \stdClass();
+            $v = isset($decoded->_content) ? clone $decoded->_content : new \stdClass();
             $v->value = $decoded->content ?? null;
             $type->setContent(FHIRCodeSystemContentMode::jsonUnserialize($v, $config));
         }
@@ -548,7 +547,7 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
             || isset($decoded->_subsumption)
             || property_exists($decoded, self::FIELD_SUBSUMPTION)
             || property_exists($decoded, self::FIELD_SUBSUMPTION_EXT)) {
-            $v = $decoded->_subsumption ?? new \stdClass();
+            $v = isset($decoded->_subsumption) ? clone $decoded->_subsumption : new \stdClass();
             $v->value = $decoded->subsumption ?? null;
             $type->setSubsumption(FHIRBoolean::jsonUnserialize($v, $config));
         }
