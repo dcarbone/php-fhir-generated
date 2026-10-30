@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -478,6 +478,8 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An external identifier for this statement such as an IRI.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -495,6 +497,8 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An external identifier for this statement such as an IRI.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -539,6 +543,8 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      *
      * A plan, proposal or order that is fulfilled in whole or in part by this
      * DeviceUseStatement.
+     *
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -556,6 +562,8 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      *
      * A plan, proposal or order that is fulfilled in whole or in part by this
      * DeviceUseStatement.
+     *
+     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -585,6 +593,8 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * A code representing the patient or other source's judgment about the state of
      * the device used that this statement is about. Generally this will be active or
      * completed.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRDeviceUseStatementStatusEnum|FHIRDeviceUseStatementStatus $status): self
     {
@@ -617,6 +627,8 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who used the device.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -661,6 +673,8 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      *
      * Allows linking the DeviceUseStatement to the underlying Request, or to other
      * information that supports or is used to derive the DeviceUseStatement.
+     *
+     * @return static
      */
     public function addDerivedFrom(FHIRReference $derivedFrom): self
     {
@@ -678,6 +692,8 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      *
      * Allows linking the DeviceUseStatement to the underlying Request, or to other
      * information that supports or is used to derive the DeviceUseStatement.
+     *
+     * @return static
      */
     public function setDerivedFrom(FHIRReference ...$derivedFrom): self
     {
@@ -715,6 +731,8 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How often the device was used.
+     *
+     * @return static
      */
     public function setTimingTiming(null|FHIRTiming $timingTiming): self
     {
@@ -744,6 +762,8 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How often the device was used.
+     *
+     * @return static
      */
     public function setTimingPeriod(null|FHIRPeriod $timingPeriod): self
     {
@@ -779,6 +799,8 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How often the device was used.
+     *
+     * @return static
      */
     public function setTimingDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timingDateTime): self
     {
@@ -817,6 +839,8 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time at which the statement was made/recorded.
+     *
+     * @return static
      */
     public function setRecordedOn(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $recordedOn): self
     {
@@ -849,6 +873,8 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who reported the device was being used by the patient.
+     *
+     * @return static
      */
     public function setSource(null|FHIRReference $source): self
     {
@@ -878,6 +904,8 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The details of the device used.
+     *
+     * @return static
      */
     public function setDevice(null|FHIRReference $device): self
     {
@@ -922,6 +950,8 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason or justification for the use of the device.
+     *
+     * @return static
      */
     public function addReasonCode(FHIRCodeableConcept $reasonCode): self
     {
@@ -939,6 +969,8 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason or justification for the use of the device.
+     *
+     * @return static
      */
     public function setReasonCode(FHIRCodeableConcept ...$reasonCode): self
     {
@@ -981,6 +1013,8 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates another resource whose existence justifies this DeviceUseStatement.
+     *
+     * @return static
      */
     public function addReasonReference(FHIRReference $reasonReference): self
     {
@@ -997,6 +1031,8 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates another resource whose existence justifies this DeviceUseStatement.
+     *
+     * @return static
      */
     public function setReasonReference(FHIRReference ...$reasonReference): self
     {
@@ -1030,6 +1066,8 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      *
      * Indicates the anotomic location on the subject's body where the device was used
      * ( i.e. the target).
+     *
+     * @return static
      */
     public function setBodySite(null|FHIRCodeableConcept $bodySite): self
     {
@@ -1078,6 +1116,8 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * Details about the device statement that were not represented at all or
      * sufficiently in one of the attributes provided in a class. These may include for
      * example a comment, an instruction, or a note associated with the statement.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1097,6 +1137,8 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * Details about the device statement that were not represented at all or
      * sufficiently in one of the attributes provided in a class. These may include for
      * example a comment, an instruction, or a note associated with the statement.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -676,6 +676,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the orderer or by the receiver.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -693,6 +695,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the orderer or by the receiver.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -739,6 +743,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      *
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other
      * definition that is adhered to in whole or in part by this DeviceRequest.
+     *
+     * @return static
      */
     public function addInstantiatesCanonical(string|FHIRCanonicalPrimitive|FHIRCanonical $instantiatesCanonical): self
     {
@@ -760,6 +766,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      *
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other
      * definition that is adhered to in whole or in part by this DeviceRequest.
+     *
+     * @return static
      */
     public function setInstantiatesCanonical(string|FHIRCanonicalPrimitive|FHIRCanonical ...$instantiatesCanonical): self
     {
@@ -811,6 +819,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      *
      * The URL pointing to an externally maintained protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this DeviceRequest.
+     *
+     * @return static
      */
     public function addInstantiatesUri(string|FHIRUriPrimitive|FHIRUri $instantiatesUri): self
     {
@@ -831,6 +841,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      *
      * The URL pointing to an externally maintained protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this DeviceRequest.
+     *
+     * @return static
      */
     public function setInstantiatesUri(string|FHIRUriPrimitive|FHIRUri ...$instantiatesUri): self
     {
@@ -880,6 +892,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Plan/proposal/order fulfilled by this request.
+     *
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -896,6 +910,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Plan/proposal/order fulfilled by this request.
+     *
+     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -940,6 +956,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      *
      * The request takes the place of the referenced completed or terminated
      * request(s).
+     *
+     * @return static
      */
     public function addPriorRequest(FHIRReference $priorRequest): self
     {
@@ -957,6 +975,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      *
      * The request takes the place of the referenced completed or terminated
      * request(s).
+     *
+     * @return static
      */
     public function setPriorRequest(FHIRReference ...$priorRequest): self
     {
@@ -988,6 +1008,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Composite request this is part of.
+     *
+     * @return static
      */
     public function setGroupIdentifier(null|FHIRIdentifier $groupIdentifier): self
     {
@@ -1017,6 +1039,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the request.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRRequestStatusList|FHIRRequestStatus $status): self
     {
@@ -1049,6 +1073,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the request is a proposal, plan, an original order or a reflex order.
+     *
+     * @return static
      */
     public function setIntent(null|string|FHIRRequestIntentList|FHIRRequestIntent $intent): self
     {
@@ -1081,6 +1107,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      *
      * Indicates how quickly the {{title}} should be addressed with respect to other
      * requests.
+     *
+     * @return static
      */
     public function setPriority(null|string|FHIRRequestPriorityList|FHIRRequestPriority $priority): self
     {
@@ -1113,6 +1141,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The details of the device to be used.
+     *
+     * @return static
      */
     public function setCodeReference(null|FHIRReference $codeReference): self
     {
@@ -1144,6 +1174,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The details of the device to be used.
+     *
+     * @return static
      */
     public function setCodeCodeableConcept(null|FHIRCodeableConcept $codeCodeableConcept): self
     {
@@ -1186,6 +1218,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      *
      * Specific parameters for the ordered item. For example, the prism value for
      * lenses.
+     *
+     * @return static
      */
     public function addParameter(FHIRDeviceRequestParameter $parameter): self
     {
@@ -1202,6 +1236,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      *
      * Specific parameters for the ordered item. For example, the prism value for
      * lenses.
+     *
+     * @return static
      */
     public function setParameter(FHIRDeviceRequestParameter ...$parameter): self
     {
@@ -1231,6 +1267,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who will use the device.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -1260,6 +1298,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An encounter that provides additional context in which this request is made.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -1301,6 +1341,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * many different expressions, for example. "Every 8 hours"; "Three times a day";
      * "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17
      * Oct 2013 and 1 Nov 2013".
+     *
+     * @return static
      */
     public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime): self
     {
@@ -1339,6 +1381,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * many different expressions, for example. "Every 8 hours"; "Three times a day";
      * "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17
      * Oct 2013 and 1 Nov 2013".
+     *
+     * @return static
      */
     public function setOccurrencePeriod(null|FHIRPeriod $occurrencePeriod): self
     {
@@ -1382,6 +1426,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * many different expressions, for example. "Every 8 hours"; "Three times a day";
      * "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17
      * Oct 2013 and 1 Nov 2013".
+     *
+     * @return static
      */
     public function setOccurrenceTiming(null|FHIRTiming $occurrenceTiming): self
     {
@@ -1417,6 +1463,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the request transitioned to being actionable.
+     *
+     * @return static
      */
     public function setAuthoredOn(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $authoredOn): self
     {
@@ -1451,6 +1499,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      *
      * The individual who initiated the request and has responsibility for its
      * activation.
+     *
+     * @return static
      */
     public function setRequester(null|FHIRReference $requester): self
     {
@@ -1482,6 +1532,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Desired type of performer for doing the diagnostic testing.
+     *
+     * @return static
      */
     public function setPerformerType(null|FHIRCodeableConcept $performerType): self
     {
@@ -1511,6 +1563,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The desired performer for doing the diagnostic testing.
+     *
+     * @return static
      */
     public function setPerformer(null|FHIRReference $performer): self
     {
@@ -1555,6 +1609,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason or justification for the use of this device.
+     *
+     * @return static
      */
     public function addReasonCode(FHIRCodeableConcept $reasonCode): self
     {
@@ -1572,6 +1628,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason or justification for the use of this device.
+     *
+     * @return static
      */
     public function setReasonCode(FHIRCodeableConcept ...$reasonCode): self
     {
@@ -1614,6 +1672,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason or justification for the use of this device.
+     *
+     * @return static
      */
     public function addReasonReference(FHIRReference $reasonReference): self
     {
@@ -1630,6 +1690,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason or justification for the use of this device.
+     *
+     * @return static
      */
     public function setReasonReference(FHIRReference ...$reasonReference): self
     {
@@ -1674,6 +1736,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      *
      * Insurance plans, coverage extensions, pre-authorizations and/or
      * pre-determinations that may be required for delivering the requested service.
+     *
+     * @return static
      */
     public function addInsurance(FHIRReference $insurance): self
     {
@@ -1691,6 +1755,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      *
      * Insurance plans, coverage extensions, pre-authorizations and/or
      * pre-determinations that may be required for delivering the requested service.
+     *
+     * @return static
      */
     public function setInsurance(FHIRReference ...$insurance): self
     {
@@ -1737,6 +1803,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * Additional clinical information about the patient that may influence the request
      * fulfilment. For example, this may include where on the subject's body the device
      * will be used (i.e. the target site).
+     *
+     * @return static
      */
     public function addSupportingInfo(FHIRReference $supportingInfo): self
     {
@@ -1755,6 +1823,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * Additional clinical information about the patient that may influence the request
      * fulfilment. For example, this may include where on the subject's body the device
      * will be used (i.e. the target site).
+     *
+     * @return static
      */
     public function setSupportingInfo(FHIRReference ...$supportingInfo): self
     {
@@ -1803,6 +1873,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * Details about this request that were not represented at all or sufficiently in
      * one of the attributes provided in a class. These may include for example a
      * comment, an instruction, or a note associated with the statement.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1822,6 +1894,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * Details about this request that were not represented at all or sufficiently in
      * one of the attributes provided in a class. These may include for example a
      * comment, an instruction, or a note associated with the statement.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1864,6 +1938,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Key events in the history of the request.
+     *
+     * @return static
      */
     public function addRelevantHistory(FHIRReference $relevantHistory): self
     {
@@ -1880,6 +1956,8 @@ class FHIRDeviceRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Key events in the history of the request.
+     *
+     * @return static
      */
     public function setRelevantHistory(FHIRReference ...$relevantHistory): self
     {

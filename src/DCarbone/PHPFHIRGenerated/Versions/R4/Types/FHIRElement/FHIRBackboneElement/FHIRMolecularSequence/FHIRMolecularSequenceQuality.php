@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -411,6 +411,8 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * INDEL / SNP / Undefined variant.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRQualityTypeList|FHIRQualityType $type): self
     {
@@ -445,6 +447,8 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Gold standard sequence used for comparing against.
+     *
+     * @return static
      */
     public function setStandardSequence(null|FHIRCodeableConcept $standardSequence): self
     {
@@ -476,6 +480,8 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      *
      * Start position of the sequence. If the coordinate system is either 0-based or
      * 1-based, then start position is inclusive.
+     *
+     * @return static
      */
     public function setStart(null|string|float|FHIRIntegerPrimitive|FHIRInteger $start): self
     {
@@ -512,6 +518,8 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      * End position of the sequence. If the coordinate system is 0-based then end is
      * exclusive and does not include the last position. If the coordinate system is
      * 1-base, then end is inclusive and includes the last position.
+     *
+     * @return static
      */
     public function setEnd(null|string|float|FHIRIntegerPrimitive|FHIRInteger $end): self
     {
@@ -550,6 +558,8 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      *
      * The score of an experimentally derived feature such as a p-value
      * ([SO:0001685](http://www.sequenceontology.org/browser/current_svn/term/SO:0001685)).
+     *
+     * @return static
      */
     public function setScore(null|FHIRQuantity $score): self
     {
@@ -581,6 +591,8 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Which method is used to get sequence quality.
+     *
+     * @return static
      */
     public function setMethod(null|FHIRCodeableConcept $method): self
     {
@@ -618,6 +630,8 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      * in the Truth Call Set for which there are paths through the Query Call Set that
      * are consistent with all of the alleles at this site, and for which there is an
      * accurate genotype call for the event.
+     *
+     * @return static
      */
     public function setTruthTP(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $truthTP): self
     {
@@ -658,6 +672,8 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      * in the Query Call Set for which there are paths through the Truth Call Set that
      * are consistent with all of the alleles at this site, and for which there is an
      * accurate genotype call for the event.
+     *
+     * @return static
      */
     public function setQueryTP(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $queryTP): self
     {
@@ -698,6 +714,8 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      * is no path through the Query Call Set that is consistent with all of the alleles
      * at this site, or sites for which there is an inaccurate genotype call for the
      * event. Sites with correct variant but incorrect genotype are counted here.
+     *
+     * @return static
      */
     public function setTruthFN(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $truthFN): self
     {
@@ -736,6 +754,8 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      * False positives, i.e. the number of sites in the Query Call Set for which there
      * is no path through the Truth Call Set that is consistent with this site. Sites
      * with correct variant but incorrect genotype are counted here.
+     *
+     * @return static
      */
     public function setQueryFP(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $queryFP): self
     {
@@ -774,6 +794,8 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      * The number of false positives where the non-REF alleles in the Truth and Query
      * Call Sets match (i.e. cases where the truth is 1/1 and the query is 0/1 or
      * similar).
+     *
+     * @return static
      */
     public function setGtFP(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $gtFP): self
     {
@@ -808,6 +830,8 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * QUERY.TP / (QUERY.TP + QUERY.FP).
+     *
+     * @return static
      */
     public function setPrecision(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $precision): self
     {
@@ -842,6 +866,8 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * TRUTH.TP / (TRUTH.TP + TRUTH.FN).
+     *
+     * @return static
      */
     public function setRecall(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $recall): self
     {
@@ -878,6 +904,8 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      *
      * Harmonic mean of Recall and Precision, computed as: 2 * precision * recall /
      * (precision + recall).
+     *
+     * @return static
      */
     public function setFScore(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $fScore): self
     {
@@ -908,6 +936,8 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      *
      * Receiver Operator Characteristic (ROC) Curve to give sensitivity/specificity
      * tradeoff.
+     *
+     * @return static
      */
     public function setRoc(null|FHIRMolecularSequenceRoc $roc): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -317,6 +317,8 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Identity (code or path) or the element/item that the map refers to.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -351,6 +353,8 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      *
      * The display for the code. The display is only provided to help editors when
      * editing the concept map.
+     *
+     * @return static
      */
     public function setDisplay(null|string|FHIRStringPrimitive|FHIRString $display): self
     {
@@ -393,6 +397,8 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * element is the same as having multiple ConceptMap.group.element.target elements
      * with one for each concept in the ConceptMap.group.element.target.valueSet value
      * set.
+     *
+     * @return static
      */
     public function setValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $valueSet): self
     {
@@ -423,6 +429,8 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      *
      * The relationship between the source and target concepts. The relationship is
      * read from source to target (e.g. source-is-narrower-than-target).
+     *
+     * @return static
      */
     public function setRelationship(null|string|FHIRConceptMapRelationshipEnum|FHIRConceptMapRelationship $relationship): self
     {
@@ -457,6 +465,8 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      *
      * A description of status/issues in mapping that conveys additional information
      * not represented in the structured data.
+     *
+     * @return static
      */
     public function setComment(null|string|FHIRStringPrimitive|FHIRString $comment): self
     {
@@ -502,6 +512,8 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * concepts, or classes in class models.
      *
      * A property value for this source -> target mapping.
+     *
+     * @return static
      */
     public function addProperty(FHIRConceptMapProperty1 $property): self
     {
@@ -518,6 +530,8 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * concepts, or classes in class models.
      *
      * A property value for this source -> target mapping.
+     *
+     * @return static
      */
     public function setProperty(FHIRConceptMapProperty1 ...$property): self
     {
@@ -564,6 +578,8 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * A set of additional dependencies for this mapping to hold. This mapping is only
      * applicable if the specified data attribute can be resolved, and it has the
      * specified value.
+     *
+     * @return static
      */
     public function addDependsOn(FHIRConceptMapDependsOn $dependsOn): self
     {
@@ -582,6 +598,8 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * A set of additional dependencies for this mapping to hold. This mapping is only
      * applicable if the specified data attribute can be resolved, and it has the
      * specified value.
+     *
+     * @return static
      */
     public function setDependsOn(FHIRConceptMapDependsOn ...$dependsOn): self
     {
@@ -626,6 +644,8 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      *
      * Product is the output of a ConceptMap that provides additional values that go in
      * other attributes / data elemnts of the target data.
+     *
+     * @return static
      */
     public function addProduct(FHIRConceptMapDependsOn $product): self
     {
@@ -643,6 +663,8 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      *
      * Product is the output of a ConceptMap that provides additional values that go in
      * other attributes / data elemnts of the target data.
+     *
+     * @return static
      */
     public function setProduct(FHIRConceptMapDependsOn ...$product): self
     {

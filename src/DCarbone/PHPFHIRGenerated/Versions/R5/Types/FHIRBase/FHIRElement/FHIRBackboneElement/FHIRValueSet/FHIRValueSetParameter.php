@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -177,7 +177,7 @@ class FHIRValueSetParameter extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the parameter. (choose any one of value*, but only one)
+     * The value of the parameter.
      */
     #[FHIRString]
     protected FHIRString $valueString;
@@ -185,7 +185,7 @@ class FHIRValueSetParameter extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the parameter. (choose any one of value*, but only one)
+     * The value of the parameter.
      */
     #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
@@ -194,7 +194,7 @@ class FHIRValueSetParameter extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the parameter. (choose any one of value*, but only one)
+     * The value of the parameter.
      */
     #[FHIRInteger]
     protected FHIRInteger $valueInteger;
@@ -204,7 +204,7 @@ class FHIRValueSetParameter extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the parameter. (choose any one of value*, but only one)
+     * The value of the parameter.
      */
     #[FHIRDecimal]
     protected FHIRDecimal $valueDecimal;
@@ -213,7 +213,7 @@ class FHIRValueSetParameter extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the parameter. (choose any one of value*, but only one)
+     * The value of the parameter.
      */
     #[FHIRUri]
     protected FHIRUri $valueUri;
@@ -223,7 +223,7 @@ class FHIRValueSetParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the parameter. (choose any one of value*, but only one)
+     * The value of the parameter.
      */
     #[FHIRCode]
     protected FHIRCode $valueCode;
@@ -236,7 +236,7 @@ class FHIRValueSetParameter extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the parameter. (choose any one of value*, but only one)
+     * The value of the parameter.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $valueDateTime;
@@ -320,6 +320,8 @@ class FHIRValueSetParameter extends FHIRBackboneElement
      * Name of the input parameter to the $expand operation; may be a server-assigned
      * name for additional default or other server-supplied parameters used to control
      * the expansion process.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -339,7 +341,7 @@ class FHIRValueSetParameter extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the parameter. (choose any one of value*, but only one)
+     * The value of the parameter.
      */
     public function getValueString(): null|FHIRString
     {
@@ -351,7 +353,9 @@ class FHIRValueSetParameter extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the parameter. (choose any one of value*, but only one)
+     * The value of the parameter.
+     *
+     * @return static
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -370,7 +374,7 @@ class FHIRValueSetParameter extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the parameter. (choose any one of value*, but only one)
+     * The value of the parameter.
      */
     public function getValueBoolean(): null|FHIRBoolean
     {
@@ -381,7 +385,9 @@ class FHIRValueSetParameter extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the parameter. (choose any one of value*, but only one)
+     * The value of the parameter.
+     *
+     * @return static
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -401,7 +407,7 @@ class FHIRValueSetParameter extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the parameter. (choose any one of value*, but only one)
+     * The value of the parameter.
      */
     public function getValueInteger(): null|FHIRInteger
     {
@@ -413,7 +419,9 @@ class FHIRValueSetParameter extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the parameter. (choose any one of value*, but only one)
+     * The value of the parameter.
+     *
+     * @return static
      */
     public function setValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $valueInteger): self
     {
@@ -434,7 +442,7 @@ class FHIRValueSetParameter extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the parameter. (choose any one of value*, but only one)
+     * The value of the parameter.
      */
     public function getValueDecimal(): null|FHIRDecimal
     {
@@ -447,7 +455,9 @@ class FHIRValueSetParameter extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the parameter. (choose any one of value*, but only one)
+     * The value of the parameter.
+     *
+     * @return static
      */
     public function setValueDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $valueDecimal): self
     {
@@ -467,7 +477,7 @@ class FHIRValueSetParameter extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the parameter. (choose any one of value*, but only one)
+     * The value of the parameter.
      */
     public function getValueUri(): null|FHIRUri
     {
@@ -479,7 +489,9 @@ class FHIRValueSetParameter extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the parameter. (choose any one of value*, but only one)
+     * The value of the parameter.
+     *
+     * @return static
      */
     public function setValueUri(null|string|FHIRUriPrimitive|FHIRUri $valueUri): self
     {
@@ -500,7 +512,7 @@ class FHIRValueSetParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the parameter. (choose any one of value*, but only one)
+     * The value of the parameter.
      */
     public function getValueCode(): null|FHIRCode
     {
@@ -513,7 +525,9 @@ class FHIRValueSetParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of the parameter. (choose any one of value*, but only one)
+     * The value of the parameter.
+     *
+     * @return static
      */
     public function setValueCode(null|string|FHIRCodePrimitive|FHIRCode $valueCode): self
     {
@@ -537,7 +551,7 @@ class FHIRValueSetParameter extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the parameter. (choose any one of value*, but only one)
+     * The value of the parameter.
      */
     public function getValueDateTime(): null|FHIRDateTime
     {
@@ -553,7 +567,9 @@ class FHIRValueSetParameter extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the parameter. (choose any one of value*, but only one)
+     * The value of the parameter.
+     *
+     * @return static
      */
     public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime): self
     {

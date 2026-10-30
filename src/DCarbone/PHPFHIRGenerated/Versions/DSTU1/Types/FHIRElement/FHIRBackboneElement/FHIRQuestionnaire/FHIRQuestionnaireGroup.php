@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -250,6 +250,8 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * Structured name for a section of a predefined list of questions this
      * questionnaire is responding to.
+     *
+     * @return static
      */
     public function setName(null|FHIRCodeableConcept $name): self
     {
@@ -277,6 +279,8 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Text that is displayed above the contents of the group.
+     *
+     * @return static
      */
     public function setHeader(null|string|FHIRStringPrimitive|FHIRString $header): self
     {
@@ -307,6 +311,8 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional text for the group, used for display purposes.
+     *
+     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -341,6 +347,8 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * More specific subject this section's answers are about, details the subject
      * given in Questionnaire.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRResourceReference $subject): self
     {
@@ -387,6 +395,8 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * A sub-group within a group. The ordering of groups within this group is
      * relevant.
+     *
+     * @return static
      */
     public function addGroup(FHIRQuestionnaireGroup $group): self
     {
@@ -405,6 +415,8 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * A sub-group within a group. The ordering of groups within this group is
      * relevant.
+     *
+     * @return static
      */
     public function setGroup(FHIRQuestionnaireGroup ...$group): self
     {
@@ -451,6 +463,8 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * Set of questions within this group. The order of questions within the group is
      * relevant.
+     *
+     * @return static
      */
     public function addQuestion(FHIRQuestionnaireQuestion $question): self
     {
@@ -469,6 +483,8 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * Set of questions within this group. The order of questions within the group is
      * relevant.
+     *
+     * @return static
      */
     public function setQuestion(FHIRQuestionnaireQuestion ...$question): self
     {

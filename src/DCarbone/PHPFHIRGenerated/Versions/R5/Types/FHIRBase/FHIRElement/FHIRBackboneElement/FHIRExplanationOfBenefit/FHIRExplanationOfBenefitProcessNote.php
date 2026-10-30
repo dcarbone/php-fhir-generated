@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -230,6 +230,8 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A number to uniquely identify a note entry.
+     *
+     * @return static
      */
     public function setNumber(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $number): self
     {
@@ -264,6 +266,8 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The business purpose of the note text.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -293,6 +297,8 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The explanation or description associated with the processing.
+     *
+     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -327,6 +333,8 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code to define the language used in the text of the note.
+     *
+     * @return static
      */
     public function setLanguage(null|FHIRCodeableConcept $language): self
     {

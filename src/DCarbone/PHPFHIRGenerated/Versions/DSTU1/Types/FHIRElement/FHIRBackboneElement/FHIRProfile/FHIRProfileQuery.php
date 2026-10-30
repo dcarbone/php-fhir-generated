@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -205,6 +205,8 @@ class FHIRProfileQuery extends FHIRBackboneElement
      * declaring use of the query. Typically this will also be the name for the _query
      * parameter when the query is called, though in some cases it may be aliased by a
      * server to avoid collisions.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -237,6 +239,8 @@ class FHIRProfileQuery extends FHIRBackboneElement
      *
      * Description of the query - the functionality it offers, and considerations about
      * how it functions and to use it.
+     *
+     * @return static
      */
     public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation): self
     {
@@ -282,6 +286,8 @@ class FHIRProfileQuery extends FHIRBackboneElement
      * and Extension Definitions.
      *
      * A parameter of a named query.
+     *
+     * @return static
      */
     public function addParameter(FHIRProfileSearchParam $parameter): self
     {
@@ -298,6 +304,8 @@ class FHIRProfileQuery extends FHIRBackboneElement
      * and Extension Definitions.
      *
      * A parameter of a named query.
+     *
+     * @return static
      */
     public function setParameter(FHIRProfileSearchParam ...$parameter): self
     {

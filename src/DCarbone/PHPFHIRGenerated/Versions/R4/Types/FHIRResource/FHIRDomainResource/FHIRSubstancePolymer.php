@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -273,6 +273,8 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
+     *
+     * @return static
      */
     public function setClass(null|FHIRCodeableConcept $class): self
     {
@@ -304,6 +306,8 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
+     *
+     * @return static
      */
     public function setGeometry(null|FHIRCodeableConcept $geometry): self
     {
@@ -348,6 +352,8 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
+     *
+     * @return static
      */
     public function addCopolymerConnectivity(FHIRCodeableConcept $copolymerConnectivity): self
     {
@@ -365,6 +371,8 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
+     *
+     * @return static
      */
     public function setCopolymerConnectivity(FHIRCodeableConcept ...$copolymerConnectivity): self
     {
@@ -407,6 +415,8 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Todo.
+     *
+     * @return static
      */
     public function addModification(string|FHIRStringPrimitive|FHIRString $modification): self
     {
@@ -426,6 +436,8 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Todo.
+     *
+     * @return static
      */
     public function setModification(string|FHIRStringPrimitive|FHIRString ...$modification): self
     {
@@ -471,6 +483,8 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
      * Todo.
      *
      * Todo.
+     *
+     * @return static
      */
     public function addMonomerSet(FHIRSubstancePolymerMonomerSet $monomerSet): self
     {
@@ -485,6 +499,8 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
      * Todo.
      *
      * Todo.
+     *
+     * @return static
      */
     public function setMonomerSet(FHIRSubstancePolymerMonomerSet ...$monomerSet): self
     {
@@ -523,6 +539,8 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
      * Todo.
      *
      * Todo.
+     *
+     * @return static
      */
     public function addRepeat(FHIRSubstancePolymerRepeat $repeat): self
     {
@@ -537,6 +555,8 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
      * Todo.
      *
      * Todo.
+     *
+     * @return static
      */
     public function setRepeat(FHIRSubstancePolymerRepeat ...$repeat): self
     {

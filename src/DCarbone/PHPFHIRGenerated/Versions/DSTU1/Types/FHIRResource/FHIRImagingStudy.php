@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -463,6 +463,8 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date and Time the study took place.
+     *
+     * @return static
      */
     public function setDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateTime): self
     {
@@ -495,6 +497,8 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who the images are of.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRResourceReference $subject): self
     {
@@ -524,6 +528,8 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
      * the Narrative, or extensions
      *
      * Formal identifier for the study.
+     *
+     * @return static
      */
     public function setUid(null|string|FHIROidPrimitive|FHIROid $uid): self
     {
@@ -556,6 +562,8 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Accession Number.
+     *
+     * @return static
      */
     public function setAccessionNo(null|FHIRIdentifier $accessionNo): self
     {
@@ -598,6 +606,8 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other identifiers for the study.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -614,6 +624,8 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other identifiers for the study.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -658,6 +670,8 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
      *
      * A list of the diagnostic orders that resulted in this imaging study being
      * performed.
+     *
+     * @return static
      */
     public function addOrder(FHIRResourceReference $order): self
     {
@@ -675,6 +689,8 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
      *
      * A list of the diagnostic orders that resulted in this imaging study being
      * performed.
+     *
+     * @return static
      */
     public function setOrder(FHIRResourceReference ...$order): self
     {
@@ -719,6 +735,8 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
      * A list of all the Series.ImageModality values that are actual acquisition
      * modalities, i.e. those in the DICOM Context Group 29 (value set OID
      * 1.2.840.10008.6.1.19).
+     *
+     * @return static
      */
     public function addModality(string|FHIRImagingModalityList|FHIRImagingModality $modality): self
     {
@@ -739,6 +757,8 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
      * A list of all the Series.ImageModality values that are actual acquisition
      * modalities, i.e. those in the DICOM Context Group 29 (value set OID
      * 1.2.840.10008.6.1.19).
+     *
+     * @return static
      */
     public function setModality(string|FHIRImagingModalityList|FHIRImagingModality ...$modality): self
     {
@@ -775,6 +795,8 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The requesting/referring physician.
+     *
+     * @return static
      */
     public function setReferrer(null|FHIRResourceReference $referrer): self
     {
@@ -802,6 +824,8 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Availability of study (online, offline or nearline).
+     *
+     * @return static
      */
     public function setAvailability(null|string|FHIRInstanceAvailabilityList|FHIRInstanceAvailability $availability): self
     {
@@ -832,6 +856,8 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * WADO-RS URI where Study is available.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -862,6 +888,8 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Number of Series in Study.
+     *
+     * @return static
      */
     public function setNumberOfSeries(null|string|float|FHIRIntegerPrimitive|FHIRInteger $numberOfSeries): self
     {
@@ -892,6 +920,8 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Number of SOP Instances in Study.
+     *
+     * @return static
      */
     public function setNumberOfInstances(null|string|float|FHIRIntegerPrimitive|FHIRInteger $numberOfInstances): self
     {
@@ -922,6 +952,8 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Diagnoses etc provided with request.
+     *
+     * @return static
      */
     public function setClinicalInformation(null|string|FHIRStringPrimitive|FHIRString $clinicalInformation): self
     {
@@ -967,6 +999,8 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of procedure performed.
+     *
+     * @return static
      */
     public function addProcedure(FHIRCoding $procedure): self
     {
@@ -983,6 +1017,8 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of procedure performed.
+     *
+     * @return static
      */
     public function setProcedure(FHIRCoding ...$procedure): self
     {
@@ -1012,6 +1048,8 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who read study and interpreted the images.
+     *
+     * @return static
      */
     public function setInterpreter(null|FHIRResourceReference $interpreter): self
     {
@@ -1041,6 +1079,8 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
      *
      * Institution-generated description or classification of the Study (component)
      * performed.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -1086,6 +1126,8 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
      * key images.
      *
      * Each study has one or more series of image instances.
+     *
+     * @return static
      */
     public function addSeries(FHIRImagingStudySeries $series): self
     {
@@ -1102,6 +1144,8 @@ class FHIRImagingStudy extends FHIRResource implements VersionContainedTypeInter
      * key images.
      *
      * Each study has one or more series of image instances.
+     *
+     * @return static
      */
     public function setSeries(FHIRImagingStudySeries ...$series): self
     {

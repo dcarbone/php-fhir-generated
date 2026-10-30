@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -236,6 +236,8 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role of participant in the appointment.
+     *
+     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -253,6 +255,8 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role of participant in the appointment.
+     *
+     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -284,6 +288,8 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      *
      * A Person, Location/HealthcareService or Device that is participating in the
      * appointment.
+     *
+     * @return static
      */
     public function setActor(null|FHIRReference $actor): self
     {
@@ -315,6 +321,8 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      * Is this participant required to be present at the meeting. This covers a
      * use-case where 2 doctors need to meet to discuss the results for a specific
      * patient, and the patient is not required to be present.
+     *
+     * @return static
      */
     public function setRequired(null|string|FHIRParticipantRequiredList|FHIRParticipantRequired $required): self
     {
@@ -345,6 +353,8 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Participation status of the Patient.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRParticipationStatusList|FHIRParticipationStatus $status): self
     {

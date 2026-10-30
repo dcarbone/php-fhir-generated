@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -311,6 +311,8 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Response business identifier.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -327,6 +329,8 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Response business identifier.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -354,6 +358,8 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRFinancialResourceStatusCodesList|FHIRFinancialResourceStatusCodes $status): self
     {
@@ -392,6 +398,8 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when this resource was created.
+     *
+     * @return static
      */
     public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created): self
     {
@@ -424,6 +432,8 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Insurer who is target of the request.
+     *
+     * @return static
      */
     public function setInsurer(null|FHIRReference $insurer): self
     {
@@ -453,6 +463,8 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who is responsible for the services rendered to the patient.
+     *
+     * @return static
      */
     public function setProvider(null|FHIRReference $provider): self
     {
@@ -482,6 +494,8 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization which is responsible for the services rendered to the patient.
+     *
+     * @return static
      */
     public function setOrganization(null|FHIRReference $organization): self
     {
@@ -511,6 +525,8 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Patient Resource.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -540,6 +556,8 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the program or plan identification, underwriter or payor.
+     *
+     * @return static
      */
     public function setCoverage(null|FHIRReference $coverage): self
     {

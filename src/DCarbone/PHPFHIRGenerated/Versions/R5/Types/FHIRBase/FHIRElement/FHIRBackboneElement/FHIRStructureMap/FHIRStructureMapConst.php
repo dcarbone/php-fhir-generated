@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -206,6 +206,8 @@ class FHIRStructureMapConst extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Other maps used by this map (canonical URLs).
+     *
+     * @return static
      */
     public function setName(null|string|FHIRIdPrimitive|FHIRId $name): self
     {
@@ -238,6 +240,8 @@ class FHIRStructureMapConst extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A FHIRPath expression that is the value of this variable.
+     *
+     * @return static
      */
     public function setValue(null|string|FHIRStringPrimitive|FHIRString $value): self
     {

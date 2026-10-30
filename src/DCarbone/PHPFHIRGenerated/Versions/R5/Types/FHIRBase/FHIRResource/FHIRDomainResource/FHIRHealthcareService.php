@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -632,6 +632,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * External identifiers for this item.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -649,6 +651,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * External identifiers for this item.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -680,6 +684,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * This flag is used to mark the record to not be used. This is not used when a
      * center is closed for maintenance, or for holidays, the notAvailable period is to
      * be used for this.
+     *
+     * @return static
      */
     public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active): self
     {
@@ -712,6 +718,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization that provides this healthcare service.
+     *
+     * @return static
      */
     public function setProvidedBy(null|FHIRReference $providedBy): self
     {
@@ -756,6 +764,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * When the HealthcareService is representing a specific, schedulable service, the
      * availableIn property can refer to a generic service.
+     *
+     * @return static
      */
     public function addOfferedIn(FHIRReference $offeredIn): self
     {
@@ -773,6 +783,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * When the HealthcareService is representing a specific, schedulable service, the
      * availableIn property can refer to a generic service.
+     *
+     * @return static
      */
     public function setOfferedIn(FHIRReference ...$offeredIn): self
     {
@@ -817,6 +829,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the broad category of service being performed or delivered.
+     *
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -834,6 +848,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the broad category of service being performed or delivered.
+     *
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -878,6 +894,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific type of service that may be delivered or performed.
+     *
+     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -895,6 +913,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific type of service that may be delivered or performed.
+     *
+     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -941,6 +961,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Collection of specialties handled by the Healthcare service. This is more of a
      * medical term.
+     *
+     * @return static
      */
     public function addSpecialty(FHIRCodeableConcept $specialty): self
     {
@@ -959,6 +981,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Collection of specialties handled by the Healthcare service. This is more of a
      * medical term.
+     *
+     * @return static
      */
     public function setSpecialty(FHIRCodeableConcept ...$specialty): self
     {
@@ -1001,6 +1025,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) where this healthcare service may be provided.
+     *
+     * @return static
      */
     public function addLocation(FHIRReference $location): self
     {
@@ -1017,6 +1043,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) where this healthcare service may be provided.
+     *
+     * @return static
      */
     public function setLocation(FHIRReference ...$location): self
     {
@@ -1048,6 +1076,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Further description of the service as it would be presented to a consumer while
      * searching.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -1092,6 +1122,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * Any additional description of the service and/or any specific issues not covered
      * by the other attributes, which can be displayed as further detail under the
      * serviceName.
+     *
+     * @return static
      */
     public function setComment(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $comment): self
     {
@@ -1132,6 +1164,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * the Narrative, or extensions
      *
      * Extra details about the service that can't be placed in the other fields.
+     *
+     * @return static
      */
     public function setExtraDetails(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $extraDetails): self
     {
@@ -1166,6 +1200,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * If there is a photo/symbol associated with this HealthcareService, it may be
      * included here to facilitate quick identification of the service in a list.
+     *
+     * @return static
      */
     public function setPhoto(null|FHIRAttachment $photo): self
     {
@@ -1214,6 +1250,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * The contact details of communication devices available relevant to the specific
      * HealthcareService. This can include addresses, phone numbers, fax numbers,
      * mobile numbers, email addresses and web sites.
+     *
+     * @return static
      */
     public function addContact(FHIRExtendedContactDetail $contact): self
     {
@@ -1233,6 +1271,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * The contact details of communication devices available relevant to the specific
      * HealthcareService. This can include addresses, phone numbers, fax numbers,
      * mobile numbers, email addresses and web sites.
+     *
+     * @return static
      */
     public function setContact(FHIRExtendedContactDetail ...$contact): self
     {
@@ -1277,6 +1317,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * The location(s) that this service is available to (not where the service is
      * provided).
+     *
+     * @return static
      */
     public function addCoverageArea(FHIRReference $coverageArea): self
     {
@@ -1294,6 +1336,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * The location(s) that this service is available to (not where the service is
      * provided).
+     *
+     * @return static
      */
     public function setCoverageArea(FHIRReference ...$coverageArea): self
     {
@@ -1340,6 +1384,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * The code(s) that detail the conditions under which the healthcare service is
      * available/offered.
+     *
+     * @return static
      */
     public function addServiceProvisionCode(FHIRCodeableConcept $serviceProvisionCode): self
     {
@@ -1358,6 +1404,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * The code(s) that detail the conditions under which the healthcare service is
      * available/offered.
+     *
+     * @return static
      */
     public function setServiceProvisionCode(FHIRCodeableConcept ...$serviceProvisionCode): self
     {
@@ -1398,6 +1446,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Does this service have specific eligibility requirements that need to be met in
      * order to use the service?
+     *
+     * @return static
      */
     public function addEligibility(FHIRHealthcareServiceEligibility $eligibility): self
     {
@@ -1413,6 +1463,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Does this service have specific eligibility requirements that need to be met in
      * order to use the service?
+     *
+     * @return static
      */
     public function setEligibility(FHIRHealthcareServiceEligibility ...$eligibility): self
     {
@@ -1457,6 +1509,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Programs that this service is applicable to.
+     *
+     * @return static
      */
     public function addProgram(FHIRCodeableConcept $program): self
     {
@@ -1474,6 +1528,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Programs that this service is applicable to.
+     *
+     * @return static
      */
     public function setProgram(FHIRCodeableConcept ...$program): self
     {
@@ -1518,6 +1574,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Collection of characteristics (attributes).
+     *
+     * @return static
      */
     public function addCharacteristic(FHIRCodeableConcept $characteristic): self
     {
@@ -1535,6 +1593,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Collection of characteristics (attributes).
+     *
+     * @return static
      */
     public function setCharacteristic(FHIRCodeableConcept ...$characteristic): self
     {
@@ -1585,6 +1645,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * property permits a directory to declare the languages this is offered in.
      * Typically this is only provided where a service operates in communities with
      * mixed languages used.
+     *
+     * @return static
      */
     public function addCommunication(FHIRCodeableConcept $communication): self
     {
@@ -1605,6 +1667,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * property permits a directory to declare the languages this is offered in.
      * Typically this is only provided where a service operates in communities with
      * mixed languages used.
+     *
+     * @return static
      */
     public function setCommunication(FHIRCodeableConcept ...$communication): self
     {
@@ -1651,6 +1715,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Ways that the service accepts referrals, if this is not provided then it is
      * implied that no referral is required.
+     *
+     * @return static
      */
     public function addReferralMethod(FHIRCodeableConcept $referralMethod): self
     {
@@ -1669,6 +1735,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Ways that the service accepts referrals, if this is not provided then it is
      * implied that no referral is required.
+     *
+     * @return static
      */
     public function setReferralMethod(FHIRCodeableConcept ...$referralMethod): self
     {
@@ -1700,6 +1768,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * Indicates whether or not a prospective consumer will require an appointment for
      * a particular service at a site to be provided by the Organization. Indicates if
      * an appointment is required for access to this service.
+     *
+     * @return static
      */
     public function setAppointmentRequired(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $appointmentRequired): self
     {
@@ -1745,6 +1815,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A collection of times that the healthcare service is available.
+     *
+     * @return static
      */
     public function addAvailability(FHIRAvailability $availability): self
     {
@@ -1761,6 +1833,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A collection of times that the healthcare service is available.
+     *
+     * @return static
      */
     public function setAvailability(FHIRAvailability ...$availability): self
     {
@@ -1805,6 +1879,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Technical endpoints providing access to services operated for the specific
      * healthcare services defined at this resource.
+     *
+     * @return static
      */
     public function addEndpoint(FHIRReference $endpoint): self
     {
@@ -1822,6 +1898,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Technical endpoints providing access to services operated for the specific
      * healthcare services defined at this resource.
+     *
+     * @return static
      */
     public function setEndpoint(FHIRReference ...$endpoint): self
     {

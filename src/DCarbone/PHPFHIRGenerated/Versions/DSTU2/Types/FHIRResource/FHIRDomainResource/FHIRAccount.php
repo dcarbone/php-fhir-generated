@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -362,6 +362,8 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Unique identifier used to reference the account. May or may not be intended for
      * human use (e.g. credit card number).
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -379,6 +381,8 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Unique identifier used to reference the account. May or may not be intended for
      * human use (e.g. credit card number).
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -408,6 +412,8 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name used for the account when displaying it to humans in reports, etc.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -442,6 +448,8 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Categorizes the account for reporting and searching purposes.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -469,6 +477,8 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the account is presently used/useable or not.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRAccountStatusList|FHIRAccountStatus $status): self
     {
@@ -501,6 +511,8 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the period of time over which the account is allowed.
+     *
+     * @return static
      */
     public function setActivePeriod(null|FHIRPeriod $activePeriod): self
     {
@@ -532,6 +544,8 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Identifies the currency to which transactions must be converted when crediting
      * or debiting the account.
+     *
+     * @return static
      */
     public function setCurrency(null|FHIRCoding $currency): self
     {
@@ -555,6 +569,8 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
     /**
      * Represents the sum of all credits less all debits associated with the account.
      * Might be positive, zero or negative.
+     *
+     * @return static
      */
     public function setBalance(null|FHIRMoney $balance): self
     {
@@ -586,6 +602,8 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Identifies the period of time the account applies to; e.g. accounts created per
      * fiscal year, quarter, etc.
+     *
+     * @return static
      */
     public function setCoveragePeriod(null|FHIRPeriod $coveragePeriod): self
     {
@@ -617,6 +635,8 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Identifies the patient, device, practitioner, location or other object the
      * account is associated with.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -648,6 +668,8 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Indicates the organization, department, etc. with responsibility for the
      * account.
+     *
+     * @return static
      */
     public function setOwner(null|FHIRReference $owner): self
     {
@@ -679,6 +701,8 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Provides additional information about what the account tracks and how it is
      * used.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -222,6 +222,8 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Substance identifier for each non-natural or radioisotope.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -253,6 +255,8 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Substance name for each non-natural or radioisotope.
+     *
+     * @return static
      */
     public function setName(null|FHIRCodeableConcept $name): self
     {
@@ -284,6 +288,8 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of isotopic substitution present in a single substance.
+     *
+     * @return static
      */
     public function setSubstitution(null|FHIRCodeableConcept $substitution): self
     {
@@ -317,6 +323,8 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Half life - for a non-natural nuclide.
+     *
+     * @return static
      */
     public function setHalfLife(null|FHIRQuantity $halfLife): self
     {
@@ -344,6 +352,8 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
      * used for prescribing.
      *
      * The molecular weight or weight range (for proteins, polymers or nucleic acids).
+     *
+     * @return static
      */
     public function setMolecularWeight(null|FHIRSubstanceSpecificationMolecularWeight $molecularWeight): self
     {

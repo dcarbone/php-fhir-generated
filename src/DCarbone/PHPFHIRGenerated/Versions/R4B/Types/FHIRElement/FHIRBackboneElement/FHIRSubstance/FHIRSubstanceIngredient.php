@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -217,6 +217,8 @@ class FHIRSubstanceIngredient extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of the ingredient in the substance - a concentration ratio.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRRatio $quantity): self
     {
@@ -248,6 +250,8 @@ class FHIRSubstanceIngredient extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Another substance that is a component of this substance.
+     *
+     * @return static
      */
     public function setSubstanceCodeableConcept(null|FHIRCodeableConcept $substanceCodeableConcept): self
     {
@@ -277,6 +281,8 @@ class FHIRSubstanceIngredient extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Another substance that is a component of this substance.
+     *
+     * @return static
      */
     public function setSubstanceReference(null|FHIRReference $substanceReference): self
     {

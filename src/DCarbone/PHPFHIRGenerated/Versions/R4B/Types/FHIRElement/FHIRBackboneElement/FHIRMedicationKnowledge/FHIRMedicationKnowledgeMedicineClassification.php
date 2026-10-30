@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -205,6 +205,8 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      *
      * The type of category for the medication (for example, therapeutic
      * classification, therapeutic sub-classification).
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -251,6 +253,8 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      *
      * Specific category assigned to the medication (e.g. anti-infective,
      * anti-hypertensive, antibiotic, etc.).
+     *
+     * @return static
      */
     public function addClassification(FHIRCodeableConcept $classification): self
     {
@@ -269,6 +273,8 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      *
      * Specific category assigned to the medication (e.g. anti-infective,
      * anti-hypertensive, antibiotic, etc.).
+     *
+     * @return static
      */
     public function setClassification(FHIRCodeableConcept ...$classification): self
     {

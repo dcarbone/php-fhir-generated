@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -486,6 +486,8 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Id for specimen.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -503,6 +505,8 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Id for specimen.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -538,6 +542,8 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * The identifier assigned by the lab when accessioning specimen(s). This is not
      * necessarily the same as the specimen identifier, depending on local lab
      * procedures.
+     *
+     * @return static
      */
     public function setAccessionIdentifier(null|FHIRIdentifier $accessionIdentifier): self
     {
@@ -563,6 +569,8 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The availability of the specimen.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRSpecimenStatusEnum|FHIRSpecimenStatus $status): self
     {
@@ -597,6 +605,8 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of material that forms the specimen.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -630,6 +640,8 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * Where the specimen came from. This may be from patient(s), from a location
      * (e.g., the source of an environmental sample), or a sampling of a substance, a
      * biologically-derived product, or a device.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -669,6 +681,8 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Time when specimen is received by the testing laboratory for processing or
      * testing.
+     *
+     * @return static
      */
     public function setReceivedTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $receivedTime): self
     {
@@ -716,6 +730,8 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Reference to the parent (source) specimen which is used when the specimen was
      * either derived from or a component of another specimen.
+     *
+     * @return static
      */
     public function addParent(FHIRReference $parent): self
     {
@@ -733,6 +749,8 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Reference to the parent (source) specimen which is used when the specimen was
      * either derived from or a component of another specimen.
+     *
+     * @return static
      */
     public function setParent(FHIRReference ...$parent): self
     {
@@ -775,6 +793,8 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Details concerning a service request that required a specimen to be collected.
+     *
+     * @return static
      */
     public function addRequest(FHIRReference $request): self
     {
@@ -791,6 +811,8 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Details concerning a service request that required a specimen to be collected.
+     *
+     * @return static
      */
     public function setRequest(FHIRReference ...$request): self
     {
@@ -816,6 +838,8 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This element signifies if the specimen is part of a group or pooled.
+     *
+     * @return static
      */
     public function setCombined(null|string|FHIRSpecimenCombinedEnum|FHIRSpecimenCombined $combined): self
     {
@@ -863,6 +887,8 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The role or reason for the specimen in the testing workflow.
+     *
+     * @return static
      */
     public function addRole(FHIRCodeableConcept $role): self
     {
@@ -880,6 +906,8 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The role or reason for the specimen in the testing workflow.
+     *
+     * @return static
      */
     public function setRole(FHIRCodeableConcept ...$role): self
     {
@@ -926,6 +954,8 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * well as its meaning (e.g. the red ink indicating the resection margin of the
      * right lobe of the excised prostate tissue or wire loop at radiologically
      * suspected tumor location).
+     *
+     * @return static
      */
     public function addFeature(FHIRSpecimenFeature $feature): self
     {
@@ -944,6 +974,8 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * well as its meaning (e.g. the red ink indicating the resection margin of the
      * right lobe of the excised prostate tissue or wire loop at radiologically
      * suspected tumor location).
+     *
+     * @return static
      */
     public function setFeature(FHIRSpecimenFeature ...$feature): self
     {
@@ -969,6 +1001,8 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * A sample to be used for analysis.
      *
      * Details concerning the specimen collection.
+     *
+     * @return static
      */
     public function setCollection(null|FHIRSpecimenCollection $collection): self
     {
@@ -1007,6 +1041,8 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * A sample to be used for analysis.
      *
      * Details concerning processing and processing steps for the specimen.
+     *
+     * @return static
      */
     public function addProcessing(FHIRSpecimenProcessing $processing): self
     {
@@ -1021,6 +1057,8 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * A sample to be used for analysis.
      *
      * Details concerning processing and processing steps for the specimen.
+     *
+     * @return static
      */
     public function setProcessing(FHIRSpecimenProcessing ...$processing): self
     {
@@ -1061,6 +1099,8 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The container holding the specimen. The recursive nature of containers; i.e.
      * blood in tube in tray in rack is not addressed here.
+     *
+     * @return static
      */
     public function addContainer(FHIRSpecimenContainer $container): self
     {
@@ -1076,6 +1116,8 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The container holding the specimen. The recursive nature of containers; i.e.
      * blood in tube in tray in rack is not addressed here.
+     *
+     * @return static
      */
     public function setContainer(FHIRSpecimenContainer ...$container): self
     {
@@ -1120,6 +1162,8 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A mode or state of being that describes the nature of the specimen.
+     *
+     * @return static
      */
     public function addCondition(FHIRCodeableConcept $condition): self
     {
@@ -1137,6 +1181,8 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A mode or state of being that describes the nature of the specimen.
+     *
+     * @return static
      */
     public function setCondition(FHIRCodeableConcept ...$condition): self
     {
@@ -1183,6 +1229,8 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * To communicate any details or issues about the specimen or during the specimen
      * collection. (for example: broken vial, sent with patient, frozen).
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1201,6 +1249,8 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * To communicate any details or issues about the specimen or during the specimen
      * collection. (for example: broken vial, sent with patient, frozen).
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {

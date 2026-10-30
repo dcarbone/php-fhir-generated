@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -253,6 +253,8 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
      *
      * A description of a landmark on the body used as a reference to locate something
      * else.
+     *
+     * @return static
      */
     public function addLandmarkDescription(FHIRCodeableConcept $landmarkDescription): self
     {
@@ -271,6 +273,8 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
      *
      * A description of a landmark on the body used as a reference to locate something
      * else.
+     *
+     * @return static
      */
     public function setLandmarkDescription(FHIRCodeableConcept ...$landmarkDescription): self
     {
@@ -317,6 +321,8 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
      *
      * An description of the direction away from a landmark something is located based
      * on a radial clock dial.
+     *
+     * @return static
      */
     public function addClockFacePosition(FHIRCodeableConcept $clockFacePosition): self
     {
@@ -335,6 +341,8 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
      *
      * An description of the direction away from a landmark something is located based
      * on a radial clock dial.
+     *
+     * @return static
      */
     public function setClockFacePosition(FHIRCodeableConcept ...$clockFacePosition): self
     {
@@ -375,6 +383,8 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
      * coded concept does not provide the necessary detail needed for the use case.
      *
      * The distance in centimeters a certain observation is made from a body landmark.
+     *
+     * @return static
      */
     public function addDistanceFromLandmark(FHIRBodyStructureDistanceFromLandmark $distanceFromLandmark): self
     {
@@ -390,6 +400,8 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
      * coded concept does not provide the necessary detail needed for the use case.
      *
      * The distance in centimeters a certain observation is made from a body landmark.
+     *
+     * @return static
      */
     public function setDistanceFromLandmark(FHIRBodyStructureDistanceFromLandmark ...$distanceFromLandmark): self
     {
@@ -434,6 +446,8 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The surface area a body location is in relation to a landmark.
+     *
+     * @return static
      */
     public function addSurfaceOrientation(FHIRCodeableConcept $surfaceOrientation): self
     {
@@ -451,6 +465,8 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The surface area a body location is in relation to a landmark.
+     *
+     * @return static
      */
     public function setSurfaceOrientation(FHIRCodeableConcept ...$surfaceOrientation): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -265,6 +265,8 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role of participant in the appointment.
+     *
+     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -282,6 +284,8 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role of participant in the appointment.
+     *
+     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -311,6 +315,8 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Participation period of the actor.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -340,6 +346,8 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual, device, location, or service participating in the appointment.
+     *
+     * @return static
      */
     public function setActor(null|FHIRReference $actor): self
     {
@@ -369,6 +377,8 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      *
      * Whether this participant is required to be present at the meeting. If false, the
      * participant is optional.
+     *
+     * @return static
      */
     public function setRequired(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $required): self
     {
@@ -397,6 +407,8 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Participation status of the actor.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRParticipationStatusEnum|FHIRParticipationStatus $status): self
     {

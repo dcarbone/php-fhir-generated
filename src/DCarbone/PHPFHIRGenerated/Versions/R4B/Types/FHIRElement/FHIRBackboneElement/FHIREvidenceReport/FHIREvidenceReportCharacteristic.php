@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -309,6 +309,8 @@ class FHIREvidenceReportCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Characteristic code.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -338,6 +340,8 @@ class FHIREvidenceReportCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Characteristic value.
+     *
+     * @return static
      */
     public function setValueReference(null|FHIRReference $valueReference): self
     {
@@ -369,6 +373,8 @@ class FHIREvidenceReportCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Characteristic value.
+     *
+     * @return static
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -396,6 +402,8 @@ class FHIREvidenceReportCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Characteristic value.
+     *
+     * @return static
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -432,6 +440,8 @@ class FHIREvidenceReportCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Characteristic value.
+     *
+     * @return static
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -461,6 +471,8 @@ class FHIREvidenceReportCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Characteristic value.
+     *
+     * @return static
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -488,6 +500,8 @@ class FHIREvidenceReportCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Is used to express not the characteristic.
+     *
+     * @return static
      */
     public function setExclude(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $exclude): self
     {
@@ -520,6 +534,8 @@ class FHIREvidenceReportCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Timeframe for the characteristic.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {

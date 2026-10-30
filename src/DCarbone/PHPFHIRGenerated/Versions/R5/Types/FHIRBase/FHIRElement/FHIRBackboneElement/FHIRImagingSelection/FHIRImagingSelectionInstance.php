@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -293,6 +293,8 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The SOP Instance UID for the selected DICOM instance.
+     *
+     * @return static
      */
     public function setUid(null|string|FHIRIdPrimitive|FHIRId $uid): self
     {
@@ -325,6 +327,8 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The Instance Number for the selected DICOM instance.
+     *
+     * @return static
      */
     public function setNumber(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $number): self
     {
@@ -357,6 +361,8 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The SOP Class UID for the selected DICOM instance.
+     *
+     * @return static
      */
     public function setSopClass(null|FHIRCoding $sopClass): self
     {
@@ -411,6 +417,8 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * document SOP Instance. - A list of segment numbers selected from a segmentation
      * SOP Instance. - A list of Region of Interest (ROI) numbers selected from a
      * radiotherapy structure set SOP Instance.
+     *
+     * @return static
      */
     public function addSubset(string|FHIRStringPrimitive|FHIRString $subset): self
     {
@@ -436,6 +444,8 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * document SOP Instance. - A list of segment numbers selected from a segmentation
      * SOP Instance. - A list of Region of Interest (ROI) numbers selected from a
      * radiotherapy structure set SOP Instance.
+     *
+     * @return static
      */
     public function setSubset(string|FHIRStringPrimitive|FHIRString ...$subset): self
     {
@@ -493,6 +503,8 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * specified by a region type and a set of 2D coordinates. If the parent
      * imagingSelection.instance contains a subset element of type frame, the image
      * region applies to all frames in the subset list.
+     *
+     * @return static
      */
     public function addImageRegion2D(FHIRImagingSelectionImageRegion2D $imageRegion2D): self
     {
@@ -513,6 +525,8 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * specified by a region type and a set of 2D coordinates. If the parent
      * imagingSelection.instance contains a subset element of type frame, the image
      * region applies to all frames in the subset list.
+     *
+     * @return static
      */
     public function setImageRegion2D(FHIRImagingSelectionImageRegion2D ...$imageRegion2D): self
     {
@@ -559,6 +573,8 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      *
      * Each imaging selection might includes a 3D image region, specified by a region
      * type and a set of 3D coordinates.
+     *
+     * @return static
      */
     public function addImageRegion3D(FHIRImagingSelectionImageRegion3D $imageRegion3D): self
     {
@@ -577,6 +593,8 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      *
      * Each imaging selection might includes a 3D image region, specified by a region
      * type and a set of 3D coordinates.
+     *
+     * @return static
      */
     public function setImageRegion3D(FHIRImagingSelectionImageRegion3D ...$imageRegion3D): self
     {

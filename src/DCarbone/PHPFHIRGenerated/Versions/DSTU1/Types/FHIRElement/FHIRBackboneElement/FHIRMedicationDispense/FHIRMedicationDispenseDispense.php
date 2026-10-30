@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -316,6 +316,8 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      *
      * Identifier assigned by the dispensing facility. This is an identifier assigned
      * outside FHIR.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -343,6 +345,8 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the dispense event.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRMedicationDispenseStatusList|FHIRMedicationDispenseStatus $status): self
     {
@@ -379,6 +383,8 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      *
      * Indicates the type of dispensing event that is performed. Examples include:
      * Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -412,6 +418,8 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of medication that has been dispensed. Includes unit of measure.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -445,6 +453,8 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
+     *
+     * @return static
      */
     public function setMedication(null|FHIRResourceReference $medication): self
     {
@@ -478,6 +488,8 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the dispensed product was packaged and reviewed.
+     *
+     * @return static
      */
     public function setWhenPrepared(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $whenPrepared): self
     {
@@ -516,6 +528,8 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      *
      * The time the dispensed product was provided to the patient or their
      * representative.
+     *
+     * @return static
      */
     public function setWhenHandedOver(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $whenHandedOver): self
     {
@@ -550,6 +564,8 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      *
      * Identification of the facility/location where the medication was shipped to, as
      * part of the dispense event.
+     *
+     * @return static
      */
     public function setDestination(null|FHIRResourceReference $destination): self
     {
@@ -596,6 +612,8 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * Identifies the person who picked up the medication. This will usually be a
      * patient or their carer, but some cases exist where it can be a healthcare
      * professional.
+     *
+     * @return static
      */
     public function addReceiver(FHIRResourceReference $receiver): self
     {
@@ -614,6 +632,8 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * Identifies the person who picked up the medication. This will usually be a
      * patient or their carer, but some cases exist where it can be a healthcare
      * professional.
+     *
+     * @return static
      */
     public function setReceiver(FHIRResourceReference ...$receiver): self
     {
@@ -654,6 +674,8 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * supply provided and the instructions for administering the medication.
      *
      * Indicates how the medication is to be used by the patient.
+     *
+     * @return static
      */
     public function addDosage(FHIRMedicationDispenseDosage $dosage): self
     {
@@ -669,6 +691,8 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * supply provided and the instructions for administering the medication.
      *
      * Indicates how the medication is to be used by the patient.
+     *
+     * @return static
      */
     public function setDosage(FHIRMedicationDispenseDosage ...$dosage): self
     {

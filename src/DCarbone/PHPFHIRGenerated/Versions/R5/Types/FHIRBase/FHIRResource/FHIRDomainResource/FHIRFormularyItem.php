@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -261,6 +261,8 @@ class FHIRFormularyItem extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for this formulary item.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -278,6 +280,8 @@ class FHIRFormularyItem extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for this formulary item.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -311,6 +315,8 @@ class FHIRFormularyItem extends FHIRDomainResource implements VersionContainedTy
      *
      * A code (or set of codes) that specify the product or service that is identified
      * by this formulary item.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -338,6 +344,8 @@ class FHIRFormularyItem extends FHIRDomainResource implements VersionContainedTy
      *
      * The validity about the information of the formulary item and not of the
      * underlying product or service itself.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRFormularyItemStatusCodesEnum|FHIRFormularyItemStatusCodes $status): self
     {

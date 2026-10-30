@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -508,6 +508,8 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier assigned to the risk assessment.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -525,6 +527,8 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier assigned to the risk assessment.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -554,6 +558,8 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the request that is fulfilled by this risk assessment.
+     *
+     * @return static
      */
     public function setBasedOn(null|FHIRReference $basedOn): self
     {
@@ -585,6 +591,8 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      *
      * A reference to a resource that this risk assessment is part of, such as a
      * Procedure.
+     *
+     * @return static
      */
     public function setParent(null|FHIRReference $parent): self
     {
@@ -610,6 +618,8 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the RiskAssessment, using the same statuses as an Observation.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRObservationStatusEnum|FHIRObservationStatus $status): self
     {
@@ -644,6 +654,8 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The algorithm, process or mechanism used to evaluate the risk.
+     *
+     * @return static
      */
     public function setMethod(null|FHIRCodeableConcept $method): self
     {
@@ -675,6 +687,8 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of the risk assessment performed.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -704,6 +718,8 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient or group the risk assessment applies to.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -733,6 +749,8 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter where the assessment was performed.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -768,6 +786,8 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and possibly time) the risk assessment was performed.
+     *
+     * @return static
      */
     public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime): self
     {
@@ -800,6 +820,8 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date (and possibly time) the risk assessment was performed.
+     *
+     * @return static
      */
     public function setOccurrencePeriod(null|FHIRPeriod $occurrencePeriod): self
     {
@@ -831,6 +853,8 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      *
      * For assessments or prognosis specific to a particular condition, indicates the
      * condition being assessed.
+     *
+     * @return static
      */
     public function setCondition(null|FHIRReference $condition): self
     {
@@ -860,6 +884,8 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The provider or software application that performed the assessment.
+     *
+     * @return static
      */
     public function setPerformer(null|FHIRReference $performer): self
     {
@@ -904,6 +930,8 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason the risk assessment was performed.
+     *
+     * @return static
      */
     public function addReasonCode(FHIRCodeableConcept $reasonCode): self
     {
@@ -921,6 +949,8 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason the risk assessment was performed.
+     *
+     * @return static
      */
     public function setReasonCode(FHIRCodeableConcept ...$reasonCode): self
     {
@@ -963,6 +993,8 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Resources supporting the reason the risk assessment was performed.
+     *
+     * @return static
      */
     public function addReasonReference(FHIRReference $reasonReference): self
     {
@@ -979,6 +1011,8 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Resources supporting the reason the risk assessment was performed.
+     *
+     * @return static
      */
     public function setReasonReference(FHIRReference ...$reasonReference): self
     {
@@ -1023,6 +1057,8 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      *
      * Indicates the source data considered as part of the assessment (for example,
      * FamilyHistory, Observations, Procedures, Conditions, etc.).
+     *
+     * @return static
      */
     public function addBasis(FHIRReference $basis): self
     {
@@ -1040,6 +1076,8 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      *
      * Indicates the source data considered as part of the assessment (for example,
      * FamilyHistory, Observations, Procedures, Conditions, etc.).
+     *
+     * @return static
      */
     public function setBasis(FHIRReference ...$basis): self
     {
@@ -1080,6 +1118,8 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      * the likelihood of each outcome.
      *
      * Describes the expected outcome for the subject.
+     *
+     * @return static
      */
     public function addPrediction(FHIRRiskAssessmentPrediction $prediction): self
     {
@@ -1095,6 +1135,8 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      * the likelihood of each outcome.
      *
      * Describes the expected outcome for the subject.
+     *
+     * @return static
      */
     public function setPrediction(FHIRRiskAssessmentPrediction ...$prediction): self
     {
@@ -1124,6 +1166,8 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the steps that might be taken to reduce the identified risk(s).
+     *
+     * @return static
      */
     public function setMitigation(null|string|FHIRStringPrimitive|FHIRString $mitigation): self
     {
@@ -1171,6 +1215,8 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional comments about the risk assessment.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1188,6 +1234,8 @@ class FHIRRiskAssessment extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional comments about the risk assessment.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -217,6 +217,8 @@ class FHIRCitationContributorship extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates if the list includes all authors and/or contributors.
+     *
+     * @return static
      */
     public function setComplete(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $complete): self
     {
@@ -264,6 +266,8 @@ class FHIRCitationContributorship extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * An individual entity named in the author list or contributor list.
+     *
+     * @return static
      */
     public function addEntry(FHIRCitationEntry $entry): self
     {
@@ -281,6 +285,8 @@ class FHIRCitationContributorship extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * An individual entity named in the author list or contributor list.
+     *
+     * @return static
      */
     public function setEntry(FHIRCitationEntry ...$entry): self
     {
@@ -327,6 +333,8 @@ class FHIRCitationContributorship extends FHIRBackboneElement
      *
      * Used to record a display of the author/contributor list without separate coding
      * for each list member.
+     *
+     * @return static
      */
     public function addSummary(FHIRCitationSummary1 $summary): self
     {
@@ -345,6 +353,8 @@ class FHIRCitationContributorship extends FHIRBackboneElement
      *
      * Used to record a display of the author/contributor list without separate coding
      * for each list member.
+     *
+     * @return static
      */
     public function setSummary(FHIRCitationSummary1 ...$summary): self
     {

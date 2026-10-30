@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -328,6 +328,8 @@ class FHIROrder extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the orderer or by the receiver.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -344,6 +346,8 @@ class FHIROrder extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the orderer or by the receiver.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -379,6 +383,8 @@ class FHIROrder extends FHIRDomainResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the order was made.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -411,6 +417,8 @@ class FHIROrder extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Patient this order is about.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -440,6 +448,8 @@ class FHIROrder extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who initiated the order.
+     *
+     * @return static
      */
     public function setSource(null|FHIRReference $source): self
     {
@@ -469,6 +479,8 @@ class FHIROrder extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who is intended to fulfill the order.
+     *
+     * @return static
      */
     public function setTarget(null|FHIRReference $target): self
     {
@@ -500,6 +512,8 @@ class FHIROrder extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Text - why the order was made.
+     *
+     * @return static
      */
     public function setReasonCodeableConcept(null|FHIRCodeableConcept $reasonCodeableConcept): self
     {
@@ -529,6 +543,8 @@ class FHIROrder extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Text - why the order was made.
+     *
+     * @return static
      */
     public function setReasonReference(null|FHIRReference $reasonReference): self
     {
@@ -554,6 +570,8 @@ class FHIROrder extends FHIRDomainResource implements VersionContainedTypeInterf
      * A request to perform an action.
      *
      * When order should be fulfilled.
+     *
+     * @return static
      */
     public function setWhen(null|FHIROrderWhen $when): self
     {
@@ -596,6 +614,8 @@ class FHIROrder extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * What action is being ordered.
+     *
+     * @return static
      */
     public function addDetail(FHIRReference $detail): self
     {
@@ -612,6 +632,8 @@ class FHIROrder extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * What action is being ordered.
+     *
+     * @return static
      */
     public function setDetail(FHIRReference ...$detail): self
     {

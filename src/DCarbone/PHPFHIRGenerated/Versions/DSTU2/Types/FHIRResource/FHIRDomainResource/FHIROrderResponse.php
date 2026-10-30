@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -318,6 +318,8 @@ class FHIROrderResponse extends FHIRDomainResource implements VersionContainedTy
      * Identifiers assigned to this order. The identifiers are usually assigned by the
      * system responding to the order, but they may be provided or added to by other
      * systems.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -336,6 +338,8 @@ class FHIROrderResponse extends FHIRDomainResource implements VersionContainedTy
      * Identifiers assigned to this order. The identifiers are usually assigned by the
      * system responding to the order, but they may be provided or added to by other
      * systems.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -365,6 +369,8 @@ class FHIROrderResponse extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the order that this is in response to.
+     *
+     * @return static
      */
     public function setRequest(null|FHIRReference $request): self
     {
@@ -400,6 +406,8 @@ class FHIROrderResponse extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time at which this order response was made (created/posted).
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -432,6 +440,8 @@ class FHIROrderResponse extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person, organization, or device credited with making the response.
+     *
+     * @return static
      */
     public function setWho(null|FHIRReference $who): self
     {
@@ -459,6 +469,8 @@ class FHIROrderResponse extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * What this response says about the status of the original order.
+     *
+     * @return static
      */
     public function setOrderStatus(null|string|FHIROrderStatusList|FHIROrderStatus $orderStatus): self
     {
@@ -493,6 +505,8 @@ class FHIROrderResponse extends FHIRDomainResource implements VersionContainedTy
      *
      * Additional description about the response - e.g. a text description provided by
      * a human user when making decisions about the order.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -542,6 +556,8 @@ class FHIROrderResponse extends FHIRDomainResource implements VersionContainedTy
      * Links to resources that provide details of the outcome of performing the order;
      * e.g. Diagnostic Reports in a response that is made to an order that referenced a
      * diagnostic order.
+     *
+     * @return static
      */
     public function addFulfillment(FHIRReference $fulfillment): self
     {
@@ -560,6 +576,8 @@ class FHIROrderResponse extends FHIRDomainResource implements VersionContainedTy
      * Links to resources that provide details of the outcome of performing the order;
      * e.g. Diagnostic Reports in a response that is made to an order that referenced a
      * diagnostic order.
+     *
+     * @return static
      */
     public function setFulfillment(FHIRReference ...$fulfillment): self
     {

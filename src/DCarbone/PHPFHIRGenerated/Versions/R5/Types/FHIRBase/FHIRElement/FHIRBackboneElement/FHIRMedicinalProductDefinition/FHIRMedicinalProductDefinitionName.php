@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -243,6 +243,8 @@ class FHIRMedicinalProductDefinitionName extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The full product name.
+     *
+     * @return static
      */
     public function setProductName(null|string|FHIRStringPrimitive|FHIRString $productName): self
     {
@@ -277,6 +279,8 @@ class FHIRMedicinalProductDefinitionName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of product name, such as rINN, BAN, Proprietary, Non-Proprietary.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -325,6 +329,8 @@ class FHIRMedicinalProductDefinitionName extends FHIRBackboneElement
      * use, or drug catalogs).
      *
      * Coding words or phrases of the name.
+     *
+     * @return static
      */
     public function addPart(FHIRMedicinalProductDefinitionPart $part): self
     {
@@ -344,6 +350,8 @@ class FHIRMedicinalProductDefinitionName extends FHIRBackboneElement
      * use, or drug catalogs).
      *
      * Coding words or phrases of the name.
+     *
+     * @return static
      */
     public function setPart(FHIRMedicinalProductDefinitionPart ...$part): self
     {
@@ -392,6 +400,8 @@ class FHIRMedicinalProductDefinitionName extends FHIRBackboneElement
      * use, or drug catalogs).
      *
      * Country and jurisdiction where the name applies, and associated language.
+     *
+     * @return static
      */
     public function addUsage(FHIRMedicinalProductDefinitionUsage $usage): self
     {
@@ -411,6 +421,8 @@ class FHIRMedicinalProductDefinitionName extends FHIRBackboneElement
      * use, or drug catalogs).
      *
      * Country and jurisdiction where the name applies, and associated language.
+     *
+     * @return static
      */
     public function setUsage(FHIRMedicinalProductDefinitionUsage ...$usage): self
     {

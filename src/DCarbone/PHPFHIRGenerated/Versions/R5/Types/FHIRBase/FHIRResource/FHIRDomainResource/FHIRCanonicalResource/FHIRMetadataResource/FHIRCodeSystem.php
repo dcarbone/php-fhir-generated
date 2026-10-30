@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -303,7 +303,7 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which CodeSystem
-     * is more current. (choose any one of versionAlgorithm*, but only one)
+     * is more current.
      */
     #[FHIRString]
     protected FHIRString $versionAlgorithmString;
@@ -313,7 +313,7 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which CodeSystem
-     * is more current. (choose any one of versionAlgorithm*, but only one)
+     * is more current.
      */
     #[FHIRCoding]
     protected FHIRCoding $versionAlgorithmCoding;
@@ -933,6 +933,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * This URL can be the target of a canonical reference. It SHALL remain the same
      * when the code system is stored on different servers. This is used in
      * [Coding](datatypes.html#Coding).system.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -984,6 +986,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * A formal identifier that is used to identify this code system when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -1003,6 +1007,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * A formal identifier that is used to identify this code system when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -1044,6 +1050,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence. This is used in
      * [Coding](datatypes.html#Coding).version.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -1064,7 +1072,7 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which CodeSystem
-     * is more current. (choose any one of versionAlgorithm*, but only one)
+     * is more current.
      */
     public function getVersionAlgorithmString(): null|FHIRString
     {
@@ -1077,7 +1085,9 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which CodeSystem
-     * is more current. (choose any one of versionAlgorithm*, but only one)
+     * is more current.
+     *
+     * @return static
      */
     public function setVersionAlgorithmString(null|string|FHIRStringPrimitive|FHIRString $versionAlgorithmString): self
     {
@@ -1098,7 +1108,7 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which CodeSystem
-     * is more current. (choose any one of versionAlgorithm*, but only one)
+     * is more current.
      */
     public function getVersionAlgorithmCoding(): null|FHIRCoding
     {
@@ -1111,7 +1121,9 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which CodeSystem
-     * is more current. (choose any one of versionAlgorithm*, but only one)
+     * is more current.
+     *
+     * @return static
      */
     public function setVersionAlgorithmCoding(null|FHIRCoding $versionAlgorithmCoding): self
     {
@@ -1145,6 +1157,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * A natural language name identifying the code system. This name should be usable
      * as an identifier for the module by machine processing applications such as code
      * generation.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -1177,6 +1191,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the code system.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -1205,6 +1221,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this code system. Enables tracking the life-cycle of the content.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -1239,6 +1257,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * A Boolean value to indicate that this code system is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
+     *
+     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -1285,6 +1305,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * changed. The date must change when the business version changes and it must
      * change if the status code changes. In addition, it should change when the
      * substantive content of the code system changes.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1319,6 +1341,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the code system.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1366,6 +1390,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1383,6 +1409,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1422,6 +1450,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      *
      * A free text natural language description of the code system from a consumer's
      * perspective.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1481,6 +1511,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate code system
      * instances.
+     *
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1504,6 +1536,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate code system
      * instances.
+     *
+     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1548,6 +1582,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the code system is intended to be used.
+     *
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1565,6 +1601,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the code system is intended to be used.
+     *
+     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1604,6 +1642,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      *
      * Explanation of why this code system is needed and why it has been designed as it
      * has.
+     *
+     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1648,6 +1688,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * A copyright statement relating to the code system and/or its contents. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * code system.
+     *
+     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1684,6 +1726,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
+     *
+     * @return static
      */
     public function setCopyrightLabel(null|string|FHIRStringPrimitive|FHIRString $copyrightLabel): self
     {
@@ -1720,6 +1764,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
+     *
+     * @return static
      */
     public function setApprovalDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $approvalDate): self
     {
@@ -1756,6 +1802,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
+     *
+     * @return static
      */
     public function setLastReviewDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lastReviewDate): self
     {
@@ -1790,6 +1838,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      *
      * The period during which the CodeSystem content was or is planned to be in active
      * use.
+     *
+     * @return static
      */
     public function setEffectivePeriod(null|FHIRPeriod $effectivePeriod): self
     {
@@ -1838,6 +1888,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * Descriptions related to the content of the CodeSystem. Topics provide a
      * high-level categorization as well as keywords for the CodeSystem that can be
      * useful for filtering and searching.
+     *
+     * @return static
      */
     public function addTopic(FHIRCodeableConcept $topic): self
     {
@@ -1857,6 +1909,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * Descriptions related to the content of the CodeSystem. Topics provide a
      * high-level categorization as well as keywords for the CodeSystem that can be
      * useful for filtering and searching.
+     *
+     * @return static
      */
     public function setTopic(FHIRCodeableConcept ...$topic): self
     {
@@ -1901,6 +1955,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the CodeSystem.
+     *
+     * @return static
      */
     public function addAuthor(FHIRContactDetail $author): self
     {
@@ -1918,6 +1974,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the CodeSystem.
+     *
+     * @return static
      */
     public function setAuthor(FHIRContactDetail ...$author): self
     {
@@ -1962,6 +2020,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      *
      * An individual or organization primarily responsible for internal coherence of
      * the CodeSystem.
+     *
+     * @return static
      */
     public function addEditor(FHIRContactDetail $editor): self
     {
@@ -1979,6 +2039,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      *
      * An individual or organization primarily responsible for internal coherence of
      * the CodeSystem.
+     *
+     * @return static
      */
     public function setEditor(FHIRContactDetail ...$editor): self
     {
@@ -2023,6 +2085,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      *
      * An individual or organization asserted by the publisher to be primarily
      * responsible for review of some aspect of the CodeSystem.
+     *
+     * @return static
      */
     public function addReviewer(FHIRContactDetail $reviewer): self
     {
@@ -2040,6 +2104,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      *
      * An individual or organization asserted by the publisher to be primarily
      * responsible for review of some aspect of the CodeSystem.
+     *
+     * @return static
      */
     public function setReviewer(FHIRContactDetail ...$reviewer): self
     {
@@ -2084,6 +2150,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      *
      * An individual or organization asserted by the publisher to be responsible for
      * officially endorsing the CodeSystem for use in some setting.
+     *
+     * @return static
      */
     public function addEndorser(FHIRContactDetail $endorser): self
     {
@@ -2101,6 +2169,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      *
      * An individual or organization asserted by the publisher to be responsible for
      * officially endorsing the CodeSystem for use in some setting.
+     *
+     * @return static
      */
     public function setEndorser(FHIRContactDetail ...$endorser): self
     {
@@ -2147,6 +2217,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      *
      * Related artifacts such as additional documentation, justification, dependencies,
      * bibliographic references, and predecessor and successor artifacts.
+     *
+     * @return static
      */
     public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact): self
     {
@@ -2165,6 +2237,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      *
      * Related artifacts such as additional documentation, justification, dependencies,
      * bibliographic references, and predecessor and successor artifacts.
+     *
+     * @return static
      */
     public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
     {
@@ -2194,6 +2268,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      *
      * If code comparison is case sensitive when codes within this system are compared
      * to each other.
+     *
+     * @return static
      */
     public function setCaseSensitive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $caseSensitive): self
     {
@@ -2230,6 +2306,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      *
      * Canonical reference to the value set that contains all codes in the code system
      * independent of code status.
+     *
+     * @return static
      */
     public function setValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $valueSet): self
     {
@@ -2258,6 +2336,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The meaning of the hierarchy of concepts as represented in this resource.
+     *
+     * @return static
      */
     public function setHierarchyMeaning(null|string|FHIRCodeSystemHierarchyMeaningEnum|FHIRCodeSystemHierarchyMeaning $hierarchyMeaning): self
     {
@@ -2288,6 +2368,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The code system defines a compositional (post-coordination) grammar.
+     *
+     * @return static
      */
     public function setCompositional(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $compositional): self
     {
@@ -2322,6 +2404,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * This flag is used to signify that the code system does not commit to concept
      * permanence across versions. If true, a version must be specified when
      * referencing this code system.
+     *
+     * @return static
      */
     public function setVersionNeeded(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $versionNeeded): self
     {
@@ -2352,6 +2436,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      *
      * The extent of the content of the code system (the concepts and codes it defines)
      * are represented in this resource instance.
+     *
+     * @return static
      */
     public function setContent(null|string|FHIRCodeSystemContentModeEnum|FHIRCodeSystemContentMode $content): self
     {
@@ -2388,6 +2474,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      *
      * The canonical URL of the code system that this code system supplement is adding
      * designations and properties to.
+     *
+     * @return static
      */
     public function setSupplements(null|string|FHIRCanonicalPrimitive|FHIRCanonical $supplements): self
     {
@@ -2424,6 +2512,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * The total number of concepts defined by the code system. Where the code system
      * has a compositional grammar, the basis of this count is defined by the system
      * steward.
+     *
+     * @return static
      */
     public function setCount(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $count): self
     {
@@ -2471,6 +2561,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      *
      * A filter that can be used in a value set compose statement when selecting
      * concepts using a filter.
+     *
+     * @return static
      */
     public function addFilter(FHIRCodeSystemFilter $filter): self
     {
@@ -2488,6 +2580,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      *
      * A filter that can be used in a value set compose statement when selecting
      * concepts using a filter.
+     *
+     * @return static
      */
     public function setFilter(FHIRCodeSystemFilter ...$filter): self
     {
@@ -2532,6 +2626,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      *
      * A property defines an additional slot through which additional information can
      * be provided about a concept.
+     *
+     * @return static
      */
     public function addProperty(FHIRCodeSystemProperty $property): self
     {
@@ -2549,6 +2645,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      *
      * A property defines an additional slot through which additional information can
      * be provided about a concept.
+     *
+     * @return static
      */
     public function setProperty(FHIRCodeSystemProperty ...$property): self
     {
@@ -2595,6 +2693,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * Concepts that are in the code system. The concept definitions are inherently
      * hierarchical, but the definitions must be consulted to determine what the
      * meanings of the hierarchical relationships are.
+     *
+     * @return static
      */
     public function addConcept(FHIRCodeSystemConcept $concept): self
     {
@@ -2613,6 +2713,8 @@ class FHIRCodeSystem extends FHIRMetadataResource implements VersionContainedTyp
      * Concepts that are in the code system. The concept definitions are inherently
      * hierarchical, but the definitions must be consulted to determine what the
      * meanings of the hierarchical relationships are.
+     *
+     * @return static
      */
     public function setConcept(FHIRCodeSystemConcept ...$concept): self
     {

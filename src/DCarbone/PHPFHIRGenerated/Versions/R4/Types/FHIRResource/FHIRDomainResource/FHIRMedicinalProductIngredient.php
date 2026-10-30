@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -277,6 +277,8 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
      * The identifier(s) of this Ingredient that are assigned by business processes
      * and/or used to refer to it when a direct URL reference to the resource itself is
      * not appropriate.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -308,6 +310,8 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ingredient role e.g. Active ingredient, excipient.
+     *
+     * @return static
      */
     public function setRole(null|FHIRCodeableConcept $role): self
     {
@@ -335,6 +339,8 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the ingredient is a known or suspected allergen.
+     *
+     * @return static
      */
     public function setAllergenicIndicator(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $allergenicIndicator): self
     {
@@ -380,6 +386,8 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of this Ingredient.
+     *
+     * @return static
      */
     public function addManufacturer(FHIRReference $manufacturer): self
     {
@@ -396,6 +404,8 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of this Ingredient.
+     *
+     * @return static
      */
     public function setManufacturer(FHIRReference ...$manufacturer): self
     {
@@ -434,6 +444,8 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
      * An ingredient of a manufactured item or pharmaceutical product.
      *
      * A specified substance that comprises this ingredient.
+     *
+     * @return static
      */
     public function addSpecifiedSubstance(FHIRMedicinalProductIngredientSpecifiedSubstance $specifiedSubstance): self
     {
@@ -448,6 +460,8 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
      * An ingredient of a manufactured item or pharmaceutical product.
      *
      * A specified substance that comprises this ingredient.
+     *
+     * @return static
      */
     public function setSpecifiedSubstance(FHIRMedicinalProductIngredientSpecifiedSubstance ...$specifiedSubstance): self
     {
@@ -473,6 +487,8 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
      * An ingredient of a manufactured item or pharmaceutical product.
      *
      * The ingredient substance.
+     *
+     * @return static
      */
     public function setSubstance(null|FHIRMedicinalProductIngredientSubstance $substance): self
     {

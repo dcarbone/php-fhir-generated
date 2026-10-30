@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -195,6 +195,8 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      *
      * The identifier for the stratifier used to coordinate the reported data back to
      * this stratifier.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -226,6 +228,8 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      *
      * The criteria for the stratifier. This must be the name of an expression defined
      * within a referenced library.
+     *
+     * @return static
      */
     public function setCriteria(null|string|FHIRStringPrimitive|FHIRString $criteria): self
     {
@@ -260,6 +264,8 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      *
      * The path to an element that defines the stratifier, specified as a valid FHIR
      * resource path.
+     *
+     * @return static
      */
     public function setPath(null|string|FHIRStringPrimitive|FHIRString $path): self
     {

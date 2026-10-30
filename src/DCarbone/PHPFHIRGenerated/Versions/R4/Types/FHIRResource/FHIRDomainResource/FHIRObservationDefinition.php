@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -408,6 +408,8 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that classifies the general type of observation.
+     *
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -425,6 +427,8 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that classifies the general type of observation.
+     *
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -458,6 +462,8 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      *
      * Describes what will be observed. Sometimes this is called the observation
      * "name".
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -502,6 +508,8 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this ObservationDefinition artifact.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -519,6 +527,8 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this ObservationDefinition artifact.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -561,6 +571,8 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      *
      * The data types allowed for the value element of the instance observations
      * conforming to this ObservationDefinition.
+     *
+     * @return static
      */
     public function addPermittedDataType(string|FHIRObservationDataTypeList|FHIRObservationDataType $permittedDataType): self
     {
@@ -580,6 +592,8 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      *
      * The data types allowed for the value element of the instance observations
      * conforming to this ObservationDefinition.
+     *
+     * @return static
      */
     public function setPermittedDataType(string|FHIRObservationDataTypeList|FHIRObservationDataType ...$permittedDataType): self
     {
@@ -616,6 +630,8 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      *
      * Multiple results allowed for observations conforming to this
      * ObservationDefinition.
+     *
+     * @return static
      */
     public function setMultipleResultsAllowed(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $multipleResultsAllowed): self
     {
@@ -650,6 +666,8 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method or technique used to perform the observation.
+     *
+     * @return static
      */
     public function setMethod(null|FHIRCodeableConcept $method): self
     {
@@ -681,6 +699,8 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      *
      * The preferred name to be used when reporting the results of observations
      * conforming to this ObservationDefinition.
+     *
+     * @return static
      */
     public function setPreferredReportName(null|string|FHIRStringPrimitive|FHIRString $preferredReportName): self
     {
@@ -711,6 +731,8 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      * produced or consumed by an orderable health care service.
      *
      * Characteristics for quantitative results of this observation.
+     *
+     * @return static
      */
     public function setQuantitativeDetails(null|FHIRObservationDefinitionQuantitativeDetails $quantitativeDetails): self
     {
@@ -753,6 +775,8 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      *
      * Multiple ranges of results qualified by different contexts for ordinal or
      * continuous observations conforming to this ObservationDefinition.
+     *
+     * @return static
      */
     public function addQualifiedInterval(FHIRObservationDefinitionQualifiedInterval $qualifiedInterval): self
     {
@@ -769,6 +793,8 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      *
      * Multiple ranges of results qualified by different contexts for ordinal or
      * continuous observations conforming to this ObservationDefinition.
+     *
+     * @return static
      */
     public function setQualifiedInterval(FHIRObservationDefinitionQualifiedInterval ...$qualifiedInterval): self
     {
@@ -800,6 +826,8 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      *
      * The set of valid coded results for the observations conforming to this
      * ObservationDefinition.
+     *
+     * @return static
      */
     public function setValidCodedValueSet(null|FHIRReference $validCodedValueSet): self
     {
@@ -831,6 +859,8 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      *
      * The set of normal coded results for the observations conforming to this
      * ObservationDefinition.
+     *
+     * @return static
      */
     public function setNormalCodedValueSet(null|FHIRReference $normalCodedValueSet): self
     {
@@ -862,6 +892,8 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      *
      * The set of abnormal coded results for the observation conforming to this
      * ObservationDefinition.
+     *
+     * @return static
      */
     public function setAbnormalCodedValueSet(null|FHIRReference $abnormalCodedValueSet): self
     {
@@ -893,6 +925,8 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      *
      * The set of critical coded results for the observation conforming to this
      * ObservationDefinition.
+     *
+     * @return static
      */
     public function setCriticalCodedValueSet(null|FHIRReference $criticalCodedValueSet): self
     {

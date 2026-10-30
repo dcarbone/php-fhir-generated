@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -564,6 +564,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * address at which at which an authoritative instance of this summary is (or will
      * be) published. This URL can be the target of a canonical reference. It SHALL
      * remain the same when the summary is stored on different servers.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -592,6 +594,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this summary. Enables tracking the life-cycle of the content.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -651,6 +655,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate evidence report
      * instances.
+     *
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -674,6 +680,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate evidence report
      * instances.
+     *
+     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -722,6 +730,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * A formal identifier that is used to identify this EvidenceReport when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -741,6 +751,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * A formal identifier that is used to identify this EvidenceReport when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -787,6 +799,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * A formal identifier that is used to identify things closely related to this
      * EvidenceReport.
+     *
+     * @return static
      */
     public function addRelatedIdentifier(FHIRIdentifier $relatedIdentifier): self
     {
@@ -805,6 +819,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * A formal identifier that is used to identify things closely related to this
      * EvidenceReport.
+     *
+     * @return static
      */
     public function setRelatedIdentifier(FHIRIdentifier ...$relatedIdentifier): self
     {
@@ -834,6 +850,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Citation Resource or display of suggested citation for this report.
+     *
+     * @return static
      */
     public function setCiteAsReference(null|FHIRReference $citeAsReference): self
     {
@@ -871,6 +889,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * the Narrative, or extensions
      *
      * Citation Resource or display of suggested citation for this report.
+     *
+     * @return static
      */
     public function setCiteAsMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $citeAsMarkdown): self
     {
@@ -907,6 +927,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * Specifies the kind of report, such as grouping of classifiers, search results,
      * or human-compiled expression.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -951,6 +973,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used for footnotes and annotations.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -968,6 +992,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used for footnotes and annotations.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1012,6 +1038,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Link, description or reference to artifact associated with the report.
+     *
+     * @return static
      */
     public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact): self
     {
@@ -1029,6 +1057,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Link, description or reference to artifact associated with the report.
+     *
+     * @return static
      */
     public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
     {
@@ -1060,6 +1090,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * Specifies the subject or focus of the report. Answers "What is this report
      * about?".
+     *
+     * @return static
      */
     public function setSubject(null|FHIREvidenceReportSubject $subject): self
     {
@@ -1089,6 +1121,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the evidence report.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1136,6 +1170,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1153,6 +1189,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1197,6 +1235,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * An individiual, organization, or device primarily involved in the creation and
      * maintenance of the content.
+     *
+     * @return static
      */
     public function addAuthor(FHIRContactDetail $author): self
     {
@@ -1214,6 +1254,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * An individiual, organization, or device primarily involved in the creation and
      * maintenance of the content.
+     *
+     * @return static
      */
     public function setAuthor(FHIRContactDetail ...$author): self
     {
@@ -1258,6 +1300,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * An individiual, organization, or device primarily responsible for internal
      * coherence of the content.
+     *
+     * @return static
      */
     public function addEditor(FHIRContactDetail $editor): self
     {
@@ -1275,6 +1319,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * An individiual, organization, or device primarily responsible for internal
      * coherence of the content.
+     *
+     * @return static
      */
     public function setEditor(FHIRContactDetail ...$editor): self
     {
@@ -1319,6 +1365,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * An individiual, organization, or device primarily responsible for review of some
      * aspect of the content.
+     *
+     * @return static
      */
     public function addReviewer(FHIRContactDetail $reviewer): self
     {
@@ -1336,6 +1384,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * An individiual, organization, or device primarily responsible for review of some
      * aspect of the content.
+     *
+     * @return static
      */
     public function setReviewer(FHIRContactDetail ...$reviewer): self
     {
@@ -1380,6 +1430,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * An individiual, organization, or device responsible for officially endorsing the
      * content for use in some setting.
+     *
+     * @return static
      */
     public function addEndorser(FHIRContactDetail $endorser): self
     {
@@ -1397,6 +1449,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * An individiual, organization, or device responsible for officially endorsing the
      * content for use in some setting.
+     *
+     * @return static
      */
     public function setEndorser(FHIRContactDetail ...$endorser): self
     {
@@ -1441,6 +1495,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * Relationships that this composition has with other compositions or documents
      * that already exist.
+     *
+     * @return static
      */
     public function addRelatesTo(FHIREvidenceReportRelatesTo $relatesTo): self
     {
@@ -1458,6 +1514,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * Relationships that this composition has with other compositions or documents
      * that already exist.
+     *
+     * @return static
      */
     public function setRelatesTo(FHIREvidenceReportRelatesTo ...$relatesTo): self
     {
@@ -1500,6 +1558,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * EvidenceVariable, and Citation resources and related concepts.
      *
      * The root of the sections that make up the composition.
+     *
+     * @return static
      */
     public function addSection(FHIREvidenceReportSection $section): self
     {
@@ -1516,6 +1576,8 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * EvidenceVariable, and Citation resources and related concepts.
      *
      * The root of the sections that make up the composition.
+     *
+     * @return static
      */
     public function setSection(FHIREvidenceReportSection ...$section): self
     {

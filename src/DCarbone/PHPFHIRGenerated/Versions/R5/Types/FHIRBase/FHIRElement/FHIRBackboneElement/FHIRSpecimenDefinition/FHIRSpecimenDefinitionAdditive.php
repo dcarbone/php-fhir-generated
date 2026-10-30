@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -115,6 +115,12 @@ class FHIRSpecimenDefinitionAdditive extends FHIRBackboneElement
 
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_ADDITIVE_CODEABLE_CONCEPT => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_ADDITIVE_REFERENCE => [
+            'min_occurs' => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -129,8 +135,7 @@ class FHIRSpecimenDefinitionAdditive extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Substance introduced in the kind of container to preserve, maintain or enhance
-     * the specimen. Examples: Formalin, Citrate, EDTA. (choose any one of additive*,
-     * but only one)
+     * the specimen. Examples: Formalin, Citrate, EDTA.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $additiveCodeableConcept;
@@ -140,8 +145,7 @@ class FHIRSpecimenDefinitionAdditive extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Substance introduced in the kind of container to preserve, maintain or enhance
-     * the specimen. Examples: Formalin, Citrate, EDTA. (choose any one of additive*,
-     * but only one)
+     * the specimen. Examples: Formalin, Citrate, EDTA.
      */
     #[FHIRReference]
     protected FHIRReference $additiveReference;
@@ -186,8 +190,7 @@ class FHIRSpecimenDefinitionAdditive extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Substance introduced in the kind of container to preserve, maintain or enhance
-     * the specimen. Examples: Formalin, Citrate, EDTA. (choose any one of additive*,
-     * but only one)
+     * the specimen. Examples: Formalin, Citrate, EDTA.
      */
     public function getAdditiveCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -201,8 +204,9 @@ class FHIRSpecimenDefinitionAdditive extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Substance introduced in the kind of container to preserve, maintain or enhance
-     * the specimen. Examples: Formalin, Citrate, EDTA. (choose any one of additive*,
-     * but only one)
+     * the specimen. Examples: Formalin, Citrate, EDTA.
+     *
+     * @return static
      */
     public function setAdditiveCodeableConcept(null|FHIRCodeableConcept $additiveCodeableConcept): self
     {
@@ -220,8 +224,7 @@ class FHIRSpecimenDefinitionAdditive extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Substance introduced in the kind of container to preserve, maintain or enhance
-     * the specimen. Examples: Formalin, Citrate, EDTA. (choose any one of additive*,
-     * but only one)
+     * the specimen. Examples: Formalin, Citrate, EDTA.
      */
     public function getAdditiveReference(): null|FHIRReference
     {
@@ -234,8 +237,9 @@ class FHIRSpecimenDefinitionAdditive extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Substance introduced in the kind of container to preserve, maintain or enhance
-     * the specimen. Examples: Formalin, Citrate, EDTA. (choose any one of additive*,
-     * but only one)
+     * the specimen. Examples: Formalin, Citrate, EDTA.
+     *
+     * @return static
      */
     public function setAdditiveReference(null|FHIRReference $additiveReference): self
     {

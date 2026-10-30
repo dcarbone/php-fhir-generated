@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -219,6 +219,8 @@ class FHIRProfileSlicing extends FHIRBackboneElement
      * processing an instance. The value of the child element in the instance SHALL
      * completely distinguish which slice the element in the resource matches based on
      * the allowed values for that element in each of the slices.
+     *
+     * @return static
      */
     public function setDiscriminator(null|string|FHIRIdPrimitive|FHIRId $discriminator): self
     {
@@ -251,6 +253,8 @@ class FHIRProfileSlicing extends FHIRBackboneElement
      *
      * If the matching elements have to occur in the same order as defined in the
      * profile.
+     *
+     * @return static
      */
     public function setOrdered(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $ordered): self
     {
@@ -283,6 +287,8 @@ class FHIRProfileSlicing extends FHIRBackboneElement
      *
      * Whether additional slices are allowed or not. When the slices are ordered,
      * profile authors can also say that additional slices are only allowed at the end.
+     *
+     * @return static
      */
     public function setRules(null|string|FHIRSlicingRulesList|FHIRSlicingRules $rules): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -245,6 +245,8 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
      * The identifier that is to be associated with every Device that references this
      * DeviceDefintiion for the issuer and jurisdiction provided in the
      * DeviceDefinition.udiDeviceIdentifier.
+     *
+     * @return static
      */
     public function setDeviceIdentifier(null|string|FHIRStringPrimitive|FHIRString $deviceIdentifier): self
     {
@@ -277,6 +279,8 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The organization that assigns the identifier algorithm.
+     *
+     * @return static
      */
     public function setIssuer(null|string|FHIRUriPrimitive|FHIRUri $issuer): self
     {
@@ -309,6 +313,8 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The jurisdiction to which the deviceIdentifier applies.
+     *
+     * @return static
      */
     public function setJurisdiction(null|string|FHIRUriPrimitive|FHIRUri $jurisdiction): self
     {
@@ -352,6 +358,8 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
      * component of a medical device.
      *
      * Indicates where and when the device is available on the market.
+     *
+     * @return static
      */
     public function addMarketDistribution(FHIRDeviceDefinitionMarketDistribution $marketDistribution): self
     {
@@ -367,6 +375,8 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
      * component of a medical device.
      *
      * Indicates where and when the device is available on the market.
+     *
+     * @return static
      */
     public function setMarketDistribution(FHIRDeviceDefinitionMarketDistribution ...$marketDistribution): self
     {

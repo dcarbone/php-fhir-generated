@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -230,6 +230,8 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for the packaged Medicinal Product.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -271,6 +273,8 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * bottle, etc. The shelf life type shall be specified using an appropriate
      * controlled vocabulary The controlled term and the controlled term identifier
      * shall be specified.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -310,6 +314,8 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
      * and the symbol identifier shall be used.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRQuantity $period): self
     {
@@ -358,6 +364,8 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * Special precautions for storage, if any, can be specified using an appropriate
      * controlled vocabulary The controlled term and the controlled term identifier
      * shall be specified.
+     *
+     * @return static
      */
     public function addSpecialPrecautionsForStorage(FHIRCodeableConcept $specialPrecautionsForStorage): self
     {
@@ -377,6 +385,8 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * Special precautions for storage, if any, can be specified using an appropriate
      * controlled vocabulary The controlled term and the controlled term identifier
      * shall be specified.
+     *
+     * @return static
      */
     public function setSpecialPrecautionsForStorage(FHIRCodeableConcept ...$specialPrecautionsForStorage): self
     {

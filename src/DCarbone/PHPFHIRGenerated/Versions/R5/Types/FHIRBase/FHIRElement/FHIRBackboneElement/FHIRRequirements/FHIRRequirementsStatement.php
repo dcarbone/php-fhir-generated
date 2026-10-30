@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -366,6 +366,8 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Key that identifies this statement (unique within this resource).
+     *
+     * @return static
      */
     public function setKey(null|string|FHIRIdPrimitive|FHIRId $key): self
     {
@@ -398,6 +400,8 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short human usable label for this statement.
+     *
+     * @return static
      */
     public function setLabel(null|string|FHIRStringPrimitive|FHIRString $label): self
     {
@@ -439,6 +443,8 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short human usable label for this statement.
+     *
+     * @return static
      */
     public function addConformance(string|FHIRConformanceExpectationEnum|FHIRConformanceExpectation $conformance): self
     {
@@ -456,6 +462,8 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short human usable label for this statement.
+     *
+     * @return static
      */
     public function setConformance(string|FHIRConformanceExpectationEnum|FHIRConformanceExpectation ...$conformance): self
     {
@@ -494,6 +502,8 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * This boolean flag is set to true of the text of the requirement is conditional
      * on something e.g. it includes lanauage like 'if x then y'. This conditionality
      * flag is introduced for purposes of filtering and colour highlighting etc.
+     *
+     * @return static
      */
     public function setConditionality(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $conditionality): self
     {
@@ -534,6 +544,8 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The actual requirement for human consumption.
+     *
+     * @return static
      */
     public function setRequirement(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $requirement): self
     {
@@ -568,6 +580,8 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      *
      * Another statement on one of the requirements that this requirement clarifies or
      * restricts.
+     *
+     * @return static
      */
     public function setDerivedFrom(null|string|FHIRStringPrimitive|FHIRString $derivedFrom): self
     {
@@ -600,6 +614,8 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A larger requirement that this requirement helps to refine and enable.
+     *
+     * @return static
      */
     public function setParent(null|string|FHIRStringPrimitive|FHIRString $parent): self
     {
@@ -649,6 +665,8 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * A reference to another artifact that satisfies this requirement. This could be a
      * Profile, extension, or an element in one of those, or a CapabilityStatement,
      * OperationDefinition, SearchParameter, CodeSystem(/code), ValueSet, Libary etc.
+     *
+     * @return static
      */
     public function addSatisfiedBy(string|FHIRUrlPrimitive|FHIRUrl $satisfiedBy): self
     {
@@ -670,6 +688,8 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * A reference to another artifact that satisfies this requirement. This could be a
      * Profile, extension, or an element in one of those, or a CapabilityStatement,
      * OperationDefinition, SearchParameter, CodeSystem(/code), ValueSet, Libary etc.
+     *
+     * @return static
      */
     public function setSatisfiedBy(string|FHIRUrlPrimitive|FHIRUrl ...$satisfiedBy): self
     {
@@ -723,6 +743,8 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * A reference to another artifact that created this requirement. This could be a
      * Profile, etc., or external regulation, or business requirements expressed
      * elsewhere.
+     *
+     * @return static
      */
     public function addReference(string|FHIRUrlPrimitive|FHIRUrl $reference): self
     {
@@ -744,6 +766,8 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * A reference to another artifact that created this requirement. This could be a
      * Profile, etc., or external regulation, or business requirements expressed
      * elsewhere.
+     *
+     * @return static
      */
     public function setReference(string|FHIRUrlPrimitive|FHIRUrl ...$reference): self
     {
@@ -795,6 +819,8 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      *
      * Who asked for this statement to be a requirement. By default, it's assumed that
      * the publisher knows who it is if it matters.
+     *
+     * @return static
      */
     public function addSource(FHIRReference $source): self
     {
@@ -812,6 +838,8 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      *
      * Who asked for this statement to be a requirement. By default, it's assumed that
      * the publisher knows who it is if it matters.
+     *
+     * @return static
      */
     public function setSource(FHIRReference ...$source): self
     {

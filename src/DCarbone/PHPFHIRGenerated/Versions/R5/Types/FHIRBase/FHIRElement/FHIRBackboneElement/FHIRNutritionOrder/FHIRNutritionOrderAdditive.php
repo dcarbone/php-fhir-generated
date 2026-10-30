@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -220,6 +220,8 @@ class FHIRNutritionOrderAdditive extends FHIRBackboneElement
      *
      * Indicates the type of modular component such as protein, carbohydrate, fat or
      * fiber to be provided in addition to or mixed with the base formula.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableReference $type): self
     {
@@ -251,6 +253,8 @@ class FHIRNutritionOrderAdditive extends FHIRBackboneElement
      *
      * The product or brand name of the type of modular component to be added to the
      * formula.
+     *
+     * @return static
      */
     public function setProductName(null|string|FHIRStringPrimitive|FHIRString $productName): self
     {
@@ -289,6 +293,8 @@ class FHIRNutritionOrderAdditive extends FHIRBackboneElement
      *
      * The amount of additive to be given in addition or to be mixed in with the base
      * formula.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {

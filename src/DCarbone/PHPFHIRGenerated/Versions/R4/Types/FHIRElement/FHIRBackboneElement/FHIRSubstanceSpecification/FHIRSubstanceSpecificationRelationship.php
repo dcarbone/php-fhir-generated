@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -328,6 +328,8 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A pointer to another substance, as a resource or just a representational code.
+     *
+     * @return static
      */
     public function setSubstanceReference(null|FHIRReference $substanceReference): self
     {
@@ -359,6 +361,8 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A pointer to another substance, as a resource or just a representational code.
+     *
+     * @return static
      */
     public function setSubstanceCodeableConcept(null|FHIRCodeableConcept $substanceCodeableConcept): self
     {
@@ -390,6 +394,8 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * For example "salt to parent", "active moiety", "starting material".
+     *
+     * @return static
      */
     public function setRelationship(null|FHIRCodeableConcept $relationship): self
     {
@@ -421,6 +427,8 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * For example where an enzyme strongly bonds with a particular substance, this is
      * a defining relationship for that enzyme, out of several possible substance
      * relationships.
+     *
+     * @return static
      */
     public function setIsDefining(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isDefining): self
     {
@@ -461,6 +469,8 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
      * other.
+     *
+     * @return static
      */
     public function setAmountQuantity(null|FHIRQuantity $amountQuantity): self
     {
@@ -494,6 +504,8 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
      * other.
+     *
+     * @return static
      */
     public function setAmountRange(null|FHIRRange $amountRange): self
     {
@@ -529,6 +541,8 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
      * other.
+     *
+     * @return static
      */
     public function setAmountRatio(null|FHIRRatio $amountRatio): self
     {
@@ -562,6 +576,8 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
      * other.
+     *
+     * @return static
      */
     public function setAmountString(null|string|FHIRStringPrimitive|FHIRString $amountString): self
     {
@@ -596,6 +612,8 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * For use when the numeric.
+     *
+     * @return static
      */
     public function setAmountRatioLowLimit(null|FHIRRatio $amountRatioLowLimit): self
     {
@@ -627,6 +645,8 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An operator for the amount, for example "average", "approximately", "less than".
+     *
+     * @return static
      */
     public function setAmountType(null|FHIRCodeableConcept $amountType): self
     {
@@ -669,6 +689,8 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting literature.
+     *
+     * @return static
      */
     public function addSource(FHIRReference $source): self
     {
@@ -685,6 +707,8 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting literature.
+     *
+     * @return static
      */
     public function setSource(FHIRReference ...$source): self
     {

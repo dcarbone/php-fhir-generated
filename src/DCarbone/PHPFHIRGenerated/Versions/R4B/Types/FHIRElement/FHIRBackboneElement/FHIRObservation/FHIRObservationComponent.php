@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -431,6 +431,8 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes what was observed. Sometimes this is called the observation "code".
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -466,6 +468,8 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
+     *
+     * @return static
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -499,6 +503,8 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
+     *
+     * @return static
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -530,6 +536,8 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
+     *
+     * @return static
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -562,6 +570,8 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
+     *
+     * @return static
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -596,6 +606,8 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
+     *
+     * @return static
      */
     public function setValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $valueInteger): self
     {
@@ -630,6 +642,8 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
+     *
+     * @return static
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -663,6 +677,8 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
+     *
+     * @return static
      */
     public function setValueRatio(null|FHIRRatio $valueRatio): self
     {
@@ -696,6 +712,8 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
+     *
+     * @return static
      */
     public function setValueSampledData(null|FHIRSampledData $valueSampledData): self
     {
@@ -725,6 +743,8 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
+     *
+     * @return static
      */
     public function setValueTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $valueTime): self
     {
@@ -765,6 +785,8 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
+     *
+     * @return static
      */
     public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime): self
     {
@@ -799,6 +821,8 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
+     *
+     * @return static
      */
     public function setValuePeriod(null|FHIRPeriod $valuePeriod): self
     {
@@ -832,6 +856,8 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * Provides a reason why the expected value in the element
      * Observation.component.value[x] is missing.
+     *
+     * @return static
      */
     public function setDataAbsentReason(null|FHIRCodeableConcept $dataAbsentReason): self
     {
@@ -878,6 +904,8 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * A categorical assessment of an observation value. For example, high, low,
      * normal.
+     *
+     * @return static
      */
     public function addInterpretation(FHIRCodeableConcept $interpretation): self
     {
@@ -896,6 +924,8 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * A categorical assessment of an observation value. For example, high, low,
      * normal.
+     *
+     * @return static
      */
     public function setInterpretation(FHIRCodeableConcept ...$interpretation): self
     {
@@ -938,6 +968,8 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * Guidance on how to interpret the value by comparison to a normal or recommended
      * range.
+     *
+     * @return static
      */
     public function addReferenceRange(FHIRObservationReferenceRange $referenceRange): self
     {
@@ -954,6 +986,8 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * Guidance on how to interpret the value by comparison to a normal or recommended
      * range.
+     *
+     * @return static
      */
     public function setReferenceRange(FHIRObservationReferenceRange ...$referenceRange): self
     {

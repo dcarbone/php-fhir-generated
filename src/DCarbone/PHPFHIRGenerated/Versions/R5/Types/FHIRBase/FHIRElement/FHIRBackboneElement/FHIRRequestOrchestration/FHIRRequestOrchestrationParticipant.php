@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -191,7 +191,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * A reference to the actual participant. (choose any one of actor*, but only one)
+     * A reference to the actual participant.
      */
     #[FHIRCanonical]
     protected FHIRCanonical $actorCanonical;
@@ -200,7 +200,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A reference to the actual participant. (choose any one of actor*, but only one)
+     * A reference to the actual participant.
      */
     #[FHIRReference]
     protected FHIRReference $actorReference;
@@ -272,6 +272,8 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of participant in the action.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRActionParticipantTypeEnum|FHIRActionParticipantType $type): self
     {
@@ -306,6 +308,8 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The type of participant in the action.
+     *
+     * @return static
      */
     public function setTypeCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $typeCanonical): self
     {
@@ -338,6 +342,8 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of participant in the action.
+     *
+     * @return static
      */
     public function setTypeReference(null|FHIRReference $typeReference): self
     {
@@ -369,6 +375,8 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The role the participant should play in performing the described action.
+     *
+     * @return static
      */
     public function setRole(null|FHIRCodeableConcept $role): self
     {
@@ -402,6 +410,8 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      *
      * Indicates how the actor will be involved in the action - author, reviewer,
      * witness, etc.
+     *
+     * @return static
      */
     public function setFunction(null|FHIRCodeableConcept $function): self
     {
@@ -419,7 +429,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * A reference to the actual participant. (choose any one of actor*, but only one)
+     * A reference to the actual participant.
      */
     public function getActorCanonical(): null|FHIRCanonical
     {
@@ -432,7 +442,9 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * A reference to the actual participant. (choose any one of actor*, but only one)
+     * A reference to the actual participant.
+     *
+     * @return static
      */
     public function setActorCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $actorCanonical): self
     {
@@ -452,7 +464,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A reference to the actual participant. (choose any one of actor*, but only one)
+     * A reference to the actual participant.
      */
     public function getActorReference(): null|FHIRReference
     {
@@ -464,7 +476,9 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A reference to the actual participant. (choose any one of actor*, but only one)
+     * A reference to the actual participant.
+     *
+     * @return static
      */
     public function setActorReference(null|FHIRReference $actorReference): self
     {

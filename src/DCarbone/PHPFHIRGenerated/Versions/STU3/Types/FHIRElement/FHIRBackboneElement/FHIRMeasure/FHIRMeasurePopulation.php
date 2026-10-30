@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -229,6 +229,8 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      *
      * A unique identifier for the population criteria. This identifier is used to
      * report data against this criteria within the measure report.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -260,6 +262,8 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of population criteria.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -289,6 +293,8 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Optional name or short description of this population.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -321,6 +327,8 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The human readable description of this population criteria.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -355,6 +363,8 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      *
      * The name of a valid referenced CQL expression (may be namespaced) that defines
      * this population criteria.
+     *
+     * @return static
      */
     public function setCriteria(null|string|FHIRStringPrimitive|FHIRString $criteria): self
     {

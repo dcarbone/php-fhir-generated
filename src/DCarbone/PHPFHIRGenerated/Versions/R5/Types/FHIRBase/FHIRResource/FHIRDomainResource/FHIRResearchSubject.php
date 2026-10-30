@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -369,6 +369,8 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this research subject for a study.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -386,6 +388,8 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this research subject for a study.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -411,6 +415,8 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The publication state of the resource (not of the subject).
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -456,6 +462,8 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
      *
      * The current state (status) of the subject and resons for status change where
      * appropriate.
+     *
+     * @return static
      */
     public function addProgress(FHIRResearchSubjectProgress $progress): self
     {
@@ -472,6 +480,8 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
      *
      * The current state (status) of the subject and resons for status change where
      * appropriate.
+     *
+     * @return static
      */
     public function setProgress(FHIRResearchSubjectProgress ...$progress): self
     {
@@ -501,6 +511,8 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The dates the subject began and ended their participation in the study.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -530,6 +542,8 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the study the subject is participating in.
+     *
+     * @return static
      */
     public function setStudy(null|FHIRReference $study): self
     {
@@ -559,6 +573,8 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The record of the person, animal or other entity involved in the study.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -596,6 +612,8 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
      *
      * The name of the arm in the study the subject is expected to follow as part of
      * this study.
+     *
+     * @return static
      */
     public function setAssignedComparisonGroup(null|string|FHIRIdPrimitive|FHIRId $assignedComparisonGroup): self
     {
@@ -636,6 +654,8 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
      *
      * The name of the arm in the study the subject actually followed as part of this
      * study.
+     *
+     * @return static
      */
     public function setActualComparisonGroup(null|string|FHIRIdPrimitive|FHIRId $actualComparisonGroup): self
     {
@@ -681,6 +701,8 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A record of the patient's informed agreement to participate in the study.
+     *
+     * @return static
      */
     public function addConsent(FHIRReference $consent): self
     {
@@ -697,6 +719,8 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A record of the patient's informed agreement to participate in the study.
+     *
+     * @return static
      */
     public function setConsent(FHIRReference ...$consent): self
     {

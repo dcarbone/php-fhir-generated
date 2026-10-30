@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -223,6 +223,8 @@ class FHIRCapabilityStatementOperation extends FHIRBackboneElement
      * The name of the operation or query. For an operation, this is the name prefixed
      * with $ and used in the URL. For a query, this is the name used in the _query
      * parameter when the query is called.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -269,6 +271,8 @@ class FHIRCapabilityStatementOperation extends FHIRBackboneElement
      * invocation. If it only supports a subset, it must define its own custom
      * [[[OperationDefinition]]] with a 'base' of the original OperationDefinition. The
      * custom definition would describe the specific subset of functionality supported.
+     *
+     * @return static
      */
     public function setDefinition(null|string|FHIRCanonicalPrimitive|FHIRCanonical $definition): self
     {
@@ -313,6 +317,8 @@ class FHIRCapabilityStatementOperation extends FHIRBackboneElement
      * Documentation that describes anything special about the operation behavior,
      * possibly detailing different behavior for system, type and instance-level
      * invocation of the operation.
+     *
+     * @return static
      */
     public function setDocumentation(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $documentation): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -206,6 +206,8 @@ class FHIRExpansionProfileFixedVersion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The specific system for which to fix the version.
+     *
+     * @return static
      */
     public function setSystem(null|string|FHIRUriPrimitive|FHIRUri $system): self
     {
@@ -240,6 +242,8 @@ class FHIRExpansionProfileFixedVersion extends FHIRBackboneElement
      *
      * The version of the code system from which codes in the expansion should be
      * included.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -274,6 +278,8 @@ class FHIRExpansionProfileFixedVersion extends FHIRBackboneElement
      *
      * How to manage the intersection between a fixed version in a value set, and this
      * fixed version of the system in the expansion profile.
+     *
+     * @return static
      */
     public function setMode(null|string|FHIRSystemVersionProcessingModeList|FHIRSystemVersionProcessingMode $mode): self
     {

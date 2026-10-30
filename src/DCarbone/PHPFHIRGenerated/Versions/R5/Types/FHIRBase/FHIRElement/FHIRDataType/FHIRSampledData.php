@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -363,6 +363,8 @@ class FHIRSampledData extends FHIRDataType
      *
      * The base quantity that a measured value of zero represents. In addition, this
      * provides the units of the entire measurement series.
+     *
+     * @return static
      */
     public function setOrigin(null|FHIRQuantity $origin): self
     {
@@ -396,6 +398,8 @@ class FHIRSampledData extends FHIRDataType
      *
      * Amount of intervalUnits between samples, e.g. milliseconds for time-based
      * sampling.
+     *
+     * @return static
      */
     public function setInterval(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $interval): self
     {
@@ -430,6 +434,8 @@ class FHIRSampledData extends FHIRDataType
      * the Narrative, or extensions
      *
      * The measurement unit in which the sample interval is expressed.
+     *
+     * @return static
      */
     public function setIntervalUnit(null|string|FHIRCodePrimitive|FHIRCode $intervalUnit): self
     {
@@ -466,6 +472,8 @@ class FHIRSampledData extends FHIRDataType
      *
      * A correction factor that is applied to the sampled data points before they are
      * added to the origin.
+     *
+     * @return static
      */
     public function setFactor(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $factor): self
     {
@@ -502,6 +510,8 @@ class FHIRSampledData extends FHIRDataType
      *
      * The lower limit of detection of the measured points. This is needed if any of
      * the data points have the value "L" (lower than detection limit).
+     *
+     * @return static
      */
     public function setLowerLimit(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $lowerLimit): self
     {
@@ -538,6 +548,8 @@ class FHIRSampledData extends FHIRDataType
      *
      * The upper limit of detection of the measured points. This is needed if any of
      * the data points have the value "U" (higher than detection limit).
+     *
+     * @return static
      */
     public function setUpperLimit(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $upperLimit): self
     {
@@ -574,6 +586,8 @@ class FHIRSampledData extends FHIRDataType
      * The number of sample points at each time point. If this value is greater than
      * one, then the dimensions will be interlaced - all the sample points for a point
      * in time will be recorded at once.
+     *
+     * @return static
      */
     public function setDimensions(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $dimensions): self
     {
@@ -608,6 +622,8 @@ class FHIRSampledData extends FHIRDataType
      * the Narrative, or extensions
      *
      * Reference to ConceptMap that defines the codes used in the data.
+     *
+     * @return static
      */
     public function setCodeMap(null|string|FHIRCanonicalPrimitive|FHIRCanonical $codeMap): self
     {
@@ -648,6 +664,8 @@ class FHIRSampledData extends FHIRDataType
      * intervalUnit. The absolute point at which the measurements begin SHALL be
      * conveyed outside the scope of this datatype, e.g. Observation.effectiveDateTime
      * for a timing offset.
+     *
+     * @return static
      */
     public function setOffsets(null|string|FHIRStringPrimitive|FHIRString $offsets): self
     {
@@ -678,6 +696,8 @@ class FHIRSampledData extends FHIRDataType
      * space (character u20). The special codes "E" (error), "L" (below detection
      * limit) and "U" (above detection limit) are also defined for used in place of
      * decimal values.
+     *
+     * @return static
      */
     public function setData(null|string|FHIRSampledDataDataTypePrimitive|FHIRSampledDataDataType $data): self
     {

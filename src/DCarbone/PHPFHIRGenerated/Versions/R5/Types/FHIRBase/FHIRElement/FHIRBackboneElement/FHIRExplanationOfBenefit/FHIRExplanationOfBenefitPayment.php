@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -262,6 +262,8 @@ class FHIRExplanationOfBenefitPayment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Whether this represents partial or complete payment of the benefits payable.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -293,6 +295,8 @@ class FHIRExplanationOfBenefitPayment extends FHIRBackboneElement
      *
      * Total amount of all adjustments to this payment included in this transaction
      * which are not related to this claim's adjudication.
+     *
+     * @return static
      */
     public function setAdjustment(null|FHIRMoney $adjustment): self
     {
@@ -324,6 +328,8 @@ class FHIRExplanationOfBenefitPayment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason for the payment adjustment.
+     *
+     * @return static
      */
     public function setAdjustmentReason(null|FHIRCodeableConcept $adjustmentReason): self
     {
@@ -355,6 +361,8 @@ class FHIRExplanationOfBenefitPayment extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Estimated date the payment will be issued or the actual issue date of payment.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $date): self
     {
@@ -387,6 +395,8 @@ class FHIRExplanationOfBenefitPayment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Benefits payable less any payment adjustment.
+     *
+     * @return static
      */
     public function setAmount(null|FHIRMoney $amount): self
     {
@@ -418,6 +428,8 @@ class FHIRExplanationOfBenefitPayment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Issuer's unique identifier for the payment instrument.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {

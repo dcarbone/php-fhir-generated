@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -263,6 +263,8 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The business identifier of the packaged medication.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -294,6 +296,8 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that defines the specific type of packaging.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -323,6 +327,8 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of items contained in the package (devices or sub-packages).
+     *
+     * @return static
      */
     public function setCount(null|string|float|FHIRIntegerPrimitive|FHIRInteger $count): self
     {
@@ -366,6 +372,8 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * component of a medical device.
      *
      * An organization that distributes the packaged device.
+     *
+     * @return static
      */
     public function addDistributor(FHIRDeviceDefinitionDistributor $distributor): self
     {
@@ -381,6 +389,8 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * component of a medical device.
      *
      * An organization that distributes the packaged device.
+     *
+     * @return static
      */
     public function setDistributor(FHIRDeviceDefinitionDistributor ...$distributor): self
     {
@@ -421,6 +431,8 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * component of a medical device.
      *
      * Unique Device Identifier (UDI) Barcode string on the packaging.
+     *
+     * @return static
      */
     public function addUdiDeviceIdentifier(FHIRDeviceDefinitionUdiDeviceIdentifier $udiDeviceIdentifier): self
     {
@@ -436,6 +448,8 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * component of a medical device.
      *
      * Unique Device Identifier (UDI) Barcode string on the packaging.
+     *
+     * @return static
      */
     public function setUdiDeviceIdentifier(FHIRDeviceDefinitionUdiDeviceIdentifier ...$udiDeviceIdentifier): self
     {
@@ -476,6 +490,8 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * component of a medical device.
      *
      * Allows packages within packages.
+     *
+     * @return static
      */
     public function addPackaging(FHIRDeviceDefinitionPackaging $packaging): self
     {
@@ -491,6 +507,8 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * component of a medical device.
      *
      * Allows packages within packages.
+     *
+     * @return static
      */
     public function setPackaging(FHIRDeviceDefinitionPackaging ...$packaging): self
     {

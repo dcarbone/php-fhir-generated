@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -666,6 +666,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      *
      * Other business identifiers associated with the document, including version
      * independent identifiers.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -684,6 +686,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      *
      * Other business identifiers associated with the document, including version
      * independent identifiers.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -715,6 +719,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      *
      * An explicitly assigned identifer of a variation of the content in the
      * DocumentReference.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -760,6 +766,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A procedure that is fulfilled in whole or in part by the creation of this media.
+     *
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -776,6 +784,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A procedure that is fulfilled in whole or in part by the creation of this media.
+     *
+     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -801,6 +811,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this document reference.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRDocumentReferenceStatusEnum|FHIRDocumentReferenceStatus $status): self
     {
@@ -829,6 +841,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the underlying document.
+     *
+     * @return static
      */
     public function setDocStatus(null|string|FHIRCompositionStatusEnum|FHIRCompositionStatus $docStatus): self
     {
@@ -878,6 +892,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      *
      * Imaging modality used. This may include both acquisition and non-acquisition
      * modalities.
+     *
+     * @return static
      */
     public function addModality(FHIRCodeableConcept $modality): self
     {
@@ -896,6 +912,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      *
      * Imaging modality used. This may include both acquisition and non-acquisition
      * modalities.
+     *
+     * @return static
      */
     public function setModality(FHIRCodeableConcept ...$modality): self
     {
@@ -931,6 +949,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * Specifies the particular kind of document referenced (e.g. History and Physical,
      * Discharge Summary, Progress Note). This usually equates to the purpose of making
      * the document referenced.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -979,6 +999,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * A categorization for the type of document referenced - helps for indexing and
      * searching. This may be implied by or derived from the code specified in the
      * DocumentReference.type.
+     *
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -998,6 +1020,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * A categorization for the type of document referenced - helps for indexing and
      * searching. This may be implied by or derived from the code specified in the
      * DocumentReference.type.
+     *
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -1033,6 +1057,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * or healthcare practitioner), a device (e.g. a machine) or even a group of
      * subjects (such as a document about a herd of farm animals, or a set of patients
      * that share a common exposure).
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -1077,6 +1103,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      *
      * Describes the clinical encounter or type of care that the document content is
      * associated with.
+     *
+     * @return static
      */
     public function addContext(FHIRReference $context): self
     {
@@ -1094,6 +1122,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      *
      * Describes the clinical encounter or type of care that the document content is
      * associated with.
+     *
+     * @return static
      */
     public function setContext(FHIRReference ...$context): self
     {
@@ -1144,6 +1174,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * an appendectomy, being documented. In some cases, the event is inherent in the
      * type Code, such as a "History and Physical Report" in which the procedure being
      * documented is necessarily a "History and Physical" act.
+     *
+     * @return static
      */
     public function addEvent(FHIRCodeableReference $event): self
     {
@@ -1164,6 +1196,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * an appendectomy, being documented. In some cases, the event is inherent in the
      * type Code, such as a "History and Physical Report" in which the procedure being
      * documented is necessarily a "History and Physical" act.
+     *
+     * @return static
      */
     public function setEvent(FHIRCodeableReference ...$event): self
     {
@@ -1208,6 +1242,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The anatomic structures included in the document.
+     *
+     * @return static
      */
     public function addBodySite(FHIRCodeableReference $bodySite): self
     {
@@ -1225,6 +1261,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The anatomic structures included in the document.
+     *
+     * @return static
      */
     public function setBodySite(FHIRCodeableReference ...$bodySite): self
     {
@@ -1256,6 +1294,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of facility where the patient was seen.
+     *
+     * @return static
      */
     public function setFacilityType(null|FHIRCodeableConcept $facilityType): self
     {
@@ -1289,6 +1329,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      *
      * This property may convey specifics about the practice setting where the content
      * was created, often reflecting the clinical specialty.
+     *
+     * @return static
      */
     public function setPracticeSetting(null|FHIRCodeableConcept $practiceSetting): self
     {
@@ -1320,6 +1362,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      *
      * The time period over which the service that is described by the document was
      * provided.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -1355,6 +1399,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the document reference was created.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $date): self
     {
@@ -1400,6 +1446,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who is responsible for adding the information to the document.
+     *
+     * @return static
      */
     public function addAuthor(FHIRReference $author): self
     {
@@ -1416,6 +1464,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who is responsible for adding the information to the document.
+     *
+     * @return static
      */
     public function setAuthor(FHIRReference ...$author): self
     {
@@ -1470,6 +1520,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * direct reference.
      *
      * A participant who has authenticated the accuracy of the document.
+     *
+     * @return static
      */
     public function addAttester(FHIRDocumentReferenceAttester $attester): self
     {
@@ -1492,6 +1544,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * direct reference.
      *
      * A participant who has authenticated the accuracy of the document.
+     *
+     * @return static
      */
     public function setAttester(FHIRDocumentReferenceAttester ...$attester): self
     {
@@ -1523,6 +1577,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      *
      * Identifies the organization or group who is responsible for ongoing maintenance
      * of and access to the document.
+     *
+     * @return static
      */
     public function setCustodian(null|FHIRReference $custodian): self
     {
@@ -1579,6 +1635,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      *
      * Relationships that this document has with other document references that already
      * exist.
+     *
+     * @return static
      */
     public function addRelatesTo(FHIRDocumentReferenceRelatesTo $relatesTo): self
     {
@@ -1602,6 +1660,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      *
      * Relationships that this document has with other document references that already
      * exist.
+     *
+     * @return static
      */
     public function setRelatesTo(FHIRDocumentReferenceRelatesTo ...$relatesTo): self
     {
@@ -1639,6 +1699,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * the Narrative, or extensions
      *
      * Human-readable description of the source document.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1704,6 +1766,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * sensitive as the document. For example: a psychotherapy episode may contain
      * highly sensitive information, while the metadata may simply indicate that some
      * episode happened.
+     *
+     * @return static
      */
     public function addSecurityLabel(FHIRCodeableConcept $securityLabel): self
     {
@@ -1730,6 +1794,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * sensitive as the document. For example: a psychotherapy episode may contain
      * highly sensitive information, while the metadata may simply indicate that some
      * episode happened.
+     *
+     * @return static
      */
     public function setSecurityLabel(FHIRCodeableConcept ...$securityLabel): self
     {
@@ -1788,6 +1854,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * The document and format referenced. If there are multiple content element
      * repetitions, these must all represent the same document in different format, or
      * attachment metadata.
+     *
+     * @return static
      */
     public function addContent(FHIRDocumentReferenceContent $content): self
     {
@@ -1812,6 +1880,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * The document and format referenced. If there are multiple content element
      * repetitions, these must all represent the same document in different format, or
      * attachment metadata.
+     *
+     * @return static
      */
     public function setContent(FHIRDocumentReferenceContent ...$content): self
     {

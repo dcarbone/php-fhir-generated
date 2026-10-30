@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -199,6 +199,8 @@ class FHIRAccountRelatedAccount extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Relationship of the associated Account.
+     *
+     * @return static
      */
     public function setRelationship(null|FHIRCodeableConcept $relationship): self
     {
@@ -228,6 +230,8 @@ class FHIRAccountRelatedAccount extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to an associated Account.
+     *
+     * @return static
      */
     public function setAccount(null|FHIRReference $account): self
     {

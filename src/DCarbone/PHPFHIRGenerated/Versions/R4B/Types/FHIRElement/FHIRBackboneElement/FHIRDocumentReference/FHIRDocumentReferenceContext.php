@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -301,6 +301,8 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      *
      * Describes the clinical encounter or type of care that the document content is
      * associated with.
+     *
+     * @return static
      */
     public function addEncounter(FHIRReference $encounter): self
     {
@@ -318,6 +320,8 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      *
      * Describes the clinical encounter or type of care that the document content is
      * associated with.
+     *
+     * @return static
      */
     public function setEncounter(FHIRReference ...$encounter): self
     {
@@ -368,6 +372,8 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      * an appendectomy, being documented. In some cases, the event is inherent in the
      * type Code, such as a "History and Physical Report" in which the procedure being
      * documented is necessarily a "History and Physical" act.
+     *
+     * @return static
      */
     public function addEvent(FHIRCodeableConcept $event): self
     {
@@ -388,6 +394,8 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      * an appendectomy, being documented. In some cases, the event is inherent in the
      * type Code, such as a "History and Physical Report" in which the procedure being
      * documented is necessarily a "History and Physical" act.
+     *
+     * @return static
      */
     public function setEvent(FHIRCodeableConcept ...$event): self
     {
@@ -419,6 +427,8 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      *
      * The time period over which the service that is described by the document was
      * provided.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -450,6 +460,8 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of facility where the patient was seen.
+     *
+     * @return static
      */
     public function setFacilityType(null|FHIRCodeableConcept $facilityType): self
     {
@@ -483,6 +495,8 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      *
      * This property may convey specifics about the practice setting where the content
      * was created, often reflecting the clinical specialty.
+     *
+     * @return static
      */
     public function setPracticeSetting(null|FHIRCodeableConcept $practiceSetting): self
     {
@@ -514,6 +528,8 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      *
      * The Patient Information as known when the document was published. May be a
      * reference to a version specific, or contained.
+     *
+     * @return static
      */
     public function setSourcePatientInfo(null|FHIRReference $sourcePatientInfo): self
     {
@@ -556,6 +572,8 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Related identifiers or resources associated with the DocumentReference.
+     *
+     * @return static
      */
     public function addRelated(FHIRReference $related): self
     {
@@ -572,6 +590,8 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Related identifiers or resources associated with the DocumentReference.
+     *
+     * @return static
      */
     public function setRelated(FHIRReference ...$related): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -154,8 +154,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * The value for this stratum, expressed as a CodeableConcept. When defining
      * stratifiers on complex values, the value must be rendered such that the value
-     * for each stratum within the stratifier is unique. (choose any one of value*, but
-     * only one)
+     * for each stratum within the stratifier is unique.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
@@ -165,8 +164,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * The value for this stratum, expressed as a CodeableConcept. When defining
      * stratifiers on complex values, the value must be rendered such that the value
-     * for each stratum within the stratifier is unique. (choose any one of value*, but
-     * only one)
+     * for each stratum within the stratifier is unique.
      */
     #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
@@ -179,8 +177,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * The value for this stratum, expressed as a CodeableConcept. When defining
      * stratifiers on complex values, the value must be rendered such that the value
-     * for each stratum within the stratifier is unique. (choose any one of value*, but
-     * only one)
+     * for each stratum within the stratifier is unique.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -191,8 +188,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * The value for this stratum, expressed as a CodeableConcept. When defining
      * stratifiers on complex values, the value must be rendered such that the value
-     * for each stratum within the stratifier is unique. (choose any one of value*, but
-     * only one)
+     * for each stratum within the stratifier is unique.
      */
     #[FHIRRange]
     protected FHIRRange $valueRange;
@@ -203,8 +199,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * The value for this stratum, expressed as a CodeableConcept. When defining
      * stratifiers on complex values, the value must be rendered such that the value
-     * for each stratum within the stratifier is unique. (choose any one of value*, but
-     * only one)
+     * for each stratum within the stratifier is unique.
      */
     #[FHIRReference]
     protected FHIRReference $valueReference;
@@ -237,8 +232,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The measure score for this stratum, calculated as appropriate for the measure
-     * type and scoring method, and based on only the members of this stratum. (choose
-     * any one of measureScore*, but only one)
+     * type and scoring method, and based on only the members of this stratum.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $measureScoreQuantity;
@@ -252,8 +246,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The measure score for this stratum, calculated as appropriate for the measure
-     * type and scoring method, and based on only the members of this stratum. (choose
-     * any one of measureScore*, but only one)
+     * type and scoring method, and based on only the members of this stratum.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $measureScoreDateTime;
@@ -264,8 +257,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The measure score for this stratum, calculated as appropriate for the measure
-     * type and scoring method, and based on only the members of this stratum. (choose
-     * any one of measureScore*, but only one)
+     * type and scoring method, and based on only the members of this stratum.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $measureScoreCodeableConcept;
@@ -275,8 +267,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The measure score for this stratum, calculated as appropriate for the measure
-     * type and scoring method, and based on only the members of this stratum. (choose
-     * any one of measureScore*, but only one)
+     * type and scoring method, and based on only the members of this stratum.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $measureScorePeriod;
@@ -286,8 +277,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The measure score for this stratum, calculated as appropriate for the measure
-     * type and scoring method, and based on only the members of this stratum. (choose
-     * any one of measureScore*, but only one)
+     * type and scoring method, and based on only the members of this stratum.
      */
     #[FHIRRange]
     protected FHIRRange $measureScoreRange;
@@ -297,8 +287,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The measure score for this stratum, calculated as appropriate for the measure
-     * type and scoring method, and based on only the members of this stratum. (choose
-     * any one of measureScore*, but only one)
+     * type and scoring method, and based on only the members of this stratum.
      */
     #[FHIRDuration]
     protected FHIRDuration $measureScoreDuration;
@@ -390,8 +379,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * The value for this stratum, expressed as a CodeableConcept. When defining
      * stratifiers on complex values, the value must be rendered such that the value
-     * for each stratum within the stratifier is unique. (choose any one of value*, but
-     * only one)
+     * for each stratum within the stratifier is unique.
      */
     public function getValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -406,8 +394,9 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * The value for this stratum, expressed as a CodeableConcept. When defining
      * stratifiers on complex values, the value must be rendered such that the value
-     * for each stratum within the stratifier is unique. (choose any one of value*, but
-     * only one)
+     * for each stratum within the stratifier is unique.
+     *
+     * @return static
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -425,8 +414,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * The value for this stratum, expressed as a CodeableConcept. When defining
      * stratifiers on complex values, the value must be rendered such that the value
-     * for each stratum within the stratifier is unique. (choose any one of value*, but
-     * only one)
+     * for each stratum within the stratifier is unique.
      */
     public function getValueBoolean(): null|FHIRBoolean
     {
@@ -439,8 +427,9 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * The value for this stratum, expressed as a CodeableConcept. When defining
      * stratifiers on complex values, the value must be rendered such that the value
-     * for each stratum within the stratifier is unique. (choose any one of value*, but
-     * only one)
+     * for each stratum within the stratifier is unique.
+     *
+     * @return static
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -464,8 +453,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * The value for this stratum, expressed as a CodeableConcept. When defining
      * stratifiers on complex values, the value must be rendered such that the value
-     * for each stratum within the stratifier is unique. (choose any one of value*, but
-     * only one)
+     * for each stratum within the stratifier is unique.
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -481,8 +469,9 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * The value for this stratum, expressed as a CodeableConcept. When defining
      * stratifiers on complex values, the value must be rendered such that the value
-     * for each stratum within the stratifier is unique. (choose any one of value*, but
-     * only one)
+     * for each stratum within the stratifier is unique.
+     *
+     * @return static
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -501,8 +490,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * The value for this stratum, expressed as a CodeableConcept. When defining
      * stratifiers on complex values, the value must be rendered such that the value
-     * for each stratum within the stratifier is unique. (choose any one of value*, but
-     * only one)
+     * for each stratum within the stratifier is unique.
      */
     public function getValueRange(): null|FHIRRange
     {
@@ -516,8 +504,9 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * The value for this stratum, expressed as a CodeableConcept. When defining
      * stratifiers on complex values, the value must be rendered such that the value
-     * for each stratum within the stratifier is unique. (choose any one of value*, but
-     * only one)
+     * for each stratum within the stratifier is unique.
+     *
+     * @return static
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -536,8 +525,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * The value for this stratum, expressed as a CodeableConcept. When defining
      * stratifiers on complex values, the value must be rendered such that the value
-     * for each stratum within the stratifier is unique. (choose any one of value*, but
-     * only one)
+     * for each stratum within the stratifier is unique.
      */
     public function getValueReference(): null|FHIRReference
     {
@@ -551,8 +539,9 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * The value for this stratum, expressed as a CodeableConcept. When defining
      * stratifiers on complex values, the value must be rendered such that the value
-     * for each stratum within the stratifier is unique. (choose any one of value*, but
-     * only one)
+     * for each stratum within the stratifier is unique.
+     *
+     * @return static
      */
     public function setValueReference(null|FHIRReference $valueReference): self
     {
@@ -593,6 +582,8 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * and optionally a reference to the resources involved in that calculation.
      *
      * A stratifier component value.
+     *
+     * @return static
      */
     public function addComponent(FHIRMeasureReportComponent $component): self
     {
@@ -608,6 +599,8 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * and optionally a reference to the resources involved in that calculation.
      *
      * A stratifier component value.
+     *
+     * @return static
      */
     public function setComponent(FHIRMeasureReportComponent ...$component): self
     {
@@ -650,6 +643,8 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * The populations that make up the stratum, one for each type of population
      * appropriate to the measure.
+     *
+     * @return static
      */
     public function addPopulation(FHIRMeasureReportPopulation1 $population): self
     {
@@ -666,6 +661,8 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * The populations that make up the stratum, one for each type of population
      * appropriate to the measure.
+     *
+     * @return static
      */
     public function setPopulation(FHIRMeasureReportPopulation1 ...$population): self
     {
@@ -685,8 +682,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The measure score for this stratum, calculated as appropriate for the measure
-     * type and scoring method, and based on only the members of this stratum. (choose
-     * any one of measureScore*, but only one)
+     * type and scoring method, and based on only the members of this stratum.
      */
     public function getMeasureScoreQuantity(): null|FHIRQuantity
     {
@@ -701,8 +697,9 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The measure score for this stratum, calculated as appropriate for the measure
-     * type and scoring method, and based on only the members of this stratum. (choose
-     * any one of measureScore*, but only one)
+     * type and scoring method, and based on only the members of this stratum.
+     *
+     * @return static
      */
     public function setMeasureScoreQuantity(null|FHIRQuantity $measureScoreQuantity): self
     {
@@ -724,8 +721,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The measure score for this stratum, calculated as appropriate for the measure
-     * type and scoring method, and based on only the members of this stratum. (choose
-     * any one of measureScore*, but only one)
+     * type and scoring method, and based on only the members of this stratum.
      */
     public function getMeasureScoreDateTime(): null|FHIRDateTime
     {
@@ -742,8 +738,9 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The measure score for this stratum, calculated as appropriate for the measure
-     * type and scoring method, and based on only the members of this stratum. (choose
-     * any one of measureScore*, but only one)
+     * type and scoring method, and based on only the members of this stratum.
+     *
+     * @return static
      */
     public function setMeasureScoreDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $measureScoreDateTime): self
     {
@@ -765,8 +762,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The measure score for this stratum, calculated as appropriate for the measure
-     * type and scoring method, and based on only the members of this stratum. (choose
-     * any one of measureScore*, but only one)
+     * type and scoring method, and based on only the members of this stratum.
      */
     public function getMeasureScoreCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -780,8 +776,9 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The measure score for this stratum, calculated as appropriate for the measure
-     * type and scoring method, and based on only the members of this stratum. (choose
-     * any one of measureScore*, but only one)
+     * type and scoring method, and based on only the members of this stratum.
+     *
+     * @return static
      */
     public function setMeasureScoreCodeableConcept(null|FHIRCodeableConcept $measureScoreCodeableConcept): self
     {
@@ -799,8 +796,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The measure score for this stratum, calculated as appropriate for the measure
-     * type and scoring method, and based on only the members of this stratum. (choose
-     * any one of measureScore*, but only one)
+     * type and scoring method, and based on only the members of this stratum.
      */
     public function getMeasureScorePeriod(): null|FHIRPeriod
     {
@@ -813,8 +809,9 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The measure score for this stratum, calculated as appropriate for the measure
-     * type and scoring method, and based on only the members of this stratum. (choose
-     * any one of measureScore*, but only one)
+     * type and scoring method, and based on only the members of this stratum.
+     *
+     * @return static
      */
     public function setMeasureScorePeriod(null|FHIRPeriod $measureScorePeriod): self
     {
@@ -832,8 +829,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The measure score for this stratum, calculated as appropriate for the measure
-     * type and scoring method, and based on only the members of this stratum. (choose
-     * any one of measureScore*, but only one)
+     * type and scoring method, and based on only the members of this stratum.
      */
     public function getMeasureScoreRange(): null|FHIRRange
     {
@@ -846,8 +842,9 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The measure score for this stratum, calculated as appropriate for the measure
-     * type and scoring method, and based on only the members of this stratum. (choose
-     * any one of measureScore*, but only one)
+     * type and scoring method, and based on only the members of this stratum.
+     *
+     * @return static
      */
     public function setMeasureScoreRange(null|FHIRRange $measureScoreRange): self
     {
@@ -865,8 +862,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The measure score for this stratum, calculated as appropriate for the measure
-     * type and scoring method, and based on only the members of this stratum. (choose
-     * any one of measureScore*, but only one)
+     * type and scoring method, and based on only the members of this stratum.
      */
     public function getMeasureScoreDuration(): null|FHIRDuration
     {
@@ -879,8 +875,9 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The measure score for this stratum, calculated as appropriate for the measure
-     * type and scoring method, and based on only the members of this stratum. (choose
-     * any one of measureScore*, but only one)
+     * type and scoring method, and based on only the members of this stratum.
+     *
+     * @return static
      */
     public function setMeasureScoreDuration(null|FHIRDuration $measureScoreDuration): self
     {

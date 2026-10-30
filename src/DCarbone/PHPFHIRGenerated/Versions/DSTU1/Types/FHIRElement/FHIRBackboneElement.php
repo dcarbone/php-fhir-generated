@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -168,6 +168,8 @@ class FHIRBackboneElement extends FHIRElement
      *
      * An extension that modifies the meaning of the element that contains it -
      * additional local content. The extension URL defines it's meaning
+     *
+     * @return static
      */
     public function addModifierExtension(FHIRExtension $modifierExtension): self
     {
@@ -185,6 +187,8 @@ class FHIRBackboneElement extends FHIRElement
      *
      * An extension that modifies the meaning of the element that contains it -
      * additional local content. The extension URL defines it's meaning
+     *
+     * @return static
      */
     public function setModifierExtension(FHIRExtension ...$modifierExtension): self
     {

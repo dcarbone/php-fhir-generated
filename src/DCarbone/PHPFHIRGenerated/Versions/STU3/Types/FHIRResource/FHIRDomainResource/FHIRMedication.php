@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -328,6 +328,8 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * if no code is available. Usage note: This could be a standard medication code
      * such as a code from RxNorm, SNOMED CT, IDMP etc. It could also be a national or
      * local formulary code, optionally with translations to other code systems.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -355,6 +357,8 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code to indicate if the medication is in active use.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRMedicationStatusList|FHIRMedicationStatus $status): self
     {
@@ -385,6 +389,8 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Set to true if the item is attributable to a specific manufacturer.
+     *
+     * @return static
      */
     public function setIsBrand(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isBrand): self
     {
@@ -417,6 +423,8 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Set to true if the medication can be obtained without an order from a
      * prescriber.
+     *
+     * @return static
      */
     public function setIsOverTheCounter(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isOverTheCounter): self
     {
@@ -451,6 +459,8 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Describes the details of the manufacturer of the medication product. This is not
      * intended to represent the distributor of a medication product.
+     *
+     * @return static
      */
     public function setManufacturer(null|FHIRReference $manufacturer): self
     {
@@ -482,6 +492,8 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the item. Powder; tablets; capsule.
+     *
+     * @return static
      */
     public function setForm(null|FHIRCodeableConcept $form): self
     {
@@ -522,6 +534,8 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * medication. It covers the ingredients and the packaging for a medication.
      *
      * Identifies a particular constituent of interest in the product.
+     *
+     * @return static
      */
     public function addIngredient(FHIRMedicationIngredient $ingredient): self
     {
@@ -537,6 +551,8 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * medication. It covers the ingredients and the packaging for a medication.
      *
      * Identifies a particular constituent of interest in the product.
+     *
+     * @return static
      */
     public function setIngredient(FHIRMedicationIngredient ...$ingredient): self
     {
@@ -564,6 +580,8 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * medication. It covers the ingredients and the packaging for a medication.
      *
      * Information that only applies to packages (not products).
+     *
+     * @return static
      */
     public function setPackage(null|FHIRMedicationPackage $package): self
     {
@@ -606,6 +624,8 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Photo(s) or graphic representation(s) of the medication.
+     *
+     * @return static
      */
     public function addImage(FHIRAttachment $image): self
     {
@@ -622,6 +642,8 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Photo(s) or graphic representation(s) of the medication.
+     *
+     * @return static
      */
     public function setImage(FHIRAttachment ...$image): self
     {

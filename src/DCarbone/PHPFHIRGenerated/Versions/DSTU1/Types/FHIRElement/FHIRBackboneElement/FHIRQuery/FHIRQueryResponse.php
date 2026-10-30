@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -298,6 +298,8 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Links response to source query.
+     *
+     * @return static
      */
     public function setIdentifier(null|string|FHIRUriPrimitive|FHIRUri $identifier): self
     {
@@ -328,6 +330,8 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Outcome of processing the query.
+     *
+     * @return static
      */
     public function setOutcome(null|string|FHIRQueryOutcomeList|FHIRQueryOutcome $outcome): self
     {
@@ -358,6 +362,8 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Total number of matching records.
+     *
+     * @return static
      */
     public function setTotal(null|string|float|FHIRIntegerPrimitive|FHIRInteger $total): self
     {
@@ -403,6 +409,8 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Parameters server used.
+     *
+     * @return static
      */
     public function addParameter(FHIRExtension $parameter): self
     {
@@ -419,6 +427,8 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Parameters server used.
+     *
+     * @return static
      */
     public function setParameter(FHIRExtension ...$parameter): self
     {
@@ -461,6 +471,8 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * To get first page (if paged).
+     *
+     * @return static
      */
     public function addFirst(FHIRExtension $first): self
     {
@@ -477,6 +489,8 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * To get first page (if paged).
+     *
+     * @return static
      */
     public function setFirst(FHIRExtension ...$first): self
     {
@@ -519,6 +533,8 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * To get previous page (if paged).
+     *
+     * @return static
      */
     public function addPrevious(FHIRExtension $previous): self
     {
@@ -535,6 +551,8 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * To get previous page (if paged).
+     *
+     * @return static
      */
     public function setPrevious(FHIRExtension ...$previous): self
     {
@@ -577,6 +595,8 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * To get next page (if paged).
+     *
+     * @return static
      */
     public function addNext(FHIRExtension $next): self
     {
@@ -593,6 +613,8 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * To get next page (if paged).
+     *
+     * @return static
      */
     public function setNext(FHIRExtension ...$next): self
     {
@@ -635,6 +657,8 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * To get last page (if paged).
+     *
+     * @return static
      */
     public function addLast(FHIRExtension $last): self
     {
@@ -651,6 +675,8 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * To get last page (if paged).
+     *
+     * @return static
      */
     public function setLast(FHIRExtension ...$last): self
     {
@@ -693,6 +719,8 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Resources that are the results of the search.
+     *
+     * @return static
      */
     public function addReference(FHIRResourceReference $reference): self
     {
@@ -709,6 +737,8 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Resources that are the results of the search.
+     *
+     * @return static
      */
     public function setReference(FHIRResourceReference ...$reference): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -282,6 +282,8 @@ class FHIRAlert extends FHIRResource implements VersionContainedTypeInterface
      *
      * Identifier assigned to the alert for external use (outside the FHIR
      * environment).
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -299,6 +301,8 @@ class FHIRAlert extends FHIRResource implements VersionContainedTypeInterface
      *
      * Identifier assigned to the alert for external use (outside the FHIR
      * environment).
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -332,6 +336,8 @@ class FHIRAlert extends FHIRResource implements VersionContainedTypeInterface
      *
      * Allows an alert to be divided into different categories like clinical,
      * administrative etc.
+     *
+     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -361,6 +367,8 @@ class FHIRAlert extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Supports basic workflow.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRAlertStatusList|FHIRAlertStatus $status): self
     {
@@ -393,6 +401,8 @@ class FHIRAlert extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who this alert concerns.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRResourceReference $subject): self
     {
@@ -422,6 +432,8 @@ class FHIRAlert extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or device that created the alert.
+     *
+     * @return static
      */
     public function setAuthor(null|FHIRResourceReference $author): self
     {
@@ -449,6 +461,8 @@ class FHIRAlert extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The textual component of the alert to display to the user.
+     *
+     * @return static
      */
     public function setNote(null|string|FHIRStringPrimitive|FHIRString $note): self
     {

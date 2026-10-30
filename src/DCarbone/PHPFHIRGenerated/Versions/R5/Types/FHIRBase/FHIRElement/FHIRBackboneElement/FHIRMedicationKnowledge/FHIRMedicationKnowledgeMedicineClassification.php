@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -150,7 +150,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Either a textual source of the classification or a reference to an online
-     * source. (choose any one of source*, but only one)
+     * source.
      */
     #[FHIRString]
     protected FHIRString $sourceString;
@@ -160,7 +160,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Either a textual source of the classification or a reference to an online
-     * source. (choose any one of source*, but only one)
+     * source.
      */
     #[FHIRUri]
     protected FHIRUri $sourceUri;
@@ -242,6 +242,8 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      *
      * The type of category for the medication (for example, therapeutic
      * classification, therapeutic sub-classification).
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -259,7 +261,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Either a textual source of the classification or a reference to an online
-     * source. (choose any one of source*, but only one)
+     * source.
      */
     public function getSourceString(): null|FHIRString
     {
@@ -272,7 +274,9 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Either a textual source of the classification or a reference to an online
-     * source. (choose any one of source*, but only one)
+     * source.
+     *
+     * @return static
      */
     public function setSourceString(null|string|FHIRStringPrimitive|FHIRString $sourceString): self
     {
@@ -293,7 +297,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Either a textual source of the classification or a reference to an online
-     * source. (choose any one of source*, but only one)
+     * source.
      */
     public function getSourceUri(): null|FHIRUri
     {
@@ -306,7 +310,9 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Either a textual source of the classification or a reference to an online
-     * source. (choose any one of source*, but only one)
+     * source.
+     *
+     * @return static
      */
     public function setSourceUri(null|string|FHIRUriPrimitive|FHIRUri $sourceUri): self
     {
@@ -356,6 +362,8 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      *
      * Specific category assigned to the medication (e.g. anti-infective,
      * anti-hypertensive, antibiotic, etc.).
+     *
+     * @return static
      */
     public function addClassification(FHIRCodeableConcept $classification): self
     {
@@ -374,6 +382,8 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      *
      * Specific category assigned to the medication (e.g. anti-infective,
      * anti-hypertensive, antibiotic, etc.).
+     *
+     * @return static
      */
     public function setClassification(FHIRCodeableConcept ...$classification): self
     {

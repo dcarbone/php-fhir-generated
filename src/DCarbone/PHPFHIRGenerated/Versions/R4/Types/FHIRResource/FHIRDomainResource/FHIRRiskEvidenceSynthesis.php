@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -769,6 +769,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * synthesis is (or will be) published. This URL can be the target of a canonical
      * reference. It SHALL remain the same when the risk evidence synthesis is stored
      * on different servers.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -820,6 +822,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * A formal identifier that is used to identify this risk evidence synthesis when
      * it is represented in other formats, or referenced in a specification, model,
      * design or an instance.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -839,6 +843,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * A formal identifier that is used to identify this risk evidence synthesis when
      * it is represented in other formats, or referenced in a specification, model,
      * design or an instance.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -878,6 +884,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * not expected to be globally unique. For example, it might be a timestamp (e.g.
      * yyyymmdd) if a managed version is not available. There is also no expectation
      * that versions can be placed in a lexicographical sequence.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -914,6 +922,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * A natural language name identifying the risk evidence synthesis. This name
      * should be usable as an identifier for the module by machine processing
      * applications such as code generation.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -946,6 +956,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the risk evidence synthesis.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -976,6 +988,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * The status of this risk evidence synthesis. Enables tracking the life-cycle of
      * the content.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusList|FHIRPublicationStatus $status): self
     {
@@ -1020,6 +1034,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * The date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the risk evidence synthesis changes.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1054,6 +1070,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * The name of the organization or individual that published the risk evidence
      * synthesis.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1101,6 +1119,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1118,6 +1138,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1157,6 +1179,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * A free text natural language description of the risk evidence synthesis from a
      * consumer's perspective.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1204,6 +1228,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable string to clarify or explain concepts about the resource.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1221,6 +1247,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable string to clarify or explain concepts about the resource.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1277,6 +1305,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate risk evidence
      * synthesis instances.
+     *
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1300,6 +1330,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate risk evidence
      * synthesis instances.
+     *
+     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1346,6 +1378,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * A legal or geographic region in which the risk evidence synthesis is intended to
      * be used.
+     *
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1364,6 +1398,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * A legal or geographic region in which the risk evidence synthesis is intended to
      * be used.
+     *
+     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1405,6 +1441,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * A copyright statement relating to the risk evidence synthesis and/or its
      * contents. Copyright statements are generally legal restrictions on the use and
      * publishing of the risk evidence synthesis.
+     *
+     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1441,6 +1479,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
+     *
+     * @return static
      */
     public function setApprovalDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $approvalDate): self
     {
@@ -1477,6 +1517,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
+     *
+     * @return static
      */
     public function setLastReviewDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lastReviewDate): self
     {
@@ -1511,6 +1553,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * The period during which the risk evidence synthesis content was or is planned to
      * be in active use.
+     *
+     * @return static
      */
     public function setEffectivePeriod(null|FHIRPeriod $effectivePeriod): self
     {
@@ -1559,6 +1603,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * Descriptive topics related to the content of the RiskEvidenceSynthesis. Topics
      * provide a high-level categorization grouping types of EffectEvidenceSynthesiss
      * that can be useful for filtering and searching.
+     *
+     * @return static
      */
     public function addTopic(FHIRCodeableConcept $topic): self
     {
@@ -1578,6 +1624,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * Descriptive topics related to the content of the RiskEvidenceSynthesis. Topics
      * provide a high-level categorization grouping types of EffectEvidenceSynthesiss
      * that can be useful for filtering and searching.
+     *
+     * @return static
      */
     public function setTopic(FHIRCodeableConcept ...$topic): self
     {
@@ -1622,6 +1670,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
+     *
+     * @return static
      */
     public function addAuthor(FHIRContactDetail $author): self
     {
@@ -1639,6 +1689,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
+     *
+     * @return static
      */
     public function setAuthor(FHIRContactDetail ...$author): self
     {
@@ -1683,6 +1735,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
+     *
+     * @return static
      */
     public function addEditor(FHIRContactDetail $editor): self
     {
@@ -1700,6 +1754,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
+     *
+     * @return static
      */
     public function setEditor(FHIRContactDetail ...$editor): self
     {
@@ -1744,6 +1800,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
+     *
+     * @return static
      */
     public function addReviewer(FHIRContactDetail $reviewer): self
     {
@@ -1761,6 +1819,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
+     *
+     * @return static
      */
     public function setReviewer(FHIRContactDetail ...$reviewer): self
     {
@@ -1805,6 +1865,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
+     *
+     * @return static
      */
     public function addEndorser(FHIRContactDetail $endorser): self
     {
@@ -1822,6 +1884,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
+     *
+     * @return static
      */
     public function setEndorser(FHIRContactDetail ...$endorser): self
     {
@@ -1868,6 +1932,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
+     *
+     * @return static
      */
     public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact): self
     {
@@ -1886,6 +1952,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
+     *
+     * @return static
      */
     public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
     {
@@ -1917,6 +1985,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of synthesis eg meta-analysis.
+     *
+     * @return static
      */
     public function setSynthesisType(null|FHIRCodeableConcept $synthesisType): self
     {
@@ -1948,6 +2018,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of study eg randomized trial.
+     *
+     * @return static
      */
     public function setStudyType(null|FHIRCodeableConcept $studyType): self
     {
@@ -1979,6 +2051,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * A reference to a EvidenceVariable resource that defines the population for the
      * research.
+     *
+     * @return static
      */
     public function setPopulation(null|FHIRReference $population): self
     {
@@ -2010,6 +2084,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * A reference to a EvidenceVariable resource that defines the exposure for the
      * research.
+     *
+     * @return static
      */
     public function setExposure(null|FHIRReference $exposure): self
     {
@@ -2041,6 +2117,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * A reference to a EvidenceVariable resomece that defines the outcome for the
      * research.
+     *
+     * @return static
      */
     public function setOutcome(null|FHIRReference $outcome): self
     {
@@ -2070,6 +2148,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * combination of research studies.
      *
      * A description of the size of the sample involved in the synthesis.
+     *
+     * @return static
      */
     public function setSampleSize(null|FHIRRiskEvidenceSynthesisSampleSize $sampleSize): self
     {
@@ -2099,6 +2179,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * combination of research studies.
      *
      * The estimated risk of the outcome.
+     *
+     * @return static
      */
     public function setRiskEstimate(null|FHIRRiskEvidenceSynthesisRiskEstimate $riskEstimate): self
     {
@@ -2141,6 +2223,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * combination of research studies.
      *
      * A description of the certainty of the risk estimate.
+     *
+     * @return static
      */
     public function addCertainty(FHIRRiskEvidenceSynthesisCertainty $certainty): self
     {
@@ -2157,6 +2241,8 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * combination of research studies.
      *
      * A description of the certainty of the risk estimate.
+     *
+     * @return static
      */
     public function setCertainty(FHIRRiskEvidenceSynthesisCertainty ...$certainty): self
     {

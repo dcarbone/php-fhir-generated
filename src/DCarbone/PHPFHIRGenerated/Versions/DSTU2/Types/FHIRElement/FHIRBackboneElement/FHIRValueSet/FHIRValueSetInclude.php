@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -219,6 +219,8 @@ class FHIRValueSetInclude extends FHIRBackboneElement
      *
      * An absolute URI which is the code system from which the selected codes come
      * from.
+     *
+     * @return static
      */
     public function setSystem(null|string|FHIRUriPrimitive|FHIRUri $system): self
     {
@@ -251,6 +253,8 @@ class FHIRValueSetInclude extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The version of the code system that the codes are selected from.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -292,6 +296,8 @@ class FHIRValueSetInclude extends FHIRBackboneElement
      * A value set specifies a set of codes drawn from one or more code systems.
      *
      * Specifies a concept to be included or excluded.
+     *
+     * @return static
      */
     public function addConcept(FHIRValueSetConcept1 $concept): self
     {
@@ -306,6 +312,8 @@ class FHIRValueSetInclude extends FHIRBackboneElement
      * A value set specifies a set of codes drawn from one or more code systems.
      *
      * Specifies a concept to be included or excluded.
+     *
+     * @return static
      */
     public function setConcept(FHIRValueSetConcept1 ...$concept): self
     {
@@ -348,6 +356,8 @@ class FHIRValueSetInclude extends FHIRBackboneElement
      * Select concepts by specify a matching criteria based on the properties
      * (including relationships) defined by the system. If multiple filters are
      * specified, they SHALL all be true.
+     *
+     * @return static
      */
     public function addFilter(FHIRValueSetFilter $filter): self
     {
@@ -364,6 +374,8 @@ class FHIRValueSetInclude extends FHIRBackboneElement
      * Select concepts by specify a matching criteria based on the properties
      * (including relationships) defined by the system. If multiple filters are
      * specified, they SHALL all be true.
+     *
+     * @return static
      */
     public function setFilter(FHIRValueSetFilter ...$filter): self
     {

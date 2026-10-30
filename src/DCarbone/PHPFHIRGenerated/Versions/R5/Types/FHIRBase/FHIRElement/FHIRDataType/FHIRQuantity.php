@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -259,6 +259,8 @@ class FHIRQuantity extends FHIRDataType
      *
      * The value of the measured amount. The value includes an implicit precision in
      * the presentation of the value.
+     *
+     * @return static
      */
     public function setValue(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $value): self
     {
@@ -293,6 +295,8 @@ class FHIRQuantity extends FHIRDataType
      * How the value should be understood and represented - whether the actual value is
      * greater or less than the stated value due to measurement issues; e.g. if the
      * comparator is "<" , then the real value is < stated value.
+     *
+     * @return static
      */
     public function setComparator(null|string|FHIRQuantityComparatorEnum|FHIRQuantityComparator $comparator): self
     {
@@ -325,6 +329,8 @@ class FHIRQuantity extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human-readable form of the unit.
+     *
+     * @return static
      */
     public function setUnit(null|string|FHIRStringPrimitive|FHIRString $unit): self
     {
@@ -357,6 +363,8 @@ class FHIRQuantity extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identification of the system that provides the coded form of the unit.
+     *
+     * @return static
      */
     public function setSystem(null|string|FHIRUriPrimitive|FHIRUri $system): self
     {
@@ -391,6 +399,8 @@ class FHIRQuantity extends FHIRDataType
      * the Narrative, or extensions
      *
      * A computer processable form of the unit in some unit representation system.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {

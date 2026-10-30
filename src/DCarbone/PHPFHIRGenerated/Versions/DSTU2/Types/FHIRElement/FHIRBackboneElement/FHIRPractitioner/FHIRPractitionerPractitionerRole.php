@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -246,6 +246,8 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization where the Practitioner performs the roles associated.
+     *
+     * @return static
      */
     public function setManagingOrganization(null|FHIRReference $managingOrganization): self
     {
@@ -277,6 +279,8 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Roles which this practitioner is authorized to perform for the organization.
+     *
+     * @return static
      */
     public function setRole(null|FHIRCodeableConcept $role): self
     {
@@ -321,6 +325,8 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific specialty of the practitioner.
+     *
+     * @return static
      */
     public function addSpecialty(FHIRCodeableConcept $specialty): self
     {
@@ -338,6 +344,8 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific specialty of the practitioner.
+     *
+     * @return static
      */
     public function setSpecialty(FHIRCodeableConcept ...$specialty): self
     {
@@ -369,6 +377,8 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement
      *
      * The period during which the person is authorized to act as a practitioner in
      * these role(s) for the organization.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -411,6 +421,8 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) at which this practitioner provides care.
+     *
+     * @return static
      */
     public function addLocation(FHIRReference $location): self
     {
@@ -427,6 +439,8 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) at which this practitioner provides care.
+     *
+     * @return static
      */
     public function setLocation(FHIRReference ...$location): self
     {
@@ -471,6 +485,8 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement
      *
      * The list of healthcare services that this worker provides for this role's
      * Organization/Location(s).
+     *
+     * @return static
      */
     public function addHealthcareService(FHIRReference $healthcareService): self
     {
@@ -488,6 +504,8 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement
      *
      * The list of healthcare services that this worker provides for this role's
      * Organization/Location(s).
+     *
+     * @return static
      */
     public function setHealthcareService(FHIRReference ...$healthcareService): self
     {

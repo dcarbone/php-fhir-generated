@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -289,6 +289,8 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the search parameter used in the interface.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -325,6 +327,8 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement
      * An absolute URI that is a formal reference to where this parameter was first
      * defined, so that a client can be confident of the meaning of the search
      * parameter (a reference to [[[SearchParameter.url]]]).
+     *
+     * @return static
      */
     public function setDefinition(null|string|FHIRUriPrimitive|FHIRUri $definition): self
     {
@@ -361,6 +365,8 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement
      *
      * The type of value a search parameter refers to, and how the content is
      * interpreted.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRCodePrimitive|FHIRCode $type): self
     {
@@ -395,6 +401,8 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement
      *
      * This allows documentation of any distinct behaviors about how the search
      * parameter is used. For example, text matching algorithms.
+     *
+     * @return static
      */
     public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation): self
     {
@@ -442,6 +450,8 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Types of resource (if a resource is referenced).
+     *
+     * @return static
      */
     public function addTarget(string|FHIRCodePrimitive|FHIRCode $target): self
     {
@@ -462,6 +472,8 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Types of resource (if a resource is referenced).
+     *
+     * @return static
      */
     public function setTarget(string|FHIRCodePrimitive|FHIRCode ...$target): self
     {
@@ -509,6 +521,8 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A modifier supported for the search parameter.
+     *
+     * @return static
      */
     public function addModifier(string|FHIRSearchModifierCodeList|FHIRSearchModifierCode $modifier): self
     {
@@ -527,6 +541,8 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A modifier supported for the search parameter.
+     *
+     * @return static
      */
     public function setModifier(string|FHIRSearchModifierCodeList|FHIRSearchModifierCode ...$modifier): self
     {
@@ -586,6 +602,8 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement
      * if they contain a reference to a resource which matches the chained parameter
      * value. Values for this field should be drawn from
      * Conformance.rest.resource.searchParam.name on the target resource type.
+     *
+     * @return static
      */
     public function addChain(string|FHIRStringPrimitive|FHIRString $chain): self
     {
@@ -610,6 +628,8 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement
      * if they contain a reference to a resource which matches the chained parameter
      * value. Values for this field should be drawn from
      * Conformance.rest.resource.searchParam.name on the target resource type.
+     *
+     * @return static
      */
     public function setChain(string|FHIRStringPrimitive|FHIRString ...$chain): self
     {

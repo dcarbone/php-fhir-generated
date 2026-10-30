@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -282,6 +282,8 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      *
      * One of the potential outcomes for the patient (e.g. remission, death, a
      * particular condition).
+     *
+     * @return static
      */
     public function setOutcome(null|FHIRCodeableConcept $outcome): self
     {
@@ -313,6 +315,8 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates how likely the outcome is (in the specified timeframe).
+     *
+     * @return static
      */
     public function setProbabilityDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $probabilityDecimal): self
     {
@@ -345,6 +349,8 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates how likely the outcome is (in the specified timeframe).
+     *
+     * @return static
      */
     public function setProbabilityRange(null|FHIRRange $probabilityRange): self
     {
@@ -378,6 +384,8 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      *
      * Indicates how likely the outcome is (in the specified timeframe), expressed as a
      * qualitative value (e.g. low, medium, or high).
+     *
+     * @return static
      */
     public function setQualitativeRisk(null|FHIRCodeableConcept $qualitativeRisk): self
     {
@@ -415,6 +423,8 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * characteristics) divided by the risk of the population in general. (Numbers
      * greater than 1 = higher risk than the population, numbers less than 1 = lower
      * risk.).
+     *
+     * @return static
      */
     public function setRelativeRisk(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $relativeRisk): self
     {
@@ -449,6 +459,8 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      *
      * Indicates the period of time or age range of the subject to which the specified
      * probability applies.
+     *
+     * @return static
      */
     public function setWhenPeriod(null|FHIRPeriod $whenPeriod): self
     {
@@ -480,6 +492,8 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      *
      * Indicates the period of time or age range of the subject to which the specified
      * probability applies.
+     *
+     * @return static
      */
     public function setWhenRange(null|FHIRRange $whenRange): self
     {
@@ -509,6 +523,8 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional information explaining the basis for the prediction.
+     *
+     * @return static
      */
     public function setRationale(null|string|FHIRStringPrimitive|FHIRString $rationale): self
     {

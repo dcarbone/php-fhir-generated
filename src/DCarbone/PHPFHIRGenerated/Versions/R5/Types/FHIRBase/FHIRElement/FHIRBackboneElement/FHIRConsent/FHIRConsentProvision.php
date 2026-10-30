@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -380,6 +380,8 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Timeframe for this provision.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -426,6 +428,8 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * Who or what is controlled by this provision. Use group to identify a set of
      * actors by some property they share (e.g. 'admitting officers').
+     *
+     * @return static
      */
     public function addActor(FHIRConsentActor $actor): self
     {
@@ -444,6 +448,8 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * Who or what is controlled by this provision. Use group to identify a set of
      * actors by some property they share (e.g. 'admitting officers').
+     *
+     * @return static
      */
     public function setActor(FHIRConsentActor ...$actor): self
     {
@@ -488,6 +494,8 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Actions controlled by this provision.
+     *
+     * @return static
      */
     public function addAction(FHIRCodeableConcept $action): self
     {
@@ -505,6 +513,8 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Actions controlled by this provision.
+     *
+     * @return static
      */
     public function setAction(FHIRCodeableConcept ...$action): self
     {
@@ -549,6 +559,8 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * A security label, comprised of 0..* security label fields (Privacy tags), which
      * define which resources are controlled by this exception.
+     *
+     * @return static
      */
     public function addSecurityLabel(FHIRCoding $securityLabel): self
     {
@@ -566,6 +578,8 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * A security label, comprised of 0..* security label fields (Privacy tags), which
      * define which resources are controlled by this exception.
+     *
+     * @return static
      */
     public function setSecurityLabel(FHIRCoding ...$securityLabel): self
     {
@@ -610,6 +624,8 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * The context of the activities a user is taking - why the user is accessing the
      * data - that are controlled by this provision.
+     *
+     * @return static
      */
     public function addPurpose(FHIRCoding $purpose): self
     {
@@ -627,6 +643,8 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * The context of the activities a user is taking - why the user is accessing the
      * data - that are controlled by this provision.
+     *
+     * @return static
      */
     public function setPurpose(FHIRCoding ...$purpose): self
     {
@@ -673,6 +691,8 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * The documentType(s) covered by this provision. The type can be a CDA document,
      * or some other type that indicates what sort of information the consent relates
      * to.
+     *
+     * @return static
      */
     public function addDocumentType(FHIRCoding $documentType): self
     {
@@ -691,6 +711,8 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * The documentType(s) covered by this provision. The type can be a CDA document,
      * or some other type that indicates what sort of information the consent relates
      * to.
+     *
+     * @return static
      */
     public function setDocumentType(FHIRCoding ...$documentType): self
     {
@@ -737,6 +759,8 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * The resourceType(s) covered by this provision. The type can be a FHIR resource
      * type or a profile on a type that indicates what information the consent relates
      * to.
+     *
+     * @return static
      */
     public function addResourceType(FHIRCoding $resourceType): self
     {
@@ -755,6 +779,8 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * The resourceType(s) covered by this provision. The type can be a FHIR resource
      * type or a profile on a type that indicates what information the consent relates
      * to.
+     *
+     * @return static
      */
     public function setResourceType(FHIRCoding ...$resourceType): self
     {
@@ -799,6 +825,8 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If this code is found in an instance, then the provision applies.
+     *
+     * @return static
      */
     public function addCode(FHIRCodeableConcept $code): self
     {
@@ -816,6 +844,8 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If this code is found in an instance, then the provision applies.
+     *
+     * @return static
      */
     public function setCode(FHIRCodeableConcept ...$code): self
     {
@@ -847,6 +877,8 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * Clinical or Operational Relevant period of time that bounds the data controlled
      * by this provision.
+     *
+     * @return static
      */
     public function setDataPeriod(null|FHIRPeriod $dataPeriod): self
     {
@@ -891,6 +923,8 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * specific purposes and periods of time.
      *
      * The resources controlled by this provision if specific resources are referenced.
+     *
+     * @return static
      */
     public function addData(FHIRConsentData $data): self
     {
@@ -908,6 +942,8 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * specific purposes and periods of time.
      *
      * The resources controlled by this provision if specific resources are referenced.
+     *
+     * @return static
      */
     public function setData(FHIRConsentData ...$data): self
     {
@@ -943,6 +979,8 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * A computable (FHIRPath or other) definition of what is controlled by this
      * consent.
+     *
+     * @return static
      */
     public function setExpression(null|FHIRExpression $expression): self
     {
@@ -987,6 +1025,8 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * specific purposes and periods of time.
      *
      * Provisions which provide exceptions to the base provision or subprovisions.
+     *
+     * @return static
      */
     public function addProvision(FHIRConsentProvision $provision): self
     {
@@ -1004,6 +1044,8 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * specific purposes and periods of time.
      *
      * Provisions which provide exceptions to the base provision or subprovisions.
+     *
+     * @return static
      */
     public function setProvision(FHIRConsentProvision ...$provision): self
     {

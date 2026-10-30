@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -144,6 +144,27 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
         self::FIELD_CODE => [
             'min_occurs' => 1,
         ],
+        self::FIELD_VALUE_CODE => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_CODING => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_STRING => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_INTEGER => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_BOOLEAN => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_DATE_TIME => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_DECIMAL => [
+            'min_occurs' => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -174,7 +195,7 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of this subproperty. (choose any one of value*, but only one)
+     * The value of this subproperty.
      */
     #[FHIRCode]
     protected FHIRCode $valueCode;
@@ -183,7 +204,7 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of this subproperty. (choose any one of value*, but only one)
+     * The value of this subproperty.
      */
     #[FHIRCoding]
     protected FHIRCoding $valueCoding;
@@ -192,7 +213,7 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of this subproperty. (choose any one of value*, but only one)
+     * The value of this subproperty.
      */
     #[FHIRString]
     protected FHIRString $valueString;
@@ -201,7 +222,7 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of this subproperty. (choose any one of value*, but only one)
+     * The value of this subproperty.
      */
     #[FHIRInteger]
     protected FHIRInteger $valueInteger;
@@ -209,7 +230,7 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of this subproperty. (choose any one of value*, but only one)
+     * The value of this subproperty.
      */
     #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
@@ -222,7 +243,7 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of this subproperty. (choose any one of value*, but only one)
+     * The value of this subproperty.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $valueDateTime;
@@ -232,7 +253,7 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of this subproperty. (choose any one of value*, but only one)
+     * The value of this subproperty.
      */
     #[FHIRDecimal]
     protected FHIRDecimal $valueDecimal;
@@ -314,6 +335,8 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A code that is a reference to ValueSet.expansion.property.code.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -334,7 +357,7 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of this subproperty. (choose any one of value*, but only one)
+     * The value of this subproperty.
      */
     public function getValueCode(): null|FHIRCode
     {
@@ -347,7 +370,9 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The value of this subproperty. (choose any one of value*, but only one)
+     * The value of this subproperty.
+     *
+     * @return static
      */
     public function setValueCode(null|string|FHIRCodePrimitive|FHIRCode $valueCode): self
     {
@@ -367,7 +392,7 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of this subproperty. (choose any one of value*, but only one)
+     * The value of this subproperty.
      */
     public function getValueCoding(): null|FHIRCoding
     {
@@ -379,7 +404,9 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of this subproperty. (choose any one of value*, but only one)
+     * The value of this subproperty.
+     *
+     * @return static
      */
     public function setValueCoding(null|FHIRCoding $valueCoding): self
     {
@@ -396,7 +423,7 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of this subproperty. (choose any one of value*, but only one)
+     * The value of this subproperty.
      */
     public function getValueString(): null|FHIRString
     {
@@ -408,7 +435,9 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of this subproperty. (choose any one of value*, but only one)
+     * The value of this subproperty.
+     *
+     * @return static
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -428,7 +457,7 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of this subproperty. (choose any one of value*, but only one)
+     * The value of this subproperty.
      */
     public function getValueInteger(): null|FHIRInteger
     {
@@ -440,7 +469,9 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of this subproperty. (choose any one of value*, but only one)
+     * The value of this subproperty.
+     *
+     * @return static
      */
     public function setValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $valueInteger): self
     {
@@ -459,7 +490,7 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of this subproperty. (choose any one of value*, but only one)
+     * The value of this subproperty.
      */
     public function getValueBoolean(): null|FHIRBoolean
     {
@@ -470,7 +501,9 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of this subproperty. (choose any one of value*, but only one)
+     * The value of this subproperty.
+     *
+     * @return static
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -494,7 +527,7 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of this subproperty. (choose any one of value*, but only one)
+     * The value of this subproperty.
      */
     public function getValueDateTime(): null|FHIRDateTime
     {
@@ -510,7 +543,9 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of this subproperty. (choose any one of value*, but only one)
+     * The value of this subproperty.
+     *
+     * @return static
      */
     public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime): self
     {
@@ -531,7 +566,7 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of this subproperty. (choose any one of value*, but only one)
+     * The value of this subproperty.
      */
     public function getValueDecimal(): null|FHIRDecimal
     {
@@ -544,7 +579,9 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of this subproperty. (choose any one of value*, but only one)
+     * The value of this subproperty.
+     *
+     * @return static
      */
     public function setValueDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $valueDecimal): self
     {

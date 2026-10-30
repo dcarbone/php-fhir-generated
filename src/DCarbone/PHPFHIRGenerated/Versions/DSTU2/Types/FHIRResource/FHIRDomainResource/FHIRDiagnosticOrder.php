@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -393,6 +393,8 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements VersionContained
      * patient, but diagnostic tests can also be requested on animals, groups of humans
      * or animals, devices such as dialysis machines, or even locations (typically for
      * environmental scans).
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -422,6 +424,8 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner that holds legal responsibility for ordering the investigation.
+     *
+     * @return static
      */
     public function setOrderer(null|FHIRReference $orderer): self
     {
@@ -466,6 +470,8 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements VersionContained
      *
      * Identifiers assigned to this order instance by the orderer and/or the receiver
      * and/or order fulfiller.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -483,6 +489,8 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements VersionContained
      *
      * Identifiers assigned to this order instance by the orderer and/or the receiver
      * and/or order fulfiller.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -514,6 +522,8 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements VersionContained
      *
      * An encounter that provides additional information about the healthcare context
      * in which this request is made.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -562,6 +572,8 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements VersionContained
      * An explanation or justification for why this diagnostic investigation is being
      * requested. This is often for billing purposes. May relate to the resources
      * referred to in supportingInformation.
+     *
+     * @return static
      */
     public function addReason(FHIRCodeableConcept $reason): self
     {
@@ -581,6 +593,8 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements VersionContained
      * An explanation or justification for why this diagnostic investigation is being
      * requested. This is often for billing purposes. May relate to the resources
      * referred to in supportingInformation.
+     *
+     * @return static
      */
     public function setReason(FHIRCodeableConcept ...$reason): self
     {
@@ -629,6 +643,8 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements VersionContained
      * test interpretations. This includes observations explicitly requested by the
      * producer(filler) to provide context or supporting information needed to complete
      * the order.
+     *
+     * @return static
      */
     public function addSupportingInformation(FHIRReference $supportingInformation): self
     {
@@ -648,6 +664,8 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements VersionContained
      * test interpretations. This includes observations explicitly requested by the
      * producer(filler) to provide context or supporting information needed to complete
      * the order.
+     *
+     * @return static
      */
     public function setSupportingInformation(FHIRReference ...$supportingInformation): self
     {
@@ -690,6 +708,8 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * One or more specimens that the diagnostic investigation is about.
+     *
+     * @return static
      */
     public function addSpecimen(FHIRReference $specimen): self
     {
@@ -706,6 +726,8 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * One or more specimens that the diagnostic investigation is about.
+     *
+     * @return static
      */
     public function setSpecimen(FHIRReference ...$specimen): self
     {
@@ -733,6 +755,8 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the order.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRDiagnosticOrderStatusList|FHIRDiagnosticOrderStatus $status): self
     {
@@ -763,6 +787,8 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The clinical priority associated with this order.
+     *
+     * @return static
      */
     public function setPriority(null|string|FHIRDiagnosticOrderPriorityList|FHIRDiagnosticOrderPriority $priority): self
     {
@@ -808,6 +834,8 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements VersionContained
      * A summary of the events of interest that have occurred as the request is
      * processed; e.g. when the order was made, various processing steps (specimens
      * received), when it was completed.
+     *
+     * @return static
      */
     public function addEvent(FHIRDiagnosticOrderEvent $event): self
     {
@@ -824,6 +852,8 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements VersionContained
      * A summary of the events of interest that have occurred as the request is
      * processed; e.g. when the order was made, various processing steps (specimens
      * received), when it was completed.
+     *
+     * @return static
      */
     public function setEvent(FHIRDiagnosticOrderEvent ...$event): self
     {
@@ -866,6 +896,8 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements VersionContained
      * The specific diagnostic investigations that are requested as part of this
      * request. Sometimes, there can only be one item per request, but in most
      * contexts, more than one investigation can be requested.
+     *
+     * @return static
      */
     public function addItem(FHIRDiagnosticOrderItem $item): self
     {
@@ -882,6 +914,8 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements VersionContained
      * The specific diagnostic investigations that are requested as part of this
      * request. Sometimes, there can only be one item per request, but in most
      * contexts, more than one investigation can be requested.
+     *
+     * @return static
      */
     public function setItem(FHIRDiagnosticOrderItem ...$item): self
     {
@@ -928,6 +962,8 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements VersionContained
      *
      * Any other notes associated with this patient, specimen or order (e.g. "patient
      * hates needles").
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -946,6 +982,8 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements VersionContained
      *
      * Any other notes associated with this patient, specimen or order (e.g. "patient
      * hates needles").
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -285,6 +285,8 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Descriptive name for this variable.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -317,6 +319,8 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A default, hard-coded, or user-defined value for this variable.
+     *
+     * @return static
      */
     public function setDefaultValue(null|string|FHIRStringPrimitive|FHIRString $defaultValue): self
     {
@@ -349,6 +353,8 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language description of the variable and its purpose.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -383,6 +389,8 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      *
      * The FHIRPath expression to evaluate against the fixture body. When variables are
      * defined, only one of either expression, headerField or path must be specified.
+     *
+     * @return static
      */
     public function setExpression(null|string|FHIRStringPrimitive|FHIRString $expression): self
     {
@@ -417,6 +425,8 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      *
      * Will be used to grab the HTTP header field value from the headers that sourceId
      * is pointing to.
+     *
+     * @return static
      */
     public function setHeaderField(null|string|FHIRStringPrimitive|FHIRString $headerField): self
     {
@@ -451,6 +461,8 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      *
      * Displayable text string with hint help information to the user when entering a
      * default value.
+     *
+     * @return static
      */
     public function setHint(null|string|FHIRStringPrimitive|FHIRString $hint): self
     {
@@ -485,6 +497,8 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      *
      * XPath or JSONPath to evaluate against the fixture body. When variables are
      * defined, only one of either expression, headerField or path must be specified.
+     *
+     * @return static
      */
     public function setPath(null|string|FHIRStringPrimitive|FHIRString $path): self
     {
@@ -525,6 +539,8 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      *
      * Fixture to evaluate the XPath/JSONPath expression or the headerField against
      * within this variable.
+     *
+     * @return static
      */
     public function setSourceId(null|string|FHIRIdPrimitive|FHIRId $sourceId): self
     {

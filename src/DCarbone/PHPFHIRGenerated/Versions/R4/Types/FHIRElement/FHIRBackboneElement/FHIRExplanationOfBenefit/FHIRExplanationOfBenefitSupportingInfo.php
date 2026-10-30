@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -338,6 +338,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A number to uniquely identify supporting information entries.
+     *
+     * @return static
      */
     public function setSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
     {
@@ -374,6 +376,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      *
      * The general class of the information supplied: information; exception; accident,
      * employment; onset, etc.
+     *
+     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -409,6 +413,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * System and code pertaining to the specific information regarding special
      * conditions relating to the setting, treatment or patient for which care is
      * sought.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -440,6 +446,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when or period to which this information refers.
+     *
+     * @return static
      */
     public function setTimingDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $timingDate): self
     {
@@ -472,6 +480,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date when or period to which this information refers.
+     *
+     * @return static
      */
     public function setTimingPeriod(null|FHIRPeriod $timingPeriod): self
     {
@@ -501,6 +511,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
+     *
+     * @return static
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -535,6 +547,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
+     *
+     * @return static
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -573,6 +587,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
+     *
+     * @return static
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -604,6 +620,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
+     *
+     * @return static
      */
     public function setValueAttachment(null|FHIRAttachment $valueAttachment): self
     {
@@ -635,6 +653,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
+     *
+     * @return static
      */
     public function setValueReference(null|FHIRReference $valueReference): self
     {
@@ -666,6 +686,8 @@ class FHIRExplanationOfBenefitSupportingInfo extends FHIRBackboneElement
      *
      * Provides the reason in the situation where a reason code is required in addition
      * to the content.
+     *
+     * @return static
      */
     public function setReason(null|FHIRCoding $reason): self
     {

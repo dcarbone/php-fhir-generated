@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -315,6 +315,8 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The family of an organism shall be specified.
+     *
+     * @return static
      */
     public function setFamily(null|FHIRCodeableConcept $family): self
     {
@@ -350,6 +352,8 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * The genus of an organism shall be specified; refers to the Latin epithet of the
      * genus element of the plant/animal scientific name; it is present in names for
      * genera, species and infraspecies.
+     *
+     * @return static
      */
     public function setGenus(null|FHIRCodeableConcept $genus): self
     {
@@ -385,6 +389,8 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * The species of an organism shall be specified; refers to the Latin epithet of
      * the species of the plant/animal; it is present in names for species and
      * infraspecies.
+     *
+     * @return static
      */
     public function setSpecies(null|FHIRCodeableConcept $species): self
     {
@@ -416,6 +422,8 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Intraspecific type of an organism shall be specified.
+     *
+     * @return static
      */
     public function setIntraspecificType(null|FHIRCodeableConcept $intraspecificType): self
     {
@@ -449,6 +457,8 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * The intraspecific description of an organism shall be specified based on a
      * controlled vocabulary. For Influenza Vaccine, the intraspecific description
      * shall contain the syntax of the antigen in line with the WHO convention.
+     *
+     * @return static
      */
     public function setIntraspecificDescription(null|string|FHIRStringPrimitive|FHIRString $intraspecificDescription): self
     {
@@ -514,6 +524,8 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * explanation the Substance Class: Structurally Diverse and the herbal annex.
      *
      * 4.9.13.6.1 Author type (Conditional).
+     *
+     * @return static
      */
     public function addAuthor(FHIRSubstanceSourceMaterialAuthor $author): self
     {
@@ -540,6 +552,8 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * explanation the Substance Class: Structurally Diverse and the herbal annex.
      *
      * 4.9.13.6.1 Author type (Conditional).
+     *
+     * @return static
      */
     public function setAuthor(FHIRSubstanceSourceMaterialAuthor ...$author): self
     {
@@ -589,6 +603,8 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * explanation the Substance Class: Structurally Diverse and the herbal annex.
      *
      * 4.9.13.8.1 Hybrid species maternal organism ID (Optional).
+     *
+     * @return static
      */
     public function setHybrid(null|FHIRSubstanceSourceMaterialHybrid $hybrid): self
     {
@@ -638,6 +654,8 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * explanation the Substance Class: Structurally Diverse and the herbal annex.
      *
      * 4.9.13.7.1 Kingdom (Conditional).
+     *
+     * @return static
      */
     public function setOrganismGeneral(null|FHIRSubstanceSourceMaterialOrganismGeneral $organismGeneral): self
     {

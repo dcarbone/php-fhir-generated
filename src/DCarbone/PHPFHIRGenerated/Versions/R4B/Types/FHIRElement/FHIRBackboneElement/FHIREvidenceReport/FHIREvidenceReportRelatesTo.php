@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -219,6 +219,8 @@ class FHIREvidenceReportRelatesTo extends FHIRBackboneElement
      *
      * The type of relationship that this composition has with anther composition or
      * document.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRReportRelationshipTypeEnum|FHIRReportRelationshipType $code): self
     {
@@ -253,6 +255,8 @@ class FHIREvidenceReportRelatesTo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target composition/document of this relationship.
+     *
+     * @return static
      */
     public function setTargetIdentifier(null|FHIRIdentifier $targetIdentifier): self
     {
@@ -282,6 +286,8 @@ class FHIREvidenceReportRelatesTo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target composition/document of this relationship.
+     *
+     * @return static
      */
     public function setTargetReference(null|FHIRReference $targetReference): self
     {

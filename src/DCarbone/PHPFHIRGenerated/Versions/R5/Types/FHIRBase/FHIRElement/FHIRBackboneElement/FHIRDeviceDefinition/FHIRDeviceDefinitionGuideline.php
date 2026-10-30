@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -318,6 +318,8 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The circumstances that form the setting for using the device.
+     *
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -337,6 +339,8 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The circumstances that form the setting for using the device.
+     *
+     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -374,6 +378,8 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Detailed written and visual directions for the user on how to use the device.
+     *
+     * @return static
      */
     public function setUsageInstruction(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $usageInstruction): self
     {
@@ -421,6 +427,8 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A source of information or reference for this guideline.
+     *
+     * @return static
      */
     public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact): self
     {
@@ -438,6 +446,8 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A source of information or reference for this guideline.
+     *
+     * @return static
      */
     public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
     {
@@ -482,6 +492,8 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A clinical condition for which the device was designed to be used.
+     *
+     * @return static
      */
     public function addIndication(FHIRCodeableConcept $indication): self
     {
@@ -499,6 +511,8 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A clinical condition for which the device was designed to be used.
+     *
+     * @return static
      */
     public function setIndication(FHIRCodeableConcept ...$indication): self
     {
@@ -543,6 +557,8 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A specific situation when a device should not be used because it may cause harm.
+     *
+     * @return static
      */
     public function addContraindication(FHIRCodeableConcept $contraindication): self
     {
@@ -560,6 +576,8 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A specific situation when a device should not be used because it may cause harm.
+     *
+     * @return static
      */
     public function setContraindication(FHIRCodeableConcept ...$contraindication): self
     {
@@ -606,6 +624,8 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      *
      * Specific hazard alert information that a user needs to know before using the
      * device.
+     *
+     * @return static
      */
     public function addWarning(FHIRCodeableConcept $warning): self
     {
@@ -624,6 +644,8 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      *
      * Specific hazard alert information that a user needs to know before using the
      * device.
+     *
+     * @return static
      */
     public function setWarning(FHIRCodeableConcept ...$warning): self
     {
@@ -655,6 +677,8 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      *
      * A description of the general purpose or medical use of the device or its
      * function.
+     *
+     * @return static
      */
     public function setIntendedUse(null|string|FHIRStringPrimitive|FHIRString $intendedUse): self
     {

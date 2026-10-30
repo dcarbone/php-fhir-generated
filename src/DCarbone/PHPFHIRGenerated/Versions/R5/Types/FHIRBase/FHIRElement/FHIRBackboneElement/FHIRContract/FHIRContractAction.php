@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -263,7 +263,7 @@ class FHIRContractAction extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * When action happens. (choose any one of occurrence*, but only one)
+     * When action happens.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $occurrenceDateTime;
@@ -272,7 +272,7 @@ class FHIRContractAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When action happens. (choose any one of occurrence*, but only one)
+     * When action happens.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $occurrencePeriod;
@@ -285,7 +285,7 @@ class FHIRContractAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When action happens. (choose any one of occurrence*, but only one)
+     * When action happens.
      */
     #[FHIRTiming]
     protected FHIRTiming $occurrenceTiming;
@@ -544,6 +544,8 @@ class FHIRContractAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True if the term prohibits the action.
+     *
+     * @return static
      */
     public function setDoNotPerform(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $doNotPerform): self
     {
@@ -580,6 +582,8 @@ class FHIRContractAction extends FHIRBackboneElement
      *
      * Activity or service obligation to be done or not done, performed or not
      * performed, effectuated or not by this Contract term.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -620,6 +624,8 @@ class FHIRContractAction extends FHIRBackboneElement
      * policy or agreement.
      *
      * Entity of the action.
+     *
+     * @return static
      */
     public function addSubject(FHIRContractSubject $subject): self
     {
@@ -635,6 +641,8 @@ class FHIRContractAction extends FHIRBackboneElement
      * policy or agreement.
      *
      * Entity of the action.
+     *
+     * @return static
      */
     public function setSubject(FHIRContractSubject ...$subject): self
     {
@@ -666,6 +674,8 @@ class FHIRContractAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason or purpose for the action stipulated by this Contract Provision.
+     *
+     * @return static
      */
     public function setIntent(null|FHIRCodeableConcept $intent): self
     {
@@ -710,6 +720,8 @@ class FHIRContractAction extends FHIRBackboneElement
      *
      * Id [identifier??] of the clause or question text related to this action in the
      * referenced form or QuestionnaireResponse.
+     *
+     * @return static
      */
     public function addLinkId(string|FHIRStringPrimitive|FHIRString $linkId): self
     {
@@ -730,6 +742,8 @@ class FHIRContractAction extends FHIRBackboneElement
      *
      * Id [identifier??] of the clause or question text related to this action in the
      * referenced form or QuestionnaireResponse.
+     *
+     * @return static
      */
     public function setLinkId(string|FHIRStringPrimitive|FHIRString ...$linkId): self
     {
@@ -768,6 +782,8 @@ class FHIRContractAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Current state of the term action.
+     *
+     * @return static
      */
     public function setStatus(null|FHIRCodeableConcept $status): self
     {
@@ -797,6 +813,8 @@ class FHIRContractAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Encounter or Episode with primary association to the specified term activity.
+     *
+     * @return static
      */
     public function setContext(null|FHIRReference $context): self
     {
@@ -841,6 +859,8 @@ class FHIRContractAction extends FHIRBackboneElement
      *
      * Id [identifier??] of the clause or question text related to the requester of
      * this action in the referenced form or QuestionnaireResponse.
+     *
+     * @return static
      */
     public function addContextLinkId(string|FHIRStringPrimitive|FHIRString $contextLinkId): self
     {
@@ -861,6 +881,8 @@ class FHIRContractAction extends FHIRBackboneElement
      *
      * Id [identifier??] of the clause or question text related to the requester of
      * this action in the referenced form or QuestionnaireResponse.
+     *
+     * @return static
      */
     public function setContextLinkId(string|FHIRStringPrimitive|FHIRString ...$contextLinkId): self
     {
@@ -888,7 +910,7 @@ class FHIRContractAction extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * When action happens. (choose any one of occurrence*, but only one)
+     * When action happens.
      */
     public function getOccurrenceDateTime(): null|FHIRDateTime
     {
@@ -904,7 +926,9 @@ class FHIRContractAction extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * When action happens. (choose any one of occurrence*, but only one)
+     * When action happens.
+     *
+     * @return static
      */
     public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime): self
     {
@@ -924,7 +948,7 @@ class FHIRContractAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When action happens. (choose any one of occurrence*, but only one)
+     * When action happens.
      */
     public function getOccurrencePeriod(): null|FHIRPeriod
     {
@@ -936,7 +960,9 @@ class FHIRContractAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When action happens. (choose any one of occurrence*, but only one)
+     * When action happens.
+     *
+     * @return static
      */
     public function setOccurrencePeriod(null|FHIRPeriod $occurrencePeriod): self
     {
@@ -957,7 +983,7 @@ class FHIRContractAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When action happens. (choose any one of occurrence*, but only one)
+     * When action happens.
      */
     public function getOccurrenceTiming(): null|FHIRTiming
     {
@@ -973,7 +999,9 @@ class FHIRContractAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When action happens. (choose any one of occurrence*, but only one)
+     * When action happens.
+     *
+     * @return static
      */
     public function setOccurrenceTiming(null|FHIRTiming $occurrenceTiming): self
     {
@@ -1016,6 +1044,8 @@ class FHIRContractAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who or what initiated the action and has responsibility for its activation.
+     *
+     * @return static
      */
     public function addRequester(FHIRReference $requester): self
     {
@@ -1032,6 +1062,8 @@ class FHIRContractAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who or what initiated the action and has responsibility for its activation.
+     *
+     * @return static
      */
     public function setRequester(FHIRReference ...$requester): self
     {
@@ -1076,6 +1108,8 @@ class FHIRContractAction extends FHIRBackboneElement
      *
      * Id [identifier??] of the clause or question text related to the requester of
      * this action in the referenced form or QuestionnaireResponse.
+     *
+     * @return static
      */
     public function addRequesterLinkId(string|FHIRStringPrimitive|FHIRString $requesterLinkId): self
     {
@@ -1096,6 +1130,8 @@ class FHIRContractAction extends FHIRBackboneElement
      *
      * Id [identifier??] of the clause or question text related to the requester of
      * this action in the referenced form or QuestionnaireResponse.
+     *
+     * @return static
      */
     public function setRequesterLinkId(string|FHIRStringPrimitive|FHIRString ...$requesterLinkId): self
     {
@@ -1149,6 +1185,8 @@ class FHIRContractAction extends FHIRBackboneElement
      *
      * The type of individual that is desired or required to perform or not perform the
      * action.
+     *
+     * @return static
      */
     public function addPerformerType(FHIRCodeableConcept $performerType): self
     {
@@ -1167,6 +1205,8 @@ class FHIRContractAction extends FHIRBackboneElement
      *
      * The type of individual that is desired or required to perform or not perform the
      * action.
+     *
+     * @return static
      */
     public function setPerformerType(FHIRCodeableConcept ...$performerType): self
     {
@@ -1200,6 +1240,8 @@ class FHIRContractAction extends FHIRBackboneElement
      *
      * The type of role or competency of an individual desired or required to perform
      * or not perform the action.
+     *
+     * @return static
      */
     public function setPerformerRole(null|FHIRCodeableConcept $performerRole): self
     {
@@ -1229,6 +1271,8 @@ class FHIRContractAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates who or what is being asked to perform (or not perform) the ction.
+     *
+     * @return static
      */
     public function setPerformer(null|FHIRReference $performer): self
     {
@@ -1273,6 +1317,8 @@ class FHIRContractAction extends FHIRBackboneElement
      *
      * Id [identifier??] of the clause or question text related to the reason type or
      * reference of this action in the referenced form or QuestionnaireResponse.
+     *
+     * @return static
      */
     public function addPerformerLinkId(string|FHIRStringPrimitive|FHIRString $performerLinkId): self
     {
@@ -1293,6 +1339,8 @@ class FHIRContractAction extends FHIRBackboneElement
      *
      * Id [identifier??] of the clause or question text related to the reason type or
      * reference of this action in the referenced form or QuestionnaireResponse.
+     *
+     * @return static
      */
     public function setPerformerLinkId(string|FHIRStringPrimitive|FHIRString ...$performerLinkId): self
     {
@@ -1348,6 +1396,8 @@ class FHIRContractAction extends FHIRBackboneElement
      * Rationale for the action to be performed or not performed. Describes why the
      * action is permitted or prohibited. Either a coded concept, or another resource
      * whose existence justifies permitting or not permitting this action.
+     *
+     * @return static
      */
     public function addReason(FHIRCodeableReference $reason): self
     {
@@ -1367,6 +1417,8 @@ class FHIRContractAction extends FHIRBackboneElement
      * Rationale for the action to be performed or not performed. Describes why the
      * action is permitted or prohibited. Either a coded concept, or another resource
      * whose existence justifies permitting or not permitting this action.
+     *
+     * @return static
      */
     public function setReason(FHIRCodeableReference ...$reason): self
     {
@@ -1411,6 +1463,8 @@ class FHIRContractAction extends FHIRBackboneElement
      *
      * Id [identifier??] of the clause or question text related to the reason type or
      * reference of this action in the referenced form or QuestionnaireResponse.
+     *
+     * @return static
      */
     public function addReasonLinkId(string|FHIRStringPrimitive|FHIRString $reasonLinkId): self
     {
@@ -1431,6 +1485,8 @@ class FHIRContractAction extends FHIRBackboneElement
      *
      * Id [identifier??] of the clause or question text related to the reason type or
      * reference of this action in the referenced form or QuestionnaireResponse.
+     *
+     * @return static
      */
     public function setReasonLinkId(string|FHIRStringPrimitive|FHIRString ...$reasonLinkId): self
     {
@@ -1484,6 +1540,8 @@ class FHIRContractAction extends FHIRBackboneElement
      *
      * Comments made about the term action made by the requester, performer, subject or
      * other participants.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1502,6 +1560,8 @@ class FHIRContractAction extends FHIRBackboneElement
      *
      * Comments made about the term action made by the requester, performer, subject or
      * other participants.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1544,6 +1604,8 @@ class FHIRContractAction extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Security labels that protects the action.
+     *
+     * @return static
      */
     public function addSecurityLabelNumber(string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $securityLabelNumber): self
     {
@@ -1563,6 +1625,8 @@ class FHIRContractAction extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Security labels that protects the action.
+     *
+     * @return static
      */
     public function setSecurityLabelNumber(string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt ...$securityLabelNumber): self
     {

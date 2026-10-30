@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -228,6 +228,8 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the server can return nested value sets.
+     *
+     * @return static
      */
     public function setHierarchical(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $hierarchical): self
     {
@@ -258,6 +260,8 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the server supports paging on expansion.
+     *
+     * @return static
      */
     public function setPaging(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $paging): self
     {
@@ -288,6 +292,8 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Allow request for incomplete expansions?
+     *
+     * @return static
      */
     public function setIncomplete(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $incomplete): self
     {
@@ -333,6 +339,8 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * functionality or a statement of required or desired server implementation.
      *
      * Supported expansion parameter.
+     *
+     * @return static
      */
     public function addParameter(FHIRTerminologyCapabilitiesParameter $parameter): self
     {
@@ -349,6 +357,8 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * functionality or a statement of required or desired server implementation.
      *
      * Supported expansion parameter.
+     *
+     * @return static
      */
     public function setParameter(FHIRTerminologyCapabilitiesParameter ...$parameter): self
     {
@@ -386,6 +396,8 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Documentation about text searching works.
+     *
+     * @return static
      */
     public function setTextFilter(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $textFilter): self
     {

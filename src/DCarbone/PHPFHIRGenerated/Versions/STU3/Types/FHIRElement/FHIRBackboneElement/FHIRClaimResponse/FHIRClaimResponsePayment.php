@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -240,6 +240,8 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Whether this represents partial or complete payment of the claim.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -271,6 +273,8 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      *
      * Adjustment to the payment of this transaction which is not related to
      * adjudication of this transaction.
+     *
+     * @return static
      */
     public function setAdjustment(null|FHIRMoney $adjustment): self
     {
@@ -302,6 +306,8 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason for the payment adjustment.
+     *
+     * @return static
      */
     public function setAdjustmentReason(null|FHIRCodeableConcept $adjustmentReason): self
     {
@@ -333,6 +339,8 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Estimated payment data.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $date): self
     {
@@ -365,6 +373,8 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Payable less any payment adjustment.
+     *
+     * @return static
      */
     public function setAmount(null|FHIRMoney $amount): self
     {
@@ -394,6 +404,8 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Payment identifier.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -278,6 +278,8 @@ class FHIRBundleRequest extends FHIRBackboneElement
      *
      * In a transaction or batch, this is the HTTP action to be executed for this
      * entry. In a history bundle, this indicates the HTTP action that occurred.
+     *
+     * @return static
      */
     public function setMethod(null|string|FHIRHTTPVerbEnum|FHIRHTTPVerb $method): self
     {
@@ -312,6 +314,8 @@ class FHIRBundleRequest extends FHIRBackboneElement
      *
      * The URL for this entry, relative to the root (the address to which the request
      * is posted).
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -346,6 +350,8 @@ class FHIRBundleRequest extends FHIRBackboneElement
      *
      * If the ETag values match, return a 304 Not Modified status. See the API
      * documentation for ["Conditional Read"](http.html#cread).
+     *
+     * @return static
      */
     public function setIfNoneMatch(null|string|FHIRStringPrimitive|FHIRString $ifNoneMatch): self
     {
@@ -386,6 +392,8 @@ class FHIRBundleRequest extends FHIRBackboneElement
      *
      * Only perform the operation if the last updated date matches. See the API
      * documentation for ["Conditional Read"](http.html#cread).
+     *
+     * @return static
      */
     public function setIfModifiedSince(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $ifModifiedSince): self
     {
@@ -420,6 +428,8 @@ class FHIRBundleRequest extends FHIRBackboneElement
      *
      * Only perform the operation if the Etag value matches. For more information, see
      * the API section ["Managing Resource Contention"](http.html#concurrency).
+     *
+     * @return static
      */
     public function setIfMatch(null|string|FHIRStringPrimitive|FHIRString $ifMatch): self
     {
@@ -458,6 +468,8 @@ class FHIRBundleRequest extends FHIRBackboneElement
      * exists. For further information, see the API documentation for ["Conditional
      * Create"](http.html#ccreate). This is just the query portion of the URL - what
      * follows the "?" (not including the "?").
+     *
+     * @return static
      */
     public function setIfNoneExist(null|string|FHIRStringPrimitive|FHIRString $ifNoneExist): self
     {

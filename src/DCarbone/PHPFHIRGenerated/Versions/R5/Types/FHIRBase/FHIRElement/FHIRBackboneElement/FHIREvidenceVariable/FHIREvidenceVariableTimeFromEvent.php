@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -175,8 +175,7 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The event used as a base point (reference point) in time. (choose any one of
-     * event*, but only one)
+     * The event used as a base point (reference point) in time.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $eventCodeableConcept;
@@ -185,8 +184,7 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The event used as a base point (reference point) in time. (choose any one of
-     * event*, but only one)
+     * The event used as a base point (reference point) in time.
      */
     #[FHIRReference]
     protected FHIRReference $eventReference;
@@ -199,8 +197,7 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The event used as a base point (reference point) in time. (choose any one of
-     * event*, but only one)
+     * The event used as a base point (reference point) in time.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $eventDateTime;
@@ -212,8 +209,7 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The event used as a base point (reference point) in time. (choose any one of
-     * event*, but only one)
+     * The event used as a base point (reference point) in time.
      */
     #[FHIRId]
     protected FHIRId $eventId;
@@ -323,6 +319,8 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Human readable description.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -370,6 +368,8 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable string to clarify or explain concepts about the timeFromEvent.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -387,6 +387,8 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable string to clarify or explain concepts about the timeFromEvent.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -404,8 +406,7 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The event used as a base point (reference point) in time. (choose any one of
-     * event*, but only one)
+     * The event used as a base point (reference point) in time.
      */
     public function getEventCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -418,8 +419,9 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The event used as a base point (reference point) in time. (choose any one of
-     * event*, but only one)
+     * The event used as a base point (reference point) in time.
+     *
+     * @return static
      */
     public function setEventCodeableConcept(null|FHIRCodeableConcept $eventCodeableConcept): self
     {
@@ -436,8 +438,7 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The event used as a base point (reference point) in time. (choose any one of
-     * event*, but only one)
+     * The event used as a base point (reference point) in time.
      */
     public function getEventReference(): null|FHIRReference
     {
@@ -449,8 +450,9 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The event used as a base point (reference point) in time. (choose any one of
-     * event*, but only one)
+     * The event used as a base point (reference point) in time.
+     *
+     * @return static
      */
     public function setEventReference(null|FHIRReference $eventReference): self
     {
@@ -471,8 +473,7 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The event used as a base point (reference point) in time. (choose any one of
-     * event*, but only one)
+     * The event used as a base point (reference point) in time.
      */
     public function getEventDateTime(): null|FHIRDateTime
     {
@@ -488,8 +489,9 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The event used as a base point (reference point) in time. (choose any one of
-     * event*, but only one)
+     * The event used as a base point (reference point) in time.
+     *
+     * @return static
      */
     public function setEventDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $eventDateTime): self
     {
@@ -512,8 +514,7 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The event used as a base point (reference point) in time. (choose any one of
-     * event*, but only one)
+     * The event used as a base point (reference point) in time.
      */
     public function getEventId(): null|FHIRId
     {
@@ -528,8 +529,9 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The event used as a base point (reference point) in time. (choose any one of
-     * event*, but only one)
+     * The event used as a base point (reference point) in time.
+     *
+     * @return static
      */
     public function setEventId(null|string|FHIRIdPrimitive|FHIRId $eventId): self
     {
@@ -568,6 +570,8 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      *
      * Used to express the observation at a defined amount of time before or after the
      * event.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -597,6 +601,8 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used to express the observation within a period before and/or after the event.
+     *
+     * @return static
      */
     public function setRange(null|FHIRRange $range): self
     {

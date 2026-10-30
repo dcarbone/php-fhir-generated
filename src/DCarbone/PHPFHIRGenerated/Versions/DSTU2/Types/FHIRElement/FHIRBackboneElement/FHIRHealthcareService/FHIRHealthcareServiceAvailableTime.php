@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -226,6 +226,8 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates which days of the week are available between the start and end Times.
+     *
+     * @return static
      */
     public function addDaysOfWeek(string|FHIRDaysOfWeekList|FHIRDaysOfWeek $daysOfWeek): self
     {
@@ -244,6 +246,8 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates which days of the week are available between the start and end Times.
+     *
+     * @return static
      */
     public function setDaysOfWeek(string|FHIRDaysOfWeekList|FHIRDaysOfWeek ...$daysOfWeek): self
     {
@@ -278,6 +282,8 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Is this always available? (hence times are irrelevant) e.g. 24 hour service.
+     *
+     * @return static
      */
     public function setAllDay(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $allDay): self
     {
@@ -310,6 +316,8 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
      *
      * The opening time of day. Note: If the AllDay flag is set, then this time is
      * ignored.
+     *
+     * @return static
      */
     public function setAvailableStartTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $availableStartTime): self
     {
@@ -342,6 +350,8 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
      *
      * The closing time of day. Note: If the AllDay flag is set, then this time is
      * ignored.
+     *
+     * @return static
      */
     public function setAvailableEndTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $availableEndTime): self
     {

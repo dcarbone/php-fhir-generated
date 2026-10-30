@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -273,6 +273,8 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * Identifies whether this portion of the statement is describing ability to
      * initiate or receive restful operations.
+     *
+     * @return static
      */
     public function setMode(null|string|FHIRRestfulConformanceModeList|FHIRRestfulConformanceMode $mode): self
     {
@@ -305,6 +307,8 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * Information about the system's restful capabilities that apply across all
      * applications, such as security.
+     *
+     * @return static
      */
     public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation): self
     {
@@ -337,6 +341,8 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * particular implementation.
      *
      * Information about security of implementation.
+     *
+     * @return static
      */
     public function setSecurity(null|FHIRConformanceSecurity $security): self
     {
@@ -381,6 +387,8 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * A specification of the restful capabilities of the solution for a specific
      * resource type.
+     *
+     * @return static
      */
     public function addResource(FHIRConformanceResource $resource): self
     {
@@ -398,6 +406,8 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * A specification of the restful capabilities of the solution for a specific
      * resource type.
+     *
+     * @return static
      */
     public function setResource(FHIRConformanceResource ...$resource): self
     {
@@ -440,6 +450,8 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * particular implementation.
      *
      * A specification of restful operations supported by the system.
+     *
+     * @return static
      */
     public function addOperation(FHIRConformanceOperation1 $operation): self
     {
@@ -456,6 +468,8 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * particular implementation.
      *
      * A specification of restful operations supported by the system.
+     *
+     * @return static
      */
     public function setOperation(FHIRConformanceOperation1 ...$operation): self
     {
@@ -498,6 +512,8 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * particular implementation.
      *
      * Definition of a named query and its parameters and their meaning.
+     *
+     * @return static
      */
     public function addQuery(FHIRConformanceQuery $query): self
     {
@@ -514,6 +530,8 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * particular implementation.
      *
      * Definition of a named query and its parameters and their meaning.
+     *
+     * @return static
      */
     public function setQuery(FHIRConformanceQuery ...$query): self
     {
@@ -562,6 +580,8 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * specification has the profile identifier
      * "http://hl7.org/fhir/documents/mailbox". Other specifications can declare their
      * own identifier for this purpose.
+     *
+     * @return static
      */
     public function addDocumentMailbox(string|FHIRUriPrimitive|FHIRUri $documentMailbox): self
     {
@@ -584,6 +604,8 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * specification has the profile identifier
      * "http://hl7.org/fhir/documents/mailbox". Other specifications can declare their
      * own identifier for this purpose.
+     *
+     * @return static
      */
     public function setDocumentMailbox(string|FHIRUriPrimitive|FHIRUri ...$documentMailbox): self
     {

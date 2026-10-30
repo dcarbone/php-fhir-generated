@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -386,6 +386,8 @@ class FHIRDosage extends FHIRBackboneElement
      *
      * Indicates the order in which the dosage instructions should be applied or
      * interpreted.
+     *
+     * @return static
      */
     public function setSequence(null|string|float|FHIRIntegerPrimitive|FHIRInteger $sequence): self
     {
@@ -418,6 +420,8 @@ class FHIRDosage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Free text dosage instructions e.g. SIG.
+     *
+     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -471,6 +475,8 @@ class FHIRDosage extends FHIRBackboneElement
      * "with meals" or"take half to one hour before food") or warnings for the patient
      * about the medication (e.g. "may cause drowsiness" or "avoid exposure of skin to
      * direct sunlight or sunlamps").
+     *
+     * @return static
      */
     public function addAdditionalInstruction(FHIRCodeableConcept $additionalInstruction): self
     {
@@ -491,6 +497,8 @@ class FHIRDosage extends FHIRBackboneElement
      * "with meals" or"take half to one hour before food") or warnings for the patient
      * about the medication (e.g. "may cause drowsiness" or "avoid exposure of skin to
      * direct sunlight or sunlamps").
+     *
+     * @return static
      */
     public function setAdditionalInstruction(FHIRCodeableConcept ...$additionalInstruction): self
     {
@@ -520,6 +528,8 @@ class FHIRDosage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Instructions in terms that are understood by the patient or consumer.
+     *
+     * @return static
      */
     public function setPatientInstruction(null|string|FHIRStringPrimitive|FHIRString $patientInstruction): self
     {
@@ -560,6 +570,8 @@ class FHIRDosage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * When medication should be administered.
+     *
+     * @return static
      */
     public function setTiming(null|FHIRTiming $timing): self
     {
@@ -591,6 +603,8 @@ class FHIRDosage extends FHIRBackboneElement
      * Indicates whether the Medication is only taken when needed within a specific
      * dosing schedule (Boolean option), or it indicates the precondition for taking
      * the Medication (CodeableConcept).
+     *
+     * @return static
      */
     public function setAsNeededBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $asNeededBoolean): self
     {
@@ -629,6 +643,8 @@ class FHIRDosage extends FHIRBackboneElement
      * Indicates whether the Medication is only taken when needed within a specific
      * dosing schedule (Boolean option), or it indicates the precondition for taking
      * the Medication (CodeableConcept).
+     *
+     * @return static
      */
     public function setAsNeededCodeableConcept(null|FHIRCodeableConcept $asNeededCodeableConcept): self
     {
@@ -660,6 +676,8 @@ class FHIRDosage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Body site to administer to.
+     *
+     * @return static
      */
     public function setSite(null|FHIRCodeableConcept $site): self
     {
@@ -691,6 +709,8 @@ class FHIRDosage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How drug should enter body.
+     *
+     * @return static
      */
     public function setRoute(null|FHIRCodeableConcept $route): self
     {
@@ -722,6 +742,8 @@ class FHIRDosage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Technique for administering medication.
+     *
+     * @return static
      */
     public function setMethod(null|FHIRCodeableConcept $method): self
     {
@@ -764,6 +786,8 @@ class FHIRDosage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of medication administered.
+     *
+     * @return static
      */
     public function addDoseAndRate(FHIRDosageDoseAndRate $doseAndRate): self
     {
@@ -780,6 +804,8 @@ class FHIRDosage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of medication administered.
+     *
+     * @return static
      */
     public function setDoseAndRate(FHIRDosageDoseAndRate ...$doseAndRate): self
     {
@@ -811,6 +837,8 @@ class FHIRDosage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Upper limit on medication per unit of time.
+     *
+     * @return static
      */
     public function setMaxDosePerPeriod(null|FHIRRatio $maxDosePerPeriod): self
     {
@@ -844,6 +872,8 @@ class FHIRDosage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Upper limit on medication per administration.
+     *
+     * @return static
      */
     public function setMaxDosePerAdministration(null|FHIRQuantity $maxDosePerAdministration): self
     {
@@ -877,6 +907,8 @@ class FHIRDosage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Upper limit on medication per lifetime of the patient.
+     *
+     * @return static
      */
     public function setMaxDosePerLifetime(null|FHIRQuantity $maxDosePerLifetime): self
     {

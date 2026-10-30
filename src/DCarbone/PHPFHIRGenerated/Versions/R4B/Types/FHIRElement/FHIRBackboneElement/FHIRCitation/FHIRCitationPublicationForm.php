@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -360,6 +360,8 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * The collection the cited article or artifact is published in.
+     *
+     * @return static
      */
     public function setPublishedIn(null|FHIRCitationPublishedIn $publishedIn): self
     {
@@ -391,6 +393,8 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * The specific issue in which the cited article resides.
+     *
+     * @return static
      */
     public function setPeriodicRelease(null|FHIRCitationPeriodicRelease $periodicRelease): self
     {
@@ -428,6 +432,8 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      *
      * The date the article was added to the database, or the date the article was
      * released (which may differ from the journal issue publication date).
+     *
+     * @return static
      */
     public function setArticleDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $articleDate): self
     {
@@ -466,6 +472,8 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date the article was last revised or updated in the database.
+     *
+     * @return static
      */
     public function setLastRevisionDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $lastRevisionDate): self
     {
@@ -513,6 +521,8 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Language in which this form of the article is published.
+     *
+     * @return static
      */
     public function addLanguage(FHIRCodeableConcept $language): self
     {
@@ -530,6 +540,8 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Language in which this form of the article is published.
+     *
+     * @return static
      */
     public function setLanguage(FHIRCodeableConcept ...$language): self
     {
@@ -559,6 +571,8 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Entry number or identifier for inclusion in a database.
+     *
+     * @return static
      */
     public function setAccessionNumber(null|string|FHIRStringPrimitive|FHIRString $accessionNumber): self
     {
@@ -591,6 +605,8 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used for full display of pagination.
+     *
+     * @return static
      */
     public function setPageString(null|string|FHIRStringPrimitive|FHIRString $pageString): self
     {
@@ -623,6 +639,8 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used for isolated representation of first page.
+     *
+     * @return static
      */
     public function setFirstPage(null|string|FHIRStringPrimitive|FHIRString $firstPage): self
     {
@@ -655,6 +673,8 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used for isolated representation of last page.
+     *
+     * @return static
      */
     public function setLastPage(null|string|FHIRStringPrimitive|FHIRString $lastPage): self
     {
@@ -687,6 +707,8 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Actual or approximate number of pages or screens.
+     *
+     * @return static
      */
     public function setPageCount(null|string|FHIRStringPrimitive|FHIRString $pageCount): self
     {
@@ -727,6 +749,8 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Copyright notice for the full article or artifact.
+     *
+     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {

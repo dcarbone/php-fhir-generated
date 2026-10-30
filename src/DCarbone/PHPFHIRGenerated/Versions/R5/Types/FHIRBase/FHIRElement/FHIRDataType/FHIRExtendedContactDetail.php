@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -265,6 +265,8 @@ class FHIRExtendedContactDetail extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The purpose/type of contact.
+     *
+     * @return static
      */
     public function setPurpose(null|FHIRCodeableConcept $purpose): self
     {
@@ -313,6 +315,8 @@ class FHIRExtendedContactDetail extends FHIRDataType
      *
      * The name of an individual to contact, some types of contact detail are usually
      * blank.
+     *
+     * @return static
      */
     public function addName(FHIRHumanName $name): self
     {
@@ -332,6 +336,8 @@ class FHIRExtendedContactDetail extends FHIRDataType
      *
      * The name of an individual to contact, some types of contact detail are usually
      * blank.
+     *
+     * @return static
      */
     public function setName(FHIRHumanName ...$name): self
     {
@@ -376,6 +382,8 @@ class FHIRExtendedContactDetail extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The contact details application for the purpose defined.
+     *
+     * @return static
      */
     public function addTelecom(FHIRContactPoint $telecom): self
     {
@@ -393,6 +401,8 @@ class FHIRExtendedContactDetail extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The contact details application for the purpose defined.
+     *
+     * @return static
      */
     public function setTelecom(FHIRContactPoint ...$telecom): self
     {
@@ -432,6 +442,8 @@ class FHIRExtendedContactDetail extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Address for the contact.
+     *
+     * @return static
      */
     public function setAddress(null|FHIRAddress $address): self
     {
@@ -465,6 +477,8 @@ class FHIRExtendedContactDetail extends FHIRDataType
      * This contact detail is handled/monitored by a specific organization. If the name
      * is provided in the contact, then it is referring to the named individual within
      * this organization.
+     *
+     * @return static
      */
     public function setOrganization(null|FHIRReference $organization): self
     {
@@ -494,6 +508,8 @@ class FHIRExtendedContactDetail extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Period that this contact was valid for usage.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {

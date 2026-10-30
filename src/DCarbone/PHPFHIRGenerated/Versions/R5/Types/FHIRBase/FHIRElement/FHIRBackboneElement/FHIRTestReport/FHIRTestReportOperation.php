@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -220,6 +220,8 @@ class FHIRTestReportOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The result of this operation.
+     *
+     * @return static
      */
     public function setResult(null|string|FHIRTestReportActionResultEnum|FHIRTestReportActionResult $result): self
     {
@@ -260,6 +262,8 @@ class FHIRTestReportOperation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * An explanatory message associated with the result.
+     *
+     * @return static
      */
     public function setMessage(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $message): self
     {
@@ -292,6 +296,8 @@ class FHIRTestReportOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A link to further details on the result.
+     *
+     * @return static
      */
     public function setDetail(null|string|FHIRUriPrimitive|FHIRUri $detail): self
     {

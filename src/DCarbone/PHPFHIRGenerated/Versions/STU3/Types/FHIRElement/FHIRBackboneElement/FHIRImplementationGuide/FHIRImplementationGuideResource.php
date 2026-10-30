@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -274,6 +274,8 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      * Whether a resource is included in the guide as part of the rules defined by the
      * guide, or just as an example of a resource that conforms to the rules and/or
      * help implementers understand the intent of the guide.
+     *
+     * @return static
      */
     public function setExample(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $example): self
     {
@@ -308,6 +310,8 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      *
      * A human assigned name for the resource. All resources SHOULD have a name, but
      * the name may be extracted from the resource (e.g. ValueSet.name).
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -342,6 +346,8 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      *
      * A description of the reason that a resource has been included in the
      * implementation guide.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -376,6 +382,8 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      *
      * A short code that may be used to identify the resource throughout the
      * implementation guide.
+     *
+     * @return static
      */
     public function setAcronym(null|string|FHIRStringPrimitive|FHIRString $acronym): self
     {
@@ -408,6 +416,8 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Where this resource is found.
+     *
+     * @return static
      */
     public function setSourceUri(null|string|FHIRUriPrimitive|FHIRUri $sourceUri): self
     {
@@ -440,6 +450,8 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where this resource is found.
+     *
+     * @return static
      */
     public function setSourceReference(null|FHIRReference $sourceReference): self
     {
@@ -471,6 +483,8 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      *
      * Another resource that this resource is an example for. This is mostly used for
      * resources that are included as examples of StructureDefinitions.
+     *
+     * @return static
      */
     public function setExampleFor(null|FHIRReference $exampleFor): self
     {

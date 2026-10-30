@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -181,6 +181,8 @@ class FHIRCapabilityStatementInteraction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Coded identifier of the operation, supported by the system resource.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRTypeRestfulInteractionList|FHIRTypeRestfulInteraction $code): self
     {
@@ -217,6 +219,8 @@ class FHIRCapabilityStatementInteraction extends FHIRBackboneElement
      * Guidance specific to the implementation of this operation, such as 'delete is a
      * logical delete' or 'updates are only allowed with version id' or 'creates
      * permitted from pre-authorized certificates only'.
+     *
+     * @return static
      */
     public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation): self
     {

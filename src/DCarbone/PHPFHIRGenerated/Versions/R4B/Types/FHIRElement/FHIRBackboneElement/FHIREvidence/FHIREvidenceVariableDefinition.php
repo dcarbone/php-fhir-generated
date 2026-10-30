@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -278,6 +278,8 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A text description or summary of the variable.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -325,6 +327,8 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Footnotes and/or explanatory notes.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -342,6 +346,8 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Footnotes and/or explanatory notes.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -375,6 +381,8 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
      *
      * population | subpopulation | exposure | referenceExposure | measuredVariable |
      * confounder.
+     *
+     * @return static
      */
     public function setVariableRole(null|FHIRCodeableConcept $variableRole): self
     {
@@ -404,6 +412,8 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Definition of the actual variable related to the statistic(s).
+     *
+     * @return static
      */
     public function setObserved(null|FHIRReference $observed): self
     {
@@ -433,6 +443,8 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Definition of the intended variable related to the Evidence.
+     *
+     * @return static
      */
     public function setIntended(null|FHIRReference $intended): self
     {
@@ -464,6 +476,8 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indication of quality of match between intended variable to actual variable.
+     *
+     * @return static
      */
     public function setDirectnessMatch(null|FHIRCodeableConcept $directnessMatch): self
     {

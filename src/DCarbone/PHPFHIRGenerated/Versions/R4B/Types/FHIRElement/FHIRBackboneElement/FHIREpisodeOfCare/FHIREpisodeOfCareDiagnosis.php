@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -220,6 +220,8 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
      *
      * A list of conditions/problems/diagnoses that this episode of care is intended to
      * be providing care for.
+     *
+     * @return static
      */
     public function setCondition(null|FHIRReference $condition): self
     {
@@ -253,6 +255,8 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
      *
      * Role that this diagnosis has within the episode of care (e.g. admission,
      * billing, discharge …).
+     *
+     * @return static
      */
     public function setRole(null|FHIRCodeableConcept $role): self
     {
@@ -282,6 +286,8 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Ranking of the diagnosis (for each role type).
+     *
+     * @return static
      */
     public function setRank(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $rank): self
     {

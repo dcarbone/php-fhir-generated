@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -186,6 +186,8 @@ class FHIRSubstanceAmountReferenceRange extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Lower limit possible or expected.
+     *
+     * @return static
      */
     public function setLowLimit(null|FHIRQuantity $lowLimit): self
     {
@@ -219,6 +221,8 @@ class FHIRSubstanceAmountReferenceRange extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Upper limit possible or expected.
+     *
+     * @return static
      */
     public function setHighLimit(null|FHIRQuantity $highLimit): self
     {

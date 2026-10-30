@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -250,6 +250,8 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A canonical reference to the Implementation guide for the dependency.
+     *
+     * @return static
      */
     public function setUri(null|string|FHIRCanonicalPrimitive|FHIRCanonical $uri): self
     {
@@ -288,6 +290,8 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The NPM package name for the Implementation Guide that this IG depends on.
+     *
+     * @return static
      */
     public function setPackageId(null|string|FHIRIdPrimitive|FHIRId $packageId): self
     {
@@ -322,6 +326,8 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
      *
      * The version of the IG that is depended on, when the correct version is required
      * to understand the IG correctly.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -362,6 +368,8 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A description explaining the nature of the dependency on the listed IG.
+     *
+     * @return static
      */
     public function setReason(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $reason): self
     {

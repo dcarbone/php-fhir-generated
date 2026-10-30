@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -243,6 +243,8 @@ class FHIRCitationAbstract extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used to express the reason or specific aspect for the abstract.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -274,6 +276,8 @@ class FHIRCitationAbstract extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used to express the specific language.
+     *
+     * @return static
      */
     public function setLanguage(null|FHIRCodeableConcept $language): self
     {
@@ -311,6 +315,8 @@ class FHIRCitationAbstract extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Abstract content.
+     *
+     * @return static
      */
     public function setText(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $text): self
     {
@@ -351,6 +357,8 @@ class FHIRCitationAbstract extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Copyright notice for the abstract.
+     *
+     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {

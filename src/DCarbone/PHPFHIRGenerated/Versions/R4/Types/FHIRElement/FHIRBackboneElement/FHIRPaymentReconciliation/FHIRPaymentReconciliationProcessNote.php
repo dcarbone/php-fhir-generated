@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -172,6 +172,8 @@ class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The business purpose of the note text.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRNoteTypeList|FHIRNoteType $type): self
     {
@@ -204,6 +206,8 @@ class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The explanation or description associated with the processing.
+     *
+     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {

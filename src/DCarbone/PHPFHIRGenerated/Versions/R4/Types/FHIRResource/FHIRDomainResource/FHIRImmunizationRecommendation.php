@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -281,6 +281,8 @@ class FHIRImmunizationRecommendation extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this particular recommendation record.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -298,6 +300,8 @@ class FHIRImmunizationRecommendation extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this particular recommendation record.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -327,6 +331,8 @@ class FHIRImmunizationRecommendation extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient the recommendation(s) are for.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -362,6 +368,8 @@ class FHIRImmunizationRecommendation extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date the immunization recommendation(s) were created.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -394,6 +402,8 @@ class FHIRImmunizationRecommendation extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the authority who published the protocol (e.g. ACIP).
+     *
+     * @return static
      */
     public function setAuthority(null|FHIRReference $authority): self
     {
@@ -434,6 +444,8 @@ class FHIRImmunizationRecommendation extends FHIRDomainResource implements Versi
      * a published schedule with optional supporting justification.
      *
      * Vaccine administration recommendations.
+     *
+     * @return static
      */
     public function addRecommendation(FHIRImmunizationRecommendationRecommendation $recommendation): self
     {
@@ -449,6 +461,8 @@ class FHIRImmunizationRecommendation extends FHIRDomainResource implements Versi
      * a published schedule with optional supporting justification.
      *
      * Vaccine administration recommendations.
+     *
+     * @return static
      */
     public function setRecommendation(FHIRImmunizationRecommendationRecommendation ...$recommendation): self
     {

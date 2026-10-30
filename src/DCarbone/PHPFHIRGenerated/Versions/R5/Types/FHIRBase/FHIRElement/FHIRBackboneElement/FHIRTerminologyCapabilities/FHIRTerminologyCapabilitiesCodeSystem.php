@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -239,6 +239,8 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Canonical identifier for the code system, represented as a URI.
+     *
+     * @return static
      */
     public function setUri(null|string|FHIRCanonicalPrimitive|FHIRCanonical $uri): self
     {
@@ -284,6 +286,8 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      * functionality or a statement of required or desired server implementation.
      *
      * For the code system, a list of versions that are supported by the server.
+     *
+     * @return static
      */
     public function addVersion(FHIRTerminologyCapabilitiesVersion $version): self
     {
@@ -300,6 +304,8 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      * functionality or a statement of required or desired server implementation.
      *
      * For the code system, a list of versions that are supported by the server.
+     *
+     * @return static
      */
     public function setVersion(FHIRTerminologyCapabilitiesVersion ...$version): self
     {
@@ -327,6 +333,8 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      *
      * The extent of the content of the code system (the concepts and codes it defines)
      * are represented in this resource instance.
+     *
+     * @return static
      */
     public function setContent(null|string|FHIRCodeSystemContentModeEnum|FHIRCodeSystemContentMode $content): self
     {
@@ -357,6 +365,8 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True if subsumption is supported for this version of the code system.
+     *
+     * @return static
      */
     public function setSubsumption(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $subsumption): self
     {

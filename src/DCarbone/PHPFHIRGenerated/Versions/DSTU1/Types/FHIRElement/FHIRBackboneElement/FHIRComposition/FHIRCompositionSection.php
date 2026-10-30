@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -224,6 +224,8 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * The heading for this particular section. This will be part of the rendered
      * content for the document.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -258,6 +260,8 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code identifying the kind of content contained within the section.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -287,6 +291,8 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the primary subject of the section.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRResourceReference $subject): self
     {
@@ -316,6 +322,8 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the discrete data that provides the content for the section.
+     *
+     * @return static
      */
     public function setContent(null|FHIRResourceReference $content): self
     {
@@ -360,6 +368,8 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * is making the statement.
      *
      * A nested sub-section within this section.
+     *
+     * @return static
      */
     public function addSection(FHIRCompositionSection $section): self
     {
@@ -377,6 +387,8 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * is making the statement.
      *
      * A nested sub-section within this section.
+     *
+     * @return static
      */
     public function setSection(FHIRCompositionSection ...$section): self
     {

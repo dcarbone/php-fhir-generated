@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -401,6 +401,8 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * The linkId for the question whose answer (or lack of answer) governs whether
      * this item is enabled.
+     *
+     * @return static
      */
     public function setQuestion(null|string|FHIRStringPrimitive|FHIRString $question): self
     {
@@ -431,6 +433,8 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies the criteria by which the question is enabled.
+     *
+     * @return static
      */
     public function setOperator(null|string|FHIRQuestionnaireItemOperatorList|FHIRQuestionnaireItemOperator $operator): self
     {
@@ -463,6 +467,8 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
+     *
+     * @return static
      */
     public function setAnswerBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $answerBoolean): self
     {
@@ -499,6 +505,8 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
+     *
+     * @return static
      */
     public function setAnswerDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $answerDecimal): self
     {
@@ -533,6 +541,8 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
+     *
+     * @return static
      */
     public function setAnswerInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $answerInteger): self
     {
@@ -569,6 +579,8 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
+     *
+     * @return static
      */
     public function setAnswerDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $answerDate): self
     {
@@ -609,6 +621,8 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
+     *
+     * @return static
      */
     public function setAnswerDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $answerDateTime): self
     {
@@ -641,6 +655,8 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
+     *
+     * @return static
      */
     public function setAnswerTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $answerTime): self
     {
@@ -675,6 +691,8 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
+     *
+     * @return static
      */
     public function setAnswerString(null|string|FHIRStringPrimitive|FHIRString $answerString): self
     {
@@ -709,6 +727,8 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
+     *
+     * @return static
      */
     public function setAnswerCoding(null|FHIRCoding $answerCoding): self
     {
@@ -744,6 +764,8 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
+     *
+     * @return static
      */
     public function setAnswerQuantity(null|FHIRQuantity $answerQuantity): self
     {
@@ -775,6 +797,8 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
+     *
+     * @return static
      */
     public function setAnswerReference(null|FHIRReference $answerReference): self
     {

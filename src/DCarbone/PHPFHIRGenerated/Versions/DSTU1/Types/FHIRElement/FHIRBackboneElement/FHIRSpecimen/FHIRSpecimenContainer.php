@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -259,6 +259,8 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      * Id for container. There may be multiple; a manufacturer's bar code, lab assigned
      * identifier, etc. The container ID may differ from the specimen id in some
      * circumstances.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -277,6 +279,8 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      * Id for container. There may be multiple; a manufacturer's bar code, lab assigned
      * identifier, etc. The container ID may differ from the specimen id in some
      * circumstances.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -304,6 +308,8 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual description of the container.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -338,6 +344,8 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of container associated with the specimen (e.g. slide, aliquot, etc).
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -371,6 +379,8 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The capacity (volume or other measure) the container may contain.
+     *
+     * @return static
      */
     public function setCapacity(null|FHIRQuantity $capacity): self
     {
@@ -406,6 +416,8 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      *
      * The quantity of specimen in the container; may be volume, dimensions, or other
      * appropriate measurements, depending on the specimen type.
+     *
+     * @return static
      */
     public function setSpecimenQuantity(null|FHIRQuantity $specimenQuantity): self
     {
@@ -435,6 +447,8 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additive associated with the container.
+     *
+     * @return static
      */
     public function setAdditive(null|FHIRResourceReference $additive): self
     {

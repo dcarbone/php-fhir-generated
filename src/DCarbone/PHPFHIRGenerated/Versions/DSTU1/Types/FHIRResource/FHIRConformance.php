@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -502,6 +502,8 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * The identifier that is used to identify this conformance statement when it is
      * referenced in a specification, model, design or an instance (should be globally
      * unique OID, UUID, or URI).
+     *
+     * @return static
      */
     public function setIdentifier(null|string|FHIRStringPrimitive|FHIRString $identifier): self
     {
@@ -538,6 +540,8 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * statement when it is referenced in a specification, model, design or instance.
      * This is an arbitrary value managed by the profile author manually and the value
      * should be a timestamp.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -568,6 +572,8 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name identifying the conformance statement.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -598,6 +604,8 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name of Organization publishing this conformance statement.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -647,6 +655,8 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      *
      * Contacts for Organization relevant to this conformance statement. The contacts
      * may be a website, email, phone numbers, etc.
+     *
+     * @return static
      */
     public function addTelecom(FHIRContact $telecom): self
     {
@@ -665,6 +675,8 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      *
      * Contacts for Organization relevant to this conformance statement. The contacts
      * may be a website, email, phone numbers, etc.
+     *
+     * @return static
      */
     public function setTelecom(FHIRContact ...$telecom): self
     {
@@ -698,6 +710,8 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * use. Typically, this is used when the profile describes a desired rather than an
      * actual solution, for example as a formal expression of requirements as part of
      * an RFP.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -728,6 +742,8 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this conformance statement.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRConformanceStatementStatusList|FHIRConformanceStatementStatus $status): self
     {
@@ -762,6 +778,8 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * A flag to indicate that this conformance statement is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
+     *
+     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -798,6 +816,8 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the conformance statement was published.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -834,6 +854,8 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * Software that is covered by this conformance statement. It is used when the
      * profile describes the capabilities of a particular software version, independent
      * of an installation.
+     *
+     * @return static
      */
     public function setSoftware(null|FHIRConformanceSoftware $software): self
     {
@@ -867,6 +889,8 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * Identifies a specific implementation instance that is described by the
      * conformance statement - i.e. a particular installation, rather than the
      * capabilities of a software program.
+     *
+     * @return static
      */
     public function setImplementation(null|FHIRConformanceImplementation $implementation): self
     {
@@ -902,6 +926,8 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      *
      * The version of the FHIR specification on which this conformance statement is
      * based.
+     *
+     * @return static
      */
     public function setFhirVersion(null|string|FHIRIdPrimitive|FHIRId $fhirVersion): self
     {
@@ -934,6 +960,8 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      *
      * A flag that indicates whether the application accepts unknown elements as part
      * of a resource.
+     *
+     * @return static
      */
     public function setAcceptUnknown(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $acceptUnknown): self
     {
@@ -981,6 +1009,8 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * the Narrative, or extensions
      *
      * A list of the formats supported by this implementation.
+     *
+     * @return static
      */
     public function addFormat(string|FHIRCodePrimitive|FHIRCode $format): self
     {
@@ -1001,6 +1031,8 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * the Narrative, or extensions
      *
      * A list of the formats supported by this implementation.
+     *
+     * @return static
      */
     public function setFormat(string|FHIRCodePrimitive|FHIRCode ...$format): self
     {
@@ -1058,6 +1090,8 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * particular profile, and allows its clients to search using this profile and to
      * find appropriate data. For a client, it means the system will search by this
      * profile and process data according to the guidance implicit in the profile.
+     *
+     * @return static
      */
     public function addProfile(FHIRResourceReference $profile): self
     {
@@ -1078,6 +1112,8 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * particular profile, and allows its clients to search using this profile and to
      * find appropriate data. For a client, it means the system will search by this
      * profile and process data according to the guidance implicit in the profile.
+     *
+     * @return static
      */
     public function setProfile(FHIRResourceReference ...$profile): self
     {
@@ -1120,6 +1156,8 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * particular implementation.
      *
      * A definition of the restful capabilities of the solution, if any.
+     *
+     * @return static
      */
     public function addRest(FHIRConformanceRest $rest): self
     {
@@ -1136,6 +1174,8 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * particular implementation.
      *
      * A definition of the restful capabilities of the solution, if any.
+     *
+     * @return static
      */
     public function setRest(FHIRConformanceRest ...$rest): self
     {
@@ -1178,6 +1218,8 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * particular implementation.
      *
      * A description of the messaging capabilities of the solution.
+     *
+     * @return static
      */
     public function addMessaging(FHIRConformanceMessaging $messaging): self
     {
@@ -1194,6 +1236,8 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * particular implementation.
      *
      * A description of the messaging capabilities of the solution.
+     *
+     * @return static
      */
     public function setMessaging(FHIRConformanceMessaging ...$messaging): self
     {
@@ -1236,6 +1280,8 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * particular implementation.
      *
      * A document definition.
+     *
+     * @return static
      */
     public function addDocument(FHIRConformanceDocument $document): self
     {
@@ -1252,6 +1298,8 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * particular implementation.
      *
      * A document definition.
+     *
+     * @return static
      */
     public function setDocument(FHIRConformanceDocument ...$document): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -401,6 +401,8 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * Code to identify the general type of benefits under which products and services
      * are provided.
+     *
+     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -432,6 +434,8 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * This contains the product, service, drug or other billing code for the item.
+     *
+     * @return static
      */
     public function setProductOrService(null|FHIRCodeableConcept $productOrService): self
     {
@@ -478,6 +482,8 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * Item typification or modifiers codes to convey additional context for the
      * product or service.
+     *
+     * @return static
      */
     public function addModifier(FHIRCodeableConcept $modifier): self
     {
@@ -496,6 +502,8 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * Item typification or modifiers codes to convey additional context for the
      * product or service.
+     *
+     * @return static
      */
     public function setModifier(FHIRCodeableConcept ...$modifier): self
     {
@@ -525,6 +533,8 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who is eligible for the provision of the product or service.
+     *
+     * @return static
      */
     public function setProvider(null|FHIRReference $provider): self
     {
@@ -554,6 +564,8 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * True if the indicated class of service is excluded from the plan, missing or
      * False indicates the product or service is included in the coverage.
+     *
+     * @return static
      */
     public function setExcluded(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $excluded): self
     {
@@ -586,6 +598,8 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short name or tag for the benefit.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -618,6 +632,8 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A richer description of the benefit or services covered.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -654,6 +670,8 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * Is a flag to indicate whether the benefits refer to in-network providers or
      * out-of-network providers.
+     *
+     * @return static
      */
     public function setNetwork(null|FHIRCodeableConcept $network): self
     {
@@ -685,6 +703,8 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates if the benefits apply to an individual or to the family.
+     *
+     * @return static
      */
     public function setUnit(null|FHIRCodeableConcept $unit): self
     {
@@ -718,6 +738,8 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * The term or period of the values such as 'maximum lifetime benefit' or 'maximum
      * annual visits'.
+     *
+     * @return static
      */
     public function setTerm(null|FHIRCodeableConcept $term): self
     {
@@ -758,6 +780,8 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * CoverageEligibilityRequest resource.
      *
      * Benefits used to date.
+     *
+     * @return static
      */
     public function addBenefit(FHIRCoverageEligibilityResponseBenefit $benefit): self
     {
@@ -773,6 +797,8 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * CoverageEligibilityRequest resource.
      *
      * Benefits used to date.
+     *
+     * @return static
      */
     public function setBenefit(FHIRCoverageEligibilityResponseBenefit ...$benefit): self
     {
@@ -802,6 +828,8 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * A boolean flag indicating whether a preauthorization is required prior to actual
      * service delivery.
+     *
+     * @return static
      */
     public function setAuthorizationRequired(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $authorizationRequired): self
     {
@@ -851,6 +879,8 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * Codes or comments regarding information or actions associated with the
      * preauthorization.
+     *
+     * @return static
      */
     public function addAuthorizationSupporting(FHIRCodeableConcept $authorizationSupporting): self
     {
@@ -869,6 +899,8 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * Codes or comments regarding information or actions associated with the
      * preauthorization.
+     *
+     * @return static
      */
     public function setAuthorizationSupporting(FHIRCodeableConcept ...$authorizationSupporting): self
     {
@@ -900,6 +932,8 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * A web location for obtaining requirements or descriptive information regarding
      * the preauthorization.
+     *
+     * @return static
      */
     public function setAuthorizationUrl(null|string|FHIRUriPrimitive|FHIRUri $authorizationUrl): self
     {

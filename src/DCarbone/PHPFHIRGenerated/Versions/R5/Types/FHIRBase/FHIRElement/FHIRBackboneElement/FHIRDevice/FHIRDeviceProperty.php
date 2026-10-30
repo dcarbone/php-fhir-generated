@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -136,6 +136,27 @@ class FHIRDeviceProperty extends FHIRBackboneElement
         self::FIELD_TYPE => [
             'min_occurs' => 1,
         ],
+        self::FIELD_VALUE_QUANTITY => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_CODEABLE_CONCEPT => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_STRING => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_BOOLEAN => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_INTEGER => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_RANGE => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_ATTACHMENT => [
+            'min_occurs' => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -165,7 +186,6 @@ class FHIRDeviceProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     * (choose any one of value*, but only one)
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -176,7 +196,6 @@ class FHIRDeviceProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     * (choose any one of value*, but only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
@@ -186,7 +205,6 @@ class FHIRDeviceProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     * (choose any one of value*, but only one)
      */
     #[FHIRString]
     protected FHIRString $valueString;
@@ -195,7 +213,6 @@ class FHIRDeviceProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     * (choose any one of value*, but only one)
      */
     #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
@@ -205,7 +222,6 @@ class FHIRDeviceProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     * (choose any one of value*, but only one)
      */
     #[FHIRInteger]
     protected FHIRInteger $valueInteger;
@@ -215,7 +231,6 @@ class FHIRDeviceProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     * (choose any one of value*, but only one)
      */
     #[FHIRRange]
     protected FHIRRange $valueRange;
@@ -225,7 +240,6 @@ class FHIRDeviceProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     * (choose any one of value*, but only one)
      */
     #[FHIRAttachment]
     protected FHIRAttachment $valueAttachment;
@@ -309,6 +323,8 @@ class FHIRDeviceProperty extends FHIRBackboneElement
      *
      * Code that specifies the property, such as resolution, color, size, being
      * represented.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -328,7 +344,6 @@ class FHIRDeviceProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     * (choose any one of value*, but only one)
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -343,7 +358,8 @@ class FHIRDeviceProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     * (choose any one of value*, but only one)
+     *
+     * @return static
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -362,7 +378,6 @@ class FHIRDeviceProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     * (choose any one of value*, but only one)
      */
     public function getValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -376,7 +391,8 @@ class FHIRDeviceProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     * (choose any one of value*, but only one)
+     *
+     * @return static
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -394,7 +410,6 @@ class FHIRDeviceProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     * (choose any one of value*, but only one)
      */
     public function getValueString(): null|FHIRString
     {
@@ -407,7 +422,8 @@ class FHIRDeviceProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     * (choose any one of value*, but only one)
+     *
+     * @return static
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -427,7 +443,6 @@ class FHIRDeviceProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     * (choose any one of value*, but only one)
      */
     public function getValueBoolean(): null|FHIRBoolean
     {
@@ -439,7 +454,8 @@ class FHIRDeviceProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     * (choose any one of value*, but only one)
+     *
+     * @return static
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -460,7 +476,6 @@ class FHIRDeviceProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     * (choose any one of value*, but only one)
      */
     public function getValueInteger(): null|FHIRInteger
     {
@@ -473,7 +488,8 @@ class FHIRDeviceProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     * (choose any one of value*, but only one)
+     *
+     * @return static
      */
     public function setValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $valueInteger): self
     {
@@ -494,7 +510,6 @@ class FHIRDeviceProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     * (choose any one of value*, but only one)
      */
     public function getValueRange(): null|FHIRRange
     {
@@ -507,7 +522,8 @@ class FHIRDeviceProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     * (choose any one of value*, but only one)
+     *
+     * @return static
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -525,7 +541,6 @@ class FHIRDeviceProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     * (choose any one of value*, but only one)
      */
     public function getValueAttachment(): null|FHIRAttachment
     {
@@ -538,7 +553,8 @@ class FHIRDeviceProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     * (choose any one of value*, but only one)
+     *
+     * @return static
      */
     public function setValueAttachment(null|FHIRAttachment $valueAttachment): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -211,6 +211,8 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      *
      * Includes the contents of the referenced value set as a part of the contents of
      * this value set. This is an absolute URI that is a reference to ValueSet.uri.
+     *
+     * @return static
      */
     public function addImport(string|FHIRUriPrimitive|FHIRUri $import): self
     {
@@ -231,6 +233,8 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      *
      * Includes the contents of the referenced value set as a part of the contents of
      * this value set. This is an absolute URI that is a reference to ValueSet.uri.
+     *
+     * @return static
      */
     public function setImport(string|FHIRUriPrimitive|FHIRUri ...$import): self
     {
@@ -276,6 +280,8 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * A value set specifies a set of codes drawn from one or more code systems.
      *
      * Include one or more codes from a code system.
+     *
+     * @return static
      */
     public function addInclude(FHIRValueSetInclude $include): self
     {
@@ -290,6 +296,8 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * A value set specifies a set of codes drawn from one or more code systems.
      *
      * Include one or more codes from a code system.
+     *
+     * @return static
      */
     public function setInclude(FHIRValueSetInclude ...$include): self
     {
@@ -328,6 +336,8 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * A value set specifies a set of codes drawn from one or more code systems.
      *
      * Exclude one or more codes from the value set.
+     *
+     * @return static
      */
     public function addExclude(FHIRValueSetInclude $exclude): self
     {
@@ -342,6 +352,8 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * A value set specifies a set of codes drawn from one or more code systems.
      *
      * Exclude one or more codes from the value set.
+     *
+     * @return static
      */
     public function setExclude(FHIRValueSetInclude ...$exclude): self
     {

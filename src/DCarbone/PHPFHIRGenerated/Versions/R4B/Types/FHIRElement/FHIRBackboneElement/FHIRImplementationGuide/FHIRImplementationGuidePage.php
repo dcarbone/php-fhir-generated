@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -262,6 +262,8 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The source address for the page.
+     *
+     * @return static
      */
     public function setNameUrl(null|string|FHIRUrlPrimitive|FHIRUrl $nameUrl): self
     {
@@ -294,6 +296,8 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The source address for the page.
+     *
+     * @return static
      */
     public function setNameReference(null|FHIRReference $nameReference): self
     {
@@ -325,6 +329,8 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      *
      * A short title used to represent this page in navigational structures such as
      * table of contents, bread crumbs, etc.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -353,6 +359,8 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code that indicates how the page is generated.
+     *
+     * @return static
      */
     public function setGeneration(null|string|FHIRGuidePageGenerationEnum|FHIRGuidePageGeneration $generation): self
     {
@@ -400,6 +408,8 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * Nested Pages/Sections under this page.
+     *
+     * @return static
      */
     public function addPage(FHIRImplementationGuidePage $page): self
     {
@@ -417,6 +427,8 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * Nested Pages/Sections under this page.
+     *
+     * @return static
      */
     public function setPage(FHIRImplementationGuidePage ...$page): self
     {

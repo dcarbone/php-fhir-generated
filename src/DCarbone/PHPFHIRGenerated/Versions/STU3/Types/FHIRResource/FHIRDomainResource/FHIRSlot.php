@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -393,6 +393,8 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * External Ids for this item.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -409,6 +411,8 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * External Ids for this item.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -442,6 +446,8 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * A broad categorisation of the service that is to be performed during this
      * appointment.
+     *
+     * @return static
      */
     public function setServiceCategory(null|FHIRCodeableConcept $serviceCategory): self
     {
@@ -492,6 +498,8 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * be an identifiable service - which is at a location, rather than the location
      * itself). If provided then this overrides the value provided on the availability
      * resource.
+     *
+     * @return static
      */
     public function addServiceType(FHIRCodeableConcept $serviceType): self
     {
@@ -512,6 +520,8 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * be an identifiable service - which is at a location, rather than the location
      * itself). If provided then this overrides the value provided on the availability
      * resource.
+     *
+     * @return static
      */
     public function setServiceType(FHIRCodeableConcept ...$serviceType): self
     {
@@ -558,6 +568,8 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The specialty of a practitioner that would be required to perform the service
      * requested in this appointment.
+     *
+     * @return static
      */
     public function addSpecialty(FHIRCodeableConcept $specialty): self
     {
@@ -576,6 +588,8 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The specialty of a practitioner that would be required to perform the service
      * requested in this appointment.
+     *
+     * @return static
      */
     public function setSpecialty(FHIRCodeableConcept ...$specialty): self
     {
@@ -609,6 +623,8 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The style of appointment or patient that may be booked in the slot (not service
      * type).
+     *
+     * @return static
      */
     public function setAppointmentType(null|FHIRCodeableConcept $appointmentType): self
     {
@@ -638,6 +654,8 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The schedule resource that this slot defines an interval of status information.
+     *
+     * @return static
      */
     public function setSchedule(null|FHIRReference $schedule): self
     {
@@ -665,6 +683,8 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * busy | free | busy-unavailable | busy-tentative | entered-in-error.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRSlotStatusList|FHIRSlotStatus $status): self
     {
@@ -701,6 +721,8 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the slot is to begin.
+     *
+     * @return static
      */
     public function setStart(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $start): self
     {
@@ -737,6 +759,8 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the slot is to conclude.
+     *
+     * @return static
      */
     public function setEnd(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $end): self
     {
@@ -769,6 +793,8 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * This slot has already been overbooked, appointments are unlikely to be accepted
      * for this time.
+     *
+     * @return static
      */
     public function setOverbooked(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $overbooked): self
     {
@@ -803,6 +829,8 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Comments on the slot to describe any extended information. Such as custom
      * constraints on the slot.
+     *
+     * @return static
      */
     public function setComment(null|string|FHIRStringPrimitive|FHIRString $comment): self
     {

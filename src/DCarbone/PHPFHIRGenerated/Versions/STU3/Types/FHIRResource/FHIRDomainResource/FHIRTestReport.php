@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -383,6 +383,8 @@ class FHIRTestReport extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Identifier for the TestScript assigned for external purposes outside the context
      * of FHIR.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -412,6 +414,8 @@ class FHIRTestReport extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name identifying the executed TestScript.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -442,6 +446,8 @@ class FHIRTestReport extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of this test report.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRTestReportStatusList|FHIRTestReportStatus $status): self
     {
@@ -476,6 +482,8 @@ class FHIRTestReport extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Ideally this is an absolute URL that is used to identify the version-specific
      * TestScript that was executed, matching the `TestScript.url`.
+     *
+     * @return static
      */
     public function setTestScript(null|FHIRReference $testScript): self
     {
@@ -503,6 +511,8 @@ class FHIRTestReport extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The overall result from the execution of the TestScript.
+     *
+     * @return static
      */
     public function setResult(null|string|FHIRTestReportResultList|FHIRTestReportResult $result): self
     {
@@ -539,6 +549,8 @@ class FHIRTestReport extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The final score (percentage of tests passed) resulting from the execution of the
      * TestScript.
+     *
+     * @return static
      */
     public function setScore(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $score): self
     {
@@ -571,6 +583,8 @@ class FHIRTestReport extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name of the tester producing this report (Organization or individual).
+     *
+     * @return static
      */
     public function setTester(null|string|FHIRStringPrimitive|FHIRString $tester): self
     {
@@ -609,6 +623,8 @@ class FHIRTestReport extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the TestScript was executed and this TestReport was generated.
+     *
+     * @return static
      */
     public function setIssued(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $issued): self
     {
@@ -652,6 +668,8 @@ class FHIRTestReport extends FHIRDomainResource implements VersionContainedTypeI
      *
      * A participant in the test execution, either the execution engine, a client, or a
      * server.
+     *
+     * @return static
      */
     public function addParticipant(FHIRTestReportParticipant $participant): self
     {
@@ -667,6 +685,8 @@ class FHIRTestReport extends FHIRDomainResource implements VersionContainedTypeI
      *
      * A participant in the test execution, either the execution engine, a client, or a
      * server.
+     *
+     * @return static
      */
     public function setParticipant(FHIRTestReportParticipant ...$participant): self
     {
@@ -694,6 +714,8 @@ class FHIRTestReport extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The results of the series of required setup operations before the tests were
      * executed.
+     *
+     * @return static
      */
     public function setSetup(null|FHIRTestReportSetup $setup): self
     {
@@ -732,6 +754,8 @@ class FHIRTestReport extends FHIRDomainResource implements VersionContainedTypeI
      * A summary of information based on the results of executing a TestScript.
      *
      * A test executed from the test script.
+     *
+     * @return static
      */
     public function addTest(FHIRTestReportTest $test): self
     {
@@ -746,6 +770,8 @@ class FHIRTestReport extends FHIRDomainResource implements VersionContainedTypeI
      * A summary of information based on the results of executing a TestScript.
      *
      * A test executed from the test script.
+     *
+     * @return static
      */
     public function setTest(FHIRTestReportTest ...$test): self
     {
@@ -773,6 +799,8 @@ class FHIRTestReport extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The results of the series of operations required to clean up after the all the
      * tests were executed (successfully or otherwise).
+     *
+     * @return static
      */
     public function setTeardown(null|FHIRTestReportTeardown $teardown): self
     {

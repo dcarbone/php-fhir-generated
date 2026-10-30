@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -225,6 +225,8 @@ class FHIRLinkage extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the asserted set of linkages are considered to be "in effect".
+     *
+     * @return static
      */
     public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active): self
     {
@@ -261,6 +263,8 @@ class FHIRLinkage extends FHIRDomainResource implements VersionContainedTypeInte
      * Identifies the user or organization responsible for asserting the linkages as
      * well as the user or organization who establishes the context in which the nature
      * of each linkage is evaluated.
+     *
+     * @return static
      */
     public function setAuthor(null|FHIRReference $author): self
     {
@@ -305,6 +309,8 @@ class FHIRLinkage extends FHIRDomainResource implements VersionContainedTypeInte
      * Identifies which record considered as the reference to the same real-world
      * occurrence as well as how the items should be evaluated within the collection of
      * linked items.
+     *
+     * @return static
      */
     public function addItem(FHIRLinkageItem $item): self
     {
@@ -322,6 +328,8 @@ class FHIRLinkage extends FHIRDomainResource implements VersionContainedTypeInte
      * Identifies which record considered as the reference to the same real-world
      * occurrence as well as how the items should be evaluated within the collection of
      * linked items.
+     *
+     * @return static
      */
     public function setItem(FHIRLinkageItem ...$item): self
     {

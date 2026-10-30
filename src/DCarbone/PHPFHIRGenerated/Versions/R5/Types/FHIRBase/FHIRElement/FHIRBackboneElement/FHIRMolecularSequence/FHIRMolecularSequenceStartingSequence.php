@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -175,8 +175,7 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The reference sequence that represents the starting sequence. (choose any one of
-     * sequence*, but only one)
+     * The reference sequence that represents the starting sequence.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $sequenceCodeableConcept;
@@ -185,8 +184,7 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The reference sequence that represents the starting sequence. (choose any one of
-     * sequence*, but only one)
+     * The reference sequence that represents the starting sequence.
      */
     #[FHIRString]
     protected FHIRString $sequenceString;
@@ -195,8 +193,7 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The reference sequence that represents the starting sequence. (choose any one of
-     * sequence*, but only one)
+     * The reference sequence that represents the starting sequence.
      */
     #[FHIRReference]
     protected FHIRReference $sequenceReference;
@@ -320,6 +317,8 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The genome assembly used for starting sequence, e.g. GRCh38.
+     *
+     * @return static
      */
     public function setGenomeAssembly(null|FHIRCodeableConcept $genomeAssembly): self
     {
@@ -357,6 +356,8 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * replication through the interaction of specific proteins at one or more origins
      * of replication
      * ([SO:0000340](http://www.sequenceontology.org/browser/current_svn/term/SO:0000340)).
+     *
+     * @return static
      */
     public function setChromosome(null|FHIRCodeableConcept $chromosome): self
     {
@@ -374,8 +375,7 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The reference sequence that represents the starting sequence. (choose any one of
-     * sequence*, but only one)
+     * The reference sequence that represents the starting sequence.
      */
     public function getSequenceCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -388,8 +388,9 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The reference sequence that represents the starting sequence. (choose any one of
-     * sequence*, but only one)
+     * The reference sequence that represents the starting sequence.
+     *
+     * @return static
      */
     public function setSequenceCodeableConcept(null|FHIRCodeableConcept $sequenceCodeableConcept): self
     {
@@ -406,8 +407,7 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The reference sequence that represents the starting sequence. (choose any one of
-     * sequence*, but only one)
+     * The reference sequence that represents the starting sequence.
      */
     public function getSequenceString(): null|FHIRString
     {
@@ -419,8 +419,9 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The reference sequence that represents the starting sequence. (choose any one of
-     * sequence*, but only one)
+     * The reference sequence that represents the starting sequence.
+     *
+     * @return static
      */
     public function setSequenceString(null|string|FHIRStringPrimitive|FHIRString $sequenceString): self
     {
@@ -440,8 +441,7 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The reference sequence that represents the starting sequence. (choose any one of
-     * sequence*, but only one)
+     * The reference sequence that represents the starting sequence.
      */
     public function getSequenceReference(): null|FHIRReference
     {
@@ -453,8 +453,9 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The reference sequence that represents the starting sequence. (choose any one of
-     * sequence*, but only one)
+     * The reference sequence that represents the starting sequence.
+     *
+     * @return static
      */
     public function setSequenceReference(null|FHIRReference $sequenceReference): self
     {
@@ -486,6 +487,8 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      *
      * Start position of the window on the starting sequence. This value should honor
      * the rules of the coordinateSystem.
+     *
+     * @return static
      */
     public function setWindowStart(null|string|float|FHIRIntegerPrimitive|FHIRInteger $windowStart): self
     {
@@ -520,6 +523,8 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      *
      * End position of the window on the starting sequence. This value should honor the
      * rules of the coordinateSystem.
+     *
+     * @return static
      */
     public function setWindowEnd(null|string|float|FHIRIntegerPrimitive|FHIRInteger $windowEnd): self
     {
@@ -552,6 +557,8 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * A relative reference to a DNA strand based on gene orientation. The strand that
      * contains the open reading frame of the gene is the "sense" strand, and the
      * opposite complementary strand is the "antisense" strand.
+     *
+     * @return static
      */
     public function setOrientation(null|string|FHIROrientationTypeEnum|FHIROrientationType $orientation): self
     {
@@ -584,6 +591,8 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * An absolute reference to a strand. The Watson strand is the strand whose 5'-end
      * is on the short arm of the chromosome, and the Crick strand as the one whose
      * 5'-end is on the long arm.
+     *
+     * @return static
      */
     public function setStrand(null|string|FHIRStrandTypeEnum|FHIRStrandType $strand): self
     {

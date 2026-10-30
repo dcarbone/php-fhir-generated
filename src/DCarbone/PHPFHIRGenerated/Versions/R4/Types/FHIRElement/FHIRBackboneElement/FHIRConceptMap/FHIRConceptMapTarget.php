@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -260,6 +260,8 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Identity (code or path) or the element/item that the map refers to.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -294,6 +296,8 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      *
      * The display for the code. The display is only provided to help editors when
      * editing the concept map.
+     *
+     * @return static
      */
     public function setDisplay(null|string|FHIRStringPrimitive|FHIRString $display): self
     {
@@ -326,6 +330,8 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * The equivalence between the source and target concepts (counting for the
      * dependencies and products). The equivalence is read from target to source (e.g.
      * the target is 'wider' than the source).
+     *
+     * @return static
      */
     public function setEquivalence(null|string|FHIRConceptMapEquivalenceList|FHIRConceptMapEquivalence $equivalence): self
     {
@@ -360,6 +366,8 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      *
      * A description of status/issues in mapping that conveys additional information
      * not represented in the structured data.
+     *
+     * @return static
      */
     public function setComment(null|string|FHIRStringPrimitive|FHIRString $comment): self
     {
@@ -409,6 +417,8 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * A set of additional dependencies for this mapping to hold. This mapping is only
      * applicable if the specified element can be resolved, and it has the specified
      * value.
+     *
+     * @return static
      */
     public function addDependsOn(FHIRConceptMapDependsOn $dependsOn): self
     {
@@ -427,6 +437,8 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * A set of additional dependencies for this mapping to hold. This mapping is only
      * applicable if the specified element can be resolved, and it has the specified
      * value.
+     *
+     * @return static
      */
     public function setDependsOn(FHIRConceptMapDependsOn ...$dependsOn): self
     {
@@ -475,6 +487,8 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * execute this mapping, the specified element must be mapped to some data element
      * or source that is in context. The mapping may still be useful without a place
      * for the additional data elements, but the equivalence cannot be relied on.
+     *
+     * @return static
      */
     public function addProduct(FHIRConceptMapDependsOn $product): self
     {
@@ -494,6 +508,8 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * execute this mapping, the specified element must be mapped to some data element
      * or source that is in context. The mapping may still be useful without a place
      * for the additional data elements, but the equivalence cannot be relied on.
+     *
+     * @return static
      */
     public function setProduct(FHIRConceptMapDependsOn ...$product): self
     {

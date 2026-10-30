@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -184,6 +184,8 @@ class FHIRHealthcareServiceNotAvailable extends FHIRBackboneElement
      *
      * The reason that can be presented to the user as to why this time is not
      * available.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -216,6 +218,8 @@ class FHIRHealthcareServiceNotAvailable extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Service is not available (seasonally or for a public holiday) from this date.
+     *
+     * @return static
      */
     public function setDuring(null|FHIRPeriod $during): self
     {

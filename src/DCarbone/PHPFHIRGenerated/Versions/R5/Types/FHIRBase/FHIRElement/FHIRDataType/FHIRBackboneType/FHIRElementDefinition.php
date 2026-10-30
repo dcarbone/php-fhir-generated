@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -829,8 +829,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRBase64Binary]
     protected FHIRBase64Binary $defaultValueBase64Binary;
@@ -839,8 +838,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRBoolean]
     protected FHIRBoolean $defaultValueBoolean;
@@ -851,8 +849,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRCanonical]
     protected FHIRCanonical $defaultValueCanonical;
@@ -863,8 +860,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRCode]
     protected FHIRCode $defaultValueCode;
@@ -875,8 +871,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRDate]
     protected FHIRDate $defaultValueDate;
@@ -890,8 +885,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRDateTime]
     protected FHIRDateTime $defaultValueDateTime;
@@ -902,8 +896,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRDecimal]
     protected FHIRDecimal $defaultValueDecimal;
@@ -916,8 +909,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRId]
     protected FHIRId $defaultValueId;
@@ -930,8 +922,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRInstant]
     protected FHIRInstant $defaultValueInstant;
@@ -941,8 +932,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRInteger]
     protected FHIRInteger $defaultValueInteger;
@@ -952,8 +942,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRInteger64]
     protected FHIRInteger64 $defaultValueInteger64;
@@ -967,8 +956,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $defaultValueMarkdown;
@@ -979,8 +967,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIROid]
     protected FHIROid $defaultValueOid;
@@ -990,8 +977,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $defaultValuePositiveInt;
@@ -1001,8 +987,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRString]
     protected FHIRString $defaultValueString;
@@ -1011,8 +996,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRTime]
     protected FHIRTime $defaultValueTime;
@@ -1022,8 +1006,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $defaultValueUnsignedInt;
@@ -1033,8 +1016,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRUri]
     protected FHIRUri $defaultValueUri;
@@ -1044,8 +1026,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRUrl]
     protected FHIRUrl $defaultValueUrl;
@@ -1056,8 +1037,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRUuid]
     protected FHIRUuid $defaultValueUuid;
@@ -1072,8 +1052,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRAddress]
     protected FHIRAddress $defaultValueAddress;
@@ -1083,8 +1062,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRAge]
     protected FHIRAge $defaultValueAge;
@@ -1095,8 +1073,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRAnnotation]
     protected FHIRAnnotation $defaultValueAnnotation;
@@ -1106,8 +1083,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRAttachment]
     protected FHIRAttachment $defaultValueAttachment;
@@ -1118,8 +1094,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $defaultValueCodeableConcept;
@@ -1130,8 +1105,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $defaultValueCodeableReference;
@@ -1141,8 +1115,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRCoding]
     protected FHIRCoding $defaultValueCoding;
@@ -1153,8 +1126,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRContactPoint]
     protected FHIRContactPoint $defaultValueContactPoint;
@@ -1166,8 +1138,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRCount]
     protected FHIRCount $defaultValueCount;
@@ -1177,8 +1148,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRDistance]
     protected FHIRDistance $defaultValueDistance;
@@ -1188,8 +1158,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRDuration]
     protected FHIRDuration $defaultValueDuration;
@@ -1201,8 +1170,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRHumanName]
     protected FHIRHumanName $defaultValueHumanName;
@@ -1213,8 +1181,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $defaultValueIdentifier;
@@ -1224,8 +1191,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRMoney]
     protected FHIRMoney $defaultValueMoney;
@@ -1235,8 +1201,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRPeriod]
     protected FHIRPeriod $defaultValuePeriod;
@@ -1248,8 +1213,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRQuantity]
     protected FHIRQuantity $defaultValueQuantity;
@@ -1259,8 +1223,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRRange]
     protected FHIRRange $defaultValueRange;
@@ -1271,8 +1234,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRRatio]
     protected FHIRRatio $defaultValueRatio;
@@ -1282,8 +1244,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRRatioRange]
     protected FHIRRatioRange $defaultValueRatioRange;
@@ -1293,8 +1254,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRReference]
     protected FHIRReference $defaultValueReference;
@@ -1305,8 +1265,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRSampledData]
     protected FHIRSampledData $defaultValueSampledData;
@@ -1320,8 +1279,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRSignature]
     protected FHIRSignature $defaultValueSignature;
@@ -1335,8 +1293,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRTiming]
     protected FHIRTiming $defaultValueTiming;
@@ -1346,8 +1303,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRContactDetail]
     protected FHIRContactDetail $defaultValueContactDetail;
@@ -1358,8 +1314,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRDataRequirement]
     protected FHIRDataRequirement $defaultValueDataRequirement;
@@ -1371,8 +1326,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRExpression]
     protected FHIRExpression $defaultValueExpression;
@@ -1384,8 +1338,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRParameterDefinition]
     protected FHIRParameterDefinition $defaultValueParameterDefinition;
@@ -1396,8 +1349,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRRelatedArtifact]
     protected FHIRRelatedArtifact $defaultValueRelatedArtifact;
@@ -1408,8 +1360,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRTriggerDefinition]
     protected FHIRTriggerDefinition $defaultValueTriggerDefinition;
@@ -1422,8 +1373,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRUsageContext]
     protected FHIRUsageContext $defaultValueUsageContext;
@@ -1433,8 +1383,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRAvailability]
     protected FHIRAvailability $defaultValueAvailability;
@@ -1445,8 +1394,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRExtendedContactDetail]
     protected FHIRExtendedContactDetail $defaultValueExtendedContactDetail;
@@ -1456,8 +1404,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRDosage]
     protected FHIRDosage $defaultValueDosage;
@@ -1469,8 +1416,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     #[FHIRMeta]
     protected FHIRMeta $defaultValueMeta;
@@ -1507,8 +1453,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRBase64Binary]
     protected FHIRBase64Binary $fixedBase64Binary;
@@ -1519,8 +1464,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRBoolean]
     protected FHIRBoolean $fixedBoolean;
@@ -1533,8 +1477,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRCanonical]
     protected FHIRCanonical $fixedCanonical;
@@ -1547,8 +1490,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRCode]
     protected FHIRCode $fixedCode;
@@ -1561,8 +1503,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRDate]
     protected FHIRDate $fixedDate;
@@ -1578,8 +1519,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $fixedDateTime;
@@ -1592,8 +1532,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRDecimal]
     protected FHIRDecimal $fixedDecimal;
@@ -1608,8 +1547,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRId]
     protected FHIRId $fixedId;
@@ -1624,8 +1562,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRInstant]
     protected FHIRInstant $fixedInstant;
@@ -1637,8 +1574,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRInteger]
     protected FHIRInteger $fixedInteger;
@@ -1650,8 +1586,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRInteger64]
     protected FHIRInteger64 $fixedInteger64;
@@ -1667,8 +1602,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $fixedMarkdown;
@@ -1681,8 +1615,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIROid]
     protected FHIROid $fixedOid;
@@ -1694,8 +1627,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $fixedPositiveInt;
@@ -1707,8 +1639,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRString]
     protected FHIRString $fixedString;
@@ -1719,8 +1650,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRTime]
     protected FHIRTime $fixedTime;
@@ -1732,8 +1662,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $fixedUnsignedInt;
@@ -1745,8 +1674,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRUri]
     protected FHIRUri $fixedUri;
@@ -1758,8 +1686,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRUrl]
     protected FHIRUrl $fixedUrl;
@@ -1772,8 +1699,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRUuid]
     protected FHIRUuid $fixedUuid;
@@ -1790,8 +1716,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRAddress]
     protected FHIRAddress $fixedAddress;
@@ -1803,8 +1728,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRAge]
     protected FHIRAge $fixedAge;
@@ -1817,8 +1741,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRAnnotation]
     protected FHIRAnnotation $fixedAnnotation;
@@ -1830,8 +1753,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRAttachment]
     protected FHIRAttachment $fixedAttachment;
@@ -1844,8 +1766,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $fixedCodeableConcept;
@@ -1858,8 +1779,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $fixedCodeableReference;
@@ -1871,8 +1791,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRCoding]
     protected FHIRCoding $fixedCoding;
@@ -1885,8 +1804,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRContactPoint]
     protected FHIRContactPoint $fixedContactPoint;
@@ -1900,8 +1818,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRCount]
     protected FHIRCount $fixedCount;
@@ -1913,8 +1830,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRDistance]
     protected FHIRDistance $fixedDistance;
@@ -1926,8 +1842,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRDuration]
     protected FHIRDuration $fixedDuration;
@@ -1941,8 +1856,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRHumanName]
     protected FHIRHumanName $fixedHumanName;
@@ -1955,8 +1869,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $fixedIdentifier;
@@ -1968,8 +1881,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRMoney]
     protected FHIRMoney $fixedMoney;
@@ -1981,8 +1893,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $fixedPeriod;
@@ -1996,8 +1907,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $fixedQuantity;
@@ -2009,8 +1919,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRRange]
     protected FHIRRange $fixedRange;
@@ -2023,8 +1932,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRRatio]
     protected FHIRRatio $fixedRatio;
@@ -2036,8 +1944,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRRatioRange]
     protected FHIRRatioRange $fixedRatioRange;
@@ -2049,8 +1956,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRReference]
     protected FHIRReference $fixedReference;
@@ -2063,8 +1969,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRSampledData]
     protected FHIRSampledData $fixedSampledData;
@@ -2080,8 +1985,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRSignature]
     protected FHIRSignature $fixedSignature;
@@ -2097,8 +2001,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRTiming]
     protected FHIRTiming $fixedTiming;
@@ -2110,8 +2013,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRContactDetail]
     protected FHIRContactDetail $fixedContactDetail;
@@ -2124,8 +2026,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRDataRequirement]
     protected FHIRDataRequirement $fixedDataRequirement;
@@ -2139,8 +2040,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRExpression]
     protected FHIRExpression $fixedExpression;
@@ -2154,8 +2054,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRParameterDefinition]
     protected FHIRParameterDefinition $fixedParameterDefinition;
@@ -2168,8 +2067,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRRelatedArtifact]
     protected FHIRRelatedArtifact $fixedRelatedArtifact;
@@ -2182,8 +2080,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRTriggerDefinition]
     protected FHIRTriggerDefinition $fixedTriggerDefinition;
@@ -2198,8 +2095,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRUsageContext]
     protected FHIRUsageContext $fixedUsageContext;
@@ -2211,8 +2107,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRAvailability]
     protected FHIRAvailability $fixedAvailability;
@@ -2225,8 +2120,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRExtendedContactDetail]
     protected FHIRExtendedContactDetail $fixedExtendedContactDetail;
@@ -2238,8 +2132,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRDosage]
     protected FHIRDosage $fixedDosage;
@@ -2253,8 +2146,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     #[FHIRMeta]
     protected FHIRMeta $fixedMeta;
@@ -2280,8 +2172,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRBase64Binary]
     protected FHIRBase64Binary $patternBase64Binary;
@@ -2306,8 +2197,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRBoolean]
     protected FHIRBoolean $patternBoolean;
@@ -2334,8 +2224,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRCanonical]
     protected FHIRCanonical $patternCanonical;
@@ -2362,8 +2251,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRCode]
     protected FHIRCode $patternCode;
@@ -2390,8 +2278,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRDate]
     protected FHIRDate $patternDate;
@@ -2421,8 +2308,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $patternDateTime;
@@ -2449,8 +2335,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRDecimal]
     protected FHIRDecimal $patternDecimal;
@@ -2479,8 +2364,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRId]
     protected FHIRId $patternId;
@@ -2509,8 +2393,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRInstant]
     protected FHIRInstant $patternInstant;
@@ -2536,8 +2419,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRInteger]
     protected FHIRInteger $patternInteger;
@@ -2563,8 +2445,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRInteger64]
     protected FHIRInteger64 $patternInteger64;
@@ -2594,8 +2475,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $patternMarkdown;
@@ -2622,8 +2502,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIROid]
     protected FHIROid $patternOid;
@@ -2649,8 +2528,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $patternPositiveInt;
@@ -2676,8 +2554,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRString]
     protected FHIRString $patternString;
@@ -2702,8 +2579,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRTime]
     protected FHIRTime $patternTime;
@@ -2729,8 +2605,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $patternUnsignedInt;
@@ -2756,8 +2631,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRUri]
     protected FHIRUri $patternUri;
@@ -2783,8 +2657,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRUrl]
     protected FHIRUrl $patternUrl;
@@ -2811,8 +2684,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRUuid]
     protected FHIRUuid $patternUuid;
@@ -2843,8 +2715,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRAddress]
     protected FHIRAddress $patternAddress;
@@ -2870,8 +2741,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRAge]
     protected FHIRAge $patternAge;
@@ -2898,8 +2768,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRAnnotation]
     protected FHIRAnnotation $patternAnnotation;
@@ -2925,8 +2794,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRAttachment]
     protected FHIRAttachment $patternAttachment;
@@ -2953,8 +2821,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $patternCodeableConcept;
@@ -2981,8 +2848,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $patternCodeableReference;
@@ -3008,8 +2874,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRCoding]
     protected FHIRCoding $patternCoding;
@@ -3036,8 +2901,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRContactPoint]
     protected FHIRContactPoint $patternContactPoint;
@@ -3065,8 +2929,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRCount]
     protected FHIRCount $patternCount;
@@ -3092,8 +2955,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRDistance]
     protected FHIRDistance $patternDistance;
@@ -3119,8 +2981,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRDuration]
     protected FHIRDuration $patternDuration;
@@ -3148,8 +3009,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRHumanName]
     protected FHIRHumanName $patternHumanName;
@@ -3176,8 +3036,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $patternIdentifier;
@@ -3203,8 +3062,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRMoney]
     protected FHIRMoney $patternMoney;
@@ -3230,8 +3088,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $patternPeriod;
@@ -3259,8 +3116,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $patternQuantity;
@@ -3286,8 +3142,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRRange]
     protected FHIRRange $patternRange;
@@ -3314,8 +3169,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRRatio]
     protected FHIRRatio $patternRatio;
@@ -3341,8 +3195,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRRatioRange]
     protected FHIRRatioRange $patternRatioRange;
@@ -3368,8 +3221,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRReference]
     protected FHIRReference $patternReference;
@@ -3396,8 +3248,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRSampledData]
     protected FHIRSampledData $patternSampledData;
@@ -3427,8 +3278,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRSignature]
     protected FHIRSignature $patternSignature;
@@ -3458,8 +3308,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRTiming]
     protected FHIRTiming $patternTiming;
@@ -3485,8 +3334,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRContactDetail]
     protected FHIRContactDetail $patternContactDetail;
@@ -3513,8 +3361,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRDataRequirement]
     protected FHIRDataRequirement $patternDataRequirement;
@@ -3542,8 +3389,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRExpression]
     protected FHIRExpression $patternExpression;
@@ -3571,8 +3417,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRParameterDefinition]
     protected FHIRParameterDefinition $patternParameterDefinition;
@@ -3599,8 +3444,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRRelatedArtifact]
     protected FHIRRelatedArtifact $patternRelatedArtifact;
@@ -3627,8 +3471,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRTriggerDefinition]
     protected FHIRTriggerDefinition $patternTriggerDefinition;
@@ -3657,8 +3500,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRUsageContext]
     protected FHIRUsageContext $patternUsageContext;
@@ -3684,8 +3526,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRAvailability]
     protected FHIRAvailability $patternAvailability;
@@ -3712,8 +3553,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRExtendedContactDetail]
     protected FHIRExtendedContactDetail $patternExtendedContactDetail;
@@ -3739,8 +3579,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRDosage]
     protected FHIRDosage $patternDosage;
@@ -3768,8 +3607,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     #[FHIRMeta]
     protected FHIRMeta $patternMeta;
@@ -3793,7 +3631,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
      */
     #[FHIRDate]
     protected FHIRDate $minValueDate;
@@ -3808,7 +3646,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $minValueDateTime;
@@ -3822,7 +3660,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
      */
     #[FHIRInstant]
     protected FHIRInstant $minValueInstant;
@@ -3832,7 +3670,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
      */
     #[FHIRTime]
     protected FHIRTime $minValueTime;
@@ -3844,7 +3682,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
      */
     #[FHIRDecimal]
     protected FHIRDecimal $minValueDecimal;
@@ -3855,7 +3693,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
      */
     #[FHIRInteger]
     protected FHIRInteger $minValueInteger;
@@ -3866,7 +3704,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
      */
     #[FHIRInteger64]
     protected FHIRInteger64 $minValueInteger64;
@@ -3877,7 +3715,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $minValuePositiveInt;
@@ -3888,7 +3726,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $minValueUnsignedInt;
@@ -3901,7 +3739,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $minValueQuantity;
@@ -3913,7 +3751,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
      */
     #[FHIRDate]
     protected FHIRDate $maxValueDate;
@@ -3928,7 +3766,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $maxValueDateTime;
@@ -3942,7 +3780,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
      */
     #[FHIRInstant]
     protected FHIRInstant $maxValueInstant;
@@ -3952,7 +3790,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
      */
     #[FHIRTime]
     protected FHIRTime $maxValueTime;
@@ -3964,7 +3802,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
      */
     #[FHIRDecimal]
     protected FHIRDecimal $maxValueDecimal;
@@ -3975,7 +3813,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
      */
     #[FHIRInteger]
     protected FHIRInteger $maxValueInteger;
@@ -3986,7 +3824,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
      */
     #[FHIRInteger64]
     protected FHIRInteger64 $maxValueInteger64;
@@ -3997,7 +3835,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $maxValuePositiveInt;
@@ -4008,7 +3846,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $maxValueUnsignedInt;
@@ -4021,7 +3859,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $maxValueQuantity;
@@ -5061,6 +4899,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The path identifies the element and is expressed as a "."-separated list of
      * ancestor elements, beginning with the name of the resource or extension.
+     *
+     * @return static
      */
     public function setPath(null|string|FHIRStringPrimitive|FHIRString $path): self
     {
@@ -5110,6 +4950,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      * deviation varies from the normal case. No extensions are allowed on elements
      * with a representation of 'xmlAttr', no matter what FHIR serialization format is
      * used.
+     *
+     * @return static
      */
     public function addRepresentation(string|FHIRPropertyRepresentationEnum|FHIRPropertyRepresentation $representation): self
     {
@@ -5131,6 +4973,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      * deviation varies from the normal case. No extensions are allowed on elements
      * with a representation of 'xmlAttr', no matter what FHIR serialization format is
      * used.
+     *
+     * @return static
      */
     public function setRepresentation(string|FHIRPropertyRepresentationEnum|FHIRPropertyRepresentation ...$representation): self
     {
@@ -5173,6 +5017,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      * must be a token with no dots or spaces. This is a unique name referring to a
      * specific set of constraints applied to this element, used to provide a name to
      * different slices of the same element.
+     *
+     * @return static
      */
     public function setSliceName(null|string|FHIRStringPrimitive|FHIRString $sliceName): self
     {
@@ -5211,6 +5057,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      * overriding any slice in an inherited profile. If missing, the slice might or
      * might not be overriding a slice in an inherited profile, depending on the
      * sliceName.
+     *
+     * @return static
      */
     public function setSliceIsConstraining(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $sliceIsConstraining): self
     {
@@ -5247,6 +5095,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      * A single preferred label which is the text to display beside the element
      * indicating its meaning or to use to prompt for the element in a user display or
      * form.
+     *
+     * @return static
      */
     public function setLabel(null|string|FHIRStringPrimitive|FHIRString $label): self
     {
@@ -5292,6 +5142,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that has the same meaning as the element in a particular terminology.
+     *
+     * @return static
      */
     public function addCode(FHIRCoding $code): self
     {
@@ -5308,6 +5160,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that has the same meaning as the element in a particular terminology.
+     *
+     * @return static
      */
     public function setCode(FHIRCoding ...$code): self
     {
@@ -5349,6 +5203,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      * The set of slices is any elements that come after this in the element sequence
      * that have the same path, until a shorter path occurs (the shorter path
      * terminates the set).
+     *
+     * @return static
      */
     public function setSlicing(null|FHIRElementDefinitionSlicing $slicing): self
     {
@@ -5380,6 +5236,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * A concise description of what this element means (e.g. for use in autogenerated
      * summaries).
+     *
+     * @return static
      */
     public function setShort(null|string|FHIRStringPrimitive|FHIRString $short): self
     {
@@ -5430,6 +5288,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      * convey the meaning of the element in the particular context of use of the
      * resource. (Note: The text you are reading is specified in
      * ElementDefinition.definition).
+     *
+     * @return static
      */
     public function setDefinition(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $definition): self
     {
@@ -5474,6 +5334,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Explanatory notes and implementation guidance about the data element, including
      * notes about how to use the data properly, exceptions to proper use, etc. (Note:
      * The text you are reading is specified in ElementDefinition.comment).
+     *
+     * @return static
      */
     public function setComment(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $comment): self
     {
@@ -5518,6 +5380,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      * This element is for traceability of why the element was created and why the
      * constraints exist as they do. This may be used to point to source materials or
      * specifications that drove the structure of this element.
+     *
+     * @return static
      */
     public function setRequirements(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $requirements): self
     {
@@ -5563,6 +5427,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies additional names by which this element might also be known.
+     *
+     * @return static
      */
     public function addAlias(string|FHIRStringPrimitive|FHIRString $alias): self
     {
@@ -5582,6 +5448,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies additional names by which this element might also be known.
+     *
+     * @return static
      */
     public function setAlias(string|FHIRStringPrimitive|FHIRString ...$alias): self
     {
@@ -5618,6 +5486,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The minimum number of times this element SHALL appear in the instance.
+     *
+     * @return static
      */
     public function setMin(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $min): self
     {
@@ -5650,6 +5520,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum number of times this element is permitted to appear in the instance.
+     *
+     * @return static
      */
     public function setMax(null|string|FHIRStringPrimitive|FHIRString $max): self
     {
@@ -5694,6 +5566,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      * from a super type in a snap shot - then the information in provided in the
      * element definition may be different to the base definition. On the original
      * definition of the element, it will be same.
+     *
+     * @return static
      */
     public function setBase(null|FHIRElementDefinitionBase $base): self
     {
@@ -5729,6 +5603,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      * should be applied to the current element. ContentReferences bring across all the
      * rules that are in the ElementDefinition for the element, including definitions,
      * cardinality constraints, bindings, invariants etc.
+     *
+     * @return static
      */
     public function setContentReference(null|string|FHIRUriPrimitive|FHIRUri $contentReference): self
     {
@@ -5774,6 +5650,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The data type or resource that the value of this element is permitted to be.
+     *
+     * @return static
      */
     public function addType(FHIRElementDefinitionType $type): self
     {
@@ -5790,6 +5668,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The data type or resource that the value of this element is permitted to be.
+     *
+     * @return static
      */
     public function setType(FHIRElementDefinitionType ...$type): self
     {
@@ -5807,8 +5687,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueBase64Binary(): null|FHIRBase64Binary
     {
@@ -5821,8 +5700,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueBase64Binary(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $defaultValueBase64Binary): self
     {
@@ -5842,8 +5722,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueBoolean(): null|FHIRBoolean
     {
@@ -5855,8 +5734,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $defaultValueBoolean): self
     {
@@ -5878,8 +5758,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueCanonical(): null|FHIRCanonical
     {
@@ -5893,8 +5772,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $defaultValueCanonical): self
     {
@@ -5916,8 +5796,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueCode(): null|FHIRCode
     {
@@ -5931,8 +5810,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueCode(null|string|FHIRCodePrimitive|FHIRCode $defaultValueCode): self
     {
@@ -5954,8 +5834,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueDate(): null|FHIRDate
     {
@@ -5969,8 +5848,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $defaultValueDate): self
     {
@@ -5995,8 +5875,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueDateTime(): null|FHIRDateTime
     {
@@ -6013,8 +5892,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $defaultValueDateTime): self
     {
@@ -6036,8 +5916,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueDecimal(): null|FHIRDecimal
     {
@@ -6051,8 +5930,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $defaultValueDecimal): self
     {
@@ -6076,8 +5956,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueId(): null|FHIRId
     {
@@ -6093,8 +5972,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueId(null|string|FHIRIdPrimitive|FHIRId $defaultValueId): self
     {
@@ -6118,8 +5998,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueInstant(): null|FHIRInstant
     {
@@ -6135,8 +6014,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueInstant(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $defaultValueInstant): self
     {
@@ -6157,8 +6037,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueInteger(): null|FHIRInteger
     {
@@ -6171,8 +6050,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $defaultValueInteger): self
     {
@@ -6193,8 +6073,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueInteger64(): null|FHIRInteger64
     {
@@ -6207,8 +6086,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueInteger64(null|string|float|FHIRInteger64Primitive|FHIRInteger64 $defaultValueInteger64): self
     {
@@ -6233,8 +6113,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueMarkdown(): null|FHIRMarkdown
     {
@@ -6251,8 +6130,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $defaultValueMarkdown): self
     {
@@ -6274,8 +6154,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueOid(): null|FHIROid
     {
@@ -6289,8 +6168,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueOid(null|string|FHIROidPrimitive|FHIROid $defaultValueOid): self
     {
@@ -6311,8 +6191,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValuePositiveInt(): null|FHIRPositiveInt
     {
@@ -6325,8 +6204,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValuePositiveInt(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $defaultValuePositiveInt): self
     {
@@ -6347,8 +6227,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueString(): null|FHIRString
     {
@@ -6361,8 +6240,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueString(null|string|FHIRStringPrimitive|FHIRString $defaultValueString): self
     {
@@ -6382,8 +6262,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueTime(): null|FHIRTime
     {
@@ -6395,8 +6274,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $defaultValueTime): self
     {
@@ -6417,8 +6297,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueUnsignedInt(): null|FHIRUnsignedInt
     {
@@ -6431,8 +6310,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $defaultValueUnsignedInt): self
     {
@@ -6453,8 +6333,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueUri(): null|FHIRUri
     {
@@ -6467,8 +6346,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueUri(null|string|FHIRUriPrimitive|FHIRUri $defaultValueUri): self
     {
@@ -6489,8 +6369,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueUrl(): null|FHIRUrl
     {
@@ -6503,8 +6382,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueUrl(null|string|FHIRUrlPrimitive|FHIRUrl $defaultValueUrl): self
     {
@@ -6526,8 +6406,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueUuid(): null|FHIRUuid
     {
@@ -6541,8 +6420,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueUuid(null|string|FHIRUuidPrimitive|FHIRUuid $defaultValueUuid): self
     {
@@ -6568,8 +6448,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueAddress(): null|FHIRAddress
     {
@@ -6587,8 +6466,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueAddress(null|FHIRAddress $defaultValueAddress): self
     {
@@ -6606,8 +6486,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueAge(): null|FHIRAge
     {
@@ -6620,8 +6499,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueAge(null|FHIRAge $defaultValueAge): self
     {
@@ -6640,8 +6520,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueAnnotation(): null|FHIRAnnotation
     {
@@ -6655,8 +6534,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueAnnotation(null|FHIRAnnotation $defaultValueAnnotation): self
     {
@@ -6674,8 +6554,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueAttachment(): null|FHIRAttachment
     {
@@ -6688,8 +6567,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueAttachment(null|FHIRAttachment $defaultValueAttachment): self
     {
@@ -6708,8 +6588,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -6723,8 +6602,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueCodeableConcept(null|FHIRCodeableConcept $defaultValueCodeableConcept): self
     {
@@ -6743,8 +6623,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueCodeableReference(): null|FHIRCodeableReference
     {
@@ -6758,8 +6637,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueCodeableReference(null|FHIRCodeableReference $defaultValueCodeableReference): self
     {
@@ -6777,8 +6657,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueCoding(): null|FHIRCoding
     {
@@ -6791,8 +6670,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueCoding(null|FHIRCoding $defaultValueCoding): self
     {
@@ -6811,8 +6691,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueContactPoint(): null|FHIRContactPoint
     {
@@ -6826,8 +6705,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueContactPoint(null|FHIRContactPoint $defaultValueContactPoint): self
     {
@@ -6847,8 +6727,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueCount(): null|FHIRCount
     {
@@ -6863,8 +6742,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueCount(null|FHIRCount $defaultValueCount): self
     {
@@ -6882,8 +6762,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueDistance(): null|FHIRDistance
     {
@@ -6896,8 +6775,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueDistance(null|FHIRDistance $defaultValueDistance): self
     {
@@ -6915,8 +6795,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueDuration(): null|FHIRDuration
     {
@@ -6929,8 +6808,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueDuration(null|FHIRDuration $defaultValueDuration): self
     {
@@ -6950,8 +6830,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueHumanName(): null|FHIRHumanName
     {
@@ -6966,8 +6845,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueHumanName(null|FHIRHumanName $defaultValueHumanName): self
     {
@@ -6986,8 +6866,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueIdentifier(): null|FHIRIdentifier
     {
@@ -7001,8 +6880,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueIdentifier(null|FHIRIdentifier $defaultValueIdentifier): self
     {
@@ -7020,8 +6900,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueMoney(): null|FHIRMoney
     {
@@ -7034,8 +6913,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueMoney(null|FHIRMoney $defaultValueMoney): self
     {
@@ -7053,8 +6933,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValuePeriod(): null|FHIRPeriod
     {
@@ -7067,8 +6946,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValuePeriod(null|FHIRPeriod $defaultValuePeriod): self
     {
@@ -7088,8 +6968,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueQuantity(): null|FHIRQuantity
     {
@@ -7104,8 +6983,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueQuantity(null|FHIRQuantity $defaultValueQuantity): self
     {
@@ -7123,8 +7003,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueRange(): null|FHIRRange
     {
@@ -7137,8 +7016,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueRange(null|FHIRRange $defaultValueRange): self
     {
@@ -7157,8 +7037,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueRatio(): null|FHIRRatio
     {
@@ -7172,8 +7051,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueRatio(null|FHIRRatio $defaultValueRatio): self
     {
@@ -7191,8 +7071,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueRatioRange(): null|FHIRRatioRange
     {
@@ -7205,8 +7084,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueRatioRange(null|FHIRRatioRange $defaultValueRatioRange): self
     {
@@ -7224,8 +7104,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueReference(): null|FHIRReference
     {
@@ -7238,8 +7117,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueReference(null|FHIRReference $defaultValueReference): self
     {
@@ -7258,8 +7138,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueSampledData(): null|FHIRSampledData
     {
@@ -7273,8 +7152,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueSampledData(null|FHIRSampledData $defaultValueSampledData): self
     {
@@ -7296,8 +7176,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueSignature(): null|FHIRSignature
     {
@@ -7314,8 +7193,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueSignature(null|FHIRSignature $defaultValueSignature): self
     {
@@ -7337,8 +7217,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueTiming(): null|FHIRTiming
     {
@@ -7355,8 +7234,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueTiming(null|FHIRTiming $defaultValueTiming): self
     {
@@ -7374,8 +7254,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueContactDetail(): null|FHIRContactDetail
     {
@@ -7388,8 +7267,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueContactDetail(null|FHIRContactDetail $defaultValueContactDetail): self
     {
@@ -7408,8 +7288,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueDataRequirement(): null|FHIRDataRequirement
     {
@@ -7423,8 +7302,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueDataRequirement(null|FHIRDataRequirement $defaultValueDataRequirement): self
     {
@@ -7444,8 +7324,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueExpression(): null|FHIRExpression
     {
@@ -7460,8 +7339,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueExpression(null|FHIRExpression $defaultValueExpression): self
     {
@@ -7481,8 +7361,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueParameterDefinition(): null|FHIRParameterDefinition
     {
@@ -7497,8 +7376,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueParameterDefinition(null|FHIRParameterDefinition $defaultValueParameterDefinition): self
     {
@@ -7517,8 +7397,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueRelatedArtifact(): null|FHIRRelatedArtifact
     {
@@ -7532,8 +7411,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueRelatedArtifact(null|FHIRRelatedArtifact $defaultValueRelatedArtifact): self
     {
@@ -7552,8 +7432,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueTriggerDefinition(): null|FHIRTriggerDefinition
     {
@@ -7567,8 +7446,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueTriggerDefinition(null|FHIRTriggerDefinition $defaultValueTriggerDefinition): self
     {
@@ -7589,8 +7469,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueUsageContext(): null|FHIRUsageContext
     {
@@ -7606,8 +7485,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueUsageContext(null|FHIRUsageContext $defaultValueUsageContext): self
     {
@@ -7625,8 +7505,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueAvailability(): null|FHIRAvailability
     {
@@ -7639,8 +7518,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueAvailability(null|FHIRAvailability $defaultValueAvailability): self
     {
@@ -7659,8 +7539,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueExtendedContactDetail(): null|FHIRExtendedContactDetail
     {
@@ -7674,8 +7553,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueExtendedContactDetail(null|FHIRExtendedContactDetail $defaultValueExtendedContactDetail): self
     {
@@ -7693,8 +7573,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueDosage(): null|FHIRDosage
     {
@@ -7707,8 +7586,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueDosage(null|FHIRDosage $defaultValueDosage): self
     {
@@ -7728,8 +7608,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
      */
     public function getDefaultValueMeta(): null|FHIRMeta
     {
@@ -7744,8 +7623,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
-     * 'if not otherwise specified, the abstract is false'). (choose any one of the
-     * elements, but only one)
+     * 'if not otherwise specified, the abstract is false').
+     *
+     * @return static
      */
     public function setDefaultValueMeta(null|FHIRMeta $defaultValueMeta): self
     {
@@ -7785,6 +7665,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The Implicit meaning that is to be understood when this element is missing (e.g.
      * 'when this element is missing, the period is ongoing').
+     *
+     * @return static
      */
     public function setMeaningWhenMissing(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $meaningWhenMissing): self
     {
@@ -7821,6 +7703,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      * If present, indicates that the order of the repeating element has meaning and
      * describes what that meaning is. If absent, it means that the order of the
      * element has no meaning.
+     *
+     * @return static
      */
     public function setOrderMeaning(null|string|FHIRStringPrimitive|FHIRString $orderMeaning): self
     {
@@ -7843,8 +7727,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedBase64Binary(): null|FHIRBase64Binary
     {
@@ -7859,8 +7742,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedBase64Binary(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $fixedBase64Binary): self
     {
@@ -7882,8 +7766,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedBoolean(): null|FHIRBoolean
     {
@@ -7897,8 +7780,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $fixedBoolean): self
     {
@@ -7922,8 +7806,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedCanonical(): null|FHIRCanonical
     {
@@ -7939,8 +7822,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $fixedCanonical): self
     {
@@ -7964,8 +7848,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedCode(): null|FHIRCode
     {
@@ -7981,8 +7864,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedCode(null|string|FHIRCodePrimitive|FHIRCode $fixedCode): self
     {
@@ -8006,8 +7890,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedDate(): null|FHIRDate
     {
@@ -8023,8 +7906,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $fixedDate): self
     {
@@ -8051,8 +7935,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedDateTime(): null|FHIRDateTime
     {
@@ -8071,8 +7954,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $fixedDateTime): self
     {
@@ -8096,8 +7980,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedDecimal(): null|FHIRDecimal
     {
@@ -8113,8 +7996,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $fixedDecimal): self
     {
@@ -8140,8 +8024,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedId(): null|FHIRId
     {
@@ -8159,8 +8042,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedId(null|string|FHIRIdPrimitive|FHIRId $fixedId): self
     {
@@ -8186,8 +8070,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedInstant(): null|FHIRInstant
     {
@@ -8205,8 +8088,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedInstant(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $fixedInstant): self
     {
@@ -8229,8 +8113,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedInteger(): null|FHIRInteger
     {
@@ -8245,8 +8128,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $fixedInteger): self
     {
@@ -8269,8 +8153,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedInteger64(): null|FHIRInteger64
     {
@@ -8285,8 +8168,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedInteger64(null|string|float|FHIRInteger64Primitive|FHIRInteger64 $fixedInteger64): self
     {
@@ -8313,8 +8197,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedMarkdown(): null|FHIRMarkdown
     {
@@ -8333,8 +8216,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $fixedMarkdown): self
     {
@@ -8358,8 +8242,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedOid(): null|FHIROid
     {
@@ -8375,8 +8258,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedOid(null|string|FHIROidPrimitive|FHIROid $fixedOid): self
     {
@@ -8399,8 +8283,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedPositiveInt(): null|FHIRPositiveInt
     {
@@ -8415,8 +8298,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedPositiveInt(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $fixedPositiveInt): self
     {
@@ -8439,8 +8323,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedString(): null|FHIRString
     {
@@ -8455,8 +8338,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedString(null|string|FHIRStringPrimitive|FHIRString $fixedString): self
     {
@@ -8478,8 +8362,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedTime(): null|FHIRTime
     {
@@ -8493,8 +8376,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $fixedTime): self
     {
@@ -8517,8 +8401,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedUnsignedInt(): null|FHIRUnsignedInt
     {
@@ -8533,8 +8416,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $fixedUnsignedInt): self
     {
@@ -8557,8 +8441,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedUri(): null|FHIRUri
     {
@@ -8573,8 +8456,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedUri(null|string|FHIRUriPrimitive|FHIRUri $fixedUri): self
     {
@@ -8597,8 +8481,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedUrl(): null|FHIRUrl
     {
@@ -8613,8 +8496,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedUrl(null|string|FHIRUrlPrimitive|FHIRUrl $fixedUrl): self
     {
@@ -8638,8 +8522,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedUuid(): null|FHIRUuid
     {
@@ -8655,8 +8538,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedUuid(null|string|FHIRUuidPrimitive|FHIRUuid $fixedUuid): self
     {
@@ -8684,8 +8568,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedAddress(): null|FHIRAddress
     {
@@ -8705,8 +8588,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedAddress(null|FHIRAddress $fixedAddress): self
     {
@@ -8726,8 +8610,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedAge(): null|FHIRAge
     {
@@ -8742,8 +8625,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedAge(null|FHIRAge $fixedAge): self
     {
@@ -8764,8 +8648,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedAnnotation(): null|FHIRAnnotation
     {
@@ -8781,8 +8664,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedAnnotation(null|FHIRAnnotation $fixedAnnotation): self
     {
@@ -8802,8 +8686,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedAttachment(): null|FHIRAttachment
     {
@@ -8818,8 +8701,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedAttachment(null|FHIRAttachment $fixedAttachment): self
     {
@@ -8840,8 +8724,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -8857,8 +8740,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedCodeableConcept(null|FHIRCodeableConcept $fixedCodeableConcept): self
     {
@@ -8879,8 +8763,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedCodeableReference(): null|FHIRCodeableReference
     {
@@ -8896,8 +8779,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedCodeableReference(null|FHIRCodeableReference $fixedCodeableReference): self
     {
@@ -8917,8 +8801,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedCoding(): null|FHIRCoding
     {
@@ -8933,8 +8816,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedCoding(null|FHIRCoding $fixedCoding): self
     {
@@ -8955,8 +8839,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedContactPoint(): null|FHIRContactPoint
     {
@@ -8972,8 +8855,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedContactPoint(null|FHIRContactPoint $fixedContactPoint): self
     {
@@ -8995,8 +8879,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedCount(): null|FHIRCount
     {
@@ -9013,8 +8896,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedCount(null|FHIRCount $fixedCount): self
     {
@@ -9034,8 +8918,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedDistance(): null|FHIRDistance
     {
@@ -9050,8 +8933,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedDistance(null|FHIRDistance $fixedDistance): self
     {
@@ -9071,8 +8955,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedDuration(): null|FHIRDuration
     {
@@ -9087,8 +8970,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedDuration(null|FHIRDuration $fixedDuration): self
     {
@@ -9110,8 +8994,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedHumanName(): null|FHIRHumanName
     {
@@ -9128,8 +9011,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedHumanName(null|FHIRHumanName $fixedHumanName): self
     {
@@ -9150,8 +9034,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedIdentifier(): null|FHIRIdentifier
     {
@@ -9167,8 +9050,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedIdentifier(null|FHIRIdentifier $fixedIdentifier): self
     {
@@ -9188,8 +9072,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedMoney(): null|FHIRMoney
     {
@@ -9204,8 +9087,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedMoney(null|FHIRMoney $fixedMoney): self
     {
@@ -9225,8 +9109,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedPeriod(): null|FHIRPeriod
     {
@@ -9241,8 +9124,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedPeriod(null|FHIRPeriod $fixedPeriod): self
     {
@@ -9264,8 +9148,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedQuantity(): null|FHIRQuantity
     {
@@ -9282,8 +9165,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedQuantity(null|FHIRQuantity $fixedQuantity): self
     {
@@ -9303,8 +9187,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedRange(): null|FHIRRange
     {
@@ -9319,8 +9202,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedRange(null|FHIRRange $fixedRange): self
     {
@@ -9341,8 +9225,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedRatio(): null|FHIRRatio
     {
@@ -9358,8 +9241,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedRatio(null|FHIRRatio $fixedRatio): self
     {
@@ -9379,8 +9263,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedRatioRange(): null|FHIRRatioRange
     {
@@ -9395,8 +9278,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedRatioRange(null|FHIRRatioRange $fixedRatioRange): self
     {
@@ -9416,8 +9300,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedReference(): null|FHIRReference
     {
@@ -9432,8 +9315,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedReference(null|FHIRReference $fixedReference): self
     {
@@ -9454,8 +9338,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedSampledData(): null|FHIRSampledData
     {
@@ -9471,8 +9354,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedSampledData(null|FHIRSampledData $fixedSampledData): self
     {
@@ -9496,8 +9380,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedSignature(): null|FHIRSignature
     {
@@ -9516,8 +9399,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedSignature(null|FHIRSignature $fixedSignature): self
     {
@@ -9541,8 +9425,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedTiming(): null|FHIRTiming
     {
@@ -9561,8 +9444,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedTiming(null|FHIRTiming $fixedTiming): self
     {
@@ -9582,8 +9466,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedContactDetail(): null|FHIRContactDetail
     {
@@ -9598,8 +9481,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedContactDetail(null|FHIRContactDetail $fixedContactDetail): self
     {
@@ -9620,8 +9504,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedDataRequirement(): null|FHIRDataRequirement
     {
@@ -9637,8 +9520,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedDataRequirement(null|FHIRDataRequirement $fixedDataRequirement): self
     {
@@ -9660,8 +9544,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedExpression(): null|FHIRExpression
     {
@@ -9678,8 +9561,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedExpression(null|FHIRExpression $fixedExpression): self
     {
@@ -9701,8 +9585,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedParameterDefinition(): null|FHIRParameterDefinition
     {
@@ -9719,8 +9602,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedParameterDefinition(null|FHIRParameterDefinition $fixedParameterDefinition): self
     {
@@ -9741,8 +9625,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedRelatedArtifact(): null|FHIRRelatedArtifact
     {
@@ -9758,8 +9641,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedRelatedArtifact(null|FHIRRelatedArtifact $fixedRelatedArtifact): self
     {
@@ -9780,8 +9664,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedTriggerDefinition(): null|FHIRTriggerDefinition
     {
@@ -9797,8 +9680,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedTriggerDefinition(null|FHIRTriggerDefinition $fixedTriggerDefinition): self
     {
@@ -9821,8 +9705,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedUsageContext(): null|FHIRUsageContext
     {
@@ -9840,8 +9723,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedUsageContext(null|FHIRUsageContext $fixedUsageContext): self
     {
@@ -9861,8 +9745,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedAvailability(): null|FHIRAvailability
     {
@@ -9877,8 +9760,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedAvailability(null|FHIRAvailability $fixedAvailability): self
     {
@@ -9899,8 +9783,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedExtendedContactDetail(): null|FHIRExtendedContactDetail
     {
@@ -9916,8 +9799,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedExtendedContactDetail(null|FHIRExtendedContactDetail $fixedExtendedContactDetail): self
     {
@@ -9937,8 +9821,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedDosage(): null|FHIRDosage
     {
@@ -9953,8 +9836,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedDosage(null|FHIRDosage $fixedDosage): self
     {
@@ -9976,8 +9860,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
      */
     public function getFixedMeta(): null|FHIRMeta
     {
@@ -9994,8 +9877,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance, if present. For purposes of comparison, non-significant whitespace is
      * ignored, and all values must be an exact match (case and accent sensitive).
-     * Missing elements/attributes must also be missing. (choose any one of the
-     * elements, but only one)
+     * Missing elements/attributes must also be missing.
+     *
+     * @return static
      */
     public function setFixedMeta(null|FHIRMeta $fixedMeta): self
     {
@@ -10029,8 +9913,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternBase64Binary(): null|FHIRBase64Binary
     {
@@ -10059,8 +9942,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternBase64Binary(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $patternBase64Binary): self
     {
@@ -10096,8 +9980,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternBoolean(): null|FHIRBoolean
     {
@@ -10125,8 +10008,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $patternBoolean): self
     {
@@ -10164,8 +10048,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternCanonical(): null|FHIRCanonical
     {
@@ -10195,8 +10078,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $patternCanonical): self
     {
@@ -10234,8 +10118,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternCode(): null|FHIRCode
     {
@@ -10265,8 +10148,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternCode(null|string|FHIRCodePrimitive|FHIRCode $patternCode): self
     {
@@ -10304,8 +10188,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternDate(): null|FHIRDate
     {
@@ -10335,8 +10218,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $patternDate): self
     {
@@ -10377,8 +10261,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternDateTime(): null|FHIRDateTime
     {
@@ -10411,8 +10294,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $patternDateTime): self
     {
@@ -10450,8 +10334,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternDecimal(): null|FHIRDecimal
     {
@@ -10481,8 +10364,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $patternDecimal): self
     {
@@ -10522,8 +10406,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternId(): null|FHIRId
     {
@@ -10555,8 +10438,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternId(null|string|FHIRIdPrimitive|FHIRId $patternId): self
     {
@@ -10596,8 +10480,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternInstant(): null|FHIRInstant
     {
@@ -10629,8 +10512,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternInstant(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $patternInstant): self
     {
@@ -10667,8 +10551,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternInteger(): null|FHIRInteger
     {
@@ -10697,8 +10580,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $patternInteger): self
     {
@@ -10735,8 +10619,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternInteger64(): null|FHIRInteger64
     {
@@ -10765,8 +10648,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternInteger64(null|string|float|FHIRInteger64Primitive|FHIRInteger64 $patternInteger64): self
     {
@@ -10807,8 +10691,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternMarkdown(): null|FHIRMarkdown
     {
@@ -10841,8 +10724,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $patternMarkdown): self
     {
@@ -10880,8 +10764,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternOid(): null|FHIROid
     {
@@ -10911,8 +10794,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternOid(null|string|FHIROidPrimitive|FHIROid $patternOid): self
     {
@@ -10949,8 +10833,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternPositiveInt(): null|FHIRPositiveInt
     {
@@ -10979,8 +10862,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternPositiveInt(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $patternPositiveInt): self
     {
@@ -11017,8 +10901,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternString(): null|FHIRString
     {
@@ -11047,8 +10930,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternString(null|string|FHIRStringPrimitive|FHIRString $patternString): self
     {
@@ -11084,8 +10968,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternTime(): null|FHIRTime
     {
@@ -11113,8 +10996,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $patternTime): self
     {
@@ -11151,8 +11035,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternUnsignedInt(): null|FHIRUnsignedInt
     {
@@ -11181,8 +11064,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $patternUnsignedInt): self
     {
@@ -11219,8 +11103,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternUri(): null|FHIRUri
     {
@@ -11249,8 +11132,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternUri(null|string|FHIRUriPrimitive|FHIRUri $patternUri): self
     {
@@ -11287,8 +11171,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternUrl(): null|FHIRUrl
     {
@@ -11317,8 +11200,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternUrl(null|string|FHIRUrlPrimitive|FHIRUrl $patternUrl): self
     {
@@ -11356,8 +11240,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternUuid(): null|FHIRUuid
     {
@@ -11387,8 +11270,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternUuid(null|string|FHIRUuidPrimitive|FHIRUuid $patternUuid): self
     {
@@ -11430,8 +11314,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternAddress(): null|FHIRAddress
     {
@@ -11465,8 +11348,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternAddress(null|FHIRAddress $patternAddress): self
     {
@@ -11500,8 +11384,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternAge(): null|FHIRAge
     {
@@ -11530,8 +11413,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternAge(null|FHIRAge $patternAge): self
     {
@@ -11566,8 +11450,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternAnnotation(): null|FHIRAnnotation
     {
@@ -11597,8 +11480,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternAnnotation(null|FHIRAnnotation $patternAnnotation): self
     {
@@ -11632,8 +11516,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternAttachment(): null|FHIRAttachment
     {
@@ -11662,8 +11545,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternAttachment(null|FHIRAttachment $patternAttachment): self
     {
@@ -11698,8 +11582,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -11729,8 +11612,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternCodeableConcept(null|FHIRCodeableConcept $patternCodeableConcept): self
     {
@@ -11765,8 +11649,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternCodeableReference(): null|FHIRCodeableReference
     {
@@ -11796,8 +11679,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternCodeableReference(null|FHIRCodeableReference $patternCodeableReference): self
     {
@@ -11831,8 +11715,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternCoding(): null|FHIRCoding
     {
@@ -11861,8 +11744,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternCoding(null|FHIRCoding $patternCoding): self
     {
@@ -11897,8 +11781,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternContactPoint(): null|FHIRContactPoint
     {
@@ -11928,8 +11811,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternContactPoint(null|FHIRContactPoint $patternContactPoint): self
     {
@@ -11965,8 +11849,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternCount(): null|FHIRCount
     {
@@ -11997,8 +11880,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternCount(null|FHIRCount $patternCount): self
     {
@@ -12032,8 +11916,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternDistance(): null|FHIRDistance
     {
@@ -12062,8 +11945,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternDistance(null|FHIRDistance $patternDistance): self
     {
@@ -12097,8 +11981,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternDuration(): null|FHIRDuration
     {
@@ -12127,8 +12010,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternDuration(null|FHIRDuration $patternDuration): self
     {
@@ -12164,8 +12048,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternHumanName(): null|FHIRHumanName
     {
@@ -12196,8 +12079,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternHumanName(null|FHIRHumanName $patternHumanName): self
     {
@@ -12232,8 +12116,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternIdentifier(): null|FHIRIdentifier
     {
@@ -12263,8 +12146,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternIdentifier(null|FHIRIdentifier $patternIdentifier): self
     {
@@ -12298,8 +12182,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternMoney(): null|FHIRMoney
     {
@@ -12328,8 +12211,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternMoney(null|FHIRMoney $patternMoney): self
     {
@@ -12363,8 +12247,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternPeriod(): null|FHIRPeriod
     {
@@ -12393,8 +12276,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternPeriod(null|FHIRPeriod $patternPeriod): self
     {
@@ -12430,8 +12314,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternQuantity(): null|FHIRQuantity
     {
@@ -12462,8 +12345,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternQuantity(null|FHIRQuantity $patternQuantity): self
     {
@@ -12497,8 +12381,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternRange(): null|FHIRRange
     {
@@ -12527,8 +12410,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternRange(null|FHIRRange $patternRange): self
     {
@@ -12563,8 +12447,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternRatio(): null|FHIRRatio
     {
@@ -12594,8 +12477,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternRatio(null|FHIRRatio $patternRatio): self
     {
@@ -12629,8 +12513,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternRatioRange(): null|FHIRRatioRange
     {
@@ -12659,8 +12542,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternRatioRange(null|FHIRRatioRange $patternRatioRange): self
     {
@@ -12694,8 +12578,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternReference(): null|FHIRReference
     {
@@ -12724,8 +12607,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternReference(null|FHIRReference $patternReference): self
     {
@@ -12760,8 +12644,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternSampledData(): null|FHIRSampledData
     {
@@ -12791,8 +12674,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternSampledData(null|FHIRSampledData $patternSampledData): self
     {
@@ -12830,8 +12714,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternSignature(): null|FHIRSignature
     {
@@ -12864,8 +12747,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternSignature(null|FHIRSignature $patternSignature): self
     {
@@ -12903,8 +12787,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternTiming(): null|FHIRTiming
     {
@@ -12937,8 +12820,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternTiming(null|FHIRTiming $patternTiming): self
     {
@@ -12972,8 +12856,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternContactDetail(): null|FHIRContactDetail
     {
@@ -13002,8 +12885,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternContactDetail(null|FHIRContactDetail $patternContactDetail): self
     {
@@ -13038,8 +12922,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternDataRequirement(): null|FHIRDataRequirement
     {
@@ -13069,8 +12952,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternDataRequirement(null|FHIRDataRequirement $patternDataRequirement): self
     {
@@ -13106,8 +12990,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternExpression(): null|FHIRExpression
     {
@@ -13138,8 +13021,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternExpression(null|FHIRExpression $patternExpression): self
     {
@@ -13175,8 +13059,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternParameterDefinition(): null|FHIRParameterDefinition
     {
@@ -13207,8 +13090,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternParameterDefinition(null|FHIRParameterDefinition $patternParameterDefinition): self
     {
@@ -13243,8 +13127,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternRelatedArtifact(): null|FHIRRelatedArtifact
     {
@@ -13274,8 +13157,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternRelatedArtifact(null|FHIRRelatedArtifact $patternRelatedArtifact): self
     {
@@ -13310,8 +13194,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternTriggerDefinition(): null|FHIRTriggerDefinition
     {
@@ -13341,8 +13224,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternTriggerDefinition(null|FHIRTriggerDefinition $patternTriggerDefinition): self
     {
@@ -13379,8 +13263,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternUsageContext(): null|FHIRUsageContext
     {
@@ -13412,8 +13295,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternUsageContext(null|FHIRUsageContext $patternUsageContext): self
     {
@@ -13447,8 +13331,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternAvailability(): null|FHIRAvailability
     {
@@ -13477,8 +13360,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternAvailability(null|FHIRAvailability $patternAvailability): self
     {
@@ -13513,8 +13397,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternExtendedContactDetail(): null|FHIRExtendedContactDetail
     {
@@ -13544,8 +13427,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternExtendedContactDetail(null|FHIRExtendedContactDetail $patternExtendedContactDetail): self
     {
@@ -13579,8 +13463,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternDosage(): null|FHIRDosage
     {
@@ -13609,8 +13492,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternDosage(null|FHIRDosage $patternDosage): self
     {
@@ -13646,8 +13530,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
      */
     public function getPatternMeta(): null|FHIRMeta
     {
@@ -13678,8 +13561,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      * desire is for a pattern to apply to only one element or a subset of elements,
      * slicing must be used. See [Examples of
      * Patterns](elementdefinition-examples.html#pattern-examples) for examples of
-     * pattern usage and the effect it will have. (choose any one of the elements, but
-     * only one)
+     * pattern usage and the effect it will have.
+     *
+     * @return static
      */
     public function setPatternMeta(null|FHIRMeta $patternMeta): self
     {
@@ -13724,6 +13608,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * A sample value for this element demonstrating the type of information that would
      * typically be found in the element.
+     *
+     * @return static
      */
     public function addExample(FHIRElementDefinitionExample $example): self
     {
@@ -13741,6 +13627,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * A sample value for this element demonstrating the type of information that would
      * typically be found in the element.
+     *
+     * @return static
      */
     public function setExample(FHIRElementDefinitionExample ...$example): self
     {
@@ -13760,7 +13648,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
      */
     public function getMinValueDate(): null|FHIRDate
     {
@@ -13775,7 +13663,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
+     *
+     * @return static
      */
     public function setMinValueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $minValueDate): self
     {
@@ -13801,7 +13691,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
      */
     public function getMinValueDateTime(): null|FHIRDateTime
     {
@@ -13819,7 +13709,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
+     *
+     * @return static
      */
     public function setMinValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $minValueDateTime): self
     {
@@ -13844,7 +13736,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
      */
     public function getMinValueInstant(): null|FHIRInstant
     {
@@ -13861,7 +13753,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
+     *
+     * @return static
      */
     public function setMinValueInstant(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $minValueInstant): self
     {
@@ -13882,7 +13776,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
      */
     public function getMinValueTime(): null|FHIRTime
     {
@@ -13895,7 +13789,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
+     *
+     * @return static
      */
     public function setMinValueTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $minValueTime): self
     {
@@ -13918,7 +13814,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
      */
     public function getMinValueDecimal(): null|FHIRDecimal
     {
@@ -13933,7 +13829,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
+     *
+     * @return static
      */
     public function setMinValueDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $minValueDecimal): self
     {
@@ -13955,7 +13853,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
      */
     public function getMinValueInteger(): null|FHIRInteger
     {
@@ -13969,7 +13867,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
+     *
+     * @return static
      */
     public function setMinValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $minValueInteger): self
     {
@@ -13991,7 +13891,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
      */
     public function getMinValueInteger64(): null|FHIRInteger64
     {
@@ -14005,7 +13905,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
+     *
+     * @return static
      */
     public function setMinValueInteger64(null|string|float|FHIRInteger64Primitive|FHIRInteger64 $minValueInteger64): self
     {
@@ -14027,7 +13929,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
      */
     public function getMinValuePositiveInt(): null|FHIRPositiveInt
     {
@@ -14041,7 +13943,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
+     *
+     * @return static
      */
     public function setMinValuePositiveInt(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $minValuePositiveInt): self
     {
@@ -14063,7 +13967,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
      */
     public function getMinValueUnsignedInt(): null|FHIRUnsignedInt
     {
@@ -14077,7 +13981,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
+     *
+     * @return static
      */
     public function setMinValueUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $minValueUnsignedInt): self
     {
@@ -14101,7 +14007,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
      */
     public function getMinValueQuantity(): null|FHIRQuantity
     {
@@ -14117,7 +14023,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of minValue*, but only one)
+     * Quantity.
+     *
+     * @return static
      */
     public function setMinValueQuantity(null|FHIRQuantity $minValueQuantity): self
     {
@@ -14137,7 +14045,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
      */
     public function getMaxValueDate(): null|FHIRDate
     {
@@ -14152,7 +14060,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
+     *
+     * @return static
      */
     public function setMaxValueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $maxValueDate): self
     {
@@ -14178,7 +14088,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
      */
     public function getMaxValueDateTime(): null|FHIRDateTime
     {
@@ -14196,7 +14106,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
+     *
+     * @return static
      */
     public function setMaxValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $maxValueDateTime): self
     {
@@ -14221,7 +14133,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
      */
     public function getMaxValueInstant(): null|FHIRInstant
     {
@@ -14238,7 +14150,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
+     *
+     * @return static
      */
     public function setMaxValueInstant(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $maxValueInstant): self
     {
@@ -14259,7 +14173,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
      */
     public function getMaxValueTime(): null|FHIRTime
     {
@@ -14272,7 +14186,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
+     *
+     * @return static
      */
     public function setMaxValueTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $maxValueTime): self
     {
@@ -14295,7 +14211,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
      */
     public function getMaxValueDecimal(): null|FHIRDecimal
     {
@@ -14310,7 +14226,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
+     *
+     * @return static
      */
     public function setMaxValueDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $maxValueDecimal): self
     {
@@ -14332,7 +14250,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
      */
     public function getMaxValueInteger(): null|FHIRInteger
     {
@@ -14346,7 +14264,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
+     *
+     * @return static
      */
     public function setMaxValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $maxValueInteger): self
     {
@@ -14368,7 +14288,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
      */
     public function getMaxValueInteger64(): null|FHIRInteger64
     {
@@ -14382,7 +14302,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
+     *
+     * @return static
      */
     public function setMaxValueInteger64(null|string|float|FHIRInteger64Primitive|FHIRInteger64 $maxValueInteger64): self
     {
@@ -14404,7 +14326,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
      */
     public function getMaxValuePositiveInt(): null|FHIRPositiveInt
     {
@@ -14418,7 +14340,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
+     *
+     * @return static
      */
     public function setMaxValuePositiveInt(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $maxValuePositiveInt): self
     {
@@ -14440,7 +14364,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
      */
     public function getMaxValueUnsignedInt(): null|FHIRUnsignedInt
     {
@@ -14454,7 +14378,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
+     *
+     * @return static
      */
     public function setMaxValueUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $maxValueUnsignedInt): self
     {
@@ -14478,7 +14404,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
      */
     public function getMaxValueQuantity(): null|FHIRQuantity
     {
@@ -14494,7 +14420,9 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
-     * Quantity. (choose any one of maxValue*, but only one)
+     * Quantity.
+     *
+     * @return static
      */
     public function setMaxValueQuantity(null|FHIRQuantity $maxValueQuantity): self
     {
@@ -14532,6 +14460,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      * consumers that support the element. ```maxLength``` SHOULD only be used on
      * primitive data types that have a string representation (see
      * [[[http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics]]]).
+     *
+     * @return static
      */
     public function setMaxLength(null|string|float|FHIRIntegerPrimitive|FHIRInteger $maxLength): self
     {
@@ -14585,6 +14515,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * A reference to an invariant that may make additional statements about the
      * cardinality or value in the instance.
+     *
+     * @return static
      */
     public function addCondition(string|FHIRIdPrimitive|FHIRId $condition): self
     {
@@ -14608,6 +14540,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * A reference to an invariant that may make additional statements about the
      * cardinality or value in the instance.
+     *
+     * @return static
      */
     public function setCondition(string|FHIRIdPrimitive|FHIRId ...$condition): self
     {
@@ -14659,6 +14593,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * Formal constraints such as co-occurrence and other constraints that can be
      * computationally evaluated within the context of the instance.
+     *
+     * @return static
      */
     public function addConstraint(FHIRElementDefinitionConstraint $constraint): self
     {
@@ -14676,6 +14612,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * Formal constraints such as co-occurrence and other constraints that can be
      * computationally evaluated within the context of the instance.
+     *
+     * @return static
      */
     public function setConstraint(FHIRElementDefinitionConstraint ...$constraint): self
     {
@@ -14705,6 +14643,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * Specifies for a primitive data type that the value of the data type cannot be
      * replaced by an extension.
+     *
+     * @return static
      */
     public function setMustHaveValue(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $mustHaveValue): self
     {
@@ -14752,6 +14692,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * Specifies a list of extensions that can appear in place of a primitive value.
+     *
+     * @return static
      */
     public function addValueAlternatives(string|FHIRCanonicalPrimitive|FHIRCanonical $valueAlternatives): self
     {
@@ -14772,6 +14714,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * Specifies a list of extensions that can appear in place of a primitive value.
+     *
+     * @return static
      */
     public function setValueAlternatives(string|FHIRCanonicalPrimitive|FHIRCanonical ...$valueAlternatives): self
     {
@@ -14814,6 +14758,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      * out and replaced by obligations (see below). If false, the element may be
      * ignored and not supported. If false, whether to populate or use the data element
      * in any way is at the discretion of the implementation.
+     *
+     * @return static
      */
     public function setMustSupport(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $mustSupport): self
     {
@@ -14858,6 +14804,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      * that it is not relevant to their particular system. When used on the root
      * element in an extension definition, this indicates whether or not the extension
      * is a modifier extension.
+     *
+     * @return static
      */
     public function setIsModifier(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isModifier): self
     {
@@ -14892,6 +14840,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * Explains how that element affects the interpretation of the resource or element
      * that contains it.
+     *
+     * @return static
      */
     public function setIsModifierReason(null|string|FHIRStringPrimitive|FHIRString $isModifierReason): self
     {
@@ -14924,6 +14874,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * Whether the element should be included if a client requests a search with the
      * parameter _summary=true.
+     *
+     * @return static
      */
     public function setIsSummary(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isSummary): self
     {
@@ -14958,6 +14910,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * Binds to a value set if this element is coded (code, Coding, CodeableConcept,
      * Quantity), or the data types (string, uri).
+     *
+     * @return static
      */
     public function setBinding(null|FHIRElementDefinitionBinding $binding): self
     {
@@ -15002,6 +14956,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * Identifies a concept from an external specification that roughly corresponds to
      * this element.
+     *
+     * @return static
      */
     public function addMapping(FHIRElementDefinitionMapping $mapping): self
     {
@@ -15019,6 +14975,8 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * Identifies a concept from an external specification that roughly corresponds to
      * this element.
+     *
+     * @return static
      */
     public function setMapping(FHIRElementDefinitionMapping ...$mapping): self
     {

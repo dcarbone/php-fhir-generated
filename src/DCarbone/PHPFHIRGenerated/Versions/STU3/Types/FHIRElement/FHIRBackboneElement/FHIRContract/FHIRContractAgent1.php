@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -181,6 +181,8 @@ class FHIRContractAgent1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The agent assigned a role in this Contract Provision.
+     *
+     * @return static
      */
     public function setActor(null|FHIRReference $actor): self
     {
@@ -227,6 +229,8 @@ class FHIRContractAgent1 extends FHIRBackboneElement
      *
      * Role played by the agent assigned this role in the execution of this Contract
      * Provision.
+     *
+     * @return static
      */
     public function addRole(FHIRCodeableConcept $role): self
     {
@@ -245,6 +249,8 @@ class FHIRContractAgent1 extends FHIRBackboneElement
      *
      * Role played by the agent assigned this role in the execution of this Contract
      * Provision.
+     *
+     * @return static
      */
     public function setRole(FHIRCodeableConcept ...$role): self
     {

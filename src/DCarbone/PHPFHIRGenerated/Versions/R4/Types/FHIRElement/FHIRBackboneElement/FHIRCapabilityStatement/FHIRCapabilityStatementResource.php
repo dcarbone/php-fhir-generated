@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -474,6 +474,8 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A type of resource exposed via the restful interface.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRCodePrimitive|FHIRCode $type): self
     {
@@ -514,6 +516,8 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * the resource, including any constraints on cardinality, bindings, lengths or
      * other limitations. See further discussion in [Using
      * Profiles](profiling.html#profile-uses).
+     *
+     * @return static
      */
     public function setProfile(null|string|FHIRCanonicalPrimitive|FHIRCanonical $profile): self
     {
@@ -573,6 +577,8 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * a client, it means the system will search by this profile and process data
      * according to the guidance implicit in the profile. See further discussion in
      * [Using Profiles](profiling.html#profile-uses).
+     *
+     * @return static
      */
     public function addSupportedProfile(string|FHIRCanonicalPrimitive|FHIRCanonical $supportedProfile): self
     {
@@ -599,6 +605,8 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * a client, it means the system will search by this profile and process data
      * according to the guidance implicit in the profile. See further discussion in
      * [Using Profiles](profiling.html#profile-uses).
+     *
+     * @return static
      */
     public function setSupportedProfile(string|FHIRCanonicalPrimitive|FHIRCanonical ...$supportedProfile): self
     {
@@ -643,6 +651,8 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Additional information about the resource type used by the system.
+     *
+     * @return static
      */
     public function setDocumentation(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $documentation): self
     {
@@ -690,6 +700,8 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * implementation.
      *
      * Identifies a restful operation supported by the solution.
+     *
+     * @return static
      */
     public function addInteraction(FHIRCapabilityStatementInteraction $interaction): self
     {
@@ -707,6 +719,8 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * implementation.
      *
      * Identifies a restful operation supported by the solution.
+     *
+     * @return static
      */
     public function setInteraction(FHIRCapabilityStatementInteraction ...$interaction): self
     {
@@ -744,6 +758,8 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * meta-property on resources. If the value is 'versioned-update', then the server
      * supports all the versioning features, including using e-tags for version
      * integrity in the API.
+     *
+     * @return static
      */
     public function setVersioning(null|string|FHIRResourceVersionPolicyList|FHIRResourceVersionPolicy $versioning): self
     {
@@ -776,6 +792,8 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      *
      * A flag for whether the server is able to return past versions as part of the
      * vRead operation.
+     *
+     * @return static
      */
     public function setReadHistory(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $readHistory): self
     {
@@ -812,6 +830,8 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * new identities on the server (that is, the client PUTs to a location where there
      * is no existing resource). Allowing this operation means that the server allows
      * the client to create new identities on the server.
+     *
+     * @return static
      */
     public function setUpdateCreate(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $updateCreate): self
     {
@@ -842,6 +862,8 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag that indicates that the server supports conditional create.
+     *
+     * @return static
      */
     public function setConditionalCreate(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $conditionalCreate): self
     {
@@ -872,6 +894,8 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code that indicates how the server supports conditional read.
+     *
+     * @return static
      */
     public function setConditionalRead(null|string|FHIRConditionalReadStatusList|FHIRConditionalReadStatus $conditionalRead): self
     {
@@ -902,6 +926,8 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag that indicates that the server supports conditional update.
+     *
+     * @return static
      */
     public function setConditionalUpdate(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $conditionalUpdate): self
     {
@@ -932,6 +958,8 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code that indicates how the server supports conditional delete.
+     *
+     * @return static
      */
     public function setConditionalDelete(null|string|FHIRConditionalDeleteStatusList|FHIRConditionalDeleteStatus $conditionalDelete): self
     {
@@ -975,6 +1003,8 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A set of flags that defines how references are supported.
+     *
+     * @return static
      */
     public function addReferencePolicy(string|FHIRReferenceHandlingPolicyList|FHIRReferenceHandlingPolicy $referencePolicy): self
     {
@@ -993,6 +1023,8 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A set of flags that defines how references are supported.
+     *
+     * @return static
      */
     public function setReferencePolicy(string|FHIRReferenceHandlingPolicyList|FHIRReferenceHandlingPolicy ...$referencePolicy): self
     {
@@ -1042,6 +1074,8 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of _include values supported by the server.
+     *
+     * @return static
      */
     public function addSearchInclude(string|FHIRStringPrimitive|FHIRString $searchInclude): self
     {
@@ -1061,6 +1095,8 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of _include values supported by the server.
+     *
+     * @return static
      */
     public function setSearchInclude(string|FHIRStringPrimitive|FHIRString ...$searchInclude): self
     {
@@ -1110,6 +1146,8 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of _revinclude (reverse include) values supported by the server.
+     *
+     * @return static
      */
     public function addSearchRevInclude(string|FHIRStringPrimitive|FHIRString $searchRevInclude): self
     {
@@ -1129,6 +1167,8 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of _revinclude (reverse include) values supported by the server.
+     *
+     * @return static
      */
     public function setSearchRevInclude(string|FHIRStringPrimitive|FHIRString ...$searchRevInclude): self
     {
@@ -1184,6 +1224,8 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * Search parameters for implementations to support and/or make use of - either
      * references to ones defined in the specification, or additional ones defined
      * for/by the implementation.
+     *
+     * @return static
      */
     public function addSearchParam(FHIRCapabilityStatementSearchParam $searchParam): self
     {
@@ -1203,6 +1245,8 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * Search parameters for implementations to support and/or make use of - either
      * references to ones defined in the specification, or additional ones defined
      * for/by the implementation.
+     *
+     * @return static
      */
     public function setSearchParam(FHIRCapabilityStatementSearchParam ...$searchParam): self
     {
@@ -1251,6 +1295,8 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * Definition of an operation or a named query together with its parameters and
      * their meaning and type. Consult the definition of the operation for details
      * about how to invoke the operation, and the parameters.
+     *
+     * @return static
      */
     public function addOperation(FHIRCapabilityStatementOperation $operation): self
     {
@@ -1270,6 +1316,8 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * Definition of an operation or a named query together with its parameters and
      * their meaning and type. Consult the definition of the operation for details
      * about how to invoke the operation, and the parameters.
+     *
+     * @return static
      */
     public function setOperation(FHIRCapabilityStatementOperation ...$operation): self
     {

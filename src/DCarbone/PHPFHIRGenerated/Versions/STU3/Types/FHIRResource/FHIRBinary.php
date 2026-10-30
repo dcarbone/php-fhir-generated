@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -215,6 +215,8 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
      * the Narrative, or extensions
      *
      * MimeType of the binary content represented as a standard MimeType (BCP 13).
+     *
+     * @return static
      */
     public function setContentType(null|string|FHIRCodePrimitive|FHIRCode $contentType): self
     {
@@ -247,6 +249,8 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Treat this binary as if it was this other resource for access control purposes.
+     *
+     * @return static
      */
     public function setSecurityContext(null|FHIRReference $securityContext): self
     {
@@ -276,6 +280,8 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual content, base64 encoded.
+     *
+     * @return static
      */
     public function setContent(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $content): self
     {

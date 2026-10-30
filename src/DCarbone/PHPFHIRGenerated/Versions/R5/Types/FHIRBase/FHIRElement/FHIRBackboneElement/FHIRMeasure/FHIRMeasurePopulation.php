@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -293,6 +293,8 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      *
      * An identifier that is unique within the Measure allowing linkage to the
      * equivalent population in a MeasureReport resource.
+     *
+     * @return static
      */
     public function setLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId): self
     {
@@ -327,6 +329,8 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of population criteria.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -364,6 +368,8 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The human readable description of this population criteria.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -402,6 +408,8 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      *
      * An expression that specifies the criteria for the population, typically the name
      * of an expression in a library.
+     *
+     * @return static
      */
     public function setCriteria(null|FHIRExpression $criteria): self
     {
@@ -431,6 +439,8 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A Group resource that defines this population as a set of characteristics.
+     *
+     * @return static
      */
     public function setGroupDefinition(null|FHIRReference $groupDefinition): self
     {
@@ -472,6 +482,8 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * and must be resolved explicitly. For example in a ratio measure with multiple
      * initial populations, the denominator must specify which population should be
      * used as the starting point.
+     *
+     * @return static
      */
     public function setInputPopulationId(null|string|FHIRStringPrimitive|FHIRString $inputPopulationId): self
     {
@@ -512,6 +524,8 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * For most scoring types, this is implied by scoring (e.g. a proportion measure
      * counts members of the populations). For continuous variables, however, this
      * information must be specified to ensure correct calculation.
+     *
+     * @return static
      */
     public function setAggregateMethod(null|FHIRCodeableConcept $aggregateMethod): self
     {

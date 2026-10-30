@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -772,6 +772,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * assigned by a manufacturer or regulator, and unique to a product (which, when
      * compared to a product instance being prescribed, is actually a product type).
      * See also MedicinalProductDefinition.code.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -793,6 +795,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * assigned by a manufacturer or regulator, and unique to a product (which, when
      * compared to a product instance being prescribed, is actually a product type).
      * See also MedicinalProductDefinition.code.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -824,6 +828,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Regulatory type, e.g. Investigational or Authorized.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -855,6 +861,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If this medicine applies to human or veterinary uses.
+     *
+     * @return static
      */
     public function setDomain(null|FHIRCodeableConcept $domain): self
     {
@@ -886,6 +894,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * A business identifier relating to a specific version of the product, this is
      * commonly used to support revisions to an existing product.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -924,6 +934,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * The status within the lifecycle of this product record. A high-level status,
      * this is not intended to duplicate details carried elsewhere such as legal
      * status, or authorization status.
+     *
+     * @return static
      */
     public function setStatus(null|FHIRCodeableConcept $status): self
     {
@@ -959,6 +971,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date at which the given status became applicable.
+     *
+     * @return static
      */
     public function setStatusDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $statusDate): self
     {
@@ -999,6 +1013,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * the Narrative, or extensions
      *
      * General description of this product.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1039,6 +1055,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * product. This is one concept that describes all the components. It does not
      * represent the form with components physically mixed, if that might be necessary,
      * for which see (AdministrableProductDefinition.administrableDoseForm).
+     *
+     * @return static
      */
     public function setCombinedPharmaceuticalDoseForm(null|FHIRCodeableConcept $combinedPharmaceuticalDoseForm): self
     {
@@ -1091,6 +1109,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * AdministrableProductDefinition resource. MedicinalProductDefinition.route is the
      * same concept as AdministrableProductDefinition.routeOfAdministration.code, and
      * they cannot be used together.
+     *
+     * @return static
      */
     public function addRoute(FHIRCodeableConcept $route): self
     {
@@ -1112,6 +1132,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * AdministrableProductDefinition resource. MedicinalProductDefinition.route is the
      * same concept as AdministrableProductDefinition.routeOfAdministration.code, and
      * they cannot be used together.
+     *
+     * @return static
      */
     public function setRoute(FHIRCodeableConcept ...$route): self
     {
@@ -1155,6 +1177,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * are not required. In cases where structured indications are required, they are
      * captured using the ClinicalUseDefinition resource. An indication is a medical
      * situation for which using the product is appropriate.
+     *
+     * @return static
      */
     public function setIndication(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $indication): self
     {
@@ -1191,6 +1215,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * The legal status of supply of the medicinal product as classified by the
      * regulator.
+     *
+     * @return static
      */
     public function setLegalStatusOfSupply(null|FHIRCodeableConcept $legalStatusOfSupply): self
     {
@@ -1224,6 +1250,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * Whether the Medicinal Product is subject to additional monitoring for regulatory
      * reasons, such as heightened reporting requirements.
+     *
+     * @return static
      */
     public function setAdditionalMonitoringIndicator(null|FHIRCodeableConcept $additionalMonitoringIndicator): self
     {
@@ -1270,6 +1298,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * Whether the Medicinal Product is subject to special measures for regulatory
      * reasons, such as a requirement to conduct post-authorisation studies.
+     *
+     * @return static
      */
     public function addSpecialMeasures(FHIRCodeableConcept $specialMeasures): self
     {
@@ -1288,6 +1318,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * Whether the Medicinal Product is subject to special measures for regulatory
      * reasons, such as a requirement to conduct post-authorisation studies.
+     *
+     * @return static
      */
     public function setSpecialMeasures(FHIRCodeableConcept ...$specialMeasures): self
     {
@@ -1319,6 +1351,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If authorised for use in children, or infants, neonates etc.
+     *
+     * @return static
      */
     public function setPediatricUseIndicator(null|FHIRCodeableConcept $pediatricUseIndicator): self
     {
@@ -1363,6 +1397,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows the product to be classified by various systems, commonly WHO ATC.
+     *
+     * @return static
      */
     public function addClassification(FHIRCodeableConcept $classification): self
     {
@@ -1380,6 +1416,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows the product to be classified by various systems, commonly WHO ATC.
+     *
+     * @return static
      */
     public function setClassification(FHIRCodeableConcept ...$classification): self
     {
@@ -1428,6 +1466,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * Marketing status of the medicinal product, in contrast to marketing
      * authorization. This refers to the product being actually 'on the market' as
      * opposed to being allowed to be on the market (which is an authorization).
+     *
+     * @return static
      */
     public function addMarketingStatus(FHIRMarketingStatus $marketingStatus): self
     {
@@ -1447,6 +1487,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * Marketing status of the medicinal product, in contrast to marketing
      * authorization. This refers to the product being actually 'on the market' as
      * opposed to being allowed to be on the market (which is an authorization).
+     *
+     * @return static
      */
     public function setMarketingStatus(FHIRMarketingStatus ...$marketingStatus): self
     {
@@ -1491,6 +1533,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Package type for the product. See also the PackagedProductDefinition resource.
+     *
+     * @return static
      */
     public function addPackagedMedicinalProduct(FHIRCodeableConcept $packagedMedicinalProduct): self
     {
@@ -1508,6 +1552,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Package type for the product. See also the PackagedProductDefinition resource.
+     *
+     * @return static
      */
     public function setPackagedMedicinalProduct(FHIRCodeableConcept ...$packagedMedicinalProduct): self
     {
@@ -1562,6 +1608,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * AdministrableProductDefinition, PackagedProductDefinition or
      * ManufacturedItemDefinition references. In cases where those levels of detail are
      * not used, the ingredients may be specified directly here as codes.
+     *
+     * @return static
      */
     public function addIngredient(FHIRCodeableConcept $ingredient): self
     {
@@ -1584,6 +1632,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * AdministrableProductDefinition, PackagedProductDefinition or
      * ManufacturedItemDefinition references. In cases where those levels of detail are
      * not used, the ingredients may be specified directly here as codes.
+     *
+     * @return static
      */
     public function setIngredient(FHIRCodeableConcept ...$ingredient): self
     {
@@ -1634,6 +1684,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * the drug substance, or an excipient in the drug product. This includes
      * process-related impurities and contaminants, product-related impurities
      * including degradation products.
+     *
+     * @return static
      */
     public function addImpurity(FHIRCodeableReference $impurity): self
     {
@@ -1654,6 +1706,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * the drug substance, or an excipient in the drug product. This includes
      * process-related impurities and contaminants, product-related impurities
      * including degradation products.
+     *
+     * @return static
      */
     public function setImpurity(FHIRCodeableReference ...$impurity): self
     {
@@ -1696,6 +1750,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional information or supporting documentation about the medicinal product.
+     *
+     * @return static
      */
     public function addAttachedDocument(FHIRReference $attachedDocument): self
     {
@@ -1712,6 +1768,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional information or supporting documentation about the medicinal product.
+     *
+     * @return static
      */
     public function setAttachedDocument(FHIRReference ...$attachedDocument): self
     {
@@ -1762,6 +1820,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * to provide confidential detailed information about facilities, processes or
      * articles used in the manufacturing, processing, packaging and storing of drug
      * products.
+     *
+     * @return static
      */
     public function addMasterFile(FHIRReference $masterFile): self
     {
@@ -1782,6 +1842,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * to provide confidential detailed information about facilities, processes or
      * articles used in the manufacturing, processing, packaging and storing of drug
      * products.
+     *
+     * @return static
      */
     public function setMasterFile(FHIRReference ...$masterFile): self
     {
@@ -1830,6 +1892,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * use, or drug catalogs).
      *
      * A product specific contact, person (in a role), or an organization.
+     *
+     * @return static
      */
     public function addContact(FHIRMedicinalProductDefinitionContact $contact): self
     {
@@ -1849,6 +1913,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * use, or drug catalogs).
      *
      * A product specific contact, person (in a role), or an organization.
+     *
+     * @return static
      */
     public function setContact(FHIRMedicinalProductDefinitionContact ...$contact): self
     {
@@ -1891,6 +1957,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Clinical trials or studies that this product is involved in.
+     *
+     * @return static
      */
     public function addClinicalTrial(FHIRReference $clinicalTrial): self
     {
@@ -1907,6 +1975,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Clinical trials or studies that this product is involved in.
+     *
+     * @return static
      */
     public function setClinicalTrial(FHIRReference ...$clinicalTrial): self
     {
@@ -1959,6 +2029,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * development and within regulatory process. However when they are prescribed they
      * tend to be identified by codes. The same product may be have multiple codes,
      * applied to it by multiple organizations.
+     *
+     * @return static
      */
     public function addCode(FHIRCoding $code): self
     {
@@ -1980,6 +2052,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * development and within regulatory process. However when they are prescribed they
      * tend to be identified by codes. The same product may be have multiple codes,
      * applied to it by multiple organizations.
+     *
+     * @return static
      */
     public function setCode(FHIRCoding ...$code): self
     {
@@ -2028,6 +2102,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * use, or drug catalogs).
      *
      * The product's name, including full name and possibly coded parts.
+     *
+     * @return static
      */
     public function addName(FHIRMedicinalProductDefinitionName $name): self
     {
@@ -2047,6 +2123,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * use, or drug catalogs).
      *
      * The product's name, including full name and possibly coded parts.
+     *
+     * @return static
      */
     public function setName(FHIRMedicinalProductDefinitionName ...$name): self
     {
@@ -2097,6 +2175,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * Reference to another product, e.g. for linking authorised to investigational
      * product, or a virtual product.
+     *
+     * @return static
      */
     public function addCrossReference(FHIRMedicinalProductDefinitionCrossReference $crossReference): self
     {
@@ -2117,6 +2197,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * Reference to another product, e.g. for linking authorised to investigational
      * product, or a virtual product.
+     *
+     * @return static
      */
     public function setCrossReference(FHIRMedicinalProductDefinitionCrossReference ...$crossReference): self
     {
@@ -2167,6 +2249,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * A manufacturing or administrative process or step associated with (or performed
      * on) the medicinal product.
+     *
+     * @return static
      */
     public function addOperation(FHIRMedicinalProductDefinitionOperation $operation): self
     {
@@ -2187,6 +2271,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * A manufacturing or administrative process or step associated with (or performed
      * on) the medicinal product.
+     *
+     * @return static
      */
     public function setOperation(FHIRMedicinalProductDefinitionOperation ...$operation): self
     {
@@ -2237,6 +2323,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * Allows the key product features to be recorded, such as "sugar free", "modified
      * release", "parallel import".
+     *
+     * @return static
      */
     public function addCharacteristic(FHIRMedicinalProductDefinitionCharacteristic $characteristic): self
     {
@@ -2257,6 +2345,8 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * Allows the key product features to be recorded, such as "sugar free", "modified
      * release", "parallel import".
+     *
+     * @return static
      */
     public function setCharacteristic(FHIRMedicinalProductDefinitionCharacteristic ...$characteristic): self
     {

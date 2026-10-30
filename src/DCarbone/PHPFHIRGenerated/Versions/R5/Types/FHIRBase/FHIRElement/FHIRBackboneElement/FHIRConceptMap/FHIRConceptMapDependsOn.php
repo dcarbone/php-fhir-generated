@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -165,8 +165,7 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Data element value that the map depends on / produces. (choose any one of
-     * value*, but only one)
+     * Data element value that the map depends on / produces.
      */
     #[FHIRCode]
     protected FHIRCode $valueCode;
@@ -175,8 +174,7 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Data element value that the map depends on / produces. (choose any one of
-     * value*, but only one)
+     * Data element value that the map depends on / produces.
      */
     #[FHIRCoding]
     protected FHIRCoding $valueCoding;
@@ -185,8 +183,7 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Data element value that the map depends on / produces. (choose any one of
-     * value*, but only one)
+     * Data element value that the map depends on / produces.
      */
     #[FHIRString]
     protected FHIRString $valueString;
@@ -194,8 +191,7 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Data element value that the map depends on / produces. (choose any one of
-     * value*, but only one)
+     * Data element value that the map depends on / produces.
      */
     #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
@@ -206,8 +202,7 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Data element value that the map depends on / produces. (choose any one of
-     * value*, but only one)
+     * Data element value that the map depends on / produces.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -295,6 +290,8 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A reference to the additional attribute that holds a value the map depends on.
+     *
+     * @return static
      */
     public function setAttribute(null|string|FHIRCodePrimitive|FHIRCode $attribute): self
     {
@@ -315,8 +312,7 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Data element value that the map depends on / produces. (choose any one of
-     * value*, but only one)
+     * Data element value that the map depends on / produces.
      */
     public function getValueCode(): null|FHIRCode
     {
@@ -329,8 +325,9 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Data element value that the map depends on / produces. (choose any one of
-     * value*, but only one)
+     * Data element value that the map depends on / produces.
+     *
+     * @return static
      */
     public function setValueCode(null|string|FHIRCodePrimitive|FHIRCode $valueCode): self
     {
@@ -350,8 +347,7 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Data element value that the map depends on / produces. (choose any one of
-     * value*, but only one)
+     * Data element value that the map depends on / produces.
      */
     public function getValueCoding(): null|FHIRCoding
     {
@@ -363,8 +359,9 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Data element value that the map depends on / produces. (choose any one of
-     * value*, but only one)
+     * Data element value that the map depends on / produces.
+     *
+     * @return static
      */
     public function setValueCoding(null|FHIRCoding $valueCoding): self
     {
@@ -381,8 +378,7 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Data element value that the map depends on / produces. (choose any one of
-     * value*, but only one)
+     * Data element value that the map depends on / produces.
      */
     public function getValueString(): null|FHIRString
     {
@@ -394,8 +390,9 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Data element value that the map depends on / produces. (choose any one of
-     * value*, but only one)
+     * Data element value that the map depends on / produces.
+     *
+     * @return static
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -414,8 +411,7 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Data element value that the map depends on / produces. (choose any one of
-     * value*, but only one)
+     * Data element value that the map depends on / produces.
      */
     public function getValueBoolean(): null|FHIRBoolean
     {
@@ -426,8 +422,9 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Data element value that the map depends on / produces. (choose any one of
-     * value*, but only one)
+     * Data element value that the map depends on / produces.
+     *
+     * @return static
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -449,8 +446,7 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Data element value that the map depends on / produces. (choose any one of
-     * value*, but only one)
+     * Data element value that the map depends on / produces.
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -464,8 +460,9 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Data element value that the map depends on / produces. (choose any one of
-     * value*, but only one)
+     * Data element value that the map depends on / produces.
+     *
+     * @return static
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -497,6 +494,8 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * This mapping applies if the data element value is a code from this value set.
+     *
+     * @return static
      */
     public function setValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $valueSet): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -268,6 +268,8 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
      * specified based on a controlled vocabulary. For plants, the parents aren’t
      * always known, and it is unlikely that it will be known which is maternal and
      * which is paternal.
+     *
+     * @return static
      */
     public function setMaternalOrganismId(null|string|FHIRStringPrimitive|FHIRString $maternalOrganismId): self
     {
@@ -304,6 +306,8 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
      * The name of the maternal species constituting the hybrid organism shall be
      * specified. For plants, the parents aren’t always known, and it is unlikely
      * that it will be known which is maternal and which is paternal.
+     *
+     * @return static
      */
     public function setMaternalOrganismName(null|string|FHIRStringPrimitive|FHIRString $maternalOrganismName): self
     {
@@ -338,6 +342,8 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
      *
      * The identifier of the paternal species constituting the hybrid organism shall be
      * specified based on a controlled vocabulary.
+     *
+     * @return static
      */
     public function setPaternalOrganismId(null|string|FHIRStringPrimitive|FHIRString $paternalOrganismId): self
     {
@@ -372,6 +378,8 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
      *
      * The name of the paternal species constituting the hybrid organism shall be
      * specified.
+     *
+     * @return static
      */
     public function setPaternalOrganismName(null|string|FHIRStringPrimitive|FHIRString $paternalOrganismName): self
     {
@@ -406,6 +414,8 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The hybrid type of an organism shall be specified.
+     *
+     * @return static
      */
     public function setHybridType(null|FHIRCodeableConcept $hybridType): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -221,6 +221,8 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
      * rough structure and requires profiling for each type of billing code system.
      *
      * Expressions that describe applicability criteria for the priceComponent.
+     *
+     * @return static
      */
     public function addApplicability(FHIRChargeItemDefinitionApplicability $applicability): self
     {
@@ -238,6 +240,8 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
      * rough structure and requires profiling for each type of billing code system.
      *
      * Expressions that describe applicability criteria for the priceComponent.
+     *
+     * @return static
      */
     public function setApplicability(FHIRChargeItemDefinitionApplicability ...$applicability): self
     {
@@ -292,6 +296,8 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
      * code is currently under development. The priceComponent element can be used to
      * offer transparency to the recipient of the Invoice of how the prices have been
      * calculated.
+     *
+     * @return static
      */
     public function addPriceComponent(FHIRChargeItemDefinitionPriceComponent $priceComponent): self
     {
@@ -314,6 +320,8 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
      * code is currently under development. The priceComponent element can be used to
      * offer transparency to the recipient of the Invoice of how the prices have been
      * calculated.
+     *
+     * @return static
      */
     public function setPriceComponent(FHIRChargeItemDefinitionPriceComponent ...$priceComponent): self
     {

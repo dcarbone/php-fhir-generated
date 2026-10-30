@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -153,8 +153,7 @@ class FHIRProductShelfLife extends FHIRBackboneType
      * The shelf life time period can be specified using a numerical value for the
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
-     * and the symbol identifier shall be used. (choose any one of period*, but only
-     * one)
+     * and the symbol identifier shall be used.
      */
     #[FHIRDuration]
     protected FHIRDuration $periodDuration;
@@ -166,8 +165,7 @@ class FHIRProductShelfLife extends FHIRBackboneType
      * The shelf life time period can be specified using a numerical value for the
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
-     * and the symbol identifier shall be used. (choose any one of period*, but only
-     * one)
+     * and the symbol identifier shall be used.
      */
     #[FHIRString]
     protected FHIRString $periodString;
@@ -258,6 +256,8 @@ class FHIRProductShelfLife extends FHIRBackboneType
      * bottle, etc. The shelf life type shall be specified using an appropriate
      * controlled vocabulary The controlled term and the controlled term identifier
      * shall be specified.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -277,8 +277,7 @@ class FHIRProductShelfLife extends FHIRBackboneType
      * The shelf life time period can be specified using a numerical value for the
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
-     * and the symbol identifier shall be used. (choose any one of period*, but only
-     * one)
+     * and the symbol identifier shall be used.
      */
     public function getPeriodDuration(): null|FHIRDuration
     {
@@ -293,8 +292,9 @@ class FHIRProductShelfLife extends FHIRBackboneType
      * The shelf life time period can be specified using a numerical value for the
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
-     * and the symbol identifier shall be used. (choose any one of period*, but only
-     * one)
+     * and the symbol identifier shall be used.
+     *
+     * @return static
      */
     public function setPeriodDuration(null|FHIRDuration $periodDuration): self
     {
@@ -314,8 +314,7 @@ class FHIRProductShelfLife extends FHIRBackboneType
      * The shelf life time period can be specified using a numerical value for the
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
-     * and the symbol identifier shall be used. (choose any one of period*, but only
-     * one)
+     * and the symbol identifier shall be used.
      */
     public function getPeriodString(): null|FHIRString
     {
@@ -330,8 +329,9 @@ class FHIRProductShelfLife extends FHIRBackboneType
      * The shelf life time period can be specified using a numerical value for the
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
-     * and the symbol identifier shall be used. (choose any one of period*, but only
-     * one)
+     * and the symbol identifier shall be used.
+     *
+     * @return static
      */
     public function setPeriodString(null|string|FHIRStringPrimitive|FHIRString $periodString): self
     {
@@ -383,6 +383,8 @@ class FHIRProductShelfLife extends FHIRBackboneType
      * Special precautions for storage, if any, can be specified using an appropriate
      * controlled vocabulary The controlled term and the controlled term identifier
      * shall be specified.
+     *
+     * @return static
      */
     public function addSpecialPrecautionsForStorage(FHIRCodeableConcept $specialPrecautionsForStorage): self
     {
@@ -402,6 +404,8 @@ class FHIRProductShelfLife extends FHIRBackboneType
      * Special precautions for storage, if any, can be specified using an appropriate
      * controlled vocabulary The controlled term and the controlled term identifier
      * shall be specified.
+     *
+     * @return static
      */
     public function setSpecialPrecautionsForStorage(FHIRCodeableConcept ...$specialPrecautionsForStorage): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -361,6 +361,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for a person within a particular scope.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -377,6 +379,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for a person within a particular scope.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -419,6 +423,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the person.
+     *
+     * @return static
      */
     public function addName(FHIRHumanName $name): self
     {
@@ -435,6 +441,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the person.
+     *
+     * @return static
      */
     public function setName(FHIRHumanName ...$name): self
     {
@@ -479,6 +487,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail for the person, e.g. a telephone number or an email address.
+     *
+     * @return static
      */
     public function addTelecom(FHIRContactPoint $telecom): self
     {
@@ -496,6 +506,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail for the person, e.g. a telephone number or an email address.
+     *
+     * @return static
      */
     public function setTelecom(FHIRContactPoint ...$telecom): self
     {
@@ -521,6 +533,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Administrative Gender.
+     *
+     * @return static
      */
     public function setGender(null|string|FHIRAdministrativeGenderList|FHIRAdministrativeGender $gender): self
     {
@@ -555,6 +569,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The birth date for the person.
+     *
+     * @return static
      */
     public function setBirthDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $birthDate): self
     {
@@ -608,6 +624,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * One or more addresses for the person.
+     *
+     * @return static
      */
     public function addAddress(FHIRAddress $address): self
     {
@@ -628,6 +646,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * One or more addresses for the person.
+     *
+     * @return static
      */
     public function setAddress(FHIRAddress ...$address): self
     {
@@ -659,6 +679,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * An image that can be displayed as a thumbnail of the person to enhance the
      * identification of the individual.
+     *
+     * @return static
      */
     public function setPhoto(null|FHIRAttachment $photo): self
     {
@@ -688,6 +710,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization that is the custodian of the person record.
+     *
+     * @return static
      */
     public function setManagingOrganization(null|FHIRReference $managingOrganization): self
     {
@@ -715,6 +739,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this person's record is in active use.
+     *
+     * @return static
      */
     public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active): self
     {
@@ -758,6 +784,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * specific health-related context.
      *
      * Link to a resource that concerns the same actual person.
+     *
+     * @return static
      */
     public function addLink(FHIRPersonLink $link): self
     {
@@ -773,6 +801,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * specific health-related context.
      *
      * Link to a resource that concerns the same actual person.
+     *
+     * @return static
      */
     public function setLink(FHIRPersonLink ...$link): self
     {

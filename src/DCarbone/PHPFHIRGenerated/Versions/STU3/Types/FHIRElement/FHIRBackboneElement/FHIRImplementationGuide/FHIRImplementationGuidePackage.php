@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -203,6 +203,8 @@ class FHIRImplementationGuidePackage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name for the group, as used in page.package.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -235,6 +237,8 @@ class FHIRImplementationGuidePackage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human readable text describing the package.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -286,6 +290,8 @@ class FHIRImplementationGuidePackage extends FHIRBackboneElement
      * (value set, structure definition, capability statements etc.) are obvious
      * candidates for inclusion, but any kind of resource can be included as an example
      * resource.
+     *
+     * @return static
      */
     public function addResource(FHIRImplementationGuideResource $resource): self
     {
@@ -305,6 +311,8 @@ class FHIRImplementationGuidePackage extends FHIRBackboneElement
      * (value set, structure definition, capability statements etc.) are obvious
      * candidates for inclusion, but any kind of resource can be included as an example
      * resource.
+     *
+     * @return static
      */
     public function setResource(FHIRImplementationGuideResource ...$resource): self
     {

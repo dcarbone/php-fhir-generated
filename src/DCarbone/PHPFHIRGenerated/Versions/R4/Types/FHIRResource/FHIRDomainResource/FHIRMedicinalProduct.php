@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -537,6 +537,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for this product. Could be an MPID.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -554,6 +556,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for this product. Could be an MPID.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -585,6 +589,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Regulatory type, e.g. Investigational or Authorized.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -614,6 +620,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If this medicine applies to human or veterinary uses.
+     *
+     * @return static
      */
     public function setDomain(null|FHIRCoding $domain): self
     {
@@ -647,6 +655,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      *
      * The dose form for a single part product, or combined form of a multiple part
      * product.
+     *
+     * @return static
      */
     public function setCombinedPharmaceuticalDoseForm(null|FHIRCodeableConcept $combinedPharmaceuticalDoseForm): self
     {
@@ -680,6 +690,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      *
      * The legal status of supply of the medicinal product as classified by the
      * regulator.
+     *
+     * @return static
      */
     public function setLegalStatusOfSupply(null|FHIRCodeableConcept $legalStatusOfSupply): self
     {
@@ -713,6 +725,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      *
      * Whether the Medicinal Product is subject to additional monitoring for regulatory
      * reasons.
+     *
+     * @return static
      */
     public function setAdditionalMonitoringIndicator(null|FHIRCodeableConcept $additionalMonitoringIndicator): self
     {
@@ -757,6 +771,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      *
      * Whether the Medicinal Product is subject to special measures for regulatory
      * reasons.
+     *
+     * @return static
      */
     public function addSpecialMeasures(string|FHIRStringPrimitive|FHIRString $specialMeasures): self
     {
@@ -777,6 +793,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      *
      * Whether the Medicinal Product is subject to special measures for regulatory
      * reasons.
+     *
+     * @return static
      */
     public function setSpecialMeasures(string|FHIRStringPrimitive|FHIRString ...$specialMeasures): self
     {
@@ -815,6 +833,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If authorised for use in children.
+     *
+     * @return static
      */
     public function setPaediatricUseIndicator(null|FHIRCodeableConcept $paediatricUseIndicator): self
     {
@@ -859,6 +879,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows the product to be classified by various systems.
+     *
+     * @return static
      */
     public function addProductClassification(FHIRCodeableConcept $productClassification): self
     {
@@ -876,6 +898,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows the product to be classified by various systems.
+     *
+     * @return static
      */
     public function setProductClassification(FHIRCodeableConcept ...$productClassification): self
     {
@@ -922,6 +946,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      *
      * Marketing status of the medicinal product, in contrast to marketing
      * authorizaton.
+     *
+     * @return static
      */
     public function addMarketingStatus(FHIRMarketingStatus $marketingStatus): self
     {
@@ -940,6 +966,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      *
      * Marketing status of the medicinal product, in contrast to marketing
      * authorizaton.
+     *
+     * @return static
      */
     public function setMarketingStatus(FHIRMarketingStatus ...$marketingStatus): self
     {
@@ -982,6 +1010,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Pharmaceutical aspects of product.
+     *
+     * @return static
      */
     public function addPharmaceuticalProduct(FHIRReference $pharmaceuticalProduct): self
     {
@@ -998,6 +1028,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Pharmaceutical aspects of product.
+     *
+     * @return static
      */
     public function setPharmaceuticalProduct(FHIRReference ...$pharmaceuticalProduct): self
     {
@@ -1040,6 +1072,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Package representation for the product.
+     *
+     * @return static
      */
     public function addPackagedMedicinalProduct(FHIRReference $packagedMedicinalProduct): self
     {
@@ -1056,6 +1090,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Package representation for the product.
+     *
+     * @return static
      */
     public function setPackagedMedicinalProduct(FHIRReference ...$packagedMedicinalProduct): self
     {
@@ -1098,6 +1134,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting documentation, typically for regulatory submission.
+     *
+     * @return static
      */
     public function addAttachedDocument(FHIRReference $attachedDocument): self
     {
@@ -1114,6 +1152,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting documentation, typically for regulatory submission.
+     *
+     * @return static
      */
     public function setAttachedDocument(FHIRReference ...$attachedDocument): self
     {
@@ -1158,6 +1198,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      *
      * A master file for to the medicinal product (e.g. Pharmacovigilance System Master
      * File).
+     *
+     * @return static
      */
     public function addMasterFile(FHIRReference $masterFile): self
     {
@@ -1175,6 +1217,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      *
      * A master file for to the medicinal product (e.g. Pharmacovigilance System Master
      * File).
+     *
+     * @return static
      */
     public function setMasterFile(FHIRReference ...$masterFile): self
     {
@@ -1217,6 +1261,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A product specific contact, person (in a role), or an organization.
+     *
+     * @return static
      */
     public function addContact(FHIRReference $contact): self
     {
@@ -1233,6 +1279,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A product specific contact, person (in a role), or an organization.
+     *
+     * @return static
      */
     public function setContact(FHIRReference ...$contact): self
     {
@@ -1275,6 +1323,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Clinical trials or studies that this product is involved in.
+     *
+     * @return static
      */
     public function addClinicalTrial(FHIRReference $clinicalTrial): self
     {
@@ -1291,6 +1341,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Clinical trials or studies that this product is involved in.
+     *
+     * @return static
      */
     public function setClinicalTrial(FHIRReference ...$clinicalTrial): self
     {
@@ -1331,6 +1383,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      * patient care (e.g. regulatory use).
      *
      * The product's name, including full name and possibly coded parts.
+     *
+     * @return static
      */
     public function addName(FHIRMedicinalProductName $name): self
     {
@@ -1346,6 +1400,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      * patient care (e.g. regulatory use).
      *
      * The product's name, including full name and possibly coded parts.
+     *
+     * @return static
      */
     public function setName(FHIRMedicinalProductName ...$name): self
     {
@@ -1392,6 +1448,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      *
      * Reference to another product, e.g. for linking authorised to investigational
      * product.
+     *
+     * @return static
      */
     public function addCrossReference(FHIRIdentifier $crossReference): self
     {
@@ -1410,6 +1468,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      *
      * Reference to another product, e.g. for linking authorised to investigational
      * product.
+     *
+     * @return static
      */
     public function setCrossReference(FHIRIdentifier ...$crossReference): self
     {
@@ -1452,6 +1512,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      *
      * An operation applied to the product, for manufacturing or adminsitrative
      * purpose.
+     *
+     * @return static
      */
     public function addManufacturingBusinessOperation(FHIRMedicinalProductManufacturingBusinessOperation $manufacturingBusinessOperation): self
     {
@@ -1468,6 +1530,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      *
      * An operation applied to the product, for manufacturing or adminsitrative
      * purpose.
+     *
+     * @return static
      */
     public function setManufacturingBusinessOperation(FHIRMedicinalProductManufacturingBusinessOperation ...$manufacturingBusinessOperation): self
     {
@@ -1510,6 +1574,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      *
      * Indicates if the medicinal product has an orphan designation for the treatment
      * of a rare disease.
+     *
+     * @return static
      */
     public function addSpecialDesignation(FHIRMedicinalProductSpecialDesignation $specialDesignation): self
     {
@@ -1526,6 +1592,8 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements VersionContaine
      *
      * Indicates if the medicinal product has an orphan designation for the treatment
      * of a rare disease.
+     *
+     * @return static
      */
     public function setSpecialDesignation(FHIRMedicinalProductSpecialDesignation ...$specialDesignation): self
     {

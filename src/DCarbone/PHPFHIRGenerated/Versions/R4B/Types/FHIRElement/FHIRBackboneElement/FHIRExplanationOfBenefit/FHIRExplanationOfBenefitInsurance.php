@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -226,6 +226,8 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
      *
      * A flag to indicate that this Coverage is to be used for adjudication of this
      * claim when set to true.
+     *
+     * @return static
      */
     public function setFocal(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $focal): self
     {
@@ -262,6 +264,8 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
      * Reference to the insurance card level information contained in the Coverage
      * resource. The coverage issuing insurer will use these details to locate the
      * patient's actual coverage within the insurer's information system.
+     *
+     * @return static
      */
     public function setCoverage(null|FHIRReference $coverage): self
     {
@@ -308,6 +312,8 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
      * Reference numbers previously provided by the insurer to the provider to be
      * quoted on subsequent claims containing services or products related to the prior
      * authorization.
+     *
+     * @return static
      */
     public function addPreAuthRef(string|FHIRStringPrimitive|FHIRString $preAuthRef): self
     {
@@ -329,6 +335,8 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
      * Reference numbers previously provided by the insurer to the provider to be
      * quoted on subsequent claims containing services or products related to the prior
      * authorization.
+     *
+     * @return static
      */
     public function setPreAuthRef(string|FHIRStringPrimitive|FHIRString ...$preAuthRef): self
     {

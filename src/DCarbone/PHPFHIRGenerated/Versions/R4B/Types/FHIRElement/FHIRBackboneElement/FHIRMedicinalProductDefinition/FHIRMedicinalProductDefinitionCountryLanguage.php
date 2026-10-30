@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -222,6 +222,8 @@ class FHIRMedicinalProductDefinitionCountryLanguage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Country code for where this name applies.
+     *
+     * @return static
      */
     public function setCountry(null|FHIRCodeableConcept $country): self
     {
@@ -255,6 +257,8 @@ class FHIRMedicinalProductDefinitionCountryLanguage extends FHIRBackboneElement
      *
      * Jurisdiction code for where this name applies. A jurisdiction may be a sub- or
      * supra-national entity (e.g. a state or a geographic region).
+     *
+     * @return static
      */
     public function setJurisdiction(null|FHIRCodeableConcept $jurisdiction): self
     {
@@ -286,6 +290,8 @@ class FHIRMedicinalProductDefinitionCountryLanguage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Language code for this name.
+     *
+     * @return static
      */
     public function setLanguage(null|FHIRCodeableConcept $language): self
     {

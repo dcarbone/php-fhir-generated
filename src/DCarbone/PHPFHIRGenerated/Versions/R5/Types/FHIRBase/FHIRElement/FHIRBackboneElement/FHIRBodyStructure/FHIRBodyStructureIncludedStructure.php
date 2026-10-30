@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -252,6 +252,8 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code that represents the included structure.
+     *
+     * @return static
      */
     public function setStructure(null|FHIRCodeableConcept $structure): self
     {
@@ -283,6 +285,8 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code that represents the included structure laterality.
+     *
+     * @return static
      */
     public function setLaterality(null|FHIRCodeableConcept $laterality): self
     {
@@ -325,6 +329,8 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
      *
      * Body locations in relation to a specific body landmark (tatoo, scar, other body
      * structure).
+     *
+     * @return static
      */
     public function addBodyLandmarkOrientation(FHIRBodyStructureBodyLandmarkOrientation $bodyLandmarkOrientation): self
     {
@@ -341,6 +347,8 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
      *
      * Body locations in relation to a specific body landmark (tatoo, scar, other body
      * structure).
+     *
+     * @return static
      */
     public function setBodyLandmarkOrientation(FHIRBodyStructureBodyLandmarkOrientation ...$bodyLandmarkOrientation): self
     {
@@ -383,6 +391,8 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * XY or XYZ-coordinate orientation for structure.
+     *
+     * @return static
      */
     public function addSpatialReference(FHIRReference $spatialReference): self
     {
@@ -399,6 +409,8 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * XY or XYZ-coordinate orientation for structure.
+     *
+     * @return static
      */
     public function setSpatialReference(FHIRReference ...$spatialReference): self
     {
@@ -443,6 +455,8 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code that represents the included structure qualifier.
+     *
+     * @return static
      */
     public function addQualifier(FHIRCodeableConcept $qualifier): self
     {
@@ -460,6 +474,8 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code that represents the included structure qualifier.
+     *
+     * @return static
      */
     public function setQualifier(FHIRCodeableConcept ...$qualifier): self
     {

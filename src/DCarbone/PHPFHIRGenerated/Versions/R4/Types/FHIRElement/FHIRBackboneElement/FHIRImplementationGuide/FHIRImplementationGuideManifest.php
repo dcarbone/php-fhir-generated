@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -247,6 +247,8 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
      *
      * A pointer to official web page, PDF or other rendering of the implementation
      * guide.
+     *
+     * @return static
      */
     public function setRendering(null|string|FHIRUrlPrimitive|FHIRUrl $rendering): self
     {
@@ -300,6 +302,8 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
      * (value set, structure definition, capability statements etc.) are obvious
      * candidates for inclusion, but any kind of resource can be included as an example
      * resource.
+     *
+     * @return static
      */
     public function addResource(FHIRImplementationGuideResource1 $resource): self
     {
@@ -320,6 +324,8 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
      * (value set, structure definition, capability statements etc.) are obvious
      * candidates for inclusion, but any kind of resource can be included as an example
      * resource.
+     *
+     * @return static
      */
     public function setResource(FHIRImplementationGuideResource1 ...$resource): self
     {
@@ -364,6 +370,8 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * Information about a page within the IG.
+     *
+     * @return static
      */
     public function addPage(FHIRImplementationGuidePage1 $page): self
     {
@@ -381,6 +389,8 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * Information about a page within the IG.
+     *
+     * @return static
      */
     public function setPage(FHIRImplementationGuidePage1 ...$page): self
     {
@@ -423,6 +433,8 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates a relative path to an image that exists within the IG.
+     *
+     * @return static
      */
     public function addImage(string|FHIRStringPrimitive|FHIRString $image): self
     {
@@ -442,6 +454,8 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates a relative path to an image that exists within the IG.
+     *
+     * @return static
      */
     public function setImage(string|FHIRStringPrimitive|FHIRString ...$image): self
     {
@@ -495,6 +509,8 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
      * Indicates the relative path of an additional non-page, non-image file that is
      * part of the IG - e.g. zip, jar and similar files that could be the target of a
      * hyperlink in a derived IG.
+     *
+     * @return static
      */
     public function addOther(string|FHIRStringPrimitive|FHIRString $other): self
     {
@@ -516,6 +532,8 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
      * Indicates the relative path of an additional non-page, non-image file that is
      * part of the IG - e.g. zip, jar and similar files that could be the target of a
      * hyperlink in a derived IG.
+     *
+     * @return static
      */
     public function setOther(string|FHIRStringPrimitive|FHIRString ...$other): self
     {

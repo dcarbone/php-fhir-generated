@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -286,6 +286,8 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * reference range endpoint is inclusive of the value (e.g. reference range is >=5
      * - <=9). If the low bound is omitted, it is assumed to be meaningless (e.g.
      * reference range is <=2.3).
+     *
+     * @return static
      */
     public function setLow(null|FHIRQuantity $low): self
     {
@@ -325,6 +327,8 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * reference range endpoint is inclusive of the value (e.g. reference range is >=5
      * - <=9). If the high bound is omitted, it is assumed to be meaningless (e.g.
      * reference range is >= 2.3).
+     *
+     * @return static
      */
     public function setHigh(null|FHIRQuantity $high): self
     {
@@ -358,6 +362,8 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      *
      * Codes to indicate the what part of the targeted reference population it applies
      * to. For example, the normal or therapeutic range.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -410,6 +416,8 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * sex or race. Multiple `appliesTo` are interpreted as an "AND" of the target
      * populations. For example, to represent a target population of African American
      * females, both a code of female and a code for African American would be used.
+     *
+     * @return static
      */
     public function addAppliesTo(FHIRCodeableConcept $appliesTo): self
     {
@@ -431,6 +439,8 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * sex or race. Multiple `appliesTo` are interpreted as an "AND" of the target
      * populations. For example, to represent a target population of African American
      * females, both a code of female and a code for African American would be used.
+     *
+     * @return static
      */
     public function setAppliesTo(FHIRCodeableConcept ...$appliesTo): self
     {
@@ -462,6 +472,8 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      *
      * The age at which this reference range is applicable. This is a neonatal age
      * (e.g. number of weeks at term) if the meaning says so.
+     *
+     * @return static
      */
     public function setAge(null|FHIRRange $age): self
     {
@@ -495,6 +507,8 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * Text based reference range in an observation which may be used when a
      * quantitative range is not appropriate for an observation. An example would be a
      * reference value of "Negative" or a list or table of "normals".
+     *
+     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {

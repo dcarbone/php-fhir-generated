@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -347,6 +347,8 @@ class FHIRBodyStructure extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for this instance of the anatomical structure.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -364,6 +366,8 @@ class FHIRBodyStructure extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for this instance of the anatomical structure.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -391,6 +395,8 @@ class FHIRBodyStructure extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this body site is in active use.
+     *
+     * @return static
      */
     public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active): self
     {
@@ -427,6 +433,8 @@ class FHIRBodyStructure extends FHIRDomainResource implements VersionContainedTy
      *
      * The kind of structure being represented by the body structure at
      * `BodyStructure.location`. This can define both normal and abnormal morphologies.
+     *
+     * @return static
      */
     public function setMorphology(null|FHIRCodeableConcept $morphology): self
     {
@@ -458,6 +466,8 @@ class FHIRBodyStructure extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The anatomical location or region of the specimen, lesion, or body structure.
+     *
+     * @return static
      */
     public function setLocation(null|FHIRCodeableConcept $location): self
     {
@@ -504,6 +514,8 @@ class FHIRBodyStructure extends FHIRDomainResource implements VersionContainedTy
      *
      * Qualifier to refine the anatomical location. These include qualifiers for
      * laterality, relative location, directionality, number, and plane.
+     *
+     * @return static
      */
     public function addLocationQualifier(FHIRCodeableConcept $locationQualifier): self
     {
@@ -522,6 +534,8 @@ class FHIRBodyStructure extends FHIRDomainResource implements VersionContainedTy
      *
      * Qualifier to refine the anatomical location. These include qualifiers for
      * laterality, relative location, directionality, number, and plane.
+     *
+     * @return static
      */
     public function setLocationQualifier(FHIRCodeableConcept ...$locationQualifier): self
     {
@@ -551,6 +565,8 @@ class FHIRBodyStructure extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A summary, characterization or explanation of the body structure.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -596,6 +612,8 @@ class FHIRBodyStructure extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Image or images used to identify a location.
+     *
+     * @return static
      */
     public function addImage(FHIRAttachment $image): self
     {
@@ -612,6 +630,8 @@ class FHIRBodyStructure extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Image or images used to identify a location.
+     *
+     * @return static
      */
     public function setImage(FHIRAttachment ...$image): self
     {
@@ -641,6 +661,8 @@ class FHIRBodyStructure extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person to which the body site belongs.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {

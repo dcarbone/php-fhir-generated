@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -247,6 +247,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * usage.
      *
      * Identifies the name, action type, time, and disposition of the audited event.
+     *
+     * @return static
      */
     public function setEvent(null|FHIRAuditEventEvent $event): self
     {
@@ -289,6 +291,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * usage.
      *
      * A person, a hardware device or software process.
+     *
+     * @return static
      */
     public function addParticipant(FHIRAuditEventParticipant $participant): self
     {
@@ -305,6 +309,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * usage.
      *
      * A person, a hardware device or software process.
+     *
+     * @return static
      */
     public function setParticipant(FHIRAuditEventParticipant ...$participant): self
     {
@@ -334,6 +340,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * usage.
      *
      * Application systems and processes.
+     *
+     * @return static
      */
     public function setSource(null|FHIRAuditEventSource $source): self
     {
@@ -376,6 +384,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * usage.
      *
      * Specific instances of data or objects that have been accessed.
+     *
+     * @return static
      */
     public function addObject(FHIRAuditEventObject $object): self
     {
@@ -392,6 +402,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * usage.
      *
      * Specific instances of data or objects that have been accessed.
+     *
+     * @return static
      */
     public function setObject(FHIRAuditEventObject ...$object): self
     {

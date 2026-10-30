@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -282,6 +282,8 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      *
      * A code - a text symbol - that uniquely identifies the concept within the code
      * system.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -316,6 +318,8 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      *
      * A human readable string that is the recommended default way to present this
      * concept to a user.
+     *
+     * @return static
      */
     public function setDisplay(null|string|FHIRStringPrimitive|FHIRString $display): self
     {
@@ -354,6 +358,8 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * formal definitions required, because of the prevalence of legacy systems.
      * However, they are highly recommended, as without them there is no formal meaning
      * associated with the concept.
+     *
+     * @return static
      */
     public function setDefinition(null|string|FHIRStringPrimitive|FHIRString $definition): self
     {
@@ -401,6 +407,8 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      *
      * Additional representations for the concept - other languages, aliases,
      * specialized purposes, used for particular purposes, etc.
+     *
+     * @return static
      */
     public function addDesignation(FHIRCodeSystemDesignation $designation): self
     {
@@ -418,6 +426,8 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      *
      * Additional representations for the concept - other languages, aliases,
      * specialized purposes, used for particular purposes, etc.
+     *
+     * @return static
      */
     public function setDesignation(FHIRCodeSystemDesignation ...$designation): self
     {
@@ -460,6 +470,8 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * part or all of its content.
      *
      * A property value for this concept.
+     *
+     * @return static
      */
     public function addProperty(FHIRCodeSystemProperty1 $property): self
     {
@@ -476,6 +488,8 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * part or all of its content.
      *
      * A property value for this concept.
+     *
+     * @return static
      */
     public function setProperty(FHIRCodeSystemProperty1 ...$property): self
     {
@@ -522,6 +536,8 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * Defines children of a concept to produce a hierarchy of concepts. The nature of
      * the relationships is variable (is-a/contains/categorizes) - see
      * hierarchyMeaning.
+     *
+     * @return static
      */
     public function addConcept(FHIRCodeSystemConcept $concept): self
     {
@@ -540,6 +556,8 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * Defines children of a concept to produce a hierarchy of concepts. The nature of
      * the relationships is variable (is-a/contains/categorizes) - see
      * hierarchyMeaning.
+     *
+     * @return static
      */
     public function setConcept(FHIRCodeSystemConcept ...$concept): self
     {

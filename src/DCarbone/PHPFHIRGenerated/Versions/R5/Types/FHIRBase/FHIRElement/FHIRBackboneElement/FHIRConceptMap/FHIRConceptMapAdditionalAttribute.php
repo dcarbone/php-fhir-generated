@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -252,6 +252,8 @@ class FHIRConceptMapAdditionalAttribute extends FHIRBackboneElement
      * A code that is used to identify this additional data attribute. The code is used
      * internally in ConceptMap.group.element.target.dependsOn.attribute and
      * ConceptMap.group.element.target.product.attribute.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -288,6 +290,8 @@ class FHIRConceptMapAdditionalAttribute extends FHIRBackboneElement
      * Reference to the formal definition of the source/target data element. For
      * elements defined by the FHIR specification, or using a FHIR logical model, the
      * correct format is {canonical-url}#{element-id}.
+     *
+     * @return static
      */
     public function setUri(null|string|FHIRUriPrimitive|FHIRUri $uri): self
     {
@@ -324,6 +328,8 @@ class FHIRConceptMapAdditionalAttribute extends FHIRBackboneElement
      * A description of the additional attribute and/or the data element it refers to -
      * why it is defined, and how the value might be used in mappings, and a discussion
      * of issues associated with the use of the data element.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -352,6 +358,8 @@ class FHIRConceptMapAdditionalAttribute extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of the source data contained in this concept map for this data element.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRConceptMapAttributeTypeEnum|FHIRConceptMapAttributeType $type): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -805,6 +805,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured name for the question that identifies this question within the
      * Questionnaire or Group.
+     *
+     * @return static
      */
     public function setName(null|FHIRCodeableConcept $name): self
     {
@@ -832,6 +834,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Text of the question as it is shown to the user.
+     *
+     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -862,6 +866,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Single-valued answer to the question.
+     *
+     * @return static
      */
     public function setAnswerDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $answerDecimal): self
     {
@@ -892,6 +898,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Single-valued answer to the question.
+     *
+     * @return static
      */
     public function setAnswerInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $answerInteger): self
     {
@@ -922,6 +930,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Single-valued answer to the question.
+     *
+     * @return static
      */
     public function setAnswerBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $answerBoolean): self
     {
@@ -956,6 +966,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Single-valued answer to the question.
+     *
+     * @return static
      */
     public function setAnswerDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $answerDate): self
     {
@@ -986,6 +998,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Single-valued answer to the question.
+     *
+     * @return static
      */
     public function setAnswerString(null|string|FHIRStringPrimitive|FHIRString $answerString): self
     {
@@ -1022,6 +1036,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Single-valued answer to the question.
+     *
+     * @return static
      */
     public function setAnswerDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $answerDateTime): self
     {
@@ -1052,6 +1068,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Single-valued answer to the question.
+     *
+     * @return static
      */
     public function setAnswerInstant(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $answerInstant): self
     {
@@ -1097,6 +1115,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Selections made by the user from the list of options.
+     *
+     * @return static
      */
     public function addChoice(FHIRCoding $choice): self
     {
@@ -1113,6 +1133,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Selections made by the user from the list of options.
+     *
+     * @return static
      */
     public function setChoice(FHIRCoding ...$choice): self
     {
@@ -1142,6 +1164,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to a valueset containing the possible options.
+     *
+     * @return static
      */
     public function setOptions(null|FHIRResourceReference $options): self
     {
@@ -1169,6 +1193,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $dataBoolean): self
     {
@@ -1199,6 +1225,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $dataInteger): self
     {
@@ -1229,6 +1257,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $dataDecimal): self
     {
@@ -1259,6 +1289,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataBase64Binary(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $dataBase64Binary): self
     {
@@ -1289,6 +1321,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataInstant(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $dataInstant): self
     {
@@ -1319,6 +1353,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataString(null|string|FHIRStringPrimitive|FHIRString $dataString): self
     {
@@ -1349,6 +1385,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataUri(null|string|FHIRUriPrimitive|FHIRUri $dataUri): self
     {
@@ -1383,6 +1421,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $dataDate): self
     {
@@ -1419,6 +1459,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dataDateTime): self
     {
@@ -1453,6 +1495,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataCode(null|string|FHIRCodePrimitive|FHIRCode $dataCode): self
     {
@@ -1485,6 +1529,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataOid(null|string|FHIROidPrimitive|FHIROid $dataOid): self
     {
@@ -1517,6 +1563,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataUuid(null|string|FHIRUuidPrimitive|FHIRUuid $dataUuid): self
     {
@@ -1553,6 +1601,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataId(null|string|FHIRIdPrimitive|FHIRId $dataId): self
     {
@@ -1585,6 +1635,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataAttachment(null|FHIRAttachment $dataAttachment): self
     {
@@ -1614,6 +1666,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataIdentifier(null|FHIRIdentifier $dataIdentifier): self
     {
@@ -1645,6 +1699,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataCodeableConcept(null|FHIRCodeableConcept $dataCodeableConcept): self
     {
@@ -1674,6 +1730,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataCoding(null|FHIRCoding $dataCoding): self
     {
@@ -1707,6 +1765,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataQuantity(null|FHIRQuantity $dataQuantity): self
     {
@@ -1736,6 +1796,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataRange(null|FHIRRange $dataRange): self
     {
@@ -1765,6 +1827,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataPeriod(null|FHIRPeriod $dataPeriod): self
     {
@@ -1796,6 +1860,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataRatio(null|FHIRRatio $dataRatio): self
     {
@@ -1825,6 +1891,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataResource(null|FHIRResourceReference $dataResource): self
     {
@@ -1856,6 +1924,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataSampledData(null|FHIRSampledData $dataSampledData): self
     {
@@ -1885,6 +1955,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataHumanName(null|FHIRHumanName $dataHumanName): self
     {
@@ -1916,6 +1988,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataAddress(null|FHIRAddress $dataAddress): self
     {
@@ -1947,6 +2021,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataContact(null|FHIRContact $dataContact): self
     {
@@ -1978,6 +2054,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Structured answer in the form of a FHIR Resource or datatype.
+     *
+     * @return static
      */
     public function setDataSchedule(null|FHIRSchedule $dataSchedule): self
     {
@@ -2009,6 +2087,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * The remark contains information about the answer given. This is additional
      * information about the answer the author wishes to convey, but should not be used
      * to contain information that is part of the answer itself.
+     *
+     * @return static
      */
     public function setRemarks(null|string|FHIRStringPrimitive|FHIRString $remarks): self
     {
@@ -2058,6 +2138,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Nested group, containing nested question for this question. The order of groups
      * within the question is relevant.
+     *
+     * @return static
      */
     public function addGroup(FHIRQuestionnaireGroup $group): self
     {
@@ -2076,6 +2158,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Nested group, containing nested question for this question. The order of groups
      * within the question is relevant.
+     *
+     * @return static
      */
     public function setGroup(FHIRQuestionnaireGroup ...$group): self
     {

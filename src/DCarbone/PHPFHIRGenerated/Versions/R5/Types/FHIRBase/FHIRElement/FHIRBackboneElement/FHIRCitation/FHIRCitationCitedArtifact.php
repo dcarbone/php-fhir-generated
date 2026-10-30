@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -459,6 +459,8 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * A formal identifier that is used to identify the cited artifact when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -478,6 +480,8 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * A formal identifier that is used to identify the cited artifact when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -524,6 +528,8 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      *
      * A formal identifier that is used to identify things closely related to the cited
      * artifact.
+     *
+     * @return static
      */
     public function addRelatedIdentifier(FHIRIdentifier $relatedIdentifier): self
     {
@@ -542,6 +548,8 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      *
      * A formal identifier that is used to identify things closely related to the cited
      * artifact.
+     *
+     * @return static
      */
     public function setRelatedIdentifier(FHIRIdentifier ...$relatedIdentifier): self
     {
@@ -579,6 +587,8 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the cited artifact was accessed.
+     *
+     * @return static
      */
     public function setDateAccessed(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateAccessed): self
     {
@@ -613,6 +623,8 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * The defined version of the cited artifact.
+     *
+     * @return static
      */
     public function setVersion(null|FHIRCitationVersion $version): self
     {
@@ -657,6 +669,8 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the cited artifact.
+     *
+     * @return static
      */
     public function addCurrentState(FHIRCodeableConcept $currentState): self
     {
@@ -674,6 +688,8 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the cited artifact.
+     *
+     * @return static
      */
     public function setCurrentState(FHIRCodeableConcept ...$currentState): self
     {
@@ -720,6 +736,8 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      *
      * An effective date or period, historical or future, actual or expected, for a
      * status of the cited artifact.
+     *
+     * @return static
      */
     public function addStatusDate(FHIRCitationStatusDate1 $statusDate): self
     {
@@ -738,6 +756,8 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      *
      * An effective date or period, historical or future, actual or expected, for a
      * status of the cited artifact.
+     *
+     * @return static
      */
     public function setStatusDate(FHIRCitationStatusDate1 ...$statusDate): self
     {
@@ -782,6 +802,8 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * The title details of the article or artifact.
+     *
+     * @return static
      */
     public function addTitle(FHIRCitationTitle $title): self
     {
@@ -799,6 +821,8 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * The title details of the article or artifact.
+     *
+     * @return static
      */
     public function setTitle(FHIRCitationTitle ...$title): self
     {
@@ -845,6 +869,8 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      *
      * The abstract may be used to convey article-contained abstracts,
      * externally-created abstracts, or other descriptive summaries.
+     *
+     * @return static
      */
     public function addAbstract(FHIRCitationAbstract $abstract): self
     {
@@ -863,6 +889,8 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      *
      * The abstract may be used to convey article-contained abstracts,
      * externally-created abstracts, or other descriptive summaries.
+     *
+     * @return static
      */
     public function setAbstract(FHIRCitationAbstract ...$abstract): self
     {
@@ -894,6 +922,8 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * The component of the article or artifact.
+     *
+     * @return static
      */
     public function setPart(null|FHIRCitationPart $part): self
     {
@@ -938,6 +968,8 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * The artifact related to the cited artifact.
+     *
+     * @return static
      */
     public function addRelatesTo(FHIRCitationRelatesTo $relatesTo): self
     {
@@ -955,6 +987,8 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * The artifact related to the cited artifact.
+     *
+     * @return static
      */
     public function setRelatesTo(FHIRCitationRelatesTo ...$relatesTo): self
     {
@@ -1001,6 +1035,8 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      *
      * If multiple, used to represent alternative forms of the article that are not
      * separate citations.
+     *
+     * @return static
      */
     public function addPublicationForm(FHIRCitationPublicationForm $publicationForm): self
     {
@@ -1019,6 +1055,8 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      *
      * If multiple, used to represent alternative forms of the article that are not
      * separate citations.
+     *
+     * @return static
      */
     public function setPublicationForm(FHIRCitationPublicationForm ...$publicationForm): self
     {
@@ -1063,6 +1101,8 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * Used for any URL for the article or artifact cited.
+     *
+     * @return static
      */
     public function addWebLocation(FHIRCitationWebLocation $webLocation): self
     {
@@ -1080,6 +1120,8 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * Used for any URL for the article or artifact cited.
+     *
+     * @return static
      */
     public function setWebLocation(FHIRCitationWebLocation ...$webLocation): self
     {
@@ -1124,6 +1166,8 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * The assignment to an organizing scheme.
+     *
+     * @return static
      */
     public function addClassification(FHIRCitationClassification1 $classification): self
     {
@@ -1141,6 +1185,8 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * The assignment to an organizing scheme.
+     *
+     * @return static
      */
     public function setClassification(FHIRCitationClassification1 ...$classification): self
     {
@@ -1174,6 +1220,8 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      *
      * This element is used to list authors and other contributors, their contact
      * information, specific contributions, and summary statements.
+     *
+     * @return static
      */
     public function setContributorship(null|FHIRCitationContributorship $contributorship): self
     {
@@ -1218,6 +1266,8 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any additional information or content for the article or artifact.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1235,6 +1285,8 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any additional information or content for the article or artifact.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {

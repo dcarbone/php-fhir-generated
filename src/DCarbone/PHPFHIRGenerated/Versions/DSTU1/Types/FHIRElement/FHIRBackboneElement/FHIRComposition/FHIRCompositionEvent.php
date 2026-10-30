@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -221,6 +221,8 @@ class FHIRCompositionEvent extends FHIRBackboneElement
      * an appendectomy, being documented. In some cases, the event is inherent in the
      * typeCode, such as a "History and Physical Report" in which the procedure being
      * documented is necessarily a "History and Physical" act.
+     *
+     * @return static
      */
     public function addCode(FHIRCodeableConcept $code): self
     {
@@ -241,6 +243,8 @@ class FHIRCompositionEvent extends FHIRBackboneElement
      * an appendectomy, being documented. In some cases, the event is inherent in the
      * typeCode, such as a "History and Physical Report" in which the procedure being
      * documented is necessarily a "History and Physical" act.
+     *
+     * @return static
      */
     public function setCode(FHIRCodeableConcept ...$code): self
     {
@@ -274,6 +278,8 @@ class FHIRCompositionEvent extends FHIRBackboneElement
      * The period of time covered by the documentation. There is no assertion that the
      * documentation is a complete representation for this period, only that it
      * documents events during this time.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -316,6 +322,8 @@ class FHIRCompositionEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Full details for the event(s) the composition/documentation consents.
+     *
+     * @return static
      */
     public function addDetail(FHIRResourceReference $detail): self
     {
@@ -332,6 +340,8 @@ class FHIRCompositionEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Full details for the event(s) the composition/documentation consents.
+     *
+     * @return static
      */
     public function setDetail(FHIRResourceReference ...$detail): self
     {

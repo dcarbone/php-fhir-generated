@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -280,6 +280,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Classification of benefit being provided.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -309,6 +311,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The quantity of the benefit which is permitted under the coverage.
+     *
+     * @return static
      */
     public function setAllowedUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $allowedUnsignedInt): self
     {
@@ -341,6 +345,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The quantity of the benefit which is permitted under the coverage.
+     *
+     * @return static
      */
     public function setAllowedString(null|string|FHIRStringPrimitive|FHIRString $allowedString): self
     {
@@ -373,6 +379,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity of the benefit which is permitted under the coverage.
+     *
+     * @return static
      */
     public function setAllowedMoney(null|FHIRMoney $allowedMoney): self
     {
@@ -402,6 +410,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The quantity of the benefit which have been consumed to date.
+     *
+     * @return static
      */
     public function setUsedUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $usedUnsignedInt): self
     {
@@ -434,6 +444,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The quantity of the benefit which have been consumed to date.
+     *
+     * @return static
      */
     public function setUsedString(null|string|FHIRStringPrimitive|FHIRString $usedString): self
     {
@@ -466,6 +478,8 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity of the benefit which have been consumed to date.
+     *
+     * @return static
      */
     public function setUsedMoney(null|FHIRMoney $usedMoney): self
     {

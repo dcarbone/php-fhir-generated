@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -240,6 +240,8 @@ class FHIRPopulation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The age of the specific population.
+     *
+     * @return static
      */
     public function setAgeRange(null|FHIRRange $ageRange): self
     {
@@ -271,6 +273,8 @@ class FHIRPopulation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The age of the specific population.
+     *
+     * @return static
      */
     public function setAgeCodeableConcept(null|FHIRCodeableConcept $ageCodeableConcept): self
     {
@@ -302,6 +306,8 @@ class FHIRPopulation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The gender of the specific population.
+     *
+     * @return static
      */
     public function setGender(null|FHIRCodeableConcept $gender): self
     {
@@ -333,6 +339,8 @@ class FHIRPopulation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Race of the specific population.
+     *
+     * @return static
      */
     public function setRace(null|FHIRCodeableConcept $race): self
     {
@@ -366,6 +374,8 @@ class FHIRPopulation extends FHIRBackboneElement
      *
      * The existing physiological conditions of the specific population to which this
      * applies.
+     *
+     * @return static
      */
     public function setPhysiologicalCondition(null|FHIRCodeableConcept $physiologicalCondition): self
     {

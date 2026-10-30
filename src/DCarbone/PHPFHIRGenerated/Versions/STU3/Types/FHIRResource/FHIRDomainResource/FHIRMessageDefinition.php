@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -633,6 +633,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * definition is (or will be) published. The URL SHOULD include the major version
      * of the message definition. For more information see [Technical and Business
      * Versions](resource.html#versions).
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -669,6 +671,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * A formal identifier that is used to identify this message definition when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -708,6 +712,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -744,6 +750,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * A natural language name identifying the message definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -776,6 +784,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the message definition.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -806,6 +816,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * The status of this message definition. Enables tracking the life-cycle of the
      * content.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusList|FHIRPublicationStatus $status): self
     {
@@ -840,6 +852,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * A boolean value to indicate that this message definition is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
+     *
+     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -884,6 +898,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * date must change if and when the business version changes and it must change if
      * the status code changes. In addition, it should change when the substantive
      * content of the message definition changes.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -918,6 +934,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * The name of the individual or organization that published the message
      * definition.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -965,6 +983,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -982,6 +1002,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1025,6 +1047,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * A free text natural language description of the message definition from a
      * consumer's perspective.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1080,6 +1104,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate message definition instances.
+     *
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1101,6 +1127,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate message definition instances.
+     *
+     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1147,6 +1175,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * A legal or geographic region in which the message definition is intended to be
      * used.
+     *
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1165,6 +1195,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * A legal or geographic region in which the message definition is intended to be
      * used.
+     *
+     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1208,6 +1240,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * Explaination of why this message definition is needed and why it has been
      * designed as it has.
+     *
+     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1256,6 +1290,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * A copyright statement relating to the message definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the message definition.
+     *
+     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1288,6 +1324,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The MessageDefinition that is the basis for the contents of this resource.
+     *
+     * @return static
      */
     public function setBase(null|FHIRReference $base): self
     {
@@ -1332,6 +1370,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * Identifies a protocol or workflow that this MessageDefinition represents a step
      * in.
+     *
+     * @return static
      */
     public function addParent(FHIRReference $parent): self
     {
@@ -1349,6 +1389,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * Identifies a protocol or workflow that this MessageDefinition represents a step
      * in.
+     *
+     * @return static
      */
     public function setParent(FHIRReference ...$parent): self
     {
@@ -1391,6 +1433,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A MessageDefinition that is superseded by this definition.
+     *
+     * @return static
      */
     public function addReplaces(FHIRReference $replaces): self
     {
@@ -1407,6 +1451,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A MessageDefinition that is superseded by this definition.
+     *
+     * @return static
      */
     public function setReplaces(FHIRReference ...$replaces): self
     {
@@ -1436,6 +1482,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A coded identifier of a supported messaging event.
+     *
+     * @return static
      */
     public function setEvent(null|FHIRCoding $event): self
     {
@@ -1463,6 +1511,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The impact of the content of the message.
+     *
+     * @return static
      */
     public function setCategory(null|string|FHIRMessageSignificanceCategoryList|FHIRMessageSignificanceCategory $category): self
     {
@@ -1512,6 +1562,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * Identifies the resource (or resources) that are being addressed by the event.
      * For example, the Encounter for an admit message or two Account records for a
      * merge.
+     *
+     * @return static
      */
     public function addFocus(FHIRMessageDefinitionFocus $focus): self
     {
@@ -1530,6 +1582,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * Identifies the resource (or resources) that are being addressed by the event.
      * For example, the Encounter for an admit message or two Account records for a
      * merge.
+     *
+     * @return static
      */
     public function setFocus(FHIRMessageDefinitionFocus ...$focus): self
     {
@@ -1557,6 +1611,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether a response is required for this message.
+     *
+     * @return static
      */
     public function setResponseRequired(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $responseRequired): self
     {
@@ -1604,6 +1660,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * Indicates what types of messages may be sent as an application-level response to
      * this message.
+     *
+     * @return static
      */
     public function addAllowedResponse(FHIRMessageDefinitionAllowedResponse $allowedResponse): self
     {
@@ -1621,6 +1679,8 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * Indicates what types of messages may be sent as an application-level response to
      * this message.
+     *
+     * @return static
      */
     public function setAllowedResponse(FHIRMessageDefinitionAllowedResponse ...$allowedResponse): self
     {

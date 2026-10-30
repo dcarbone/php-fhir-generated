@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -319,6 +319,8 @@ class FHIRQuestionnaire extends FHIRResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The lifecycle status of the questionnaire as a whole.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRQuestionnaireStatusList|FHIRQuestionnaireStatus $status): self
     {
@@ -355,6 +357,8 @@ class FHIRQuestionnaire extends FHIRResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and/or time that this version of the questionnaire was authored.
+     *
+     * @return static
      */
     public function setAuthored(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $authored): self
     {
@@ -389,6 +393,8 @@ class FHIRQuestionnaire extends FHIRResource implements VersionContainedTypeInte
      *
      * The subject of the questionnaires: this is the patient that the answers apply
      * to, but this person is not necessarily the source of information.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRResourceReference $subject): self
     {
@@ -420,6 +426,8 @@ class FHIRQuestionnaire extends FHIRResource implements VersionContainedTypeInte
      *
      * Person who received the answers to the questions in the Questionnaire and
      * recorded them in the system.
+     *
+     * @return static
      */
     public function setAuthor(null|FHIRResourceReference $author): self
     {
@@ -451,6 +459,8 @@ class FHIRQuestionnaire extends FHIRResource implements VersionContainedTypeInte
      *
      * The person who answered the questions about the subject. Only used when this is
      * not the subject him/herself.
+     *
+     * @return static
      */
     public function setSource(null|FHIRResourceReference $source): self
     {
@@ -484,6 +494,8 @@ class FHIRQuestionnaire extends FHIRResource implements VersionContainedTypeInte
      *
      * Structured name for a predefined list of questions this questionnaire is
      * responding to.
+     *
+     * @return static
      */
     public function setName(null|FHIRCodeableConcept $name): self
     {
@@ -532,6 +544,8 @@ class FHIRQuestionnaire extends FHIRResource implements VersionContainedTypeInte
      * defined by business processed and/ or used to refer to it when a direct URL
      * reference to the resource itself is not appropriate (e.g. in CDA documents, or
      * in written / printed documentation).
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -551,6 +565,8 @@ class FHIRQuestionnaire extends FHIRResource implements VersionContainedTypeInte
      * defined by business processed and/ or used to refer to it when a direct URL
      * reference to the resource itself is not appropriate (e.g. in CDA documents, or
      * in written / printed documentation).
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -584,6 +600,8 @@ class FHIRQuestionnaire extends FHIRResource implements VersionContainedTypeInte
      * Encounter during which this questionnaire answers were collected. When there
      * were multiple encounters, this is the one considered most relevant to the
      * context of the answers.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRResourceReference $encounter): self
     {
@@ -617,6 +635,8 @@ class FHIRQuestionnaire extends FHIRResource implements VersionContainedTypeInte
      *
      * A group of questions to a possibly similarly grouped set of questions in the
      * questionnaire.
+     *
+     * @return static
      */
     public function setGroup(null|FHIRQuestionnaireGroup $group): self
     {

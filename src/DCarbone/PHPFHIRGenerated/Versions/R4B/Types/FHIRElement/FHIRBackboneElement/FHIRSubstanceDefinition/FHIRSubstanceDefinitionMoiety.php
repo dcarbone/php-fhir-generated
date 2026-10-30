@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -311,6 +311,8 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role that the moiety is playing.
+     *
+     * @return static
      */
     public function setRole(null|FHIRCodeableConcept $role): self
     {
@@ -342,6 +344,8 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier by which this moiety substance is known.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -371,6 +375,8 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual name for this moiety substance.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -405,6 +411,8 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Stereochemistry type.
+     *
+     * @return static
      */
     public function setStereochemistry(null|FHIRCodeableConcept $stereochemistry): self
     {
@@ -436,6 +444,8 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Optical activity type.
+     *
+     * @return static
      */
     public function setOpticalActivity(null|FHIRCodeableConcept $opticalActivity): self
     {
@@ -467,6 +477,8 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
      *
      * Molecular formula for this moiety of this substance, typically using the Hill
      * system.
+     *
+     * @return static
      */
     public function setMolecularFormula(null|string|FHIRStringPrimitive|FHIRString $molecularFormula): self
     {
@@ -503,6 +515,8 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Quantitative value for this moiety.
+     *
+     * @return static
      */
     public function setAmountQuantity(null|FHIRQuantity $amountQuantity): self
     {
@@ -532,6 +546,8 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Quantitative value for this moiety.
+     *
+     * @return static
      */
     public function setAmountString(null|string|FHIRStringPrimitive|FHIRString $amountString): self
     {
@@ -570,6 +586,8 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
      * The measurement type of the quantitative value. In capturing the actual relative
      * amounts of substances or molecular fragments it may be necessary to indicate
      * whether the amount refers to, for example, a mole ratio or weight ratio.
+     *
+     * @return static
      */
     public function setMeasurementType(null|FHIRCodeableConcept $measurementType): self
     {

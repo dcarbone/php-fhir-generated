@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -221,6 +221,8 @@ class FHIRContractContext extends FHIRBackboneElement
      * Asset context reference may include the creator, custodian, or owning Person or
      * Organization (e.g., bank, repository), location held, e.g., building,
      * jurisdiction.
+     *
+     * @return static
      */
     public function setReference(null|FHIRReference $reference): self
     {
@@ -267,6 +269,8 @@ class FHIRContractContext extends FHIRBackboneElement
      *
      * Coded representation of the context generally or of the Referenced entity, such
      * as the asset holder type or location.
+     *
+     * @return static
      */
     public function addCode(FHIRCodeableConcept $code): self
     {
@@ -285,6 +289,8 @@ class FHIRContractContext extends FHIRBackboneElement
      *
      * Coded representation of the context generally or of the Referenced entity, such
      * as the asset holder type or location.
+     *
+     * @return static
      */
     public function setCode(FHIRCodeableConcept ...$code): self
     {
@@ -314,6 +320,8 @@ class FHIRContractContext extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Context description.
+     *
+     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {

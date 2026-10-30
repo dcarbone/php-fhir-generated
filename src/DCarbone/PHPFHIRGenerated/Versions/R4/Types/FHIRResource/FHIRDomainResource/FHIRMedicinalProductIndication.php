@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -334,6 +334,8 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The medication for which this is an indication.
+     *
+     * @return static
      */
     public function addSubject(FHIRReference $subject): self
     {
@@ -350,6 +352,8 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The medication for which this is an indication.
+     *
+     * @return static
      */
     public function setSubject(FHIRReference ...$subject): self
     {
@@ -381,6 +385,8 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The disease, symptom or procedure that is the indication for treatment.
+     *
+     * @return static
      */
     public function setDiseaseSymptomProcedure(null|FHIRCodeableConcept $diseaseSymptomProcedure): self
     {
@@ -412,6 +418,8 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the disease or symptom for which the indication applies.
+     *
+     * @return static
      */
     public function setDiseaseStatus(null|FHIRCodeableConcept $diseaseStatus): self
     {
@@ -456,6 +464,8 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comorbidity (concurrent condition) or co-infection as part of the indication.
+     *
+     * @return static
      */
     public function addComorbidity(FHIRCodeableConcept $comorbidity): self
     {
@@ -473,6 +483,8 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comorbidity (concurrent condition) or co-infection as part of the indication.
+     *
+     * @return static
      */
     public function setComorbidity(FHIRCodeableConcept ...$comorbidity): self
     {
@@ -504,6 +516,8 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended effect, aim or strategy to be achieved by the indication.
+     *
+     * @return static
      */
     public function setIntendedEffect(null|FHIRCodeableConcept $intendedEffect): self
     {
@@ -537,6 +551,8 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Timing or duration information as part of the indication.
+     *
+     * @return static
      */
     public function setDuration(null|FHIRQuantity $duration): self
     {
@@ -577,6 +593,8 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements Versi
      *
      * Information about the use of the medicinal product in relation to other
      * therapies described as part of the indication.
+     *
+     * @return static
      */
     public function addOtherTherapy(FHIRMedicinalProductIndicationOtherTherapy $otherTherapy): self
     {
@@ -592,6 +610,8 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements Versi
      *
      * Information about the use of the medicinal product in relation to other
      * therapies described as part of the indication.
+     *
+     * @return static
      */
     public function setOtherTherapy(FHIRMedicinalProductIndicationOtherTherapy ...$otherTherapy): self
     {
@@ -634,6 +654,8 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describe the undesirable effects of the medicinal product.
+     *
+     * @return static
      */
     public function addUndesirableEffect(FHIRReference $undesirableEffect): self
     {
@@ -650,6 +672,8 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describe the undesirable effects of the medicinal product.
+     *
+     * @return static
      */
     public function setUndesirableEffect(FHIRReference ...$undesirableEffect): self
     {
@@ -692,6 +716,8 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The population group to which this applies.
+     *
+     * @return static
      */
     public function addPopulation(FHIRPopulation $population): self
     {
@@ -708,6 +734,8 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The population group to which this applies.
+     *
+     * @return static
      */
     public function setPopulation(FHIRPopulation ...$population): self
     {

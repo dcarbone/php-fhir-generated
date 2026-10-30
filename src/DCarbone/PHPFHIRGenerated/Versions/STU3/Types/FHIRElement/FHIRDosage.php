@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -430,6 +430,8 @@ class FHIRDosage extends FHIRElement
      *
      * Indicates the order in which the dosage instructions should be applied or
      * interpreted.
+     *
+     * @return static
      */
     public function setSequence(null|string|float|FHIRIntegerPrimitive|FHIRInteger $sequence): self
     {
@@ -462,6 +464,8 @@ class FHIRDosage extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Free text dosage instructions e.g. SIG.
+     *
+     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -509,6 +513,8 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supplemental instruction - e.g. "with meals".
+     *
+     * @return static
      */
     public function addAdditionalInstruction(FHIRCodeableConcept $additionalInstruction): self
     {
@@ -526,6 +532,8 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supplemental instruction - e.g. "with meals".
+     *
+     * @return static
      */
     public function setAdditionalInstruction(FHIRCodeableConcept ...$additionalInstruction): self
     {
@@ -555,6 +563,8 @@ class FHIRDosage extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Instructions in terms that are understood by the patient or consumer.
+     *
+     * @return static
      */
     public function setPatientInstruction(null|string|FHIRStringPrimitive|FHIRString $patientInstruction): self
     {
@@ -595,6 +605,8 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * When medication should be administered.
+     *
+     * @return static
      */
     public function setTiming(null|FHIRTiming $timing): self
     {
@@ -626,6 +638,8 @@ class FHIRDosage extends FHIRElement
      * Indicates whether the Medication is only taken when needed within a specific
      * dosing schedule (Boolean option), or it indicates the precondition for taking
      * the Medication (CodeableConcept).
+     *
+     * @return static
      */
     public function setAsNeededBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $asNeededBoolean): self
     {
@@ -664,6 +678,8 @@ class FHIRDosage extends FHIRElement
      * Indicates whether the Medication is only taken when needed within a specific
      * dosing schedule (Boolean option), or it indicates the precondition for taking
      * the Medication (CodeableConcept).
+     *
+     * @return static
      */
     public function setAsNeededCodeableConcept(null|FHIRCodeableConcept $asNeededCodeableConcept): self
     {
@@ -695,6 +711,8 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Body site to administer to.
+     *
+     * @return static
      */
     public function setSite(null|FHIRCodeableConcept $site): self
     {
@@ -726,6 +744,8 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How drug should enter body.
+     *
+     * @return static
      */
     public function setRoute(null|FHIRCodeableConcept $route): self
     {
@@ -757,6 +777,8 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Technique for administering medication.
+     *
+     * @return static
      */
     public function setMethod(null|FHIRCodeableConcept $method): self
     {
@@ -786,6 +808,8 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per dose.
+     *
+     * @return static
      */
     public function setDoseRange(null|FHIRRange $doseRange): self
     {
@@ -819,6 +843,8 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per dose.
+     *
+     * @return static
      */
     public function setDoseQuantity(null|FHIRQuantity $doseQuantity): self
     {
@@ -850,6 +876,8 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Upper limit on medication per unit of time.
+     *
+     * @return static
      */
     public function setMaxDosePerPeriod(null|FHIRRatio $maxDosePerPeriod): self
     {
@@ -883,6 +911,8 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Upper limit on medication per administration.
+     *
+     * @return static
      */
     public function setMaxDosePerAdministration(null|FHIRQuantity $maxDosePerAdministration): self
     {
@@ -916,6 +946,8 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Upper limit on medication per lifetime of the patient.
+     *
+     * @return static
      */
     public function setMaxDosePerLifetime(null|FHIRQuantity $maxDosePerLifetime): self
     {
@@ -947,6 +979,8 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per unit of time.
+     *
+     * @return static
      */
     public function setRateRatio(null|FHIRRatio $rateRatio): self
     {
@@ -976,6 +1010,8 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per unit of time.
+     *
+     * @return static
      */
     public function setRateRange(null|FHIRRange $rateRange): self
     {
@@ -1009,6 +1045,8 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per unit of time.
+     *
+     * @return static
      */
     public function setRateQuantity(null|FHIRQuantity $rateQuantity): self
     {

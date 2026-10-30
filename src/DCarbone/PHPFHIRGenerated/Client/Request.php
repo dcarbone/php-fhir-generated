@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Client;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -76,10 +76,10 @@ class Request
     public bool $parseResponseHeaders;
 
     /**
-     * Extra client clientOptions.  Possible entries will vary depending on what client implementation you are using.
+     * Extra client options.  Possible entries will vary depending on what client implementation you are using.
      *
      * If using the provided client (@see \DCarbone\PHPFHIRGenerated\Client\Client class),
-     * these must be valid PHP curl clientOptions.
+     * these must be valid PHP curl options.  They are applied on top of any options defined in the client config.
      */
     public array $clientOptions;
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -244,6 +244,8 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * A container for a collection of resources.
      *
      * A series of links that provide context to this entry.
+     *
+     * @return static
      */
     public function addLink(FHIRBundleLink $link): self
     {
@@ -258,6 +260,8 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * A container for a collection of resources.
      *
      * A series of links that provide context to this entry.
+     *
+     * @return static
      */
     public function setLink(FHIRBundleLink ...$link): self
     {
@@ -299,6 +303,8 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * value except that: * fullUrl can be empty on a POST (although it does not need
      * to when specifying a temporary id for reference in the bundle) * Results from
      * operations might involve resources that are not identified.
+     *
+     * @return static
      */
     public function setFullUrl(null|string|FHIRUriPrimitive|FHIRUri $fullUrl): self
     {
@@ -325,6 +331,8 @@ class FHIRBundleEntry extends FHIRBackboneElement
     /**
      * The Resource for the entry. The purpose/meaning of the resource is determined by
      * the Bundle.type.
+     *
+     * @return static
      */
     public function setResource(null|FHIRResourceContainer|VersionContainedTypeInterface $resource): self
     {
@@ -353,6 +361,8 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * A container for a collection of resources.
      *
      * Information about the search process that lead to the creation of this entry.
+     *
+     * @return static
      */
     public function setSearch(null|FHIRBundleSearch $search): self
     {
@@ -382,6 +392,8 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * Additional information about how this entry should be processed as part of a
      * transaction or batch. For history, it shows how the entry was processed to
      * create the version contained in the entry.
+     *
+     * @return static
      */
     public function setRequest(null|FHIRBundleRequest $request): self
     {
@@ -411,6 +423,8 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * Indicates the results of processing the corresponding 'request' entry in the
      * batch or transaction being responded to or what the results of an operation
      * where when returning history.
+     *
+     * @return static
      */
     public function setResponse(null|FHIRBundleResponse $response): self
     {

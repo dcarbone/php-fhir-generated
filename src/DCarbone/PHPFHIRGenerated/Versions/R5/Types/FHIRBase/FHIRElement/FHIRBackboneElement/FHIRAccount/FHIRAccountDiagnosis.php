@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -278,6 +278,8 @@ class FHIRAccountDiagnosis extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Ranking of the diagnosis (for each type).
+     *
+     * @return static
      */
     public function setSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
     {
@@ -312,6 +314,8 @@ class FHIRAccountDiagnosis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The diagnosis relevant to the account.
+     *
+     * @return static
      */
     public function setCondition(null|FHIRCodeableReference $condition): self
     {
@@ -349,6 +353,8 @@ class FHIRAccountDiagnosis extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Ranking of the diagnosis (for each type).
+     *
+     * @return static
      */
     public function setDateOfDiagnosis(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateOfDiagnosis): self
     {
@@ -398,6 +404,8 @@ class FHIRAccountDiagnosis extends FHIRBackboneElement
      *
      * Type that this diagnosis has relevant to the account (e.g. admission, billing,
      * discharge …).
+     *
+     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -416,6 +424,8 @@ class FHIRAccountDiagnosis extends FHIRBackboneElement
      *
      * Type that this diagnosis has relevant to the account (e.g. admission, billing,
      * discharge …).
+     *
+     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -443,6 +453,8 @@ class FHIRAccountDiagnosis extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Was the Diagnosis present on Admission in the related Encounter.
+     *
+     * @return static
      */
     public function setOnAdmission(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $onAdmission): self
     {
@@ -492,6 +504,8 @@ class FHIRAccountDiagnosis extends FHIRBackboneElement
      *
      * The package code can be used to group diagnoses that may be priced or delivered
      * as a single product. Such as DRGs.
+     *
+     * @return static
      */
     public function addPackageCode(FHIRCodeableConcept $packageCode): self
     {
@@ -510,6 +524,8 @@ class FHIRAccountDiagnosis extends FHIRBackboneElement
      *
      * The package code can be used to group diagnoses that may be priced or delivered
      * as a single product. Such as DRGs.
+     *
+     * @return static
      */
     public function setPackageCode(FHIRCodeableConcept ...$packageCode): self
     {

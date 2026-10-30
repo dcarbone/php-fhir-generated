@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -203,6 +203,8 @@ class FHIRConsentActor extends FHIRBackboneElement
      *
      * How the individual is involved in the resources content that is described in the
      * exception.
+     *
+     * @return static
      */
     public function setRole(null|FHIRCodeableConcept $role): self
     {
@@ -236,6 +238,8 @@ class FHIRConsentActor extends FHIRBackboneElement
      * The resource that identifies the actor. To identify actors by type, use group to
      * identify a set of actors by some property they share (e.g. 'admitting
      * officers').
+     *
+     * @return static
      */
     public function setReference(null|FHIRReference $reference): self
     {

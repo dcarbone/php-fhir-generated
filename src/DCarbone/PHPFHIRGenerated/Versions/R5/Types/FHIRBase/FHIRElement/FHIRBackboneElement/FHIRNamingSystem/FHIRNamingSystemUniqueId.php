@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -266,6 +266,8 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the unique identifier scheme used for this particular identifier.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRNamingSystemIdentifierTypeEnum|FHIRNamingSystemIdentifierType $type): self
     {
@@ -300,6 +302,8 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      *
      * The string that should be sent over the wire to identify the code system or
      * identifier system.
+     *
+     * @return static
      */
     public function setValue(null|string|FHIRStringPrimitive|FHIRString $value): self
     {
@@ -330,6 +334,8 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether this identifier is the "preferred" identifier of this type.
+     *
+     * @return static
      */
     public function setPreferred(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $preferred): self
     {
@@ -362,6 +368,8 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Notes about the past or intended usage of this identifier.
+     *
+     * @return static
      */
     public function setComment(null|string|FHIRStringPrimitive|FHIRString $comment): self
     {
@@ -398,6 +406,8 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      * Identifies the period of time over which this identifier is considered
      * appropriate to refer to the naming system. Outside of this window, the
      * identifier might be non-deterministic.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -427,6 +437,8 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      *
      * Indicates whether this identifier ie endorsed by the official owner of the
      * associated naming system.
+     *
+     * @return static
      */
     public function setAuthoritative(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $authoritative): self
     {

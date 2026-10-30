@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -349,6 +349,8 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The Numeric identifier of this series in the study.
+     *
+     * @return static
      */
     public function setNumber(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $number): self
     {
@@ -381,6 +383,8 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The modality of this series sequence.
+     *
+     * @return static
      */
     public function setModality(null|FHIRCoding $modality): self
     {
@@ -412,6 +416,8 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Formal identifier for this series.
+     *
+     * @return static
      */
     public function setUid(null|string|FHIROidPrimitive|FHIROid $uid): self
     {
@@ -444,6 +450,8 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the series.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -476,6 +484,8 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Number of SOP Instances in Series.
+     *
+     * @return static
      */
     public function setNumberOfInstances(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $numberOfInstances): self
     {
@@ -506,6 +516,8 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Availability of series (online, offline or nearline).
+     *
+     * @return static
      */
     public function setAvailability(null|string|FHIRInstanceAvailabilityList|FHIRInstanceAvailability $availability): self
     {
@@ -538,6 +550,8 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * URI/URL specifying the location of the referenced series using WADO-RS.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -572,6 +586,8 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      *
      * Body part examined. See DICOM Part 16 Annex L for the mapping from DICOM to
      * Snomed CT.
+     *
+     * @return static
      */
     public function setBodySite(null|FHIRCoding $bodySite): self
     {
@@ -603,6 +619,8 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      *
      * Laterality if body site is paired anatomic structure and laterality is not
      * pre-coordinated in body site code.
+     *
+     * @return static
      */
     public function setLaterality(null|FHIRCoding $laterality): self
     {
@@ -638,6 +656,8 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time the series was started.
+     *
+     * @return static
      */
     public function setStarted(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $started): self
     {
@@ -687,6 +707,8 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * ultrasound), but a study may have multiple series of different modalities.
      *
      * A single SOP Instance within the series, e.g. an image, or presentation state.
+     *
+     * @return static
      */
     public function addInstance(FHIRImagingStudyInstance $instance): self
     {
@@ -705,6 +727,8 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * ultrasound), but a study may have multiple series of different modalities.
      *
      * A single SOP Instance within the series, e.g. an image, or presentation state.
+     *
+     * @return static
      */
     public function setInstance(FHIRImagingStudyInstance ...$instance): self
     {

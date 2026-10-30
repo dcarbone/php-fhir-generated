@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -165,6 +165,15 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
 
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_ARTIFACT_REFERENCE => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_ARTIFACT_CANONICAL => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_ARTIFACT_URI => [
+            'min_occurs' => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -211,7 +220,7 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Display of or reference to the bibliographic citation of the comment,
-     * classifier, or rating. (choose any one of citeAs*, but only one)
+     * classifier, or rating.
      */
     #[FHIRReference]
     protected FHIRReference $citeAsReference;
@@ -225,7 +234,7 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * the Narrative, or extensions
      *
      * Display of or reference to the bibliographic citation of the comment,
-     * classifier, or rating. (choose any one of citeAs*, but only one)
+     * classifier, or rating.
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $citeAsMarkdown;
@@ -288,7 +297,7 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a resource, canonical resource, or non-FHIR resource which the
-     * comment or assessment is about. (choose any one of artifact*, but only one)
+     * comment or assessment is about.
      */
     #[FHIRReference]
     protected FHIRReference $artifactReference;
@@ -299,7 +308,7 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * the Narrative, or extensions
      *
      * A reference to a resource, canonical resource, or non-FHIR resource which the
-     * comment or assessment is about. (choose any one of artifact*, but only one)
+     * comment or assessment is about.
      */
     #[FHIRCanonical]
     protected FHIRCanonical $artifactCanonical;
@@ -309,7 +318,7 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A reference to a resource, canonical resource, or non-FHIR resource which the
-     * comment or assessment is about. (choose any one of artifact*, but only one)
+     * comment or assessment is about.
      */
     #[FHIRUri]
     protected FHIRUri $artifactUri;
@@ -477,6 +486,8 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * A formal identifier that is used to identify this artifact assessment when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -496,6 +507,8 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * A formal identifier that is used to identify this artifact assessment when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -525,6 +538,8 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short title for the assessment for use in displaying and selecting.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -545,7 +560,7 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Display of or reference to the bibliographic citation of the comment,
-     * classifier, or rating. (choose any one of citeAs*, but only one)
+     * classifier, or rating.
      */
     public function getCiteAsReference(): null|FHIRReference
     {
@@ -558,7 +573,9 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Display of or reference to the bibliographic citation of the comment,
-     * classifier, or rating. (choose any one of citeAs*, but only one)
+     * classifier, or rating.
+     *
+     * @return static
      */
     public function setCiteAsReference(null|FHIRReference $citeAsReference): self
     {
@@ -580,7 +597,7 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * the Narrative, or extensions
      *
      * Display of or reference to the bibliographic citation of the comment,
-     * classifier, or rating. (choose any one of citeAs*, but only one)
+     * classifier, or rating.
      */
     public function getCiteAsMarkdown(): null|FHIRMarkdown
     {
@@ -597,7 +614,9 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * the Narrative, or extensions
      *
      * Display of or reference to the bibliographic citation of the comment,
-     * classifier, or rating. (choose any one of citeAs*, but only one)
+     * classifier, or rating.
+     *
+     * @return static
      */
     public function setCiteAsMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $citeAsMarkdown): self
     {
@@ -644,6 +663,8 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * date must change when the disposition changes and it must change if the workflow
      * status code changes. In addition, it should change when the substantive content
      * of the artifact assessment changes.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -688,6 +709,8 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * A copyright statement relating to the artifact assessment and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the artifact assessment.
+     *
+     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -724,6 +747,8 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
+     *
+     * @return static
      */
     public function setApprovalDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $approvalDate): self
     {
@@ -760,6 +785,8 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
+     *
+     * @return static
      */
     public function setLastReviewDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lastReviewDate): self
     {
@@ -780,7 +807,7 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a resource, canonical resource, or non-FHIR resource which the
-     * comment or assessment is about. (choose any one of artifact*, but only one)
+     * comment or assessment is about.
      */
     public function getArtifactReference(): null|FHIRReference
     {
@@ -793,7 +820,9 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a resource, canonical resource, or non-FHIR resource which the
-     * comment or assessment is about. (choose any one of artifact*, but only one)
+     * comment or assessment is about.
+     *
+     * @return static
      */
     public function setArtifactReference(null|FHIRReference $artifactReference): self
     {
@@ -812,7 +841,7 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * the Narrative, or extensions
      *
      * A reference to a resource, canonical resource, or non-FHIR resource which the
-     * comment or assessment is about. (choose any one of artifact*, but only one)
+     * comment or assessment is about.
      */
     public function getArtifactCanonical(): null|FHIRCanonical
     {
@@ -826,7 +855,9 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * the Narrative, or extensions
      *
      * A reference to a resource, canonical resource, or non-FHIR resource which the
-     * comment or assessment is about. (choose any one of artifact*, but only one)
+     * comment or assessment is about.
+     *
+     * @return static
      */
     public function setArtifactCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $artifactCanonical): self
     {
@@ -847,7 +878,7 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A reference to a resource, canonical resource, or non-FHIR resource which the
-     * comment or assessment is about. (choose any one of artifact*, but only one)
+     * comment or assessment is about.
      */
     public function getArtifactUri(): null|FHIRUri
     {
@@ -860,7 +891,9 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A reference to a resource, canonical resource, or non-FHIR resource which the
-     * comment or assessment is about. (choose any one of artifact*, but only one)
+     * comment or assessment is about.
+     *
+     * @return static
      */
     public function setArtifactUri(null|string|FHIRUriPrimitive|FHIRUri $artifactUri): self
     {
@@ -906,6 +939,8 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * content.
      *
      * A component comment, classifier, or rating of the artifact.
+     *
+     * @return static
      */
     public function addContent(FHIRArtifactAssessmentContent $content): self
     {
@@ -922,6 +957,8 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * content.
      *
      * A component comment, classifier, or rating of the artifact.
+     *
+     * @return static
      */
     public function setContent(FHIRArtifactAssessmentContent ...$content): self
     {
@@ -947,6 +984,8 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the workflow status of the comment or change request.
+     *
+     * @return static
      */
     public function setWorkflowStatus(null|string|FHIRArtifactAssessmentWorkflowStatusEnum|FHIRArtifactAssessmentWorkflowStatus $workflowStatus): self
     {
@@ -977,6 +1016,8 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      *
      * Indicates the disposition of the responsible party to the comment or change
      * request.
+     *
+     * @return static
      */
     public function setDisposition(null|string|FHIRArtifactAssessmentDispositionEnum|FHIRArtifactAssessmentDisposition $disposition): self
     {

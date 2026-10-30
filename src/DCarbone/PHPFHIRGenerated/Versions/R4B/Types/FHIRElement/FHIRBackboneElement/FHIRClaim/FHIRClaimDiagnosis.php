@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -274,6 +274,8 @@ class FHIRClaimDiagnosis extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A number to uniquely identify diagnosis entries.
+     *
+     * @return static
      */
     public function setSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
     {
@@ -310,6 +312,8 @@ class FHIRClaimDiagnosis extends FHIRBackboneElement
      *
      * The nature of illness or problem in a coded form or as a reference to an
      * external defined Condition.
+     *
+     * @return static
      */
     public function setDiagnosisCodeableConcept(null|FHIRCodeableConcept $diagnosisCodeableConcept): self
     {
@@ -341,6 +345,8 @@ class FHIRClaimDiagnosis extends FHIRBackboneElement
      *
      * The nature of illness or problem in a coded form or as a reference to an
      * external defined Condition.
+     *
+     * @return static
      */
     public function setDiagnosisReference(null|FHIRReference $diagnosisReference): self
     {
@@ -385,6 +391,8 @@ class FHIRClaimDiagnosis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * When the condition was observed or the relative ranking.
+     *
+     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -402,6 +410,8 @@ class FHIRClaimDiagnosis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * When the condition was observed or the relative ranking.
+     *
+     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -433,6 +443,8 @@ class FHIRClaimDiagnosis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indication of whether the diagnosis was present on admission to a facility.
+     *
+     * @return static
      */
     public function setOnAdmission(null|FHIRCodeableConcept $onAdmission): self
     {
@@ -468,6 +480,8 @@ class FHIRClaimDiagnosis extends FHIRBackboneElement
      * A package billing code or bundle code used to group products and services to a
      * particular health condition (such as heart attack) which is based on a
      * predetermined grouping code system.
+     *
+     * @return static
      */
     public function setPackageCode(null|FHIRCodeableConcept $packageCode): self
     {

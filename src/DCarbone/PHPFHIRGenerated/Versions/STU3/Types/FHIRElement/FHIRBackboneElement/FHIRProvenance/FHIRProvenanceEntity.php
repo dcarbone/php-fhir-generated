@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -254,6 +254,8 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the entity was used during the activity.
+     *
+     * @return static
      */
     public function setRole(null|string|FHIRProvenanceEntityRoleList|FHIRProvenanceEntityRole $role): self
     {
@@ -288,6 +290,8 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      *
      * Identity of the Entity used. May be a logical or physical uri and maybe absolute
      * or relative.
+     *
+     * @return static
      */
     public function setWhatUri(null|string|FHIRUriPrimitive|FHIRUri $whatUri): self
     {
@@ -322,6 +326,8 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      *
      * Identity of the Entity used. May be a logical or physical uri and maybe absolute
      * or relative.
+     *
+     * @return static
      */
     public function setWhatReference(null|FHIRReference $whatReference): self
     {
@@ -353,6 +359,8 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      *
      * Identity of the Entity used. May be a logical or physical uri and maybe absolute
      * or relative.
+     *
+     * @return static
      */
     public function setWhatIdentifier(null|FHIRIdentifier $whatIdentifier): self
     {
@@ -413,6 +421,8 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      * that entity, possibly along with other agents. This description can be
      * understood as shorthand for saying that the agent was responsible for the
      * activity which generated the entity.
+     *
+     * @return static
      */
     public function addAgent(FHIRProvenanceAgent $agent): self
     {
@@ -438,6 +448,8 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      * that entity, possibly along with other agents. This description can be
      * understood as shorthand for saying that the agent was responsible for the
      * activity which generated the entity.
+     *
+     * @return static
      */
     public function setAgent(FHIRProvenanceAgent ...$agent): self
     {

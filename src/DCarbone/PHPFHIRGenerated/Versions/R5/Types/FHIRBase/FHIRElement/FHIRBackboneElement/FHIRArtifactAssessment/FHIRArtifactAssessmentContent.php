@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -339,6 +339,8 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of information this component of the content represents.
+     *
+     * @return static
      */
     public function setInformationType(null|string|FHIRArtifactAssessmentInformationTypeEnum|FHIRArtifactAssessmentInformationType $informationType): self
     {
@@ -379,6 +381,8 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A brief summary of the content of this component.
+     *
+     * @return static
      */
     public function setSummary(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $summary): self
     {
@@ -413,6 +417,8 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates what type of content this component represents.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -457,6 +463,8 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Represents a rating, classifier, or assessment of the artifact.
+     *
+     * @return static
      */
     public function addClassifier(FHIRCodeableConcept $classifier): self
     {
@@ -474,6 +482,8 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Represents a rating, classifier, or assessment of the artifact.
+     *
+     * @return static
      */
     public function setClassifier(FHIRCodeableConcept ...$classifier): self
     {
@@ -507,6 +517,8 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A quantitative rating of the artifact.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -536,6 +548,8 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates who or what authored the content.
+     *
+     * @return static
      */
     public function setAuthor(null|FHIRReference $author): self
     {
@@ -580,6 +594,8 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      *
      * A URI that points to what the comment is about, such as a line of text in the
      * CQL, or a specific element in a resource.
+     *
+     * @return static
      */
     public function addPath(string|FHIRUriPrimitive|FHIRUri $path): self
     {
@@ -600,6 +616,8 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      *
      * A URI that points to what the comment is about, such as a line of text in the
      * CQL, or a specific element in a resource.
+     *
+     * @return static
      */
     public function setPath(string|FHIRUriPrimitive|FHIRUri ...$path): self
     {
@@ -653,6 +671,8 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      *
      * Additional related artifacts that provide supporting documentation, additional
      * evidence, or further information related to the content.
+     *
+     * @return static
      */
     public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact): self
     {
@@ -671,6 +691,8 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      *
      * Additional related artifacts that provide supporting documentation, additional
      * evidence, or further information related to the content.
+     *
+     * @return static
      */
     public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
     {
@@ -698,6 +720,8 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Acceptable to publicly share the comment, classifier or rating.
+     *
+     * @return static
      */
     public function setFreeToShare(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $freeToShare): self
     {
@@ -743,6 +767,8 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * content.
      *
      * If the informationType is container, the components of the content.
+     *
+     * @return static
      */
     public function addComponent(FHIRArtifactAssessmentContent $component): self
     {
@@ -759,6 +785,8 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * content.
      *
      * If the informationType is container, the components of the content.
+     *
+     * @return static
      */
     public function setComponent(FHIRArtifactAssessmentContent ...$component): self
     {

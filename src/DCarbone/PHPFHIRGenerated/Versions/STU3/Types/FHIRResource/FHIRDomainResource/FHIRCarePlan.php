@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -555,6 +555,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * business processes and/or used to refer to it when a direct URL reference to the
      * resource itself is not appropriate (e.g. in CDA documents, or in written /
      * printed documentation).
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -574,6 +576,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * business processes and/or used to refer to it when a direct URL reference to the
      * resource itself is not appropriate (e.g. in CDA documents, or in written /
      * printed documentation).
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -618,6 +622,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Identifies the protocol, questionnaire, guideline or other specification the
      * care plan should be conducted in accordance with.
+     *
+     * @return static
      */
     public function addDefinition(FHIRReference $definition): self
     {
@@ -635,6 +641,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Identifies the protocol, questionnaire, guideline or other specification the
      * care plan should be conducted in accordance with.
+     *
+     * @return static
      */
     public function setDefinition(FHIRReference ...$definition): self
     {
@@ -677,6 +685,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A care plan that is fulfilled in whole or in part by this care plan.
+     *
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -693,6 +703,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A care plan that is fulfilled in whole or in part by this care plan.
+     *
+     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -735,6 +747,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Completed or terminated care plan whose function is taken by this new care plan.
+     *
+     * @return static
      */
     public function addReplaces(FHIRReference $replaces): self
     {
@@ -751,6 +765,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Completed or terminated care plan whose function is taken by this new care plan.
+     *
+     * @return static
      */
     public function setReplaces(FHIRReference ...$replaces): self
     {
@@ -793,6 +809,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger care plan of which this particular care plan is a component or step.
+     *
+     * @return static
      */
     public function addPartOf(FHIRReference $partOf): self
     {
@@ -809,6 +827,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger care plan of which this particular care plan is a component or step.
+     *
+     * @return static
      */
     public function setPartOf(FHIRReference ...$partOf): self
     {
@@ -840,6 +860,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Indicates whether the plan is currently being acted upon, represents future
      * intentions or is now a historical record.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRCarePlanStatusList|FHIRCarePlanStatus $status): self
     {
@@ -874,6 +896,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Indicates the level of authority/intentionality associated with the care plan
      * and where the care plan fits into the workflow chain.
+     *
+     * @return static
      */
     public function setIntent(null|string|FHIRCarePlanIntentList|FHIRCarePlanIntent $intent): self
     {
@@ -925,6 +949,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * Identifies what "kind" of plan this is to support differentiation between
      * multiple co-existing plans; e.g. "Home health", "psychiatric", "asthma",
      * "disease management", "wellness plan", etc.
+     *
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -944,6 +970,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * Identifies what "kind" of plan this is to support differentiation between
      * multiple co-existing plans; e.g. "Home health", "psychiatric", "asthma",
      * "disease management", "wellness plan", etc.
+     *
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -973,6 +1001,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-friendly name for the CarePlan.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -1005,6 +1035,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the scope and nature of the plan.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -1037,6 +1069,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the patient or group whose intended care is described by the plan.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -1066,6 +1100,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the original context in which this particular CarePlan was created.
+     *
+     * @return static
      */
     public function setContext(null|FHIRReference $context): self
     {
@@ -1095,6 +1131,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates when the plan did (or is intended to) come into effect and end.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -1139,6 +1177,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Identifies the individual(s) or ogranization who is responsible for the content
      * of the care plan.
+     *
+     * @return static
      */
     public function addAuthor(FHIRReference $author): self
     {
@@ -1156,6 +1196,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Identifies the individual(s) or ogranization who is responsible for the content
      * of the care plan.
+     *
+     * @return static
      */
     public function setAuthor(FHIRReference ...$author): self
     {
@@ -1200,6 +1242,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Identifies all people and organizations who are expected to be involved in the
      * care envisioned by this plan.
+     *
+     * @return static
      */
     public function addCareTeam(FHIRReference $careTeam): self
     {
@@ -1217,6 +1261,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Identifies all people and organizations who are expected to be involved in the
      * care envisioned by this plan.
+     *
+     * @return static
      */
     public function setCareTeam(FHIRReference ...$careTeam): self
     {
@@ -1261,6 +1307,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Identifies the conditions/problems/concerns/diagnoses/etc. whose management
      * and/or mitigation are handled by this plan.
+     *
+     * @return static
      */
     public function addAddresses(FHIRReference $addresses): self
     {
@@ -1278,6 +1326,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Identifies the conditions/problems/concerns/diagnoses/etc. whose management
      * and/or mitigation are handled by this plan.
+     *
+     * @return static
      */
     public function setAddresses(FHIRReference ...$addresses): self
     {
@@ -1324,6 +1374,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * Identifies portions of the patient's record that specifically influenced the
      * formation of the plan. These might include co-morbidities, recent procedures,
      * limitations, recent assessments, etc.
+     *
+     * @return static
      */
     public function addSupportingInfo(FHIRReference $supportingInfo): self
     {
@@ -1342,6 +1394,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * Identifies portions of the patient's record that specifically influenced the
      * formation of the plan. These might include co-morbidities, recent procedures,
      * limitations, recent assessments, etc.
+     *
+     * @return static
      */
     public function setSupportingInfo(FHIRReference ...$supportingInfo): self
     {
@@ -1384,6 +1438,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the intended objective(s) of carrying out the care plan.
+     *
+     * @return static
      */
     public function addGoal(FHIRReference $goal): self
     {
@@ -1400,6 +1456,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the intended objective(s) of carrying out the care plan.
+     *
+     * @return static
      */
     public function setGoal(FHIRReference ...$goal): self
     {
@@ -1444,6 +1502,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Identifies a planned action to occur as part of the plan. For example, a
      * medication to be used, lab tests to perform, self-monitoring, education, etc.
+     *
+     * @return static
      */
     public function addActivity(FHIRCarePlanActivity $activity): self
     {
@@ -1461,6 +1521,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Identifies a planned action to occur as part of the plan. For example, a
      * medication to be used, lab tests to perform, self-monitoring, education, etc.
+     *
+     * @return static
      */
     public function setActivity(FHIRCarePlanActivity ...$activity): self
     {
@@ -1505,6 +1567,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * General notes about the care plan not covered elsewhere.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1522,6 +1586,8 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * General notes about the care plan not covered elsewhere.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -206,6 +206,8 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * System value for the code.
+     *
+     * @return static
      */
     public function setSystem(null|string|FHIRUriPrimitive|FHIRUri $system): self
     {
@@ -240,6 +242,8 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Code - if blank, this is not a choosable code.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -270,6 +274,8 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * User display for the concept.
+     *
+     * @return static
      */
     public function setDisplay(null|string|FHIRStringPrimitive|FHIRString $display): self
     {
@@ -311,6 +317,8 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * A value set specifies a set of codes drawn from one or more code systems.
      *
      * Codes contained in this concept.
+     *
+     * @return static
      */
     public function addContains(FHIRValueSetContains $contains): self
     {
@@ -325,6 +333,8 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * A value set specifies a set of codes drawn from one or more code systems.
      *
      * Codes contained in this concept.
+     *
+     * @return static
      */
     public function setContains(FHIRValueSetContains ...$contains): self
     {

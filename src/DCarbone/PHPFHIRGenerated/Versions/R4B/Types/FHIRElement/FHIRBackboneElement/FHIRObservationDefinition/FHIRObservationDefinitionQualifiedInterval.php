@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -292,6 +292,8 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      *
      * The category of interval of values for continuous or ordinal observations
      * conforming to this ObservationDefinition.
+     *
+     * @return static
      */
     public function setCategory(null|string|FHIRObservationRangeCategoryEnum|FHIRObservationRangeCategory $category): self
     {
@@ -326,6 +328,8 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      *
      * The low and high values determining the interval. There may be only one of the
      * two.
+     *
+     * @return static
      */
     public function setRange(null|FHIRRange $range): self
     {
@@ -359,6 +363,8 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      *
      * Codes to indicate the health context the range applies to. For example, the
      * normal or therapeutic range.
+     *
+     * @return static
      */
     public function setContext(null|FHIRCodeableConcept $context): self
     {
@@ -403,6 +409,8 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Codes to indicate the target population this reference range applies to.
+     *
+     * @return static
      */
     public function addAppliesTo(FHIRCodeableConcept $appliesTo): self
     {
@@ -420,6 +428,8 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Codes to indicate the target population this reference range applies to.
+     *
+     * @return static
      */
     public function setAppliesTo(FHIRCodeableConcept ...$appliesTo): self
     {
@@ -445,6 +455,8 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Sex of the population the range applies to.
+     *
+     * @return static
      */
     public function setGender(null|string|FHIRAdministrativeGenderEnum|FHIRAdministrativeGender $gender): self
     {
@@ -479,6 +491,8 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      *
      * The age at which this reference range is applicable. This is a neonatal age
      * (e.g. number of weeks at term) if the meaning says so.
+     *
+     * @return static
      */
     public function setAge(null|FHIRRange $age): self
     {
@@ -510,6 +524,8 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      *
      * The gestational age to which this reference range is applicable, in the context
      * of pregnancy.
+     *
+     * @return static
      */
     public function setGestationalAge(null|FHIRRange $gestationalAge): self
     {
@@ -539,6 +555,8 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Text based condition for which the reference range is valid.
+     *
+     * @return static
      */
     public function setCondition(null|string|FHIRStringPrimitive|FHIRString $condition): self
     {

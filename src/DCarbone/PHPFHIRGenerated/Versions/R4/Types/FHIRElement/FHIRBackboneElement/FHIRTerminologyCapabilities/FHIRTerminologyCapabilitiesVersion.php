@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -253,6 +253,8 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      *
      * For version-less code systems, there should be a single version with no
      * identifier.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRStringPrimitive|FHIRString $code): self
     {
@@ -283,6 +285,8 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If this is the default version for this code system.
+     *
+     * @return static
      */
     public function setIsDefault(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isDefault): self
     {
@@ -313,6 +317,8 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the compositional grammar defined by the code system is supported.
+     *
+     * @return static
      */
     public function setCompositional(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $compositional): self
     {
@@ -360,6 +366,8 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Language Displays supported.
+     *
+     * @return static
      */
     public function addLanguage(string|FHIRCodePrimitive|FHIRCode $language): self
     {
@@ -380,6 +388,8 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Language Displays supported.
+     *
+     * @return static
      */
     public function setLanguage(string|FHIRCodePrimitive|FHIRCode ...$language): self
     {
@@ -429,6 +439,8 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      * functionality or a statement of required or desired server implementation.
      *
      * Filter Properties supported.
+     *
+     * @return static
      */
     public function addFilter(FHIRTerminologyCapabilitiesFilter $filter): self
     {
@@ -445,6 +457,8 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      * functionality or a statement of required or desired server implementation.
      *
      * Filter Properties supported.
+     *
+     * @return static
      */
     public function setFilter(FHIRTerminologyCapabilitiesFilter ...$filter): self
     {
@@ -489,6 +503,8 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Properties supported for $lookup.
+     *
+     * @return static
      */
     public function addProperty(string|FHIRCodePrimitive|FHIRCode $property): self
     {
@@ -509,6 +525,8 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Properties supported for $lookup.
+     *
+     * @return static
      */
     public function setProperty(string|FHIRCodePrimitive|FHIRCode ...$property): self
     {

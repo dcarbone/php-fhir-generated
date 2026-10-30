@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -209,6 +209,8 @@ class FHIRQuery extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Links query and its response(s).
+     *
+     * @return static
      */
     public function setIdentifier(null|string|FHIRUriPrimitive|FHIRUri $identifier): self
     {
@@ -254,6 +256,8 @@ class FHIRQuery extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Set of query parameters with values.
+     *
+     * @return static
      */
     public function addParameter(FHIRExtension $parameter): self
     {
@@ -270,6 +274,8 @@ class FHIRQuery extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Set of query parameters with values.
+     *
+     * @return static
      */
     public function setParameter(FHIRExtension ...$parameter): self
     {
@@ -295,6 +301,8 @@ class FHIRQuery extends FHIRResource implements VersionContainedTypeInterface
      * A description of a query with a set of parameters.
      *
      * If this is a response to a query.
+     *
+     * @return static
      */
     public function setResponse(null|FHIRQueryResponse $response): self
     {

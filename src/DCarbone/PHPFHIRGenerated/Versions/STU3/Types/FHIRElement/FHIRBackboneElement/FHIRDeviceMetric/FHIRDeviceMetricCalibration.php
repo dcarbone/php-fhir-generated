@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -194,6 +194,8 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the type of the calibration method.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRDeviceMetricCalibrationTypeList|FHIRDeviceMetricCalibrationType $type): self
     {
@@ -224,6 +226,8 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the state of the calibration.
+     *
+     * @return static
      */
     public function setState(null|string|FHIRDeviceMetricCalibrationStateList|FHIRDeviceMetricCalibrationState $state): self
     {
@@ -260,6 +264,8 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the time last calibration has been performed.
+     *
+     * @return static
      */
     public function setTime(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $time): self
     {

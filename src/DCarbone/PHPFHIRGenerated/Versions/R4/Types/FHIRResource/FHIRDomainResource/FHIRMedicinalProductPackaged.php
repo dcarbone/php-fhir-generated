@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -343,6 +343,8 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -360,6 +362,8 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -402,6 +406,8 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The product with this is a pack for.
+     *
+     * @return static
      */
     public function addSubject(FHIRReference $subject): self
     {
@@ -418,6 +424,8 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The product with this is a pack for.
+     *
+     * @return static
      */
     public function setSubject(FHIRReference ...$subject): self
     {
@@ -447,6 +455,8 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual description.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -483,6 +493,8 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      *
      * The legal status of supply of the medicinal product as classified by the
      * regulator.
+     *
+     * @return static
      */
     public function setLegalStatusOfSupply(null|FHIRCodeableConcept $legalStatusOfSupply): self
     {
@@ -527,6 +539,8 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Marketing information.
+     *
+     * @return static
      */
     public function addMarketingStatus(FHIRMarketingStatus $marketingStatus): self
     {
@@ -544,6 +558,8 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Marketing information.
+     *
+     * @return static
      */
     public function setMarketingStatus(FHIRMarketingStatus ...$marketingStatus): self
     {
@@ -573,6 +589,8 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of this Package Item.
+     *
+     * @return static
      */
     public function setMarketingAuthorization(null|FHIRReference $marketingAuthorization): self
     {
@@ -615,6 +633,8 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of this Package Item.
+     *
+     * @return static
      */
     public function addManufacturer(FHIRReference $manufacturer): self
     {
@@ -631,6 +651,8 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of this Package Item.
+     *
+     * @return static
      */
     public function setManufacturer(FHIRReference ...$manufacturer): self
     {
@@ -669,6 +691,8 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * A medicinal product in a container or package.
      *
      * Batch numbering.
+     *
+     * @return static
      */
     public function addBatchIdentifier(FHIRMedicinalProductPackagedBatchIdentifier $batchIdentifier): self
     {
@@ -683,6 +707,8 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * A medicinal product in a container or package.
      *
      * Batch numbering.
+     *
+     * @return static
      */
     public function setBatchIdentifier(FHIRMedicinalProductPackagedBatchIdentifier ...$batchIdentifier): self
     {
@@ -723,6 +749,8 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      *
      * A packaging item, as a contained for medicine, possibly with other packaging
      * items within.
+     *
+     * @return static
      */
     public function addPackageItem(FHIRMedicinalProductPackagedPackageItem $packageItem): self
     {
@@ -738,6 +766,8 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      *
      * A packaging item, as a contained for medicine, possibly with other packaging
      * items within.
+     *
+     * @return static
      */
     public function setPackageItem(FHIRMedicinalProductPackagedPackageItem ...$packageItem): self
     {

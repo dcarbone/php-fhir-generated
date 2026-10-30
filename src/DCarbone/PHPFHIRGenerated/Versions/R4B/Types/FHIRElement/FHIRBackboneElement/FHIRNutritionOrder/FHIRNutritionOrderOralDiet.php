@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -294,6 +294,8 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      *
      * The kind of diet or dietary restriction such as fiber restricted diet or
      * diabetic diet.
+     *
+     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -312,6 +314,8 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      *
      * The kind of diet or dietary restriction such as fiber restricted diet or
      * diabetic diet.
+     *
+     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -366,6 +370,8 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * The time period and frequency at which the diet should be given. The diet should
      * be given for the combination of all schedules if more than one schedule is
      * present.
+     *
+     * @return static
      */
     public function addSchedule(FHIRTiming $schedule): self
     {
@@ -388,6 +394,8 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * The time period and frequency at which the diet should be given. The diet should
      * be given for the combination of all schedules if more than one schedule is
      * present.
+     *
+     * @return static
      */
     public function setSchedule(FHIRTiming ...$schedule): self
     {
@@ -430,6 +438,8 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      *
      * Class that defines the quantity and type of nutrient modifications (for example
      * carbohydrate, fiber or sodium) required for the oral diet.
+     *
+     * @return static
      */
     public function addNutrient(FHIRNutritionOrderNutrient $nutrient): self
     {
@@ -446,6 +456,8 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      *
      * Class that defines the quantity and type of nutrient modifications (for example
      * carbohydrate, fiber or sodium) required for the oral diet.
+     *
+     * @return static
      */
     public function setNutrient(FHIRNutritionOrderNutrient ...$nutrient): self
     {
@@ -488,6 +500,8 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      *
      * Class that describes any texture modifications required for the patient to
      * safely consume various types of solid foods.
+     *
+     * @return static
      */
     public function addTexture(FHIRNutritionOrderTexture $texture): self
     {
@@ -504,6 +518,8 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      *
      * Class that describes any texture modifications required for the patient to
      * safely consume various types of solid foods.
+     *
+     * @return static
      */
     public function setTexture(FHIRNutritionOrderTexture ...$texture): self
     {
@@ -550,6 +566,8 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      *
      * The required consistency (e.g. honey-thick, nectar-thick, thin, thickened.) of
      * liquids or fluids served to the patient.
+     *
+     * @return static
      */
     public function addFluidConsistencyType(FHIRCodeableConcept $fluidConsistencyType): self
     {
@@ -568,6 +586,8 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      *
      * The required consistency (e.g. honey-thick, nectar-thick, thin, thickened.) of
      * liquids or fluids served to the patient.
+     *
+     * @return static
      */
     public function setFluidConsistencyType(FHIRCodeableConcept ...$fluidConsistencyType): self
     {
@@ -597,6 +617,8 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Free text or additional instructions or information pertaining to the oral diet.
+     *
+     * @return static
      */
     public function setInstruction(null|string|FHIRStringPrimitive|FHIRString $instruction): self
     {

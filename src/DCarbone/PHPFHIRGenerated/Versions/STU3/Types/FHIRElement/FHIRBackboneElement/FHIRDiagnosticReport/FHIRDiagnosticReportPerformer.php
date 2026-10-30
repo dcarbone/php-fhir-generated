@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -187,6 +187,8 @@ class FHIRDiagnosticReportPerformer extends FHIRBackboneElement
      *
      * Describes the type of participation (e.g. a responsible party, author, or
      * verifier).
+     *
+     * @return static
      */
     public function setRole(null|FHIRCodeableConcept $role): self
     {
@@ -220,6 +222,8 @@ class FHIRDiagnosticReportPerformer extends FHIRBackboneElement
      * The reference to the practitioner or organization involved in producing the
      * report. For example, the diagnostic service that is responsible for issuing the
      * report.
+     *
+     * @return static
      */
     public function setActor(null|FHIRReference $actor): self
     {

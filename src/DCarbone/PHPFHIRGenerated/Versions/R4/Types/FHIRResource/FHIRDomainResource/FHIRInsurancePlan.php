@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -427,6 +427,8 @@ class FHIRInsurancePlan extends FHIRDomainResource implements VersionContainedTy
      *
      * Business identifiers assigned to this health insurance product which remain
      * constant as the resource is updated and propagates from server to server.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -445,6 +447,8 @@ class FHIRInsurancePlan extends FHIRDomainResource implements VersionContainedTy
      *
      * Business identifiers assigned to this health insurance product which remain
      * constant as the resource is updated and propagates from server to server.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -470,6 +474,8 @@ class FHIRInsurancePlan extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the health insurance product.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusList|FHIRPublicationStatus $status): self
     {
@@ -517,6 +523,8 @@ class FHIRInsurancePlan extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of health insurance product.
+     *
+     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -534,6 +542,8 @@ class FHIRInsurancePlan extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of health insurance product.
+     *
+     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -563,6 +573,8 @@ class FHIRInsurancePlan extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Official name of the health insurance product as designated by the owner.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -610,6 +622,8 @@ class FHIRInsurancePlan extends FHIRDomainResource implements VersionContainedTy
      *
      * A list of alternate names that the product is known as, or was known as in the
      * past.
+     *
+     * @return static
      */
     public function addAlias(string|FHIRStringPrimitive|FHIRString $alias): self
     {
@@ -630,6 +644,8 @@ class FHIRInsurancePlan extends FHIRDomainResource implements VersionContainedTy
      *
      * A list of alternate names that the product is known as, or was known as in the
      * past.
+     *
+     * @return static
      */
     public function setAlias(string|FHIRStringPrimitive|FHIRString ...$alias): self
     {
@@ -666,6 +682,8 @@ class FHIRInsurancePlan extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period of time that the health insurance product is available.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -699,6 +717,8 @@ class FHIRInsurancePlan extends FHIRDomainResource implements VersionContainedTy
      * The entity that is providing the health insurance product and underwriting the
      * risk. This is typically an insurance carriers, other third-party payers, or
      * health plan sponsors comonly referred to as 'payers'.
+     *
+     * @return static
      */
     public function setOwnedBy(null|FHIRReference $ownedBy): self
     {
@@ -732,6 +752,8 @@ class FHIRInsurancePlan extends FHIRDomainResource implements VersionContainedTy
      * An organization which administer other services such as underwriting, customer
      * service and/or claims processing on behalf of the health insurance product
      * owner.
+     *
+     * @return static
      */
     public function setAdministeredBy(null|FHIRReference $administeredBy): self
     {
@@ -774,6 +796,8 @@ class FHIRInsurancePlan extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The geographic region in which a health insurance product's benefits apply.
+     *
+     * @return static
      */
     public function addCoverageArea(FHIRReference $coverageArea): self
     {
@@ -790,6 +814,8 @@ class FHIRInsurancePlan extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The geographic region in which a health insurance product's benefits apply.
+     *
+     * @return static
      */
     public function setCoverageArea(FHIRReference ...$coverageArea): self
     {
@@ -828,6 +854,8 @@ class FHIRInsurancePlan extends FHIRDomainResource implements VersionContainedTy
      * Details of a Health Insurance product/plan provided by an organization.
      *
      * The contact for the health insurance product for a certain purpose.
+     *
+     * @return static
      */
     public function addContact(FHIRInsurancePlanContact $contact): self
     {
@@ -842,6 +870,8 @@ class FHIRInsurancePlan extends FHIRDomainResource implements VersionContainedTy
      * Details of a Health Insurance product/plan provided by an organization.
      *
      * The contact for the health insurance product for a certain purpose.
+     *
+     * @return static
      */
     public function setContact(FHIRInsurancePlanContact ...$contact): self
     {
@@ -886,6 +916,8 @@ class FHIRInsurancePlan extends FHIRDomainResource implements VersionContainedTy
      *
      * The technical endpoints providing access to services operated for the health
      * insurance product.
+     *
+     * @return static
      */
     public function addEndpoint(FHIRReference $endpoint): self
     {
@@ -903,6 +935,8 @@ class FHIRInsurancePlan extends FHIRDomainResource implements VersionContainedTy
      *
      * The technical endpoints providing access to services operated for the health
      * insurance product.
+     *
+     * @return static
      */
     public function setEndpoint(FHIRReference ...$endpoint): self
     {
@@ -945,6 +979,8 @@ class FHIRInsurancePlan extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the network included in the health insurance product.
+     *
+     * @return static
      */
     public function addNetwork(FHIRReference $network): self
     {
@@ -961,6 +997,8 @@ class FHIRInsurancePlan extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the network included in the health insurance product.
+     *
+     * @return static
      */
     public function setNetwork(FHIRReference ...$network): self
     {
@@ -999,6 +1037,8 @@ class FHIRInsurancePlan extends FHIRDomainResource implements VersionContainedTy
      * Details of a Health Insurance product/plan provided by an organization.
      *
      * Details about the coverage offered by the insurance product.
+     *
+     * @return static
      */
     public function addCoverage(FHIRInsurancePlanCoverage $coverage): self
     {
@@ -1013,6 +1053,8 @@ class FHIRInsurancePlan extends FHIRDomainResource implements VersionContainedTy
      * Details of a Health Insurance product/plan provided by an organization.
      *
      * Details about the coverage offered by the insurance product.
+     *
+     * @return static
      */
     public function setCoverage(FHIRInsurancePlanCoverage ...$coverage): self
     {
@@ -1051,6 +1093,8 @@ class FHIRInsurancePlan extends FHIRDomainResource implements VersionContainedTy
      * Details of a Health Insurance product/plan provided by an organization.
      *
      * Details about an insurance plan.
+     *
+     * @return static
      */
     public function addPlan(FHIRInsurancePlanPlan $plan): self
     {
@@ -1065,6 +1109,8 @@ class FHIRInsurancePlan extends FHIRDomainResource implements VersionContainedTy
      * Details of a Health Insurance product/plan provided by an organization.
      *
      * Details about an insurance plan.
+     *
+     * @return static
      */
     public function setPlan(FHIRInsurancePlanPlan ...$plan): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -518,6 +518,8 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * The identifier of the request associated with this response. If an identifier
      * was given as part of the request, it will be reproduced here to enable the
      * requester to more easily identify the response in a multi-request scenario.
+     *
+     * @return static
      */
     public function setRequestIdentifier(null|FHIRIdentifier $requestIdentifier): self
     {
@@ -562,6 +564,8 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a service to provide unique, business identifiers for the response.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -579,6 +583,8 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a service to provide unique, business identifiers for the response.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -610,6 +616,8 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
      * requested.
+     *
+     * @return static
      */
     public function setModuleUri(null|string|FHIRUriPrimitive|FHIRUri $moduleUri): self
     {
@@ -646,6 +654,8 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
      * requested.
+     *
+     * @return static
      */
     public function setModuleCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $moduleCanonical): self
     {
@@ -682,6 +692,8 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
      * requested.
+     *
+     * @return static
      */
     public function setModuleCodeableConcept(null|FHIRCodeableConcept $moduleCodeableConcept): self
     {
@@ -721,6 +733,8 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * determines that a potentially more accurate response could be provided if more
      * data was available, the status will be data-requested, and the response will
      * contain a description of the additional requested information.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRGuidanceResponseStatusEnum|FHIRGuidanceResponseStatus $status): self
     {
@@ -753,6 +767,8 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient for which the request was processed.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -784,6 +800,8 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      *
      * The encounter during which this response was created or to which the creation of
      * this record is tightly associated.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -819,6 +837,8 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates when the guidance response was processed.
+     *
+     * @return static
      */
     public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime): self
     {
@@ -851,6 +871,8 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a reference to the device that performed the guidance.
+     *
+     * @return static
      */
     public function setPerformer(null|FHIRReference $performer): self
     {
@@ -895,6 +917,8 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the reason for the guidance response in coded or textual form.
+     *
+     * @return static
      */
     public function addReasonCode(FHIRCodeableConcept $reasonCode): self
     {
@@ -912,6 +936,8 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the reason for the guidance response in coded or textual form.
+     *
+     * @return static
      */
     public function setReasonCode(FHIRCodeableConcept ...$reasonCode): self
     {
@@ -960,6 +986,8 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * parameter to the evaluation and echoed by the service, although for some use
      * cases, such as subscription- or event-based scenarios, it may provide an
      * indication of the cause for the response.
+     *
+     * @return static
      */
     public function addReasonReference(FHIRReference $reasonReference): self
     {
@@ -979,6 +1007,8 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * parameter to the evaluation and echoed by the service, although for some use
      * cases, such as subscription- or event-based scenarios, it may provide an
      * indication of the cause for the response.
+     *
+     * @return static
      */
     public function setReasonReference(FHIRReference ...$reasonReference): self
     {
@@ -1023,6 +1053,8 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a mechanism to communicate additional information about the response.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1040,6 +1072,8 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a mechanism to communicate additional information about the response.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1086,6 +1120,8 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * Messages resulting from the evaluation of the artifact or artifacts. As part of
      * evaluating the request, the engine may produce informational or warning
      * messages. These messages will be provided by this element.
+     *
+     * @return static
      */
     public function addEvaluationMessage(FHIRReference $evaluationMessage): self
     {
@@ -1104,6 +1140,8 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * Messages resulting from the evaluation of the artifact or artifacts. As part of
      * evaluating the request, the engine may produce informational or warning
      * messages. These messages will be provided by this element.
+     *
+     * @return static
      */
     public function setEvaluationMessage(FHIRReference ...$evaluationMessage): self
     {
@@ -1141,6 +1179,8 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * are returned as part of the operation result. However, modules may define
      * specific outputs that would be returned as the result of the evaluation, and
      * these would be returned in this element.
+     *
+     * @return static
      */
     public function setOutputParameters(null|FHIRReference $outputParameters): self
     {
@@ -1170,6 +1210,8 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actions, if any, produced by the evaluation of the artifact.
+     *
+     * @return static
      */
     public function setResult(null|FHIRReference $result): self
     {
@@ -1220,6 +1262,8 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * additional information would potentially result in a more accurate response,
      * this element will a description of the data required in order to proceed with
      * the evaluation. A subsequent request to the service should include this data.
+     *
+     * @return static
      */
     public function addDataRequirement(FHIRDataRequirement $dataRequirement): self
     {
@@ -1240,6 +1284,8 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * additional information would potentially result in a more accurate response,
      * this element will a description of the data required in order to proceed with
      * the evaluation. A subsequent request to the service should include this data.
+     *
+     * @return static
      */
     public function setDataRequirement(FHIRDataRequirement ...$dataRequirement): self
     {

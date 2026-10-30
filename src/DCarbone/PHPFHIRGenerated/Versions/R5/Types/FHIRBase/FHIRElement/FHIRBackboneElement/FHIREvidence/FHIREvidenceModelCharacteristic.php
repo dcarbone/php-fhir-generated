@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -240,6 +240,8 @@ class FHIREvidenceModelCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description of a component of the method to generate the statistic.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -275,6 +277,8 @@ class FHIREvidenceModelCharacteristic extends FHIRBackboneElement
      *
      * Further specification of the quantified value of the component of the method to
      * generate the statistic.
+     *
+     * @return static
      */
     public function setValue(null|FHIRQuantity $value): self
     {
@@ -319,6 +323,8 @@ class FHIREvidenceModelCharacteristic extends FHIRBackboneElement
      * variables), the statistics, and the certainty of this evidence.
      *
      * A variable adjusted for in the adjusted analysis.
+     *
+     * @return static
      */
     public function addVariable(FHIREvidenceVariable $variable): self
     {
@@ -336,6 +342,8 @@ class FHIREvidenceModelCharacteristic extends FHIRBackboneElement
      * variables), the statistics, and the certainty of this evidence.
      *
      * A variable adjusted for in the adjusted analysis.
+     *
+     * @return static
      */
     public function setVariable(FHIREvidenceVariable ...$variable): self
     {
@@ -380,6 +388,8 @@ class FHIREvidenceModelCharacteristic extends FHIRBackboneElement
      * variables), the statistics, and the certainty of this evidence.
      *
      * An attribute of the statistic used as a model characteristic.
+     *
+     * @return static
      */
     public function addAttributeEstimate(FHIREvidenceAttributeEstimate $attributeEstimate): self
     {
@@ -397,6 +407,8 @@ class FHIREvidenceModelCharacteristic extends FHIRBackboneElement
      * variables), the statistics, and the certainty of this evidence.
      *
      * An attribute of the statistic used as a model characteristic.
+     *
+     * @return static
      */
     public function setAttributeEstimate(FHIREvidenceAttributeEstimate ...$attributeEstimate): self
     {

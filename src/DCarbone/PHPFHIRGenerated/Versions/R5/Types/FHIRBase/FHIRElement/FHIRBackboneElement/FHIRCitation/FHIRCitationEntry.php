@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -306,6 +306,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The identity of the individual contributor.
+     *
+     * @return static
      */
     public function setContributor(null|FHIRReference $contributor): self
     {
@@ -335,6 +337,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * For citation styles that use initials.
+     *
+     * @return static
      */
     public function setForenameInitials(null|string|FHIRStringPrimitive|FHIRString $forenameInitials): self
     {
@@ -380,6 +384,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization affiliated with the contributor.
+     *
+     * @return static
      */
     public function addAffiliation(FHIRReference $affiliation): self
     {
@@ -396,6 +402,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization affiliated with the contributor.
+     *
+     * @return static
      */
     public function setAffiliation(FHIRReference ...$affiliation): self
     {
@@ -442,6 +450,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * This element identifies the specific nature of an individual’s contribution
      * with respect to the cited work.
+     *
+     * @return static
      */
     public function addContributionType(FHIRCodeableConcept $contributionType): self
     {
@@ -460,6 +470,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * This element identifies the specific nature of an individual’s contribution
      * with respect to the cited work.
+     *
+     * @return static
      */
     public function setContributionType(FHIRCodeableConcept ...$contributionType): self
     {
@@ -491,6 +503,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The role of the contributor (e.g. author, editor, reviewer, funder).
+     *
+     * @return static
      */
     public function setRole(null|FHIRCodeableConcept $role): self
     {
@@ -535,6 +549,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * Contributions with accounting for time or number.
+     *
+     * @return static
      */
     public function addContributionInstance(FHIRCitationContributionInstance $contributionInstance): self
     {
@@ -552,6 +568,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * Contributions with accounting for time or number.
+     *
+     * @return static
      */
     public function setContributionInstance(FHIRCitationContributionInstance ...$contributionInstance): self
     {
@@ -579,6 +597,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the contributor is the corresponding contributor for the role.
+     *
+     * @return static
      */
     public function setCorrespondingContact(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $correspondingContact): self
     {
@@ -613,6 +633,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * Provides a numerical ranking to represent the degree of contributorship relative
      * to other contributors, such as 1 for first author and 2 for second author.
+     *
+     * @return static
      */
     public function setRankingOrder(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $rankingOrder): self
     {

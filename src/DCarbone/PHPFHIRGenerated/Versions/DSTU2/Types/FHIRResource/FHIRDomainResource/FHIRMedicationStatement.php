@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -525,6 +525,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      * administration while the patient was off the ward might be made with a different
      * system and entered after the event. Particularly important if these records have
      * to be updated.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -547,6 +549,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      * administration while the patient was off the ward might be made with a different
      * system and entered after the event. Particularly important if these records have
      * to be updated.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -576,6 +580,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or animal who is/was taking the medication.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -605,6 +611,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who provided the information about the taking of this medication.
+     *
+     * @return static
      */
     public function setInformationSource(null|FHIRReference $informationSource): self
     {
@@ -640,6 +648,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the medication statement was asserted by the information source.
+     *
+     * @return static
      */
     public function setDateAsserted(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateAsserted): self
     {
@@ -674,6 +684,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      * A code representing the patient or other source's judgment about the state of
      * the medication used that this statement is about. Generally this will be active
      * or completed.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRMedicationStatementStatusList|FHIRMedicationStatementStatus $status): self
     {
@@ -704,6 +716,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Set this to true if the record is saying that the medication was NOT taken.
+     *
+     * @return static
      */
     public function setWasNotTaken(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $wasNotTaken): self
     {
@@ -751,6 +765,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code indicating why the medication was not taken.
+     *
+     * @return static
      */
     public function addReasonNotTaken(FHIRCodeableConcept $reasonNotTaken): self
     {
@@ -768,6 +784,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code indicating why the medication was not taken.
+     *
+     * @return static
      */
     public function setReasonNotTaken(FHIRCodeableConcept ...$reasonNotTaken): self
     {
@@ -799,6 +817,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reason for why the medication is being/was taken.
+     *
+     * @return static
      */
     public function setReasonForUseCodeableConcept(null|FHIRCodeableConcept $reasonForUseCodeableConcept): self
     {
@@ -828,6 +848,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reason for why the medication is being/was taken.
+     *
+     * @return static
      */
     public function setReasonForUseReference(null|FHIRReference $reasonForUseReference): self
     {
@@ -865,6 +887,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      *
      * The interval of time during which it is being asserted that the patient was
      * taking the medication (or was not taking, when the wasNotGiven element is true).
+     *
+     * @return static
      */
     public function setEffectiveDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $effectiveDateTime): self
     {
@@ -899,6 +923,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      *
      * The interval of time during which it is being asserted that the patient was
      * taking the medication (or was not taking, when the wasNotGiven element is true).
+     *
+     * @return static
      */
     public function setEffectivePeriod(null|FHIRPeriod $effectivePeriod): self
     {
@@ -930,6 +956,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      *
      * Provides extra information about the medication statement that is not conveyed
      * by the other attributes.
+     *
+     * @return static
      */
     public function setNote(null|string|FHIRStringPrimitive|FHIRString $note): self
     {
@@ -977,6 +1005,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      *
      * Allows linking the MedicationStatement to the underlying MedicationOrder, or to
      * other information that supports the MedicationStatement.
+     *
+     * @return static
      */
     public function addSupportingInformation(FHIRReference $supportingInformation): self
     {
@@ -994,6 +1024,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      *
      * Allows linking the MedicationStatement to the underlying MedicationOrder, or to
      * other information that supports the MedicationStatement.
+     *
+     * @return static
      */
     public function setSupportingInformation(FHIRReference ...$supportingInformation): self
     {
@@ -1029,6 +1061,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
+     *
+     * @return static
      */
     public function setMedicationCodeableConcept(null|FHIRCodeableConcept $medicationCodeableConcept): self
     {
@@ -1062,6 +1096,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
+     *
+     * @return static
      */
     public function setMedicationReference(null|FHIRReference $medicationReference): self
     {
@@ -1138,6 +1174,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      * administration is more formal and is not missing detailed information.
      *
      * Indicates how the medication is/was used by the patient.
+     *
+     * @return static
      */
     public function addDosage(FHIRMedicationStatementDosage $dosage): self
     {
@@ -1171,6 +1209,8 @@ class FHIRMedicationStatement extends FHIRDomainResource implements VersionConta
      * administration is more formal and is not missing detailed information.
      *
      * Indicates how the medication is/was used by the patient.
+     *
+     * @return static
      */
     public function setDosage(FHIRMedicationStatementDosage ...$dosage): self
     {

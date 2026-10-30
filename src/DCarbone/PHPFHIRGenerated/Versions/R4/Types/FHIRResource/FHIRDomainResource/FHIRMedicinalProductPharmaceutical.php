@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -309,6 +309,8 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier for the pharmaceutical medicinal product.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -326,6 +328,8 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier for the pharmaceutical medicinal product.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -357,6 +361,8 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The administrable dose form, after necessary reconstitution.
+     *
+     * @return static
      */
     public function setAdministrableDoseForm(null|FHIRCodeableConcept $administrableDoseForm): self
     {
@@ -388,6 +394,8 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
+     *
+     * @return static
      */
     public function setUnitOfPresentation(null|FHIRCodeableConcept $unitOfPresentation): self
     {
@@ -430,6 +438,8 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ingredient.
+     *
+     * @return static
      */
     public function addIngredient(FHIRReference $ingredient): self
     {
@@ -446,6 +456,8 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ingredient.
+     *
+     * @return static
      */
     public function setIngredient(FHIRReference ...$ingredient): self
     {
@@ -488,6 +500,8 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Accompanying device.
+     *
+     * @return static
      */
     public function addDevice(FHIRReference $device): self
     {
@@ -504,6 +518,8 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Accompanying device.
+     *
+     * @return static
      */
     public function setDevice(FHIRReference ...$device): self
     {
@@ -542,6 +558,8 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      * A pharmaceutical product described in terms of its composition and dose form.
      *
      * Characteristics e.g. a products onset of action.
+     *
+     * @return static
      */
     public function addCharacteristics(FHIRMedicinalProductPharmaceuticalCharacteristics $characteristics): self
     {
@@ -556,6 +574,8 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      * A pharmaceutical product described in terms of its composition and dose form.
      *
      * Characteristics e.g. a products onset of action.
+     *
+     * @return static
      */
     public function setCharacteristics(FHIRMedicinalProductPharmaceuticalCharacteristics ...$characteristics): self
     {
@@ -596,6 +616,8 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      *
      * The path by which the pharmaceutical product is taken into or makes contact with
      * the body.
+     *
+     * @return static
      */
     public function addRouteOfAdministration(FHIRMedicinalProductPharmaceuticalRouteOfAdministration $routeOfAdministration): self
     {
@@ -611,6 +633,8 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      *
      * The path by which the pharmaceutical product is taken into or makes contact with
      * the body.
+     *
+     * @return static
      */
     public function setRouteOfAdministration(FHIRMedicinalProductPharmaceuticalRouteOfAdministration ...$routeOfAdministration): self
     {

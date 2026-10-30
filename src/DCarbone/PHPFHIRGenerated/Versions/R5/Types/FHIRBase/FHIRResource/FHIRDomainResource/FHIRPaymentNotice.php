@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -411,6 +411,8 @@ class FHIRPaymentNotice extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this payment notice.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -428,6 +430,8 @@ class FHIRPaymentNotice extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this payment notice.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -453,6 +457,8 @@ class FHIRPaymentNotice extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRFinancialResourceStatusCodesEnum|FHIRFinancialResourceStatusCodes $status): self
     {
@@ -485,6 +491,8 @@ class FHIRPaymentNotice extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference of resource for which payment is being made.
+     *
+     * @return static
      */
     public function setRequest(null|FHIRReference $request): self
     {
@@ -514,6 +522,8 @@ class FHIRPaymentNotice extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference of response to resource for which payment is being made.
+     *
+     * @return static
      */
     public function setResponse(null|FHIRReference $response): self
     {
@@ -551,6 +561,8 @@ class FHIRPaymentNotice extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when this resource was created.
+     *
+     * @return static
      */
     public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created): self
     {
@@ -583,6 +595,8 @@ class FHIRPaymentNotice extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The party who reports the payment notice.
+     *
+     * @return static
      */
     public function setReporter(null|FHIRReference $reporter): self
     {
@@ -612,6 +626,8 @@ class FHIRPaymentNotice extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the payment which is the subject of this notice.
+     *
+     * @return static
      */
     public function setPayment(null|FHIRReference $payment): self
     {
@@ -643,6 +659,8 @@ class FHIRPaymentNotice extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the above payment action occurred.
+     *
+     * @return static
      */
     public function setPaymentDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $paymentDate): self
     {
@@ -677,6 +695,8 @@ class FHIRPaymentNotice extends FHIRDomainResource implements VersionContainedTy
      *
      * The party who will receive or has received payment that is the subject of this
      * notification.
+     *
+     * @return static
      */
     public function setPayee(null|FHIRReference $payee): self
     {
@@ -706,6 +726,8 @@ class FHIRPaymentNotice extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The party who is notified of the payment status.
+     *
+     * @return static
      */
     public function setRecipient(null|FHIRReference $recipient): self
     {
@@ -735,6 +757,8 @@ class FHIRPaymentNotice extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount sent to the payee.
+     *
+     * @return static
      */
     public function setAmount(null|FHIRMoney $amount): self
     {
@@ -766,6 +790,8 @@ class FHIRPaymentNotice extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code indicating whether payment has been sent or cleared.
+     *
+     * @return static
      */
     public function setPaymentStatus(null|FHIRCodeableConcept $paymentStatus): self
     {

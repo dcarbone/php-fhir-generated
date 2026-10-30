@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -235,6 +235,8 @@ class FHIRSecurityEvent extends FHIRResource implements VersionContainedTypeInte
      * usage.
      *
      * Identifies the name, action type, time, and disposition of the audited event.
+     *
+     * @return static
      */
     public function setEvent(null|FHIRSecurityEventEvent $event): self
     {
@@ -277,6 +279,8 @@ class FHIRSecurityEvent extends FHIRResource implements VersionContainedTypeInte
      * usage.
      *
      * A person, a hardware device or software process.
+     *
+     * @return static
      */
     public function addParticipant(FHIRSecurityEventParticipant $participant): self
     {
@@ -293,6 +297,8 @@ class FHIRSecurityEvent extends FHIRResource implements VersionContainedTypeInte
      * usage.
      *
      * A person, a hardware device or software process.
+     *
+     * @return static
      */
     public function setParticipant(FHIRSecurityEventParticipant ...$participant): self
     {
@@ -322,6 +328,8 @@ class FHIRSecurityEvent extends FHIRResource implements VersionContainedTypeInte
      * usage.
      *
      * Application systems and processes.
+     *
+     * @return static
      */
     public function setSource(null|FHIRSecurityEventSource $source): self
     {
@@ -364,6 +372,8 @@ class FHIRSecurityEvent extends FHIRResource implements VersionContainedTypeInte
      * usage.
      *
      * Specific instances of data or objects that have been accessed.
+     *
+     * @return static
      */
     public function addObject(FHIRSecurityEventObject $object): self
     {
@@ -380,6 +390,8 @@ class FHIRSecurityEvent extends FHIRResource implements VersionContainedTypeInte
      * usage.
      *
      * Specific instances of data or objects that have been accessed.
+     *
+     * @return static
      */
     public function setObject(FHIRSecurityEventObject ...$object): self
     {

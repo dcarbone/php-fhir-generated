@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -228,6 +228,8 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The kind of resource that must be the focus for this message.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -264,6 +266,8 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      *
      * A profile that reflects constraints for the focal resource (and potentially for
      * related resources).
+     *
+     * @return static
      */
     public function setProfile(null|string|FHIRCanonicalPrimitive|FHIRCanonical $profile): self
     {
@@ -298,6 +302,8 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      *
      * Identifies the minimum number of resources of this type that must be pointed to
      * by a message in order for it to be valid against this MessageDefinition.
+     *
+     * @return static
      */
     public function setMin(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $min): self
     {
@@ -332,6 +338,8 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      *
      * Identifies the maximum number of resources of this type that must be pointed to
      * by a message in order for it to be valid against this MessageDefinition.
+     *
+     * @return static
      */
     public function setMax(null|string|FHIRStringPrimitive|FHIRString $max): self
     {

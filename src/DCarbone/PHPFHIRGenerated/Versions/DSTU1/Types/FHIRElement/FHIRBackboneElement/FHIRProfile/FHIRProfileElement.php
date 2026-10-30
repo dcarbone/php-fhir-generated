@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -234,6 +234,8 @@ class FHIRProfileElement extends FHIRBackboneElement
      *
      * The path identifies the element and is expressed as a "."-separated list of
      * ancestor elements, beginning with the name of the resource.
+     *
+     * @return static
      */
     public function setPath(null|string|FHIRStringPrimitive|FHIRString $path): self
     {
@@ -279,6 +281,8 @@ class FHIRProfileElement extends FHIRBackboneElement
      *
      * Codes that define how this element is represented in instances, when the
      * deviation varies from the normal case.
+     *
+     * @return static
      */
     public function addRepresentation(string|FHIRPropertyRepresentationList|FHIRPropertyRepresentation $representation): self
     {
@@ -298,6 +302,8 @@ class FHIRProfileElement extends FHIRBackboneElement
      *
      * Codes that define how this element is represented in instances, when the
      * deviation varies from the normal case.
+     *
+     * @return static
      */
     public function setRepresentation(string|FHIRPropertyRepresentationList|FHIRPropertyRepresentation ...$representation): self
     {
@@ -338,6 +344,8 @@ class FHIRProfileElement extends FHIRBackboneElement
      * definitions using Profile.structure.element.definition.nameReference). This is a
      * unique name referring to a specific set of constraints applied to this element.
      * One use of this is to provide a name to different slices of the same element.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -378,6 +386,8 @@ class FHIRProfileElement extends FHIRBackboneElement
      * set of slices is any elements that come after this in the element sequence that
      * have the same path, until a shorter path occurs (the shorter path terminates the
      * set).
+     *
+     * @return static
      */
     public function setSlicing(null|FHIRProfileSlicing $slicing): self
     {
@@ -409,6 +419,8 @@ class FHIRProfileElement extends FHIRBackboneElement
      *
      * Definition of the content of the element to provide a more specific definition
      * than that contained for the element in the base resource.
+     *
+     * @return static
      */
     public function setDefinition(null|FHIRProfileDefinition $definition): self
     {

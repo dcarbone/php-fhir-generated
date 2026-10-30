@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -498,6 +498,8 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      *
      * Unique instance identifiers assigned to a biologically derived product dispense.
      * Note: This is a business identifier, not a resource identifier.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -516,6 +518,8 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      *
      * Unique instance identifiers assigned to a biologically derived product dispense.
      * Note: This is a business identifier, not a resource identifier.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -560,6 +564,8 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      *
      * The order or request that the dispense is fulfilling. This is a reference to a
      * ServiceRequest resource.
+     *
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -577,6 +583,8 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      *
      * The order or request that the dispense is fulfilling. This is a reference to a
      * ServiceRequest resource.
+     *
+     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -619,6 +627,8 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger event of which this particular event is a component.
+     *
+     * @return static
      */
     public function addPartOf(FHIRReference $partOf): self
     {
@@ -635,6 +645,8 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger event of which this particular event is a component.
+     *
+     * @return static
      */
     public function setPartOf(FHIRReference ...$partOf): self
     {
@@ -662,6 +674,8 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the dispense event.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRBiologicallyDerivedProductDispenseCodesEnum|FHIRBiologicallyDerivedProductDispenseCodes $status): self
     {
@@ -698,6 +712,8 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      *
      * Indicates the relationship between the donor of the biologically derived product
      * and the intended recipient.
+     *
+     * @return static
      */
     public function setOriginRelationshipType(null|FHIRCodeableConcept $originRelationshipType): self
     {
@@ -729,6 +745,8 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      *
      * A link to a resource identifying the biologically derived product that is being
      * dispensed.
+     *
+     * @return static
      */
     public function setProduct(null|FHIRReference $product): self
     {
@@ -758,6 +776,8 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A link to a resource representing the patient that the product is dispensed for.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -789,6 +809,8 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the type of matching associated with the dispense.
+     *
+     * @return static
      */
     public function setMatchStatus(null|FHIRCodeableConcept $matchStatus): self
     {
@@ -833,6 +855,8 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      * clinical team responsible for clinical application.
      *
      * Indicates who or what performed an action.
+     *
+     * @return static
      */
     public function addPerformer(FHIRBiologicallyDerivedProductDispensePerformer $performer): self
     {
@@ -850,6 +874,8 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      * clinical team responsible for clinical application.
      *
      * Indicates who or what performed an action.
+     *
+     * @return static
      */
     public function setPerformer(FHIRBiologicallyDerivedProductDispensePerformer ...$performer): self
     {
@@ -879,6 +905,8 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The physical location where the dispense was performed.
+     *
+     * @return static
      */
     public function setLocation(null|FHIRReference $location): self
     {
@@ -914,6 +942,8 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      *
      * The amount of product in the dispense. Quantity will depend on the product being
      * dispensed. Examples are: volume; cell count; concentration.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -951,6 +981,8 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the product was selected/ matched.
+     *
+     * @return static
      */
     public function setPreparedDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $preparedDate): self
     {
@@ -991,6 +1023,8 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the product was dispatched for clinical use.
+     *
+     * @return static
      */
     public function setWhenHandedOver(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $whenHandedOver): self
     {
@@ -1025,6 +1059,8 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      *
      * Link to a resource identifying the physical location that the product was
      * dispatched to.
+     *
+     * @return static
      */
     public function setDestination(null|FHIRReference $destination): self
     {
@@ -1069,6 +1105,8 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional notes.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1086,6 +1124,8 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional notes.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1115,6 +1155,8 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specific instructions for use.
+     *
+     * @return static
      */
     public function setUsageInstruction(null|string|FHIRStringPrimitive|FHIRString $usageInstruction): self
     {

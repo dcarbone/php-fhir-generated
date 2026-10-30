@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -243,6 +243,8 @@ class FHIRExampleScenarioVersion extends FHIRBackboneElement
      *
      * A unique string within the instance that is used to reference the version of the
      * instance.
+     *
+     * @return static
      */
     public function setKey(null|string|FHIRStringPrimitive|FHIRString $key): self
     {
@@ -275,6 +277,8 @@ class FHIRExampleScenarioVersion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short descriptive label the version to be used in tables or diagrams.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -317,6 +321,8 @@ class FHIRExampleScenarioVersion extends FHIRBackboneElement
      *
      * An explanation of what this specific version of the instance contains and
      * represents.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -351,6 +357,8 @@ class FHIRExampleScenarioVersion extends FHIRBackboneElement
      *
      * Points to an instance (typically an example) that shows the data that would flow
      * at this point in the scenario.
+     *
+     * @return static
      */
     public function setContent(null|FHIRReference $content): self
     {

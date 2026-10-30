@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -307,6 +307,8 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPermissionStatusEnum|FHIRPermissionStatus $status): self
     {
@@ -339,6 +341,8 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or entity that asserts the permission.
+     *
+     * @return static
      */
     public function setAsserter(null|FHIRReference $asserter): self
     {
@@ -389,6 +393,8 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that permission was asserted.
+     *
+     * @return static
      */
     public function addDate(string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -412,6 +418,8 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that permission was asserted.
+     *
+     * @return static
      */
     public function setDate(string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime ...$date): self
     {
@@ -448,6 +456,8 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period in which the permission is active.
+     *
+     * @return static
      */
     public function setValidity(null|FHIRPeriod $validity): self
     {
@@ -473,6 +483,8 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
      * Permission resource holds access rules for a given data and context.
      *
      * The asserted justification for using the data.
+     *
+     * @return static
      */
     public function setJustification(null|FHIRPermissionJustification $justification): self
     {
@@ -498,6 +510,8 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines a procedure for arriving at an access decision given the set of rules.
+     *
+     * @return static
      */
     public function setCombining(null|string|FHIRPermissionRuleCombiningEnum|FHIRPermissionRuleCombining $combining): self
     {
@@ -539,6 +553,8 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
      * Permission resource holds access rules for a given data and context.
      *
      * A set of rules.
+     *
+     * @return static
      */
     public function addRule(FHIRPermissionRule $rule): self
     {
@@ -553,6 +569,8 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
      * Permission resource holds access rules for a given data and context.
      *
      * A set of rules.
+     *
+     * @return static
      */
     public function setRule(FHIRPermissionRule ...$rule): self
     {

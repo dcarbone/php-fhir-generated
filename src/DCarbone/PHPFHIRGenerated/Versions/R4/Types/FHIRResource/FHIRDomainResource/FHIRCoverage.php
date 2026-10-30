@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -487,6 +487,8 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this coverage.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -504,6 +506,8 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this coverage.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -531,6 +535,8 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRFinancialResourceStatusCodesList|FHIRFinancialResourceStatusCodes $status): self
     {
@@ -567,6 +573,8 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The type of coverage: social program, medical plan, accident coverage (workers
      * compensation, auto), group health or payment by an individual or organization.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -596,6 +604,8 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The party who 'owns' the insurance policy.
+     *
+     * @return static
      */
     public function setPolicyHolder(null|FHIRReference $policyHolder): self
     {
@@ -629,6 +639,8 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * The party who has signed-up for or 'owns' the contractual relationship to the
      * policy or to whom the benefit of the policy for services rendered to them or
      * their family is due.
+     *
+     * @return static
      */
     public function setSubscriber(null|FHIRReference $subscriber): self
     {
@@ -658,6 +670,8 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The insurer assigned ID for the Subscriber.
+     *
+     * @return static
      */
     public function setSubscriberId(null|string|FHIRStringPrimitive|FHIRString $subscriberId): self
     {
@@ -692,6 +706,8 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The party who benefits from the insurance coverage; the patient when products
      * and/or services are provided.
+     *
+     * @return static
      */
     public function setBeneficiary(null|FHIRReference $beneficiary): self
     {
@@ -721,6 +737,8 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A unique identifier for a dependent under the coverage.
+     *
+     * @return static
      */
     public function setDependent(null|string|FHIRStringPrimitive|FHIRString $dependent): self
     {
@@ -755,6 +773,8 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The relationship of beneficiary (patient) to the subscriber.
+     *
+     * @return static
      */
     public function setRelationship(null|FHIRCodeableConcept $relationship): self
     {
@@ -788,6 +808,8 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * Time period during which the coverage is in force. A missing start date
      * indicates the start date isn't known, a missing end date means the coverage is
      * continuing to be in force.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -832,6 +854,8 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The program or plan underwriter or payor including both insurance and
      * non-insurance agreements, such as patient-pay agreements.
+     *
+     * @return static
      */
     public function addPayor(FHIRReference $payor): self
     {
@@ -849,6 +873,8 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The program or plan underwriter or payor including both insurance and
      * non-insurance agreements, such as patient-pay agreements.
+     *
+     * @return static
      */
     public function setPayor(FHIRReference ...$payor): self
     {
@@ -889,6 +915,8 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * products and services. Includes both insurance and self-payment.
      *
      * A suite of underwriter specific classifiers.
+     *
+     * @return static
      */
     public function addClass(FHIRCoverageClass $class): self
     {
@@ -904,6 +932,8 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * products and services. Includes both insurance and self-payment.
      *
      * A suite of underwriter specific classifiers.
+     *
+     * @return static
      */
     public function setClass(FHIRCoverageClass ...$class): self
     {
@@ -939,6 +969,8 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * are currently in force. Note, there may be gaps in the numbering and this does
      * not imply primary, secondary etc. as the specific positioning of coverages
      * depends upon the episode of care.
+     *
+     * @return static
      */
     public function setOrder(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $order): self
     {
@@ -975,6 +1007,8 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * The insurer-specific identifier for the insurer-defined network of providers to
      * which the beneficiary may seek treatment which will be covered at the
      * 'in-network' rate, otherwise 'out of network' terms and conditions apply.
+     *
+     * @return static
      */
     public function setNetwork(null|string|FHIRStringPrimitive|FHIRString $network): self
     {
@@ -1020,6 +1054,8 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A suite of codes indicating the cost category and associated amount which have
      * been detailed in the policy and may have been included on the health card.
+     *
+     * @return static
      */
     public function addCostToBeneficiary(FHIRCoverageCostToBeneficiary $costToBeneficiary): self
     {
@@ -1036,6 +1072,8 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A suite of codes indicating the cost category and associated amount which have
      * been detailed in the policy and may have been included on the health card.
+     *
+     * @return static
      */
     public function setCostToBeneficiary(FHIRCoverageCostToBeneficiary ...$costToBeneficiary): self
     {
@@ -1065,6 +1103,8 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * When 'subrogation=true' this insurance instance has been included not for
      * adjudication but to provide insurers with the details to recover costs.
+     *
+     * @return static
      */
     public function setSubrogation(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $subrogation): self
     {
@@ -1110,6 +1150,8 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The policy(s) which constitute this insurance coverage.
+     *
+     * @return static
      */
     public function addContract(FHIRReference $contract): self
     {
@@ -1126,6 +1168,8 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The policy(s) which constitute this insurance coverage.
+     *
+     * @return static
      */
     public function setContract(FHIRReference ...$contract): self
     {

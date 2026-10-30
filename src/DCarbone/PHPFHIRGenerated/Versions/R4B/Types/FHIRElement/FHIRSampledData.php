@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -299,6 +299,8 @@ class FHIRSampledData extends FHIRElement
      *
      * The base quantity that a measured value of zero represents. In addition, this
      * provides the units of the entire measurement series.
+     *
+     * @return static
      */
     public function setOrigin(null|FHIRQuantity $origin): self
     {
@@ -330,6 +332,8 @@ class FHIRSampledData extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The length of time between sampling times, measured in milliseconds.
+     *
+     * @return static
      */
     public function setPeriod(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $period): self
     {
@@ -366,6 +370,8 @@ class FHIRSampledData extends FHIRElement
      *
      * A correction factor that is applied to the sampled data points before they are
      * added to the origin.
+     *
+     * @return static
      */
     public function setFactor(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $factor): self
     {
@@ -402,6 +408,8 @@ class FHIRSampledData extends FHIRElement
      *
      * The lower limit of detection of the measured points. This is needed if any of
      * the data points have the value "L" (lower than detection limit).
+     *
+     * @return static
      */
     public function setLowerLimit(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $lowerLimit): self
     {
@@ -438,6 +446,8 @@ class FHIRSampledData extends FHIRElement
      *
      * The upper limit of detection of the measured points. This is needed if any of
      * the data points have the value "U" (higher than detection limit).
+     *
+     * @return static
      */
     public function setUpperLimit(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $upperLimit): self
     {
@@ -474,6 +484,8 @@ class FHIRSampledData extends FHIRElement
      * The number of sample points at each time point. If this value is greater than
      * one, then the dimensions will be interlaced - all the sample points for a point
      * in time will be recorded at once.
+     *
+     * @return static
      */
     public function setDimensions(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $dimensions): self
     {
@@ -502,6 +514,8 @@ class FHIRSampledData extends FHIRElement
      * A series of data points which are decimal values separated by a single space
      * (character u20). The special values "E" (error), "L" (below detection limit) and
      * "U" (above detection limit) can also be used in place of a decimal value.
+     *
+     * @return static
      */
     public function setData(null|string|FHIRSampledDataDataTypePrimitive|FHIRSampledDataDataType $data): self
     {

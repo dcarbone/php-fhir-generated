@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -207,6 +207,8 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      * Identifies the actual instance of what caused the adverse event. May be a
      * substance, medication, medication administration, medication statement or a
      * device.
+     *
+     * @return static
      */
     public function setInstance(null|FHIRReference $instance): self
     {
@@ -251,6 +253,8 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      * hospitalization, or that results in death.
      *
      * Information on the possible cause of the event.
+     *
+     * @return static
      */
     public function addCausality(FHIRAdverseEventCausality $causality): self
     {
@@ -268,6 +272,8 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      * hospitalization, or that results in death.
      *
      * Information on the possible cause of the event.
+     *
+     * @return static
      */
     public function setCausality(FHIRAdverseEventCausality ...$causality): self
     {

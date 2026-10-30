@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -273,6 +273,8 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Primary of secondary specimen.
+     *
+     * @return static
      */
     public function setIsDerived(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isDerived): self
     {
@@ -307,6 +309,8 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of specimen conditioned for testing expected by lab.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -334,6 +338,8 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The preference for this type of conditioned specimen.
+     *
+     * @return static
      */
     public function setPreference(null|string|FHIRSpecimenContainedPreferenceList|FHIRSpecimenContainedPreference $preference): self
     {
@@ -362,6 +368,8 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * A kind of specimen with associated set of requirements.
      *
      * The specimen's container.
+     *
+     * @return static
      */
     public function setContainer(null|FHIRSpecimenDefinitionContainer $container): self
     {
@@ -393,6 +401,8 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      *
      * Requirements for delivery and special handling of this kind of conditioned
      * specimen.
+     *
+     * @return static
      */
     public function setRequirement(null|string|FHIRStringPrimitive|FHIRString $requirement): self
     {
@@ -427,6 +437,8 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      *
      * The usual time that a specimen of this kind is retained after the ordered tests
      * are completed, for the purpose of additional testing.
+     *
+     * @return static
      */
     public function setRetentionTime(null|FHIRDuration $retentionTime): self
     {
@@ -471,6 +483,8 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Criterion for rejection of the specimen in its container by the laboratory.
+     *
+     * @return static
      */
     public function addRejectionCriterion(FHIRCodeableConcept $rejectionCriterion): self
     {
@@ -488,6 +502,8 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Criterion for rejection of the specimen in its container by the laboratory.
+     *
+     * @return static
      */
     public function setRejectionCriterion(FHIRCodeableConcept ...$rejectionCriterion): self
     {
@@ -528,6 +544,8 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      *
      * Set of instructions for preservation/transport of the specimen at a defined
      * temperature interval, prior the testing process.
+     *
+     * @return static
      */
     public function addHandling(FHIRSpecimenDefinitionHandling $handling): self
     {
@@ -543,6 +561,8 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      *
      * Set of instructions for preservation/transport of the specimen at a defined
      * temperature interval, prior the testing process.
+     *
+     * @return static
      */
     public function setHandling(FHIRSpecimenDefinitionHandling ...$handling): self
     {

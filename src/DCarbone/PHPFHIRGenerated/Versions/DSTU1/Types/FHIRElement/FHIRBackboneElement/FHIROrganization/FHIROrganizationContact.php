@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -228,6 +228,8 @@ class FHIROrganizationContact extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates a purpose for which the contact can be reached.
+     *
+     * @return static
      */
     public function setPurpose(null|FHIRCodeableConcept $purpose): self
     {
@@ -257,6 +259,8 @@ class FHIROrganizationContact extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the contact.
+     *
+     * @return static
      */
     public function setName(null|FHIRHumanName $name): self
     {
@@ -303,6 +307,8 @@ class FHIROrganizationContact extends FHIRBackboneElement
      *
      * A contact detail (e.g. a telephone number or an email address) by which the
      * party may be contacted.
+     *
+     * @return static
      */
     public function addTelecom(FHIRContact $telecom): self
     {
@@ -321,6 +327,8 @@ class FHIROrganizationContact extends FHIRBackboneElement
      *
      * A contact detail (e.g. a telephone number or an email address) by which the
      * party may be contacted.
+     *
+     * @return static
      */
     public function setTelecom(FHIRContact ...$telecom): self
     {
@@ -352,6 +360,8 @@ class FHIROrganizationContact extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Visiting or postal addresses for the contact.
+     *
+     * @return static
      */
     public function setAddress(null|FHIRAddress $address): self
     {
@@ -385,6 +395,8 @@ class FHIROrganizationContact extends FHIRBackboneElement
      *
      * Administrative Gender - the gender that the person is considered to have for
      * administration and record keeping purposes.
+     *
+     * @return static
      */
     public function setGender(null|FHIRCodeableConcept $gender): self
     {

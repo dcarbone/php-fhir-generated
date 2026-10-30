@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -323,6 +323,8 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of this series in the overall sequence.
+     *
+     * @return static
      */
     public function setNumber(null|string|float|FHIRIntegerPrimitive|FHIRInteger $number): self
     {
@@ -353,6 +355,8 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The modality of this series sequence.
+     *
+     * @return static
      */
     public function setModality(null|string|FHIRModalityList|FHIRModality $modality): self
     {
@@ -385,6 +389,8 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Formal identifier for this series.
+     *
+     * @return static
      */
     public function setUid(null|string|FHIROidPrimitive|FHIROid $uid): self
     {
@@ -415,6 +421,8 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the series.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -445,6 +453,8 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Sequence that contains attributes from the.
+     *
+     * @return static
      */
     public function setNumberOfInstances(null|string|float|FHIRIntegerPrimitive|FHIRInteger $numberOfInstances): self
     {
@@ -475,6 +485,8 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Availability of series (online, offline or nearline).
+     *
+     * @return static
      */
     public function setAvailability(null|string|FHIRInstanceAvailabilityList|FHIRInstanceAvailability $availability): self
     {
@@ -505,6 +517,8 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * WADO-RS URI where Series is available.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -539,6 +553,8 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      *
      * Body part examined. See DICOM Part 16 Annex L for the mapping from DICOM to
      * Snomed.
+     *
+     * @return static
      */
     public function setBodySite(null|FHIRCoding $bodySite): self
     {
@@ -572,6 +588,8 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the series started.
+     *
+     * @return static
      */
     public function setDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateTime): self
     {
@@ -617,6 +635,8 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * key images.
      *
      * A single image taken from a patient.
+     *
+     * @return static
      */
     public function addInstance(FHIRImagingStudyInstance $instance): self
     {
@@ -633,6 +653,8 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * key images.
      *
      * A single image taken from a patient.
+     *
+     * @return static
      */
     public function setInstance(FHIRImagingStudyInstance ...$instance): self
     {

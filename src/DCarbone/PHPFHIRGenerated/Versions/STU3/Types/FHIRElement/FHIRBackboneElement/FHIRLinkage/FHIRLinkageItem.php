@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -185,6 +185,8 @@ class FHIRLinkageItem extends FHIRBackboneElement
      *
      * Distinguishes which item is "source of truth" (if any) and which items are no
      * longer considered to be current representations.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRLinkageTypeList|FHIRLinkageType $type): self
     {
@@ -217,6 +219,8 @@ class FHIRLinkageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The resource instance being linked as part of the group.
+     *
+     * @return static
      */
     public function setResource(null|FHIRReference $resource): self
     {

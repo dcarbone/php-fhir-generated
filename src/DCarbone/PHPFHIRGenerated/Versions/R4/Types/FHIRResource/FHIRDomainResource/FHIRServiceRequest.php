@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -886,6 +886,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * Identifiers assigned to this order instance by the orderer and/or the receiver
      * and/or order fulfiller.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -904,6 +906,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * Identifiers assigned to this order instance by the orderer and/or the receiver
      * and/or order fulfiller.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -950,6 +954,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other
      * definition that is adhered to in whole or in part by this ServiceRequest.
+     *
+     * @return static
      */
     public function addInstantiatesCanonical(string|FHIRCanonicalPrimitive|FHIRCanonical $instantiatesCanonical): self
     {
@@ -971,6 +977,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other
      * definition that is adhered to in whole or in part by this ServiceRequest.
+     *
+     * @return static
      */
     public function setInstantiatesCanonical(string|FHIRCanonicalPrimitive|FHIRCanonical ...$instantiatesCanonical): self
     {
@@ -1022,6 +1030,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * The URL pointing to an externally maintained protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this ServiceRequest.
+     *
+     * @return static
      */
     public function addInstantiatesUri(string|FHIRUriPrimitive|FHIRUri $instantiatesUri): self
     {
@@ -1042,6 +1052,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * The URL pointing to an externally maintained protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this ServiceRequest.
+     *
+     * @return static
      */
     public function setInstantiatesUri(string|FHIRUriPrimitive|FHIRUri ...$instantiatesUri): self
     {
@@ -1091,6 +1103,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Plan/proposal/order fulfilled by this request.
+     *
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -1107,6 +1121,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Plan/proposal/order fulfilled by this request.
+     *
+     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -1151,6 +1167,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * The request takes the place of the referenced completed or terminated
      * request(s).
+     *
+     * @return static
      */
     public function addReplaces(FHIRReference $replaces): self
     {
@@ -1168,6 +1186,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * The request takes the place of the referenced completed or terminated
      * request(s).
+     *
+     * @return static
      */
     public function setReplaces(FHIRReference ...$replaces): self
     {
@@ -1203,6 +1223,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * A shared identifier common to all service requests that were authorized more or
      * less simultaneously by a single author, representing the composite or group
      * identifier.
+     *
+     * @return static
      */
     public function setRequisition(null|FHIRIdentifier $requisition): self
     {
@@ -1232,6 +1254,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the order.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRRequestStatusList|FHIRRequestStatus $status): self
     {
@@ -1264,6 +1288,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the request is a proposal, plan, an original order or a reflex order.
+     *
+     * @return static
      */
     public function setIntent(null|string|FHIRRequestIntentList|FHIRRequestIntent $intent): self
     {
@@ -1313,6 +1339,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * A code that classifies the service for searching, sorting and display purposes
      * (e.g. "Surgical Procedure").
+     *
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -1331,6 +1359,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * A code that classifies the service for searching, sorting and display purposes
      * (e.g. "Surgical Procedure").
+     *
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -1360,6 +1390,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * Indicates how quickly the ServiceRequest should be addressed with respect to
      * other requests.
+     *
+     * @return static
      */
     public function setPriority(null|string|FHIRRequestPriorityList|FHIRRequestPriority $priority): self
     {
@@ -1392,6 +1424,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * Set this to true if the record is saying that the service/procedure should NOT
      * be performed.
+     *
+     * @return static
      */
     public function setDoNotPerform(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $doNotPerform): self
     {
@@ -1428,6 +1462,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * A code that identifies a particular service (i.e., procedure, diagnostic
      * investigation, or panel of investigations) that have been requested.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -1478,6 +1514,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * delivered. For example, and order for a urinary catheter may have an order
      * detail for an external or indwelling catheter, or an order for a bandage may
      * require additional instructions specifying how the bandage should be applied.
+     *
+     * @return static
      */
     public function addOrderDetail(FHIRCodeableConcept $orderDetail): self
     {
@@ -1498,6 +1536,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * delivered. For example, and order for a urinary catheter may have an order
      * detail for an external or indwelling catheter, or an order for a bandage may
      * require additional instructions specifying how the bandage should be applied.
+     *
+     * @return static
      */
     public function setOrderDetail(FHIRCodeableConcept ...$orderDetail): self
     {
@@ -1535,6 +1575,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * An amount of service being requested which can be a quantity ( for example
      * $1,500 home modification), a ratio ( for example, 20 half day visits per month),
      * or a range (2.0 to 1.8 Gy per fraction).
+     *
+     * @return static
      */
     public function setQuantityQuantity(null|FHIRQuantity $quantityQuantity): self
     {
@@ -1570,6 +1612,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * An amount of service being requested which can be a quantity ( for example
      * $1,500 home modification), a ratio ( for example, 20 half day visits per month),
      * or a range (2.0 to 1.8 Gy per fraction).
+     *
+     * @return static
      */
     public function setQuantityRatio(null|FHIRRatio $quantityRatio): self
     {
@@ -1603,6 +1647,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * An amount of service being requested which can be a quantity ( for example
      * $1,500 home modification), a ratio ( for example, 20 half day visits per month),
      * or a range (2.0 to 1.8 Gy per fraction).
+     *
+     * @return static
      */
     public function setQuantityRange(null|FHIRRange $quantityRange): self
     {
@@ -1636,6 +1682,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * On whom or what the service is to be performed. This is usually a human patient,
      * but can also be requested on animals, groups of humans or animals, devices such
      * as dialysis machines, or even locations (typically for environmental scans).
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -1667,6 +1715,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * An encounter that provides additional information about the healthcare context
      * in which this request is made.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -1702,6 +1752,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date/time at which the requested service should occur.
+     *
+     * @return static
      */
     public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime): self
     {
@@ -1734,6 +1786,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date/time at which the requested service should occur.
+     *
+     * @return static
      */
     public function setOccurrencePeriod(null|FHIRPeriod $occurrencePeriod): self
     {
@@ -1771,6 +1825,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date/time at which the requested service should occur.
+     *
+     * @return static
      */
     public function setOccurrenceTiming(null|FHIRTiming $occurrenceTiming): self
     {
@@ -1800,6 +1856,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the service. For example "pain", "on flare-up", etc.
+     *
+     * @return static
      */
     public function setAsNeededBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $asNeededBoolean): self
     {
@@ -1836,6 +1894,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the service. For example "pain", "on flare-up", etc.
+     *
+     * @return static
      */
     public function setAsNeededCodeableConcept(null|FHIRCodeableConcept $asNeededCodeableConcept): self
     {
@@ -1871,6 +1931,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the request transitioned to being actionable.
+     *
+     * @return static
      */
     public function setAuthoredOn(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $authoredOn): self
     {
@@ -1905,6 +1967,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * The individual who initiated the request and has responsibility for its
      * activation.
+     *
+     * @return static
      */
     public function setRequester(null|FHIRReference $requester): self
     {
@@ -1936,6 +2000,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Desired type of performer for doing the requested service.
+     *
+     * @return static
      */
     public function setPerformerType(null|FHIRCodeableConcept $performerType): self
     {
@@ -1980,6 +2046,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * The desired performer for doing the requested service. For example, the surgeon,
      * dermatopathologist, endoscopist, etc.
+     *
+     * @return static
      */
     public function addPerformer(FHIRReference $performer): self
     {
@@ -1997,6 +2065,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * The desired performer for doing the requested service. For example, the surgeon,
      * dermatopathologist, endoscopist, etc.
+     *
+     * @return static
      */
     public function setPerformer(FHIRReference ...$performer): self
     {
@@ -2043,6 +2113,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * The preferred location(s) where the procedure should actually happen in coded or
      * free text form. E.g. at home or nursing day care center.
+     *
+     * @return static
      */
     public function addLocationCode(FHIRCodeableConcept $locationCode): self
     {
@@ -2061,6 +2133,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * The preferred location(s) where the procedure should actually happen in coded or
      * free text form. E.g. at home or nursing day care center.
+     *
+     * @return static
      */
     public function setLocationCode(FHIRCodeableConcept ...$locationCode): self
     {
@@ -2105,6 +2179,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * A reference to the the preferred location(s) where the procedure should actually
      * happen. E.g. at home or nursing day care center.
+     *
+     * @return static
      */
     public function addLocationReference(FHIRReference $locationReference): self
     {
@@ -2122,6 +2198,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * A reference to the the preferred location(s) where the procedure should actually
      * happen. E.g. at home or nursing day care center.
+     *
+     * @return static
      */
     public function setLocationReference(FHIRReference ...$locationReference): self
     {
@@ -2170,6 +2248,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * An explanation or justification for why this service is being requested in coded
      * or textual form. This is often for billing purposes. May relate to the resources
      * referred to in `supportingInfo`.
+     *
+     * @return static
      */
     public function addReasonCode(FHIRCodeableConcept $reasonCode): self
     {
@@ -2189,6 +2269,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * An explanation or justification for why this service is being requested in coded
      * or textual form. This is often for billing purposes. May relate to the resources
      * referred to in `supportingInfo`.
+     *
+     * @return static
      */
     public function setReasonCode(FHIRCodeableConcept ...$reasonCode): self
     {
@@ -2233,6 +2315,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * Indicates another resource that provides a justification for why this service is
      * being requested. May relate to the resources referred to in `supportingInfo`.
+     *
+     * @return static
      */
     public function addReasonReference(FHIRReference $reasonReference): self
     {
@@ -2250,6 +2334,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * Indicates another resource that provides a justification for why this service is
      * being requested. May relate to the resources referred to in `supportingInfo`.
+     *
+     * @return static
      */
     public function setReasonReference(FHIRReference ...$reasonReference): self
     {
@@ -2294,6 +2380,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * Insurance plans, coverage extensions, pre-authorizations and/or
      * pre-determinations that may be needed for delivering the requested service.
+     *
+     * @return static
      */
     public function addInsurance(FHIRReference $insurance): self
     {
@@ -2311,6 +2399,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * Insurance plans, coverage extensions, pre-authorizations and/or
      * pre-determinations that may be needed for delivering the requested service.
+     *
+     * @return static
      */
     public function setInsurance(FHIRReference ...$insurance): self
     {
@@ -2365,6 +2455,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * observations explicitly requested by the producer (filler) to provide context or
      * supporting information needed to complete the order. For example, reporting the
      * amount of inspired oxygen for blood gas measurements.
+     *
+     * @return static
      */
     public function addSupportingInfo(FHIRReference $supportingInfo): self
     {
@@ -2387,6 +2479,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * observations explicitly requested by the producer (filler) to provide context or
      * supporting information needed to complete the order. For example, reporting the
      * amount of inspired oxygen for blood gas measurements.
+     *
+     * @return static
      */
     public function setSupportingInfo(FHIRReference ...$supportingInfo): self
     {
@@ -2429,6 +2523,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * One or more specimens that the laboratory procedure will use.
+     *
+     * @return static
      */
     public function addSpecimen(FHIRReference $specimen): self
     {
@@ -2445,6 +2541,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * One or more specimens that the laboratory procedure will use.
+     *
+     * @return static
      */
     public function setSpecimen(FHIRReference ...$specimen): self
     {
@@ -2491,6 +2589,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * Anatomic location where the procedure should be performed. This is the target
      * site.
+     *
+     * @return static
      */
     public function addBodySite(FHIRCodeableConcept $bodySite): self
     {
@@ -2509,6 +2609,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * Anatomic location where the procedure should be performed. This is the target
      * site.
+     *
+     * @return static
      */
     public function setBodySite(FHIRCodeableConcept ...$bodySite): self
     {
@@ -2555,6 +2657,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * Any other notes and comments made about the service request. For example,
      * internal billing notes.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -2573,6 +2677,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      *
      * Any other notes and comments made about the service request. For example,
      * internal billing notes.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -2602,6 +2708,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Instructions in terms that are understood by the patient or consumer.
+     *
+     * @return static
      */
     public function setPatientInstruction(null|string|FHIRStringPrimitive|FHIRString $patientInstruction): self
     {
@@ -2647,6 +2755,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Key events in the history of the request.
+     *
+     * @return static
      */
     public function addRelevantHistory(FHIRReference $relevantHistory): self
     {
@@ -2663,6 +2773,8 @@ class FHIRServiceRequest extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Key events in the history of the request.
+     *
+     * @return static
      */
     public function setRelevantHistory(FHIRReference ...$relevantHistory): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -371,6 +371,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A type of resource exposed via the restful interface.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRCodePrimitive|FHIRCode $type): self
     {
@@ -409,6 +411,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * the resource, including any constraints on cardinality, bindings, lengths or
      * other limitations. See further discussion in [Using
      * Profiles]{profiling.html#profile-uses}.
+     *
+     * @return static
      */
     public function setProfile(null|FHIRReference $profile): self
     {
@@ -451,6 +455,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * desired server implementation.
      *
      * Identifies a restful operation supported by the solution.
+     *
+     * @return static
      */
     public function addInteraction(FHIRConformanceInteraction $interaction): self
     {
@@ -467,6 +473,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * desired server implementation.
      *
      * Identifies a restful operation supported by the solution.
+     *
+     * @return static
      */
     public function setInteraction(FHIRConformanceInteraction ...$interaction): self
     {
@@ -504,6 +512,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * meta-property on resources. If the value is 'versioned-update', then the server
      * supports all the versioning features, including using e-tags for version
      * integrity in the API.
+     *
+     * @return static
      */
     public function setVersioning(null|string|FHIRResourceVersionPolicyList|FHIRResourceVersionPolicy $versioning): self
     {
@@ -536,6 +546,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
      *
      * A flag for whether the server is able to return past versions as part of the
      * vRead operation.
+     *
+     * @return static
      */
     public function setReadHistory(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $readHistory): self
     {
@@ -572,6 +584,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * new identities on the server (e.g. that is, the client PUTs to a location where
      * there is no existing resource). Allowing this operation means that the server
      * allows the client to create new identities on the server.
+     *
+     * @return static
      */
     public function setUpdateCreate(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $updateCreate): self
     {
@@ -602,6 +616,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag that indicates that the server supports conditional create.
+     *
+     * @return static
      */
     public function setConditionalCreate(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $conditionalCreate): self
     {
@@ -632,6 +648,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag that indicates that the server supports conditional update.
+     *
+     * @return static
      */
     public function setConditionalUpdate(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $conditionalUpdate): self
     {
@@ -662,6 +680,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code that indicates how the server supports conditional delete.
+     *
+     * @return static
      */
     public function setConditionalDelete(null|string|FHIRConditionalDeleteStatusList|FHIRConditionalDeleteStatus $conditionalDelete): self
     {
@@ -707,6 +727,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of _include values supported by the server.
+     *
+     * @return static
      */
     public function addSearchInclude(string|FHIRStringPrimitive|FHIRString $searchInclude): self
     {
@@ -726,6 +748,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of _include values supported by the server.
+     *
+     * @return static
      */
     public function setSearchInclude(string|FHIRStringPrimitive|FHIRString ...$searchInclude): self
     {
@@ -775,6 +799,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of _revinclude (reverse include) values supported by the server.
+     *
+     * @return static
      */
     public function addSearchRevInclude(string|FHIRStringPrimitive|FHIRString $searchRevInclude): self
     {
@@ -794,6 +820,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of _revinclude (reverse include) values supported by the server.
+     *
+     * @return static
      */
     public function setSearchRevInclude(string|FHIRStringPrimitive|FHIRString ...$searchRevInclude): self
     {
@@ -847,6 +875,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * Search parameters for implementations to support and/or make use of - either
      * references to ones defined in the specification, or additional ones defined
      * for/by the implementation.
+     *
+     * @return static
      */
     public function addSearchParam(FHIRConformanceSearchParam $searchParam): self
     {
@@ -865,6 +895,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * Search parameters for implementations to support and/or make use of - either
      * references to ones defined in the specification, or additional ones defined
      * for/by the implementation.
+     *
+     * @return static
      */
     public function setSearchParam(FHIRConformanceSearchParam ...$searchParam): self
     {

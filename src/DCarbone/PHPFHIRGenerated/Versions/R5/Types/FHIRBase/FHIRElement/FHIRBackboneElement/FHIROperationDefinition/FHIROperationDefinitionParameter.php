@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -414,6 +414,8 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The name of used to identify the parameter.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRCodePrimitive|FHIRCode $name): self
     {
@@ -442,6 +444,8 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this is an input or an output parameter.
+     *
+     * @return static
      */
     public function setUse(null|string|FHIROperationParameterUseEnum|FHIROperationParameterUse $use): self
     {
@@ -485,6 +489,8 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * If present, indicates that the parameter applies when the operation is being
      * invoked at the specified level.
+     *
+     * @return static
      */
     public function addScope(string|FHIROperationParameterScopeEnum|FHIROperationParameterScope $scope): self
     {
@@ -503,6 +509,8 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * If present, indicates that the parameter applies when the operation is being
      * invoked at the specified level.
+     *
+     * @return static
      */
     public function setScope(string|FHIROperationParameterScopeEnum|FHIROperationParameterScope ...$scope): self
     {
@@ -541,6 +549,8 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * The minimum number of times this parameter SHALL appear in the request or
      * response.
+     *
+     * @return static
      */
     public function setMin(null|string|float|FHIRIntegerPrimitive|FHIRInteger $min): self
     {
@@ -575,6 +585,8 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * The maximum number of times this element is permitted to appear in the request
      * or response.
+     *
+     * @return static
      */
     public function setMax(null|string|FHIRStringPrimitive|FHIRString $max): self
     {
@@ -615,6 +627,8 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Describes the meaning or use of this parameter.
+     *
+     * @return static
      */
     public function setDocumentation(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $documentation): self
     {
@@ -643,6 +657,8 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type for this parameter.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRFHIRTypesEnum|FHIRFHIRTypes $type): self
     {
@@ -686,6 +702,8 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * Support for polymorphic types. If the parameter type is abstract, this element
      * lists allowed sub-types for the parameter.
+     *
+     * @return static
      */
     public function addAllowedType(string|FHIRFHIRTypesEnum|FHIRFHIRTypes $allowedType): self
     {
@@ -704,6 +722,8 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * Support for polymorphic types. If the parameter type is abstract, this element
      * lists allowed sub-types for the parameter.
+     *
+     * @return static
      */
     public function setAllowedType(string|FHIRFHIRTypesEnum|FHIRFHIRTypes ...$allowedType): self
     {
@@ -769,6 +789,8 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * Implementation Guide by a canonical URL. When an implementation guide is
      * specified, the target resource SHALL conform to at least one profile defined in
      * the implementation guide.
+     *
+     * @return static
      */
     public function addTargetProfile(string|FHIRCanonicalPrimitive|FHIRCanonical $targetProfile): self
     {
@@ -796,6 +818,8 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * Implementation Guide by a canonical URL. When an implementation guide is
      * specified, the target resource SHALL conform to at least one profile defined in
      * the implementation guide.
+     *
+     * @return static
      */
     public function setTargetProfile(string|FHIRCanonicalPrimitive|FHIRCanonical ...$targetProfile): self
     {
@@ -830,6 +854,8 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * How the parameter is understood if/when it used as search parameter. This is
      * only used if the parameter is a string.
+     *
+     * @return static
      */
     public function setSearchType(null|string|FHIRSearchParamTypeEnum|FHIRSearchParamType $searchType): self
     {
@@ -860,6 +886,8 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * named query (using the search interaction).
      *
      * Binds to a value set if this parameter is coded (code, Coding, CodeableConcept).
+     *
+     * @return static
      */
     public function setBinding(null|FHIROperationDefinitionBinding $binding): self
     {
@@ -902,6 +930,8 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * Identifies other resource parameters within the operation invocation that are
      * expected to resolve to this resource.
+     *
+     * @return static
      */
     public function addReferencedFrom(FHIROperationDefinitionReferencedFrom $referencedFrom): self
     {
@@ -918,6 +948,8 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * Identifies other resource parameters within the operation invocation that are
      * expected to resolve to this resource.
+     *
+     * @return static
      */
     public function setReferencedFrom(FHIROperationDefinitionReferencedFrom ...$referencedFrom): self
     {
@@ -958,6 +990,8 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * named query (using the search interaction).
      *
      * The parts of a nested Parameter.
+     *
+     * @return static
      */
     public function addPart(FHIROperationDefinitionParameter $part): self
     {
@@ -973,6 +1007,8 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * named query (using the search interaction).
      *
      * The parts of a nested Parameter.
+     *
+     * @return static
      */
     public function setPart(FHIROperationDefinitionParameter ...$part): self
     {

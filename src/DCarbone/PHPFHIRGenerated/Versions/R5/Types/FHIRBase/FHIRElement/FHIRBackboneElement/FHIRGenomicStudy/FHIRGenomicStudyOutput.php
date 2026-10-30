@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -194,6 +194,8 @@ class FHIRGenomicStudyOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * File containing output data.
+     *
+     * @return static
      */
     public function setFile(null|FHIRReference $file): self
     {
@@ -225,6 +227,8 @@ class FHIRGenomicStudyOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of output data, e.g., VCF, MAF, or BAM.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {

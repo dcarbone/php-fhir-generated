@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -253,6 +253,8 @@ class FHIRExpression extends FHIRDataType
      *
      * A brief, natural language description of the condition that effectively
      * communicates the intended semantics.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -289,6 +291,8 @@ class FHIRExpression extends FHIRDataType
      *
      * A short name assigned to the expression to allow for multiple reuse of the
      * expression in the context where it is defined.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRCodePrimitive|FHIRCode $name): self
     {
@@ -323,6 +327,8 @@ class FHIRExpression extends FHIRDataType
      * the Narrative, or extensions
      *
      * The media type of the language for the expression.
+     *
+     * @return static
      */
     public function setLanguage(null|string|FHIRCodePrimitive|FHIRCode $language): self
     {
@@ -355,6 +361,8 @@ class FHIRExpression extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An expression in the specified language that returns a value.
+     *
+     * @return static
      */
     public function setExpression(null|string|FHIRStringPrimitive|FHIRString $expression): self
     {
@@ -387,6 +395,8 @@ class FHIRExpression extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A URI that defines where the expression is found.
+     *
+     * @return static
      */
     public function setReference(null|string|FHIRUriPrimitive|FHIRUri $reference): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -188,6 +188,8 @@ class FHIRProfileMapping1 extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * An internal reference to the definition of a mapping.
+     *
+     * @return static
      */
     public function setIdentity(null|string|FHIRIdPrimitive|FHIRId $identity): self
     {
@@ -218,6 +220,8 @@ class FHIRProfileMapping1 extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Expresses what part of the target specification corresponds to this element.
+     *
+     * @return static
      */
     public function setMap(null|string|FHIRStringPrimitive|FHIRString $map): self
     {

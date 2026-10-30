@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -558,6 +558,8 @@ class FHIRObservation extends FHIRResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes what was observed. Sometimes this is called the observation "code".
+     *
+     * @return static
      */
     public function setName(null|FHIRCodeableConcept $name): self
     {
@@ -593,6 +595,8 @@ class FHIRObservation extends FHIRResource implements VersionContainedTypeInterf
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
+     *
+     * @return static
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -626,6 +630,8 @@ class FHIRObservation extends FHIRResource implements VersionContainedTypeInterf
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
+     *
+     * @return static
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -657,6 +663,8 @@ class FHIRObservation extends FHIRResource implements VersionContainedTypeInterf
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
+     *
+     * @return static
      */
     public function setValueAttachment(null|FHIRAttachment $valueAttachment): self
     {
@@ -690,6 +698,8 @@ class FHIRObservation extends FHIRResource implements VersionContainedTypeInterf
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
+     *
+     * @return static
      */
     public function setValueRatio(null|FHIRRatio $valueRatio): self
     {
@@ -721,6 +731,8 @@ class FHIRObservation extends FHIRResource implements VersionContainedTypeInterf
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
+     *
+     * @return static
      */
     public function setValuePeriod(null|FHIRPeriod $valuePeriod): self
     {
@@ -754,6 +766,8 @@ class FHIRObservation extends FHIRResource implements VersionContainedTypeInterf
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
+     *
+     * @return static
      */
     public function setValueSampledData(null|FHIRSampledData $valueSampledData): self
     {
@@ -783,6 +797,8 @@ class FHIRObservation extends FHIRResource implements VersionContainedTypeInterf
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
+     *
+     * @return static
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -817,6 +833,8 @@ class FHIRObservation extends FHIRResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The assessment made based on the result of the observation.
+     *
+     * @return static
      */
     public function setInterpretation(null|FHIRCodeableConcept $interpretation): self
     {
@@ -848,6 +866,8 @@ class FHIRObservation extends FHIRResource implements VersionContainedTypeInterf
      * May include statements about significant, unexpected or unreliable values, or
      * information about the source of the value where this may be relevant to the
      * interpretation of the result.
+     *
+     * @return static
      */
     public function setComments(null|string|FHIRStringPrimitive|FHIRString $comments): self
     {
@@ -892,6 +912,8 @@ class FHIRObservation extends FHIRResource implements VersionContainedTypeInterf
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
      * is not known, only the date/time itself.
+     *
+     * @return static
      */
     public function setAppliesDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $appliesDateTime): self
     {
@@ -932,6 +954,8 @@ class FHIRObservation extends FHIRResource implements VersionContainedTypeInterf
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
      * is not known, only the date/time itself.
+     *
+     * @return static
      */
     public function setAppliesPeriod(null|FHIRPeriod $appliesPeriod): self
     {
@@ -959,6 +983,8 @@ class FHIRObservation extends FHIRResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time this was made available.
+     *
+     * @return static
      */
     public function setIssued(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $issued): self
     {
@@ -989,6 +1015,8 @@ class FHIRObservation extends FHIRResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the result value.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRObservationStatusList|FHIRObservationStatus $status): self
     {
@@ -1023,6 +1051,8 @@ class FHIRObservation extends FHIRResource implements VersionContainedTypeInterf
      *
      * An estimate of the degree to which quality issues have impacted on the value
      * reported.
+     *
+     * @return static
      */
     public function setReliability(null|string|FHIRObservationReliabilityList|FHIRObservationReliability $reliability): self
     {
@@ -1057,6 +1087,8 @@ class FHIRObservation extends FHIRResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates where on the subject's body the observation was made.
+     *
+     * @return static
      */
     public function setBodySite(null|FHIRCodeableConcept $bodySite): self
     {
@@ -1088,6 +1120,8 @@ class FHIRObservation extends FHIRResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to perform the observation.
+     *
+     * @return static
      */
     public function setMethod(null|FHIRCodeableConcept $method): self
     {
@@ -1117,6 +1151,8 @@ class FHIRObservation extends FHIRResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier for the simple observation.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -1146,6 +1182,8 @@ class FHIRObservation extends FHIRResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The thing the observation is being made about.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRResourceReference $subject): self
     {
@@ -1175,6 +1213,8 @@ class FHIRObservation extends FHIRResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specimen that was used when this observation was made.
+     *
+     * @return static
      */
     public function setSpecimen(null|FHIRResourceReference $specimen): self
     {
@@ -1217,6 +1257,8 @@ class FHIRObservation extends FHIRResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who was responsible for asserting the observed value as "true".
+     *
+     * @return static
      */
     public function addPerformer(FHIRResourceReference $performer): self
     {
@@ -1233,6 +1275,8 @@ class FHIRObservation extends FHIRResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who was responsible for asserting the observed value as "true".
+     *
+     * @return static
      */
     public function setPerformer(FHIRResourceReference ...$performer): self
     {
@@ -1275,6 +1319,8 @@ class FHIRObservation extends FHIRResource implements VersionContainedTypeInterf
      *
      * Guidance on how to interpret the value by comparison to a normal or recommended
      * range.
+     *
+     * @return static
      */
     public function addReferenceRange(FHIRObservationReferenceRange $referenceRange): self
     {
@@ -1291,6 +1337,8 @@ class FHIRObservation extends FHIRResource implements VersionContainedTypeInterf
      *
      * Guidance on how to interpret the value by comparison to a normal or recommended
      * range.
+     *
+     * @return static
      */
     public function setReferenceRange(FHIRObservationReferenceRange ...$referenceRange): self
     {
@@ -1333,6 +1381,8 @@ class FHIRObservation extends FHIRResource implements VersionContainedTypeInterf
      *
      * Related observations - either components, or previous observations, or
      * statements of derivation.
+     *
+     * @return static
      */
     public function addRelated(FHIRObservationRelated $related): self
     {
@@ -1349,6 +1399,8 @@ class FHIRObservation extends FHIRResource implements VersionContainedTypeInterf
      *
      * Related observations - either components, or previous observations, or
      * statements of derivation.
+     *
+     * @return static
      */
     public function setRelated(FHIRObservationRelated ...$related): self
     {

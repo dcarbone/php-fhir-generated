@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -680,6 +680,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * definition is (or will be) published. The URL SHOULD include the major version
      * of the service definition. For more information see [Technical and Business
      * Versions](resource.html#versions).
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -733,6 +735,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * an instance. This is used for CMS or NQF identifiers for a measure artifact.
      * Note that at least one identifier is required for non-experimental active
      * artifacts.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -753,6 +757,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * an instance. This is used for CMS or NQF identifiers for a measure artifact.
      * Note that at least one identifier is required for non-experimental active
      * artifacts.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -792,6 +798,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -828,6 +836,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * A natural language name identifying the service definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -860,6 +870,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the service definition.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -890,6 +902,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      *
      * The status of this service definition. Enables tracking the life-cycle of the
      * content.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusList|FHIRPublicationStatus $status): self
     {
@@ -924,6 +938,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * A boolean value to indicate that this service definition is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
+     *
+     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -968,6 +984,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * date must change if and when the business version changes and it must change if
      * the status code changes. In addition, it should change when the substantive
      * content of the service definition changes.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1002,6 +1020,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      *
      * The name of the individual or organization that published the service
      * definition.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1048,6 +1068,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      *
      * A free text natural language description of the service definition from a
      * consumer's perspective.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1094,6 +1116,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      *
      * Explaination of why this service definition is needed and why it has been
      * designed as it has.
+     *
+     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1126,6 +1150,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A detailed description of how the module is used from a clinical perspective.
+     *
+     * @return static
      */
     public function setUsage(null|string|FHIRStringPrimitive|FHIRString $usage): self
     {
@@ -1162,6 +1188,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
+     *
+     * @return static
      */
     public function setApprovalDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $approvalDate): self
     {
@@ -1198,6 +1226,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval, but doesn't change the original approval date.
+     *
+     * @return static
      */
     public function setLastReviewDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lastReviewDate): self
     {
@@ -1232,6 +1262,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      *
      * The period during which the service definition content was or is planned to be
      * in active use.
+     *
+     * @return static
      */
     public function setEffectivePeriod(null|FHIRPeriod $effectivePeriod): self
     {
@@ -1284,6 +1316,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate service definition instances.
+     *
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1305,6 +1339,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate service definition instances.
+     *
+     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1351,6 +1387,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      *
      * A legal or geographic region in which the service definition is intended to be
      * used.
+     *
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1369,6 +1407,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      *
      * A legal or geographic region in which the service definition is intended to be
      * used.
+     *
+     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1415,6 +1455,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      *
      * Descriptive topics related to the module. Topics provide a high-level
      * categorization of the module that can be useful for filtering and searching.
+     *
+     * @return static
      */
     public function addTopic(FHIRCodeableConcept $topic): self
     {
@@ -1433,6 +1475,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      *
      * Descriptive topics related to the module. Topics provide a high-level
      * categorization of the module that can be useful for filtering and searching.
+     *
+     * @return static
      */
     public function setTopic(FHIRCodeableConcept ...$topic): self
     {
@@ -1479,6 +1523,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      *
      * A contributor to the content of the module, including authors, editors,
      * reviewers, and endorsers.
+     *
+     * @return static
      */
     public function addContributor(FHIRContributor $contributor): self
     {
@@ -1497,6 +1543,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      *
      * A contributor to the content of the module, including authors, editors,
      * reviewers, and endorsers.
+     *
+     * @return static
      */
     public function setContributor(FHIRContributor ...$contributor): self
     {
@@ -1541,6 +1589,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1558,6 +1608,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1603,6 +1655,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * A copyright statement relating to the service definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the service definition.
+     *
+     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1652,6 +1706,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      *
      * Related resources such as additional documentation, justification, or
      * bibliographic references.
+     *
+     * @return static
      */
     public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact): self
     {
@@ -1670,6 +1726,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      *
      * Related resources such as additional documentation, justification, or
      * bibliographic references.
+     *
+     * @return static
      */
     public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
     {
@@ -1716,6 +1774,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * The trigger element defines when the rule should be invoked. This information is
      * used by consumers of the rule to determine how to integrate the rule into a
      * specific workflow.
+     *
+     * @return static
      */
     public function addTrigger(FHIRTriggerDefinition $trigger): self
     {
@@ -1734,6 +1794,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * The trigger element defines when the rule should be invoked. This information is
      * used by consumers of the rule to determine how to integrate the rule into a
      * specific workflow.
+     *
+     * @return static
      */
     public function setTrigger(FHIRTriggerDefinition ...$trigger): self
     {
@@ -1780,6 +1842,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      *
      * Data requirements are a machine processable description of the data required by
      * the module in order to perform a successful evaluation.
+     *
+     * @return static
      */
     public function addDataRequirement(FHIRDataRequirement $dataRequirement): self
     {
@@ -1798,6 +1862,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      *
      * Data requirements are a machine processable description of the data required by
      * the module in order to perform a successful evaluation.
+     *
+     * @return static
      */
     public function setDataRequirement(FHIRDataRequirement ...$dataRequirement): self
     {
@@ -1827,6 +1893,8 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the operation that is used to invoke this service.
+     *
+     * @return static
      */
     public function setOperationDefinition(null|FHIRReference $operationDefinition): self
     {

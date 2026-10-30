@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -308,6 +308,8 @@ class FHIRSubstance extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for the substance.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -324,6 +326,8 @@ class FHIRSubstance extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for the substance.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -351,6 +355,8 @@ class FHIRSubstance extends FHIRDomainResource implements VersionContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code to indicate if the substance is actively used.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRFHIRSubstanceStatusList|FHIRFHIRSubstanceStatus $status): self
     {
@@ -400,6 +406,8 @@ class FHIRSubstance extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * A code that classifies the general type of substance. This is used for
      * searching, sorting and display purposes.
+     *
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -418,6 +426,8 @@ class FHIRSubstance extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * A code that classifies the general type of substance. This is used for
      * searching, sorting and display purposes.
+     *
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -449,6 +459,8 @@ class FHIRSubstance extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code (or set of codes) that identify this substance.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -480,6 +492,8 @@ class FHIRSubstance extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * A description of the substance - its appearance, handling requirements, and
      * other usage notes.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -523,6 +537,8 @@ class FHIRSubstance extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Substance may be used to describe a kind of substance, or a specific
      * package/container of the substance: an instance.
+     *
+     * @return static
      */
     public function addInstance(FHIRSubstanceInstance $instance): self
     {
@@ -538,6 +554,8 @@ class FHIRSubstance extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Substance may be used to describe a kind of substance, or a specific
      * package/container of the substance: an instance.
+     *
+     * @return static
      */
     public function setInstance(FHIRSubstanceInstance ...$instance): self
     {
@@ -576,6 +594,8 @@ class FHIRSubstance extends FHIRDomainResource implements VersionContainedTypeIn
      * A homogeneous material with a definite composition.
      *
      * A substance can be composed of other substances.
+     *
+     * @return static
      */
     public function addIngredient(FHIRSubstanceIngredient $ingredient): self
     {
@@ -590,6 +610,8 @@ class FHIRSubstance extends FHIRDomainResource implements VersionContainedTypeIn
      * A homogeneous material with a definite composition.
      *
      * A substance can be composed of other substances.
+     *
+     * @return static
      */
     public function setIngredient(FHIRSubstanceIngredient ...$ingredient): self
     {

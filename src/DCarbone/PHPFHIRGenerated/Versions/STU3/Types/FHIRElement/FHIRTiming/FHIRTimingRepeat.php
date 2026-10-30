@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -449,6 +449,8 @@ class FHIRTimingRepeat extends FHIRElement
      *
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
+     *
+     * @return static
      */
     public function setBoundsDuration(null|FHIRDuration $boundsDuration): self
     {
@@ -480,6 +482,8 @@ class FHIRTimingRepeat extends FHIRElement
      *
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
+     *
+     * @return static
      */
     public function setBoundsRange(null|FHIRRange $boundsRange): self
     {
@@ -511,6 +515,8 @@ class FHIRTimingRepeat extends FHIRElement
      *
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
+     *
+     * @return static
      */
     public function setBoundsPeriod(null|FHIRPeriod $boundsPeriod): self
     {
@@ -540,6 +546,8 @@ class FHIRTimingRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A total count of the desired number of repetitions.
+     *
+     * @return static
      */
     public function setCount(null|string|float|FHIRIntegerPrimitive|FHIRInteger $count): self
     {
@@ -574,6 +582,8 @@ class FHIRTimingRepeat extends FHIRElement
      *
      * A maximum value for the count of the desired repetitions (e.g. do something 6-8
      * times).
+     *
+     * @return static
      */
     public function setCountMax(null|string|float|FHIRIntegerPrimitive|FHIRInteger $countMax): self
     {
@@ -608,6 +618,8 @@ class FHIRTimingRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How long this thing happens for when it happens.
+     *
+     * @return static
      */
     public function setDuration(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $duration): self
     {
@@ -642,6 +654,8 @@ class FHIRTimingRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The upper limit of how long this thing happens for when it happens.
+     *
+     * @return static
      */
     public function setDurationMax(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $durationMax): self
     {
@@ -672,6 +686,8 @@ class FHIRTimingRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The units of time for the duration, in UCUM units.
+     *
+     * @return static
      */
     public function setDurationUnit(null|string|FHIRUnitsOfTimeList|FHIRUnitsOfTime $durationUnit): self
     {
@@ -706,6 +722,8 @@ class FHIRTimingRepeat extends FHIRElement
      *
      * The number of times to repeat the action within the specified period / period
      * range (i.e. both period and periodMax provided).
+     *
+     * @return static
      */
     public function setFrequency(null|string|float|FHIRIntegerPrimitive|FHIRInteger $frequency): self
     {
@@ -740,6 +758,8 @@ class FHIRTimingRepeat extends FHIRElement
      *
      * If present, indicates that the frequency is a range - so to repeat between
      * [frequency] and [frequencyMax] times within the period or period range.
+     *
+     * @return static
      */
     public function setFrequencyMax(null|string|float|FHIRIntegerPrimitive|FHIRInteger $frequencyMax): self
     {
@@ -778,6 +798,8 @@ class FHIRTimingRepeat extends FHIRElement
      * Indicates the duration of time over which repetitions are to occur; e.g. to
      * express "3 times per day", 3 would be the frequency and "1 day" would be the
      * period.
+     *
+     * @return static
      */
     public function setPeriod(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $period): self
     {
@@ -814,6 +836,8 @@ class FHIRTimingRepeat extends FHIRElement
      *
      * If present, indicates that the period is a range from [period] to [periodMax],
      * allowing expressing concepts such as "do this once every 3-5 days.
+     *
+     * @return static
      */
     public function setPeriodMax(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $periodMax): self
     {
@@ -844,6 +868,8 @@ class FHIRTimingRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The units of time for the period in UCUM units.
+     *
+     * @return static
      */
     public function setPeriodUnit(null|string|FHIRUnitsOfTimeList|FHIRUnitsOfTime $periodUnit): self
     {
@@ -893,6 +919,8 @@ class FHIRTimingRepeat extends FHIRElement
      *
      * If one or more days of week is provided, then the action happens only on the
      * specified day(s).
+     *
+     * @return static
      */
     public function addDayOfWeek(string|FHIRCodePrimitive|FHIRCode $dayOfWeek): self
     {
@@ -914,6 +942,8 @@ class FHIRTimingRepeat extends FHIRElement
      *
      * If one or more days of week is provided, then the action happens only on the
      * specified day(s).
+     *
+     * @return static
      */
     public function setDayOfWeek(string|FHIRCodePrimitive|FHIRCode ...$dayOfWeek): self
     {
@@ -961,6 +991,8 @@ class FHIRTimingRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specified time of day for action to take place.
+     *
+     * @return static
      */
     public function addTimeOfDay(string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $timeOfDay): self
     {
@@ -979,6 +1011,8 @@ class FHIRTimingRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specified time of day for action to take place.
+     *
+     * @return static
      */
     public function setTimeOfDay(string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime ...$timeOfDay): self
     {
@@ -1026,6 +1060,8 @@ class FHIRTimingRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Real world events that the occurrence of the event should be tied to.
+     *
+     * @return static
      */
     public function addWhen(string|FHIREventTimingList|FHIREventTiming $when): self
     {
@@ -1044,6 +1080,8 @@ class FHIRTimingRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Real world events that the occurrence of the event should be tied to.
+     *
+     * @return static
      */
     public function setWhen(string|FHIREventTimingList|FHIREventTiming ...$when): self
     {
@@ -1084,6 +1122,8 @@ class FHIRTimingRepeat extends FHIRElement
      * The number of minutes from the event. If the event code does not indicate
      * whether the minutes is before or after the event, then the offset is assumed to
      * be after the event.
+     *
+     * @return static
      */
     public function setOffset(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $offset): self
     {

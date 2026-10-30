@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -205,6 +205,8 @@ class FHIRDetectedIssueMitigation extends FHIRBackboneElement
      *
      * Describes the action that was taken or the observation that was made that
      * reduces/eliminates the risk associated with the identified issue.
+     *
+     * @return static
      */
     public function setAction(null|FHIRCodeableConcept $action): self
     {
@@ -240,6 +242,8 @@ class FHIRDetectedIssueMitigation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates when the mitigating action was documented.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -274,6 +278,8 @@ class FHIRDetectedIssueMitigation extends FHIRBackboneElement
      *
      * Identifies the practitioner who determined the mitigation and takes
      * responsibility for the mitigation step occurring.
+     *
+     * @return static
      */
     public function setAuthor(null|FHIRReference $author): self
     {

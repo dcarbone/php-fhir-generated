@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -239,6 +239,8 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
      * resource for this shape definition. It will be the same, a generality, or a
      * specificity of SubscriptionTopic.resourceTrigger.resource or
      * SubscriptionTopic.eventTrigger.resource when they are present.
+     *
+     * @return static
      */
     public function setResource(null|string|FHIRUriPrimitive|FHIRUri $resource): self
     {
@@ -290,6 +292,8 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
      * SHOULD include resources listed here, if they exist and the user is authorized
      * to receive them. Clients SHOULD be prepared to receive these additional
      * resources, but SHALL function properly without them.
+     *
+     * @return static
      */
     public function addInclude(string|FHIRStringPrimitive|FHIRString $include): self
     {
@@ -312,6 +316,8 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
      * SHOULD include resources listed here, if they exist and the user is authorized
      * to receive them. Clients SHOULD be prepared to receive these additional
      * resources, but SHALL function properly without them.
+     *
+     * @return static
      */
     public function setInclude(string|FHIRStringPrimitive|FHIRString ...$include): self
     {
@@ -367,6 +373,8 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
      * Servers SHOULD include resources listed here, if they exist and the user is
      * authorized to receive them. Clients SHOULD be prepared to receive these
      * additional resources, but SHALL function properly without them.
+     *
+     * @return static
      */
     public function addRevInclude(string|FHIRStringPrimitive|FHIRString $revInclude): self
     {
@@ -389,6 +397,8 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
      * Servers SHOULD include resources listed here, if they exist and the user is
      * authorized to receive them. Clients SHOULD be prepared to receive these
      * additional resources, but SHALL function properly without them.
+     *
+     * @return static
      */
     public function setRevInclude(string|FHIRStringPrimitive|FHIRString ...$revInclude): self
     {

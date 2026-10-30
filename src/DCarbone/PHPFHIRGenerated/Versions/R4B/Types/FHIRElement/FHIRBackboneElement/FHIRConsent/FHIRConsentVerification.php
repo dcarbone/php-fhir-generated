@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -218,6 +218,8 @@ class FHIRConsentVerification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Has the instruction been verified.
+     *
+     * @return static
      */
     public function setVerified(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $verified): self
     {
@@ -250,6 +252,8 @@ class FHIRConsentVerification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who verified the instruction (Patient, Relative or other Authorized Person).
+     *
+     * @return static
      */
     public function setVerifiedWith(null|FHIRReference $verifiedWith): self
     {
@@ -285,6 +289,8 @@ class FHIRConsentVerification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date verification was collected.
+     *
+     * @return static
      */
     public function setVerificationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $verificationDate): self
     {

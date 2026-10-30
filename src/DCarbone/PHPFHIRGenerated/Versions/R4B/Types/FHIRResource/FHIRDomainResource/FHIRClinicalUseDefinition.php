@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -389,6 +389,8 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for this issue.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -406,6 +408,8 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for this issue.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -431,6 +435,8 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * indication | contraindication | interaction | undesirable-effect | warning.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRClinicalUseDefinitionTypeEnum|FHIRClinicalUseDefinitionType $type): self
     {
@@ -482,6 +488,8 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * A categorisation of the issue, primarily for dividing warnings into subject
      * heading areas such as "Pregnancy and Lactation", "Overdose", "Effects on Ability
      * to Drive and Use Machines".
+     *
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -501,6 +509,8 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * A categorisation of the issue, primarily for dividing warnings into subject
      * heading areas such as "Pregnancy and Lactation", "Overdose", "Effects on Ability
      * to Drive and Use Machines".
+     *
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -543,6 +553,8 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The medication or procedure for which this is an indication.
+     *
+     * @return static
      */
     public function addSubject(FHIRReference $subject): self
     {
@@ -559,6 +571,8 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The medication or procedure for which this is an indication.
+     *
+     * @return static
      */
     public function setSubject(FHIRReference ...$subject): self
     {
@@ -590,6 +604,8 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Whether this is a current issue or one that has been retired etc.
+     *
+     * @return static
      */
     public function setStatus(null|FHIRCodeableConcept $status): self
     {
@@ -617,6 +633,8 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * undesirable effect for a medicinal product, medication, device or procedure.
      *
      * Specifics for when this is a contraindication.
+     *
+     * @return static
      */
     public function setContraindication(null|FHIRClinicalUseDefinitionContraindication $contraindication): self
     {
@@ -644,6 +662,8 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * undesirable effect for a medicinal product, medication, device or procedure.
      *
      * Specifics for when this is an indication.
+     *
+     * @return static
      */
     public function setIndication(null|FHIRClinicalUseDefinitionIndication $indication): self
     {
@@ -671,6 +691,8 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * undesirable effect for a medicinal product, medication, device or procedure.
      *
      * Specifics for when this is an interaction.
+     *
+     * @return static
      */
     public function setInteraction(null|FHIRClinicalUseDefinitionInteraction $interaction): self
     {
@@ -713,6 +735,8 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The population group to which this applies.
+     *
+     * @return static
      */
     public function addPopulation(FHIRReference $population): self
     {
@@ -729,6 +753,8 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The population group to which this applies.
+     *
+     * @return static
      */
     public function setPopulation(FHIRReference ...$population): self
     {
@@ -758,6 +784,8 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      *
      * Describe the possible undesirable effects (negative outcomes) from the use of
      * the medicinal product as treatment.
+     *
+     * @return static
      */
     public function setUndesirableEffect(null|FHIRClinicalUseDefinitionUndesirableEffect $undesirableEffect): self
     {
@@ -791,6 +819,8 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * hazards that serve as caution to the user. For example 'Do not operate heavy
      * machinery', 'May cause drowsiness', or 'Get medical advice/attention if you feel
      * unwell'.
+     *
+     * @return static
      */
     public function setWarning(null|FHIRClinicalUseDefinitionWarning $warning): self
     {

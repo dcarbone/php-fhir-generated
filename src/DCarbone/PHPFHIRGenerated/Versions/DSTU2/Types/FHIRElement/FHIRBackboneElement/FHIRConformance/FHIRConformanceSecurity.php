@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -219,6 +219,8 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
      *
      * Server adds CORS headers when responding to requests - this enables javascript
      * applications to use the server.
+     *
+     * @return static
      */
     public function setCors(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $cors): self
     {
@@ -266,6 +268,8 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Types of security services are supported/required by the system.
+     *
+     * @return static
      */
     public function addService(FHIRCodeableConcept $service): self
     {
@@ -283,6 +287,8 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Types of security services are supported/required by the system.
+     *
+     * @return static
      */
     public function setService(FHIRCodeableConcept ...$service): self
     {
@@ -312,6 +318,8 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * General description of how security works.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -357,6 +365,8 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
      * desired server implementation.
      *
      * Certificates associated with security profiles.
+     *
+     * @return static
      */
     public function addCertificate(FHIRConformanceCertificate $certificate): self
     {
@@ -373,6 +383,8 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
      * desired server implementation.
      *
      * Certificates associated with security profiles.
+     *
+     * @return static
      */
     public function setCertificate(FHIRConformanceCertificate ...$certificate): self
     {

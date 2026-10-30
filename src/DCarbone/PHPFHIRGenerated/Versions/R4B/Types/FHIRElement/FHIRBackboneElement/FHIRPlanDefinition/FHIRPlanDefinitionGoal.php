@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -294,6 +294,8 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates a category the goal falls within.
+     *
+     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -329,6 +331,8 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      * Human-readable and/or coded description of a specific desired objective of care,
      * such as "control blood pressure" or "negotiate an obstacle course" or "dance
      * with child at wedding".
+     *
+     * @return static
      */
     public function setDescription(null|FHIRCodeableConcept $description): self
     {
@@ -362,6 +366,8 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      *
      * Identifies the expected level of importance associated with reaching/sustaining
      * the defined goal.
+     *
+     * @return static
      */
     public function setPriority(null|FHIRCodeableConcept $priority): self
     {
@@ -393,6 +399,8 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The event after which the goal should begin being pursued.
+     *
+     * @return static
      */
     public function setStart(null|FHIRCodeableConcept $start): self
     {
@@ -439,6 +447,8 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      *
      * Identifies problems, conditions, issues, or concerns the goal is intended to
      * address.
+     *
+     * @return static
      */
     public function addAddresses(FHIRCodeableConcept $addresses): self
     {
@@ -457,6 +467,8 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      *
      * Identifies problems, conditions, issues, or concerns the goal is intended to
      * address.
+     *
+     * @return static
      */
     public function setAddresses(FHIRCodeableConcept ...$addresses): self
     {
@@ -505,6 +517,8 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      * Didactic or other informational resources associated with the goal that provide
      * further supporting information about the goal. Information resources can include
      * inline text commentary and links to web resources.
+     *
+     * @return static
      */
     public function addDocumentation(FHIRRelatedArtifact $documentation): self
     {
@@ -524,6 +538,8 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      * Didactic or other informational resources associated with the goal that provide
      * further supporting information about the goal. Information resources can include
      * inline text commentary and links to web resources.
+     *
+     * @return static
      */
     public function setDocumentation(FHIRRelatedArtifact ...$documentation): self
     {
@@ -570,6 +586,8 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      * specifications.
      *
      * Indicates what should be done and within what timeframe.
+     *
+     * @return static
      */
     public function addTarget(FHIRPlanDefinitionTarget $target): self
     {
@@ -588,6 +606,8 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      * specifications.
      *
      * Indicates what should be done and within what timeframe.
+     *
+     * @return static
      */
     public function setTarget(FHIRPlanDefinitionTarget ...$target): self
     {

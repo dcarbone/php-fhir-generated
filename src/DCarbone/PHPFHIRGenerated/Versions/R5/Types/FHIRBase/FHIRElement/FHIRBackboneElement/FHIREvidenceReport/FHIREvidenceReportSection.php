@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -377,6 +377,8 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
      *
      * The label for this particular section. This will be part of the rendered content
      * for the document, and is often used to build a table of contents.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -413,6 +415,8 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
      *
      * A code identifying the kind of content contained within the section. This should
      * be consistent with the section title.
+     *
+     * @return static
      */
     public function setFocus(null|FHIRCodeableConcept $focus): self
     {
@@ -444,6 +448,8 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
      *
      * A definitional Resource identifying the kind of content contained within the
      * section. This should be consistent with the section title.
+     *
+     * @return static
      */
     public function setFocusReference(null|FHIRReference $focusReference): self
     {
@@ -488,6 +494,8 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
      *
      * Identifies who is responsible for the information in this section, not
      * necessarily who typed it in.
+     *
+     * @return static
      */
     public function addAuthor(FHIRReference $author): self
     {
@@ -505,6 +513,8 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
      *
      * Identifies who is responsible for the information in this section, not
      * necessarily who typed it in.
+     *
+     * @return static
      */
     public function setAuthor(FHIRReference ...$author): self
     {
@@ -542,6 +552,8 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
      * used to represent the content of the resource to a human. The narrative need not
      * encode all the structured data, but is peferred to contain sufficient detail to
      * make it acceptable for a human to just read the narrative.
+     *
+     * @return static
      */
     public function setText(null|FHIRNarrative $text): self
     {
@@ -573,6 +585,8 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
      * for being maintained on an ongoing basis, or if it represents a snapshot of a
      * list of items from another source, or whether it is a prepared list where items
      * may be marked as added, modified or deleted.
+     *
+     * @return static
      */
     public function setMode(null|string|FHIRListModeEnum|FHIRListMode $mode): self
     {
@@ -607,6 +621,8 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the order applied to the items in the section entries.
+     *
+     * @return static
      */
     public function setOrderedBy(null|FHIRCodeableConcept $orderedBy): self
     {
@@ -651,6 +667,8 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies any type of classification of the evidence report.
+     *
+     * @return static
      */
     public function addEntryClassifier(FHIRCodeableConcept $entryClassifier): self
     {
@@ -668,6 +686,8 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies any type of classification of the evidence report.
+     *
+     * @return static
      */
     public function setEntryClassifier(FHIRCodeableConcept ...$entryClassifier): self
     {
@@ -712,6 +732,8 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
      *
      * A reference to the actual resource from which the narrative in the section is
      * derived.
+     *
+     * @return static
      */
     public function addEntryReference(FHIRReference $entryReference): self
     {
@@ -729,6 +751,8 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
      *
      * A reference to the actual resource from which the narrative in the section is
      * derived.
+     *
+     * @return static
      */
     public function setEntryReference(FHIRReference ...$entryReference): self
     {
@@ -775,6 +799,8 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Quantity as content.
+     *
+     * @return static
      */
     public function addEntryQuantity(FHIRQuantity $entryQuantity): self
     {
@@ -793,6 +819,8 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Quantity as content.
+     *
+     * @return static
      */
     public function setEntryQuantity(FHIRQuantity ...$entryQuantity): self
     {
@@ -826,6 +854,8 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
      *
      * If the section is empty, why the list is empty. An empty section typically has
      * some text explaining the empty reason.
+     *
+     * @return static
      */
     public function setEmptyReason(null|FHIRCodeableConcept $emptyReason): self
     {
@@ -868,6 +898,8 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
      * EvidenceVariable, and Citation resources and related concepts.
      *
      * A nested sub-section within this section.
+     *
+     * @return static
      */
     public function addSection(FHIREvidenceReportSection $section): self
     {
@@ -884,6 +916,8 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
      * EvidenceVariable, and Citation resources and related concepts.
      *
      * A nested sub-section within this section.
+     *
+     * @return static
      */
     public function setSection(FHIREvidenceReportSection ...$section): self
     {

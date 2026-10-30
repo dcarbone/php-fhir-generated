@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -206,7 +206,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
-     * (choose any one of subject*, but only one)
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $subjectCodeableConcept;
@@ -217,7 +216,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
-     * (choose any one of subject*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $subjectReference;
@@ -423,6 +421,8 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * An identifier that is unique within the Measure allowing linkage to the
      * equivalent item in a MeasureReport resource.
+     *
+     * @return static
      */
     public function setLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId): self
     {
@@ -461,6 +461,8 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * Indicates a meaning for the group. This can be as simple as a unique identifier,
      * or it can establish meaning in a broader context by drawing from a terminology,
      * allowing groups to be correlated across measures.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -498,6 +500,8 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The human readable description of this population group.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -547,6 +551,8 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * Indicates whether the measure is used to examine a process, an outcome over
      * time, a patient-reported outcome, or a structure measure such as utilization.
+     *
+     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -565,6 +571,8 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * Indicates whether the measure is used to examine a process, an outcome over
      * time, a patient-reported outcome, or a structure measure such as utilization.
+     *
+     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -584,7 +592,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
-     * (choose any one of subject*, but only one)
      */
     public function getSubjectCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -599,7 +606,8 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
-     * (choose any one of subject*, but only one)
+     *
+     * @return static
      */
     public function setSubjectCodeableConcept(null|FHIRCodeableConcept $subjectCodeableConcept): self
     {
@@ -618,7 +626,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
-     * (choose any one of subject*, but only one)
      */
     public function getSubjectReference(): null|FHIRReference
     {
@@ -632,7 +639,8 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
-     * (choose any one of subject*, but only one)
+     *
+     * @return static
      */
     public function setSubjectReference(null|FHIRReference $subjectReference): self
     {
@@ -672,6 +680,8 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * basis. For example, an encounter-based measure has a subject of Patient and a
      * population basis of Encounter, and the population criteria all return lists of
      * Encounters.
+     *
+     * @return static
      */
     public function setBasis(null|string|FHIRFHIRTypesEnum|FHIRFHIRTypes $basis): self
     {
@@ -710,6 +720,8 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * Indicates how the calculation is performed for the measure, including
      * proportion, ratio, continuous-variable, and cohort. The value set is extensible,
      * allowing additional measure scoring types to be represented.
+     *
+     * @return static
      */
     public function setScoring(null|FHIRCodeableConcept $scoring): self
     {
@@ -743,6 +755,8 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * Defines the expected units of measure for the measure score. This element SHOULD
      * be specified as a UCUM unit.
+     *
+     * @return static
      */
     public function setScoringUnit(null|FHIRCodeableConcept $scoringUnit): self
     {
@@ -782,6 +796,8 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * Describes how to combine the information calculated, based on logic in each of
      * several populations, into one summarized result.
+     *
+     * @return static
      */
     public function setRateAggregation(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $rateAggregation): self
     {
@@ -820,6 +836,8 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * Information on whether an increase or decrease in score is the preferred result
      * (e.g., a higher score indicates better quality OR a lower score indicates better
      * quality OR quality is within a range).
+     *
+     * @return static
      */
     public function setImprovementNotation(null|FHIRCodeableConcept $improvementNotation): self
     {
@@ -866,6 +884,8 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * A reference to a Library resource containing the formal logic used by the
      * measure group.
+     *
+     * @return static
      */
     public function addLibrary(string|FHIRCanonicalPrimitive|FHIRCanonical $library): self
     {
@@ -887,6 +907,8 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * A reference to a Library resource containing the formal logic used by the
      * measure group.
+     *
+     * @return static
      */
     public function setLibrary(string|FHIRCanonicalPrimitive|FHIRCanonical ...$library): self
     {
@@ -932,6 +954,8 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * The Measure resource provides the definition of a quality measure.
      *
      * A population criteria for the measure.
+     *
+     * @return static
      */
     public function addPopulation(FHIRMeasurePopulation $population): self
     {
@@ -946,6 +970,8 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * The Measure resource provides the definition of a quality measure.
      *
      * A population criteria for the measure.
+     *
+     * @return static
      */
     public function setPopulation(FHIRMeasurePopulation ...$population): self
     {
@@ -988,6 +1014,8 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * The stratifier criteria for the measure report, specified as either the name of
      * a valid CQL expression defined within a referenced library or a valid FHIR
      * Resource Path.
+     *
+     * @return static
      */
     public function addStratifier(FHIRMeasureStratifier $stratifier): self
     {
@@ -1004,6 +1032,8 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * The stratifier criteria for the measure report, specified as either the name of
      * a valid CQL expression defined within a referenced library or a valid FHIR
      * Resource Path.
+     *
+     * @return static
      */
     public function setStratifier(FHIRMeasureStratifier ...$stratifier): self
     {

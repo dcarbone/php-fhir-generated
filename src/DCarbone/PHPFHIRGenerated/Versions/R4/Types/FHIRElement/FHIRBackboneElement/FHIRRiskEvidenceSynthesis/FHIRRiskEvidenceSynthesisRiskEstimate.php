@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -262,6 +262,8 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable summary of risk estimate.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -296,6 +298,8 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Examples include proportion and mean.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -327,6 +331,8 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The point estimate of the risk estimate.
+     *
+     * @return static
      */
     public function setValue(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $value): self
     {
@@ -361,6 +367,8 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the UCUM unit for the outcome.
+     *
+     * @return static
      */
     public function setUnitOfMeasure(null|FHIRCodeableConcept $unitOfMeasure): self
     {
@@ -390,6 +398,8 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The sample size for the group that was measured for this risk estimate.
+     *
+     * @return static
      */
     public function setDenominatorCount(null|string|float|FHIRIntegerPrimitive|FHIRInteger $denominatorCount): self
     {
@@ -422,6 +432,8 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of group members with the outcome of interest.
+     *
+     * @return static
      */
     public function setNumeratorCount(null|string|float|FHIRIntegerPrimitive|FHIRInteger $numeratorCount): self
     {
@@ -467,6 +479,8 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * combination of research studies.
      *
      * A description of the precision of the estimate for the effect.
+     *
+     * @return static
      */
     public function addPrecisionEstimate(FHIRRiskEvidenceSynthesisPrecisionEstimate $precisionEstimate): self
     {
@@ -483,6 +497,8 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * combination of research studies.
      *
      * A description of the precision of the estimate for the effect.
+     *
+     * @return static
      */
     public function setPrecisionEstimate(FHIRRiskEvidenceSynthesisPrecisionEstimate ...$precisionEstimate): self
     {

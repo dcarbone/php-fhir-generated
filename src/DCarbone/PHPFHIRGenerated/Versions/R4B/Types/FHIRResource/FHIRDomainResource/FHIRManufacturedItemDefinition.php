@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -336,6 +336,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -353,6 +355,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -378,6 +382,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this item. Enables tracking the life-cycle of the content.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -414,6 +420,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      *
      * Dose form as manufactured and before any transformation into the pharmaceutical
      * product.
+     *
+     * @return static
      */
     public function setManufacturedDoseForm(null|FHIRCodeableConcept $manufacturedDoseForm): self
     {
@@ -447,6 +455,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      *
      * The “real world” units in which the quantity of the manufactured item is
      * described.
+     *
+     * @return static
      */
     public function setUnitOfPresentation(null|FHIRCodeableConcept $unitOfPresentation): self
     {
@@ -491,6 +501,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      *
      * Manufacturer of the item (Note that this should be named "manufacturer" but it
      * currently causes technical issues).
+     *
+     * @return static
      */
     public function addManufacturer(FHIRReference $manufacturer): self
     {
@@ -508,6 +520,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      *
      * Manufacturer of the item (Note that this should be named "manufacturer" but it
      * currently causes technical issues).
+     *
+     * @return static
      */
     public function setManufacturer(FHIRReference ...$manufacturer): self
     {
@@ -556,6 +570,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * The ingredients of this manufactured item. This is only needed if the
      * ingredients are not specified by incoming references from the Ingredient
      * resource.
+     *
+     * @return static
      */
     public function addIngredient(FHIRCodeableConcept $ingredient): self
     {
@@ -575,6 +591,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * The ingredients of this manufactured item. This is only needed if the
      * ingredients are not specified by incoming references from the Ingredient
      * resource.
+     *
+     * @return static
      */
     public function setIngredient(FHIRCodeableConcept ...$ingredient): self
     {
@@ -615,6 +633,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * tablet or capsule, as contained in a packaged medicinal product.
      *
      * General characteristics of this item.
+     *
+     * @return static
      */
     public function addProperty(FHIRManufacturedItemDefinitionProperty $property): self
     {
@@ -630,6 +650,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * tablet or capsule, as contained in a packaged medicinal product.
      *
      * General characteristics of this item.
+     *
+     * @return static
      */
     public function setProperty(FHIRManufacturedItemDefinitionProperty ...$property): self
     {

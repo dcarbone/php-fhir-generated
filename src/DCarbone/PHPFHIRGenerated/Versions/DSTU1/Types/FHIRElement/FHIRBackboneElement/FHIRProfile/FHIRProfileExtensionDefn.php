@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -242,6 +242,8 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A unique code (within the profile) used to identify the extension.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -274,6 +276,8 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
      *
      * Defined so that applications can use this name when displaying the value of the
      * extension to the user.
+     *
+     * @return static
      */
     public function setDisplay(null|string|FHIRStringPrimitive|FHIRString $display): self
     {
@@ -304,6 +308,8 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the type of context to which the extension applies.
+     *
+     * @return static
      */
     public function setContextType(null|string|FHIRExtensionContextList|FHIRExtensionContext $contextType): self
     {
@@ -349,6 +355,8 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
      *
      * Identifies the types of resource or data type elements to which the extension
      * can be applied.
+     *
+     * @return static
      */
     public function addContext(string|FHIRStringPrimitive|FHIRString $context): self
     {
@@ -368,6 +376,8 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
      *
      * Identifies the types of resource or data type elements to which the extension
      * can be applied.
+     *
+     * @return static
      */
     public function setContext(string|FHIRStringPrimitive|FHIRString ...$context): self
     {
@@ -404,6 +414,8 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
      * and Extension Definitions.
      *
      * Definition of the extension and its content.
+     *
+     * @return static
      */
     public function setDefinition(null|FHIRProfileDefinition $definition): self
     {

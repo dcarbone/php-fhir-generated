@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -299,6 +299,8 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      *
      * A number to uniquely identify insurance entries and provide a sequence of
      * coverages to convey coordination of benefit order.
+     *
+     * @return static
      */
     public function setSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
     {
@@ -331,6 +333,8 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      *
      * A flag to indicate that this Coverage is to be used for adjudication of this
      * claim when set to true.
+     *
+     * @return static
      */
     public function setFocal(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $focal): self
     {
@@ -367,6 +371,8 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      *
      * The business identifier to be used when the claim is sent for adjudication
      * against this insurance policy.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -400,6 +406,8 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      * Reference to the insurance card level information contained in the Coverage
      * resource. The coverage issuing insurer will use these details to locate the
      * patient's actual coverage within the insurer's information system.
+     *
+     * @return static
      */
     public function setCoverage(null|FHIRReference $coverage): self
     {
@@ -431,6 +439,8 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      *
      * A business agreement number established between the provider and the insurer for
      * special business processing purposes.
+     *
+     * @return static
      */
     public function setBusinessArrangement(null|string|FHIRStringPrimitive|FHIRString $businessArrangement): self
     {
@@ -480,6 +490,8 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      * Reference numbers previously provided by the insurer to the provider to be
      * quoted on subsequent claims containing services or products related to the prior
      * authorization.
+     *
+     * @return static
      */
     public function addPreAuthRef(string|FHIRStringPrimitive|FHIRString $preAuthRef): self
     {
@@ -501,6 +513,8 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      * Reference numbers previously provided by the insurer to the provider to be
      * quoted on subsequent claims containing services or products related to the prior
      * authorization.
+     *
+     * @return static
      */
     public function setPreAuthRef(string|FHIRStringPrimitive|FHIRString ...$preAuthRef): self
     {
@@ -539,6 +553,8 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      *
      * The result of the adjudication of the line items for the Coverage specified in
      * this insurance.
+     *
+     * @return static
      */
     public function setClaimResponse(null|FHIRReference $claimResponse): self
     {

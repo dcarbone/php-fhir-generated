@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -267,6 +267,8 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      *
      * An identifier that is unique within the Measure allowing linkage to the
      * equivalent item in a MeasureReport resource.
+     *
+     * @return static
      */
     public function setLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId): self
     {
@@ -305,6 +307,8 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * Indicates a meaning for the supplemental data. This can be as simple as a unique
      * identifier, or it can establish meaning in a broader context by drawing from a
      * terminology, allowing supplemental data to be correlated across measures.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -357,6 +361,8 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * augment the measure information. Risk adjustment factor indicates the data is
      * additional information used to calculate risk adjustment factors when applying a
      * risk model to the measure calculation.
+     *
+     * @return static
      */
     public function addUsage(FHIRCodeableConcept $usage): self
     {
@@ -378,6 +384,8 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * augment the measure information. Risk adjustment factor indicates the data is
      * additional information used to calculate risk adjustment factors when applying a
      * risk model to the measure calculation.
+     *
+     * @return static
      */
     public function setUsage(FHIRCodeableConcept ...$usage): self
     {
@@ -415,6 +423,8 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The human readable description of this supplemental data.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -457,6 +467,8 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * expression defined within a referenced library, but it may also be a path to a
      * specific data element. The criteria defines the data to be returned for this
      * element.
+     *
+     * @return static
      */
     public function setCriteria(null|FHIRExpression $criteria): self
     {

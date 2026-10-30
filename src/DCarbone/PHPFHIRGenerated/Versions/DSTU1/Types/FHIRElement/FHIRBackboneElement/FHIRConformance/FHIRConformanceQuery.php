@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -216,6 +216,8 @@ class FHIRConformanceQuery extends FHIRBackboneElement
      *
      * The name of a query, which is used in the _query parameter when the query is
      * called.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -246,6 +248,8 @@ class FHIRConformanceQuery extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the custom query, defined either in FHIR core or another profile.
+     *
+     * @return static
      */
     public function setDefinition(null|string|FHIRUriPrimitive|FHIRUri $definition): self
     {
@@ -278,6 +282,8 @@ class FHIRConformanceQuery extends FHIRBackboneElement
      *
      * Additional information about how the query functions in this particular
      * implementation.
+     *
+     * @return static
      */
     public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation): self
     {
@@ -323,6 +329,8 @@ class FHIRConformanceQuery extends FHIRBackboneElement
      * particular implementation.
      *
      * Identifies which of the parameters for the named query are supported.
+     *
+     * @return static
      */
     public function addParameter(FHIRConformanceSearchParam $parameter): self
     {
@@ -339,6 +347,8 @@ class FHIRConformanceQuery extends FHIRBackboneElement
      * particular implementation.
      *
      * Identifies which of the parameters for the named query are supported.
+     *
+     * @return static
      */
     public function setParameter(FHIRConformanceSearchParam ...$parameter): self
     {

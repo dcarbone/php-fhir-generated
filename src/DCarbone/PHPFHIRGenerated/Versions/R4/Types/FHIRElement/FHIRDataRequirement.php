@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -323,6 +323,8 @@ class FHIRDataRequirement extends FHIRElement
      *
      * The type of the required data, specified as the type name of a resource. For
      * profiles, this value is set to the type of the base resource of the profile.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRCodePrimitive|FHIRCode $type): self
     {
@@ -372,6 +374,8 @@ class FHIRDataRequirement extends FHIRElement
      *
      * The profile of the required data, specified as the uri of the profile
      * definition.
+     *
+     * @return static
      */
     public function addProfile(string|FHIRCanonicalPrimitive|FHIRCanonical $profile): self
     {
@@ -393,6 +397,8 @@ class FHIRDataRequirement extends FHIRElement
      *
      * The profile of the required data, specified as the uri of the profile
      * definition.
+     *
+     * @return static
      */
     public function setProfile(string|FHIRCanonicalPrimitive|FHIRCanonical ...$profile): self
     {
@@ -433,6 +439,8 @@ class FHIRDataRequirement extends FHIRElement
      *
      * The intended subjects of the data requirement. If this element is not provided,
      * a Patient subject is assumed.
+     *
+     * @return static
      */
     public function setSubjectCodeableConcept(null|FHIRCodeableConcept $subjectCodeableConcept): self
     {
@@ -464,6 +472,8 @@ class FHIRDataRequirement extends FHIRElement
      *
      * The intended subjects of the data requirement. If this element is not provided,
      * a Patient subject is assumed.
+     *
+     * @return static
      */
     public function setSubjectReference(null|FHIRReference $subjectReference): self
     {
@@ -520,6 +530,8 @@ class FHIRDataRequirement extends FHIRElement
      * FHIRPath resolveable on the type of the DataRequirement. The path SHALL consist
      * only of identifiers, constant indexers, and .resolve() (see the [Simple FHIRPath
      * Profile](fhirpath.html#simple) for full details).
+     *
+     * @return static
      */
     public function addMustSupport(string|FHIRStringPrimitive|FHIRString $mustSupport): self
     {
@@ -546,6 +558,8 @@ class FHIRDataRequirement extends FHIRElement
      * FHIRPath resolveable on the type of the DataRequirement. The path SHALL consist
      * only of identifiers, constant indexers, and .resolve() (see the [Simple FHIRPath
      * Profile](fhirpath.html#simple) for full details).
+     *
+     * @return static
      */
     public function setMustSupport(string|FHIRStringPrimitive|FHIRString ...$mustSupport): self
     {
@@ -601,6 +615,8 @@ class FHIRDataRequirement extends FHIRElement
      * Code filters specify additional constraints on the data, specifying the value
      * set of interest for a particular element of the data. Each code filter defines
      * an additional constraint on the data, i.e. code filters are AND'ed, not OR'ed.
+     *
+     * @return static
      */
     public function addCodeFilter(FHIRDataRequirementCodeFilter $codeFilter): self
     {
@@ -620,6 +636,8 @@ class FHIRDataRequirement extends FHIRElement
      * Code filters specify additional constraints on the data, specifying the value
      * set of interest for a particular element of the data. Each code filter defines
      * an additional constraint on the data, i.e. code filters are AND'ed, not OR'ed.
+     *
+     * @return static
      */
     public function setCodeFilter(FHIRDataRequirementCodeFilter ...$codeFilter): self
     {
@@ -668,6 +686,8 @@ class FHIRDataRequirement extends FHIRElement
      * Date filters specify additional constraints on the data in terms of the
      * applicable date range for specific elements. Each date filter specifies an
      * additional constraint on the data, i.e. date filters are AND'ed, not OR'ed.
+     *
+     * @return static
      */
     public function addDateFilter(FHIRDataRequirementDateFilter $dateFilter): self
     {
@@ -687,6 +707,8 @@ class FHIRDataRequirement extends FHIRElement
      * Date filters specify additional constraints on the data in terms of the
      * applicable date range for specific elements. Each date filter specifies an
      * additional constraint on the data, i.e. date filters are AND'ed, not OR'ed.
+     *
+     * @return static
      */
     public function setDateFilter(FHIRDataRequirementDateFilter ...$dateFilter): self
     {
@@ -718,6 +740,8 @@ class FHIRDataRequirement extends FHIRElement
      *
      * Specifies a maximum number of results that are required (uses the _count search
      * parameter).
+     *
+     * @return static
      */
     public function setLimit(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $limit): self
     {
@@ -765,6 +789,8 @@ class FHIRDataRequirement extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the order of the results to be returned.
+     *
+     * @return static
      */
     public function addSort(FHIRDataRequirementSort $sort): self
     {
@@ -782,6 +808,8 @@ class FHIRDataRequirement extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the order of the results to be returned.
+     *
+     * @return static
      */
     public function setSort(FHIRDataRequirementSort ...$sort): self
     {

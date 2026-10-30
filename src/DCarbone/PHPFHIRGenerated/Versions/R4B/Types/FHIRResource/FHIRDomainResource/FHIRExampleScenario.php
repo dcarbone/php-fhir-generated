@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -541,6 +541,8 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * address at which at which an authoritative instance of this example scenario is
      * (or will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the example scenario is stored on different servers.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -592,6 +594,8 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * A formal identifier that is used to identify this example scenario when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -611,6 +615,8 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * A formal identifier that is used to identify this example scenario when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -650,6 +656,8 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -686,6 +694,8 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * A natural language name identifying the example scenario. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -716,6 +726,8 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      *
      * The status of this example scenario. Enables tracking the life-cycle of the
      * content.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -750,6 +762,8 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * A Boolean value to indicate that this example scenario is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
+     *
+     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -794,6 +808,8 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * must change when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * example scenario changes. (e.g. the 'content logical definition').
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -826,6 +842,8 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the example scenario.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -873,6 +891,8 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -890,6 +910,8 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -946,6 +968,8 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate example scenario
      * instances.
+     *
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -969,6 +993,8 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate example scenario
      * instances.
+     *
+     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1015,6 +1041,8 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      *
      * A legal or geographic region in which the example scenario is intended to be
      * used.
+     *
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1033,6 +1061,8 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      *
      * A legal or geographic region in which the example scenario is intended to be
      * used.
+     *
+     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1074,6 +1104,8 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * A copyright statement relating to the example scenario and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the example scenario.
+     *
+     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1118,6 +1150,8 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * What the example scenario resource is created for. This should not be used to
      * show the business purpose of the scenario itself, but the purpose of documenting
      * a scenario.
+     *
+     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1159,6 +1193,8 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * Example of workflow instance.
      *
      * Actor participating in the resource.
+     *
+     * @return static
      */
     public function addActor(FHIRExampleScenarioActor $actor): self
     {
@@ -1173,6 +1209,8 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * Example of workflow instance.
      *
      * Actor participating in the resource.
+     *
+     * @return static
      */
     public function setActor(FHIRExampleScenarioActor ...$actor): self
     {
@@ -1211,6 +1249,8 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * Example of workflow instance.
      *
      * Each resource and each version that is present in the workflow.
+     *
+     * @return static
      */
     public function addInstance(FHIRExampleScenarioInstance $instance): self
     {
@@ -1225,6 +1265,8 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * Example of workflow instance.
      *
      * Each resource and each version that is present in the workflow.
+     *
+     * @return static
      */
     public function setInstance(FHIRExampleScenarioInstance ...$instance): self
     {
@@ -1263,6 +1305,8 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * Example of workflow instance.
      *
      * Each major process - a group of operations.
+     *
+     * @return static
      */
     public function addProcess(FHIRExampleScenarioProcess $process): self
     {
@@ -1277,6 +1321,8 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * Example of workflow instance.
      *
      * Each major process - a group of operations.
+     *
+     * @return static
      */
     public function setProcess(FHIRExampleScenarioProcess ...$process): self
     {
@@ -1321,6 +1367,8 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * the Narrative, or extensions
      *
      * Another nested workflow.
+     *
+     * @return static
      */
     public function addWorkflow(string|FHIRCanonicalPrimitive|FHIRCanonical $workflow): self
     {
@@ -1341,6 +1389,8 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * the Narrative, or extensions
      *
      * Another nested workflow.
+     *
+     * @return static
      */
     public function setWorkflow(string|FHIRCanonicalPrimitive|FHIRCanonical ...$workflow): self
     {

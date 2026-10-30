@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -243,6 +243,8 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable summary of effect estimate.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -277,6 +279,8 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Examples include relative risk and mean difference.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -308,6 +312,8 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used to define variant exposure states such as low-risk state.
+     *
+     * @return static
      */
     public function setVariantState(null|FHIRCodeableConcept $variantState): self
     {
@@ -339,6 +345,8 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The point estimate of the effect estimate.
+     *
+     * @return static
      */
     public function setValue(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $value): self
     {
@@ -373,6 +381,8 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the UCUM unit for the outcome.
+     *
+     * @return static
      */
     public function setUnitOfMeasure(null|FHIRCodeableConcept $unitOfMeasure): self
     {
@@ -415,6 +425,8 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
      * from a combination of research studies.
      *
      * A description of the precision of the estimate for the effect.
+     *
+     * @return static
      */
     public function addPrecisionEstimate(FHIREffectEvidenceSynthesisPrecisionEstimate $precisionEstimate): self
     {
@@ -431,6 +443,8 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
      * from a combination of research studies.
      *
      * A description of the precision of the estimate for the effect.
+     *
+     * @return static
      */
     public function setPrecisionEstimate(FHIREffectEvidenceSynthesisPrecisionEstimate ...$precisionEstimate): self
     {

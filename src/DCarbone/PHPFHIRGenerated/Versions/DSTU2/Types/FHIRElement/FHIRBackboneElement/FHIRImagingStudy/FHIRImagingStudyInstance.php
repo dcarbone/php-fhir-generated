@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -265,6 +265,8 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The number of instance in the series.
+     *
+     * @return static
      */
     public function setNumber(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $number): self
     {
@@ -299,6 +301,8 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Formal identifier for this image or other content.
+     *
+     * @return static
      */
     public function setUid(null|string|FHIROidPrimitive|FHIROid $uid): self
     {
@@ -333,6 +337,8 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * DICOM instance type.
+     *
+     * @return static
      */
     public function setSopClass(null|string|FHIROidPrimitive|FHIROid $sopClass): self
     {
@@ -365,6 +371,8 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human-friendly SOP Class name.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRStringPrimitive|FHIRString $type): self
     {
@@ -397,6 +405,8 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The description of the instance.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -450,6 +460,8 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * by a URL reference to a WADO-RS service that makes the instance available; or to
      * a FHIR Resource (e.g. Media, Document, etc.). Multiple content attachments may
      * be used for alternate representations of the instance.
+     *
+     * @return static
      */
     public function addContent(FHIRAttachment $content): self
     {
@@ -470,6 +482,8 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * by a URL reference to a WADO-RS service that makes the instance available; or to
      * a FHIR Resource (e.g. Media, Document, etc.). Multiple content attachments may
      * be used for alternate representations of the instance.
+     *
+     * @return static
      */
     public function setContent(FHIRAttachment ...$content): self
     {

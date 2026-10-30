@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -612,6 +612,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier by which this substance is known.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -629,6 +631,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier by which this substance is known.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -658,6 +662,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A business level version identifier of the substance.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -692,6 +698,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Status of substance within the catalogue e.g. active, retired.
+     *
+     * @return static
      */
     public function setStatus(null|FHIRCodeableConcept $status): self
     {
@@ -740,6 +748,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * A high level categorization, e.g. polymer or nucleic acid, or food, chemical,
      * biological, or a lower level such as the general types of polymer (linear or
      * branch chain) or type of impurity (process related or contaminant).
+     *
+     * @return static
      */
     public function addClassification(FHIRCodeableConcept $classification): self
     {
@@ -759,6 +769,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * A high level categorization, e.g. polymer or nucleic acid, or food, chemical,
      * biological, or a lower level such as the general types of polymer (linear or
      * branch chain) or type of impurity (process related or contaminant).
+     *
+     * @return static
      */
     public function setClassification(FHIRCodeableConcept ...$classification): self
     {
@@ -790,6 +802,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the substance applies to human or veterinary use.
+     *
+     * @return static
      */
     public function setDomain(null|FHIRCodeableConcept $domain): self
     {
@@ -836,6 +850,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      *
      * The quality standard, established benchmark, to which substance complies (e.g.
      * USP/NF, Ph. Eur, JP, BP, Company Standard).
+     *
+     * @return static
      */
     public function addGrade(FHIRCodeableConcept $grade): self
     {
@@ -854,6 +870,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      *
      * The quality standard, established benchmark, to which substance complies (e.g.
      * USP/NF, Ph. Eur, JP, BP, Company Standard).
+     *
+     * @return static
      */
     public function setGrade(FHIRCodeableConcept ...$grade): self
     {
@@ -891,6 +909,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * the Narrative, or extensions
      *
      * Textual description of the substance.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -936,6 +956,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting literature.
+     *
+     * @return static
      */
     public function addInformationSource(FHIRReference $informationSource): self
     {
@@ -952,6 +974,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting literature.
+     *
+     * @return static
      */
     public function setInformationSource(FHIRReference ...$informationSource): self
     {
@@ -996,6 +1020,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Textual comment about the substance's catalogue or registry record.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1013,6 +1039,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Textual comment about the substance's catalogue or registry record.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1057,6 +1085,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      *
      * The entity that creates, makes, produces or fabricates the substance. This is a
      * set of potential manufacturers but is not necessarily comprehensive.
+     *
+     * @return static
      */
     public function addManufacturer(FHIRReference $manufacturer): self
     {
@@ -1074,6 +1104,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      *
      * The entity that creates, makes, produces or fabricates the substance. This is a
      * set of potential manufacturers but is not necessarily comprehensive.
+     *
+     * @return static
      */
     public function setManufacturer(FHIRReference ...$manufacturer): self
     {
@@ -1118,6 +1150,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      *
      * An entity that is the source for the substance. It may be different from the
      * manufacturer. Supplier is synonymous to a distributor.
+     *
+     * @return static
      */
     public function addSupplier(FHIRReference $supplier): self
     {
@@ -1135,6 +1169,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      *
      * An entity that is the source for the substance. It may be different from the
      * manufacturer. Supplier is synonymous to a distributor.
+     *
+     * @return static
      */
     public function setSupplier(FHIRReference ...$supplier): self
     {
@@ -1175,6 +1211,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * used for prescribing.
      *
      * Moiety, for structural modifications.
+     *
+     * @return static
      */
     public function addMoiety(FHIRSubstanceDefinitionMoiety $moiety): self
     {
@@ -1190,6 +1228,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * used for prescribing.
      *
      * Moiety, for structural modifications.
+     *
+     * @return static
      */
     public function setMoiety(FHIRSubstanceDefinitionMoiety ...$moiety): self
     {
@@ -1230,6 +1270,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * used for prescribing.
      *
      * General specifications for this substance.
+     *
+     * @return static
      */
     public function addCharacterization(FHIRSubstanceDefinitionCharacterization $characterization): self
     {
@@ -1245,6 +1287,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * used for prescribing.
      *
      * General specifications for this substance.
+     *
+     * @return static
      */
     public function setCharacterization(FHIRSubstanceDefinitionCharacterization ...$characterization): self
     {
@@ -1285,6 +1329,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * used for prescribing.
      *
      * General specifications for this substance.
+     *
+     * @return static
      */
     public function addProperty(FHIRSubstanceDefinitionProperty $property): self
     {
@@ -1300,6 +1346,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * used for prescribing.
      *
      * General specifications for this substance.
+     *
+     * @return static
      */
     public function setProperty(FHIRSubstanceDefinitionProperty ...$property): self
     {
@@ -1329,6 +1377,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * General information detailing this substance.
+     *
+     * @return static
      */
     public function setReferenceInformation(null|FHIRReference $referenceInformation): self
     {
@@ -1371,6 +1421,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      *
      * The average mass of a molecule of a compound compared to 1/12 the mass of carbon
      * 12 and calculated as the sum of the atomic weights of the constituent atoms.
+     *
+     * @return static
      */
     public function addMolecularWeight(FHIRSubstanceDefinitionMolecularWeight $molecularWeight): self
     {
@@ -1387,6 +1439,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      *
      * The average mass of a molecule of a compound compared to 1/12 the mass of carbon
      * 12 and calculated as the sum of the atomic weights of the constituent atoms.
+     *
+     * @return static
      */
     public function setMolecularWeight(FHIRSubstanceDefinitionMolecularWeight ...$molecularWeight): self
     {
@@ -1414,6 +1468,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * used for prescribing.
      *
      * Structural information.
+     *
+     * @return static
      */
     public function setStructure(null|FHIRSubstanceDefinitionStructure $structure): self
     {
@@ -1454,6 +1510,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * used for prescribing.
      *
      * Codes associated with the substance.
+     *
+     * @return static
      */
     public function addCode(FHIRSubstanceDefinitionCode $code): self
     {
@@ -1469,6 +1527,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * used for prescribing.
      *
      * Codes associated with the substance.
+     *
+     * @return static
      */
     public function setCode(FHIRSubstanceDefinitionCode ...$code): self
     {
@@ -1509,6 +1569,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * used for prescribing.
      *
      * Names applicable to this substance.
+     *
+     * @return static
      */
     public function addName(FHIRSubstanceDefinitionName $name): self
     {
@@ -1524,6 +1586,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * used for prescribing.
      *
      * Names applicable to this substance.
+     *
+     * @return static
      */
     public function setName(FHIRSubstanceDefinitionName ...$name): self
     {
@@ -1564,6 +1628,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * used for prescribing.
      *
      * A link between this substance and another, with details of the relationship.
+     *
+     * @return static
      */
     public function addRelationship(FHIRSubstanceDefinitionRelationship $relationship): self
     {
@@ -1579,6 +1645,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * used for prescribing.
      *
      * A link between this substance and another, with details of the relationship.
+     *
+     * @return static
      */
     public function setRelationship(FHIRSubstanceDefinitionRelationship ...$relationship): self
     {
@@ -1608,6 +1676,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Data items specific to nucleic acids.
+     *
+     * @return static
      */
     public function setNucleicAcid(null|FHIRReference $nucleicAcid): self
     {
@@ -1637,6 +1707,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Data items specific to polymers.
+     *
+     * @return static
      */
     public function setPolymer(null|FHIRReference $polymer): self
     {
@@ -1666,6 +1738,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Data items specific to proteins.
+     *
+     * @return static
      */
     public function setProtein(null|FHIRReference $protein): self
     {
@@ -1693,6 +1767,8 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements VersionConta
      * used for prescribing.
      *
      * Material or taxonomic/anatomical source for the substance.
+     *
+     * @return static
      */
     public function setSourceMaterial(null|FHIRSubstanceDefinitionSourceMaterial $sourceMaterial): self
     {

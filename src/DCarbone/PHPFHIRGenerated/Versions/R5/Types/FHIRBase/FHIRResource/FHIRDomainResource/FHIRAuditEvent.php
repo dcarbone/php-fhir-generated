@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -226,8 +226,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The time or period during which the activity occurred. (choose any one of
-     * occurred*, but only one)
+     * The time or period during which the activity occurred.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $occurredPeriod;
@@ -240,8 +239,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The time or period during which the activity occurred. (choose any one of
-     * occurred*, but only one)
+     * The time or period during which the activity occurred.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $occurredDateTime;
@@ -481,6 +479,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Classification of the type of event.
+     *
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -498,6 +498,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Classification of the type of event.
+     *
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -529,6 +531,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes what happened. The most specific code for the event.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -560,6 +564,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Indicator for type of action performed during the event that generated the
      * audit.
+     *
+     * @return static
      */
     public function setAction(null|string|FHIRAuditEventActionEnum|FHIRAuditEventAction $action): self
     {
@@ -592,6 +598,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Indicates and enables segmentation of various severity including debugging from
      * critical.
+     *
+     * @return static
      */
     public function setSeverity(null|string|FHIRAuditEventSeverityEnum|FHIRAuditEventSeverity $severity): self
     {
@@ -611,8 +619,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The time or period during which the activity occurred. (choose any one of
-     * occurred*, but only one)
+     * The time or period during which the activity occurred.
      */
     public function getOccurredPeriod(): null|FHIRPeriod
     {
@@ -624,8 +631,9 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The time or period during which the activity occurred. (choose any one of
-     * occurred*, but only one)
+     * The time or period during which the activity occurred.
+     *
+     * @return static
      */
     public function setOccurredPeriod(null|FHIRPeriod $occurredPeriod): self
     {
@@ -646,8 +654,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The time or period during which the activity occurred. (choose any one of
-     * occurred*, but only one)
+     * The time or period during which the activity occurred.
      */
     public function getOccurredDateTime(): null|FHIRDateTime
     {
@@ -663,8 +670,9 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The time or period during which the activity occurred. (choose any one of
-     * occurred*, but only one)
+     * The time or period during which the activity occurred.
+     *
+     * @return static
      */
     public function setOccurredDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurredDateTime): self
     {
@@ -703,6 +711,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the event was recorded.
+     *
+     * @return static
      */
     public function setRecorded(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $recorded): self
     {
@@ -735,6 +745,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Indicates whether the event succeeded or failed. A free text descripiton can be
      * given in outcome.text.
+     *
+     * @return static
      */
     public function setOutcome(null|FHIRAuditEventOutcome $outcome): self
     {
@@ -781,6 +793,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The authorization (e.g., PurposeOfUse) that was used during the event being
      * recorded.
+     *
+     * @return static
      */
     public function addAuthorization(FHIRCodeableConcept $authorization): self
     {
@@ -799,6 +813,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The authorization (e.g., PurposeOfUse) that was used during the event being
      * recorded.
+     *
+     * @return static
      */
     public function setAuthorization(FHIRCodeableConcept ...$authorization): self
     {
@@ -843,6 +859,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Allows tracing of authorizatino for the events and tracking whether
      * proposals/recommendations were acted upon.
+     *
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -860,6 +878,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Allows tracing of authorizatino for the events and tracking whether
      * proposals/recommendations were acted upon.
+     *
+     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -891,6 +911,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The patient element is available to enable deterministic tracking of activities
      * that involve the patient as the subject of the data used in an activity.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -924,6 +946,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * This will typically be the encounter the event occurred, but some events may be
      * initiated prior to or after the official completion of an encounter but still be
      * tied to the context of the encounter (e.g. pre-admission lab tests).
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -964,6 +988,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * security, maintenance, and performance analysis.
      *
      * An actor taking an active role in the event or activity that is logged.
+     *
+     * @return static
      */
     public function addAgent(FHIRAuditEventAgent $agent): self
     {
@@ -979,6 +1005,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * security, maintenance, and performance analysis.
      *
      * An actor taking an active role in the event or activity that is logged.
+     *
+     * @return static
      */
     public function setAgent(FHIRAuditEventAgent ...$agent): self
     {
@@ -1006,6 +1034,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * security, maintenance, and performance analysis.
      *
      * The actor that is reporting the event.
+     *
+     * @return static
      */
     public function setSource(null|FHIRAuditEventSource $source): self
     {
@@ -1046,6 +1076,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * security, maintenance, and performance analysis.
      *
      * Specific instances of data or objects that have been accessed.
+     *
+     * @return static
      */
     public function addEntity(FHIRAuditEventEntity $entity): self
     {
@@ -1061,6 +1093,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * security, maintenance, and performance analysis.
      *
      * Specific instances of data or objects that have been accessed.
+     *
+     * @return static
      */
     public function setEntity(FHIRAuditEventEntity ...$entity): self
     {

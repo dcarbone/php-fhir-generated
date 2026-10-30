@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -225,6 +225,8 @@ class FHIRElementDefinitionBinding extends FHIRElement
      * Indicates the degree of conformance expectations associated with this binding -
      * that is, the degree to which the provided value set must be adhered to in the
      * instances.
+     *
+     * @return static
      */
     public function setStrength(null|string|FHIRBindingStrengthList|FHIRBindingStrength $strength): self
     {
@@ -257,6 +259,8 @@ class FHIRElementDefinitionBinding extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the intended use of this particular set of codes.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -299,6 +303,8 @@ class FHIRElementDefinitionBinding extends FHIRElement
      * containing the canonical URL for the value set. If the reference is to an
      * implicit value set - usually, an IETF RFC that defines a grammar, such as mime
      * types - then use a uri.
+     *
+     * @return static
      */
     public function setValueSetUri(null|string|FHIRUriPrimitive|FHIRUri $valueSetUri): self
     {
@@ -341,6 +347,8 @@ class FHIRElementDefinitionBinding extends FHIRElement
      * containing the canonical URL for the value set. If the reference is to an
      * implicit value set - usually, an IETF RFC that defines a grammar, such as mime
      * types - then use a uri.
+     *
+     * @return static
      */
     public function setValueSetReference(null|FHIRReference $valueSetReference): self
     {

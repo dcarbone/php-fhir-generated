@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -420,6 +420,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * processes and/ or used to refer to it when a direct URL reference to the
      * resource itself is not appropriate (e.g. in CDA documents, or in written /
      * printed documentation).
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -439,6 +441,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * processes and/ or used to refer to it when a direct URL reference to the
      * resource itself is not appropriate (e.g. in CDA documents, or in written /
      * printed documentation).
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -472,6 +476,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      *
      * The type of message conveyed such as alert, notification, reminder, instruction,
      * etc.
+     *
+     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -503,6 +509,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      *
      * The entity (e.g. person, organization, clinical information system, or device)
      * which was the source of the communication.
+     *
+     * @return static
      */
     public function setSender(null|FHIRReference $sender): self
     {
@@ -555,6 +563,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * recipient.  Multiple recipient communications are intended where either a
      * receipt(s) is not tracked (e.g. a mass mail-out) or is captured in aggregate
      * (all emails confirmed received by a particular time).
+     *
+     * @return static
      */
     public function addRecipient(FHIRReference $recipient): self
     {
@@ -576,6 +586,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * recipient.  Multiple recipient communications are intended where either a
      * receipt(s) is not tracked (e.g. a mass mail-out) or is captured in aggregate
      * (all emails confirmed received by a particular time).
+     *
+     * @return static
      */
     public function setRecipient(FHIRReference ...$recipient): self
     {
@@ -618,6 +630,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * condition.
      *
      * Text, attachment(s), or resource(s) that was communicated to the recipient.
+     *
+     * @return static
      */
     public function addPayload(FHIRCommunicationPayload $payload): self
     {
@@ -634,6 +648,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * condition.
      *
      * Text, attachment(s), or resource(s) that was communicated to the recipient.
+     *
+     * @return static
      */
     public function setPayload(FHIRCommunicationPayload ...$payload): self
     {
@@ -678,6 +694,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A channel that was used for this communication (e.g. email, fax).
+     *
+     * @return static
      */
     public function addMedium(FHIRCodeableConcept $medium): self
     {
@@ -695,6 +713,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A channel that was used for this communication (e.g. email, fax).
+     *
+     * @return static
      */
     public function setMedium(FHIRCodeableConcept ...$medium): self
     {
@@ -722,6 +742,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the transmission.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRCommunicationStatusList|FHIRCommunicationStatus $status): self
     {
@@ -754,6 +776,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter within which the communication was sent.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -789,6 +813,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when this communication was sent.
+     *
+     * @return static
      */
     public function setSent(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $sent): self
     {
@@ -827,6 +853,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when this communication arrived at the destination.
+     *
+     * @return static
      */
     public function setReceived(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $received): self
     {
@@ -874,6 +902,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason or justification for the communication.
+     *
+     * @return static
      */
     public function addReason(FHIRCodeableConcept $reason): self
     {
@@ -891,6 +921,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason or justification for the communication.
+     *
+     * @return static
      */
     public function setReason(FHIRCodeableConcept ...$reason): self
     {
@@ -920,6 +952,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who was the focus of this communication.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -949,6 +983,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The communication request that was responsible for producing this communication.
+     *
+     * @return static
      */
     public function setRequestDetail(null|FHIRReference $requestDetail): self
     {

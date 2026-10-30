@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -529,6 +529,8 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
      * business processed and/ or used to refer to it when a direct URL reference to
      * the resource itself is not appropriate (e.g. in CDA documents, or in written /
      * printed documentation).
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -548,6 +550,8 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
      * business processed and/ or used to refer to it when a direct URL reference to
      * the resource itself is not appropriate (e.g. in CDA documents, or in written /
      * printed documentation).
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -577,6 +581,8 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the patient who the condition record is associated with.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRResourceReference $subject): self
     {
@@ -606,6 +612,8 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Encounter during which the condition was first asserted.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRResourceReference $encounter): self
     {
@@ -637,6 +645,8 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
      *
      * Person who takes responsibility for asserting the existence of the condition as
      * part of the electronic record.
+     *
+     * @return static
      */
     public function setAsserter(null|FHIRResourceReference $asserter): self
     {
@@ -670,6 +680,8 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
      *
      * Estimated or actual date the condition/problem/diagnosis was first
      * detected/suspected.
+     *
+     * @return static
      */
     public function setDateAsserted(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $dateAsserted): self
     {
@@ -704,6 +716,8 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identification of the condition, problem or diagnosis.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -737,6 +751,8 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
      *
      * A category assigned to the condition. E.g. complaint | symptom | finding |
      * diagnosis.
+     *
+     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -764,6 +780,8 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The clinical status of the condition.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRConditionStatusList|FHIRConditionStatus $status): self
     {
@@ -798,6 +816,8 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The degree of confidence that this condition is correct.
+     *
+     * @return static
      */
     public function setCertainty(null|FHIRCodeableConcept $certainty): self
     {
@@ -831,6 +851,8 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
      *
      * A subjective assessment of the severity of the condition as evaluated by the
      * clinician.
+     *
+     * @return static
      */
     public function setSeverity(null|FHIRCodeableConcept $severity): self
     {
@@ -862,6 +884,8 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Estimated or actual date the condition began, in the opinion of the clinician.
+     *
+     * @return static
      */
     public function setOnsetDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $onsetDate): self
     {
@@ -886,6 +910,8 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
 
     /**
      * Estimated or actual date the condition began, in the opinion of the clinician.
+     *
+     * @return static
      */
     public function setOnsetAge(null|FHIRAge $onsetAge): self
     {
@@ -923,6 +949,8 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
      * resolved, but they can abate.
+     *
+     * @return static
      */
     public function setAbatementDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $abatementDate): self
     {
@@ -953,6 +981,8 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
      * resolved, but they can abate.
+     *
+     * @return static
      */
     public function setAbatementAge(null|FHIRAge $abatementAge): self
     {
@@ -986,6 +1016,8 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
      * resolved, but they can abate.
+     *
+     * @return static
      */
     public function setAbatementBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $abatementBoolean): self
     {
@@ -1020,6 +1052,8 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
      * Discharge Summary.
      *
      * Clinical stage or grade of a condition. May include formal severity assessments.
+     *
+     * @return static
      */
     public function setStage(null|FHIRConditionStage $stage): self
     {
@@ -1066,6 +1100,8 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
      *
      * Supporting Evidence / manifestations that are the basis on which this condition
      * is suspected or confirmed.
+     *
+     * @return static
      */
     public function addEvidence(FHIRConditionEvidence $evidence): self
     {
@@ -1084,6 +1120,8 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
      *
      * Supporting Evidence / manifestations that are the basis on which this condition
      * is suspected or confirmed.
+     *
+     * @return static
      */
     public function setEvidence(FHIRConditionEvidence ...$evidence): self
     {
@@ -1128,6 +1166,8 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
      * Discharge Summary.
      *
      * The anatomical location where this condition manifests itself.
+     *
+     * @return static
      */
     public function addLocation(FHIRConditionLocation $location): self
     {
@@ -1145,6 +1185,8 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
      * Discharge Summary.
      *
      * The anatomical location where this condition manifests itself.
+     *
+     * @return static
      */
     public function setLocation(FHIRConditionLocation ...$location): self
     {
@@ -1193,6 +1235,8 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
      * Further conditions, problems, diagnoses, procedures or events that are related
      * in some way to this condition, or the substance that caused/triggered this
      * Condition.
+     *
+     * @return static
      */
     public function addRelatedItem(FHIRConditionRelatedItem $relatedItem): self
     {
@@ -1212,6 +1256,8 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
      * Further conditions, problems, diagnoses, procedures or events that are related
      * in some way to this condition, or the substance that caused/triggered this
      * Condition.
+     *
+     * @return static
      */
     public function setRelatedItem(FHIRConditionRelatedItem ...$relatedItem): self
     {
@@ -1241,6 +1287,8 @@ class FHIRCondition extends FHIRResource implements VersionContainedTypeInterfac
      *
      * Additional information about the Condition. This is a general notes/comments
      * entry for description of the Condition, its diagnosis and prognosis.
+     *
+     * @return static
      */
     public function setNotes(null|string|FHIRStringPrimitive|FHIRString $notes): self
     {

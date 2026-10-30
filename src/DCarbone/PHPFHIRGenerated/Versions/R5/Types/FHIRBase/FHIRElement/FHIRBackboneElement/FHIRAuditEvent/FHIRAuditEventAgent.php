@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -217,7 +217,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * When the event utilizes a network there should be an agent describing the local
      * system, and an agent describing remote system, with the network interface
-     * details. (choose any one of network*, but only one)
+     * details.
      */
     #[FHIRReference]
     protected FHIRReference $networkReference;
@@ -228,7 +228,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * When the event utilizes a network there should be an agent describing the local
      * system, and an agent describing remote system, with the network interface
-     * details. (choose any one of network*, but only one)
+     * details.
      */
     #[FHIRUri]
     protected FHIRUri $networkUri;
@@ -239,7 +239,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * When the event utilizes a network there should be an agent describing the local
      * system, and an agent describing remote system, with the network interface
-     * details. (choose any one of network*, but only one)
+     * details.
      */
     #[FHIRString]
     protected FHIRString $networkString;
@@ -345,6 +345,8 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Functional Role of the user when performing the event.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -391,6 +393,8 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * The structural roles of the agent indicating the agent's competency. The
      * security role enabling the agent with respect to the activity.
+     *
+     * @return static
      */
     public function addRole(FHIRCodeableConcept $role): self
     {
@@ -409,6 +413,8 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * The structural roles of the agent indicating the agent's competency. The
      * security role enabling the agent with respect to the activity.
+     *
+     * @return static
      */
     public function setRole(FHIRCodeableConcept ...$role): self
     {
@@ -438,6 +444,8 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to who this agent is that was involved in the event.
+     *
+     * @return static
      */
     public function setWho(null|FHIRReference $who): self
     {
@@ -467,6 +475,8 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * Indicator that the user is or is not the requestor, or initiator, for the event
      * being audited.
+     *
+     * @return static
      */
     public function setRequestor(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $requestor): self
     {
@@ -499,6 +509,8 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the agent location is known, the agent location when the event occurred.
+     *
+     * @return static
      */
     public function setLocation(null|FHIRReference $location): self
     {
@@ -547,6 +559,8 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * event. Typically, a single activity may have multiple applicable policies, such
      * as patient consent, guarantor funding, etc. The policy would also indicate the
      * security token used.
+     *
+     * @return static
      */
     public function addPolicy(string|FHIRUriPrimitive|FHIRUri $policy): self
     {
@@ -569,6 +583,8 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * event. Typically, a single activity may have multiple applicable policies, such
      * as patient consent, guarantor funding, etc. The policy would also indicate the
      * security token used.
+     *
+     * @return static
      */
     public function setPolicy(string|FHIRUriPrimitive|FHIRUri ...$policy): self
     {
@@ -594,7 +610,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * When the event utilizes a network there should be an agent describing the local
      * system, and an agent describing remote system, with the network interface
-     * details. (choose any one of network*, but only one)
+     * details.
      */
     public function getNetworkReference(): null|FHIRReference
     {
@@ -608,7 +624,9 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * When the event utilizes a network there should be an agent describing the local
      * system, and an agent describing remote system, with the network interface
-     * details. (choose any one of network*, but only one)
+     * details.
+     *
+     * @return static
      */
     public function setNetworkReference(null|FHIRReference $networkReference): self
     {
@@ -627,7 +645,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * When the event utilizes a network there should be an agent describing the local
      * system, and an agent describing remote system, with the network interface
-     * details. (choose any one of network*, but only one)
+     * details.
      */
     public function getNetworkUri(): null|FHIRUri
     {
@@ -641,7 +659,9 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * When the event utilizes a network there should be an agent describing the local
      * system, and an agent describing remote system, with the network interface
-     * details. (choose any one of network*, but only one)
+     * details.
+     *
+     * @return static
      */
     public function setNetworkUri(null|string|FHIRUriPrimitive|FHIRUri $networkUri): self
     {
@@ -663,7 +683,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * When the event utilizes a network there should be an agent describing the local
      * system, and an agent describing remote system, with the network interface
-     * details. (choose any one of network*, but only one)
+     * details.
      */
     public function getNetworkString(): null|FHIRString
     {
@@ -677,7 +697,9 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * When the event utilizes a network there should be an agent describing the local
      * system, and an agent describing remote system, with the network interface
-     * details. (choose any one of network*, but only one)
+     * details.
+     *
+     * @return static
      */
     public function setNetworkString(null|string|FHIRStringPrimitive|FHIRString $networkString): self
     {
@@ -727,6 +749,8 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * The authorization (e.g., PurposeOfUse) that was used during the event being
      * recorded.
+     *
+     * @return static
      */
     public function addAuthorization(FHIRCodeableConcept $authorization): self
     {
@@ -745,6 +769,8 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * The authorization (e.g., PurposeOfUse) that was used during the event being
      * recorded.
+     *
+     * @return static
      */
     public function setAuthorization(FHIRCodeableConcept ...$authorization): self
     {

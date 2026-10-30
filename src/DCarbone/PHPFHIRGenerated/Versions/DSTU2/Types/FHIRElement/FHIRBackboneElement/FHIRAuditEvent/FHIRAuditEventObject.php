@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -312,6 +312,8 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      *
      * Identifies a specific instance of the participant object. The reference should
      * always be version specific.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -343,6 +345,8 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      *
      * Identifies a specific instance of the participant object. The reference should
      * always be version specific.
+     *
+     * @return static
      */
     public function setReference(null|FHIRReference $reference): self
     {
@@ -372,6 +376,8 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of the object that was involved in this audit event.
+     *
+     * @return static
      */
     public function setType(null|FHIRCoding $type): self
     {
@@ -403,6 +409,8 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      *
      * Code representing the functional application role of Participant Object being
      * audited.
+     *
+     * @return static
      */
     public function setRole(null|FHIRCoding $role): self
     {
@@ -432,6 +440,8 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the data life-cycle stage for the participant object.
+     *
+     * @return static
      */
     public function setLifecycle(null|FHIRCoding $lifecycle): self
     {
@@ -474,6 +484,8 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Denotes security labels for the identified object.
+     *
+     * @return static
      */
     public function addSecurityLabel(FHIRCoding $securityLabel): self
     {
@@ -490,6 +502,8 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Denotes security labels for the identified object.
+     *
+     * @return static
      */
     public function setSecurityLabel(FHIRCoding ...$securityLabel): self
     {
@@ -521,6 +535,8 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      *
      * An instance-specific descriptor of the Participant Object ID audited, such as a
      * person's name.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -553,6 +569,8 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Text that describes the object in more detail.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -585,6 +603,8 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual query for a query-type participant object.
+     *
+     * @return static
      */
     public function setQuery(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $query): self
     {
@@ -630,6 +650,8 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * usage.
      *
      * Additional Information about the Object.
+     *
+     * @return static
      */
     public function addDetail(FHIRAuditEventDetail $detail): self
     {
@@ -646,6 +668,8 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * usage.
      *
      * Additional Information about the Object.
+     *
+     * @return static
      */
     public function setDetail(FHIRAuditEventDetail ...$detail): self
     {

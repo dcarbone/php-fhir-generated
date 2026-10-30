@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -222,6 +222,8 @@ class FHIRPlanDefinitionOutput extends FHIRBackboneElement
      * A human-readable label for the data requirement used to label data flows in BPMN
      * or similar diagrams. Also provides a human readable label when rendering the
      * data requirement that conveys its purpose to human readers.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -256,6 +258,8 @@ class FHIRPlanDefinitionOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines the data that results as output from the action.
+     *
+     * @return static
      */
     public function setRequirement(null|FHIRDataRequirement $requirement): self
     {
@@ -287,6 +291,8 @@ class FHIRPlanDefinitionOutput extends FHIRBackboneElement
      *
      * Points to an existing input or output element that is results as output from the
      * action.
+     *
+     * @return static
      */
     public function setRelatedData(null|string|FHIRStringPrimitive|FHIRString $relatedData): self
     {

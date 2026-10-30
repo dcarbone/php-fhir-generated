@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -260,6 +260,8 @@ class FHIREncounterAdmission extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Pre-admission identifier.
+     *
+     * @return static
      */
     public function setPreAdmissionIdentifier(null|FHIRIdentifier $preAdmissionIdentifier): self
     {
@@ -289,6 +291,8 @@ class FHIREncounterAdmission extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location/organization from which the patient came before admission.
+     *
+     * @return static
      */
     public function setOrigin(null|FHIRReference $origin): self
     {
@@ -320,6 +324,8 @@ class FHIREncounterAdmission extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * From where patient was admitted (physician referral, transfer).
+     *
+     * @return static
      */
     public function setAdmitSource(null|FHIRCodeableConcept $admitSource): self
     {
@@ -355,6 +361,8 @@ class FHIREncounterAdmission extends FHIRBackboneElement
      * Indicates that this encounter is directly related to a prior admission, often
      * because the conditions addressed in the prior admission were not fully
      * addressed.
+     *
+     * @return static
      */
     public function setReAdmission(null|FHIRCodeableConcept $reAdmission): self
     {
@@ -384,6 +392,8 @@ class FHIREncounterAdmission extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Location/organization to which the patient is discharged.
+     *
+     * @return static
      */
     public function setDestination(null|FHIRReference $destination): self
     {
@@ -415,6 +425,8 @@ class FHIREncounterAdmission extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Category or kind of location after discharge.
+     *
+     * @return static
      */
     public function setDischargeDisposition(null|FHIRCodeableConcept $dischargeDisposition): self
     {

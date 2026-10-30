@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -210,6 +210,8 @@ class FHIRSubscriptionParameter extends FHIRBackboneElement
      * Parameter name for information passed to the channel for notifications, for
      * example in the case of a REST hook wanting to pass through an authorization
      * header, the name would be Authorization.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -246,6 +248,8 @@ class FHIRSubscriptionParameter extends FHIRBackboneElement
      * Parameter value for information passed to the channel for notifications, for
      * example in the case of a REST hook wanting to pass through an authorization
      * header, the value would be `Bearer 0193...`.
+     *
+     * @return static
      */
     public function setValue(null|string|FHIRStringPrimitive|FHIRString $value): self
     {

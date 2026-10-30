@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -213,6 +213,8 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
      *
      * Mode of this document declaration - whether an application is a producer or
      * consumer.
+     *
+     * @return static
      */
     public function setMode(null|string|FHIRDocumentModeList|FHIRDocumentMode $mode): self
     {
@@ -257,6 +259,8 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
      * A description of how the application supports or uses the specified document
      * profile. For example, when documents are created, what action is taken with
      * consumed documents, etc.
+     *
+     * @return static
      */
     public function setDocumentation(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $documentation): self
     {
@@ -293,6 +297,8 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
      *
      * A profile on the document Bundle that constrains which resources are present,
      * and their contents.
+     *
+     * @return static
      */
     public function setProfile(null|string|FHIRCanonicalPrimitive|FHIRCanonical $profile): self
     {

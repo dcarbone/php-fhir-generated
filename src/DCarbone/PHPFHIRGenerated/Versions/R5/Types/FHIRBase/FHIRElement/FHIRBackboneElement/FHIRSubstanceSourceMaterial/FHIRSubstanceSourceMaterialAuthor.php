@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -220,6 +220,8 @@ class FHIRSubstanceSourceMaterialAuthor extends FHIRBackboneElement
      * author of an organism species refers to the first author who published the
      * plant/animal name (of any rank). The primary author of an organism species
      * refers to the first author(s), who validly published the plant/animal name.
+     *
+     * @return static
      */
     public function setAuthorType(null|FHIRCodeableConcept $authorType): self
     {
@@ -253,6 +255,8 @@ class FHIRSubstanceSourceMaterialAuthor extends FHIRBackboneElement
      * The author of an organism species shall be specified. The author year of an
      * organism shall also be specified when applicable; refers to the year in which
      * the first author(s) published the infraspecific plant/animal name (of any rank).
+     *
+     * @return static
      */
     public function setAuthorDescription(null|string|FHIRStringPrimitive|FHIRString $authorDescription): self
     {

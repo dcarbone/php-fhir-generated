@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -481,6 +481,8 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * A unique identifier for this package as whole. Unique instance identifiers
      * assigned to a package by manufacturers, regulators, drug catalogue custodians or
      * other organizations.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -500,6 +502,8 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * A unique identifier for this package as whole. Unique instance identifiers
      * assigned to a package by manufacturers, regulators, drug catalogue custodians or
      * other organizations.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -531,6 +535,8 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      *
      * A name for this package. Typically what it would be listed as in a drug
      * formulary or catalogue, inventory etc.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -567,6 +573,8 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      *
      * A high level category e.g. medicinal product, raw material, shipping/transport
      * container, etc.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -609,6 +617,8 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The product that this is a pack for.
+     *
+     * @return static
      */
     public function addPackageFor(FHIRReference $packageFor): self
     {
@@ -625,6 +635,8 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The product that this is a pack for.
+     *
+     * @return static
      */
     public function setPackageFor(FHIRReference ...$packageFor): self
     {
@@ -660,6 +672,8 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * The status within the lifecycle of this item. A high level status, this is not
      * intended to duplicate details carried elsewhere such as legal status, or
      * authorization or marketing status.
+     *
+     * @return static
      */
     public function setStatus(null|FHIRCodeableConcept $status): self
     {
@@ -695,6 +709,8 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date at which the given status became applicable.
+     *
+     * @return static
      */
     public function setStatusDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $statusDate): self
     {
@@ -766,6 +782,8 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * allow different counts of similar items (e.g. not '2 tubes and 3 tubes').
      * Repeats are not to be used to represent different pack sizes (e.g. 20 pack vs.
      * 50 pack) - which would be different instances of this resource.
+     *
+     * @return static
      */
     public function addContainedItemQuantity(FHIRQuantity $containedItemQuantity): self
     {
@@ -795,6 +813,8 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * allow different counts of similar items (e.g. not '2 tubes and 3 tubes').
      * Repeats are not to be used to represent different pack sizes (e.g. 20 pack vs.
      * 50 pack) - which would be different instances of this resource.
+     *
+     * @return static
      */
     public function setContainedItemQuantity(FHIRQuantity ...$containedItemQuantity): self
     {
@@ -832,6 +852,8 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * the Narrative, or extensions
      *
      * Textual description. Note that this is not the name of the package or product.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -873,6 +895,8 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * A medically related item or items, in a container or package.
      *
      * The legal status of supply of the packaged item as classified by the regulator.
+     *
+     * @return static
      */
     public function addLegalStatusOfSupply(FHIRPackagedProductDefinitionLegalStatusOfSupply $legalStatusOfSupply): self
     {
@@ -887,6 +911,8 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * A medically related item or items, in a container or package.
      *
      * The legal status of supply of the packaged item as classified by the regulator.
+     *
+     * @return static
      */
     public function setLegalStatusOfSupply(FHIRPackagedProductDefinitionLegalStatusOfSupply ...$legalStatusOfSupply): self
     {
@@ -933,6 +959,8 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      *
      * Allows specifying that an item is on the market for sale, or that it is not
      * available, and the dates and locations associated.
+     *
+     * @return static
      */
     public function addMarketingStatus(FHIRMarketingStatus $marketingStatus): self
     {
@@ -951,6 +979,8 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      *
      * Allows specifying that an item is on the market for sale, or that it is not
      * available, and the dates and locations associated.
+     *
+     * @return static
      */
     public function setMarketingStatus(FHIRMarketingStatus ...$marketingStatus): self
     {
@@ -997,6 +1027,8 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      *
      * Allows the key features to be recorded, such as "hospital pack", "nurse
      * prescribable", "calendar pack".
+     *
+     * @return static
      */
     public function addCharacteristic(FHIRCodeableConcept $characteristic): self
     {
@@ -1015,6 +1047,8 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      *
      * Allows the key features to be recorded, such as "hospital pack", "nurse
      * prescribable", "calendar pack".
+     *
+     * @return static
      */
     public function setCharacteristic(FHIRCodeableConcept ...$characteristic): self
     {
@@ -1044,6 +1078,8 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      *
      * States whether a drug product is supplied with another item such as a diluent or
      * adjuvant.
+     *
+     * @return static
      */
     public function setCopackagedIndicator(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $copackagedIndicator): self
     {
@@ -1091,6 +1127,8 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      *
      * Manufacturer of this package type. When there are multiple it means these are
      * all possible manufacturers.
+     *
+     * @return static
      */
     public function addManufacturer(FHIRReference $manufacturer): self
     {
@@ -1108,6 +1146,8 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      *
      * Manufacturer of this package type. When there are multiple it means these are
      * all possible manufacturers.
+     *
+     * @return static
      */
     public function setManufacturer(FHIRReference ...$manufacturer): self
     {
@@ -1137,6 +1177,8 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * A packaging item, as a container for medically related items, possibly with
      * other packaging items within, or a packaging component, such as bottle cap
      * (which is not a device or a medication manufactured item).
+     *
+     * @return static
      */
     public function setPackage(null|FHIRPackagedProductDefinitionPackage $package): self
     {

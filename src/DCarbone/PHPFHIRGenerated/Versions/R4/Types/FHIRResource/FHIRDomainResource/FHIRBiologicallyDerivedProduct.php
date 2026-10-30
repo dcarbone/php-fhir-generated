@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -384,6 +384,8 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * instance that are defined by business processes and/or used to refer to it when
      * a direct URL reference to the resource itself is not appropriate (e.g. in CDA
      * documents, or in written / printed documentation).
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -404,6 +406,8 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * instance that are defined by business processes and/or used to refer to it when
      * a direct URL reference to the resource itself is not appropriate (e.g. in CDA
      * documents, or in written / printed documentation).
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -431,6 +435,8 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Broad category of this product.
+     *
+     * @return static
      */
     public function setProductCategory(null|string|FHIRBiologicallyDerivedProductCategoryList|FHIRBiologicallyDerivedProductCategory $productCategory): self
     {
@@ -467,6 +473,8 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      *
      * A code that identifies the kind of this biologically derived product (SNOMED
      * Ctcode).
+     *
+     * @return static
      */
     public function setProductCode(null|FHIRCodeableConcept $productCode): self
     {
@@ -494,6 +502,8 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the product is currently available.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRBiologicallyDerivedProductStatusList|FHIRBiologicallyDerivedProductStatus $status): self
     {
@@ -539,6 +549,8 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Procedure request to obtain this biologically derived product.
+     *
+     * @return static
      */
     public function addRequest(FHIRReference $request): self
     {
@@ -555,6 +567,8 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Procedure request to obtain this biologically derived product.
+     *
+     * @return static
      */
     public function setRequest(FHIRReference ...$request): self
     {
@@ -584,6 +598,8 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Number of discrete units within this product.
+     *
+     * @return static
      */
     public function setQuantity(null|string|float|FHIRIntegerPrimitive|FHIRInteger $quantity): self
     {
@@ -629,6 +645,8 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Parent product (if any).
+     *
+     * @return static
      */
     public function addParent(FHIRReference $parent): self
     {
@@ -645,6 +663,8 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Parent product (if any).
+     *
+     * @return static
      */
     public function setParent(FHIRReference ...$parent): self
     {
@@ -672,6 +692,8 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * transplanted or infused into another (possibly the same) biological entity.
      *
      * How this product was collected.
+     *
+     * @return static
      */
     public function setCollection(null|FHIRBiologicallyDerivedProductCollection $collection): self
     {
@@ -716,6 +738,8 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * Any processing of the product during collection that does not change the
      * fundamental nature of the product. For example adding anti-coagulants during the
      * collection of Peripheral Blood Stem Cells.
+     *
+     * @return static
      */
     public function addProcessing(FHIRBiologicallyDerivedProductProcessing $processing): self
     {
@@ -733,6 +757,8 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * Any processing of the product during collection that does not change the
      * fundamental nature of the product. For example adding anti-coagulants during the
      * collection of Peripheral Blood Stem Cells.
+     *
+     * @return static
      */
     public function setProcessing(FHIRBiologicallyDerivedProductProcessing ...$processing): self
     {
@@ -764,6 +790,8 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * Any manipulation of product post-collection that is intended to alter the
      * product. For example a buffy-coat enrichment or CD8 reduction of Peripheral
      * Blood Stem Cells to make it more suitable for infusion.
+     *
+     * @return static
      */
     public function setManipulation(null|FHIRBiologicallyDerivedProductManipulation $manipulation): self
     {
@@ -804,6 +832,8 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * transplanted or infused into another (possibly the same) biological entity.
      *
      * Product storage.
+     *
+     * @return static
      */
     public function addStorage(FHIRBiologicallyDerivedProductStorage $storage): self
     {
@@ -819,6 +849,8 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * transplanted or infused into another (possibly the same) biological entity.
      *
      * Product storage.
+     *
+     * @return static
      */
     public function setStorage(FHIRBiologicallyDerivedProductStorage ...$storage): self
     {

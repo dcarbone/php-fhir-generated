@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -303,6 +303,8 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
      *
      * Code to identify the general type of benefits under which products and services
      * are provided.
+     *
+     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -332,6 +334,8 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
      *
      * True if the indicated class of service is excluded from the plan, missing or
      * False indicates the product or service is included in the coverage.
+     *
+     * @return static
      */
     public function setExcluded(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $excluded): self
     {
@@ -364,6 +368,8 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short name or tag for the benefit.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -396,6 +402,8 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A richer description of the benefit or services covered.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -432,6 +440,8 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
      *
      * Is a flag to indicate whether the benefits refer to in-network providers or
      * out-of-network providers.
+     *
+     * @return static
      */
     public function setNetwork(null|FHIRCodeableConcept $network): self
     {
@@ -463,6 +473,8 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates if the benefits apply to an individual or to the family.
+     *
+     * @return static
      */
     public function setUnit(null|FHIRCodeableConcept $unit): self
     {
@@ -496,6 +508,8 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
      *
      * The term or period of the values such as 'maximum lifetime benefit' or 'maximum
      * annual visits'.
+     *
+     * @return static
      */
     public function setTerm(null|FHIRCodeableConcept $term): self
     {
@@ -538,6 +552,8 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
      * the subscriber of the benefits provided.
      *
      * Benefits Used to date.
+     *
+     * @return static
      */
     public function addFinancial(FHIRExplanationOfBenefitFinancial $financial): self
     {
@@ -554,6 +570,8 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
      * the subscriber of the benefits provided.
      *
      * Benefits Used to date.
+     *
+     * @return static
      */
     public function setFinancial(FHIRExplanationOfBenefitFinancial ...$financial): self
     {

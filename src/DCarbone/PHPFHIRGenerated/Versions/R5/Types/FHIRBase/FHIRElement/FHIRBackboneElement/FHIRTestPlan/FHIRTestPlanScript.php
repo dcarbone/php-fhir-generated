@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -142,7 +142,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual content of the cases - references to TestScripts or externally
-     * defined content. (choose any one of source*, but only one)
+     * defined content.
      */
     #[FHIRString]
     protected FHIRString $sourceString;
@@ -152,7 +152,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual content of the cases - references to TestScripts or externally
-     * defined content. (choose any one of source*, but only one)
+     * defined content.
      */
     #[FHIRReference]
     protected FHIRReference $sourceReference;
@@ -214,6 +214,8 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The language for the test cases e.g. 'gherkin', 'testscript'.
+     *
+     * @return static
      */
     public function setLanguage(null|FHIRCodeableConcept $language): self
     {
@@ -231,7 +233,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual content of the cases - references to TestScripts or externally
-     * defined content. (choose any one of source*, but only one)
+     * defined content.
      */
     public function getSourceString(): null|FHIRString
     {
@@ -244,7 +246,9 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual content of the cases - references to TestScripts or externally
-     * defined content. (choose any one of source*, but only one)
+     * defined content.
+     *
+     * @return static
      */
     public function setSourceString(null|string|FHIRStringPrimitive|FHIRString $sourceString): self
     {
@@ -265,7 +269,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual content of the cases - references to TestScripts or externally
-     * defined content. (choose any one of source*, but only one)
+     * defined content.
      */
     public function getSourceReference(): null|FHIRReference
     {
@@ -278,7 +282,9 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual content of the cases - references to TestScripts or externally
-     * defined content. (choose any one of source*, but only one)
+     * defined content.
+     *
+     * @return static
      */
     public function setSourceReference(null|FHIRReference $sourceReference): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -645,6 +645,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The category of claim this is.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRClaimTypeList|FHIRClaimType $type): self
     {
@@ -692,6 +694,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * The business identifier for the instance: invoice number, claim number,
      * pre-determination or pre-authorization number.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -709,6 +713,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * The business identifier for the instance: invoice number, claim number,
      * pre-determination or pre-authorization number.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -738,6 +744,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The version of the specification on which this instance relies.
+     *
+     * @return static
      */
     public function setRuleset(null|FHIRCoding $ruleset): self
     {
@@ -767,6 +775,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The version of the specification from which the original instance was created.
+     *
+     * @return static
      */
     public function setOriginalRuleset(null|FHIRCoding $originalRuleset): self
     {
@@ -802,6 +812,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the enclosed suite of services were performed or completed.
+     *
+     * @return static
      */
     public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created): self
     {
@@ -834,6 +846,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Insurer Identifier, typical BIN number (6 digit).
+     *
+     * @return static
      */
     public function setTarget(null|FHIRReference $target): self
     {
@@ -865,6 +879,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * The provider which is responsible for the bill, claim pre-determination,
      * pre-authorization.
+     *
+     * @return static
      */
     public function setProvider(null|FHIRReference $provider): self
     {
@@ -896,6 +912,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * The organization which is responsible for the bill, claim pre-determination,
      * pre-authorization.
+     *
+     * @return static
      */
     public function setOrganization(null|FHIRReference $organization): self
     {
@@ -925,6 +943,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Complete (Bill or Claim), Proposed (Pre-Authorization), Exploratory
      * (Pre-determination).
+     *
+     * @return static
      */
     public function setUse(null|string|FHIRUseList|FHIRUse $use): self
     {
@@ -957,6 +977,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Immediate (stat), best effort (normal), deferred (deferred).
+     *
+     * @return static
      */
     public function setPriority(null|FHIRCoding $priority): self
     {
@@ -992,6 +1014,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * that funds in the amount of the expected Benefit be reserved ('Patient' or
      * 'Provider') to pay for the Benefits determined on the subsequent claim(s).
      * 'None' explicitly indicates no funds reserving is requested.
+     *
+     * @return static
      */
     public function setFundsReserve(null|FHIRCoding $fundsReserve): self
     {
@@ -1021,6 +1045,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Person who created the invoice/claim/pre-determination or pre-authorization.
+     *
+     * @return static
      */
     public function setEnterer(null|FHIRReference $enterer): self
     {
@@ -1050,6 +1076,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Facility where the services were provided.
+     *
+     * @return static
      */
     public function setFacility(null|FHIRReference $facility): self
     {
@@ -1079,6 +1107,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Prescription to support the dispensing of Pharmacy or Vision products.
+     *
+     * @return static
      */
     public function setPrescription(null|FHIRReference $prescription): self
     {
@@ -1110,6 +1140,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Original prescription to support the dispensing of pharmacy services,
      * medications or products.
+     *
+     * @return static
      */
     public function setOriginalPrescription(null|FHIRReference $originalPrescription): self
     {
@@ -1137,6 +1169,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * a patient which is provided to an insurer for payment recovery.
      *
      * The party to be reimbursed for the services.
+     *
+     * @return static
      */
     public function setPayee(null|FHIRClaimPayee $payee): self
     {
@@ -1168,6 +1202,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * The referral resource which lists the date, practitioner, reason and other
      * supporting information.
+     *
+     * @return static
      */
     public function setReferral(null|FHIRReference $referral): self
     {
@@ -1208,6 +1244,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * a patient which is provided to an insurer for payment recovery.
      *
      * Ordered list of patient diagnosis for which care is sought.
+     *
+     * @return static
      */
     public function addDiagnosis(FHIRClaimDiagnosis $diagnosis): self
     {
@@ -1223,6 +1261,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * a patient which is provided to an insurer for payment recovery.
      *
      * Ordered list of patient diagnosis for which care is sought.
+     *
+     * @return static
      */
     public function setDiagnosis(FHIRClaimDiagnosis ...$diagnosis): self
     {
@@ -1265,6 +1305,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * List of patient conditions for which care is sought.
+     *
+     * @return static
      */
     public function addCondition(FHIRCoding $condition): self
     {
@@ -1281,6 +1323,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * List of patient conditions for which care is sought.
+     *
+     * @return static
      */
     public function setCondition(FHIRCoding ...$condition): self
     {
@@ -1310,6 +1354,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Patient Resource.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -1350,6 +1396,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * a patient which is provided to an insurer for payment recovery.
      *
      * Financial instrument by which payment information for health care.
+     *
+     * @return static
      */
     public function addCoverage(FHIRClaimCoverage $coverage): self
     {
@@ -1365,6 +1413,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * a patient which is provided to an insurer for payment recovery.
      *
      * Financial instrument by which payment information for health care.
+     *
+     * @return static
      */
     public function setCoverage(FHIRClaimCoverage ...$coverage): self
     {
@@ -1407,6 +1457,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Factors which may influence the applicability of coverage.
+     *
+     * @return static
      */
     public function addException(FHIRCoding $exception): self
     {
@@ -1423,6 +1475,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Factors which may influence the applicability of coverage.
+     *
+     * @return static
      */
     public function setException(FHIRCoding ...$exception): self
     {
@@ -1452,6 +1506,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name of school for over-aged dependents.
+     *
+     * @return static
      */
     public function setSchool(null|string|FHIRStringPrimitive|FHIRString $school): self
     {
@@ -1486,6 +1542,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date of an accident which these services are addressing.
+     *
+     * @return static
      */
     public function setAccident(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $accident): self
     {
@@ -1518,6 +1576,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of accident: work, auto, etc.
+     *
+     * @return static
      */
     public function setAccidentType(null|FHIRCoding $accidentType): self
     {
@@ -1562,6 +1622,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * A list of intervention and exception codes which may influence the adjudication
      * of the claim.
+     *
+     * @return static
      */
     public function addInterventionException(FHIRCoding $interventionException): self
     {
@@ -1579,6 +1641,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * A list of intervention and exception codes which may influence the adjudication
      * of the claim.
+     *
+     * @return static
      */
     public function setInterventionException(FHIRCoding ...$interventionException): self
     {
@@ -1619,6 +1683,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * a patient which is provided to an insurer for payment recovery.
      *
      * First tier of goods and services.
+     *
+     * @return static
      */
     public function addItem(FHIRClaimItem $item): self
     {
@@ -1634,6 +1700,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * a patient which is provided to an insurer for payment recovery.
      *
      * First tier of goods and services.
+     *
+     * @return static
      */
     public function setItem(FHIRClaimItem ...$item): self
     {
@@ -1678,6 +1746,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Code to indicate that Xrays, images, emails, documents, models or attachments
      * are being sent in support of this submission.
+     *
+     * @return static
      */
     public function addAdditionalMaterials(FHIRCoding $additionalMaterials): self
     {
@@ -1695,6 +1765,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Code to indicate that Xrays, images, emails, documents, models or attachments
      * are being sent in support of this submission.
+     *
+     * @return static
      */
     public function setAdditionalMaterials(FHIRCoding ...$additionalMaterials): self
     {
@@ -1737,6 +1809,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * A list of teeth which would be expected but are not found due to having been
      * previously extracted or for other reasons.
+     *
+     * @return static
      */
     public function addMissingTeeth(FHIRClaimMissingTeeth $missingTeeth): self
     {
@@ -1753,6 +1827,8 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * A list of teeth which would be expected but are not found due to having been
      * previously extracted or for other reasons.
+     *
+     * @return static
      */
     public function setMissingTeeth(FHIRClaimMissingTeeth ...$missingTeeth): self
     {

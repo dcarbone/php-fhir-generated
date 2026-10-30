@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -231,6 +231,8 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Number used to link this term or term element to the applicable Security Label.
+     *
+     * @return static
      */
     public function addNumber(string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $number): self
     {
@@ -250,6 +252,8 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Number used to link this term or term element to the applicable Security Label.
+     *
+     * @return static
      */
     public function setNumber(string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt ...$number): self
     {
@@ -288,6 +292,8 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
      *
      * Security label privacy tag that species the level of confidentiality protection
      * required for this term and/or term elements.
+     *
+     * @return static
      */
     public function setClassification(null|FHIRCoding $classification): self
     {
@@ -332,6 +338,8 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
      *
      * Security label privacy tag that species the applicable privacy and security
      * policies governing this term and/or term elements.
+     *
+     * @return static
      */
     public function addCategory(FHIRCoding $category): self
     {
@@ -349,6 +357,8 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
      *
      * Security label privacy tag that species the applicable privacy and security
      * policies governing this term and/or term elements.
+     *
+     * @return static
      */
     public function setCategory(FHIRCoding ...$category): self
     {
@@ -393,6 +403,8 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
      *
      * Security label privacy tag that species the manner in which term and/or term
      * elements are to be protected.
+     *
+     * @return static
      */
     public function addControl(FHIRCoding $control): self
     {
@@ -410,6 +422,8 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
      *
      * Security label privacy tag that species the manner in which term and/or term
      * elements are to be protected.
+     *
+     * @return static
      */
     public function setControl(FHIRCoding ...$control): self
     {

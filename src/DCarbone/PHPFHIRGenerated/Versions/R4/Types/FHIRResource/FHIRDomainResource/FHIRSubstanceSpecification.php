@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -474,6 +474,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier by which this substance is known.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -505,6 +507,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * High level categorization, e.g. polymer or nucleic acid.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -536,6 +540,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Status of substance within the catalogue e.g. approved.
+     *
+     * @return static
      */
     public function setStatus(null|FHIRCodeableConcept $status): self
     {
@@ -567,6 +573,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the substance applies to only human or veterinary use.
+     *
+     * @return static
      */
     public function setDomain(null|FHIRCodeableConcept $domain): self
     {
@@ -596,6 +604,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements VersionCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual description of the substance.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -641,6 +651,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting literature.
+     *
+     * @return static
      */
     public function addSource(FHIRReference $source): self
     {
@@ -657,6 +669,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting literature.
+     *
+     * @return static
      */
     public function setSource(FHIRReference ...$source): self
     {
@@ -686,6 +700,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements VersionCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual comment about this record of a substance.
+     *
+     * @return static
      */
     public function setComment(null|string|FHIRStringPrimitive|FHIRString $comment): self
     {
@@ -729,6 +745,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements VersionCo
      * used for prescribing.
      *
      * Moiety, for structural modifications.
+     *
+     * @return static
      */
     public function addMoiety(FHIRSubstanceSpecificationMoiety $moiety): self
     {
@@ -744,6 +762,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements VersionCo
      * used for prescribing.
      *
      * Moiety, for structural modifications.
+     *
+     * @return static
      */
     public function setMoiety(FHIRSubstanceSpecificationMoiety ...$moiety): self
     {
@@ -786,6 +806,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements VersionCo
      *
      * General specifications for this substance, including how it is related to other
      * substances.
+     *
+     * @return static
      */
     public function addProperty(FHIRSubstanceSpecificationProperty $property): self
     {
@@ -802,6 +824,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements VersionCo
      *
      * General specifications for this substance, including how it is related to other
      * substances.
+     *
+     * @return static
      */
     public function setProperty(FHIRSubstanceSpecificationProperty ...$property): self
     {
@@ -831,6 +855,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * General information detailing this substance.
+     *
+     * @return static
      */
     public function setReferenceInformation(null|FHIRReference $referenceInformation): self
     {
@@ -858,6 +884,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements VersionCo
      * used for prescribing.
      *
      * Structural information.
+     *
+     * @return static
      */
     public function setStructure(null|FHIRSubstanceSpecificationStructure $structure): self
     {
@@ -898,6 +926,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements VersionCo
      * used for prescribing.
      *
      * Codes associated with the substance.
+     *
+     * @return static
      */
     public function addCode(FHIRSubstanceSpecificationCode $code): self
     {
@@ -913,6 +943,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements VersionCo
      * used for prescribing.
      *
      * Codes associated with the substance.
+     *
+     * @return static
      */
     public function setCode(FHIRSubstanceSpecificationCode ...$code): self
     {
@@ -953,6 +985,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements VersionCo
      * used for prescribing.
      *
      * Names applicable to this substance.
+     *
+     * @return static
      */
     public function addName(FHIRSubstanceSpecificationName $name): self
     {
@@ -968,6 +1002,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements VersionCo
      * used for prescribing.
      *
      * Names applicable to this substance.
+     *
+     * @return static
      */
     public function setName(FHIRSubstanceSpecificationName ...$name): self
     {
@@ -1008,6 +1044,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements VersionCo
      * used for prescribing.
      *
      * The molecular weight or weight range (for proteins, polymers or nucleic acids).
+     *
+     * @return static
      */
     public function addMolecularWeight(FHIRSubstanceSpecificationMolecularWeight $molecularWeight): self
     {
@@ -1023,6 +1061,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements VersionCo
      * used for prescribing.
      *
      * The molecular weight or weight range (for proteins, polymers or nucleic acids).
+     *
+     * @return static
      */
     public function setMolecularWeight(FHIRSubstanceSpecificationMolecularWeight ...$molecularWeight): self
     {
@@ -1063,6 +1103,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements VersionCo
      * used for prescribing.
      *
      * A link between this substance and another, with details of the relationship.
+     *
+     * @return static
      */
     public function addRelationship(FHIRSubstanceSpecificationRelationship $relationship): self
     {
@@ -1078,6 +1120,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements VersionCo
      * used for prescribing.
      *
      * A link between this substance and another, with details of the relationship.
+     *
+     * @return static
      */
     public function setRelationship(FHIRSubstanceSpecificationRelationship ...$relationship): self
     {
@@ -1107,6 +1151,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Data items specific to nucleic acids.
+     *
+     * @return static
      */
     public function setNucleicAcid(null|FHIRReference $nucleicAcid): self
     {
@@ -1136,6 +1182,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Data items specific to polymers.
+     *
+     * @return static
      */
     public function setPolymer(null|FHIRReference $polymer): self
     {
@@ -1165,6 +1213,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Data items specific to proteins.
+     *
+     * @return static
      */
     public function setProtein(null|FHIRReference $protein): self
     {
@@ -1194,6 +1244,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Material or taxonomic/anatomical source for the substance.
+     *
+     * @return static
      */
     public function setSourceMaterial(null|FHIRReference $sourceMaterial): self
     {

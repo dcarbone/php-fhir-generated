@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -289,6 +289,8 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the designation, or procedure number.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -306,6 +308,8 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the designation, or procedure number.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -337,6 +341,8 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of special designation, e.g. orphan drug, minor use.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -368,6 +374,8 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended use of the product, e.g. prevention, treatment.
+     *
+     * @return static
      */
     public function setIntendedUse(null|FHIRCodeableConcept $intendedUse): self
     {
@@ -399,6 +407,8 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Condition for which the medicinal use applies.
+     *
+     * @return static
      */
     public function setIndicationCodeableConcept(null|FHIRCodeableConcept $indicationCodeableConcept): self
     {
@@ -428,6 +438,8 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Condition for which the medicinal use applies.
+     *
+     * @return static
      */
     public function setIndicationReference(null|FHIRReference $indicationReference): self
     {
@@ -459,6 +471,8 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * For example granted, pending, expired or withdrawn.
+     *
+     * @return static
      */
     public function setStatus(null|FHIRCodeableConcept $status): self
     {
@@ -494,6 +508,8 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date when the designation was granted.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -528,6 +544,8 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Animal species for which this applies.
+     *
+     * @return static
      */
     public function setSpecies(null|FHIRCodeableConcept $species): self
     {

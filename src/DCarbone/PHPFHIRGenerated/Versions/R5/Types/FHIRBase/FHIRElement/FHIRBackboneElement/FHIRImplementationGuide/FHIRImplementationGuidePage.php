@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -161,8 +161,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page. (choose any one
-     * of source*, but only one)
+     * Indicates the URL or the actual content to provide for the page.
      */
     #[FHIRUrl]
     protected FHIRUrl $sourceUrl;
@@ -171,8 +170,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page. (choose any one
-     * of source*, but only one)
+     * Indicates the URL or the actual content to provide for the page.
      */
     #[FHIRString]
     protected FHIRString $sourceString;
@@ -185,8 +183,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page. (choose any one
-     * of source*, but only one)
+     * Indicates the URL or the actual content to provide for the page.
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $sourceMarkdown;
@@ -288,8 +285,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page. (choose any one
-     * of source*, but only one)
+     * Indicates the URL or the actual content to provide for the page.
      */
     public function getSourceUrl(): null|FHIRUrl
     {
@@ -301,8 +297,9 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page. (choose any one
-     * of source*, but only one)
+     * Indicates the URL or the actual content to provide for the page.
+     *
+     * @return static
      */
     public function setSourceUrl(null|string|FHIRUrlPrimitive|FHIRUrl $sourceUrl): self
     {
@@ -322,8 +319,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page. (choose any one
-     * of source*, but only one)
+     * Indicates the URL or the actual content to provide for the page.
      */
     public function getSourceString(): null|FHIRString
     {
@@ -335,8 +331,9 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page. (choose any one
-     * of source*, but only one)
+     * Indicates the URL or the actual content to provide for the page.
+     *
+     * @return static
      */
     public function setSourceString(null|string|FHIRStringPrimitive|FHIRString $sourceString): self
     {
@@ -360,8 +357,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page. (choose any one
-     * of source*, but only one)
+     * Indicates the URL or the actual content to provide for the page.
      */
     public function getSourceMarkdown(): null|FHIRMarkdown
     {
@@ -377,8 +373,9 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page. (choose any one
-     * of source*, but only one)
+     * Indicates the URL or the actual content to provide for the page.
+     *
+     * @return static
      */
     public function setSourceMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $sourceMarkdown): self
     {
@@ -411,6 +408,8 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The url by which the page should be known when published.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRUrlPrimitive|FHIRUrl $name): self
     {
@@ -445,6 +444,8 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      *
      * A short title used to represent this page in navigational structures such as
      * table of contents, bread crumbs, etc.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -473,6 +474,8 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code that indicates how the page is generated.
+     *
+     * @return static
      */
     public function setGeneration(null|string|FHIRGuidePageGenerationEnum|FHIRGuidePageGeneration $generation): self
     {
@@ -520,6 +523,8 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * Nested Pages/Sections under this page.
+     *
+     * @return static
      */
     public function addPage(FHIRImplementationGuidePage $page): self
     {
@@ -537,6 +542,8 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * Nested Pages/Sections under this page.
+     *
+     * @return static
      */
     public function setPage(FHIRImplementationGuidePage ...$page): self
     {

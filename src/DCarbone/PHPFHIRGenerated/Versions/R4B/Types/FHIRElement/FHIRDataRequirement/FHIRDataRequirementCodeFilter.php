@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDataRequi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -262,6 +262,8 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * Profile](fhirpath.html#simple) for full details). Note that the index must be an
      * integer constant. The path must resolve to an element of type code, Coding, or
      * CodeableConcept.
+     *
+     * @return static
      */
     public function setPath(null|string|FHIRStringPrimitive|FHIRString $path): self
     {
@@ -298,6 +300,8 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * A token parameter that refers to a search parameter defined on the specified
      * type of the DataRequirement, and which searches on elements of type code,
      * Coding, or CodeableConcept.
+     *
+     * @return static
      */
     public function setSearchParam(null|string|FHIRStringPrimitive|FHIRString $searchParam): self
     {
@@ -338,6 +342,8 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * If valueSet is specified, the filter will return only those data items for which
      * the value of the code-valued element specified in the path is a member of the
      * specified valueset.
+     *
+     * @return static
      */
     public function setValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $valueSet): self
     {
@@ -391,6 +397,8 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * value that is one of the specified codes. If codes are specified in addition to
      * a value set, the filter returns items matching a code in the value set or one of
      * the specified codes.
+     *
+     * @return static
      */
     public function addCode(FHIRCoding $code): self
     {
@@ -411,6 +419,8 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * value that is one of the specified codes. If codes are specified in addition to
      * a value set, the filter returns items matching a code in the value set or one of
      * the specified codes.
+     *
+     * @return static
      */
     public function setCode(FHIRCoding ...$code): self
     {

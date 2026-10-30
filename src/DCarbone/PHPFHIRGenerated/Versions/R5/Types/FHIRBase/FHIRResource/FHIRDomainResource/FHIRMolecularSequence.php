@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -370,6 +370,8 @@ class FHIRMolecularSequence extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier for this particular sequence instance.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -387,6 +389,8 @@ class FHIRMolecularSequence extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier for this particular sequence instance.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -412,6 +416,8 @@ class FHIRMolecularSequence extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Amino Acid Sequence/ DNA Sequence / RNA Sequence.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRSequenceTypeEnum|FHIRSequenceType $type): self
     {
@@ -444,6 +450,8 @@ class FHIRMolecularSequence extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the subject this sequence is associated too.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -492,6 +500,8 @@ class FHIRMolecularSequence extends FHIRDomainResource implements VersionContain
      * representing something or someone associated with the patient such as a spouse,
      * parent, child, or sibling. For example, in trio testing, the subject would be
      * the child (proband) and the focus would be the parent.
+     *
+     * @return static
      */
     public function addFocus(FHIRReference $focus): self
     {
@@ -511,6 +521,8 @@ class FHIRMolecularSequence extends FHIRDomainResource implements VersionContain
      * representing something or someone associated with the patient such as a spouse,
      * parent, child, or sibling. For example, in trio testing, the subject would be
      * the child (proband) and the focus would be the parent.
+     *
+     * @return static
      */
     public function setFocus(FHIRReference ...$focus): self
     {
@@ -540,6 +552,8 @@ class FHIRMolecularSequence extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specimen used for sequencing.
+     *
+     * @return static
      */
     public function setSpecimen(null|FHIRReference $specimen): self
     {
@@ -569,6 +583,8 @@ class FHIRMolecularSequence extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method for sequencing, for example, chip information.
+     *
+     * @return static
      */
     public function setDevice(null|FHIRReference $device): self
     {
@@ -598,6 +614,8 @@ class FHIRMolecularSequence extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization or lab that should be responsible for this result.
+     *
+     * @return static
      */
     public function setPerformer(null|FHIRReference $performer): self
     {
@@ -627,6 +645,8 @@ class FHIRMolecularSequence extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Sequence that was observed.
+     *
+     * @return static
      */
     public function setLiteral(null|string|FHIRStringPrimitive|FHIRString $literal): self
     {
@@ -674,6 +694,8 @@ class FHIRMolecularSequence extends FHIRDomainResource implements VersionContain
      *
      * Sequence that was observed as file content. Can be an actual file contents, or
      * referenced by a URL to an external system.
+     *
+     * @return static
      */
     public function addFormatted(FHIRAttachment $formatted): self
     {
@@ -691,6 +713,8 @@ class FHIRMolecularSequence extends FHIRDomainResource implements VersionContain
      *
      * Sequence that was observed as file content. Can be an actual file contents, or
      * referenced by a URL to an external system.
+     *
+     * @return static
      */
     public function setFormatted(FHIRAttachment ...$formatted): self
     {
@@ -729,6 +753,8 @@ class FHIRMolecularSequence extends FHIRDomainResource implements VersionContain
      * Representation of a molecular sequence.
      *
      * A sequence defined relative to another sequence.
+     *
+     * @return static
      */
     public function addRelative(FHIRMolecularSequenceRelative $relative): self
     {
@@ -743,6 +769,8 @@ class FHIRMolecularSequence extends FHIRDomainResource implements VersionContain
      * Representation of a molecular sequence.
      *
      * A sequence defined relative to another sequence.
+     *
+     * @return static
      */
     public function setRelative(FHIRMolecularSequenceRelative ...$relative): self
     {

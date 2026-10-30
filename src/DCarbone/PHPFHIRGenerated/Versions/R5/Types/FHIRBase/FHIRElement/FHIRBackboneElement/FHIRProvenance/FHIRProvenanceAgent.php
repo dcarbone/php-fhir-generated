@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -240,6 +240,8 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Functional Role of the agent with respect to the activity.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -286,6 +288,8 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      *
      * The structural roles of the agent indicating the agent's competency. The
      * security role enabling the agent with respect to the activity.
+     *
+     * @return static
      */
     public function addRole(FHIRCodeableConcept $role): self
     {
@@ -304,6 +308,8 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      *
      * The structural roles of the agent indicating the agent's competency. The
      * security role enabling the agent with respect to the activity.
+     *
+     * @return static
      */
     public function setRole(FHIRCodeableConcept ...$role): self
     {
@@ -333,6 +339,8 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates who or what performed in the event.
+     *
+     * @return static
      */
     public function setWho(null|FHIRReference $who): self
     {
@@ -364,6 +372,8 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      *
      * The agent that delegated authority to perform the activity performed by the
      * agent.who element.
+     *
+     * @return static
      */
     public function setOnBehalfOf(null|FHIRReference $onBehalfOf): self
     {

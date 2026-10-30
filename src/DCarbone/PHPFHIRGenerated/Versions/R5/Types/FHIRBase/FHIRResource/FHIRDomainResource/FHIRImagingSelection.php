@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -534,6 +534,8 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this imaging selection.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -551,6 +553,8 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this imaging selection.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -580,6 +584,8 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      * The current state of the ImagingSelection resource. This is not the status of
      * any ImagingStudy, ServiceRequest, or Task resources associated with the
      * ImagingSelection.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRImagingSelectionStatusEnum|FHIRImagingSelectionStatus $status): self
     {
@@ -616,6 +622,8 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      * The patient, or group of patients, location, device, organization, procedure or
      * practitioner this imaging selection is about and into whose or what record the
      * imaging selection is placed.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -651,6 +659,8 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time this imaging selection was created.
+     *
+     * @return static
      */
     public function setIssued(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $issued): self
     {
@@ -698,6 +708,8 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      * Resource or transferring this information along with the ImagingStudy Resource.
      *
      * Selector of the instances – human or machine.
+     *
+     * @return static
      */
     public function addPerformer(FHIRImagingSelectionPerformer $performer): self
     {
@@ -715,6 +727,8 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      * Resource or transferring this information along with the ImagingStudy Resource.
      *
      * Selector of the instances – human or machine.
+     *
+     * @return static
      */
     public function setPerformer(FHIRImagingSelectionPerformer ...$performer): self
     {
@@ -759,6 +773,8 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      *
      * A list of the diagnostic requests that resulted in this imaging selection being
      * performed.
+     *
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -776,6 +792,8 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      *
      * A list of the diagnostic requests that resulted in this imaging selection being
      * performed.
+     *
+     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -820,6 +838,8 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Classifies the imaging selection.
+     *
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -837,6 +857,8 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Classifies the imaging selection.
+     *
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -868,6 +890,8 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason for referencing the selected content.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -903,6 +927,8 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      * the Narrative, or extensions
      *
      * The Study Instance UID for the DICOM Study from which the images were selected.
+     *
+     * @return static
      */
     public function setStudyUid(null|string|FHIRIdPrimitive|FHIRId $studyUid): self
     {
@@ -948,6 +974,8 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The imaging study from which the imaging selection is made.
+     *
+     * @return static
      */
     public function addDerivedFrom(FHIRReference $derivedFrom): self
     {
@@ -964,6 +992,8 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The imaging study from which the imaging selection is made.
+     *
+     * @return static
      */
     public function setDerivedFrom(FHIRReference ...$derivedFrom): self
     {
@@ -1008,6 +1038,8 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      *
      * The network service providing retrieval access to the selected images, frames,
      * etc. See implementation notes for information about using DICOM endpoints.
+     *
+     * @return static
      */
     public function addEndpoint(FHIRReference $endpoint): self
     {
@@ -1025,6 +1057,8 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      *
      * The network service providing retrieval access to the selected images, frames,
      * etc. See implementation notes for information about using DICOM endpoints.
+     *
+     * @return static
      */
     public function setEndpoint(FHIRReference ...$endpoint): self
     {
@@ -1062,6 +1096,8 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      *
      * The Series Instance UID for the DICOM Series from which the images were
      * selected.
+     *
+     * @return static
      */
     public function setSeriesUid(null|string|FHIRIdPrimitive|FHIRId $seriesUid): self
     {
@@ -1094,6 +1130,8 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      * the Narrative, or extensions
      *
      * The Series Number for the DICOM Series from which the images were selected.
+     *
+     * @return static
      */
     public function setSeriesNumber(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $seriesNumber): self
     {
@@ -1134,6 +1172,8 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      *
      * The Frame of Reference UID identifying the coordinate system that conveys
      * spatial and/or temporal information for the selected images or frames.
+     *
+     * @return static
      */
     public function setFrameOfReferenceUid(null|string|FHIRIdPrimitive|FHIRId $frameOfReferenceUid): self
     {
@@ -1172,6 +1212,8 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      * The anatomic structures examined. See DICOM Part 16 Annex L
      * (http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_L.html)
      * for DICOM to SNOMED-CT mappings.
+     *
+     * @return static
      */
     public function setBodySite(null|FHIRCodeableReference $bodySite): self
     {
@@ -1230,6 +1272,8 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      * the Observation resource to capture whether the mother is trained to change her
      * child's tracheostomy tube. In this example, the child is the patient of record
      * and the mother is the focus.
+     *
+     * @return static
      */
     public function addFocus(FHIRReference $focus): self
     {
@@ -1254,6 +1298,8 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      * the Observation resource to capture whether the mother is trained to change her
      * child's tracheostomy tube. In this example, the child is the patient of record
      * and the mother is the focus.
+     *
+     * @return static
      */
     public function setFocus(FHIRReference ...$focus): self
     {
@@ -1298,6 +1344,8 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      * Resource or transferring this information along with the ImagingStudy Resource.
      *
      * Each imaging selection includes one or more selected DICOM SOP instances.
+     *
+     * @return static
      */
     public function addInstance(FHIRImagingSelectionInstance $instance): self
     {
@@ -1315,6 +1363,8 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      * Resource or transferring this information along with the ImagingStudy Resource.
      *
      * Each imaging selection includes one or more selected DICOM SOP instances.
+     *
+     * @return static
      */
     public function setInstance(FHIRImagingSelectionInstance ...$instance): self
     {

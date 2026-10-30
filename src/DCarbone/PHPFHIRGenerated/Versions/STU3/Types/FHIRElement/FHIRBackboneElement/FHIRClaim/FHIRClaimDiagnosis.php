@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -236,6 +236,8 @@ class FHIRClaimDiagnosis extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Sequence of diagnosis which serves to provide a link.
+     *
+     * @return static
      */
     public function setSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
     {
@@ -270,6 +272,8 @@ class FHIRClaimDiagnosis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The diagnosis.
+     *
+     * @return static
      */
     public function setDiagnosisCodeableConcept(null|FHIRCodeableConcept $diagnosisCodeableConcept): self
     {
@@ -299,6 +303,8 @@ class FHIRClaimDiagnosis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The diagnosis.
+     *
+     * @return static
      */
     public function setDiagnosisReference(null|FHIRReference $diagnosisReference): self
     {
@@ -345,6 +351,8 @@ class FHIRClaimDiagnosis extends FHIRBackboneElement
      *
      * The type of the Diagnosis, for example: admitting, primary, secondary,
      * discharge.
+     *
+     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -363,6 +371,8 @@ class FHIRClaimDiagnosis extends FHIRBackboneElement
      *
      * The type of the Diagnosis, for example: admitting, primary, secondary,
      * discharge.
+     *
+     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -396,6 +406,8 @@ class FHIRClaimDiagnosis extends FHIRBackboneElement
      *
      * The package billing code, for example DRG, based on the assigned grouping code
      * system.
+     *
+     * @return static
      */
     public function setPackageCode(null|FHIRCodeableConcept $packageCode): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -191,8 +191,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The period during which the activity occurred. (choose any one of occurred*, but
-     * only one)
+     * The period during which the activity occurred.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $occurredPeriod;
@@ -205,8 +204,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The period during which the activity occurred. (choose any one of occurred*, but
-     * only one)
+     * The period during which the activity occurred.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $occurredDateTime;
@@ -494,6 +492,8 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * The Reference(s) that were generated or updated by the activity described in
      * this resource. A provenance can point to more than one target if multiple
      * resources were created/updated by the same activity.
+     *
+     * @return static
      */
     public function addTarget(FHIRReference $target): self
     {
@@ -512,6 +512,8 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * The Reference(s) that were generated or updated by the activity described in
      * this resource. A provenance can point to more than one target if multiple
      * resources were created/updated by the same activity.
+     *
+     * @return static
      */
     public function setTarget(FHIRReference ...$target): self
     {
@@ -528,8 +530,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The period during which the activity occurred. (choose any one of occurred*, but
-     * only one)
+     * The period during which the activity occurred.
      */
     public function getOccurredPeriod(): null|FHIRPeriod
     {
@@ -541,8 +542,9 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The period during which the activity occurred. (choose any one of occurred*, but
-     * only one)
+     * The period during which the activity occurred.
+     *
+     * @return static
      */
     public function setOccurredPeriod(null|FHIRPeriod $occurredPeriod): self
     {
@@ -563,8 +565,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The period during which the activity occurred. (choose any one of occurred*, but
-     * only one)
+     * The period during which the activity occurred.
      */
     public function getOccurredDateTime(): null|FHIRDateTime
     {
@@ -580,8 +581,9 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The period during which the activity occurred. (choose any one of occurred*, but
-     * only one)
+     * The period during which the activity occurred.
+     *
+     * @return static
      */
     public function setOccurredDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurredDateTime): self
     {
@@ -620,6 +622,8 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The instant of time at which the activity was recorded.
+     *
+     * @return static
      */
     public function setRecorded(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $recorded): self
     {
@@ -669,6 +673,8 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * Policy or plan the activity was defined by. Typically, a single activity may
      * have multiple applicable policy documents, such as patient consent, guarantor
      * funding, etc.
+     *
+     * @return static
      */
     public function addPolicy(string|FHIRUriPrimitive|FHIRUri $policy): self
     {
@@ -690,6 +696,8 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * Policy or plan the activity was defined by. Typically, a single activity may
      * have multiple applicable policy documents, such as patient consent, guarantor
      * funding, etc.
+     *
+     * @return static
      */
     public function setPolicy(string|FHIRUriPrimitive|FHIRUri ...$policy): self
     {
@@ -726,6 +734,8 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the activity occurred, if relevant.
+     *
+     * @return static
      */
     public function setLocation(null|FHIRReference $location): self
     {
@@ -772,6 +782,8 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The authorization (e.g., PurposeOfUse) that was used during the event being
      * recorded.
+     *
+     * @return static
      */
     public function addAuthorization(FHIRCodeableReference $authorization): self
     {
@@ -790,6 +802,8 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The authorization (e.g., PurposeOfUse) that was used during the event being
      * recorded.
+     *
+     * @return static
      */
     public function setAuthorization(FHIRCodeableReference ...$authorization): self
     {
@@ -825,6 +839,8 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * An activity is something that occurs over a period of time and acts upon or with
      * entities; it may include consuming, processing, transforming, modifying,
      * relocating, using, or generating entities.
+     *
+     * @return static
      */
     public function setActivity(null|FHIRCodeableConcept $activity): self
     {
@@ -869,6 +885,8 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Allows tracing of authorizatino for the events and tracking whether
      * proposals/recommendations were acted upon.
+     *
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -886,6 +904,8 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Allows tracing of authorizatino for the events and tracking whether
      * proposals/recommendations were acted upon.
+     *
+     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -917,6 +937,8 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The patient element is available to enable deterministic tracking of activities
      * that involve the patient as the subject of the data used in an activity.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -950,6 +972,8 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * This will typically be the encounter the event occurred, but some events may be
      * initiated prior to or after the official completion of an encounter but still be
      * tied to the context of the encounter (e.g. pre-admission lab tests).
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -1006,6 +1030,8 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      *
      * An actor taking a role in an activity for which it can be assigned some degree
      * of responsibility for the activity taking place.
+     *
+     * @return static
      */
     public function addAgent(FHIRProvenanceAgent $agent): self
     {
@@ -1029,6 +1055,8 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      *
      * An actor taking a role in an activity for which it can be assigned some degree
      * of responsibility for the activity taking place.
+     *
+     * @return static
      */
     public function setAgent(FHIRProvenanceAgent ...$agent): self
     {
@@ -1083,6 +1111,8 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * authenticated), all of which may impact security, privacy, and trust policies.
      *
      * An entity used in this activity.
+     *
+     * @return static
      */
     public function addEntity(FHIRProvenanceEntity $entity): self
     {
@@ -1105,6 +1135,8 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * authenticated), all of which may impact security, privacy, and trust policies.
      *
      * An entity used in this activity.
+     *
+     * @return static
      */
     public function setEntity(FHIRProvenanceEntity ...$entity): self
     {
@@ -1157,6 +1189,8 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      *
      * A digital signature on the target Reference(s). The signer should match a
      * Provenance.agent. The purpose of the signature is indicated.
+     *
+     * @return static
      */
     public function addSignature(FHIRSignature $signature): self
     {
@@ -1178,6 +1212,8 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      *
      * A digital signature on the target Reference(s). The signer should match a
      * Provenance.agent. The purpose of the signature is indicated.
+     *
+     * @return static
      */
     public function setSignature(FHIRSignature ...$signature): self
     {

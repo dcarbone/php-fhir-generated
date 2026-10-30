@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -221,6 +221,8 @@ class FHIRResearchStudyProgressStatus extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Label for status or state (e.g. recruitment status).
+     *
+     * @return static
      */
     public function setState(null|FHIRCodeableConcept $state): self
     {
@@ -252,6 +254,8 @@ class FHIRResearchStudyProgressStatus extends FHIRBackboneElement
      * An indication of whether or not the date is a known date when the state changed
      * or will change. A value of true indicates a known date. A value of false
      * indicates an estimated date.
+     *
+     * @return static
      */
     public function setActual(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $actual): self
     {
@@ -284,6 +288,8 @@ class FHIRResearchStudyProgressStatus extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Date range.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {

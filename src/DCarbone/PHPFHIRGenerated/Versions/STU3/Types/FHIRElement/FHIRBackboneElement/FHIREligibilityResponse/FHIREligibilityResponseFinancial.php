@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -244,6 +244,8 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Deductable, visits, benefit amount.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -273,6 +275,8 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Benefits allowed.
+     *
+     * @return static
      */
     public function setAllowedUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $allowedUnsignedInt): self
     {
@@ -305,6 +309,8 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Benefits allowed.
+     *
+     * @return static
      */
     public function setAllowedString(null|string|FHIRStringPrimitive|FHIRString $allowedString): self
     {
@@ -337,6 +343,8 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Benefits allowed.
+     *
+     * @return static
      */
     public function setAllowedMoney(null|FHIRMoney $allowedMoney): self
     {
@@ -366,6 +374,8 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Benefits used.
+     *
+     * @return static
      */
     public function setUsedUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $usedUnsignedInt): self
     {
@@ -398,6 +408,8 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Benefits used.
+     *
+     * @return static
      */
     public function setUsedMoney(null|FHIRMoney $usedMoney): self
     {

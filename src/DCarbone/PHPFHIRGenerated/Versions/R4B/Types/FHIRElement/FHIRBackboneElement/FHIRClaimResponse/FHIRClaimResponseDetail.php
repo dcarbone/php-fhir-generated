@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -238,6 +238,8 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A number to uniquely reference the claim detail entry.
+     *
+     * @return static
      */
     public function setDetailSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $detailSequence): self
     {
@@ -285,6 +287,8 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
      *
      * The numbers associated with notes below which apply to the adjudication of this
      * item.
+     *
+     * @return static
      */
     public function addNoteNumber(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $noteNumber): self
     {
@@ -305,6 +309,8 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
      *
      * The numbers associated with notes below which apply to the adjudication of this
      * item.
+     *
+     * @return static
      */
     public function setNoteNumber(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$noteNumber): self
     {
@@ -352,6 +358,8 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
      * resource.
      *
      * The adjudication results.
+     *
+     * @return static
      */
     public function addAdjudication(FHIRClaimResponseAdjudication $adjudication): self
     {
@@ -367,6 +375,8 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
      * resource.
      *
      * The adjudication results.
+     *
+     * @return static
      */
     public function setAdjudication(FHIRClaimResponseAdjudication ...$adjudication): self
     {
@@ -407,6 +417,8 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
      * resource.
      *
      * A sub-detail adjudication of a simple product or service.
+     *
+     * @return static
      */
     public function addSubDetail(FHIRClaimResponseSubDetail $subDetail): self
     {
@@ -422,6 +434,8 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
      * resource.
      *
      * A sub-detail adjudication of a simple product or service.
+     *
+     * @return static
      */
     public function setSubDetail(FHIRClaimResponseSubDetail ...$subDetail): self
     {

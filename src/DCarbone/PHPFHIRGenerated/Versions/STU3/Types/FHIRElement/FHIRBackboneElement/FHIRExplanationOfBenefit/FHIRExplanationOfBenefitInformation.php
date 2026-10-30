@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -320,6 +320,8 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Sequence of the information element which serves to provide a link.
+     *
+     * @return static
      */
     public function setSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
     {
@@ -356,6 +358,8 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement
      *
      * The general class of the information supplied: information; exception; accident,
      * employment; onset, etc.
+     *
+     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -391,6 +395,8 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement
      * System and code pertaining to the specific information regarding special
      * conditions relating to the setting, treatment or patient for which care is
      * sought which may influence the adjudication.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -422,6 +428,8 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when or period to which this information refers.
+     *
+     * @return static
      */
     public function setTimingDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $timingDate): self
     {
@@ -454,6 +462,8 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date when or period to which this information refers.
+     *
+     * @return static
      */
     public function setTimingPeriod(null|FHIRPeriod $timingPeriod): self
     {
@@ -485,6 +495,8 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
+     *
+     * @return static
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -523,6 +535,8 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
+     *
+     * @return static
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -554,6 +568,8 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
+     *
+     * @return static
      */
     public function setValueAttachment(null|FHIRAttachment $valueAttachment): self
     {
@@ -585,6 +601,8 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
+     *
+     * @return static
      */
     public function setValueReference(null|FHIRReference $valueReference): self
     {
@@ -616,6 +634,8 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement
      *
      * For example, provides the reason for: the additional stay, or missing tooth or
      * any other situation where a reason code is required in addition to the content.
+     *
+     * @return static
      */
     public function setReason(null|FHIRCoding $reason): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -203,6 +203,8 @@ class FHIRContractSigner extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role of this Contract signer, e.g. notary, grantee.
+     *
+     * @return static
      */
     public function setType(null|FHIRCoding $type): self
     {
@@ -232,6 +234,8 @@ class FHIRContractSigner extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Party which is a signator to this Contract.
+     *
+     * @return static
      */
     public function setParty(null|FHIRReference $party): self
     {
@@ -280,6 +284,8 @@ class FHIRContractSigner extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Legally binding Contract DSIG signature contents in Base64.
+     *
+     * @return static
      */
     public function addSignature(FHIRSignature $signature): self
     {
@@ -299,6 +305,8 @@ class FHIRContractSigner extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Legally binding Contract DSIG signature contents in Base64.
+     *
+     * @return static
      */
     public function setSignature(FHIRSignature ...$signature): self
     {

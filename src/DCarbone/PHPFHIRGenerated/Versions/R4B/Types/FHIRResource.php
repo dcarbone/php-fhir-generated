@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -253,6 +253,8 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      *
      * The logical id of the resource, as used in the URL for the resource. Once
      * assigned, this value never changes.
+     *
+     * @return static
      */
     public function setId(null|string|FHIRIdPrimitive|FHIRId $id): self
     {
@@ -293,6 +295,8 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * The metadata about the resource. This is content that is maintained by the
      * infrastructure. Changes to the content might not always be associated with
      * version changes to the resource.
+     *
+     * @return static
      */
     public function setMeta(null|FHIRMeta $meta): self
     {
@@ -328,6 +332,8 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * constructed, and which must be understood when processing the content. Often,
      * this is a reference to an implementation guide that defines the special rules
      * along with other profiles etc.
+     *
+     * @return static
      */
     public function setImplicitRules(null|string|FHIRUriPrimitive|FHIRUri $implicitRules): self
     {
@@ -362,6 +368,8 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * the Narrative, or extensions
      *
      * The base language in which the resource is written.
+     *
+     * @return static
      */
     public function setLanguage(null|string|FHIRCodePrimitive|FHIRCode $language): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -525,6 +525,8 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * medication, or observation), Expressions ( using an expression language such as
      * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
      * last year).
+     *
+     * @return static
      */
     public function setDefinitionCodeableConcept(null|FHIRCodeableConcept $definitionCodeableConcept): self
     {
@@ -562,6 +564,8 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * medication, or observation), Expressions ( using an expression language such as
      * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
      * last year).
+     *
+     * @return static
      */
     public function setDefinitionCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $definitionCanonical): self
     {
@@ -604,6 +608,8 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * medication, or observation), Expressions ( using an expression language such as
      * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
      * last year).
+     *
+     * @return static
      */
     public function setDefinitionExpression(null|FHIRExpression $definitionExpression): self
     {
@@ -641,6 +647,8 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * medication, or observation), Expressions ( using an expression language such as
      * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
      * last year).
+     *
+     * @return static
      */
     public function setDefinitionDataRequirement(null|FHIRDataRequirement $definitionDataRequirement): self
     {
@@ -691,6 +699,8 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * Use UsageContext to define the members of the population, such as Age Ranges,
      * Genders, Settings.
+     *
+     * @return static
      */
     public function addUsageContext(FHIRUsageContext $usageContext): self
     {
@@ -711,6 +721,8 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      *
      * Use UsageContext to define the members of the population, such as Age Ranges,
      * Genders, Settings.
+     *
+     * @return static
      */
     public function setUsageContext(FHIRUsageContext ...$usageContext): self
     {
@@ -738,6 +750,8 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When true, members with this characteristic are excluded from the element.
+     *
+     * @return static
      */
     public function setExclude(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $exclude): self
     {
@@ -772,6 +786,8 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the UCUM unit for the outcome.
+     *
+     * @return static
      */
     public function setUnitOfMeasure(null|FHIRCodeableConcept $unitOfMeasure): self
     {
@@ -801,6 +817,8 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A narrative description of the time period the study covers.
+     *
+     * @return static
      */
     public function setStudyEffectiveDescription(null|string|FHIRStringPrimitive|FHIRString $studyEffectiveDescription): self
     {
@@ -839,6 +857,8 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates what effective period the study covers.
+     *
+     * @return static
      */
     public function setStudyEffectiveDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $studyEffectiveDateTime): self
     {
@@ -871,6 +891,8 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates what effective period the study covers.
+     *
+     * @return static
      */
     public function setStudyEffectivePeriod(null|FHIRPeriod $studyEffectivePeriod): self
     {
@@ -900,6 +922,8 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates what effective period the study covers.
+     *
+     * @return static
      */
     public function setStudyEffectiveDuration(null|FHIRDuration $studyEffectiveDuration): self
     {
@@ -937,6 +961,8 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates what effective period the study covers.
+     *
+     * @return static
      */
     public function setStudyEffectiveTiming(null|FHIRTiming $studyEffectiveTiming): self
     {
@@ -966,6 +992,8 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates duration from the study initiation.
+     *
+     * @return static
      */
     public function setStudyEffectiveTimeFromStart(null|FHIRDuration $studyEffectiveTimeFromStart): self
     {
@@ -993,6 +1021,8 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates how elements are aggregated within the study effective period.
+     *
+     * @return static
      */
     public function setStudyEffectiveGroupMeasure(null|string|FHIRGroupMeasureList|FHIRGroupMeasure $studyEffectiveGroupMeasure): self
     {
@@ -1025,6 +1055,8 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A narrative description of the time period the study covers.
+     *
+     * @return static
      */
     public function setParticipantEffectiveDescription(null|string|FHIRStringPrimitive|FHIRString $participantEffectiveDescription): self
     {
@@ -1063,6 +1095,8 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates what effective period the study covers.
+     *
+     * @return static
      */
     public function setParticipantEffectiveDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $participantEffectiveDateTime): self
     {
@@ -1095,6 +1129,8 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates what effective period the study covers.
+     *
+     * @return static
      */
     public function setParticipantEffectivePeriod(null|FHIRPeriod $participantEffectivePeriod): self
     {
@@ -1124,6 +1160,8 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates what effective period the study covers.
+     *
+     * @return static
      */
     public function setParticipantEffectiveDuration(null|FHIRDuration $participantEffectiveDuration): self
     {
@@ -1161,6 +1199,8 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates what effective period the study covers.
+     *
+     * @return static
      */
     public function setParticipantEffectiveTiming(null|FHIRTiming $participantEffectiveTiming): self
     {
@@ -1190,6 +1230,8 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates duration from the participant's study entry.
+     *
+     * @return static
      */
     public function setParticipantEffectiveTimeFromStart(null|FHIRDuration $participantEffectiveTimeFromStart): self
     {
@@ -1217,6 +1259,8 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates how elements are aggregated within the study effective period.
+     *
+     * @return static
      */
     public function setParticipantEffectiveGroupMeasure(null|string|FHIRGroupMeasureList|FHIRGroupMeasure $participantEffectiveGroupMeasure): self
     {

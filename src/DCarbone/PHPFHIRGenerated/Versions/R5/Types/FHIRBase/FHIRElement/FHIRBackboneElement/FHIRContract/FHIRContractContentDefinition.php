@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -288,6 +288,8 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * Precusory content structure and use, i.e., a boilerplate, template, application
      * for a contract such as an insurance policy or benefits under a program, e.g.,
      * workers compensation.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -319,6 +321,8 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Detailed Precusory content type.
+     *
+     * @return static
      */
     public function setSubType(null|FHIRCodeableConcept $subType): self
     {
@@ -348,6 +352,8 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or organization that published the Contract precursor content.
+     *
+     * @return static
      */
     public function setPublisher(null|FHIRReference $publisher): self
     {
@@ -391,6 +397,8 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * The date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the contract changes.
+     *
+     * @return static
      */
     public function setPublicationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $publicationDate): self
     {
@@ -419,6 +427,8 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * amended | appended | cancelled | disputed | entered-in-error | executable +.
+     *
+     * @return static
      */
     public function setPublicationStatus(null|string|FHIRContractResourcePublicationStatusCodesEnum|FHIRContractResourcePublicationStatusCodes $publicationStatus): self
     {
@@ -463,6 +473,8 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * A copyright statement relating to Contract precursor content. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * Contract precursor content.
+     *
+     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {

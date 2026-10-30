@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -227,6 +227,8 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The function of the agent with respect to the activity.
+     *
+     * @return static
      */
     public function setRole(null|FHIRCoding $role): self
     {
@@ -256,6 +258,8 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual, device or organization that participated in the event.
+     *
+     * @return static
      */
     public function setActor(null|FHIRReference $actor): self
     {
@@ -285,6 +289,8 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The identity of the agent as known by the authorization system.
+     *
+     * @return static
      */
     public function setUserId(null|FHIRIdentifier $userId): self
     {
@@ -345,6 +351,8 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      * defined to allow for explicit description of the delegation between agents. For
      * example, this human author used this device, or one person acted on another's
      * behest.
+     *
+     * @return static
      */
     public function addRelatedAgent(FHIRProvenanceRelatedAgent $relatedAgent): self
     {
@@ -370,6 +378,8 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      * defined to allow for explicit description of the delegation between agents. For
      * example, this human author used this device, or one person acted on another's
      * behest.
+     *
+     * @return static
      */
     public function setRelatedAgent(FHIRProvenanceRelatedAgent ...$relatedAgent): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -258,6 +258,8 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Associated definitions for this medication.
+     *
+     * @return static
      */
     public function addDefinition(FHIRReference $definition): self
     {
@@ -274,6 +276,8 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Associated definitions for this medication.
+     *
+     * @return static
      */
     public function setDefinition(FHIRReference ...$definition): self
     {
@@ -305,6 +309,8 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the item. Powder; tablets; capsule.
+     *
+     * @return static
      */
     public function setDoseForm(null|FHIRCodeableConcept $doseForm): self
     {
@@ -349,6 +355,8 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended or approved route of administration.
+     *
+     * @return static
      */
     public function addIntendedRoute(FHIRCodeableConcept $intendedRoute): self
     {
@@ -366,6 +374,8 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended or approved route of administration.
+     *
+     * @return static
      */
     public function setIntendedRoute(FHIRCodeableConcept ...$intendedRoute): self
     {
@@ -404,6 +414,8 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      * Information about a medication that is used to support knowledge.
      *
      * Identifies a particular constituent of interest in the product.
+     *
+     * @return static
      */
     public function addIngredient(FHIRMedicationKnowledgeIngredient $ingredient): self
     {
@@ -418,6 +430,8 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      * Information about a medication that is used to support knowledge.
      *
      * Identifies a particular constituent of interest in the product.
+     *
+     * @return static
      */
     public function setIngredient(FHIRMedicationKnowledgeIngredient ...$ingredient): self
     {
@@ -458,6 +472,8 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      *
      * Specifies descriptive properties of the medicine, such as color, shape,
      * imprints, etc.
+     *
+     * @return static
      */
     public function addDrugCharacteristic(FHIRMedicationKnowledgeDrugCharacteristic $drugCharacteristic): self
     {
@@ -473,6 +489,8 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      *
      * Specifies descriptive properties of the medicine, such as color, shape,
      * imprints, etc.
+     *
+     * @return static
      */
     public function setDrugCharacteristic(FHIRMedicationKnowledgeDrugCharacteristic ...$drugCharacteristic): self
     {

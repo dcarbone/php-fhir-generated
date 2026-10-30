@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -320,6 +320,8 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      *
      * The status of the subscription, which marks the server state for managing the
      * subscription.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRSubscriptionStatusCodesEnum|FHIRSubscriptionStatusCodes $status): self
     {
@@ -348,6 +350,8 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of event being conveyed with this notification.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRSubscriptionNotificationTypeEnum|FHIRSubscriptionNotificationType $type): self
     {
@@ -386,6 +390,8 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      * Subscription was created (inclusive of this notification) - regardless of how
      * many have been successfully communicated. This number is NOT incremented for
      * handshake and heartbeat notifications.
+     *
+     * @return static
      */
     public function setEventsSinceSubscriptionStart(null|string|float|FHIRInteger64Primitive|FHIRInteger64 $eventsSinceSubscriptionStart): self
     {
@@ -429,6 +435,8 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      * notifications.
      *
      * Detailed information about events relevant to this subscription notification.
+     *
+     * @return static
      */
     public function addNotificationEvent(FHIRSubscriptionStatusNotificationEvent $notificationEvent): self
     {
@@ -444,6 +452,8 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      * notifications.
      *
      * Detailed information about events relevant to this subscription notification.
+     *
+     * @return static
      */
     public function setNotificationEvent(FHIRSubscriptionStatusNotificationEvent ...$notificationEvent): self
     {
@@ -473,6 +483,8 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reference to the Subscription which generated this notification.
+     *
+     * @return static
      */
     public function setSubscription(null|FHIRReference $subscription): self
     {
@@ -506,6 +518,8 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      *
      * The reference to the SubscriptionTopic for the Subscription which generated this
      * notification.
+     *
+     * @return static
      */
     public function setTopic(null|string|FHIRCanonicalPrimitive|FHIRCanonical $topic): self
     {
@@ -553,6 +567,8 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A record of errors that occurred when the server processed a notification.
+     *
+     * @return static
      */
     public function addError(FHIRCodeableConcept $error): self
     {
@@ -570,6 +586,8 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A record of errors that occurred when the server processed a notification.
+     *
+     * @return static
      */
     public function setError(FHIRCodeableConcept ...$error): self
     {

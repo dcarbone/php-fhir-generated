@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -270,6 +270,8 @@ class FHIRMarketingStatus extends FHIRBackboneType
      *
      * The country in which the marketing authorization has been granted shall be
      * specified It should be specified using the ISO 3166 ‑ 1 alpha-2 code elements.
+     *
+     * @return static
      */
     public function setCountry(null|FHIRCodeableConcept $country): self
     {
@@ -307,6 +309,8 @@ class FHIRMarketingStatus extends FHIRBackboneType
      * which specific provisions within a jurisdiction apply, the jurisdiction can be
      * specified using an appropriate controlled terminology The controlled term and
      * the controlled term identifier shall be specified.
+     *
+     * @return static
      */
     public function setJurisdiction(null|FHIRCodeableConcept $jurisdiction): self
     {
@@ -340,6 +344,8 @@ class FHIRMarketingStatus extends FHIRBackboneType
      *
      * This attribute provides information on the status of the marketing of the
      * medicinal product See ISO/TS 20443 for more information and examples.
+     *
+     * @return static
      */
     public function setStatus(null|FHIRCodeableConcept $status): self
     {
@@ -379,6 +385,8 @@ class FHIRMarketingStatus extends FHIRBackboneType
      * month and year shall be specified using the ISO 8601 date format NOTE “Placed
      * on the market” refers to the release of the Medicinal Product into the
      * distribution chain.
+     *
+     * @return static
      */
     public function setDateRange(null|FHIRPeriod $dateRange): self
     {
@@ -426,6 +434,8 @@ class FHIRMarketingStatus extends FHIRBackboneType
      * month and year shall be specified using the ISO 8601 date format NOTE “Placed
      * on the market” refers to the release of the Medicinal Product into the
      * distribution chain.
+     *
+     * @return static
      */
     public function setRestoreDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $restoreDate): self
     {

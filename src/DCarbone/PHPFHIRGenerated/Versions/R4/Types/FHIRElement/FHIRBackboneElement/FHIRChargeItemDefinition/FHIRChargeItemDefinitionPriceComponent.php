@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -215,6 +215,8 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This code identifies the type of the component.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRInvoicePriceComponentTypeList|FHIRInvoicePriceComponentType $type): self
     {
@@ -251,6 +253,8 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement
      *
      * A code that identifies the component. Codes may be used to differentiate between
      * kinds of taxes, surcharges, discounts etc.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -284,6 +288,8 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement
      *
      * The factor that has been applied on the base price for calculating this
      * component.
+     *
+     * @return static
      */
     public function setFactor(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $factor): self
     {
@@ -316,6 +322,8 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount calculated for this component.
+     *
+     * @return static
      */
     public function setAmount(null|FHIRMoney $amount): self
     {

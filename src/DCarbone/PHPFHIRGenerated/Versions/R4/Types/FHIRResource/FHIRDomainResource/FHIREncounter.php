@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -594,6 +594,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier(s) by which this encounter is known.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -611,6 +613,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier(s) by which this encounter is known.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -638,6 +642,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * planned | arrived | triaged | in-progress | onleave | finished | cancelled +.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIREncounterStatusList|FHIREncounterStatus $status): self
     {
@@ -685,6 +691,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * The status history permits the encounter resource to contain the status history
      * without needing to read through the historical versions of the resource, or even
      * have the server store them.
+     *
+     * @return static
      */
     public function addStatusHistory(FHIREncounterStatusHistory $statusHistory): self
     {
@@ -702,6 +710,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * The status history permits the encounter resource to contain the status history
      * without needing to read through the historical versions of the resource, or even
      * have the server store them.
+     *
+     * @return static
      */
     public function setStatusHistory(FHIREncounterStatusHistory ...$statusHistory): self
     {
@@ -735,6 +745,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * Concepts representing classification of patient encounter such as ambulatory
      * (outpatient), inpatient, emergency, home health or others due to local
      * variations.
+     *
+     * @return static
      */
     public function setClass(null|FHIRCoding $class): self
     {
@@ -787,6 +799,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * any lab/diagnostic results can more easily follow the patient and not require
      * re-processing and not get lost or cancelled during a kind of discharge from
      * emergency to inpatient.
+     *
+     * @return static
      */
     public function addClassHistory(FHIREncounterClassHistory $classHistory): self
     {
@@ -808,6 +822,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * any lab/diagnostic results can more easily follow the patient and not require
      * re-processing and not get lost or cancelled during a kind of discharge from
      * emergency to inpatient.
+     *
+     * @return static
      */
     public function setClassHistory(FHIREncounterClassHistory ...$classHistory): self
     {
@@ -854,6 +870,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled
      * nursing, rehabilitation).
+     *
+     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -872,6 +890,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled
      * nursing, rehabilitation).
+     *
+     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -903,6 +923,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Broad categorization of the service that is to be provided (e.g. cardiology).
+     *
+     * @return static
      */
     public function setServiceType(null|FHIRCodeableConcept $serviceType): self
     {
@@ -934,6 +956,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the urgency of the encounter.
+     *
+     * @return static
      */
     public function setPriority(null|FHIRCodeableConcept $priority): self
     {
@@ -963,6 +987,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient or group present at the encounter.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -1017,6 +1043,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * association is recorded on the encounter as these are typically created after
      * the episode of care and grouped on entry rather than editing the episode of care
      * to append another encounter to it (the episode of care could span years).
+     *
+     * @return static
      */
     public function addEpisodeOfCare(FHIRReference $episodeOfCare): self
     {
@@ -1039,6 +1067,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * association is recorded on the encounter as these are typically created after
      * the episode of care and grouped on entry rather than editing the episode of care
      * to append another encounter to it (the episode of care could span years).
+     *
+     * @return static
      */
     public function setEpisodeOfCare(FHIRReference ...$episodeOfCare): self
     {
@@ -1083,6 +1113,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The request this encounter satisfies (e.g. incoming referral or procedure
      * request).
+     *
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -1100,6 +1132,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The request this encounter satisfies (e.g. incoming referral or procedure
      * request).
+     *
+     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -1140,6 +1174,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * providing healthcare service(s) or assessing the health status of a patient.
      *
      * The list of people responsible for providing the service.
+     *
+     * @return static
      */
     public function addParticipant(FHIREncounterParticipant $participant): self
     {
@@ -1155,6 +1191,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * providing healthcare service(s) or assessing the health status of a patient.
      *
      * The list of people responsible for providing the service.
+     *
+     * @return static
      */
     public function setParticipant(FHIREncounterParticipant ...$participant): self
     {
@@ -1197,6 +1235,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The appointment that scheduled this encounter.
+     *
+     * @return static
      */
     public function addAppointment(FHIRReference $appointment): self
     {
@@ -1213,6 +1253,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The appointment that scheduled this encounter.
+     *
+     * @return static
      */
     public function setAppointment(FHIRReference ...$appointment): self
     {
@@ -1242,6 +1284,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The start and end time of the encounter.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -1273,6 +1317,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Quantity of time the encounter lasted. This excludes the time during leaves of
      * absence.
+     *
+     * @return static
      */
     public function setLength(null|FHIRDuration $length): self
     {
@@ -1319,6 +1365,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Reason the encounter takes place, expressed as a code. For admissions, this can
      * be used for a coded admission diagnosis.
+     *
+     * @return static
      */
     public function addReasonCode(FHIRCodeableConcept $reasonCode): self
     {
@@ -1337,6 +1385,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Reason the encounter takes place, expressed as a code. For admissions, this can
      * be used for a coded admission diagnosis.
+     *
+     * @return static
      */
     public function setReasonCode(FHIRCodeableConcept ...$reasonCode): self
     {
@@ -1381,6 +1431,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Reason the encounter takes place, expressed as a code. For admissions, this can
      * be used for a coded admission diagnosis.
+     *
+     * @return static
      */
     public function addReasonReference(FHIRReference $reasonReference): self
     {
@@ -1398,6 +1450,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Reason the encounter takes place, expressed as a code. For admissions, this can
      * be used for a coded admission diagnosis.
+     *
+     * @return static
      */
     public function setReasonReference(FHIRReference ...$reasonReference): self
     {
@@ -1438,6 +1492,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * providing healthcare service(s) or assessing the health status of a patient.
      *
      * The list of diagnosis relevant to this encounter.
+     *
+     * @return static
      */
     public function addDiagnosis(FHIREncounterDiagnosis $diagnosis): self
     {
@@ -1453,6 +1509,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * providing healthcare service(s) or assessing the health status of a patient.
      *
      * The list of diagnosis relevant to this encounter.
+     *
+     * @return static
      */
     public function setDiagnosis(FHIREncounterDiagnosis ...$diagnosis): self
     {
@@ -1495,6 +1553,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of accounts that may be used for billing for this Encounter.
+     *
+     * @return static
      */
     public function addAccount(FHIRReference $account): self
     {
@@ -1511,6 +1571,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of accounts that may be used for billing for this Encounter.
+     *
+     * @return static
      */
     public function setAccount(FHIRReference ...$account): self
     {
@@ -1538,6 +1600,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * providing healthcare service(s) or assessing the health status of a patient.
      *
      * Details about the admission to a healthcare service.
+     *
+     * @return static
      */
     public function setHospitalization(null|FHIREncounterHospitalization $hospitalization): self
     {
@@ -1578,6 +1642,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * providing healthcare service(s) or assessing the health status of a patient.
      *
      * List of locations where the patient has been during this encounter.
+     *
+     * @return static
      */
     public function addLocation(FHIREncounterLocation $location): self
     {
@@ -1593,6 +1659,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * providing healthcare service(s) or assessing the health status of a patient.
      *
      * List of locations where the patient has been during this encounter.
+     *
+     * @return static
      */
     public function setLocation(FHIREncounterLocation ...$location): self
     {
@@ -1632,6 +1700,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * organization (which may be billed seperately) for an external consultation.
      * Refer to the example bundle showing an abbreviated set of Encounters for a
      * colonoscopy.
+     *
+     * @return static
      */
     public function setServiceProvider(null|FHIRReference $serviceProvider): self
     {
@@ -1663,6 +1733,8 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Another Encounter of which this encounter is a part of (administratively or in
      * time).
+     *
+     * @return static
      */
     public function setPartOf(null|FHIRReference $partOf): self
     {

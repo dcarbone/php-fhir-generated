@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -180,6 +180,8 @@ class FHIRElementDefinitionDiscriminator extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the element value is interpreted when discrimination is evaluated.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRDiscriminatorTypeList|FHIRDiscriminatorType $type): self
     {
@@ -214,6 +216,8 @@ class FHIRElementDefinitionDiscriminator extends FHIRElement
      *
      * A FHIRPath expression, using a restricted subset of FHIRPath, that is used to
      * identify the element on which discrimination is based.
+     *
+     * @return static
      */
     public function setPath(null|string|FHIRStringPrimitive|FHIRString $path): self
     {

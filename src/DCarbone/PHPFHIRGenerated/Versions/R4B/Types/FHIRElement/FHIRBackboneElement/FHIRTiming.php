@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -250,6 +250,8 @@ class FHIRTiming extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies specific times when the event occurs.
+     *
+     * @return static
      */
     public function addEvent(string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $event): self
     {
@@ -272,6 +274,8 @@ class FHIRTiming extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies specific times when the event occurs.
+     *
+     * @return static
      */
     public function setEvent(string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime ...$event): self
     {
@@ -316,6 +320,8 @@ class FHIRTiming extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A set of rules that describe when the event is scheduled.
+     *
+     * @return static
      */
     public function setRepeat(null|FHIRTimingRepeat $repeat): self
     {
@@ -357,6 +363,8 @@ class FHIRTiming extends FHIRBackboneElement
      * whatever is specified in the structured timing data, and either the code or the
      * data may be used to interpret the Timing, with the exception that .repeat.bounds
      * still applies over the code (and is not contained in the code).
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {

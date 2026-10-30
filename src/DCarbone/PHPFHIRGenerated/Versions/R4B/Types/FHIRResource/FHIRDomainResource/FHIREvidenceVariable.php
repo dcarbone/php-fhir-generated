@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -662,6 +662,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * address at which at which an authoritative instance of this evidence variable is
      * (or will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the evidence variable is stored on different servers.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -713,6 +715,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * A formal identifier that is used to identify this evidence variable when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -732,6 +736,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * A formal identifier that is used to identify this evidence variable when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -779,6 +785,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the
      * Decision Support Service specification. Note that a version is required for
      * non-experimental active artifacts.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -815,6 +823,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * A natural language name identifying the evidence variable. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -847,6 +857,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the evidence variable.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -881,6 +893,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * The short title provides an alternate title for use in informal descriptive
      * contexts where the full, formal title is not necessary.
+     *
+     * @return static
      */
     public function setShortTitle(null|string|FHIRStringPrimitive|FHIRString $shortTitle): self
     {
@@ -915,6 +929,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * An explanatory or alternate title for the EvidenceVariable giving additional
      * information about its content.
+     *
+     * @return static
      */
     public function setSubtitle(null|string|FHIRStringPrimitive|FHIRString $subtitle): self
     {
@@ -945,6 +961,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * The status of this evidence variable. Enables tracking the life-cycle of the
      * content.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -989,6 +1007,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the evidence variable changes.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1031,6 +1051,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * A free text natural language description of the evidence variable from a
      * consumer's perspective.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1078,6 +1100,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable string to clarify or explain concepts about the resource.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1095,6 +1119,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable string to clarify or explain concepts about the resource.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1151,6 +1177,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate evidence variable
      * instances.
+     *
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1174,6 +1202,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate evidence variable
      * instances.
+     *
+     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1203,6 +1233,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the evidence variable.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1250,6 +1282,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1267,6 +1301,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1311,6 +1347,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
+     *
+     * @return static
      */
     public function addAuthor(FHIRContactDetail $author): self
     {
@@ -1328,6 +1366,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
+     *
+     * @return static
      */
     public function setAuthor(FHIRContactDetail ...$author): self
     {
@@ -1372,6 +1412,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
+     *
+     * @return static
      */
     public function addEditor(FHIRContactDetail $editor): self
     {
@@ -1389,6 +1431,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
+     *
+     * @return static
      */
     public function setEditor(FHIRContactDetail ...$editor): self
     {
@@ -1433,6 +1477,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
+     *
+     * @return static
      */
     public function addReviewer(FHIRContactDetail $reviewer): self
     {
@@ -1450,6 +1496,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
+     *
+     * @return static
      */
     public function setReviewer(FHIRContactDetail ...$reviewer): self
     {
@@ -1494,6 +1542,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
+     *
+     * @return static
      */
     public function addEndorser(FHIRContactDetail $endorser): self
     {
@@ -1511,6 +1561,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
+     *
+     * @return static
      */
     public function setEndorser(FHIRContactDetail ...$endorser): self
     {
@@ -1557,6 +1609,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
+     *
+     * @return static
      */
     public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact): self
     {
@@ -1575,6 +1629,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
+     *
+     * @return static
      */
     public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
     {
@@ -1604,6 +1660,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * True if the actual variable measured, false if a conceptual representation of
      * the intended variable.
+     *
+     * @return static
      */
     public function setActual(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $actual): self
     {
@@ -1632,6 +1690,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used to specify if two or more characteristics are combined with OR or AND.
+     *
+     * @return static
      */
     public function setCharacteristicCombination(null|string|FHIRCharacteristicCombinationEnum|FHIRCharacteristicCombination $characteristicCombination): self
     {
@@ -1677,6 +1737,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * A characteristic that defines the members of the evidence element. Multiple
      * characteristics are applied with "and" semantics.
+     *
+     * @return static
      */
     public function addCharacteristic(FHIREvidenceVariableCharacteristic $characteristic): self
     {
@@ -1693,6 +1755,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * A characteristic that defines the members of the evidence element. Multiple
      * characteristics are applied with "and" semantics.
+     *
+     * @return static
      */
     public function setCharacteristic(FHIREvidenceVariableCharacteristic ...$characteristic): self
     {
@@ -1718,6 +1782,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used for an outcome to classify.
+     *
+     * @return static
      */
     public function setHandling(null|string|FHIREvidenceVariableHandlingEnum|FHIREvidenceVariableHandling $handling): self
     {
@@ -1763,6 +1829,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * A grouping (or set of values) described along with other groupings to specify
      * the set of groupings allowed for the variable.
+     *
+     * @return static
      */
     public function addCategory(FHIREvidenceVariableCategory $category): self
     {
@@ -1779,6 +1847,8 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * A grouping (or set of values) described along with other groupings to specify
      * the set of groupings allowed for the variable.
+     *
+     * @return static
      */
     public function setCategory(FHIREvidenceVariableCategory ...$category): self
     {

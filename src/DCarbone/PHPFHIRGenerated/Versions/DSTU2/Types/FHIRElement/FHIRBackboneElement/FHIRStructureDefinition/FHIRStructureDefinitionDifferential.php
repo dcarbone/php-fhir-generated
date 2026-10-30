@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -181,6 +181,8 @@ class FHIRStructureDefinitionDifferential extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Captures constraints on each element within the resource.
+     *
+     * @return static
      */
     public function addElement(FHIRElementDefinition $element): self
     {
@@ -197,6 +199,8 @@ class FHIRStructureDefinitionDifferential extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Captures constraints on each element within the resource.
+     *
+     * @return static
      */
     public function setElement(FHIRElementDefinition ...$element): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -196,6 +196,8 @@ class FHIRCodeableReference extends FHIRDataType
      *
      * A reference to a concept - e.g. the information is identified by its general
      * class to the degree of precision found in the terminology.
+     *
+     * @return static
      */
     public function setConcept(null|FHIRCodeableConcept $concept): self
     {
@@ -227,6 +229,8 @@ class FHIRCodeableReference extends FHIRDataType
      *
      * A reference to a resource the provides exact details about the information being
      * referenced.
+     *
+     * @return static
      */
     public function setReference(null|FHIRReference $reference): self
     {

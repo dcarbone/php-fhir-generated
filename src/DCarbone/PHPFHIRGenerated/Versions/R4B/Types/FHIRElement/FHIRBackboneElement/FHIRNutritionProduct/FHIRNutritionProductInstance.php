@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -264,6 +264,8 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      *
      * The amount of items or instances that the resource considers, for instance when
      * referring to 2 identical units together.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -308,6 +310,8 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The identifier for the physical instance, typically a serial number.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -325,6 +329,8 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The identifier for the physical instance, typically a serial number.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -354,6 +360,8 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identification of the batch or lot of the product.
+     *
+     * @return static
      */
     public function setLotNumber(null|string|FHIRStringPrimitive|FHIRString $lotNumber): self
     {
@@ -394,6 +402,8 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      *
      * The time after which the product is no longer expected to be in proper
      * condition, or its use is not advised or not allowed.
+     *
+     * @return static
      */
     public function setExpiry(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $expiry): self
     {
@@ -434,6 +444,8 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      *
      * The time after which the product is no longer expected to be in proper
      * condition, or its use is not advised or not allowed.
+     *
+     * @return static
      */
     public function setUseBy(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $useBy): self
     {

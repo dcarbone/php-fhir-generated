@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -399,6 +399,8 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * A formal identifier that is used to identify this MeasureReport when it is
      * represented in other formats or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -418,6 +420,8 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * A formal identifier that is used to identify this MeasureReport when it is
      * represented in other formats or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -447,6 +451,8 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      *
      * The MeasureReport status. No data will be available until the MeasureReport
      * status is complete.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRMeasureReportStatusList|FHIRMeasureReportStatus $status): self
     {
@@ -487,6 +493,8 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * criteria in the measure; a summary report, which returns a population count for
      * each of the criteria in the measure; or a data-collection, which enables the
      * MeasureReport to be used to exchange the data-of-interest for a quality measure.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRMeasureReportTypeList|FHIRMeasureReportType $type): self
     {
@@ -521,6 +529,8 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * the Narrative, or extensions
      *
      * A reference to the Measure that was calculated to produce this report.
+     *
+     * @return static
      */
     public function setMeasure(null|string|FHIRCanonicalPrimitive|FHIRCanonical $measure): self
     {
@@ -553,6 +563,8 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Optional subject identifying the individual or individuals the report is for.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -588,6 +600,8 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this measure report was generated.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -620,6 +634,8 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual, location, or organization that is reporting the data.
+     *
+     * @return static
      */
     public function setReporter(null|FHIRReference $reporter): self
     {
@@ -649,6 +665,8 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reporting period for which the report was calculated.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -682,6 +700,8 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      *
      * Whether improvement in the measure is noted by an increase or decrease in the
      * measure score.
+     *
+     * @return static
      */
     public function setImprovementNotation(null|FHIRCodeableConcept $improvementNotation): self
     {
@@ -722,6 +742,8 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * and optionally a reference to the resources involved in that calculation.
      *
      * The results of the calculation, one for each population group in the measure.
+     *
+     * @return static
      */
     public function addGroup(FHIRMeasureReportGroup $group): self
     {
@@ -737,6 +759,8 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * and optionally a reference to the resources involved in that calculation.
      *
      * The results of the calculation, one for each population group in the measure.
+     *
+     * @return static
      */
     public function setGroup(FHIRMeasureReportGroup ...$group): self
     {
@@ -781,6 +805,8 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      *
      * A reference to a Bundle containing the Resources that were used in the
      * calculation of this measure.
+     *
+     * @return static
      */
     public function addEvaluatedResource(FHIRReference $evaluatedResource): self
     {
@@ -798,6 +824,8 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      *
      * A reference to a Bundle containing the Resources that were used in the
      * calculation of this measure.
+     *
+     * @return static
      */
     public function setEvaluatedResource(FHIRReference ...$evaluatedResource): self
     {

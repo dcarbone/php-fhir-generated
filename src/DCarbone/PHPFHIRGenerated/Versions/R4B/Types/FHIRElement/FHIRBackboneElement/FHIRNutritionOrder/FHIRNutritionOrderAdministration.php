@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -245,6 +245,8 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      *
      * The time period and frequency at which the enteral formula should be delivered
      * to the patient.
+     *
+     * @return static
      */
     public function setSchedule(null|FHIRTiming $schedule): self
     {
@@ -280,6 +282,8 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      *
      * The volume of formula to provide to the patient per the specified administration
      * schedule.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -315,6 +319,8 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
      * according to the specified schedule.
+     *
+     * @return static
      */
     public function setRateQuantity(null|FHIRQuantity $rateQuantity): self
     {
@@ -348,6 +354,8 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
      * according to the specified schedule.
+     *
+     * @return static
      */
     public function setRateRatio(null|FHIRRatio $rateRatio): self
     {

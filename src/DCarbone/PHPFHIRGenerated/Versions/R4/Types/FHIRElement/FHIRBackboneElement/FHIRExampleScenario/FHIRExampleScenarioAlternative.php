@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -203,6 +203,8 @@ class FHIRExampleScenarioAlternative extends FHIRBackboneElement
      *
      * The label to display for the alternative that gives a sense of the circumstance
      * in which the alternative should be invoked.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -245,6 +247,8 @@ class FHIRExampleScenarioAlternative extends FHIRBackboneElement
      *
      * A human-readable description of the alternative explaining when the alternative
      * should occur rather than the base step.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -286,6 +290,8 @@ class FHIRExampleScenarioAlternative extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * What happens in each alternative option.
+     *
+     * @return static
      */
     public function addStep(FHIRExampleScenarioStep $step): self
     {
@@ -300,6 +306,8 @@ class FHIRExampleScenarioAlternative extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * What happens in each alternative option.
+     *
+     * @return static
      */
     public function setStep(FHIRExampleScenarioStep ...$step): self
     {

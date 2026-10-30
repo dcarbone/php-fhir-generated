@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -179,6 +179,8 @@ class FHIRConditionEvidence extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A manifestation or symptom that led to the recording of this condition.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -221,6 +223,8 @@ class FHIRConditionEvidence extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Links to other relevant information, including pathology reports.
+     *
+     * @return static
      */
     public function addDetail(FHIRResourceReference $detail): self
     {
@@ -237,6 +241,8 @@ class FHIRConditionEvidence extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Links to other relevant information, including pathology reports.
+     *
+     * @return static
      */
     public function setDetail(FHIRResourceReference ...$detail): self
     {

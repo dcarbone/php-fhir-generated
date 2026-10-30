@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -300,6 +300,8 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      *
      * Dose form as manufactured and before any transformation into the pharmaceutical
      * product.
+     *
+     * @return static
      */
     public function setManufacturedDoseForm(null|FHIRCodeableConcept $manufacturedDoseForm): self
     {
@@ -333,6 +335,8 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      *
      * The “real world” units in which the quantity of the manufactured item is
      * described.
+     *
+     * @return static
      */
     public function setUnitOfPresentation(null|FHIRCodeableConcept $unitOfPresentation): self
     {
@@ -366,6 +370,8 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity or "count number" of the manufactured item.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -410,6 +416,8 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      *
      * Manufacturer of the item (Note that this should be named "manufacturer" but it
      * currently causes technical issues).
+     *
+     * @return static
      */
     public function addManufacturer(FHIRReference $manufacturer): self
     {
@@ -427,6 +435,8 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      *
      * Manufacturer of the item (Note that this should be named "manufacturer" but it
      * currently causes technical issues).
+     *
+     * @return static
      */
     public function setManufacturer(FHIRReference ...$manufacturer): self
     {
@@ -469,6 +479,8 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ingredient.
+     *
+     * @return static
      */
     public function addIngredient(FHIRReference $ingredient): self
     {
@@ -485,6 +497,8 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ingredient.
+     *
+     * @return static
      */
     public function setIngredient(FHIRReference ...$ingredient): self
     {
@@ -516,6 +530,8 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dimensions, color etc.
+     *
+     * @return static
      */
     public function setPhysicalCharacteristics(null|FHIRProdCharacteristic $physicalCharacteristics): self
     {
@@ -560,6 +576,8 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other codeable characteristics.
+     *
+     * @return static
      */
     public function addOtherCharacteristics(FHIRCodeableConcept $otherCharacteristics): self
     {
@@ -577,6 +595,8 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other codeable characteristics.
+     *
+     * @return static
      */
     public function setOtherCharacteristics(FHIRCodeableConcept ...$otherCharacteristics): self
     {

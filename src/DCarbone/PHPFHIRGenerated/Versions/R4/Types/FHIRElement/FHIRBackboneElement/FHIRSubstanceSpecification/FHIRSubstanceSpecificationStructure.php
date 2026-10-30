@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -274,6 +274,8 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Stereochemistry type.
+     *
+     * @return static
      */
     public function setStereochemistry(null|FHIRCodeableConcept $stereochemistry): self
     {
@@ -305,6 +307,8 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Optical activity type.
+     *
+     * @return static
      */
     public function setOpticalActivity(null|FHIRCodeableConcept $opticalActivity): self
     {
@@ -334,6 +338,8 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Molecular formula.
+     *
+     * @return static
      */
     public function setMolecularFormula(null|string|FHIRStringPrimitive|FHIRString $molecularFormula): self
     {
@@ -368,6 +374,8 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
      *
      * Specified per moiety according to the Hill system, i.e. first C, then H, then
      * alphabetical, each moiety separated by a dot.
+     *
+     * @return static
      */
     public function setMolecularFormulaByMoiety(null|string|FHIRStringPrimitive|FHIRString $molecularFormulaByMoiety): self
     {
@@ -413,6 +421,8 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
      *
      * Applicable for single substances that contain a radionuclide or a non-natural
      * isotopic ratio.
+     *
+     * @return static
      */
     public function addIsotope(FHIRSubstanceSpecificationIsotope $isotope): self
     {
@@ -429,6 +439,8 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
      *
      * Applicable for single substances that contain a radionuclide or a non-natural
      * isotopic ratio.
+     *
+     * @return static
      */
     public function setIsotope(FHIRSubstanceSpecificationIsotope ...$isotope): self
     {
@@ -456,6 +468,8 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
      * used for prescribing.
      *
      * The molecular weight or weight range (for proteins, polymers or nucleic acids).
+     *
+     * @return static
      */
     public function setMolecularWeight(null|FHIRSubstanceSpecificationMolecularWeight $molecularWeight): self
     {
@@ -498,6 +512,8 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting literature.
+     *
+     * @return static
      */
     public function addSource(FHIRReference $source): self
     {
@@ -514,6 +530,8 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting literature.
+     *
+     * @return static
      */
     public function setSource(FHIRReference ...$source): self
     {
@@ -554,6 +572,8 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
      * used for prescribing.
      *
      * Molecular structural representation.
+     *
+     * @return static
      */
     public function addRepresentation(FHIRSubstanceSpecificationRepresentation $representation): self
     {
@@ -569,6 +589,8 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
      * used for prescribing.
      *
      * Molecular structural representation.
+     *
+     * @return static
      */
     public function setRepresentation(FHIRSubstanceSpecificationRepresentation ...$representation): self
     {

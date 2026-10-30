@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -467,6 +467,8 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * An identifier that is unique within the Questionnaire allowing linkage to the
      * equivalent item in a QuestionnaireResponse resource.
+     *
+     * @return static
      */
     public function setLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId): self
     {
@@ -519,6 +521,8 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * (ElementDefinition.min) * repeats (ElementDefinition.max) * maxLength
      * (ElementDefinition.maxLength) * answerValueSet (ElementDefinition.binding) *
      * options (ElementDefinition.binding).
+     *
+     * @return static
      */
     public function setDefinition(null|string|FHIRUriPrimitive|FHIRUri $definition): self
     {
@@ -566,6 +570,8 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * A terminology code that corresponds to this group or question (e.g. a code from
      * LOINC, which defines many questions and answers).
+     *
+     * @return static
      */
     public function addCode(FHIRCoding $code): self
     {
@@ -583,6 +589,8 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * A terminology code that corresponds to this group or question (e.g. a code from
      * LOINC, which defines many questions and answers).
+     *
+     * @return static
      */
     public function setCode(FHIRCoding ...$code): self
     {
@@ -614,6 +622,8 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * A short label for a particular group, question or set of display text within the
      * questionnaire used for reference by the individual completing the questionnaire.
+     *
+     * @return static
      */
     public function setPrefix(null|string|FHIRStringPrimitive|FHIRString $prefix): self
     {
@@ -648,6 +658,8 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The name of a section, the text of a question or text content for a display
      * item.
+     *
+     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -680,6 +692,8 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * The type of questionnaire item this is - whether text for display, a grouping of
      * other items or a particular type of data to be captured (string, integer, coded
      * choice, etc.).
+     *
+     * @return static
      */
     public function setType(null|string|FHIRQuestionnaireItemTypeEnum|FHIRQuestionnaireItemType $type): self
     {
@@ -727,6 +741,8 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * A constraint indicating that this item should only be enabled (displayed/allow
      * answers to be captured) when the specified condition is true.
+     *
+     * @return static
      */
     public function addEnableWhen(FHIRQuestionnaireEnableWhen $enableWhen): self
     {
@@ -744,6 +760,8 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * A constraint indicating that this item should only be enabled (displayed/allow
      * answers to be captured) when the specified condition is true.
+     *
+     * @return static
      */
     public function setEnableWhen(FHIRQuestionnaireEnableWhen ...$enableWhen): self
     {
@@ -771,6 +789,8 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * Controls how multiple enableWhen values are interpreted - whether all or any
      * must be true.
+     *
+     * @return static
      */
     public function setEnableBehavior(null|string|FHIREnableWhenBehaviorEnum|FHIREnableWhenBehavior $enableBehavior): self
     {
@@ -805,6 +825,8 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * An indication, if true, that the item must be present in a "completed"
      * QuestionnaireResponse. If false, the item may be skipped when answering the
      * questionnaire.
+     *
+     * @return static
      */
     public function setRequired(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $required): self
     {
@@ -839,6 +861,8 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * An indication, if true, that the item may occur multiple times in the response,
      * collecting multiple answers for questions or multiple sets of answers for
      * groups.
+     *
+     * @return static
      */
     public function setRepeats(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $repeats): self
     {
@@ -871,6 +895,8 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * An indication, when true, that the value cannot be changed by a human respondent
      * to the Questionnaire.
+     *
+     * @return static
      */
     public function setReadOnly(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $readOnly): self
     {
@@ -905,6 +931,8 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The maximum number of characters that are permitted in the answer to be
      * considered a "valid" QuestionnaireResponse.
+     *
+     * @return static
      */
     public function setMaxLength(null|string|float|FHIRIntegerPrimitive|FHIRInteger $maxLength): self
     {
@@ -941,6 +969,8 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * A reference to a value set containing a list of codes representing permitted
      * answers for a "choice" or "open-choice" question.
+     *
+     * @return static
      */
     public function setAnswerValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $answerValueSet): self
     {
@@ -986,6 +1016,8 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * phraseology and grouping to allow coherent, consistent data collection.
      *
      * One of the permitted answers for a "choice" or "open-choice" question.
+     *
+     * @return static
      */
     public function addAnswerOption(FHIRQuestionnaireAnswerOption $answerOption): self
     {
@@ -1002,6 +1034,8 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * phraseology and grouping to allow coherent, consistent data collection.
      *
      * One of the permitted answers for a "choice" or "open-choice" question.
+     *
+     * @return static
      */
     public function setAnswerOption(FHIRQuestionnaireAnswerOption ...$answerOption): self
     {
@@ -1046,6 +1080,8 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * One or more values that should be pre-populated in the answer when initially
      * rendering the questionnaire for user input.
+     *
+     * @return static
      */
     public function addInitial(FHIRQuestionnaireInitial $initial): self
     {
@@ -1063,6 +1099,8 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * One or more values that should be pre-populated in the answer when initially
      * rendering the questionnaire for user input.
+     *
+     * @return static
      */
     public function setInitial(FHIRQuestionnaireInitial ...$initial): self
     {
@@ -1105,6 +1143,8 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * phraseology and grouping to allow coherent, consistent data collection.
      *
      * Text, questions and other groups to be nested beneath a question or group.
+     *
+     * @return static
      */
     public function addItem(FHIRQuestionnaireItem $item): self
     {
@@ -1121,6 +1161,8 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * phraseology and grouping to allow coherent, consistent data collection.
      *
      * Text, questions and other groups to be nested beneath a question or group.
+     *
+     * @return static
      */
     public function setItem(FHIRQuestionnaireItem ...$item): self
     {

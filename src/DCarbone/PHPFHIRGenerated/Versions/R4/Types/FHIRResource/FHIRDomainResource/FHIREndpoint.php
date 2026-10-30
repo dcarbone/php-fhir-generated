@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -402,6 +402,8 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Identifier for the organization that is used to identify the endpoint across
      * multiple disparate systems.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -420,6 +422,8 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Identifier for the organization that is used to identify the endpoint across
      * multiple disparate systems.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -447,6 +451,8 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * active | suspended | error | off | test.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIREndpointStatusList|FHIREndpointStatus $status): self
     {
@@ -483,6 +489,8 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * A coded value that represents the technical details of the usage of this
      * endpoint, such as what WSDLs should be used in what way. (e.g.
      * XDS.b/DICOM/cds-hook).
+     *
+     * @return static
      */
     public function setConnectionType(null|FHIRCoding $connectionType): self
     {
@@ -512,6 +520,8 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A friendly name that this endpoint can be referred to with.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -548,6 +558,8 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * The organization that manages this endpoint (even if technically another
      * organization is hosting this in the cloud, it is the organization associated
      * with the data).
+     *
+     * @return static
      */
     public function setManagingOrganization(null|FHIRReference $managingOrganization): self
     {
@@ -594,6 +606,8 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Contact details for a human to contact about the subscription. The primary use
      * of this for system administrator troubleshooting.
+     *
+     * @return static
      */
     public function addContact(FHIRContactPoint $contact): self
     {
@@ -612,6 +626,8 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Contact details for a human to contact about the subscription. The primary use
      * of this for system administrator troubleshooting.
+     *
+     * @return static
      */
     public function setContact(FHIRContactPoint ...$contact): self
     {
@@ -641,6 +657,8 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The interval during which the endpoint is expected to be operational.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -687,6 +705,8 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The payload type describes the acceptable content that can be communicated on
      * the endpoint.
+     *
+     * @return static
      */
     public function addPayloadType(FHIRCodeableConcept $payloadType): self
     {
@@ -705,6 +725,8 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The payload type describes the acceptable content that can be communicated on
      * the endpoint.
+     *
+     * @return static
      */
     public function setPayloadType(FHIRCodeableConcept ...$payloadType): self
     {
@@ -753,6 +775,8 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * The mime type to send the payload in - e.g. application/fhir+xml,
      * application/fhir+json. If the mime type is not specified, then the sender could
      * send any content (including no content depending on the connectionType).
+     *
+     * @return static
      */
     public function addPayloadMimeType(string|FHIRCodePrimitive|FHIRCode $payloadMimeType): self
     {
@@ -775,6 +799,8 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * The mime type to send the payload in - e.g. application/fhir+xml,
      * application/fhir+json. If the mime type is not specified, then the sender could
      * send any content (including no content depending on the connectionType).
+     *
+     * @return static
      */
     public function setPayloadMimeType(string|FHIRCodePrimitive|FHIRCode ...$payloadMimeType): self
     {
@@ -811,6 +837,8 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * the Narrative, or extensions
      *
      * The uri that describes the actual end-point to connect to.
+     *
+     * @return static
      */
     public function setAddress(null|string|FHIRUrlPrimitive|FHIRUrl $address): self
     {
@@ -856,6 +884,8 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional headers / information to send as part of the notification.
+     *
+     * @return static
      */
     public function addHeader(string|FHIRStringPrimitive|FHIRString $header): self
     {
@@ -875,6 +905,8 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional headers / information to send as part of the notification.
+     *
+     * @return static
      */
     public function setHeader(string|FHIRStringPrimitive|FHIRString ...$header): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -289,6 +289,8 @@ class FHIRSignature extends FHIRElement
      * An indication of the reason that the entity signed this document. This may be
      * explicitly included as part of the signature information and can be used when
      * determining accountability for various actions concerning the document.
+     *
+     * @return static
      */
     public function addType(FHIRCoding $type): self
     {
@@ -307,6 +309,8 @@ class FHIRSignature extends FHIRElement
      * An indication of the reason that the entity signed this document. This may be
      * explicitly included as part of the signature information and can be used when
      * determining accountability for various actions concerning the document.
+     *
+     * @return static
      */
     public function setType(FHIRCoding ...$type): self
     {
@@ -340,6 +344,8 @@ class FHIRSignature extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the digital signature was signed.
+     *
+     * @return static
      */
     public function setWhen(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $when): self
     {
@@ -374,6 +380,8 @@ class FHIRSignature extends FHIRElement
      *
      * A reference to an application-usable description of the person that signed the
      * certificate (e.g. the signature used their private key).
+     *
+     * @return static
      */
     public function setWhoUri(null|string|FHIRUriPrimitive|FHIRUri $whoUri): self
     {
@@ -408,6 +416,8 @@ class FHIRSignature extends FHIRElement
      *
      * A reference to an application-usable description of the person that signed the
      * certificate (e.g. the signature used their private key).
+     *
+     * @return static
      */
     public function setWhoReference(null|FHIRReference $whoReference): self
     {
@@ -443,6 +453,8 @@ class FHIRSignature extends FHIRElement
      * A mime type that indicates the technical format of the signature. Important mime
      * types are application/signature+xml for X ML DigSig, application/jwt for JWT,
      * and image/* for a graphical image of a signature.
+     *
+     * @return static
      */
     public function setContentType(null|string|FHIRCodePrimitive|FHIRCode $contentType): self
     {
@@ -475,6 +487,8 @@ class FHIRSignature extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The base64 encoding of the Signature content.
+     *
+     * @return static
      */
     public function setBlob(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $blob): self
     {

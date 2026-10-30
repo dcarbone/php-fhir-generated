@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -134,6 +134,21 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
         self::FIELD_CODE => [
             'min_occurs' => 1,
         ],
+        self::FIELD_VALUE_CODEABLE_CONCEPT => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_BOOLEAN => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_QUANTITY => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_RANGE => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_REFERENCE => [
+            'min_occurs' => 1,
+        ],
         self::FIELD_EXCLUDE => [
             'min_occurs' => 1,
         ],
@@ -163,7 +178,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
+     * of the group.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
@@ -172,7 +187,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
+     * of the group.
      */
     #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
@@ -184,7 +199,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
+     * of the group.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -194,7 +209,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
+     * of the group.
      */
     #[FHIRRange]
     protected FHIRRange $valueRange;
@@ -204,7 +219,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
+     * of the group.
      */
     #[FHIRReference]
     protected FHIRReference $valueReference;
@@ -305,6 +320,8 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that identifies the kind of trait being asserted.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -323,7 +340,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
+     * of the group.
      */
     public function getValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -337,7 +354,9 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
+     * of the group.
+     *
+     * @return static
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -354,7 +373,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
+     * of the group.
      */
     public function getValueBoolean(): null|FHIRBoolean
     {
@@ -366,7 +385,9 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
+     * of the group.
+     *
+     * @return static
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -389,7 +410,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
+     * of the group.
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -404,7 +425,9 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
+     * of the group.
+     *
+     * @return static
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -422,7 +445,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
+     * of the group.
      */
     public function getValueRange(): null|FHIRRange
     {
@@ -435,7 +458,9 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
+     * of the group.
+     *
+     * @return static
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -453,7 +478,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
+     * of the group.
      */
     public function getValueReference(): null|FHIRReference
     {
@@ -466,7 +491,9 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
+     * of the group.
+     *
+     * @return static
      */
     public function setValueReference(null|FHIRReference $valueReference): self
     {
@@ -496,6 +523,8 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      *
      * If true, indicates the characteristic is one that is NOT held by members of the
      * group.
+     *
+     * @return static
      */
     public function setExclude(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $exclude): self
     {
@@ -530,6 +559,8 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      *
      * The period over which the characteristic is tested; e.g. the patient had an
      * operation during the month of June.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {

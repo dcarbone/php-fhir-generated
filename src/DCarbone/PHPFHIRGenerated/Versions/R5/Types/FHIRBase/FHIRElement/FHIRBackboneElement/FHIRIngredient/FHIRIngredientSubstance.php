@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -201,6 +201,8 @@ class FHIRIngredientSubstance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code or full resource that represents the ingredient's substance.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableReference $code): self
     {
@@ -245,6 +247,8 @@ class FHIRIngredientSubstance extends FHIRBackboneElement
      * mass) of the single pharmaceutical product or manufactured item. The allowed
      * repetitions do not represent different strengths, but are different
      * representations - mathematically equivalent - of a single strength.
+     *
+     * @return static
      */
     public function addStrength(FHIRIngredientStrength $strength): self
     {
@@ -262,6 +266,8 @@ class FHIRIngredientSubstance extends FHIRBackboneElement
      * mass) of the single pharmaceutical product or manufactured item. The allowed
      * repetitions do not represent different strengths, but are different
      * representations - mathematically equivalent - of a single strength.
+     *
+     * @return static
      */
     public function setStrength(FHIRIngredientStrength ...$strength): self
     {

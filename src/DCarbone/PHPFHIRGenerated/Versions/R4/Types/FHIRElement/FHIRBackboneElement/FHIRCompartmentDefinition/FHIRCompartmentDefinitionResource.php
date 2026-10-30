@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -203,6 +203,8 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The name of a resource supported by the server.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -252,6 +254,8 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
      * The name of a search parameter that represents the link to the compartment. More
      * than one may be listed because a resource may be linked to a compartment in more
      * than one way,.
+     *
+     * @return static
      */
     public function addParam(string|FHIRStringPrimitive|FHIRString $param): self
     {
@@ -273,6 +277,8 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
      * The name of a search parameter that represents the link to the compartment. More
      * than one may be listed because a resource may be linked to a compartment in more
      * than one way,.
+     *
+     * @return static
      */
     public function setParam(string|FHIRStringPrimitive|FHIRString ...$param): self
     {
@@ -309,6 +315,8 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional documentation about the resource and compartment.
+     *
+     * @return static
      */
     public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation): self
     {

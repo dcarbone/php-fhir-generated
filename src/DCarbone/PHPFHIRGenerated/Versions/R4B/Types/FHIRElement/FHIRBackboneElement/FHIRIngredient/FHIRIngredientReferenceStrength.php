@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -253,6 +253,8 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Relevant reference substance.
+     *
+     * @return static
      */
     public function setSubstance(null|FHIRCodeableReference $substance): self
     {
@@ -284,6 +286,8 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Strength expressed in terms of a reference substance.
+     *
+     * @return static
      */
     public function setStrengthRatio(null|FHIRRatio $strengthRatio): self
     {
@@ -313,6 +317,8 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Strength expressed in terms of a reference substance.
+     *
+     * @return static
      */
     public function setStrengthRatioRange(null|FHIRRatioRange $strengthRatioRange): self
     {
@@ -342,6 +348,8 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * For when strength is measured at a particular point or distance.
+     *
+     * @return static
      */
     public function setMeasurementPoint(null|string|FHIRStringPrimitive|FHIRString $measurementPoint): self
     {
@@ -389,6 +397,8 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country or countries for which the strength range applies.
+     *
+     * @return static
      */
     public function addCountry(FHIRCodeableConcept $country): self
     {
@@ -406,6 +416,8 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country or countries for which the strength range applies.
+     *
+     * @return static
      */
     public function setCountry(FHIRCodeableConcept ...$country): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -407,6 +407,8 @@ class FHIRContractAsset extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Differentiates the kind of the asset .
+     *
+     * @return static
      */
     public function setScope(null|FHIRCodeableConcept $scope): self
     {
@@ -451,6 +453,8 @@ class FHIRContractAsset extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Target entity type about which the term may be concerned.
+     *
+     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -468,6 +472,8 @@ class FHIRContractAsset extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Target entity type about which the term may be concerned.
+     *
+     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -510,6 +516,8 @@ class FHIRContractAsset extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Associated entities.
+     *
+     * @return static
      */
     public function addTypeReference(FHIRReference $typeReference): self
     {
@@ -526,6 +534,8 @@ class FHIRContractAsset extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Associated entities.
+     *
+     * @return static
      */
     public function setTypeReference(FHIRReference ...$typeReference): self
     {
@@ -570,6 +580,8 @@ class FHIRContractAsset extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * May be a subtype or part of an offered asset.
+     *
+     * @return static
      */
     public function addSubtype(FHIRCodeableConcept $subtype): self
     {
@@ -587,6 +599,8 @@ class FHIRContractAsset extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * May be a subtype or part of an offered asset.
+     *
+     * @return static
      */
     public function setSubtype(FHIRCodeableConcept ...$subtype): self
     {
@@ -620,6 +634,8 @@ class FHIRContractAsset extends FHIRBackboneElement
      * Specifies the applicability of the term to an asset resource instance, and
      * instances it refers to orinstances that refer to it, and/or are owned by the
      * offeree.
+     *
+     * @return static
      */
     public function setRelationship(null|FHIRCoding $relationship): self
     {
@@ -660,6 +676,8 @@ class FHIRContractAsset extends FHIRBackboneElement
      * policy or agreement.
      *
      * Circumstance of the asset.
+     *
+     * @return static
      */
     public function addContext(FHIRContractContext $context): self
     {
@@ -675,6 +693,8 @@ class FHIRContractAsset extends FHIRBackboneElement
      * policy or agreement.
      *
      * Circumstance of the asset.
+     *
+     * @return static
      */
     public function setContext(FHIRContractContext ...$context): self
     {
@@ -706,6 +726,8 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * Description of the quality and completeness of the asset that imay be a factor
      * in its valuation.
+     *
+     * @return static
      */
     public function setCondition(null|string|FHIRStringPrimitive|FHIRString $condition): self
     {
@@ -753,6 +775,8 @@ class FHIRContractAsset extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of Asset availability for use or ownership.
+     *
+     * @return static
      */
     public function addPeriodType(FHIRCodeableConcept $periodType): self
     {
@@ -770,6 +794,8 @@ class FHIRContractAsset extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of Asset availability for use or ownership.
+     *
+     * @return static
      */
     public function setPeriodType(FHIRCodeableConcept ...$periodType): self
     {
@@ -812,6 +838,8 @@ class FHIRContractAsset extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Asset relevant contractual time period.
+     *
+     * @return static
      */
     public function addPeriod(FHIRPeriod $period): self
     {
@@ -828,6 +856,8 @@ class FHIRContractAsset extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Asset relevant contractual time period.
+     *
+     * @return static
      */
     public function setPeriod(FHIRPeriod ...$period): self
     {
@@ -870,6 +900,8 @@ class FHIRContractAsset extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period of asset use.
+     *
+     * @return static
      */
     public function addUsePeriod(FHIRPeriod $usePeriod): self
     {
@@ -886,6 +918,8 @@ class FHIRContractAsset extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period of asset use.
+     *
+     * @return static
      */
     public function setUsePeriod(FHIRPeriod ...$usePeriod): self
     {
@@ -917,6 +951,8 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * Clause or question text (Prose Object) concerning the asset in a linked form,
      * such as a QuestionnaireResponse used in the formation of the contract.
+     *
+     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -964,6 +1000,8 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * Id [identifier??] of the clause or question text about the asset in the
      * referenced form or QuestionnaireResponse.
+     *
+     * @return static
      */
     public function addLinkId(string|FHIRStringPrimitive|FHIRString $linkId): self
     {
@@ -984,6 +1022,8 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * Id [identifier??] of the clause or question text about the asset in the
      * referenced form or QuestionnaireResponse.
+     *
+     * @return static
      */
     public function setLinkId(string|FHIRStringPrimitive|FHIRString ...$linkId): self
     {
@@ -1031,6 +1071,8 @@ class FHIRContractAsset extends FHIRBackboneElement
      * policy or agreement.
      *
      * Response to assets.
+     *
+     * @return static
      */
     public function addAnswer(FHIRContractAnswer $answer): self
     {
@@ -1046,6 +1088,8 @@ class FHIRContractAsset extends FHIRBackboneElement
      * policy or agreement.
      *
      * Response to assets.
+     *
+     * @return static
      */
     public function setAnswer(FHIRContractAnswer ...$answer): self
     {
@@ -1088,6 +1132,8 @@ class FHIRContractAsset extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Security labels that protects the asset.
+     *
+     * @return static
      */
     public function addSecurityLabelNumber(string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $securityLabelNumber): self
     {
@@ -1107,6 +1153,8 @@ class FHIRContractAsset extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Security labels that protects the asset.
+     *
+     * @return static
      */
     public function setSecurityLabelNumber(string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt ...$securityLabelNumber): self
     {
@@ -1154,6 +1202,8 @@ class FHIRContractAsset extends FHIRBackboneElement
      * policy or agreement.
      *
      * Contract Valued Item List.
+     *
+     * @return static
      */
     public function addValuedItem(FHIRContractValuedItem $valuedItem): self
     {
@@ -1169,6 +1219,8 @@ class FHIRContractAsset extends FHIRBackboneElement
      * policy or agreement.
      *
      * Contract Valued Item List.
+     *
+     * @return static
      */
     public function setValuedItem(FHIRContractValuedItem ...$valuedItem): self
     {

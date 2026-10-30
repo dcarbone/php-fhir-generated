@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -148,7 +148,7 @@ class FHIRSupplyRequestParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the device detail. (choose any one of value*, but only one)
+     * The value of the device detail.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
@@ -159,7 +159,7 @@ class FHIRSupplyRequestParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the device detail. (choose any one of value*, but only one)
+     * The value of the device detail.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -168,7 +168,7 @@ class FHIRSupplyRequestParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the device detail. (choose any one of value*, but only one)
+     * The value of the device detail.
      */
     #[FHIRRange]
     protected FHIRRange $valueRange;
@@ -176,7 +176,7 @@ class FHIRSupplyRequestParameter extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the device detail. (choose any one of value*, but only one)
+     * The value of the device detail.
      */
     #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
@@ -246,6 +246,8 @@ class FHIRSupplyRequestParameter extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code or string that identifies the device detail being asserted.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -263,7 +265,7 @@ class FHIRSupplyRequestParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the device detail. (choose any one of value*, but only one)
+     * The value of the device detail.
      */
     public function getValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -276,7 +278,9 @@ class FHIRSupplyRequestParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the device detail. (choose any one of value*, but only one)
+     * The value of the device detail.
+     *
+     * @return static
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -295,7 +299,7 @@ class FHIRSupplyRequestParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the device detail. (choose any one of value*, but only one)
+     * The value of the device detail.
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -309,7 +313,9 @@ class FHIRSupplyRequestParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the device detail. (choose any one of value*, but only one)
+     * The value of the device detail.
+     *
+     * @return static
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -326,7 +332,7 @@ class FHIRSupplyRequestParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the device detail. (choose any one of value*, but only one)
+     * The value of the device detail.
      */
     public function getValueRange(): null|FHIRRange
     {
@@ -338,7 +344,9 @@ class FHIRSupplyRequestParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the device detail. (choose any one of value*, but only one)
+     * The value of the device detail.
+     *
+     * @return static
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -354,7 +362,7 @@ class FHIRSupplyRequestParameter extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the device detail. (choose any one of value*, but only one)
+     * The value of the device detail.
      */
     public function getValueBoolean(): null|FHIRBoolean
     {
@@ -365,7 +373,9 @@ class FHIRSupplyRequestParameter extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the device detail. (choose any one of value*, but only one)
+     * The value of the device detail.
+     *
+     * @return static
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {

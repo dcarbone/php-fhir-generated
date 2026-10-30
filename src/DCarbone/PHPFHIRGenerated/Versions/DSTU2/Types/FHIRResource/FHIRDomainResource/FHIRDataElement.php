@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -445,6 +445,8 @@ class FHIRDataElement extends FHIRDomainResource implements VersionContainedType
      * in a specification, model, design or an instance. This SHALL be a URL, SHOULD be
      * globally unique, and SHOULD be an address at which this data element is (or will
      * be) published.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -494,6 +496,8 @@ class FHIRDataElement extends FHIRDomainResource implements VersionContainedType
      * Formal identifier that is used to identify this data element when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -512,6 +516,8 @@ class FHIRDataElement extends FHIRDomainResource implements VersionContainedType
      * Formal identifier that is used to identify this data element when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -545,6 +551,8 @@ class FHIRDataElement extends FHIRDomainResource implements VersionContainedType
      * The identifier that is used to identify this version of the data element when it
      * is referenced in a StructureDefinition, Questionnaire or instance. This is an
      * arbitrary value managed by the definition author manually.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -579,6 +587,8 @@ class FHIRDataElement extends FHIRDomainResource implements VersionContainedType
      *
      * The term used by humans to refer to the data element. Should ideally be unique
      * within the context in which the data element is expected to be used.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -613,6 +623,8 @@ class FHIRDataElement extends FHIRDomainResource implements VersionContainedType
      * the Narrative, or extensions
      *
      * The status of the data element.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRCodePrimitive|FHIRCode $status): self
     {
@@ -647,6 +659,8 @@ class FHIRDataElement extends FHIRDomainResource implements VersionContainedType
      * A flag to indicate that this search data element definition is authored for
      * testing purposes (or education/evaluation/marketing), and is not intended to be
      * used for genuine usage.
+     *
+     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -679,6 +693,8 @@ class FHIRDataElement extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the data element.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -722,6 +738,8 @@ class FHIRDataElement extends FHIRDomainResource implements VersionContainedType
      * reported.
      *
      * Contacts to assist a user in finding and communicating with the publisher.
+     *
+     * @return static
      */
     public function addContact(FHIRDataElementContact $contact): self
     {
@@ -737,6 +755,8 @@ class FHIRDataElement extends FHIRDomainResource implements VersionContainedType
      * reported.
      *
      * Contacts to assist a user in finding and communicating with the publisher.
+     *
+     * @return static
      */
     public function setContact(FHIRDataElementContact ...$contact): self
     {
@@ -778,6 +798,8 @@ class FHIRDataElement extends FHIRDomainResource implements VersionContainedType
      * when the business version changes, if it does, and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * data element changes.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -829,6 +851,8 @@ class FHIRDataElement extends FHIRDomainResource implements VersionContainedType
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * of data element definitions.
+     *
+     * @return static
      */
     public function addUseContext(FHIRCodeableConcept $useContext): self
     {
@@ -848,6 +872,8 @@ class FHIRDataElement extends FHIRDomainResource implements VersionContainedType
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * of data element definitions.
+     *
+     * @return static
      */
     public function setUseContext(FHIRCodeableConcept ...$useContext): self
     {
@@ -881,6 +907,8 @@ class FHIRDataElement extends FHIRDomainResource implements VersionContainedType
      * A copyright statement relating to the definition of the data element. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * details of the definition of the data element.
+     *
+     * @return static
      */
     public function setCopyright(null|string|FHIRStringPrimitive|FHIRString $copyright): self
     {
@@ -911,6 +939,8 @@ class FHIRDataElement extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies how precise the data element is in its definition.
+     *
+     * @return static
      */
     public function setStringency(null|string|FHIRDataElementStringencyList|FHIRDataElementStringency $stringency): self
     {
@@ -956,6 +986,8 @@ class FHIRDataElement extends FHIRDomainResource implements VersionContainedType
      *
      * Identifies a specification (other than a terminology) that the elements which
      * make up the DataElement have some correspondence with.
+     *
+     * @return static
      */
     public function addMapping(FHIRDataElementMapping $mapping): self
     {
@@ -972,6 +1004,8 @@ class FHIRDataElement extends FHIRDomainResource implements VersionContainedType
      *
      * Identifies a specification (other than a terminology) that the elements which
      * make up the DataElement have some correspondence with.
+     *
+     * @return static
      */
     public function setMapping(FHIRDataElementMapping ...$mapping): self
     {
@@ -1016,6 +1050,8 @@ class FHIRDataElement extends FHIRDomainResource implements VersionContainedType
      *
      * Defines the structure, type, allowed values and other constraining
      * characteristics of the data element.
+     *
+     * @return static
      */
     public function addElement(FHIRElementDefinition $element): self
     {
@@ -1033,6 +1069,8 @@ class FHIRDataElement extends FHIRDomainResource implements VersionContainedType
      *
      * Defines the structure, type, allowed values and other constraining
      * characteristics of the data element.
+     *
+     * @return static
      */
     public function setElement(FHIRElementDefinition ...$element): self
     {

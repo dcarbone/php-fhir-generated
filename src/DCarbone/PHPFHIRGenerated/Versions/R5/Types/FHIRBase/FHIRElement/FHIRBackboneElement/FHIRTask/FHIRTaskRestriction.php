@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -216,6 +216,8 @@ class FHIRTaskRestriction extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Indicates the number of times the requested action should occur.
+     *
+     * @return static
      */
     public function setRepetitions(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $repetitions): self
     {
@@ -252,6 +254,8 @@ class FHIRTaskRestriction extends FHIRBackboneElement
      * The time-period for which fulfillment is sought. This must fall within the
      * overall time period authorized in the referenced request. E.g.
      * ServiceRequest.occurance[x].
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -296,6 +300,8 @@ class FHIRTaskRestriction extends FHIRBackboneElement
      *
      * For requests that are targeted to more than one potential recipient/target, to
      * identify who is fulfillment is sought for.
+     *
+     * @return static
      */
     public function addRecipient(FHIRReference $recipient): self
     {
@@ -313,6 +319,8 @@ class FHIRTaskRestriction extends FHIRBackboneElement
      *
      * For requests that are targeted to more than one potential recipient/target, to
      * identify who is fulfillment is sought for.
+     *
+     * @return static
      */
     public function setRecipient(FHIRReference ...$recipient): self
     {

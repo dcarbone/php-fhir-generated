@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -510,6 +510,8 @@ class FHIRGraphDefinition extends FHIRDomainResource implements VersionContained
      * address at which at which an authoritative instance of this graph definition is
      * (or will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the graph definition is stored on different servers.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -552,6 +554,8 @@ class FHIRGraphDefinition extends FHIRDomainResource implements VersionContained
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -588,6 +592,8 @@ class FHIRGraphDefinition extends FHIRDomainResource implements VersionContained
      * A natural language name identifying the graph definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -618,6 +624,8 @@ class FHIRGraphDefinition extends FHIRDomainResource implements VersionContained
      *
      * The status of this graph definition. Enables tracking the life-cycle of the
      * content.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -652,6 +660,8 @@ class FHIRGraphDefinition extends FHIRDomainResource implements VersionContained
      * A Boolean value to indicate that this graph definition is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
+     *
+     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -696,6 +706,8 @@ class FHIRGraphDefinition extends FHIRDomainResource implements VersionContained
      * must change when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * graph definition changes.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -728,6 +740,8 @@ class FHIRGraphDefinition extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the graph definition.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -775,6 +789,8 @@ class FHIRGraphDefinition extends FHIRDomainResource implements VersionContained
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -792,6 +808,8 @@ class FHIRGraphDefinition extends FHIRDomainResource implements VersionContained
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -831,6 +849,8 @@ class FHIRGraphDefinition extends FHIRDomainResource implements VersionContained
      *
      * A free text natural language description of the graph definition from a
      * consumer's perspective.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -890,6 +910,8 @@ class FHIRGraphDefinition extends FHIRDomainResource implements VersionContained
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate graph definition
      * instances.
+     *
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -913,6 +935,8 @@ class FHIRGraphDefinition extends FHIRDomainResource implements VersionContained
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate graph definition
      * instances.
+     *
+     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -959,6 +983,8 @@ class FHIRGraphDefinition extends FHIRDomainResource implements VersionContained
      *
      * A legal or geographic region in which the graph definition is intended to be
      * used.
+     *
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -977,6 +1003,8 @@ class FHIRGraphDefinition extends FHIRDomainResource implements VersionContained
      *
      * A legal or geographic region in which the graph definition is intended to be
      * used.
+     *
+     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1016,6 +1044,8 @@ class FHIRGraphDefinition extends FHIRDomainResource implements VersionContained
      *
      * Explanation of why this graph definition is needed and why it has been designed
      * as it has.
+     *
+     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1044,6 +1074,8 @@ class FHIRGraphDefinition extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of FHIR resource at which instances of this graph start.
+     *
+     * @return static
      */
     public function setStart(null|string|FHIRResourceTypeEnum|FHIRResourceType $start): self
     {
@@ -1078,6 +1110,8 @@ class FHIRGraphDefinition extends FHIRDomainResource implements VersionContained
      * the Narrative, or extensions
      *
      * The profile that describes the use of the base resource.
+     *
+     * @return static
      */
     public function setProfile(null|string|FHIRCanonicalPrimitive|FHIRCanonical $profile): self
     {
@@ -1123,6 +1157,8 @@ class FHIRGraphDefinition extends FHIRDomainResource implements VersionContained
      * resource defines a set and makes rules about the set.
      *
      * Links this graph makes rules about.
+     *
+     * @return static
      */
     public function addLink(FHIRGraphDefinitionLink $link): self
     {
@@ -1139,6 +1175,8 @@ class FHIRGraphDefinition extends FHIRDomainResource implements VersionContained
      * resource defines a set and makes rules about the set.
      *
      * Links this graph makes rules about.
+     *
+     * @return static
      */
     public function setLink(FHIRGraphDefinitionLink ...$link): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -216,6 +216,8 @@ class FHIRCitationClassification1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of classifier (e.g. publication type, keyword).
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -260,6 +262,8 @@ class FHIRCitationClassification1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific classification value.
+     *
+     * @return static
      */
     public function addClassifier(FHIRCodeableConcept $classifier): self
     {
@@ -277,6 +281,8 @@ class FHIRCitationClassification1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific classification value.
+     *
+     * @return static
      */
     public function setClassifier(FHIRCodeableConcept ...$classifier): self
     {
@@ -308,6 +314,8 @@ class FHIRCitationClassification1 extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * Provenance and copyright of classification.
+     *
+     * @return static
      */
     public function setWhoClassified(null|FHIRCitationWhoClassified $whoClassified): self
     {

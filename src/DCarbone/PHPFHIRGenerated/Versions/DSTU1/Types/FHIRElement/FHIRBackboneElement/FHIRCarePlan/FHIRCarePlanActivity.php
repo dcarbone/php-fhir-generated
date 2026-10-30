@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -270,6 +270,8 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
     /**
      * Internal reference that identifies the goals that this activity is intended to
      * contribute towards meeting.
+     *
+     * @return static
      */
     public function addGoal(string|FHIRXmlIdRef $goal): self
     {
@@ -286,6 +288,8 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
     /**
      * Internal reference that identifies the goals that this activity is intended to
      * contribute towards meeting.
+     *
+     * @return static
      */
     public function setGoal(string|FHIRXmlIdRef ...$goal): self
     {
@@ -313,6 +317,8 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies what progress is being made for the specific activity.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRCarePlanActivityStatusList|FHIRCarePlanActivityStatus $status): self
     {
@@ -345,6 +351,8 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      *
      * If true, indicates that the described activity is one that must NOT be engaged
      * in when following the plan.
+     *
+     * @return static
      */
     public function setProhibited(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $prohibited): self
     {
@@ -392,6 +400,8 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      *
      * Resources that describe follow-on actions resulting from the plan, such as drug
      * prescriptions, encounter records, appointments, etc.
+     *
+     * @return static
      */
     public function addActionResulting(FHIRResourceReference $actionResulting): self
     {
@@ -409,6 +419,8 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      *
      * Resources that describe follow-on actions resulting from the plan, such as drug
      * prescriptions, encounter records, appointments, etc.
+     *
+     * @return static
      */
     public function setActionResulting(FHIRResourceReference ...$actionResulting): self
     {
@@ -436,6 +448,8 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Notes about the execution of the activity.
+     *
+     * @return static
      */
     public function setNotes(null|string|FHIRStringPrimitive|FHIRString $notes): self
     {
@@ -468,6 +482,8 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The details of the proposed activity represented in a specific resource.
+     *
+     * @return static
      */
     public function setDetail(null|FHIRResourceReference $detail): self
     {
@@ -499,6 +515,8 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      *
      * A simple summary of details suitable for a general care plan system (e.g. form
      * driven) that doesn't know about specific resources such as procedure etc.
+     *
+     * @return static
      */
     public function setSimple(null|FHIRCarePlanSimple $simple): self
     {

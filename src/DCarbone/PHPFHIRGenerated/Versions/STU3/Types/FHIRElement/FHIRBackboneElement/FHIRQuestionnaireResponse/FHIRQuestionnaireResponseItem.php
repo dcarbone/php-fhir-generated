@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -253,6 +253,8 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      *
      * The item from the Questionnaire that corresponds to this item in the
      * QuestionnaireResponse resource.
+     *
+     * @return static
      */
     public function setLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId): self
     {
@@ -287,6 +289,8 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      *
      * A reference to an [[[ElementDefinition]]] that provides the details for the
      * item.
+     *
+     * @return static
      */
     public function setDefinition(null|string|FHIRUriPrimitive|FHIRUri $definition): self
     {
@@ -321,6 +325,8 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      *
      * Text that is displayed above the contents of the group or as the text of the
      * question being answered.
+     *
+     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -355,6 +361,8 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      *
      * More specific subject this section's answers are about, details the subject
      * given in QuestionnaireResponse.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -397,6 +405,8 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      * the questionnaire being responded to.
      *
      * The respondent's answer(s) to the question.
+     *
+     * @return static
      */
     public function addAnswer(FHIRQuestionnaireResponseAnswer $answer): self
     {
@@ -413,6 +423,8 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      * the questionnaire being responded to.
      *
      * The respondent's answer(s) to the question.
+     *
+     * @return static
      */
     public function setAnswer(FHIRQuestionnaireResponseAnswer ...$answer): self
     {
@@ -455,6 +467,8 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      * the questionnaire being responded to.
      *
      * Questions or sub-groups nested beneath a question or group.
+     *
+     * @return static
      */
     public function addItem(FHIRQuestionnaireResponseItem $item): self
     {
@@ -471,6 +485,8 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      * the questionnaire being responded to.
      *
      * Questions or sub-groups nested beneath a question or group.
+     *
+     * @return static
      */
     public function setItem(FHIRQuestionnaireResponseItem ...$item): self
     {

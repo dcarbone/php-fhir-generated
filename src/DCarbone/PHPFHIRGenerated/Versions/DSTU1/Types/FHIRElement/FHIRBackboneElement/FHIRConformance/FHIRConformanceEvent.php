@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -291,6 +291,8 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A coded identifier of a supported messaging event.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCoding $code): self
     {
@@ -318,6 +320,8 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The impact of the content of the message.
+     *
+     * @return static
      */
     public function setCategory(null|string|FHIRMessageSignificanceCategoryList|FHIRMessageSignificanceCategory $category): self
     {
@@ -348,6 +352,8 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The mode of this event declaration - whether application is sender or receiver.
+     *
+     * @return static
      */
     public function setMode(null|string|FHIRConformanceEventModeList|FHIRConformanceEventMode $mode): self
     {
@@ -395,6 +401,8 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      *
      * A list of the messaging transport protocol(s) identifiers, supported by this
      * endpoint.
+     *
+     * @return static
      */
     public function addProtocol(FHIRCoding $protocol): self
     {
@@ -412,6 +420,8 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      *
      * A list of the messaging transport protocol(s) identifiers, supported by this
      * endpoint.
+     *
+     * @return static
      */
     public function setProtocol(FHIRCoding ...$protocol): self
     {
@@ -445,6 +455,8 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      *
      * A resource associated with the event. This is the resource that defines the
      * event.
+     *
+     * @return static
      */
     public function setFocus(null|string|FHIRCodePrimitive|FHIRCode $focus): self
     {
@@ -477,6 +489,8 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Information about the request for this event.
+     *
+     * @return static
      */
     public function setRequest(null|FHIRResourceReference $request): self
     {
@@ -506,6 +520,8 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Information about the response for this event.
+     *
+     * @return static
      */
     public function setResponse(null|FHIRResourceReference $response): self
     {
@@ -535,6 +551,8 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      *
      * Guidance on how this event is handled, such as internal system trigger points,
      * business rules, etc.
+     *
+     * @return static
      */
     public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -254,6 +254,8 @@ class FHIRResearchStudyAssociatedParty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name of associated party.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -288,6 +290,8 @@ class FHIRResearchStudyAssociatedParty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of association.
+     *
+     * @return static
      */
     public function setRole(null|FHIRCodeableConcept $role): self
     {
@@ -330,6 +334,8 @@ class FHIRResearchStudyAssociatedParty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the start date and the end date of the associated party in the role.
+     *
+     * @return static
      */
     public function addPeriod(FHIRPeriod $period): self
     {
@@ -346,6 +352,8 @@ class FHIRResearchStudyAssociatedParty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the start date and the end date of the associated party in the role.
+     *
+     * @return static
      */
     public function setPeriod(FHIRPeriod ...$period): self
     {
@@ -390,6 +398,8 @@ class FHIRResearchStudyAssociatedParty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A categorization other than role for the associated party.
+     *
+     * @return static
      */
     public function addClassifier(FHIRCodeableConcept $classifier): self
     {
@@ -407,6 +417,8 @@ class FHIRResearchStudyAssociatedParty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A categorization other than role for the associated party.
+     *
+     * @return static
      */
     public function setClassifier(FHIRCodeableConcept ...$classifier): self
     {
@@ -438,6 +450,8 @@ class FHIRResearchStudyAssociatedParty extends FHIRBackboneElement
      *
      * Individual or organization associated with study (use practitionerRole to
      * specify their organisation).
+     *
+     * @return static
      */
     public function setParty(null|FHIRReference $party): self
     {

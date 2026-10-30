@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -225,6 +225,8 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The code that identifies this filter when it is used in the instance.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -257,6 +259,8 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of how or why the filter is used.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -300,6 +304,8 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of operators that can be used with the filter.
+     *
+     * @return static
      */
     public function addOperator(string|FHIRFilterOperatorList|FHIRFilterOperator $operator): self
     {
@@ -318,6 +324,8 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of operators that can be used with the filter.
+     *
+     * @return static
      */
     public function setOperator(string|FHIRFilterOperatorList|FHIRFilterOperator ...$operator): self
     {
@@ -354,6 +362,8 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of what the value for the filter should be.
+     *
+     * @return static
      */
     public function setValue(null|string|FHIRStringPrimitive|FHIRString $value): self
     {

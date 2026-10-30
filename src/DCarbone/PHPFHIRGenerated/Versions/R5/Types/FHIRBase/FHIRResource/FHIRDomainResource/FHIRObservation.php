@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -249,7 +249,6 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      *
      * The reference to a FHIR ObservationDefinition resource that provides the
      * definition that is adhered to in whole or in part by this Observation instance.
-     * (choose any one of instantiates*, but only one)
      */
     #[FHIRCanonical]
     protected FHIRCanonical $instantiatesCanonical;
@@ -260,7 +259,6 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      *
      * The reference to a FHIR ObservationDefinition resource that provides the
      * definition that is adhered to in whole or in part by this Observation instance.
-     * (choose any one of instantiates*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $instantiatesReference;
@@ -384,8 +382,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * biological subjects - e.g. human patients - this is usually called the
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
-     * is not known, only the date/time itself. (choose any one of effective*, but only
-     * one)
+     * is not known, only the date/time itself.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $effectiveDateTime;
@@ -398,8 +395,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * biological subjects - e.g. human patients - this is usually called the
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
-     * is not known, only the date/time itself. (choose any one of effective*, but only
-     * one)
+     * is not known, only the date/time itself.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $effectivePeriod;
@@ -416,8 +412,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * biological subjects - e.g. human patients - this is usually called the
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
-     * is not known, only the date/time itself. (choose any one of effective*, but only
-     * one)
+     * is not known, only the date/time itself.
      */
     #[FHIRTiming]
     protected FHIRTiming $effectiveTiming;
@@ -433,8 +428,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * biological subjects - e.g. human patients - this is usually called the
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
-     * is not known, only the date/time itself. (choose any one of effective*, but only
-     * one)
+     * is not known, only the date/time itself.
      */
     #[FHIRInstant]
     protected FHIRInstant $effectiveInstant;
@@ -470,7 +464,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -481,7 +475,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
@@ -491,7 +485,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
      */
     #[FHIRString]
     protected FHIRString $valueString;
@@ -500,7 +494,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
      */
     #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
@@ -510,7 +504,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
      */
     #[FHIRInteger]
     protected FHIRInteger $valueInteger;
@@ -520,7 +514,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
      */
     #[FHIRRange]
     protected FHIRRange $valueRange;
@@ -531,7 +525,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
      */
     #[FHIRRatio]
     protected FHIRRatio $valueRatio;
@@ -542,7 +536,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
      */
     #[FHIRSampledData]
     protected FHIRSampledData $valueSampledData;
@@ -551,7 +545,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
      */
     #[FHIRTime]
     protected FHIRTime $valueTime;
@@ -565,7 +559,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $valueDateTime;
@@ -575,7 +569,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $valuePeriod;
@@ -585,7 +579,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
      */
     #[FHIRAttachment]
     protected FHIRAttachment $valueAttachment;
@@ -595,7 +589,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
      */
     #[FHIRReference]
     protected FHIRReference $valueReference;
@@ -998,6 +992,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this observation.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -1015,6 +1011,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this observation.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -1034,7 +1032,6 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      *
      * The reference to a FHIR ObservationDefinition resource that provides the
      * definition that is adhered to in whole or in part by this Observation instance.
-     * (choose any one of instantiates*, but only one)
      */
     public function getInstantiatesCanonical(): null|FHIRCanonical
     {
@@ -1049,7 +1046,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      *
      * The reference to a FHIR ObservationDefinition resource that provides the
      * definition that is adhered to in whole or in part by this Observation instance.
-     * (choose any one of instantiates*, but only one)
+     *
+     * @return static
      */
     public function setInstantiatesCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $instantiatesCanonical): self
     {
@@ -1071,7 +1069,6 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      *
      * The reference to a FHIR ObservationDefinition resource that provides the
      * definition that is adhered to in whole or in part by this Observation instance.
-     * (choose any one of instantiates*, but only one)
      */
     public function getInstantiatesReference(): null|FHIRReference
     {
@@ -1085,7 +1082,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      *
      * The reference to a FHIR ObservationDefinition resource that provides the
      * definition that is adhered to in whole or in part by this Observation instance.
-     * (choose any one of instantiates*, but only one)
+     *
+     * @return static
      */
     public function setInstantiatesReference(null|FHIRReference $instantiatesReference): self
     {
@@ -1132,6 +1130,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * A plan, proposal or order that is fulfilled in whole or in part by this event.
      * For example, a MedicationRequest may require a patient to have laboratory test
      * performed before it is dispensed.
+     *
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -1150,6 +1150,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * A plan, proposal or order that is fulfilled in whole or in part by this event.
      * For example, a MedicationRequest may require a patient to have laboratory test
      * performed before it is dispensed.
+     *
+     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -1192,6 +1194,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      *
      * Identifies the observation(s) that triggered the performance of this
      * observation.
+     *
+     * @return static
      */
     public function addTriggeredBy(FHIRObservationTriggeredBy $triggeredBy): self
     {
@@ -1208,6 +1212,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      *
      * Identifies the observation(s) that triggered the performance of this
      * observation.
+     *
+     * @return static
      */
     public function setTriggeredBy(FHIRObservationTriggeredBy ...$triggeredBy): self
     {
@@ -1252,6 +1258,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      *
      * A larger event of which this particular Observation is a component or step. For
      * example, an observation as part of a procedure.
+     *
+     * @return static
      */
     public function addPartOf(FHIRReference $partOf): self
     {
@@ -1269,6 +1277,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      *
      * A larger event of which this particular Observation is a component or step. For
      * example, an observation as part of a procedure.
+     *
+     * @return static
      */
     public function setPartOf(FHIRReference ...$partOf): self
     {
@@ -1294,6 +1304,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the result value.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRObservationStatusEnum|FHIRObservationStatus $status): self
     {
@@ -1341,6 +1353,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that classifies the general type of observation being made.
+     *
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -1358,6 +1372,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that classifies the general type of observation being made.
+     *
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -1389,6 +1405,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes what was observed. Sometimes this is called the observation "name".
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -1426,6 +1444,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * observation is placed. If the actual focus of the observation is different from
      * the subject (or a sample of, part, or region of the subject), the `focus`
      * element or the `code` itself specifies the actual focus of the observation.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -1484,6 +1504,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * the Observation resource to capture whether the mother is trained to change her
      * child's tracheostomy tube. In this example, the child is the patient of record
      * and the mother is the focus.
+     *
+     * @return static
      */
     public function addFocus(FHIRReference $focus): self
     {
@@ -1508,6 +1530,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * the Observation resource to capture whether the mother is trained to change her
      * child's tracheostomy tube. In this example, the child is the patient of record
      * and the mother is the focus.
+     *
+     * @return static
      */
     public function setFocus(FHIRReference ...$focus): self
     {
@@ -1539,6 +1563,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      *
      * The healthcare event (e.g. a patient and healthcare provider interaction) during
      * which this observation is made.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -1563,8 +1589,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * biological subjects - e.g. human patients - this is usually called the
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
-     * is not known, only the date/time itself. (choose any one of effective*, but only
-     * one)
+     * is not known, only the date/time itself.
      */
     public function getEffectiveDateTime(): null|FHIRDateTime
     {
@@ -1584,8 +1609,9 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * biological subjects - e.g. human patients - this is usually called the
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
-     * is not known, only the date/time itself. (choose any one of effective*, but only
-     * one)
+     * is not known, only the date/time itself.
+     *
+     * @return static
      */
     public function setEffectiveDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $effectiveDateTime): self
     {
@@ -1609,8 +1635,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * biological subjects - e.g. human patients - this is usually called the
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
-     * is not known, only the date/time itself. (choose any one of effective*, but only
-     * one)
+     * is not known, only the date/time itself.
      */
     public function getEffectivePeriod(): null|FHIRPeriod
     {
@@ -1626,8 +1651,9 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * biological subjects - e.g. human patients - this is usually called the
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
-     * is not known, only the date/time itself. (choose any one of effective*, but only
-     * one)
+     * is not known, only the date/time itself.
+     *
+     * @return static
      */
     public function setEffectivePeriod(null|FHIRPeriod $effectivePeriod): self
     {
@@ -1652,8 +1678,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * biological subjects - e.g. human patients - this is usually called the
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
-     * is not known, only the date/time itself. (choose any one of effective*, but only
-     * one)
+     * is not known, only the date/time itself.
      */
     public function getEffectiveTiming(): null|FHIRTiming
     {
@@ -1673,8 +1698,9 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * biological subjects - e.g. human patients - this is usually called the
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
-     * is not known, only the date/time itself. (choose any one of effective*, but only
-     * one)
+     * is not known, only the date/time itself.
+     *
+     * @return static
      */
     public function setEffectiveTiming(null|FHIRTiming $effectiveTiming): self
     {
@@ -1698,8 +1724,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * biological subjects - e.g. human patients - this is usually called the
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
-     * is not known, only the date/time itself. (choose any one of effective*, but only
-     * one)
+     * is not known, only the date/time itself.
      */
     public function getEffectiveInstant(): null|FHIRInstant
     {
@@ -1718,8 +1743,9 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * biological subjects - e.g. human patients - this is usually called the
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
-     * is not known, only the date/time itself. (choose any one of effective*, but only
-     * one)
+     * is not known, only the date/time itself.
+     *
+     * @return static
      */
     public function setEffectiveInstant(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $effectiveInstant): self
     {
@@ -1760,6 +1786,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      *
      * The date and time this version of the observation was made available to
      * providers, typically after the results have been reviewed and verified.
+     *
+     * @return static
      */
     public function setIssued(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $issued): self
     {
@@ -1805,6 +1833,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who was responsible for asserting the observed value as "true".
+     *
+     * @return static
      */
     public function addPerformer(FHIRReference $performer): self
     {
@@ -1821,6 +1851,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who was responsible for asserting the observed value as "true".
+     *
+     * @return static
      */
     public function setPerformer(FHIRReference ...$performer): self
     {
@@ -1840,7 +1872,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -1855,7 +1887,9 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
+     *
+     * @return static
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -1874,7 +1908,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
      */
     public function getValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -1888,7 +1922,9 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
+     *
+     * @return static
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -1906,7 +1942,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
      */
     public function getValueString(): null|FHIRString
     {
@@ -1919,7 +1955,9 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
+     *
+     * @return static
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -1939,7 +1977,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
      */
     public function getValueBoolean(): null|FHIRBoolean
     {
@@ -1951,7 +1989,9 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
+     *
+     * @return static
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -1972,7 +2012,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
      */
     public function getValueInteger(): null|FHIRInteger
     {
@@ -1985,7 +2025,9 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
+     *
+     * @return static
      */
     public function setValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $valueInteger): self
     {
@@ -2006,7 +2048,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
      */
     public function getValueRange(): null|FHIRRange
     {
@@ -2019,7 +2061,9 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
+     *
+     * @return static
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -2038,7 +2082,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
      */
     public function getValueRatio(): null|FHIRRatio
     {
@@ -2052,7 +2096,9 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
+     *
+     * @return static
      */
     public function setValueRatio(null|FHIRRatio $valueRatio): self
     {
@@ -2071,7 +2117,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
      */
     public function getValueSampledData(): null|FHIRSampledData
     {
@@ -2085,7 +2131,9 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
+     *
+     * @return static
      */
     public function setValueSampledData(null|FHIRSampledData $valueSampledData): self
     {
@@ -2102,7 +2150,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
      */
     public function getValueTime(): null|FHIRTime
     {
@@ -2114,7 +2162,9 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
+     *
+     * @return static
      */
     public function setValueTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $valueTime): self
     {
@@ -2139,7 +2189,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
      */
     public function getValueDateTime(): null|FHIRDateTime
     {
@@ -2156,7 +2206,9 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
+     *
+     * @return static
      */
     public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime): self
     {
@@ -2177,7 +2229,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
      */
     public function getValuePeriod(): null|FHIRPeriod
     {
@@ -2190,7 +2242,9 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
+     *
+     * @return static
      */
     public function setValuePeriod(null|FHIRPeriod $valuePeriod): self
     {
@@ -2208,7 +2262,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
      */
     public function getValueAttachment(): null|FHIRAttachment
     {
@@ -2221,7 +2275,9 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
+     *
+     * @return static
      */
     public function setValueAttachment(null|FHIRAttachment $valueAttachment): self
     {
@@ -2239,7 +2295,7 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
      */
     public function getValueReference(): null|FHIRReference
     {
@@ -2252,7 +2308,9 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
-     * information has a simple value. (choose any one of value*, but only one)
+     * information has a simple value.
+     *
+     * @return static
      */
     public function setValueReference(null|FHIRReference $valueReference): self
     {
@@ -2286,6 +2344,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      *
      * Provides a reason why the expected value in the element Observation.value[x] is
      * missing.
+     *
+     * @return static
      */
     public function setDataAbsentReason(null|FHIRCodeableConcept $dataAbsentReason): self
     {
@@ -2332,6 +2392,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      *
      * A categorical assessment of an observation value. For example, high, low,
      * normal.
+     *
+     * @return static
      */
     public function addInterpretation(FHIRCodeableConcept $interpretation): self
     {
@@ -2350,6 +2412,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      *
      * A categorical assessment of an observation value. For example, high, low,
      * normal.
+     *
+     * @return static
      */
     public function setInterpretation(FHIRCodeableConcept ...$interpretation): self
     {
@@ -2394,6 +2458,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments about the observation or the results.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -2411,6 +2477,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments about the observation or the results.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -2444,6 +2512,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      *
      * Indicates the site on the subject's body where the observation was made (i.e.
      * the target site).
+     *
+     * @return static
      */
     public function setBodySite(null|FHIRCodeableConcept $bodySite): self
     {
@@ -2475,6 +2545,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      *
      * Indicates the body structure on the subject's body where the observation was
      * made (i.e. the target site).
+     *
+     * @return static
      */
     public function setBodyStructure(null|FHIRReference $bodyStructure): self
     {
@@ -2506,6 +2578,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to perform the observation.
+     *
+     * @return static
      */
     public function setMethod(null|FHIRCodeableConcept $method): self
     {
@@ -2535,6 +2609,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specimen that was used when this observation was made.
+     *
+     * @return static
      */
     public function setSpecimen(null|FHIRReference $specimen): self
     {
@@ -2566,6 +2642,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      *
      * A reference to the device that generates the measurements or the device settings
      * for the device.
+     *
+     * @return static
      */
     public function setDevice(null|FHIRReference $device): self
     {
@@ -2612,6 +2690,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * range. Multiple reference ranges are interpreted as an "OR". In other words, to
      * represent two distinct target populations, two `referenceRange` elements would
      * be used.
+     *
+     * @return static
      */
     public function addReferenceRange(FHIRObservationReferenceRange $referenceRange): self
     {
@@ -2630,6 +2710,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * range. Multiple reference ranges are interpreted as an "OR". In other words, to
      * represent two distinct target populations, two `referenceRange` elements would
      * be used.
+     *
+     * @return static
      */
     public function setReferenceRange(FHIRObservationReferenceRange ...$referenceRange): self
     {
@@ -2674,6 +2756,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      *
      * This observation is a group observation (e.g. a battery, a panel of tests, a set
      * of vital sign measurements) that includes the target as a member of the group.
+     *
+     * @return static
      */
     public function addHasMember(FHIRReference $hasMember): self
     {
@@ -2691,6 +2775,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      *
      * This observation is a group observation (e.g. a battery, a panel of tests, a set
      * of vital sign measurements) that includes the target as a member of the group.
+     *
+     * @return static
      */
     public function setHasMember(FHIRReference ...$hasMember): self
     {
@@ -2737,6 +2823,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * The target resource that represents a measurement from which this observation
      * value is derived. For example, a calculated anion gap or a fetal measurement
      * based on an ultrasound image.
+     *
+     * @return static
      */
     public function addDerivedFrom(FHIRReference $derivedFrom): self
     {
@@ -2755,6 +2843,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * The target resource that represents a measurement from which this observation
      * value is derived. For example, a calculated anion gap or a fetal measurement
      * based on an ultrasound image.
+     *
+     * @return static
      */
     public function setDerivedFrom(FHIRReference ...$derivedFrom): self
     {
@@ -2803,6 +2893,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * attributes. Examples include systolic and diastolic component observations for
      * blood pressure measurement and multiple component observations for genetics
      * observations.
+     *
+     * @return static
      */
     public function addComponent(FHIRObservationComponent $component): self
     {
@@ -2822,6 +2914,8 @@ class FHIRObservation extends FHIRDomainResource implements VersionContainedType
      * attributes. Examples include systolic and diastolic component observations for
      * blood pressure measurement and multiple component observations for genetics
      * observations.
+     *
+     * @return static
      */
     public function setComponent(FHIRObservationComponent ...$component): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -344,6 +344,8 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for this medication.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -361,6 +363,8 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for this medication.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -398,6 +402,8 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * if no code is available. Usage note: This could be a standard medication code
      * such as a code from RxNorm, SNOMED CT, IDMP etc. It could also be a national or
      * local formulary code, optionally with translations to other code systems.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -423,6 +429,8 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code to indicate if the medication is in active use.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRMedicationStatusCodesEnum|FHIRMedicationStatusCodes $status): self
     {
@@ -457,6 +465,8 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Describes the details of the manufacturer of the medication product. This is not
      * intended to represent the distributor of a medication product.
+     *
+     * @return static
      */
     public function setManufacturer(null|FHIRReference $manufacturer): self
     {
@@ -488,6 +498,8 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the item. Powder; tablets; capsule.
+     *
+     * @return static
      */
     public function setForm(null|FHIRCodeableConcept $form): self
     {
@@ -525,6 +537,8 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * specifying a product that has the same strength (For example, Insulin glargine
      * 100 unit per mL solution for injection), this attribute provides additional
      * clarification of the package amount (For example, 3 mL, 10mL, etc.).
+     *
+     * @return static
      */
     public function setAmount(null|FHIRRatio $amount): self
     {
@@ -567,6 +581,8 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * medication as well as for making statements about medication use.
      *
      * Identifies a particular constituent of interest in the product.
+     *
+     * @return static
      */
     public function addIngredient(FHIRMedicationIngredient $ingredient): self
     {
@@ -583,6 +599,8 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * medication as well as for making statements about medication use.
      *
      * Identifies a particular constituent of interest in the product.
+     *
+     * @return static
      */
     public function setIngredient(FHIRMedicationIngredient ...$ingredient): self
     {
@@ -612,6 +630,8 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * medication as well as for making statements about medication use.
      *
      * Information that only applies to packages (not products).
+     *
+     * @return static
      */
     public function setBatch(null|FHIRMedicationBatch $batch): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -514,6 +514,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this Contract.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -549,6 +551,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When this Contract was issued.
+     *
+     * @return static
      */
     public function setIssued(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $issued): self
     {
@@ -581,6 +585,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Relevant time or time-period when this Contract is applicable.
+     *
+     * @return static
      */
     public function setApplies(null|FHIRPeriod $applies): self
     {
@@ -625,6 +631,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Who and/or what this Contract is about: typically a Patient, Organization, or
      * valued items such as goods and services.
+     *
+     * @return static
      */
     public function addSubject(FHIRReference $subject): self
     {
@@ -642,6 +650,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Who and/or what this Contract is about: typically a Patient, Organization, or
      * valued items such as goods and services.
+     *
+     * @return static
      */
     public function setSubject(FHIRReference ...$subject): self
     {
@@ -690,6 +700,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * organizations, or jurisdictions formed for the purpose of achieving some form of
      * collective action such as the promulgation, administration and enforcement of
      * contracts and policies.
+     *
+     * @return static
      */
     public function addAuthority(FHIRReference $authority): self
     {
@@ -709,6 +721,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * organizations, or jurisdictions formed for the purpose of achieving some form of
      * collective action such as the promulgation, administration and enforcement of
      * contracts and policies.
+     *
+     * @return static
      */
     public function setAuthority(FHIRReference ...$authority): self
     {
@@ -757,6 +771,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * in accordance with specified principles, policies, processes or procedures for
      * managing rights, actions, or behaviors of parties or principals relative to
      * resources.
+     *
+     * @return static
      */
     public function addDomain(FHIRReference $domain): self
     {
@@ -776,6 +792,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * in accordance with specified principles, policies, processes or procedures for
      * managing rights, actions, or behaviors of parties or principals relative to
      * resources.
+     *
+     * @return static
      */
     public function setDomain(FHIRReference ...$domain): self
     {
@@ -809,6 +827,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Type of Contract such as an insurance policy, real estate contract, a will,
      * power of attorny, Privacy or Security policy , trust framework agreement, etc.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -857,6 +877,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * More specific type or specialization of an overarching or more general contract
      * such as auto insurance, home owner insurance, prenupial agreement,
      * Advanced-Directive, or privacy consent.
+     *
+     * @return static
      */
     public function addSubType(FHIRCodeableConcept $subType): self
     {
@@ -876,6 +898,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * More specific type or specialization of an overarching or more general contract
      * such as auto insurance, home owner insurance, prenupial agreement,
      * Advanced-Directive, or privacy consent.
+     *
+     * @return static
      */
     public function setSubType(FHIRCodeableConcept ...$subType): self
     {
@@ -920,6 +944,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Action stipulated by this Contract.
+     *
+     * @return static
      */
     public function addAction(FHIRCodeableConcept $action): self
     {
@@ -937,6 +963,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Action stipulated by this Contract.
+     *
+     * @return static
      */
     public function setAction(FHIRCodeableConcept ...$action): self
     {
@@ -981,6 +1009,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason for action stipulated by this Contract.
+     *
+     * @return static
      */
     public function addActionReason(FHIRCodeableConcept $actionReason): self
     {
@@ -998,6 +1028,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason for action stipulated by this Contract.
+     *
+     * @return static
      */
     public function setActionReason(FHIRCodeableConcept ...$actionReason): self
     {
@@ -1038,6 +1070,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * of information or other matters.
      *
      * List of Contract actors.
+     *
+     * @return static
      */
     public function addActor(FHIRContractActor $actor): self
     {
@@ -1053,6 +1087,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * of information or other matters.
      *
      * List of Contract actors.
+     *
+     * @return static
      */
     public function setActor(FHIRContractActor ...$actor): self
     {
@@ -1093,6 +1129,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * of information or other matters.
      *
      * Contract Valued Item List.
+     *
+     * @return static
      */
     public function addValuedItem(FHIRContractValuedItem $valuedItem): self
     {
@@ -1108,6 +1146,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * of information or other matters.
      *
      * Contract Valued Item List.
+     *
+     * @return static
      */
     public function setValuedItem(FHIRContractValuedItem ...$valuedItem): self
     {
@@ -1148,6 +1188,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * of information or other matters.
      *
      * Party signing this Contract.
+     *
+     * @return static
      */
     public function addSigner(FHIRContractSigner $signer): self
     {
@@ -1163,6 +1205,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * of information or other matters.
      *
      * Party signing this Contract.
+     *
+     * @return static
      */
     public function setSigner(FHIRContractSigner ...$signer): self
     {
@@ -1205,6 +1249,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * One or more Contract Provisions, which may be related and conveyed as a group,
      * and may contain nested groups.
+     *
+     * @return static
      */
     public function addTerm(FHIRContractTerm $term): self
     {
@@ -1221,6 +1267,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * One or more Contract Provisions, which may be related and conveyed as a group,
      * and may contain nested groups.
+     *
+     * @return static
      */
     public function setTerm(FHIRContractTerm ...$term): self
     {
@@ -1256,6 +1304,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * representation of the Contract, which is considered the "source of truth" and
      * which would be the basis for legal action related to enforcement of this
      * Contract.
+     *
+     * @return static
      */
     public function setBindingAttachment(null|FHIRAttachment $bindingAttachment): self
     {
@@ -1291,6 +1341,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * representation of the Contract, which is considered the "source of truth" and
      * which would be the basis for legal action related to enforcement of this
      * Contract.
+     *
+     * @return static
      */
     public function setBindingReference(null|FHIRReference $bindingReference): self
     {
@@ -1341,6 +1393,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * a layperson in accordance with best practices for communication styles that
      * ensure that those agreeing to or signing the Contract understand the roles,
      * actions, obligations, responsibilities, and implication of the agreement.
+     *
+     * @return static
      */
     public function addFriendly(FHIRContractFriendly $friendly): self
     {
@@ -1361,6 +1415,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * a layperson in accordance with best practices for communication styles that
      * ensure that those agreeing to or signing the Contract understand the roles,
      * actions, obligations, responsibilities, and implication of the agreement.
+     *
+     * @return static
      */
     public function setFriendly(FHIRContractFriendly ...$friendly): self
     {
@@ -1401,6 +1457,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * of information or other matters.
      *
      * List of Legal expressions or representations of this Contract.
+     *
+     * @return static
      */
     public function addLegal(FHIRContractLegal $legal): self
     {
@@ -1416,6 +1474,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * of information or other matters.
      *
      * List of Legal expressions or representations of this Contract.
+     *
+     * @return static
      */
     public function setLegal(FHIRContractLegal ...$legal): self
     {
@@ -1456,6 +1516,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * of information or other matters.
      *
      * List of Computable Policy Rule Language Representations of this Contract.
+     *
+     * @return static
      */
     public function addRule(FHIRContractRule $rule): self
     {
@@ -1471,6 +1533,8 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * of information or other matters.
      *
      * List of Computable Policy Rule Language Representations of this Contract.
+     *
+     * @return static
      */
     public function setRule(FHIRContractRule ...$rule): self
     {

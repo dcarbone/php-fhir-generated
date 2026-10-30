@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -269,6 +269,8 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of the sequence shall be specified based on a controlled vocabulary.
+     *
+     * @return static
      */
     public function setSequenceType(null|FHIRCodeableConcept $sequenceType): self
     {
@@ -304,6 +306,8 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
      * bonds shall be described. Subunits would be strands of nucleic acids that are
      * tightly associated typically through Watson-Crick base pairing. NOTE: If not
      * specified in the reference source, the assumption is that there is 1 subunit.
+     *
+     * @return static
      */
     public function setNumberOfSubunits(null|string|float|FHIRIntegerPrimitive|FHIRInteger $numberOfSubunits): self
     {
@@ -342,6 +346,8 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
      * RNA or DNA. The number associated with the subunit followed by the number
      * associated to the residue shall be specified in increasing order. The underscore
      * “” shall be used as separator as follows: “Subunitnumber Residue”.
+     *
+     * @return static
      */
     public function setAreaOfHybridisation(null|string|FHIRStringPrimitive|FHIRString $areaOfHybridisation): self
     {
@@ -376,6 +382,8 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * (TBC).
+     *
+     * @return static
      */
     public function setOligoNucleotideType(null|FHIRCodeableConcept $oligoNucleotideType): self
     {
@@ -424,6 +432,8 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
      * Subunits are listed in order of decreasing length; sequences of the same length
      * will be ordered by molecular weight; subunits that have identical sequences will
      * be repeated multiple times.
+     *
+     * @return static
      */
     public function addSubunit(FHIRSubstanceNucleicAcidSubunit $subunit): self
     {
@@ -443,6 +453,8 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
      * Subunits are listed in order of decreasing length; sequences of the same length
      * will be ordered by molecular weight; subunits that have identical sequences will
      * be repeated multiple times.
+     *
+     * @return static
      */
     public function setSubunit(FHIRSubstanceNucleicAcidSubunit ...$subunit): self
     {

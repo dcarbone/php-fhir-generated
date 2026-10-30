@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -225,6 +225,8 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
      * The coded diagnosis or a reference to a Condition (with other resources
      * referenced in the evidence.detail), the use property will indicate the purpose
      * of this specific diagnosis.
+     *
+     * @return static
      */
     public function addCondition(FHIRCodeableReference $condition): self
     {
@@ -244,6 +246,8 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
      * The coded diagnosis or a reference to a Condition (with other resources
      * referenced in the evidence.detail), the use property will indicate the purpose
      * of this specific diagnosis.
+     *
+     * @return static
      */
     public function setCondition(FHIRCodeableReference ...$condition): self
     {
@@ -290,6 +294,8 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
      *
      * Role that this diagnosis has within the encounter (e.g. admission, billing,
      * discharge …).
+     *
+     * @return static
      */
     public function addUse(FHIRCodeableConcept $use): self
     {
@@ -308,6 +314,8 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
      *
      * Role that this diagnosis has within the encounter (e.g. admission, billing,
      * discharge …).
+     *
+     * @return static
      */
     public function setUse(FHIRCodeableConcept ...$use): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -199,6 +199,8 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable name for the target system.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -233,6 +235,8 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement
      *
      * Identifies the target end system in situations where the initial message
      * transmission is to an intermediary system.
+     *
+     * @return static
      */
     public function setTarget(null|FHIRReference $target): self
     {
@@ -262,6 +266,8 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates where the message should be routed to.
+     *
+     * @return static
      */
     public function setEndpoint(null|string|FHIRUriPrimitive|FHIRUri $endpoint): self
     {

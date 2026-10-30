@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -265,6 +265,8 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      *
      * The quantity of substance in the unit of presentation, or in the volume (or
      * mass) of the single pharmaceutical product or manufactured item.
+     *
+     * @return static
      */
     public function setPresentation(null|FHIRRatio $presentation): self
     {
@@ -300,6 +302,8 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * A lower limit for the quantity of substance in the unit of presentation. For use
      * when there is a range of strengths, this is the lower limit, with the
      * presentation attribute becoming the upper limit.
+     *
+     * @return static
      */
     public function setPresentationLowLimit(null|FHIRRatio $presentationLowLimit): self
     {
@@ -331,6 +335,8 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The strength per unitary volume (or mass).
+     *
+     * @return static
      */
     public function setConcentration(null|FHIRRatio $concentration): self
     {
@@ -364,6 +370,8 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      *
      * A lower limit for the strength per unitary volume (or mass), for when there is a
      * range. The concentration attribute then becomes the upper limit.
+     *
+     * @return static
      */
     public function setConcentrationLowLimit(null|FHIRRatio $concentrationLowLimit): self
     {
@@ -393,6 +401,8 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * For when strength is measured at a particular point or distance.
+     *
+     * @return static
      */
     public function setMeasurementPoint(null|string|FHIRStringPrimitive|FHIRString $measurementPoint): self
     {
@@ -440,6 +450,8 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country or countries for which the strength range applies.
+     *
+     * @return static
      */
     public function addCountry(FHIRCodeableConcept $country): self
     {
@@ -457,6 +469,8 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country or countries for which the strength range applies.
+     *
+     * @return static
      */
     public function setCountry(FHIRCodeableConcept ...$country): self
     {
@@ -495,6 +509,8 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * An ingredient of a manufactured item or pharmaceutical product.
      *
      * Strength expressed in terms of a reference substance.
+     *
+     * @return static
      */
     public function addReferenceStrength(FHIRMedicinalProductIngredientReferenceStrength $referenceStrength): self
     {
@@ -509,6 +525,8 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * An ingredient of a manufactured item or pharmaceutical product.
      *
      * Strength expressed in terms of a reference substance.
+     *
+     * @return static
      */
     public function setReferenceStrength(FHIRMedicinalProductIngredientReferenceStrength ...$referenceStrength): self
     {

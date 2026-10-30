@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -250,6 +250,8 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The situation that is being documented as contraindicating against this item.
+     *
+     * @return static
      */
     public function setDiseaseSymptomProcedure(null|FHIRCodeableReference $diseaseSymptomProcedure): self
     {
@@ -283,6 +285,8 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      *
      * The status of the disease or symptom for the contraindication, for example
      * "chronic" or "metastatic".
+     *
+     * @return static
      */
     public function setDiseaseStatus(null|FHIRCodeableReference $diseaseStatus): self
     {
@@ -327,6 +331,8 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A comorbidity (concurrent condition) or coinfection.
+     *
+     * @return static
      */
     public function addComorbidity(FHIRCodeableReference $comorbidity): self
     {
@@ -344,6 +350,8 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A comorbidity (concurrent condition) or coinfection.
+     *
+     * @return static
      */
     public function setComorbidity(FHIRCodeableReference ...$comorbidity): self
     {
@@ -386,6 +394,8 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The indication which this is a contraidication for.
+     *
+     * @return static
      */
     public function addIndication(FHIRReference $indication): self
     {
@@ -402,6 +412,8 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The indication which this is a contraidication for.
+     *
+     * @return static
      */
     public function setIndication(FHIRReference ...$indication): self
     {
@@ -444,6 +456,8 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      *
      * Information about the use of the medicinal product in relation to other
      * therapies described as part of the contraindication.
+     *
+     * @return static
      */
     public function addOtherTherapy(FHIRClinicalUseDefinitionOtherTherapy $otherTherapy): self
     {
@@ -460,6 +474,8 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      *
      * Information about the use of the medicinal product in relation to other
      * therapies described as part of the contraindication.
+     *
+     * @return static
      */
     public function setOtherTherapy(FHIRClinicalUseDefinitionOtherTherapy ...$otherTherapy): self
     {

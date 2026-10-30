@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -556,6 +556,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * Identifiers for the ImagingStudy such as DICOM Study Instance UID, and Accession
      * Number.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -574,6 +576,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * Identifiers for the ImagingStudy such as DICOM Study Instance UID, and Accession
      * Number.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -601,6 +605,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the ImagingStudy.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRImagingStudyStatusList|FHIRImagingStudyStatus $status): self
     {
@@ -648,6 +654,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * A list of all the series.modality values that are actual acquisition modalities,
      * i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
+     *
+     * @return static
      */
     public function addModality(FHIRCoding $modality): self
     {
@@ -665,6 +673,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * A list of all the series.modality values that are actual acquisition modalities,
      * i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
+     *
+     * @return static
      */
     public function setModality(FHIRCoding ...$modality): self
     {
@@ -694,6 +704,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject, typically a patient, of the imaging study.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -725,6 +737,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * The healthcare event (e.g. a patient and healthcare provider interaction) during
      * which this ImagingStudy is made.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -760,6 +774,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date and time the study started.
+     *
+     * @return static
      */
     public function setStarted(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $started): self
     {
@@ -807,6 +823,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * A list of the diagnostic requests that resulted in this imaging study being
      * performed.
+     *
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -824,6 +842,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * A list of the diagnostic requests that resulted in this imaging study being
      * performed.
+     *
+     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -853,6 +873,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The requesting/referring physician.
+     *
+     * @return static
      */
     public function setReferrer(null|FHIRReference $referrer): self
     {
@@ -895,6 +917,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who read the study and interpreted the images or other content.
+     *
+     * @return static
      */
     public function addInterpreter(FHIRReference $interpreter): self
     {
@@ -911,6 +935,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who read the study and interpreted the images or other content.
+     *
+     * @return static
      */
     public function setInterpreter(FHIRReference ...$interpreter): self
     {
@@ -959,6 +985,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * study. See implementation notes for information about using DICOM endpoints. A
      * study-level endpoint applies to each series in the study, unless overridden by a
      * series-level endpoint with the same Endpoint.connectionType.
+     *
+     * @return static
      */
     public function addEndpoint(FHIRReference $endpoint): self
     {
@@ -978,6 +1006,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * study. See implementation notes for information about using DICOM endpoints. A
      * study-level endpoint applies to each series in the study, unless overridden by a
      * series-level endpoint with the same Endpoint.connectionType.
+     *
+     * @return static
      */
     public function setEndpoint(FHIRReference ...$endpoint): self
     {
@@ -1013,6 +1043,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * series elements this Resource contains due to resource availability, security,
      * or other factors. This element should be present if any series elements are
      * present.
+     *
+     * @return static
      */
     public function setNumberOfSeries(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $numberOfSeries): self
     {
@@ -1051,6 +1083,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * of instance elements this resource contains due to resource availability,
      * security, or other factors. This element should be present if any instance
      * elements are present.
+     *
+     * @return static
      */
     public function setNumberOfInstances(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $numberOfInstances): self
     {
@@ -1083,6 +1117,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The procedure which this ImagingStudy was part of.
+     *
+     * @return static
      */
     public function setProcedureReference(null|FHIRReference $procedureReference): self
     {
@@ -1127,6 +1163,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The code for the performed procedure type.
+     *
+     * @return static
      */
     public function addProcedureCode(FHIRCodeableConcept $procedureCode): self
     {
@@ -1144,6 +1182,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The code for the performed procedure type.
+     *
+     * @return static
      */
     public function setProcedureCode(FHIRCodeableConcept ...$procedureCode): self
     {
@@ -1173,6 +1213,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The principal physical location where the ImagingStudy was performed.
+     *
+     * @return static
      */
     public function setLocation(null|FHIRReference $location): self
     {
@@ -1217,6 +1259,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description of clinical condition indicating why the ImagingStudy was requested.
+     *
+     * @return static
      */
     public function addReasonCode(FHIRCodeableConcept $reasonCode): self
     {
@@ -1234,6 +1278,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description of clinical condition indicating why the ImagingStudy was requested.
+     *
+     * @return static
      */
     public function setReasonCode(FHIRCodeableConcept ...$reasonCode): self
     {
@@ -1276,6 +1322,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates another resource whose existence justifies this Study.
+     *
+     * @return static
      */
     public function addReasonReference(FHIRReference $reasonReference): self
     {
@@ -1292,6 +1340,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates another resource whose existence justifies this Study.
+     *
+     * @return static
      */
     public function setReasonReference(FHIRReference ...$reasonReference): self
     {
@@ -1342,6 +1392,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * Description attribute (0008,1030). Observations or findings about the imaging
      * study should be recorded in another resource, e.g. Observation, and not in this
      * element.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1362,6 +1414,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * Description attribute (0008,1030). Observations or findings about the imaging
      * study should be recorded in another resource, e.g. Observation, and not in this
      * element.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1393,6 +1447,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * The Imaging Manager description of the study. Institution-generated description
      * or classification of the Study (component) performed.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -1442,6 +1498,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * ultrasound), but a study may have multiple series of different modalities.
      *
      * Each study has one or more series of images or other content.
+     *
+     * @return static
      */
     public function addSeries(FHIRImagingStudySeries $series): self
     {
@@ -1460,6 +1518,8 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * ultrasound), but a study may have multiple series of different modalities.
      *
      * Each study has one or more series of images or other content.
+     *
+     * @return static
      */
     public function setSeries(FHIRImagingStudySeries ...$series): self
     {

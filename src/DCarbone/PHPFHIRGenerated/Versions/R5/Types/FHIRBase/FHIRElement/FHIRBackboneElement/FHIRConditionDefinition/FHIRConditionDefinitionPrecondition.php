@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -157,7 +157,7 @@ class FHIRConditionDefinitionPrecondition extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Value of Observation. (choose any one of value*, but only one)
+     * Value of Observation.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
@@ -168,7 +168,7 @@ class FHIRConditionDefinitionPrecondition extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Value of Observation. (choose any one of value*, but only one)
+     * Value of Observation.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -228,6 +228,8 @@ class FHIRConditionDefinitionPrecondition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Kind of pre-condition.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRConditionPreconditionTypeEnum|FHIRConditionPreconditionType $type): self
     {
@@ -262,6 +264,8 @@ class FHIRConditionDefinitionPrecondition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code for relevant Observation.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -279,7 +283,7 @@ class FHIRConditionDefinitionPrecondition extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Value of Observation. (choose any one of value*, but only one)
+     * Value of Observation.
      */
     public function getValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -292,7 +296,9 @@ class FHIRConditionDefinitionPrecondition extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Value of Observation. (choose any one of value*, but only one)
+     * Value of Observation.
+     *
+     * @return static
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -311,7 +317,7 @@ class FHIRConditionDefinitionPrecondition extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Value of Observation. (choose any one of value*, but only one)
+     * Value of Observation.
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -325,7 +331,9 @@ class FHIRConditionDefinitionPrecondition extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Value of Observation. (choose any one of value*, but only one)
+     * Value of Observation.
+     *
+     * @return static
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {

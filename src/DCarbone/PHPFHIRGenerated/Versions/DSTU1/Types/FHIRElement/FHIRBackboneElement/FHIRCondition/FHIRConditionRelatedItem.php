@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -193,6 +193,8 @@ class FHIRConditionRelatedItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of relationship that this condition has to the related item.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRConditionRelationshipTypeList|FHIRConditionRelationshipType $type): self
     {
@@ -229,6 +231,8 @@ class FHIRConditionRelatedItem extends FHIRBackboneElement
      *
      * Code that identifies the target of this relationship. The code takes the place
      * of a detailed instance target.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -258,6 +262,8 @@ class FHIRConditionRelatedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Target of the relationship.
+     *
+     * @return static
      */
     public function setTarget(null|FHIRResourceReference $target): self
     {

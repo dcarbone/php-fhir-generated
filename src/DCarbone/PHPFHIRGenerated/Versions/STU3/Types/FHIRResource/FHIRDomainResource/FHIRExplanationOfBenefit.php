@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -822,6 +822,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The EOB Business Identifier.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -838,6 +840,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The EOB Business Identifier.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -865,6 +869,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRExplanationOfBenefitStatusList|FHIRExplanationOfBenefitStatus $status): self
     {
@@ -899,6 +905,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The category of claim, eg, oral, pharmacy, vision, insitutional, professional.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -945,6 +953,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * A finer grained suite of claim subtype codes which may convey Inpatient vs
      * Outpatient and/or a specialty service. In the US the BillType.
+     *
+     * @return static
      */
     public function addSubType(FHIRCodeableConcept $subType): self
     {
@@ -963,6 +973,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * A finer grained suite of claim subtype codes which may convey Inpatient vs
      * Outpatient and/or a specialty service. In the US the BillType.
+     *
+     * @return static
      */
     public function setSubType(FHIRCodeableConcept ...$subType): self
     {
@@ -992,6 +1004,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Patient Resource.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -1021,6 +1035,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The billable period for which charges are being submitted.
+     *
+     * @return static
      */
     public function setBillablePeriod(null|FHIRPeriod $billablePeriod): self
     {
@@ -1056,6 +1072,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the EOB was created.
+     *
+     * @return static
      */
     public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created): self
     {
@@ -1088,6 +1106,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who created the explanation of benefit.
+     *
+     * @return static
      */
     public function setEnterer(null|FHIRReference $enterer): self
     {
@@ -1117,6 +1137,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The insurer which is responsible for the explanation of benefit.
+     *
+     * @return static
      */
     public function setInsurer(null|FHIRReference $insurer): self
     {
@@ -1146,6 +1168,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The provider which is responsible for the claim.
+     *
+     * @return static
      */
     public function setProvider(null|FHIRReference $provider): self
     {
@@ -1175,6 +1199,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The provider which is responsible for the claim.
+     *
+     * @return static
      */
     public function setOrganization(null|FHIRReference $organization): self
     {
@@ -1206,6 +1232,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * The referral resource which lists the date, practitioner, reason and other
      * supporting information.
+     *
+     * @return static
      */
     public function setReferral(null|FHIRReference $referral): self
     {
@@ -1235,6 +1263,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Facility where the services were provided.
+     *
+     * @return static
      */
     public function setFacility(null|FHIRReference $facility): self
     {
@@ -1266,6 +1296,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * The business identifier for the instance: invoice number, claim number,
      * pre-determination or pre-authorization number.
+     *
+     * @return static
      */
     public function setClaim(null|FHIRReference $claim): self
     {
@@ -1297,6 +1329,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * The business identifier for the instance: invoice number, claim number,
      * pre-determination or pre-authorization number.
+     *
+     * @return static
      */
     public function setClaimResponse(null|FHIRReference $claimResponse): self
     {
@@ -1328,6 +1362,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Processing outcome errror, partial or complete processing.
+     *
+     * @return static
      */
     public function setOutcome(null|FHIRCodeableConcept $outcome): self
     {
@@ -1357,6 +1393,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the status of the adjudication.
+     *
+     * @return static
      */
     public function setDisposition(null|string|FHIRStringPrimitive|FHIRString $disposition): self
     {
@@ -1404,6 +1442,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * Other claims which are related to this claim such as prior claim versions or for
      * related services.
+     *
+     * @return static
      */
     public function addRelated(FHIRExplanationOfBenefitRelated $related): self
     {
@@ -1421,6 +1461,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * Other claims which are related to this claim such as prior claim versions or for
      * related services.
+     *
+     * @return static
      */
     public function setRelated(FHIRExplanationOfBenefitRelated ...$related): self
     {
@@ -1450,6 +1492,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Prescription to support the dispensing of Pharmacy or Vision products.
+     *
+     * @return static
      */
     public function setPrescription(null|FHIRReference $prescription): self
     {
@@ -1491,6 +1535,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * issues a new precription for an alternate medication which has the same
      * theraputic intent. The prescription from the pharmacy becomes the 'prescription'
      * and that from the physician becomes the 'original prescription'.
+     *
+     * @return static
      */
     public function setOriginalPrescription(null|FHIRReference $originalPrescription): self
     {
@@ -1520,6 +1566,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * the subscriber of the benefits provided.
      *
      * The party to be reimbursed for the services.
+     *
+     * @return static
      */
     public function setPayee(null|FHIRExplanationOfBenefitPayee $payee): self
     {
@@ -1566,6 +1614,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * Additional information codes regarding exceptions, special considerations, the
      * condition, situation, prior or concurrent issues. Often there are mutiple
      * jurisdiction specific valuesets which are required.
+     *
+     * @return static
      */
     public function addInformation(FHIRExplanationOfBenefitInformation $information): self
     {
@@ -1584,6 +1634,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * Additional information codes regarding exceptions, special considerations, the
      * condition, situation, prior or concurrent issues. Often there are mutiple
      * jurisdiction specific valuesets which are required.
+     *
+     * @return static
      */
     public function setInformation(FHIRExplanationOfBenefitInformation ...$information): self
     {
@@ -1628,6 +1680,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * The members of the team who provided the overall service as well as their role
      * and whether responsible and qualifications.
+     *
+     * @return static
      */
     public function addCareTeam(FHIRExplanationOfBenefitCareTeam $careTeam): self
     {
@@ -1645,6 +1699,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * The members of the team who provided the overall service as well as their role
      * and whether responsible and qualifications.
+     *
+     * @return static
      */
     public function setCareTeam(FHIRExplanationOfBenefitCareTeam ...$careTeam): self
     {
@@ -1687,6 +1743,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * the subscriber of the benefits provided.
      *
      * Ordered list of patient diagnosis for which care is sought.
+     *
+     * @return static
      */
     public function addDiagnosis(FHIRExplanationOfBenefitDiagnosis $diagnosis): self
     {
@@ -1703,6 +1761,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * the subscriber of the benefits provided.
      *
      * Ordered list of patient diagnosis for which care is sought.
+     *
+     * @return static
      */
     public function setDiagnosis(FHIRExplanationOfBenefitDiagnosis ...$diagnosis): self
     {
@@ -1745,6 +1805,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * the subscriber of the benefits provided.
      *
      * Ordered list of patient procedures performed to support the adjudication.
+     *
+     * @return static
      */
     public function addProcedure(FHIRExplanationOfBenefitProcedure $procedure): self
     {
@@ -1761,6 +1823,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * the subscriber of the benefits provided.
      *
      * Ordered list of patient procedures performed to support the adjudication.
+     *
+     * @return static
      */
     public function setProcedure(FHIRExplanationOfBenefitProcedure ...$procedure): self
     {
@@ -1790,6 +1854,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * the Narrative, or extensions
      *
      * Precedence (primary, secondary, etc.).
+     *
+     * @return static
      */
     public function setPrecedence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $precedence): self
     {
@@ -1822,6 +1888,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * the subscriber of the benefits provided.
      *
      * Financial instrument by which payment information for health care.
+     *
+     * @return static
      */
     public function setInsurance(null|FHIRExplanationOfBenefitInsurance $insurance): self
     {
@@ -1851,6 +1919,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * the subscriber of the benefits provided.
      *
      * An accident which resulted in the need for healthcare services.
+     *
+     * @return static
      */
     public function setAccident(null|FHIRExplanationOfBenefitAccident $accident): self
     {
@@ -1882,6 +1952,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * The start and optional end dates of when the patient was precluded from working
      * due to the treatable condition(s).
+     *
+     * @return static
      */
     public function setEmploymentImpacted(null|FHIRPeriod $employmentImpacted): self
     {
@@ -1913,6 +1985,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * The start and optional end dates of when the patient was confined to a treatment
      * center.
+     *
+     * @return static
      */
     public function setHospitalization(null|FHIRPeriod $hospitalization): self
     {
@@ -1955,6 +2029,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * the subscriber of the benefits provided.
      *
      * First tier of goods and services.
+     *
+     * @return static
      */
     public function addItem(FHIRExplanationOfBenefitItem $item): self
     {
@@ -1971,6 +2047,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * the subscriber of the benefits provided.
      *
      * First tier of goods and services.
+     *
+     * @return static
      */
     public function setItem(FHIRExplanationOfBenefitItem ...$item): self
     {
@@ -2013,6 +2091,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * the subscriber of the benefits provided.
      *
      * The first tier service adjudications for payor added services.
+     *
+     * @return static
      */
     public function addAddItem(FHIRExplanationOfBenefitAddItem $addItem): self
     {
@@ -2029,6 +2109,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * the subscriber of the benefits provided.
      *
      * The first tier service adjudications for payor added services.
+     *
+     * @return static
      */
     public function setAddItem(FHIRExplanationOfBenefitAddItem ...$addItem): self
     {
@@ -2058,6 +2140,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The total cost of the services reported.
+     *
+     * @return static
      */
     public function setTotalCost(null|FHIRMoney $totalCost): self
     {
@@ -2089,6 +2173,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * The amount of deductable applied which was not allocated to any particular
      * service line.
+     *
+     * @return static
      */
     public function setUnallocDeductable(null|FHIRMoney $unallocDeductable): self
     {
@@ -2120,6 +2206,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * Total amount of benefit payable (Equal to sum of the Benefit amounts from all
      * detail lines and additions less the Unallocated Deductable).
+     *
+     * @return static
      */
     public function setTotalBenefit(null|FHIRMoney $totalBenefit): self
     {
@@ -2149,6 +2237,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * the subscriber of the benefits provided.
      *
      * Payment details for the claim if the claim has been paid.
+     *
+     * @return static
      */
     public function setPayment(null|FHIRExplanationOfBenefitPayment $payment): self
     {
@@ -2180,6 +2270,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The form to be used for printing the content.
+     *
+     * @return static
      */
     public function setForm(null|FHIRCodeableConcept $form): self
     {
@@ -2222,6 +2314,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * the subscriber of the benefits provided.
      *
      * Note text.
+     *
+     * @return static
      */
     public function addProcessNote(FHIRExplanationOfBenefitProcessNote $processNote): self
     {
@@ -2238,6 +2332,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * the subscriber of the benefits provided.
      *
      * Note text.
+     *
+     * @return static
      */
     public function setProcessNote(FHIRExplanationOfBenefitProcessNote ...$processNote): self
     {
@@ -2280,6 +2376,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * the subscriber of the benefits provided.
      *
      * Balance by Benefit Category.
+     *
+     * @return static
      */
     public function addBenefitBalance(FHIRExplanationOfBenefitBenefitBalance $benefitBalance): self
     {
@@ -2296,6 +2394,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * the subscriber of the benefits provided.
      *
      * Balance by Benefit Category.
+     *
+     * @return static
      */
     public function setBenefitBalance(FHIRExplanationOfBenefitBenefitBalance ...$benefitBalance): self
     {

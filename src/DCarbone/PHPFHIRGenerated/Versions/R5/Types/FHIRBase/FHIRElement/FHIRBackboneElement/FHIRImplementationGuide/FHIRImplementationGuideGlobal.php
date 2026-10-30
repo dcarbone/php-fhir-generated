@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -202,6 +202,8 @@ class FHIRImplementationGuideGlobal extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of resource that all instances must conform to.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRResourceTypeEnum|FHIRResourceType $type): self
     {
@@ -236,6 +238,8 @@ class FHIRImplementationGuideGlobal extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A reference to the profile that all instances must conform to.
+     *
+     * @return static
      */
     public function setProfile(null|string|FHIRCanonicalPrimitive|FHIRCanonical $profile): self
     {

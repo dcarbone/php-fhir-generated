@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -574,6 +574,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Response business identifier.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -590,6 +592,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Response business identifier.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -619,6 +623,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Original request resource referrence.
+     *
+     * @return static
      */
     public function setRequest(null|FHIRReference $request): self
     {
@@ -650,6 +656,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      *
      * The version of the style of resource contents. This should be mapped to the
      * allowable profiles for this and supporting resources.
+     *
+     * @return static
      */
     public function setRuleset(null|FHIRCoding $ruleset): self
     {
@@ -681,6 +689,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      *
      * The style (standard) and version of the original material which was converted
      * into this resource.
+     *
+     * @return static
      */
     public function setOriginalRuleset(null|FHIRCoding $originalRuleset): self
     {
@@ -716,6 +726,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the enclosed suite of services were performed or completed.
+     *
+     * @return static
      */
     public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created): self
     {
@@ -748,6 +760,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Insurer who produced this adjudicated response.
+     *
+     * @return static
      */
     public function setOrganization(null|FHIRReference $organization): self
     {
@@ -777,6 +791,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who is responsible for the services rendered to the patient.
+     *
+     * @return static
      */
     public function setRequestProvider(null|FHIRReference $requestProvider): self
     {
@@ -806,6 +822,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization which is responsible for the services rendered to the patient.
+     *
+     * @return static
      */
     public function setRequestOrganization(null|FHIRReference $requestOrganization): self
     {
@@ -837,6 +855,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * the Narrative, or extensions
      *
      * Transaction status: error, complete.
+     *
+     * @return static
      */
     public function setOutcome(null|string|FHIRCodePrimitive|FHIRCode $outcome): self
     {
@@ -869,6 +889,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the status of the adjudication.
+     *
+     * @return static
      */
     public function setDisposition(null|string|FHIRStringPrimitive|FHIRString $disposition): self
     {
@@ -901,6 +923,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Party to be reimbursed: Subscriber, provider, other.
+     *
+     * @return static
      */
     public function setPayeeType(null|FHIRCoding $payeeType): self
     {
@@ -941,6 +965,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * resource.
      *
      * The first tier service adjudications for submitted services.
+     *
+     * @return static
      */
     public function addItem(FHIRClaimResponseItem $item): self
     {
@@ -956,6 +982,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * resource.
      *
      * The first tier service adjudications for submitted services.
+     *
+     * @return static
      */
     public function setItem(FHIRClaimResponseItem ...$item): self
     {
@@ -996,6 +1024,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * resource.
      *
      * The first tier service adjudications for payor added services.
+     *
+     * @return static
      */
     public function addAddItem(FHIRClaimResponseAddItem $addItem): self
     {
@@ -1011,6 +1041,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * resource.
      *
      * The first tier service adjudications for payor added services.
+     *
+     * @return static
      */
     public function setAddItem(FHIRClaimResponseAddItem ...$addItem): self
     {
@@ -1051,6 +1083,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * resource.
      *
      * Mutually exclusive with Services Provided (Item).
+     *
+     * @return static
      */
     public function addError(FHIRClaimResponseError $error): self
     {
@@ -1066,6 +1100,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * resource.
      *
      * Mutually exclusive with Services Provided (Item).
+     *
+     * @return static
      */
     public function setError(FHIRClaimResponseError ...$error): self
     {
@@ -1087,6 +1123,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
 
     /**
      * The total cost of the services reported.
+     *
+     * @return static
      */
     public function setTotalCost(null|FHIRMoney $totalCost): self
     {
@@ -1110,6 +1148,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
     /**
      * The amount of deductible applied which was not allocated to any particular
      * service line.
+     *
+     * @return static
      */
     public function setUnallocDeductable(null|FHIRMoney $unallocDeductable): self
     {
@@ -1133,6 +1173,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
     /**
      * Total amount of benefit payable (Equal to sum of the Benefit amounts from all
      * detail lines and additions less the Unallocated Deductible).
+     *
+     * @return static
      */
     public function setTotalBenefit(null|FHIRMoney $totalBenefit): self
     {
@@ -1156,6 +1198,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
     /**
      * Adjustment to the payment of this transaction which is not related to
      * adjudication of this transaction.
+     *
+     * @return static
      */
     public function setPaymentAdjustment(null|FHIRMoney $paymentAdjustment): self
     {
@@ -1185,6 +1229,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason for the payment adjustment.
+     *
+     * @return static
      */
     public function setPaymentAdjustmentReason(null|FHIRCoding $paymentAdjustmentReason): self
     {
@@ -1216,6 +1262,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Estimated payment data.
+     *
+     * @return static
      */
     public function setPaymentDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $paymentDate): self
     {
@@ -1240,6 +1288,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
 
     /**
      * Payable less any payment adjustment.
+     *
+     * @return static
      */
     public function setPaymentAmount(null|FHIRMoney $paymentAmount): self
     {
@@ -1269,6 +1319,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Payment identifier.
+     *
+     * @return static
      */
     public function setPaymentRef(null|FHIRIdentifier $paymentRef): self
     {
@@ -1298,6 +1350,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Status of funds reservation (For provider, for Patient, None).
+     *
+     * @return static
      */
     public function setReserved(null|FHIRCoding $reserved): self
     {
@@ -1327,6 +1381,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The form to be used for printing the content.
+     *
+     * @return static
      */
     public function setForm(null|FHIRCoding $form): self
     {
@@ -1367,6 +1423,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * resource.
      *
      * Note text.
+     *
+     * @return static
      */
     public function addNote(FHIRClaimResponseNote $note): self
     {
@@ -1382,6 +1440,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * resource.
      *
      * Note text.
+     *
+     * @return static
      */
     public function setNote(FHIRClaimResponseNote ...$note): self
     {
@@ -1422,6 +1482,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * resource.
      *
      * Financial instrument by which payment information for health care.
+     *
+     * @return static
      */
     public function addCoverage(FHIRClaimResponseCoverage $coverage): self
     {
@@ -1437,6 +1499,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements VersionContainedTy
      * resource.
      *
      * Financial instrument by which payment information for health care.
+     *
+     * @return static
      */
     public function setCoverage(FHIRClaimResponseCoverage ...$coverage): self
     {

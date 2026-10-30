@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -240,7 +240,7 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
      */
     #[FHIRString]
     protected FHIRString $versionAlgorithmString;
@@ -250,7 +250,7 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
      */
     #[FHIRCoding]
     protected FHIRCoding $versionAlgorithmCoding;
@@ -544,6 +544,8 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      * will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the compartment definition is stored on different
      * servers.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -586,6 +588,8 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      * not expected to be globally unique. For example, it might be a timestamp (e.g.
      * yyyymmdd) if a managed version is not available. There is also no expectation
      * that versions can be placed in a lexicographical sequence.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -606,7 +610,7 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
      */
     public function getVersionAlgorithmString(): null|FHIRString
     {
@@ -619,7 +623,9 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
+     *
+     * @return static
      */
     public function setVersionAlgorithmString(null|string|FHIRStringPrimitive|FHIRString $versionAlgorithmString): self
     {
@@ -640,7 +646,7 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
      */
     public function getVersionAlgorithmCoding(): null|FHIRCoding
     {
@@ -653,7 +659,9 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
+     *
+     * @return static
      */
     public function setVersionAlgorithmCoding(null|FHIRCoding $versionAlgorithmCoding): self
     {
@@ -687,6 +695,8 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      * A natural language name identifying the compartment definition. This name should
      * be usable as an identifier for the module by machine processing applications
      * such as code generation.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -719,6 +729,8 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the capability statement.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -749,6 +761,8 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      *
      * The status of this compartment definition. Enables tracking the life-cycle of
      * the content.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -783,6 +797,8 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      * A Boolean value to indicate that this compartment definition is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended to be
      * used for genuine usage.
+     *
+     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -829,6 +845,8 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      * significantly changed. The date must change when the business version changes
      * and it must change if the status code changes. In addition, it should change
      * when the substantive content of the compartment definition changes.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -863,6 +881,8 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the compartment definition.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -910,6 +930,8 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -927,6 +949,8 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -966,6 +990,8 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      *
      * A free text natural language description of the compartment definition from a
      * consumer's perspective.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1025,6 +1051,8 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate compartment
      * definition instances.
+     *
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1048,6 +1076,8 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate compartment
      * definition instances.
+     *
+     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1087,6 +1117,8 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      *
      * Explanation of why this compartment definition is needed and why it has been
      * designed as it has.
+     *
+     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1115,6 +1147,8 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Which compartment this definition describes.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCompartmentTypeEnum|FHIRCompartmentType $code): self
     {
@@ -1145,6 +1179,8 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the search syntax is supported,.
+     *
+     * @return static
      */
     public function setSearch(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $search): self
     {
@@ -1186,6 +1222,8 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      * A compartment definition that defines how resources are accessed on a server.
      *
      * Information about how a resource is related to the compartment.
+     *
+     * @return static
      */
     public function addResource(FHIRCompartmentDefinitionResource $resource): self
     {
@@ -1200,6 +1238,8 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      * A compartment definition that defines how resources are accessed on a server.
      *
      * Information about how a resource is related to the compartment.
+     *
+     * @return static
      */
     public function setResource(FHIRCompartmentDefinitionResource ...$resource): self
     {

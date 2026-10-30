@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -357,6 +357,8 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * The label for this particular section. This will be part of the rendered content
      * for the document, and is often used to build a table of contents.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -393,6 +395,8 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * A code identifying the kind of content contained within the section. This must
      * be consistent with the section title.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -437,6 +441,8 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * Identifies who is responsible for the information in this section, not
      * necessarily who typed it in.
+     *
+     * @return static
      */
     public function addAuthor(FHIRReference $author): self
     {
@@ -454,6 +460,8 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * Identifies who is responsible for the information in this section, not
      * necessarily who typed it in.
+     *
+     * @return static
      */
     public function setAuthor(FHIRReference ...$author): self
     {
@@ -497,6 +505,8 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * a focus SHALL only include resources where the logical subject (patient,
      * subject, focus, etc.) matches the section focus, or the resources have no
      * logical subject (few resources).
+     *
+     * @return static
      */
     public function setFocus(null|FHIRReference $focus): self
     {
@@ -534,6 +544,8 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * used to represent the content of the resource to a human. The narrative need not
      * encode all the structured data, but is required to contain sufficient detail to
      * make it "clinically safe" for a human to just read the narrative.
+     *
+     * @return static
      */
     public function setText(null|FHIRNarrative $text): self
     {
@@ -565,6 +577,8 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * for being maintained on an ongoing basis, or if it represents a snapshot of a
      * list of items from another source, or whether it is a prepared list where items
      * may be marked as added, modified or deleted.
+     *
+     * @return static
      */
     public function setMode(null|string|FHIRListModeEnum|FHIRListMode $mode): self
     {
@@ -599,6 +613,8 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the order applied to the items in the section entries.
+     *
+     * @return static
      */
     public function setOrderedBy(null|FHIRCodeableConcept $orderedBy): self
     {
@@ -643,6 +659,8 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * A reference to the actual resource from which the narrative in the section is
      * derived.
+     *
+     * @return static
      */
     public function addEntry(FHIRReference $entry): self
     {
@@ -660,6 +678,8 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * A reference to the actual resource from which the narrative in the section is
      * derived.
+     *
+     * @return static
      */
     public function setEntry(FHIRReference ...$entry): self
     {
@@ -693,6 +713,8 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * If the section is empty, why the list is empty. An empty section typically has
      * some text explaining the empty reason.
+     *
+     * @return static
      */
     public function setEmptyReason(null|FHIRCodeableConcept $emptyReason): self
     {
@@ -747,6 +769,8 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * Patient, Practitioner, Encounter, etc.).
      *
      * A nested sub-section within this section.
+     *
+     * @return static
      */
     public function addSection(FHIRCompositionSection $section): self
     {
@@ -769,6 +793,8 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * Patient, Practitioner, Encounter, etc.).
      *
      * A nested sub-section within this section.
+     *
+     * @return static
      */
     public function setSection(FHIRCompositionSection ...$section): self
     {

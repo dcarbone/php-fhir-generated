@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -280,6 +280,8 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A unique name for the group for the convenience of human readers.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRIdPrimitive|FHIRId $name): self
     {
@@ -318,6 +320,8 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Another group that this group adds rules to.
+     *
+     * @return static
      */
     public function setExtends(null|string|FHIRIdPrimitive|FHIRId $extends): self
     {
@@ -348,6 +352,8 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      *
      * If this is the default rule set to apply for the source type or this combination
      * of types.
+     *
+     * @return static
      */
     public function setTypeMode(null|string|FHIRStructureMapGroupTypeModeEnum|FHIRStructureMapGroupTypeMode $typeMode): self
     {
@@ -382,6 +388,8 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      *
      * Additional supporting documentation that explains the purpose of the group and
      * the types of mappings within it.
+     *
+     * @return static
      */
     public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation): self
     {
@@ -425,6 +433,8 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      *
      * A name assigned to an instance of data. The instance must be provided when the
      * mapping is invoked.
+     *
+     * @return static
      */
     public function addInput(FHIRStructureMapInput $input): self
     {
@@ -440,6 +450,8 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      *
      * A name assigned to an instance of data. The instance must be provided when the
      * mapping is invoked.
+     *
+     * @return static
      */
     public function setInput(FHIRStructureMapInput ...$input): self
     {
@@ -478,6 +490,8 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      * A Map of relationships between 2 structures that can be used to transform data.
      *
      * Transform Rule from source to target.
+     *
+     * @return static
      */
     public function addRule(FHIRStructureMapRule $rule): self
     {
@@ -492,6 +506,8 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      * A Map of relationships between 2 structures that can be used to transform data.
      *
      * Transform Rule from source to target.
+     *
+     * @return static
      */
     public function setRule(FHIRStructureMapRule ...$rule): self
     {

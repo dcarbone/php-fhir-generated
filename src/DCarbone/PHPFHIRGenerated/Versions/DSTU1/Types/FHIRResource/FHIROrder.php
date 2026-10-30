@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -329,6 +329,8 @@ class FHIROrder extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the orderer or by the receiver.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -345,6 +347,8 @@ class FHIROrder extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the orderer or by the receiver.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -378,6 +382,8 @@ class FHIROrder extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the order was made.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -410,6 +416,8 @@ class FHIROrder extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Patient this order is about.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRResourceReference $subject): self
     {
@@ -439,6 +447,8 @@ class FHIROrder extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who initiated the order.
+     *
+     * @return static
      */
     public function setSource(null|FHIRResourceReference $source): self
     {
@@ -468,6 +478,8 @@ class FHIROrder extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who is intended to fulfill the order.
+     *
+     * @return static
      */
     public function setTarget(null|FHIRResourceReference $target): self
     {
@@ -499,6 +511,8 @@ class FHIROrder extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Text - why the order was made.
+     *
+     * @return static
      */
     public function setReasonCodeableConcept(null|FHIRCodeableConcept $reasonCodeableConcept): self
     {
@@ -528,6 +542,8 @@ class FHIROrder extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Text - why the order was made.
+     *
+     * @return static
      */
     public function setReasonResource(null|FHIRResourceReference $reasonResource): self
     {
@@ -557,6 +573,8 @@ class FHIROrder extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If required by policy.
+     *
+     * @return static
      */
     public function setAuthority(null|FHIRResourceReference $authority): self
     {
@@ -582,6 +600,8 @@ class FHIROrder extends FHIRResource implements VersionContainedTypeInterface
      * A request to perform an action.
      *
      * When order should be fulfilled.
+     *
+     * @return static
      */
     public function setWhen(null|FHIROrderWhen $when): self
     {
@@ -624,6 +644,8 @@ class FHIROrder extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * What action is being ordered.
+     *
+     * @return static
      */
     public function addDetail(FHIRResourceReference $detail): self
     {
@@ -640,6 +662,8 @@ class FHIROrder extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * What action is being ordered.
+     *
+     * @return static
      */
     public function setDetail(FHIRResourceReference ...$detail): self
     {

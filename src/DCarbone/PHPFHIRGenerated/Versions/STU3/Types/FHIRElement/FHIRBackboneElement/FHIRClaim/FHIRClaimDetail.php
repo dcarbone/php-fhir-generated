@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -358,6 +358,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A service line number.
+     *
+     * @return static
      */
     public function setSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
     {
@@ -392,6 +394,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of reveneu or cost center providing the product and/or service.
+     *
+     * @return static
      */
     public function setRevenue(null|FHIRCodeableConcept $revenue): self
     {
@@ -425,6 +429,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
      *
      * Health Care Service Type Codes to identify the classification of service or
      * benefits.
+     *
+     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -462,6 +468,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * indicate the Professional Service or Product supplied (eg. CTP,
      * HCPCS,USCLS,ICD10, NCPDP,DIN,ACHI,CCI). If a grouping item then use a group code
      * to indicate the type of thing being grouped eg. 'glasses' or 'compound'.
+     *
+     * @return static
      */
     public function setService(null|FHIRCodeableConcept $service): self
     {
@@ -510,6 +518,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * Item typification or modifiers codes, eg for Oral whether the treatment is
      * cosmetic or associated with TMJ, or for medical whether the treatment was
      * outside the clinic or out of office hours.
+     *
+     * @return static
      */
     public function addModifier(FHIRCodeableConcept $modifier): self
     {
@@ -529,6 +539,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * Item typification or modifiers codes, eg for Oral whether the treatment is
      * cosmetic or associated with TMJ, or for medical whether the treatment was
      * outside the clinic or out of office hours.
+     *
+     * @return static
      */
     public function setModifier(FHIRCodeableConcept ...$modifier): self
     {
@@ -575,6 +587,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
      *
      * For programs which require reson codes for the inclusion, covering, of this
      * billed item under the program or sub-program.
+     *
+     * @return static
      */
     public function addProgramCode(FHIRCodeableConcept $programCode): self
     {
@@ -593,6 +607,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
      *
      * For programs which require reson codes for the inclusion, covering, of this
      * billed item under the program or sub-program.
+     *
+     * @return static
      */
     public function setProgramCode(FHIRCodeableConcept ...$programCode): self
     {
@@ -626,6 +642,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The number of repetitions of a service or product.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -657,6 +675,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
      *
      * If the item is a node then this is the fee for the product or service, otherwise
      * this is the total of the fees for the children of the group.
+     *
+     * @return static
      */
     public function setUnitPrice(null|FHIRMoney $unitPrice): self
     {
@@ -692,6 +712,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * A real number that represents a multiplier used in determining the overall value
      * of services delivered and/or goods received. The concept of a Factor allows for
      * a discount or surcharge multiplier to be applied to a monetary amount.
+     *
+     * @return static
      */
     public function setFactor(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $factor): self
     {
@@ -730,6 +752,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * charge. For example, the formula: unit Quantity * unit Price (Cost per Point) *
      * factor Number * points = net Amount. Quantity, factor and points are assumed to
      * be 1 if not supplied.
+     *
+     * @return static
      */
     public function setNet(null|FHIRMoney $net): self
     {
@@ -772,6 +796,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * List of Unique Device Identifiers associated with this line item.
+     *
+     * @return static
      */
     public function addUdi(FHIRReference $udi): self
     {
@@ -788,6 +814,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * List of Unique Device Identifiers associated with this line item.
+     *
+     * @return static
      */
     public function setUdi(FHIRReference ...$udi): self
     {
@@ -828,6 +856,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * a patient which is provided to an insurer for payment recovery.
      *
      * Third tier of goods and services.
+     *
+     * @return static
      */
     public function addSubDetail(FHIRClaimSubDetail $subDetail): self
     {
@@ -843,6 +873,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * a patient which is provided to an insurer for payment recovery.
      *
      * Third tier of goods and services.
+     *
+     * @return static
      */
     public function setSubDetail(FHIRClaimSubDetail ...$subDetail): self
     {

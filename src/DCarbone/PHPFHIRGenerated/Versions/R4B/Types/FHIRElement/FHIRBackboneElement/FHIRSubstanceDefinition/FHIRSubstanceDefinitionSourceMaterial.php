@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -249,6 +249,8 @@ class FHIRSubstanceDefinitionSourceMaterial extends FHIRBackboneElement
      *
      * A classification that provides the origin of the raw material. Example: cat hair
      * would be an Animal source type.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -282,6 +284,8 @@ class FHIRSubstanceDefinitionSourceMaterial extends FHIRBackboneElement
      *
      * The genus of an organism, typically referring to the Latin epithet of the genus
      * element of the plant/animal scientific name.
+     *
+     * @return static
      */
     public function setGenus(null|FHIRCodeableConcept $genus): self
     {
@@ -315,6 +319,8 @@ class FHIRSubstanceDefinitionSourceMaterial extends FHIRBackboneElement
      *
      * The species of an organism, typically referring to the Latin epithet of the
      * species of the plant/animal.
+     *
+     * @return static
      */
     public function setSpecies(null|FHIRCodeableConcept $species): self
     {
@@ -346,6 +352,8 @@ class FHIRSubstanceDefinitionSourceMaterial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An anatomical origin of the source material within an organism.
+     *
+     * @return static
      */
     public function setPart(null|FHIRCodeableConcept $part): self
     {
@@ -390,6 +398,8 @@ class FHIRSubstanceDefinitionSourceMaterial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country or countries where the material is harvested.
+     *
+     * @return static
      */
     public function addCountryOfOrigin(FHIRCodeableConcept $countryOfOrigin): self
     {
@@ -407,6 +417,8 @@ class FHIRSubstanceDefinitionSourceMaterial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country or countries where the material is harvested.
+     *
+     * @return static
      */
     public function setCountryOfOrigin(FHIRCodeableConcept ...$countryOfOrigin): self
     {

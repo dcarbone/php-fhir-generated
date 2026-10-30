@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -334,6 +334,8 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * External Ids for this item.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -350,6 +352,8 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * External Ids for this item.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -379,6 +383,8 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Whether this schedule record is in active use, or should not be used (such as
      * was entered in error).
+     *
+     * @return static
      */
     public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active): self
     {
@@ -415,6 +421,8 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A broad categorisation of the service that is to be performed during this
      * appointment.
+     *
+     * @return static
      */
     public function setServiceCategory(null|FHIRCodeableConcept $serviceCategory): self
     {
@@ -459,6 +467,8 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific service that is to be performed during this appointment.
+     *
+     * @return static
      */
     public function addServiceType(FHIRCodeableConcept $serviceType): self
     {
@@ -476,6 +486,8 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific service that is to be performed during this appointment.
+     *
+     * @return static
      */
     public function setServiceType(FHIRCodeableConcept ...$serviceType): self
     {
@@ -522,6 +534,8 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The specialty of a practitioner that would be required to perform the service
      * requested in this appointment.
+     *
+     * @return static
      */
     public function addSpecialty(FHIRCodeableConcept $specialty): self
     {
@@ -540,6 +554,8 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The specialty of a practitioner that would be required to perform the service
      * requested in this appointment.
+     *
+     * @return static
      */
     public function setSpecialty(FHIRCodeableConcept ...$specialty): self
     {
@@ -586,6 +602,8 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      * The resource this Schedule resource is providing availability information for.
      * These are expected to usually be one of HealthcareService, Location,
      * Practitioner, PractitionerRole, Device, Patient or RelatedPerson.
+     *
+     * @return static
      */
     public function addActor(FHIRReference $actor): self
     {
@@ -604,6 +622,8 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      * The resource this Schedule resource is providing availability information for.
      * These are expected to usually be one of HealthcareService, Location,
      * Practitioner, PractitionerRole, Device, Patient or RelatedPerson.
+     *
+     * @return static
      */
     public function setActor(FHIRReference ...$actor): self
     {
@@ -641,6 +661,8 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      * organization's planning horizon; the interval for which they are currently
      * accepting appointments. This does not define a "template" for planning outside
      * these dates.
+     *
+     * @return static
      */
     public function setPlanningHorizon(null|FHIRPeriod $planningHorizon): self
     {
@@ -672,6 +694,8 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Comments on the availability to describe any extended information. Such as
      * custom constraints on the slots that may be associated.
+     *
+     * @return static
      */
     public function setComment(null|string|FHIRStringPrimitive|FHIRString $comment): self
     {

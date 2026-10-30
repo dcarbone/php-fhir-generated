@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -296,6 +296,8 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
      * The SubstanceProtein descriptive elements will only be used when a complete or
      * partial amino acid sequence is available or derivable from a nucleic acid
      * sequence.
+     *
+     * @return static
      */
     public function setSequenceType(null|FHIRCodeableConcept $sequenceType): self
     {
@@ -329,6 +331,8 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
      * Number of linear sequences of amino acids linked through peptide bonds. The
      * number of subunits constituting the SubstanceProtein shall be described. It is
      * possible that the number of subunits can be variable.
+     *
+     * @return static
      */
     public function setNumberOfSubunits(null|string|float|FHIRIntegerPrimitive|FHIRInteger $numberOfSubunits): self
     {
@@ -384,6 +388,8 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
      * number and position within subunit followed by the abbreviation of the amino
      * acids involved. The disulfide linkage positions shall actually contain the amino
      * acid Cysteine at the respective positions.
+     *
+     * @return static
      */
     public function addDisulfideLinkage(string|FHIRStringPrimitive|FHIRString $disulfideLinkage): self
     {
@@ -408,6 +414,8 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
      * number and position within subunit followed by the abbreviation of the amino
      * acids involved. The disulfide linkage positions shall actually contain the amino
      * acid Cysteine at the respective positions.
+     *
+     * @return static
      */
     public function setDisulfideLinkage(string|FHIRStringPrimitive|FHIRString ...$disulfideLinkage): self
     {
@@ -481,6 +489,8 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
      * decreasing length; sequences of the same length will be ordered by decreasing
      * molecular weight; subunits that have identical sequences will be repeated
      * multiple times.
+     *
+     * @return static
      */
     public function addSubunit(FHIRSubstanceProteinSubunit $subunit): self
     {
@@ -509,6 +519,8 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
      * decreasing length; sequences of the same length will be ordered by decreasing
      * molecular weight; subunits that have identical sequences will be repeated
      * multiple times.
+     *
+     * @return static
      */
     public function setSubunit(FHIRSubstanceProteinSubunit ...$subunit): self
     {

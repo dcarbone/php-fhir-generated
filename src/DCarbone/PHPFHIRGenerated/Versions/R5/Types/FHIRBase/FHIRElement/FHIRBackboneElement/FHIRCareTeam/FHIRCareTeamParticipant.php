@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -163,8 +163,7 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When the member is generally available within this care team. (choose any one of
-     * coverage*, but only one)
+     * When the member is generally available within this care team.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $coveragePeriod;
@@ -177,8 +176,7 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When the member is generally available within this care team. (choose any one of
-     * coverage*, but only one)
+     * When the member is generally available within this care team.
      */
     #[FHIRTiming]
     protected FHIRTiming $coverageTiming;
@@ -250,6 +248,8 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
      *
      * Indicates specific responsibility of an individual within the care team, such as
      * "Primary care physician", "Trained social worker counselor", "Caregiver", etc.
+     *
+     * @return static
      */
     public function setRole(null|FHIRCodeableConcept $role): self
     {
@@ -281,6 +281,8 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
      *
      * The specific person or organization who is participating/expected to participate
      * in the care team.
+     *
+     * @return static
      */
     public function setMember(null|FHIRReference $member): self
     {
@@ -310,6 +312,8 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization of the practitioner.
+     *
+     * @return static
      */
     public function setOnBehalfOf(null|FHIRReference $onBehalfOf): self
     {
@@ -326,8 +330,7 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When the member is generally available within this care team. (choose any one of
-     * coverage*, but only one)
+     * When the member is generally available within this care team.
      */
     public function getCoveragePeriod(): null|FHIRPeriod
     {
@@ -339,8 +342,9 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When the member is generally available within this care team. (choose any one of
-     * coverage*, but only one)
+     * When the member is generally available within this care team.
+     *
+     * @return static
      */
     public function setCoveragePeriod(null|FHIRPeriod $coveragePeriod): self
     {
@@ -361,8 +365,7 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When the member is generally available within this care team. (choose any one of
-     * coverage*, but only one)
+     * When the member is generally available within this care team.
      */
     public function getCoverageTiming(): null|FHIRTiming
     {
@@ -378,8 +381,9 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When the member is generally available within this care team. (choose any one of
-     * coverage*, but only one)
+     * When the member is generally available within this care team.
+     *
+     * @return static
      */
     public function setCoverageTiming(null|FHIRTiming $coverageTiming): self
     {

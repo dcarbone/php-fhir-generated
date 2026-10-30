@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -162,6 +162,8 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement
      * Resource to define constraints on the Expansion of a FHIR ValueSet.
      *
      * Designations to be included.
+     *
+     * @return static
      */
     public function setInclude(null|FHIRExpansionProfileInclude $include): self
     {
@@ -187,6 +189,8 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement
      * Resource to define constraints on the Expansion of a FHIR ValueSet.
      *
      * Designations to be excluded.
+     *
+     * @return static
      */
     public function setExclude(null|FHIRExpansionProfileExclude $exclude): self
     {

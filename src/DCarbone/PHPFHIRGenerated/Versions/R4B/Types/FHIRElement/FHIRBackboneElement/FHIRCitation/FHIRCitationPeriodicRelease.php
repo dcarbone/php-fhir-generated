@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -231,6 +231,8 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the medium cited. Common codes are "Internet" or "Print".
+     *
+     * @return static
      */
     public function setCitedMedium(null|FHIRCodeableConcept $citedMedium): self
     {
@@ -260,6 +262,8 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Volume number of journal in which the article is published.
+     *
+     * @return static
      */
     public function setVolume(null|string|FHIRStringPrimitive|FHIRString $volume): self
     {
@@ -292,6 +296,8 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Issue, part or supplement of journal in which the article is published.
+     *
+     * @return static
      */
     public function setIssue(null|string|FHIRStringPrimitive|FHIRString $issue): self
     {
@@ -326,6 +332,8 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * Defining the date on which the issue of the journal was published.
+     *
+     * @return static
      */
     public function setDateOfPublication(null|FHIRCitationDateOfPublication $dateOfPublication): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -308,7 +308,7 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
      */
     #[FHIRString]
     protected FHIRString $versionAlgorithmString;
@@ -318,7 +318,7 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
      */
     #[FHIRCoding]
     protected FHIRCoding $versionAlgorithmCoding;
@@ -833,6 +833,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * address at which an authoritative instance of this search parameter is (or will
      * be) published. This URL can be the target of a canonical reference. It SHALL
      * remain the same when the search parameter is stored on different servers.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -884,6 +886,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * A formal identifier that is used to identify this search parameter when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -903,6 +907,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * A formal identifier that is used to identify this search parameter when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -942,6 +948,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -962,7 +970,7 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
      */
     public function getVersionAlgorithmString(): null|FHIRString
     {
@@ -975,7 +983,9 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
+     *
+     * @return static
      */
     public function setVersionAlgorithmString(null|string|FHIRStringPrimitive|FHIRString $versionAlgorithmString): self
     {
@@ -996,7 +1006,7 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
      */
     public function getVersionAlgorithmCoding(): null|FHIRCoding
     {
@@ -1009,7 +1019,9 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
+     *
+     * @return static
      */
     public function setVersionAlgorithmCoding(null|FHIRCoding $versionAlgorithmCoding): self
     {
@@ -1043,6 +1055,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * A natural language name identifying the search parameter. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -1075,6 +1089,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the search parameter.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -1117,6 +1133,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * from which it is defined. i.e. the parameter should have the same meaning, and
      * (usually) the functionality should be a proper subset of the underlying search
      * parameter.
+     *
+     * @return static
      */
     public function setDerivedFrom(null|string|FHIRCanonicalPrimitive|FHIRCanonical $derivedFrom): self
     {
@@ -1147,6 +1165,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      *
      * The status of this search parameter. Enables tracking the life-cycle of the
      * content.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -1181,6 +1201,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * A Boolean value to indicate that this search parameter is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
+     *
+     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -1227,6 +1249,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * changed. The date must change when the business version changes and it must
      * change if the status code changes. In addition, it should change when the
      * substantive content of the search parameter changes.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1261,6 +1285,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      *
      * The name of the organization or individual tresponsible for the release and
      * ongoing maintenance of the search parameter.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1308,6 +1334,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1325,6 +1353,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1362,6 +1392,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * the Narrative, or extensions
      *
      * And how it used.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1421,6 +1453,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate search parameter
      * instances.
+     *
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1444,6 +1478,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate search parameter
      * instances.
+     *
+     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1490,6 +1526,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      *
      * A legal or geographic region in which the search parameter is intended to be
      * used.
+     *
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1508,6 +1546,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      *
      * A legal or geographic region in which the search parameter is intended to be
      * used.
+     *
+     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1547,6 +1587,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      *
      * Explanation of why this search parameter is needed and why it has been designed
      * as it has.
+     *
+     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1591,6 +1633,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * A copyright statement relating to the search parameter and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the search parameter.
+     *
+     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1627,6 +1671,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
+     *
+     * @return static
      */
     public function setCopyrightLabel(null|string|FHIRStringPrimitive|FHIRString $copyrightLabel): self
     {
@@ -1667,6 +1713,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * parameters resource for this search parameter. In some cases, servers may need
      * to use a different CapabilityStatement searchParam.name to differentiate between
      * multiple SearchParameters that happen to have the same code.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -1708,6 +1756,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The base resource type(s) that this search parameter can be used against.
+     *
+     * @return static
      */
     public function addBase(string|FHIRVersionIndependentResourceTypesAllEnum|FHIRVersionIndependentResourceTypesAll $base): self
     {
@@ -1725,6 +1775,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The base resource type(s) that this search parameter can be used against.
+     *
+     * @return static
      */
     public function setBase(string|FHIRVersionIndependentResourceTypesAllEnum|FHIRVersionIndependentResourceTypesAll ...$base): self
     {
@@ -1759,6 +1811,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      *
      * The type of value that a search parameter may contain, and how the content is
      * interpreted.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRSearchParamTypeEnum|FHIRSearchParamType $type): self
     {
@@ -1791,6 +1845,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A FHIRPath expression that returns a set of elements for the search parameter.
+     *
+     * @return static
      */
     public function setExpression(null|string|FHIRStringPrimitive|FHIRString $expression): self
     {
@@ -1821,6 +1877,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      *
      * How the search parameter relates to the set of elements returned by evaluating
      * the expression query.
+     *
+     * @return static
      */
     public function setProcessingMode(null|string|FHIRSearchProcessingModeTypeEnum|FHIRSearchProcessingModeType $processingMode): self
     {
@@ -1855,6 +1913,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      *
      * FHIRPath expression that defines/sets a complex constraint for when this
      * SearchParameter is applicable.
+     *
+     * @return static
      */
     public function setConstraint(null|string|FHIRStringPrimitive|FHIRString $constraint): self
     {
@@ -1896,6 +1956,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Types of resource (if a resource is referenced).
+     *
+     * @return static
      */
     public function addTarget(string|FHIRVersionIndependentResourceTypesAllEnum|FHIRVersionIndependentResourceTypesAll $target): self
     {
@@ -1913,6 +1975,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Types of resource (if a resource is referenced).
+     *
+     * @return static
      */
     public function setTarget(string|FHIRVersionIndependentResourceTypesAllEnum|FHIRVersionIndependentResourceTypesAll ...$target): self
     {
@@ -1949,6 +2013,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      *
      * Whether multiple values are allowed for each time the parameter exists. Values
      * are separated by commas, and the parameter matches if any of the values match.
+     *
+     * @return static
      */
     public function setMultipleOr(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $multipleOr): self
     {
@@ -1981,6 +2047,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      *
      * Whether multiple parameters are allowed - e.g. more than one parameter with the
      * same name. The search matches if all the parameters match.
+     *
+     * @return static
      */
     public function setMultipleAnd(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $multipleAnd): self
     {
@@ -2022,6 +2090,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comparators supported for the search parameter.
+     *
+     * @return static
      */
     public function addComparator(string|FHIRSearchComparatorEnum|FHIRSearchComparator $comparator): self
     {
@@ -2039,6 +2109,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comparators supported for the search parameter.
+     *
+     * @return static
      */
     public function setComparator(string|FHIRSearchComparatorEnum|FHIRSearchComparator ...$comparator): self
     {
@@ -2084,6 +2156,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A modifier supported for the search parameter.
+     *
+     * @return static
      */
     public function addModifier(string|FHIRSearchModifierCodeEnum|FHIRSearchModifierCode $modifier): self
     {
@@ -2101,6 +2175,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A modifier supported for the search parameter.
+     *
+     * @return static
      */
     public function setModifier(string|FHIRSearchModifierCodeEnum|FHIRSearchModifierCode ...$modifier): self
     {
@@ -2160,6 +2236,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * they contain a reference to a resource which matches the chained parameter
      * value. Values for this field should be drawn from SearchParameter.code for a
      * parameter on the target resource type.
+     *
+     * @return static
      */
     public function addChain(string|FHIRStringPrimitive|FHIRString $chain): self
     {
@@ -2184,6 +2262,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * they contain a reference to a resource which matches the chained parameter
      * value. Values for this field should be drawn from SearchParameter.code for a
      * parameter on the target resource type.
+     *
+     * @return static
      */
     public function setChain(string|FHIRStringPrimitive|FHIRString ...$chain): self
     {
@@ -2231,6 +2311,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * search/filter on a resource.
      *
      * Used to define the parts of a composite search parameter.
+     *
+     * @return static
      */
     public function addComponent(FHIRSearchParameterComponent $component): self
     {
@@ -2246,6 +2328,8 @@ class FHIRSearchParameter extends FHIRCanonicalResource implements VersionContai
      * search/filter on a resource.
      *
      * Used to define the parts of a composite search parameter.
+     *
+     * @return static
      */
     public function setComponent(FHIRSearchParameterComponent ...$component): self
     {

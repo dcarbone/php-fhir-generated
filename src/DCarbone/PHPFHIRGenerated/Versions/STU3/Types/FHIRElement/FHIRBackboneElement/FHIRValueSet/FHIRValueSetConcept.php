@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -201,6 +201,8 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Specifies a code for the concept to be included or excluded.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -237,6 +239,8 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      * The text to display to the user for this concept in the context of this
      * valueset. If no display is provided, then applications using the value set use
      * the display specified for the code by the system.
+     *
+     * @return static
      */
     public function setDisplay(null|string|FHIRStringPrimitive|FHIRString $display): self
     {
@@ -280,6 +284,8 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      *
      * Additional representations for this concept when used in this value set - other
      * languages, aliases, specialized purposes, used for particular purposes, etc.
+     *
+     * @return static
      */
     public function addDesignation(FHIRValueSetDesignation $designation): self
     {
@@ -295,6 +301,8 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      *
      * Additional representations for this concept when used in this value set - other
      * languages, aliases, specialized purposes, used for particular purposes, etc.
+     *
+     * @return static
      */
     public function setDesignation(FHIRValueSetDesignation ...$designation): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -469,6 +469,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Identifier of this Invoice, often used for reference in correspondence about
      * this invoice or for tracking of payments.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -487,6 +489,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Identifier of this Invoice, often used for reference in correspondence about
      * this invoice or for tracking of payments.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -514,6 +518,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the Invoice.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRInvoiceStatusList|FHIRInvoiceStatus $status): self
     {
@@ -548,6 +554,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * In case of Invoice cancellation a reason must be given (entered in error,
      * superseded by corrected invoice etc.).
+     *
+     * @return static
      */
     public function setCancelledReason(null|string|FHIRStringPrimitive|FHIRString $cancelledReason): self
     {
@@ -584,6 +592,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Type of Invoice depending on domain, realm an usage (e.g. internal/external,
      * dental, preliminary).
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -615,6 +625,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The individual or set of individuals receiving the goods and services billed in
      * this invoice.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -644,6 +656,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or Organization responsible for balancing of this invoice.
+     *
+     * @return static
      */
     public function setRecipient(null|FHIRReference $recipient): self
     {
@@ -679,6 +693,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/time(s) of when this Invoice was posted.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -722,6 +738,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * individual and total price for Billing purpose.
      *
      * Indicates who or what performed or participated in the charged service.
+     *
+     * @return static
      */
     public function addParticipant(FHIRInvoiceParticipant $participant): self
     {
@@ -737,6 +755,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * individual and total price for Billing purpose.
      *
      * Indicates who or what performed or participated in the charged service.
+     *
+     * @return static
      */
     public function setParticipant(FHIRInvoiceParticipant ...$participant): self
     {
@@ -766,6 +786,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organizationissuing the Invoice.
+     *
+     * @return static
      */
     public function setIssuer(null|FHIRReference $issuer): self
     {
@@ -795,6 +817,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Account which is supposed to be balanced with this Invoice.
+     *
+     * @return static
      */
     public function setAccount(null|FHIRReference $account): self
     {
@@ -837,6 +861,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Each line item represents one charge for goods and services rendered. Details
      * such as date, code and amount are found in the referenced ChargeItem resource.
+     *
+     * @return static
      */
     public function addLineItem(FHIRInvoiceLineItem $lineItem): self
     {
@@ -853,6 +879,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Each line item represents one charge for goods and services rendered. Details
      * such as date, code and amount are found in the referenced ChargeItem resource.
+     *
+     * @return static
      */
     public function setLineItem(FHIRInvoiceLineItem ...$lineItem): self
     {
@@ -899,6 +927,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * with surcharges/deductions that apply in certain conditions. The priceComponent
      * element can be used to offer transparency to the recipient of the Invoice of how
      * the total price was calculated.
+     *
+     * @return static
      */
     public function addTotalPriceComponent(FHIRInvoicePriceComponent $totalPriceComponent): self
     {
@@ -917,6 +947,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * with surcharges/deductions that apply in certain conditions. The priceComponent
      * element can be used to offer transparency to the recipient of the Invoice of how
      * the total price was calculated.
+     *
+     * @return static
      */
     public function setTotalPriceComponent(FHIRInvoicePriceComponent ...$totalPriceComponent): self
     {
@@ -946,6 +978,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Invoice total , taxes excluded.
+     *
+     * @return static
      */
     public function setTotalNet(null|FHIRMoney $totalNet): self
     {
@@ -975,6 +1009,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Invoice total, tax included.
+     *
+     * @return static
      */
     public function setTotalGross(null|FHIRMoney $totalGross): self
     {
@@ -1014,6 +1050,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Payment details such as banking details, period of payment, deductibles, methods
      * of payment.
+     *
+     * @return static
      */
     public function setPaymentTerms(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $paymentTerms): self
     {
@@ -1061,6 +1099,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the invoice by the issuer, subject, or other participants.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1078,6 +1118,8 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the invoice by the issuer, subject, or other participants.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {

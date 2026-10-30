@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -527,6 +527,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * Business identifiers assigned to this SupplyRequest by the author and/or other
      * systems. These identifiers remain constant as the resource is updated and
      * propagates from server to server.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -546,6 +548,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * Business identifiers assigned to this SupplyRequest by the author and/or other
      * systems. These identifiers remain constant as the resource is updated and
      * propagates from server to server.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -571,6 +575,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the supply request.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRSupplyRequestStatusEnum|FHIRSupplyRequestStatus $status): self
     {
@@ -607,6 +613,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      *
      * Category of supply, e.g. central, non-stock, etc. This is used to support work
      * flows associated with the supply process.
+     *
+     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -634,6 +642,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      *
      * Indicates how quickly this SupplyRequest should be addressed with respect to
      * other requests.
+     *
+     * @return static
      */
     public function setPriority(null|string|FHIRRequestPriorityEnum|FHIRRequestPriority $priority): self
     {
@@ -672,6 +682,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * The item that is requested to be supplied. This is either a link to a resource
      * representing the details of the item or a code that identifies the item from a
      * known list.
+     *
+     * @return static
      */
     public function setItemCodeableConcept(null|FHIRCodeableConcept $itemCodeableConcept): self
     {
@@ -705,6 +717,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * The item that is requested to be supplied. This is either a link to a resource
      * representing the details of the item or a code that identifies the item from a
      * known list.
+     *
+     * @return static
      */
     public function setItemReference(null|FHIRReference $itemReference): self
     {
@@ -738,6 +752,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount that is being ordered of the indicated item.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -780,6 +796,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      *
      * Specific parameters for the ordered item. For example, the size of the indicated
      * item.
+     *
+     * @return static
      */
     public function addParameter(FHIRSupplyRequestParameter $parameter): self
     {
@@ -796,6 +814,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      *
      * Specific parameters for the ordered item. For example, the size of the indicated
      * item.
+     *
+     * @return static
      */
     public function setParameter(FHIRSupplyRequestParameter ...$parameter): self
     {
@@ -831,6 +851,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the request should be fulfilled.
+     *
+     * @return static
      */
     public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime): self
     {
@@ -863,6 +885,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * When the request should be fulfilled.
+     *
+     * @return static
      */
     public function setOccurrencePeriod(null|FHIRPeriod $occurrencePeriod): self
     {
@@ -900,6 +924,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * When the request should be fulfilled.
+     *
+     * @return static
      */
     public function setOccurrenceTiming(null|FHIRTiming $occurrenceTiming): self
     {
@@ -935,6 +961,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the request was made.
+     *
+     * @return static
      */
     public function setAuthoredOn(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $authoredOn): self
     {
@@ -967,6 +995,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The device, practitioner, etc. who initiated the request.
+     *
+     * @return static
      */
     public function setRequester(null|FHIRReference $requester): self
     {
@@ -1009,6 +1039,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who is intended to fulfill the request.
+     *
+     * @return static
      */
     public function addSupplier(FHIRReference $supplier): self
     {
@@ -1025,6 +1057,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who is intended to fulfill the request.
+     *
+     * @return static
      */
     public function setSupplier(FHIRReference ...$supplier): self
     {
@@ -1069,6 +1103,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason why the supply item was requested.
+     *
+     * @return static
      */
     public function addReasonCode(FHIRCodeableConcept $reasonCode): self
     {
@@ -1086,6 +1122,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason why the supply item was requested.
+     *
+     * @return static
      */
     public function setReasonCode(FHIRCodeableConcept ...$reasonCode): self
     {
@@ -1128,6 +1166,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason why the supply item was requested.
+     *
+     * @return static
      */
     public function addReasonReference(FHIRReference $reasonReference): self
     {
@@ -1144,6 +1184,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason why the supply item was requested.
+     *
+     * @return static
      */
     public function setReasonReference(FHIRReference ...$reasonReference): self
     {
@@ -1173,6 +1215,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the supply is expected to come from.
+     *
+     * @return static
      */
     public function setDeliverFrom(null|FHIRReference $deliverFrom): self
     {
@@ -1202,6 +1246,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the supply is destined to go.
+     *
+     * @return static
      */
     public function setDeliverTo(null|FHIRReference $deliverTo): self
     {

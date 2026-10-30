@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -609,6 +609,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this event performer or other systems.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -653,6 +655,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * References the source of pricing information, rules of application for the code
      * this ChargeItem uses.
+     *
+     * @return static
      */
     public function addDefinition(string|FHIRUriPrimitive|FHIRUri $definition): self
     {
@@ -673,6 +677,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * References the source of pricing information, rules of application for the code
      * this ChargeItem uses.
+     *
+     * @return static
      */
     public function setDefinition(string|FHIRUriPrimitive|FHIRUri ...$definition): self
     {
@@ -707,6 +713,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the ChargeItem.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRChargeItemStatusList|FHIRChargeItemStatus $status): self
     {
@@ -752,6 +760,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * ChargeItems can be grouped to larger ChargeItems covering the whole set.
+     *
+     * @return static
      */
     public function addPartOf(FHIRReference $partOf): self
     {
@@ -768,6 +778,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * ChargeItems can be grouped to larger ChargeItems covering the whole set.
+     *
+     * @return static
      */
     public function setPartOf(FHIRReference ...$partOf): self
     {
@@ -799,6 +811,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that identifies the charge, like a billing code.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -828,6 +842,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or set of individuals the action is being or was performed on.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -857,6 +873,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter or episode of care that establishes the context for this event.
+     *
+     * @return static
      */
     public function setContext(null|FHIRReference $context): self
     {
@@ -892,6 +910,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/time(s) or duration when the charged service was applied.
+     *
+     * @return static
      */
     public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime): self
     {
@@ -924,6 +944,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Date/time(s) or duration when the charged service was applied.
+     *
+     * @return static
      */
     public function setOccurrencePeriod(null|FHIRPeriod $occurrencePeriod): self
     {
@@ -961,6 +983,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Date/time(s) or duration when the charged service was applied.
+     *
+     * @return static
      */
     public function setOccurrenceTiming(null|FHIRTiming $occurrenceTiming): self
     {
@@ -1007,6 +1031,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * enable the billing process and internal cost allocation.
      *
      * Indicates who or what performed or participated in the charged service.
+     *
+     * @return static
      */
     public function addParticipant(FHIRChargeItemParticipant $participant): self
     {
@@ -1025,6 +1051,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * enable the billing process and internal cost allocation.
      *
      * Indicates who or what performed or participated in the charged service.
+     *
+     * @return static
      */
     public function setParticipant(FHIRChargeItemParticipant ...$participant): self
     {
@@ -1054,6 +1082,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization requesting the service.
+     *
+     * @return static
      */
     public function setPerformingOrganization(null|FHIRReference $performingOrganization): self
     {
@@ -1083,6 +1113,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization performing the service.
+     *
+     * @return static
      */
     public function setRequestingOrganization(null|FHIRReference $requestingOrganization): self
     {
@@ -1116,6 +1148,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Quantity of which the charge item has been serviced.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -1160,6 +1194,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The anatomical location where the related service has been applied.
+     *
+     * @return static
      */
     public function addBodysite(FHIRCodeableConcept $bodysite): self
     {
@@ -1177,6 +1213,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The anatomical location where the related service has been applied.
+     *
+     * @return static
      */
     public function setBodysite(FHIRCodeableConcept ...$bodysite): self
     {
@@ -1208,6 +1246,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Factor overriding the factor determined by the rules associated with the code.
+     *
+     * @return static
      */
     public function setFactorOverride(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $factorOverride): self
     {
@@ -1240,6 +1280,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Total price of the charge overriding the list price associated with the code.
+     *
+     * @return static
      */
     public function setPriceOverride(null|FHIRMoney $priceOverride): self
     {
@@ -1273,6 +1315,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * If the list price or the rule based factor associated with the code is
      * overridden, this attribute can capture a text to indicate the reason for this
      * action.
+     *
+     * @return static
      */
     public function setOverrideReason(null|string|FHIRStringPrimitive|FHIRString $overrideReason): self
     {
@@ -1305,6 +1349,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The device, practitioner, etc. who entered the charge item.
+     *
+     * @return static
      */
     public function setEnterer(null|FHIRReference $enterer): self
     {
@@ -1340,6 +1386,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date the charge item was entered.
+     *
+     * @return static
      */
     public function setEnteredDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $enteredDate): self
     {
@@ -1387,6 +1435,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes why the event occurred in coded or textual form.
+     *
+     * @return static
      */
     public function addReason(FHIRCodeableConcept $reason): self
     {
@@ -1404,6 +1454,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes why the event occurred in coded or textual form.
+     *
+     * @return static
      */
     public function setReason(FHIRCodeableConcept ...$reason): self
     {
@@ -1446,6 +1498,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicated the rendered service that caused this charge.
+     *
+     * @return static
      */
     public function addService(FHIRReference $service): self
     {
@@ -1462,6 +1516,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicated the rendered service that caused this charge.
+     *
+     * @return static
      */
     public function setService(FHIRReference ...$service): self
     {
@@ -1504,6 +1560,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Account into which this ChargeItems belongs.
+     *
+     * @return static
      */
     public function addAccount(FHIRReference $account): self
     {
@@ -1520,6 +1578,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Account into which this ChargeItems belongs.
+     *
+     * @return static
      */
     public function setAccount(FHIRReference ...$account): self
     {
@@ -1564,6 +1624,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the event by the performer, subject or other participants.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1581,6 +1643,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the event by the performer, subject or other participants.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1623,6 +1687,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Further information supporting the this charge.
+     *
+     * @return static
      */
     public function addSupportingInformation(FHIRReference $supportingInformation): self
     {
@@ -1639,6 +1705,8 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Further information supporting the this charge.
+     *
+     * @return static
      */
     public function setSupportingInformation(FHIRReference ...$supportingInformation): self
     {

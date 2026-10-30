@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -401,6 +401,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      *
      * Identifier for the organization that is used to identify the organization across
      * multiple disparate systems.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -419,6 +421,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      *
      * Identifier for the organization that is used to identify the organization across
      * multiple disparate systems.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -446,6 +450,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the organization's record is still in active use.
+     *
+     * @return static
      */
     public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active): self
     {
@@ -493,6 +499,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind(s) of organization that this is.
+     *
+     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -510,6 +518,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind(s) of organization that this is.
+     *
+     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -539,6 +549,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A name associated with the organization.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -586,6 +598,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      *
      * A list of alternate names that the organization is known as, or was known as in
      * the past.
+     *
+     * @return static
      */
     public function addAlias(string|FHIRStringPrimitive|FHIRString $alias): self
     {
@@ -606,6 +620,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      *
      * A list of alternate names that the organization is known as, or was known as in
      * the past.
+     *
+     * @return static
      */
     public function setAlias(string|FHIRStringPrimitive|FHIRString ...$alias): self
     {
@@ -652,6 +668,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      *
      * Description of the organization, which helps provide additional general context
      * on the organization to ensure that the correct organization is selected.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -703,6 +721,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      * The contact details of communication devices available relevant to the specific
      * Organization. This can include addresses, phone numbers, fax numbers, mobile
      * numbers, email addresses and web sites.
+     *
+     * @return static
      */
     public function addContact(FHIRExtendedContactDetail $contact): self
     {
@@ -722,6 +742,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      * The contact details of communication devices available relevant to the specific
      * Organization. This can include addresses, phone numbers, fax numbers, mobile
      * numbers, email addresses and web sites.
+     *
+     * @return static
      */
     public function setContact(FHIRExtendedContactDetail ...$contact): self
     {
@@ -751,6 +773,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization of which this organization forms a part.
+     *
+     * @return static
      */
     public function setPartOf(null|FHIRReference $partOf): self
     {
@@ -793,6 +817,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Technical endpoints providing access to services operated for the organization.
+     *
+     * @return static
      */
     public function addEndpoint(FHIRReference $endpoint): self
     {
@@ -809,6 +835,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Technical endpoints providing access to services operated for the organization.
+     *
+     * @return static
      */
     public function setEndpoint(FHIRReference ...$endpoint): self
     {
@@ -859,6 +887,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      * that authorize and/or otherwise endorse the provision of care by the
      * organization. For example, an approval to provide a type of services issued by a
      * certifying body (such as the US Joint Commission) to an organization.
+     *
+     * @return static
      */
     public function addQualification(FHIROrganizationQualification $qualification): self
     {
@@ -879,6 +909,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      * that authorize and/or otherwise endorse the provision of care by the
      * organization. For example, an approval to provide a type of services issued by a
      * certifying body (such as the US Joint Commission) to an organization.
+     *
+     * @return static
      */
     public function setQualification(FHIROrganizationQualification ...$qualification): self
     {

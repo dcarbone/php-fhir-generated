@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -625,6 +625,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * Business identifier that uniquely identifies the referral/care transfer request
      * instance.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -642,6 +644,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * Business identifier that uniquely identifies the referral/care transfer request
      * instance.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -686,6 +690,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * A protocol, guideline, orderset or other definition that is adhered to in whole
      * or in part by this request.
+     *
+     * @return static
      */
     public function addDefinition(FHIRReference $definition): self
     {
@@ -703,6 +709,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * A protocol, guideline, orderset or other definition that is adhered to in whole
      * or in part by this request.
+     *
+     * @return static
      */
     public function setDefinition(FHIRReference ...$definition): self
     {
@@ -747,6 +755,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * Indicates any plans, proposals or orders that this request is intended to
      * satisfy - in whole or in part.
+     *
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -764,6 +774,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * Indicates any plans, proposals or orders that this request is intended to
      * satisfy - in whole or in part.
+     *
+     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -806,6 +818,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Completed or terminated request(s) whose function is taken by this new request.
+     *
+     * @return static
      */
     public function addReplaces(FHIRReference $replaces): self
     {
@@ -822,6 +836,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Completed or terminated request(s) whose function is taken by this new request.
+     *
+     * @return static
      */
     public function setReplaces(FHIRReference ...$replaces): self
     {
@@ -853,6 +869,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The business identifier of the logical "grouping" request/order that this
      * referral is a part of.
+     *
+     * @return static
      */
     public function setGroupIdentifier(null|FHIRIdentifier $groupIdentifier): self
     {
@@ -882,6 +900,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The status of the authorization/intention reflected by the referral request
      * record.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRRequestStatusList|FHIRRequestStatus $status): self
     {
@@ -912,6 +932,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Distinguishes the "level" of authorization/demand implicit in this request.
+     *
+     * @return static
      */
     public function setIntent(null|string|FHIRRequestIntentList|FHIRRequestIntent $intent): self
     {
@@ -948,6 +970,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * An indication of the type of referral (or where applicable the type of transfer
      * of care) request.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -977,6 +1001,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * An indication of the urgency of referral (or where applicable the type of
      * transfer of care) request.
+     *
+     * @return static
      */
     public function setPriority(null|string|FHIRRequestPriorityList|FHIRRequestPriority $priority): self
     {
@@ -1026,6 +1052,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The service(s) that is/are requested to be provided to the patient. For example:
      * cardiac pacemaker insertion.
+     *
+     * @return static
      */
     public function addServiceRequested(FHIRCodeableConcept $serviceRequested): self
     {
@@ -1044,6 +1072,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The service(s) that is/are requested to be provided to the patient. For example:
      * cardiac pacemaker insertion.
+     *
+     * @return static
      */
     public function setServiceRequested(FHIRCodeableConcept ...$serviceRequested): self
     {
@@ -1073,6 +1103,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who is the subject of a referral or transfer of care request.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -1104,6 +1136,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The encounter at which the request for referral or transfer of care is
      * initiated.
+     *
+     * @return static
      */
     public function setContext(null|FHIRReference $context): self
     {
@@ -1141,6 +1175,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The period of time within which the services identified in the referral/transfer
      * of care is specified or required to occur.
+     *
+     * @return static
      */
     public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime): self
     {
@@ -1175,6 +1211,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The period of time within which the services identified in the referral/transfer
      * of care is specified or required to occur.
+     *
+     * @return static
      */
     public function setOccurrencePeriod(null|FHIRPeriod $occurrencePeriod): self
     {
@@ -1212,6 +1250,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * Date/DateTime of creation for draft requests and date of activation for active
      * requests.
+     *
+     * @return static
      */
     public function setAuthoredOn(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $authoredOn): self
     {
@@ -1244,6 +1284,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The individual who initiated the request and has responsibility for its
      * activation.
+     *
+     * @return static
      */
     public function setRequester(null|FHIRReferralRequestRequester $requester): self
     {
@@ -1279,6 +1321,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * Indication of the clinical domain or discipline to which the referral or
      * transfer of care request is sent. For example: Cardiology Gastroenterology
      * Diabetology.
+     *
+     * @return static
      */
     public function setSpecialty(null|FHIRCodeableConcept $specialty): self
     {
@@ -1323,6 +1367,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The healthcare provider(s) or provider organization(s) who/which is to receive
      * the referral/transfer of care request.
+     *
+     * @return static
      */
     public function addRecipient(FHIRReference $recipient): self
     {
@@ -1340,6 +1386,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The healthcare provider(s) or provider organization(s) who/which is to receive
      * the referral/transfer of care request.
+     *
+     * @return static
      */
     public function setRecipient(FHIRReference ...$recipient): self
     {
@@ -1388,6 +1436,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * Description of clinical condition indicating why referral/transfer of care is
      * requested. For example: Pathological Anomalies, Disabled (physical or mental),
      * Behavioral Management.
+     *
+     * @return static
      */
     public function addReasonCode(FHIRCodeableConcept $reasonCode): self
     {
@@ -1407,6 +1457,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * Description of clinical condition indicating why referral/transfer of care is
      * requested. For example: Pathological Anomalies, Disabled (physical or mental),
      * Behavioral Management.
+     *
+     * @return static
      */
     public function setReasonCode(FHIRCodeableConcept ...$reasonCode): self
     {
@@ -1449,6 +1501,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates another resource whose existence justifies this request.
+     *
+     * @return static
      */
     public function addReasonReference(FHIRReference $reasonReference): self
     {
@@ -1465,6 +1519,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates another resource whose existence justifies this request.
+     *
+     * @return static
      */
     public function setReasonReference(FHIRReference ...$reasonReference): self
     {
@@ -1496,6 +1552,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The reason element gives a short description of why the referral is being made,
      * the description expands on this to support a more complete clinical summary.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -1549,6 +1607,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * problems/chief complaints Medical History Family History Alerts
      * Allergy/Intolerance and Adverse Reactions Medications Observations/Assessments
      * (may include cognitive and fundtional assessments) Diagnostic Reports Care Plan.
+     *
+     * @return static
      */
     public function addSupportingInfo(FHIRReference $supportingInfo): self
     {
@@ -1569,6 +1629,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * problems/chief complaints Medical History Family History Alerts
      * Allergy/Intolerance and Adverse Reactions Medications Observations/Assessments
      * (may include cognitive and fundtional assessments) Diagnostic Reports Care Plan.
+     *
+     * @return static
      */
     public function setSupportingInfo(FHIRReference ...$supportingInfo): self
     {
@@ -1613,6 +1675,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the referral request by any of the participants.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1630,6 +1694,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the referral request by any of the participants.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1678,6 +1744,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * request or event resources that identify key state transitions or updates that
      * are likely to be relevant to a user looking at the current version of the
      * resource.
+     *
+     * @return static
      */
     public function addRelevantHistory(FHIRReference $relevantHistory): self
     {
@@ -1697,6 +1765,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * request or event resources that identify key state transitions or updates that
      * are likely to be relevant to a user looking at the current version of the
      * resource.
+     *
+     * @return static
      */
     public function setRelevantHistory(FHIRReference ...$relevantHistory): self
     {

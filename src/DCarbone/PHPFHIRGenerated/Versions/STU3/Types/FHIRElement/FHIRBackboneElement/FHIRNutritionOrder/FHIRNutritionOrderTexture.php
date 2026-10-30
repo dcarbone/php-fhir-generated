@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -180,6 +180,8 @@ class FHIRNutritionOrderTexture extends FHIRBackboneElement
      *
      * Any texture modifications (for solid foods) that should be made, e.g. easy to
      * chew, chopped, ground, and pureed.
+     *
+     * @return static
      */
     public function setModifier(null|FHIRCodeableConcept $modifier): self
     {
@@ -213,6 +215,8 @@ class FHIRNutritionOrderTexture extends FHIRBackboneElement
      *
      * The food type(s) (e.g. meats, all foods) that the texture modification applies
      * to. This could be all foods types.
+     *
+     * @return static
      */
     public function setFoodType(null|FHIRCodeableConcept $foodType): self
     {

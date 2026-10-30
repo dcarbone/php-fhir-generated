@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -260,6 +260,8 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the issue indicates a variation from successful processing.
+     *
+     * @return static
      */
     public function setSeverity(null|string|FHIRIssueSeverityList|FHIRIssueSeverity $severity): self
     {
@@ -294,6 +296,8 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * Describes the type of the issue. The system that creates an OperationOutcome
      * SHALL choose the most applicable code from the IssueType value set, and may
      * additional provide its own code for the error in the details element.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRIssueTypeList|FHIRIssueType $code): self
     {
@@ -330,6 +334,8 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      *
      * Additional details about the error. This may be a text description of the error,
      * or a system code that identifies the error.
+     *
+     * @return static
      */
     public function setDetails(null|FHIRCodeableConcept $details): self
     {
@@ -363,6 +369,8 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * Additional diagnostic information about the issue. Typically, this may be a
      * description of how a value is erroneous, or a stack dump to help trace the
      * issue.
+     *
+     * @return static
      */
     public function setDiagnostics(null|string|FHIRStringPrimitive|FHIRString $diagnostics): self
     {
@@ -414,6 +422,8 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * repetition indicators and the default child access that identifies one of the
      * elements in the resource that caused this issue to be raised. For HTTP errors,
      * will be "http." + the parameter name.
+     *
+     * @return static
      */
     public function addLocation(string|FHIRStringPrimitive|FHIRString $location): self
     {
@@ -436,6 +446,8 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * repetition indicators and the default child access that identifies one of the
      * elements in the resource that caused this issue to be raised. For HTTP errors,
      * will be "http." + the parameter name.
+     *
+     * @return static
      */
     public function setLocation(string|FHIRStringPrimitive|FHIRString ...$location): self
     {
@@ -489,6 +501,8 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * A simple FHIRPath limited to element names, repetition indicators and the
      * default child access that identifies one of the elements in the resource that
      * caused this issue to be raised.
+     *
+     * @return static
      */
     public function addExpression(string|FHIRStringPrimitive|FHIRString $expression): self
     {
@@ -510,6 +524,8 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * A simple FHIRPath limited to element names, repetition indicators and the
      * default child access that identifies one of the elements in the resource that
      * caused this issue to be raised.
+     *
+     * @return static
      */
     public function setExpression(string|FHIRStringPrimitive|FHIRString ...$expression): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -525,6 +525,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a service to provide a unique, business identifier for the request.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -542,6 +544,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a service to provide a unique, business identifier for the request.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -588,6 +592,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      *
      * A canonical URL referencing a FHIR-defined protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this request.
+     *
+     * @return static
      */
     public function addInstantiatesCanonical(string|FHIRCanonicalPrimitive|FHIRCanonical $instantiatesCanonical): self
     {
@@ -609,6 +615,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      *
      * A canonical URL referencing a FHIR-defined protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this request.
+     *
+     * @return static
      */
     public function setInstantiatesCanonical(string|FHIRCanonicalPrimitive|FHIRCanonical ...$instantiatesCanonical): self
     {
@@ -660,6 +668,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      *
      * A URL referencing an externally defined protocol, guideline, orderset or other
      * definition that is adhered to in whole or in part by this request.
+     *
+     * @return static
      */
     public function addInstantiatesUri(string|FHIRUriPrimitive|FHIRUri $instantiatesUri): self
     {
@@ -680,6 +690,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      *
      * A URL referencing an externally defined protocol, guideline, orderset or other
      * definition that is adhered to in whole or in part by this request.
+     *
+     * @return static
      */
     public function setInstantiatesUri(string|FHIRUriPrimitive|FHIRUri ...$instantiatesUri): self
     {
@@ -729,6 +741,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A plan, proposal or order that is fulfilled in whole or in part by this request.
+     *
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -745,6 +759,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A plan, proposal or order that is fulfilled in whole or in part by this request.
+     *
+     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -787,6 +803,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Completed or terminated request(s) whose function is taken by this new request.
+     *
+     * @return static
      */
     public function addReplaces(FHIRReference $replaces): self
     {
@@ -803,6 +821,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Completed or terminated request(s) whose function is taken by this new request.
+     *
+     * @return static
      */
     public function setReplaces(FHIRReference ...$replaces): self
     {
@@ -838,6 +858,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      * A shared identifier common to all requests that were authorized more or less
      * simultaneously by a single author, representing the identifier of the
      * requisition, prescription or similar form.
+     *
+     * @return static
      */
     public function setGroupIdentifier(null|FHIRIdentifier $groupIdentifier): self
     {
@@ -865,6 +887,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      *
      * The current state of the request. For request groups, the status reflects the
      * status of all the requests in the group.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRRequestStatusEnum|FHIRRequestStatus $status): self
     {
@@ -895,6 +919,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      *
      * Indicates the level of authority/intentionality associated with the request and
      * where the request fits into the workflow chain.
+     *
+     * @return static
      */
     public function setIntent(null|string|FHIRRequestIntentEnum|FHIRRequestIntent $intent): self
     {
@@ -925,6 +951,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      *
      * Indicates how quickly the request should be addressed with respect to other
      * requests.
+     *
+     * @return static
      */
     public function setPriority(null|string|FHIRRequestPriorityEnum|FHIRRequestPriority $priority): self
     {
@@ -959,6 +987,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that identifies what the overall request group is.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -988,6 +1018,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject for which the request group was created.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -1017,6 +1049,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the context of the request group, if any.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -1052,6 +1086,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates when the request group was created.
+     *
+     * @return static
      */
     public function setAuthoredOn(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $authoredOn): self
     {
@@ -1084,6 +1120,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a reference to the author of the request group.
+     *
+     * @return static
      */
     public function setAuthor(null|FHIRReference $author): self
     {
@@ -1128,6 +1166,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the reason for the request group in coded or textual form.
+     *
+     * @return static
      */
     public function addReasonCode(FHIRCodeableConcept $reasonCode): self
     {
@@ -1145,6 +1185,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the reason for the request group in coded or textual form.
+     *
+     * @return static
      */
     public function setReasonCode(FHIRCodeableConcept ...$reasonCode): self
     {
@@ -1187,6 +1229,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates another resource whose existence justifies this request group.
+     *
+     * @return static
      */
     public function addReasonReference(FHIRReference $reasonReference): self
     {
@@ -1203,6 +1247,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates another resource whose existence justifies this request group.
+     *
+     * @return static
      */
     public function setReasonReference(FHIRReference ...$reasonReference): self
     {
@@ -1247,6 +1293,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a mechanism to communicate additional information about the response.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1264,6 +1312,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a mechanism to communicate additional information about the response.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1304,6 +1354,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      * have inter-dependencies such as "give this medication after that one".
      *
      * The actions, if any, produced by the evaluation of the artifact.
+     *
+     * @return static
      */
     public function addAction(FHIRRequestGroupAction $action): self
     {
@@ -1319,6 +1371,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements VersionContainedTyp
      * have inter-dependencies such as "give this medication after that one".
      *
      * The actions, if any, produced by the evaluation of the artifact.
+     *
+     * @return static
      */
     public function setAction(FHIRRequestGroupAction ...$action): self
     {

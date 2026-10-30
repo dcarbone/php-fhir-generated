@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -381,6 +381,8 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * unit of measurement The unit of measurement shall be specified in accordance
      * with ISO 11240 and the resulting terminology The symbol and the symbol
      * identifier shall be used.
+     *
+     * @return static
      */
     public function setHeight(null|FHIRQuantity $height): self
     {
@@ -420,6 +422,8 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * unit of measurement The unit of measurement shall be specified in accordance
      * with ISO 11240 and the resulting terminology The symbol and the symbol
      * identifier shall be used.
+     *
+     * @return static
      */
     public function setWidth(null|FHIRQuantity $width): self
     {
@@ -459,6 +463,8 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * unit of measurement The unit of measurement shall be specified in accordance
      * with ISO 11240 and the resulting terminology The symbol and the symbol
      * identifier shall be used.
+     *
+     * @return static
      */
     public function setDepth(null|FHIRQuantity $depth): self
     {
@@ -498,6 +504,8 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * unit of measurement The unit of measurement shall be specified in accordance
      * with ISO 11240 and the resulting terminology The symbol and the symbol
      * identifier shall be used.
+     *
+     * @return static
      */
     public function setWeight(null|FHIRQuantity $weight): self
     {
@@ -537,6 +545,8 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * and its unit of measurement The unit of measurement shall be specified in
      * accordance with ISO 11240 and the resulting terminology The symbol and the
      * symbol identifier shall be used.
+     *
+     * @return static
      */
     public function setNominalVolume(null|FHIRQuantity $nominalVolume): self
     {
@@ -576,6 +586,8 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * and its unit of measurement The unit of measurement shall be specified in
      * accordance with ISO 11240 and the resulting terminology The symbol and the
      * symbol identifier shall be used.
+     *
+     * @return static
      */
     public function setExternalDiameter(null|FHIRQuantity $externalDiameter): self
     {
@@ -607,6 +619,8 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      *
      * Where applicable, the shape can be specified An appropriate controlled
      * vocabulary shall be used The term and the term identifier shall be used.
+     *
+     * @return static
      */
     public function setShape(null|string|FHIRStringPrimitive|FHIRString $shape): self
     {
@@ -654,6 +668,8 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      *
      * Where applicable, the color can be specified An appropriate controlled
      * vocabulary shall be used The term and the term identifier shall be used.
+     *
+     * @return static
      */
     public function addColor(string|FHIRStringPrimitive|FHIRString $color): self
     {
@@ -674,6 +690,8 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      *
      * Where applicable, the color can be specified An appropriate controlled
      * vocabulary shall be used The term and the term identifier shall be used.
+     *
+     * @return static
      */
     public function setColor(string|FHIRStringPrimitive|FHIRString ...$color): self
     {
@@ -723,6 +741,8 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Where applicable, the imprint can be specified as text.
+     *
+     * @return static
      */
     public function addImprint(string|FHIRStringPrimitive|FHIRString $imprint): self
     {
@@ -742,6 +762,8 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Where applicable, the imprint can be specified as text.
+     *
+     * @return static
      */
     public function setImprint(string|FHIRStringPrimitive|FHIRString ...$imprint): self
     {
@@ -793,6 +815,8 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      *
      * Where applicable, the image can be provided The format of the image attachment
      * shall be specified by regional implementations.
+     *
+     * @return static
      */
     public function addImage(FHIRAttachment $image): self
     {
@@ -810,6 +834,8 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      *
      * Where applicable, the image can be provided The format of the image attachment
      * shall be specified by regional implementations.
+     *
+     * @return static
      */
     public function setImage(FHIRAttachment ...$image): self
     {
@@ -843,6 +869,8 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      *
      * Where applicable, the scoring can be specified An appropriate controlled
      * vocabulary shall be used The term and the term identifier shall be used.
+     *
+     * @return static
      */
     public function setScoring(null|FHIRCodeableConcept $scoring): self
     {

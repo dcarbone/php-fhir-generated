@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -187,6 +187,8 @@ class FHIRDocumentManifestContent extends FHIRBackboneElement
      * The list of references to document content, or Attachment that consist of the
      * parts of this document manifest. Usually, these would be document references,
      * but direct references to Media or Attachments are also allowed.
+     *
+     * @return static
      */
     public function setPAttachment(null|FHIRAttachment $pAttachment): self
     {
@@ -220,6 +222,8 @@ class FHIRDocumentManifestContent extends FHIRBackboneElement
      * The list of references to document content, or Attachment that consist of the
      * parts of this document manifest. Usually, these would be document references,
      * but direct references to Media or Attachments are also allowed.
+     *
+     * @return static
      */
     public function setPReference(null|FHIRReference $pReference): self
     {

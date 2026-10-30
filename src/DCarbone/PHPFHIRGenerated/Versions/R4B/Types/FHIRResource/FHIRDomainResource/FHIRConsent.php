@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -465,6 +465,8 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this copy of the Consent Statement.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -482,6 +484,8 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this copy of the Consent Statement.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -507,6 +511,8 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the current state of this consent.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRConsentStateEnum|FHIRConsentState $status): self
     {
@@ -543,6 +549,8 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * A selector of the type of consent being presented: ADR, Privacy, Treatment,
      * Research. This list is now extensible.
+     *
+     * @return static
      */
     public function setScope(null|FHIRCodeableConcept $scope): self
     {
@@ -589,6 +597,8 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * A classification of the type of consents found in the statement. This element
      * supports indexing and retrieval of consent statements.
+     *
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -607,6 +617,8 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * A classification of the type of consents found in the statement. This element
      * supports indexing and retrieval of consent statements.
+     *
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -636,6 +648,8 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient/healthcare consumer to whom this consent applies.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -671,6 +685,8 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When this Consent was issued / created / indexed.
+     *
+     * @return static
      */
     public function setDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateTime): self
     {
@@ -722,6 +738,8 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * listed in a Consent Directive or the Grantee, which is the entity responsible
      * for complying with the Consent Directive, including any obligations or
      * limitations on authorizations and enforcement of prohibitions.
+     *
+     * @return static
      */
     public function addPerformer(FHIRReference $performer): self
     {
@@ -741,6 +759,8 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * listed in a Consent Directive or the Grantee, which is the entity responsible
      * for complying with the Consent Directive, including any obligations or
      * limitations on authorizations and enforcement of prohibitions.
+     *
+     * @return static
      */
     public function setPerformer(FHIRReference ...$performer): self
     {
@@ -785,6 +805,8 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The organization that manages the consent, and the framework within which it is
      * executed.
+     *
+     * @return static
      */
     public function addOrganization(FHIRReference $organization): self
     {
@@ -802,6 +824,8 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The organization that manages the consent, and the framework within which it is
      * executed.
+     *
+     * @return static
      */
     public function setOrganization(FHIRReference ...$organization): self
     {
@@ -837,6 +861,8 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * scanned original paper form, or a reference to a consent that links back to such
      * a source, a reference to a document repository (e.g. XDS) that stores the
      * original consent document.
+     *
+     * @return static
      */
     public function setSourceAttachment(null|FHIRAttachment $sourceAttachment): self
     {
@@ -872,6 +898,8 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * scanned original paper form, or a reference to a consent that links back to such
      * a source, a reference to a document repository (e.g. XDS) that stores the
      * original consent document.
+     *
+     * @return static
      */
     public function setSourceReference(null|FHIRReference $sourceReference): self
     {
@@ -916,6 +944,8 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The references to the policies that are included in this consent scope. Policies
      * may be organizational, but are often defined jurisdictionally, or in law.
+     *
+     * @return static
      */
     public function addPolicy(FHIRConsentPolicy $policy): self
     {
@@ -933,6 +963,8 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The references to the policies that are included in this consent scope. Policies
      * may be organizational, but are often defined jurisdictionally, or in law.
+     *
+     * @return static
      */
     public function setPolicy(FHIRConsentPolicy ...$policy): self
     {
@@ -964,6 +996,8 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the specific base computable regulation or policy.
+     *
+     * @return static
      */
     public function setPolicyRule(null|FHIRCodeableConcept $policyRule): self
     {
@@ -1008,6 +1042,8 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Whether a treatment instruction (e.g. artificial respiration yes or no) was
      * verified with the patient, his/her family or another authorized person.
+     *
+     * @return static
      */
     public function addVerification(FHIRConsentVerification $verification): self
     {
@@ -1025,6 +1061,8 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Whether a treatment instruction (e.g. artificial respiration yes or no) was
      * verified with the patient, his/her family or another authorized person.
+     *
+     * @return static
      */
     public function setVerification(FHIRConsentVerification ...$verification): self
     {
@@ -1056,6 +1094,8 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * An exception to the base policy of this consent. An exception can be an addition
      * or removal of access permissions.
+     *
+     * @return static
      */
     public function setProvision(null|FHIRConsentProvision $provision): self
     {

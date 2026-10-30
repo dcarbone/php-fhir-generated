@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -499,6 +499,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers for the analysis event.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -516,6 +518,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers for the analysis event.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -562,6 +566,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      *
      * Type of the methods used in the analysis, e.g., Fluorescence in situ
      * hybridization (FISH), Karyotyping, or Microsatellite instability testing (MSI).
+     *
+     * @return static
      */
     public function addMethodType(FHIRCodeableConcept $methodType): self
     {
@@ -580,6 +586,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      *
      * Type of the methods used in the analysis, e.g., Fluorescence in situ
      * hybridization (FISH), Karyotyping, or Microsatellite instability testing (MSI).
+     *
+     * @return static
      */
     public function setMethodType(FHIRCodeableConcept ...$methodType): self
     {
@@ -626,6 +634,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      *
      * Type of the genomic changes studied in the analysis, e.g., DNA, RNA, or amino
      * acid change.
+     *
+     * @return static
      */
     public function addChangeType(FHIRCodeableConcept $changeType): self
     {
@@ -644,6 +654,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      *
      * Type of the genomic changes studied in the analysis, e.g., DNA, RNA, or amino
      * acid change.
+     *
+     * @return static
      */
     public function setChangeType(FHIRCodeableConcept ...$changeType): self
     {
@@ -675,6 +687,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reference genome build that is used in this analysis.
+     *
+     * @return static
      */
     public function setGenomeBuild(null|FHIRCodeableConcept $genomeBuild): self
     {
@@ -706,6 +720,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The defined protocol that describes the analysis.
+     *
+     * @return static
      */
     public function setInstantiatesCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $instantiatesCanonical): self
     {
@@ -740,6 +756,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      *
      * The URL pointing to an externally maintained protocol that describes the
      * analysis.
+     *
+     * @return static
      */
     public function setInstantiatesUri(null|string|FHIRUriPrimitive|FHIRUri $instantiatesUri): self
     {
@@ -772,6 +790,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name of the analysis event (human friendly).
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -825,6 +845,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * parent, child, or sibling. For example, in trio testing, the
      * GenomicStudy.subject would be the child (proband) and the
      * GenomicStudy.analysis.focus of a specific analysis would be the parent.
+     *
+     * @return static
      */
     public function addFocus(FHIRReference $focus): self
     {
@@ -845,6 +867,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * parent, child, or sibling. For example, in trio testing, the
      * GenomicStudy.subject would be the child (proband) and the
      * GenomicStudy.analysis.focus of a specific analysis would be the parent.
+     *
+     * @return static
      */
     public function setFocus(FHIRReference ...$focus): self
     {
@@ -887,6 +911,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specimen used in the analysis event.
+     *
+     * @return static
      */
     public function addSpecimen(FHIRReference $specimen): self
     {
@@ -903,6 +929,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specimen used in the analysis event.
+     *
+     * @return static
      */
     public function setSpecimen(FHIRReference ...$specimen): self
     {
@@ -940,6 +968,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date of the analysis event.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -987,6 +1017,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any notes capture with the analysis event.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1004,6 +1036,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any notes capture with the analysis event.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1033,6 +1067,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The protocol that was performed for the analysis event.
+     *
+     * @return static
      */
     public function setProtocolPerformed(null|FHIRReference $protocolPerformed): self
     {
@@ -1075,6 +1111,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The genomic regions to be studied in the analysis (BED file).
+     *
+     * @return static
      */
     public function addRegionsStudied(FHIRReference $regionsStudied): self
     {
@@ -1091,6 +1129,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The genomic regions to be studied in the analysis (BED file).
+     *
+     * @return static
      */
     public function setRegionsStudied(FHIRReference ...$regionsStudied): self
     {
@@ -1133,6 +1173,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Genomic regions actually called in the analysis event (BED file).
+     *
+     * @return static
      */
     public function addRegionsCalled(FHIRReference $regionsCalled): self
     {
@@ -1149,6 +1191,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Genomic regions actually called in the analysis event (BED file).
+     *
+     * @return static
      */
     public function setRegionsCalled(FHIRReference ...$regionsCalled): self
     {
@@ -1189,6 +1233,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * data.
      *
      * Inputs for the analysis event.
+     *
+     * @return static
      */
     public function addInput(FHIRGenomicStudyInput $input): self
     {
@@ -1204,6 +1250,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * data.
      *
      * Inputs for the analysis event.
+     *
+     * @return static
      */
     public function setInput(FHIRGenomicStudyInput ...$input): self
     {
@@ -1244,6 +1292,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * data.
      *
      * Outputs for the analysis event.
+     *
+     * @return static
      */
     public function addOutput(FHIRGenomicStudyOutput $output): self
     {
@@ -1259,6 +1309,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * data.
      *
      * Outputs for the analysis event.
+     *
+     * @return static
      */
     public function setOutput(FHIRGenomicStudyOutput ...$output): self
     {
@@ -1299,6 +1351,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * data.
      *
      * Performer for the analysis event.
+     *
+     * @return static
      */
     public function addPerformer(FHIRGenomicStudyPerformer $performer): self
     {
@@ -1314,6 +1368,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * data.
      *
      * Performer for the analysis event.
+     *
+     * @return static
      */
     public function setPerformer(FHIRGenomicStudyPerformer ...$performer): self
     {
@@ -1356,6 +1412,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      *
      * Devices used for the analysis (e.g., instruments, software), with settings and
      * parameters.
+     *
+     * @return static
      */
     public function addDevice(FHIRGenomicStudyDevice $device): self
     {
@@ -1372,6 +1430,8 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      *
      * Devices used for the analysis (e.g., instruments, software), with settings and
      * parameters.
+     *
+     * @return static
      */
     public function setDevice(FHIRGenomicStudyDevice ...$device): self
     {

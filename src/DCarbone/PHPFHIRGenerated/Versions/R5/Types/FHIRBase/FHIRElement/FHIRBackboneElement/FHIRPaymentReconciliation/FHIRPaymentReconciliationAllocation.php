@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -185,7 +185,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred. (choose any one of targetItem*, but only one)
+     * incurred.
      */
     #[FHIRString]
     protected FHIRString $targetItemString;
@@ -197,7 +197,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred. (choose any one of targetItem*, but only one)
+     * incurred.
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $targetItemIdentifier;
@@ -208,7 +208,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred. (choose any one of targetItem*, but only one)
+     * incurred.
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $targetItemPositiveInt;
@@ -404,6 +404,8 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for the current payment item for the referenced payable.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -435,6 +437,8 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for the prior payment item for the referenced payable.
+     *
+     * @return static
      */
     public function setPredecessor(null|FHIRIdentifier $predecessor): self
     {
@@ -464,6 +468,8 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific resource to which the payment/adjustment/advance applies.
+     *
+     * @return static
      */
     public function setTarget(null|FHIRReference $target): self
     {
@@ -482,7 +488,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred. (choose any one of targetItem*, but only one)
+     * incurred.
      */
     public function getTargetItemString(): null|FHIRString
     {
@@ -496,7 +502,9 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred. (choose any one of targetItem*, but only one)
+     * incurred.
+     *
+     * @return static
      */
     public function setTargetItemString(null|string|FHIRStringPrimitive|FHIRString $targetItemString): self
     {
@@ -519,7 +527,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred. (choose any one of targetItem*, but only one)
+     * incurred.
      */
     public function getTargetItemIdentifier(): null|FHIRIdentifier
     {
@@ -534,7 +542,9 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred. (choose any one of targetItem*, but only one)
+     * incurred.
+     *
+     * @return static
      */
     public function setTargetItemIdentifier(null|FHIRIdentifier $targetItemIdentifier): self
     {
@@ -553,7 +563,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred. (choose any one of targetItem*, but only one)
+     * incurred.
      */
     public function getTargetItemPositiveInt(): null|FHIRPositiveInt
     {
@@ -567,7 +577,9 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * Identifies the claim line item, encounter or other sub-element being paid. Note
      * payment may be partial, that is not match the then outstanding balance or amount
-     * incurred. (choose any one of targetItem*, but only one)
+     * incurred.
+     *
+     * @return static
      */
     public function setTargetItemPositiveInt(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $targetItemPositiveInt): self
     {
@@ -602,6 +614,8 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * The Encounter to which this payment applies, may be completed by the receiver,
      * used for search.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -633,6 +647,8 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * The Account to which this payment applies, may be completed by the receiver,
      * used for search.
+     *
+     * @return static
      */
     public function setAccount(null|FHIRReference $account): self
     {
@@ -664,6 +680,8 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code to indicate the nature of the payment.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -693,6 +711,8 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The party which submitted the claim or financial transaction.
+     *
+     * @return static
      */
     public function setSubmitter(null|FHIRReference $submitter): self
     {
@@ -722,6 +742,8 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A resource, such as a ClaimResponse, which contains a commitment to payment.
+     *
+     * @return static
      */
     public function setResponse(null|FHIRReference $response): self
     {
@@ -753,6 +775,8 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date from the response resource containing a commitment to pay.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $date): self
     {
@@ -787,6 +811,8 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      *
      * A reference to the individual who is responsible for inquiries regarding the
      * response and its payment.
+     *
+     * @return static
      */
     public function setResponsible(null|FHIRReference $responsible): self
     {
@@ -816,6 +842,8 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The party which is receiving the payment.
+     *
+     * @return static
      */
     public function setPayee(null|FHIRReference $payee): self
     {
@@ -845,6 +873,8 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The monetary amount allocated from the total payment to the payable.
+     *
+     * @return static
      */
     public function setAmount(null|FHIRMoney $amount): self
     {

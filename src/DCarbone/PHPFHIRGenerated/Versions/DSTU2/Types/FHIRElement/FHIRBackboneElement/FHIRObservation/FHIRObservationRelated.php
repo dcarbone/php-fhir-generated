@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -180,6 +180,8 @@ class FHIRObservationRelated extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the kind of relationship that exists with the target resource.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRObservationRelationshipTypeList|FHIRObservationRelationshipType $type): self
     {
@@ -214,6 +216,8 @@ class FHIRObservationRelated extends FHIRBackboneElement
      *
      * A reference to the observation or [[[QuestionnaireResponse]]] resource that is
      * related to this observation.
+     *
+     * @return static
      */
     public function setTarget(null|FHIRReference $target): self
     {

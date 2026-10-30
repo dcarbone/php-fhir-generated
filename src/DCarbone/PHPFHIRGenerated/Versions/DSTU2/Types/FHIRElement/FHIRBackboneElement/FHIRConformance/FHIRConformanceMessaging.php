@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -239,6 +239,8 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
      *
      * An endpoint (network accessible address) to which messages and/or replies are to
      * be sent.
+     *
+     * @return static
      */
     public function addEndpoint(FHIRConformanceEndpoint $endpoint): self
     {
@@ -256,6 +258,8 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
      *
      * An endpoint (network accessible address) to which messages and/or replies are to
      * be sent.
+     *
+     * @return static
      */
     public function setEndpoint(FHIRConformanceEndpoint ...$endpoint): self
     {
@@ -287,6 +291,8 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
      *
      * Length if the receiver's reliable messaging cache in minutes (if a receiver) or
      * how long the cache length on the receiver should be (if a sender).
+     *
+     * @return static
      */
     public function setReliableCache(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $reliableCache): self
     {
@@ -323,6 +329,8 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
      * Documentation about the system's messaging capabilities for this endpoint not
      * otherwise documented by the conformance statement. For example, process for
      * becoming an authorized messaging exchange partner.
+     *
+     * @return static
      */
     public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation): self
     {
@@ -368,6 +376,8 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
      * desired server implementation.
      *
      * A description of the solution's support for an event at this end-point.
+     *
+     * @return static
      */
     public function addEvent(FHIRConformanceEvent $event): self
     {
@@ -384,6 +394,8 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
      * desired server implementation.
      *
      * A description of the solution's support for an event at this end-point.
+     *
+     * @return static
      */
     public function setEvent(FHIRConformanceEvent ...$event): self
     {

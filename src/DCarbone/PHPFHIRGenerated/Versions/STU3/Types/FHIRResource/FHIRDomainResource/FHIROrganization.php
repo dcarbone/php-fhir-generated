@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -372,6 +372,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      *
      * Identifier for the organization that is used to identify the organization across
      * multiple disparate systems.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -389,6 +391,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      *
      * Identifier for the organization that is used to identify the organization across
      * multiple disparate systems.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -416,6 +420,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the organization's record is still in active use.
+     *
+     * @return static
      */
     public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active): self
     {
@@ -463,6 +469,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind(s) of organization that this is.
+     *
+     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -480,6 +488,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind(s) of organization that this is.
+     *
+     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -509,6 +519,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A name associated with the organization.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -556,6 +568,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      *
      * A list of alternate names that the organization is known as, or was known as in
      * the past.
+     *
+     * @return static
      */
     public function addAlias(string|FHIRStringPrimitive|FHIRString $alias): self
     {
@@ -576,6 +590,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      *
      * A list of alternate names that the organization is known as, or was known as in
      * the past.
+     *
+     * @return static
      */
     public function setAlias(string|FHIRStringPrimitive|FHIRString ...$alias): self
     {
@@ -627,6 +643,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail for the organization.
+     *
+     * @return static
      */
     public function addTelecom(FHIRContactPoint $telecom): self
     {
@@ -644,6 +662,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail for the organization.
+     *
+     * @return static
      */
     public function setTelecom(FHIRContactPoint ...$telecom): self
     {
@@ -694,6 +714,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An address for the organization.
+     *
+     * @return static
      */
     public function addAddress(FHIRAddress $address): self
     {
@@ -714,6 +736,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An address for the organization.
+     *
+     * @return static
      */
     public function setAddress(FHIRAddress ...$address): self
     {
@@ -743,6 +767,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization of which this organization forms a part.
+     *
+     * @return static
      */
     public function setPartOf(null|FHIRReference $partOf): self
     {
@@ -787,6 +813,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      * groups, etc.
      *
      * Contact for the organization for a certain purpose.
+     *
+     * @return static
      */
     public function addContact(FHIROrganizationContact $contact): self
     {
@@ -804,6 +832,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      * groups, etc.
      *
      * Contact for the organization for a certain purpose.
+     *
+     * @return static
      */
     public function setContact(FHIROrganizationContact ...$contact): self
     {
@@ -846,6 +876,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Technical endpoints providing access to services operated for the organization.
+     *
+     * @return static
      */
     public function addEndpoint(FHIRReference $endpoint): self
     {
@@ -862,6 +894,8 @@ class FHIROrganization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Technical endpoints providing access to services operated for the organization.
+     *
+     * @return static
      */
     public function setEndpoint(FHIRReference ...$endpoint): self
     {

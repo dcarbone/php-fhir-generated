@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -217,6 +217,8 @@ class FHIRAuditEventSource extends FHIRBackboneElement
      *
      * Logical source location within the healthcare enterprise network. For example, a
      * hospital or other provider location within a multi-entity provider group.
+     *
+     * @return static
      */
     public function setSite(null|FHIRReference $site): self
     {
@@ -246,6 +248,8 @@ class FHIRAuditEventSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier of the source where the event was detected.
+     *
+     * @return static
      */
     public function setObserver(null|FHIRReference $observer): self
     {
@@ -290,6 +294,8 @@ class FHIRAuditEventSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code specifying the type of source where event originated.
+     *
+     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -307,6 +313,8 @@ class FHIRAuditEventSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code specifying the type of source where event originated.
+     *
+     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {

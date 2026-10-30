@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -193,6 +193,8 @@ class FHIRTestScriptSetup extends FHIRBackboneElement
      * determine compliance against the FHIR specification.
      *
      * Action would contain either an operation or an assertion.
+     *
+     * @return static
      */
     public function addAction(FHIRTestScriptAction $action): self
     {
@@ -208,6 +210,8 @@ class FHIRTestScriptSetup extends FHIRBackboneElement
      * determine compliance against the FHIR specification.
      *
      * Action would contain either an operation or an assertion.
+     *
+     * @return static
      */
     public function setAction(FHIRTestScriptAction ...$action): self
     {

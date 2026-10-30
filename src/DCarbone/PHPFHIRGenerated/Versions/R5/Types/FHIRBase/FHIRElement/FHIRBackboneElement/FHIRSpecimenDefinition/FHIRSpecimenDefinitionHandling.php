@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -239,6 +239,8 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
      * It qualifies the interval of temperature, which characterizes an occurrence of
      * handling. Conditions that are not related to temperature may be handled in the
      * instruction element.
+     *
+     * @return static
      */
     public function setTemperatureQualifier(null|FHIRCodeableConcept $temperatureQualifier): self
     {
@@ -268,6 +270,8 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The temperature interval for this set of handling instructions.
+     *
+     * @return static
      */
     public function setTemperatureRange(null|FHIRRange $temperatureRange): self
     {
@@ -297,6 +301,8 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum time interval of preservation of the specimen with these conditions.
+     *
+     * @return static
      */
     public function setMaxDuration(null|FHIRDuration $maxDuration): self
     {
@@ -336,6 +342,8 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
      *
      * Additional textual instructions for the preservation or transport of the
      * specimen. For instance, 'Protect from light exposure'.
+     *
+     * @return static
      */
     public function setInstruction(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $instruction): self
     {

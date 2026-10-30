@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -203,6 +203,8 @@ class FHIRDeviceDefinitionLink extends FHIRBackboneElement
      *
      * The type indicates the relationship of the related device to the device
      * instance.
+     *
+     * @return static
      */
     public function setRelation(null|FHIRCoding $relation): self
     {
@@ -234,6 +236,8 @@ class FHIRDeviceDefinitionLink extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the linked device.
+     *
+     * @return static
      */
     public function setRelatedDevice(null|FHIRCodeableReference $relatedDevice): self
     {

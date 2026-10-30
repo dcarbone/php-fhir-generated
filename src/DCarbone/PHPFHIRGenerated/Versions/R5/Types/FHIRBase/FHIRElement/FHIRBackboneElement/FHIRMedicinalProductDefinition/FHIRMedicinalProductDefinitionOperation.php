@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -242,6 +242,8 @@ class FHIRMedicinalProductDefinitionOperation extends FHIRBackboneElement
      * The type of manufacturing operation e.g. manufacturing itself, re-packaging. For
      * the authorization of this, a RegulatedAuthorization would point to the same plan
      * or activity referenced here.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableReference $type): self
     {
@@ -271,6 +273,8 @@ class FHIRMedicinalProductDefinitionOperation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Date range of applicability.
+     *
+     * @return static
      */
     public function setEffectiveDate(null|FHIRPeriod $effectiveDate): self
     {
@@ -315,6 +319,8 @@ class FHIRMedicinalProductDefinitionOperation extends FHIRBackboneElement
      *
      * The organization or establishment responsible for (or associated with) the
      * particular process or step, examples include the manufacturer, importer, agent.
+     *
+     * @return static
      */
     public function addOrganization(FHIRReference $organization): self
     {
@@ -332,6 +338,8 @@ class FHIRMedicinalProductDefinitionOperation extends FHIRBackboneElement
      *
      * The organization or establishment responsible for (or associated with) the
      * particular process or step, examples include the manufacturer, importer, agent.
+     *
+     * @return static
      */
     public function setOrganization(FHIRReference ...$organization): self
     {
@@ -365,6 +373,8 @@ class FHIRMedicinalProductDefinitionOperation extends FHIRBackboneElement
      *
      * Specifies whether this particular business or manufacturing process is
      * considered proprietary or confidential.
+     *
+     * @return static
      */
     public function setConfidentialityIndicator(null|FHIRCodeableConcept $confidentialityIndicator): self
     {

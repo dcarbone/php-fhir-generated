@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -193,6 +193,8 @@ class FHIRDocumentReferenceService extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of the service that can be used to access the documents.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -220,6 +222,8 @@ class FHIRDocumentReferenceService extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Where the service end-point is located.
+     *
+     * @return static
      */
     public function setAddress(null|string|FHIRStringPrimitive|FHIRString $address): self
     {
@@ -261,6 +265,8 @@ class FHIRDocumentReferenceService extends FHIRBackboneElement
      * A reference to a document.
      *
      * A list of named parameters that is used in the service call.
+     *
+     * @return static
      */
     public function addParameter(FHIRDocumentReferenceParameter $parameter): self
     {
@@ -275,6 +281,8 @@ class FHIRDocumentReferenceService extends FHIRBackboneElement
      * A reference to a document.
      *
      * A list of named parameters that is used in the service call.
+     *
+     * @return static
      */
     public function setParameter(FHIRDocumentReferenceParameter ...$parameter): self
     {

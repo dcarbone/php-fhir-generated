@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -179,6 +179,8 @@ class FHIRConformanceOperation1 extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A coded identifier of the operation, supported by the system.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRRestfulOperationSystemList|FHIRRestfulOperationSystem $code): self
     {
@@ -213,6 +215,8 @@ class FHIRConformanceOperation1 extends FHIRBackboneElement
      * Guidance specific to the implementation of this operation, such as limitations
      * on the kind of transactions allowed, or information about system wide search is
      * implemented.
+     *
+     * @return static
      */
     public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation): self
     {

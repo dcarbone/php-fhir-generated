@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -553,6 +553,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A user-visible prefix for the action.
+     *
+     * @return static
      */
     public function setPrefix(null|string|FHIRStringPrimitive|FHIRString $prefix): self
     {
@@ -585,6 +587,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The title of the action displayed to a user.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -619,6 +623,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * A short description of the action used to provide a summary to display to the
      * user.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -655,6 +661,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * A text equivalent of the action to be performed. This provides a
      * human-interpretable description of the action when the definition is consumed by
      * a system that might not be capable of interpreting it dynamically.
+     *
+     * @return static
      */
     public function setTextEquivalent(null|string|FHIRStringPrimitive|FHIRString $textEquivalent): self
     {
@@ -687,6 +695,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * Indicates how quickly the action should be addressed with respect to other
      * actions.
+     *
+     * @return static
      */
     public function setPriority(null|string|FHIRRequestPriorityList|FHIRRequestPriority $priority): self
     {
@@ -736,6 +746,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * A code that provides meaning for the action or action group. For example, a
      * section may have a LOINC code for a section of a documentation template.
+     *
+     * @return static
      */
     public function addCode(FHIRCodeableConcept $code): self
     {
@@ -754,6 +766,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * A code that provides meaning for the action or action group. For example, a
      * section may have a LOINC code for a section of a documentation template.
+     *
+     * @return static
      */
     public function setCode(FHIRCodeableConcept ...$code): self
     {
@@ -802,6 +816,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * Didactic or other informational resources associated with the action that can be
      * provided to the CDS recipient. Information resources can include inline text
      * commentary and links to web resources.
+     *
+     * @return static
      */
     public function addDocumentation(FHIRRelatedArtifact $documentation): self
     {
@@ -821,6 +837,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * Didactic or other informational resources associated with the action that can be
      * provided to the CDS recipient. Information resources can include inline text
      * commentary and links to web resources.
+     *
+     * @return static
      */
     public function setDocumentation(FHIRRelatedArtifact ...$documentation): self
     {
@@ -863,6 +881,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * An expression that describes applicability criteria, or start/stop conditions
      * for the action.
+     *
+     * @return static
      */
     public function addCondition(FHIRRequestGroupCondition $condition): self
     {
@@ -879,6 +899,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * An expression that describes applicability criteria, or start/stop conditions
      * for the action.
+     *
+     * @return static
      */
     public function setCondition(FHIRRequestGroupCondition ...$condition): self
     {
@@ -921,6 +943,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * A relationship to another action such as "before" or "30-60 minutes after start
      * of".
+     *
+     * @return static
      */
     public function addRelatedAction(FHIRRequestGroupRelatedAction $relatedAction): self
     {
@@ -937,6 +961,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * A relationship to another action such as "before" or "30-60 minutes after start
      * of".
+     *
+     * @return static
      */
     public function setRelatedAction(FHIRRequestGroupRelatedAction ...$relatedAction): self
     {
@@ -972,6 +998,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An optional value describing when the action should be performed.
+     *
+     * @return static
      */
     public function setTimingDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timingDateTime): self
     {
@@ -1004,6 +1032,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An optional value describing when the action should be performed.
+     *
+     * @return static
      */
     public function setTimingAge(null|FHIRAge $timingAge): self
     {
@@ -1033,6 +1063,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An optional value describing when the action should be performed.
+     *
+     * @return static
      */
     public function setTimingPeriod(null|FHIRPeriod $timingPeriod): self
     {
@@ -1062,6 +1094,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An optional value describing when the action should be performed.
+     *
+     * @return static
      */
     public function setTimingDuration(null|FHIRDuration $timingDuration): self
     {
@@ -1091,6 +1125,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An optional value describing when the action should be performed.
+     *
+     * @return static
      */
     public function setTimingRange(null|FHIRRange $timingRange): self
     {
@@ -1128,6 +1164,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An optional value describing when the action should be performed.
+     *
+     * @return static
      */
     public function setTimingTiming(null|FHIRTiming $timingTiming): self
     {
@@ -1170,6 +1208,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The participant that should perform or be responsible for this action.
+     *
+     * @return static
      */
     public function addParticipant(FHIRReference $participant): self
     {
@@ -1186,6 +1226,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The participant that should perform or be responsible for this action.
+     *
+     * @return static
      */
     public function setParticipant(FHIRReference ...$participant): self
     {
@@ -1217,6 +1259,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of action to perform (create, update, remove).
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -1244,6 +1288,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the grouping behavior for the action and its children.
+     *
+     * @return static
      */
     public function setGroupingBehavior(null|string|FHIRActionGroupingBehaviorList|FHIRActionGroupingBehavior $groupingBehavior): self
     {
@@ -1274,6 +1320,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the selection behavior for the action and its children.
+     *
+     * @return static
      */
     public function setSelectionBehavior(null|string|FHIRActionSelectionBehaviorList|FHIRActionSelectionBehavior $selectionBehavior): self
     {
@@ -1304,6 +1352,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines expectations around whether an action is required.
+     *
+     * @return static
      */
     public function setRequiredBehavior(null|string|FHIRActionRequiredBehaviorList|FHIRActionRequiredBehavior $requiredBehavior): self
     {
@@ -1334,6 +1384,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines whether the action should usually be preselected.
+     *
+     * @return static
      */
     public function setPrecheckBehavior(null|string|FHIRActionPrecheckBehaviorList|FHIRActionPrecheckBehavior $precheckBehavior): self
     {
@@ -1366,6 +1418,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines whether the action can be selected multiple times.
+     *
+     * @return static
      */
     public function setCardinalityBehavior(null|string|FHIRActionCardinalityBehaviorList|FHIRActionCardinalityBehavior $cardinalityBehavior): self
     {
@@ -1398,6 +1452,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The resource that is the target of the action (e.g. CommunicationRequest).
+     *
+     * @return static
      */
     public function setResource(null|FHIRReference $resource): self
     {
@@ -1438,6 +1494,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * have inter-dependencies such as "give this medication after that one".
      *
      * Sub actions.
+     *
+     * @return static
      */
     public function addAction(FHIRRequestGroupAction $action): self
     {
@@ -1453,6 +1511,8 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * have inter-dependencies such as "give this medication after that one".
      *
      * Sub actions.
+     *
+     * @return static
      */
     public function setAction(FHIRRequestGroupAction ...$action): self
     {

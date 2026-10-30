@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -608,6 +608,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * Business identifiers assigned to this communication by the performer or other
      * systems which remain constant as the resource is updated and propagates from
      * server to server.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -627,6 +629,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * Business identifiers assigned to this communication by the performer or other
      * systems which remain constant as the resource is updated and propagates from
      * server to server.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -673,6 +677,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      *
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other
      * definition that is adhered to in whole or in part by this Communication.
+     *
+     * @return static
      */
     public function addInstantiatesCanonical(string|FHIRCanonicalPrimitive|FHIRCanonical $instantiatesCanonical): self
     {
@@ -694,6 +700,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      *
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other
      * definition that is adhered to in whole or in part by this Communication.
+     *
+     * @return static
      */
     public function setInstantiatesCanonical(string|FHIRCanonicalPrimitive|FHIRCanonical ...$instantiatesCanonical): self
     {
@@ -745,6 +753,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      *
      * The URL pointing to an externally maintained protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this Communication.
+     *
+     * @return static
      */
     public function addInstantiatesUri(string|FHIRUriPrimitive|FHIRUri $instantiatesUri): self
     {
@@ -765,6 +775,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      *
      * The URL pointing to an externally maintained protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this Communication.
+     *
+     * @return static
      */
     public function setInstantiatesUri(string|FHIRUriPrimitive|FHIRUri ...$instantiatesUri): self
     {
@@ -814,6 +826,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An order, proposal or plan fulfilled in whole or in part by this Communication.
+     *
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -830,6 +844,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An order, proposal or plan fulfilled in whole or in part by this Communication.
+     *
+     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -872,6 +888,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Part of this action.
+     *
+     * @return static
      */
     public function addPartOf(FHIRReference $partOf): self
     {
@@ -888,6 +906,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Part of this action.
+     *
+     * @return static
      */
     public function setPartOf(FHIRReference ...$partOf): self
     {
@@ -930,6 +950,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Prior communication that this communication is in response to.
+     *
+     * @return static
      */
     public function addInResponseTo(FHIRReference $inResponseTo): self
     {
@@ -946,6 +968,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Prior communication that this communication is in response to.
+     *
+     * @return static
      */
     public function setInResponseTo(FHIRReference ...$inResponseTo): self
     {
@@ -973,6 +997,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the transmission.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIREventStatusList|FHIREventStatus $status): self
     {
@@ -1007,6 +1033,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Captures the reason for the current state of the Communication.
+     *
+     * @return static
      */
     public function setStatusReason(null|FHIRCodeableConcept $statusReason): self
     {
@@ -1053,6 +1081,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      *
      * The type of message conveyed such as alert, notification, reminder, instruction,
      * etc.
+     *
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -1071,6 +1101,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      *
      * The type of message conveyed such as alert, notification, reminder, instruction,
      * etc.
+     *
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -1100,6 +1132,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      *
      * Characterizes how quickly the planned or in progress communication must be
      * addressed. Includes concepts such as stat, urgent, routine.
+     *
+     * @return static
      */
     public function setPriority(null|string|FHIRRequestPriorityList|FHIRRequestPriority $priority): self
     {
@@ -1147,6 +1181,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A channel that was used for this communication (e.g. email, fax).
+     *
+     * @return static
      */
     public function addMedium(FHIRCodeableConcept $medium): self
     {
@@ -1164,6 +1200,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A channel that was used for this communication (e.g. email, fax).
+     *
+     * @return static
      */
     public function setMedium(FHIRCodeableConcept ...$medium): self
     {
@@ -1193,6 +1231,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient or group that was the focus of this communication.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -1224,6 +1264,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description of the purpose/content, similar to a subject line in an email.
+     *
+     * @return static
      */
     public function setTopic(null|FHIRCodeableConcept $topic): self
     {
@@ -1268,6 +1310,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      *
      * Other resources that pertain to this communication and to which this
      * communication should be associated.
+     *
+     * @return static
      */
     public function addAbout(FHIRReference $about): self
     {
@@ -1285,6 +1329,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      *
      * Other resources that pertain to this communication and to which this
      * communication should be associated.
+     *
+     * @return static
      */
     public function setAbout(FHIRReference ...$about): self
     {
@@ -1316,6 +1362,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      *
      * The Encounter during which this Communication was created or to which the
      * creation of this record is tightly associated.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -1351,6 +1399,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when this communication was sent.
+     *
+     * @return static
      */
     public function setSent(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $sent): self
     {
@@ -1389,6 +1439,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when this communication arrived at the destination.
+     *
+     * @return static
      */
     public function setReceived(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $received): self
     {
@@ -1444,6 +1496,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * for each recipient. Multiple recipient communications are intended where either
      * receipts are not tracked (e.g. a mass mail-out) or a receipt is captured in
      * aggregate (all emails confirmed received by a particular time).
+     *
+     * @return static
      */
     public function addRecipient(FHIRReference $recipient): self
     {
@@ -1465,6 +1519,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * for each recipient. Multiple recipient communications are intended where either
      * receipts are not tracked (e.g. a mass mail-out) or a receipt is captured in
      * aggregate (all emails confirmed received by a particular time).
+     *
+     * @return static
      */
     public function setRecipient(FHIRReference ...$recipient): self
     {
@@ -1496,6 +1552,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      *
      * The entity (e.g. person, organization, clinical information system, or device)
      * which was the source of the communication.
+     *
+     * @return static
      */
     public function setSender(null|FHIRReference $sender): self
     {
@@ -1540,6 +1598,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason or justification for the communication.
+     *
+     * @return static
      */
     public function addReasonCode(FHIRCodeableConcept $reasonCode): self
     {
@@ -1557,6 +1617,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason or justification for the communication.
+     *
+     * @return static
      */
     public function setReasonCode(FHIRCodeableConcept ...$reasonCode): self
     {
@@ -1599,6 +1661,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates another resource whose existence justifies this communication.
+     *
+     * @return static
      */
     public function addReasonReference(FHIRReference $reasonReference): self
     {
@@ -1615,6 +1679,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates another resource whose existence justifies this communication.
+     *
+     * @return static
      */
     public function setReasonReference(FHIRReference ...$reasonReference): self
     {
@@ -1657,6 +1723,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * reportable condition.
      *
      * Text, attachment(s), or resource(s) that was communicated to the recipient.
+     *
+     * @return static
      */
     public function addPayload(FHIRCommunicationPayload $payload): self
     {
@@ -1673,6 +1741,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      * reportable condition.
      *
      * Text, attachment(s), or resource(s) that was communicated to the recipient.
+     *
+     * @return static
      */
     public function setPayload(FHIRCommunicationPayload ...$payload): self
     {
@@ -1719,6 +1789,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      *
      * Additional notes or commentary about the communication by the sender, receiver
      * or other interested parties.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1737,6 +1809,8 @@ class FHIRCommunication extends FHIRDomainResource implements VersionContainedTy
      *
      * Additional notes or commentary about the communication by the sender, receiver
      * or other interested parties.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {

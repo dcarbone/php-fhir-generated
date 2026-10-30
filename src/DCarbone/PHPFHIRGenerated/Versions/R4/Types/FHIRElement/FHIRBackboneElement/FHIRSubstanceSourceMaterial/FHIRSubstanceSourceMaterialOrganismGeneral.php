@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -217,6 +217,8 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kingdom of an organism shall be specified.
+     *
+     * @return static
      */
     public function setKingdom(null|FHIRCodeableConcept $kingdom): self
     {
@@ -248,6 +250,8 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The phylum of an organism shall be specified.
+     *
+     * @return static
      */
     public function setPhylum(null|FHIRCodeableConcept $phylum): self
     {
@@ -279,6 +283,8 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The class of an organism shall be specified.
+     *
+     * @return static
      */
     public function setClass(null|FHIRCodeableConcept $class): self
     {
@@ -310,6 +316,8 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The order of an organism shall be specified,.
+     *
+     * @return static
      */
     public function setOrder(null|FHIRCodeableConcept $order): self
     {

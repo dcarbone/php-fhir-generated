@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -216,6 +216,8 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
      *
      * An integer associated with each note which may be referred to from each service
      * line item.
+     *
+     * @return static
      */
     public function setNumber(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $number): self
     {
@@ -250,6 +252,8 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The note purpose: Print/Display.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -279,6 +283,8 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The note text.
+     *
+     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -319,6 +325,8 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
      * by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g.
      * "en" for English, or "en-US" for American English versus "en-EN" for England
      * English.
+     *
+     * @return static
      */
     public function setLanguage(null|FHIRCodeableConcept $language): self
     {

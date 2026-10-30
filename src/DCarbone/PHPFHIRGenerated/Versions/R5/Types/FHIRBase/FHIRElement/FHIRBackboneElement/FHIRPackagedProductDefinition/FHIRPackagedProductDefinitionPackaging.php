@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -381,6 +381,8 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * A business identifier that is specific to this particular part of the packaging,
      * often assigned by the manufacturer. Including possibly Data Carrier Identifier
      * (a GS1 barcode).
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -400,6 +402,8 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * A business identifier that is specific to this particular part of the packaging,
      * often assigned by the manufacturer. Including possibly Data Carrier Identifier
      * (a GS1 barcode).
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -431,6 +435,8 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The physical type of the container of the items.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -462,6 +468,8 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * Is this a part of the packaging (e.g. a cap or bottle stopper), rather than the
      * packaging itself (e.g. a bottle or vial). The latter type are designed be a
      * container, but the former are not.
+     *
+     * @return static
      */
     public function setComponentPart(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $componentPart): self
     {
@@ -500,6 +508,8 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * does not relate to the number of contained items but relates solely to the
      * number of packaging items. When looking at the outermost layer it is always 1.
      * If there are two boxes within, at the next layer it would be 2.
+     *
+     * @return static
      */
     public function setQuantity(null|string|float|FHIRIntegerPrimitive|FHIRInteger $quantity): self
     {
@@ -547,6 +557,8 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Material type of the package item.
+     *
+     * @return static
      */
     public function addMaterial(FHIRCodeableConcept $material): self
     {
@@ -564,6 +576,8 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Material type of the package item.
+     *
+     * @return static
      */
     public function setMaterial(FHIRCodeableConcept ...$material): self
     {
@@ -612,6 +626,8 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * A possible alternate material for this part of the packaging, that is allowed to
      * be used instead of the usual material (e.g. different types of plastic for a
      * blister sleeve).
+     *
+     * @return static
      */
     public function addAlternateMaterial(FHIRCodeableConcept $alternateMaterial): self
     {
@@ -631,6 +647,8 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * A possible alternate material for this part of the packaging, that is allowed to
      * be used instead of the usual material (e.g. different types of plastic for a
      * blister sleeve).
+     *
+     * @return static
      */
     public function setAlternateMaterial(FHIRCodeableConcept ...$alternateMaterial): self
     {
@@ -675,6 +693,8 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Shelf Life and storage information.
+     *
+     * @return static
      */
     public function addShelfLifeStorage(FHIRProductShelfLife $shelfLifeStorage): self
     {
@@ -692,6 +712,8 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Shelf Life and storage information.
+     *
+     * @return static
      */
     public function setShelfLifeStorage(FHIRProductShelfLife ...$shelfLifeStorage): self
     {
@@ -736,6 +758,8 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      *
      * Manufacturer of this packaging item. When there are multiple values each one is
      * a potential manufacturer of this packaging item.
+     *
+     * @return static
      */
     public function addManufacturer(FHIRReference $manufacturer): self
     {
@@ -753,6 +777,8 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      *
      * Manufacturer of this packaging item. When there are multiple values each one is
      * a potential manufacturer of this packaging item.
+     *
+     * @return static
      */
     public function setManufacturer(FHIRReference ...$manufacturer): self
     {
@@ -791,6 +817,8 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * A medically related item or items, in a container or package.
      *
      * General characteristics of this item.
+     *
+     * @return static
      */
     public function addProperty(FHIRPackagedProductDefinitionProperty $property): self
     {
@@ -805,6 +833,8 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * A medically related item or items, in a container or package.
      *
      * General characteristics of this item.
+     *
+     * @return static
      */
     public function setProperty(FHIRPackagedProductDefinitionProperty ...$property): self
     {
@@ -843,6 +873,8 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * A medically related item or items, in a container or package.
      *
      * The item(s) within the packaging.
+     *
+     * @return static
      */
     public function addContainedItem(FHIRPackagedProductDefinitionContainedItem $containedItem): self
     {
@@ -857,6 +889,8 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * A medically related item or items, in a container or package.
      *
      * The item(s) within the packaging.
+     *
+     * @return static
      */
     public function setContainedItem(FHIRPackagedProductDefinitionContainedItem ...$containedItem): self
     {
@@ -899,6 +933,8 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * Allows containers (and parts of containers) within containers, still as a part
      * of a single packaged product. See also
      * PackagedProductDefinition.packaging.containedItem.item(PackagedProductDefinition).
+     *
+     * @return static
      */
     public function addPackaging(FHIRPackagedProductDefinitionPackaging $packaging): self
     {
@@ -915,6 +951,8 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * Allows containers (and parts of containers) within containers, still as a part
      * of a single packaged product. See also
      * PackagedProductDefinition.packaging.containedItem.item(PackagedProductDefinition).
+     *
+     * @return static
      */
     public function setPackaging(FHIRPackagedProductDefinitionPackaging ...$packaging): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -201,6 +201,8 @@ class FHIRIngredientManufacturer extends FHIRBackboneElement
      * example whether it is a possible one (others allowed), or an exclusive
      * authorized one for this ingredient. Note that this is not the manufacturing
      * process role.
+     *
+     * @return static
      */
     public function setRole(null|string|FHIRIngredientManufacturerRoleEnum|FHIRIngredientManufacturerRole $role): self
     {
@@ -233,6 +235,8 @@ class FHIRIngredientManufacturer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An organization that manufactures this ingredient.
+     *
+     * @return static
      */
     public function setManufacturer(null|FHIRReference $manufacturer): self
     {

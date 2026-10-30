@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -212,6 +212,8 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specified substance.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -243,6 +245,8 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The group of specified substance, e.g. group 1 to 4.
+     *
+     * @return static
      */
     public function setGroup(null|FHIRCodeableConcept $group): self
     {
@@ -274,6 +278,8 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Confidentiality level of the specified substance as the ingredient.
+     *
+     * @return static
      */
     public function setConfidentiality(null|FHIRCodeableConcept $confidentiality): self
     {
@@ -314,6 +320,8 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      *
      * Quantity of the substance or specified substance present in the manufactured
      * item or pharmaceutical product.
+     *
+     * @return static
      */
     public function addStrength(FHIRMedicinalProductIngredientStrength $strength): self
     {
@@ -329,6 +337,8 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      *
      * Quantity of the substance or specified substance present in the manufactured
      * item or pharmaceutical product.
+     *
+     * @return static
      */
     public function setStrength(FHIRMedicinalProductIngredientStrength ...$strength): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -405,6 +405,8 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      * The EpisodeOfCare may be known by different identifiers for different contexts
      * of use, such as when an external agency is tracking the Episode for funding
      * purposes.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -424,6 +426,8 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      * The EpisodeOfCare may be known by different identifiers for different contexts
      * of use, such as when an external agency is tracking the Episode for funding
      * purposes.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -451,6 +455,8 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * planned | waitlist | active | onhold | finished | cancelled.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIREpisodeOfCareStatusList|FHIREpisodeOfCareStatus $status): self
     {
@@ -498,6 +504,8 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      *
      * The history of statuses that the EpisodeOfCare has been through (without
      * requiring processing the history of the resource).
+     *
+     * @return static
      */
     public function addStatusHistory(FHIREpisodeOfCareStatusHistory $statusHistory): self
     {
@@ -515,6 +523,8 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      *
      * The history of statuses that the EpisodeOfCare has been through (without
      * requiring processing the history of the resource).
+     *
+     * @return static
      */
     public function setStatusHistory(FHIREpisodeOfCareStatusHistory ...$statusHistory): self
     {
@@ -561,6 +571,8 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      *
      * A classification of the type of episode of care; e.g. specialist referral,
      * disease management, type of funded care.
+     *
+     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -579,6 +591,8 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      *
      * A classification of the type of episode of care; e.g. specialist referral,
      * disease management, type of funded care.
+     *
+     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -621,6 +635,8 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      * level of responsibility for the patient during this time.
      *
      * The list of diagnosis relevant to this episode of care.
+     *
+     * @return static
      */
     public function addDiagnosis(FHIREpisodeOfCareDiagnosis $diagnosis): self
     {
@@ -637,6 +653,8 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      * level of responsibility for the patient during this time.
      *
      * The list of diagnosis relevant to this episode of care.
+     *
+     * @return static
      */
     public function setDiagnosis(FHIREpisodeOfCareDiagnosis ...$diagnosis): self
     {
@@ -666,6 +684,8 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who is the focus of this episode of care.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -697,6 +717,8 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      *
      * The organization that has assumed the specific responsibilities for the
      * specified duration.
+     *
+     * @return static
      */
     public function setManagingOrganization(null|FHIRReference $managingOrganization): self
     {
@@ -728,6 +750,8 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      *
      * The interval during which the managing organization assumes the defined
      * responsibility.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -772,6 +796,8 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      *
      * Referral Request(s) that are fulfilled by this EpisodeOfCare, incoming
      * referrals.
+     *
+     * @return static
      */
     public function addReferralRequest(FHIRReference $referralRequest): self
     {
@@ -789,6 +815,8 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      *
      * Referral Request(s) that are fulfilled by this EpisodeOfCare, incoming
      * referrals.
+     *
+     * @return static
      */
     public function setReferralRequest(FHIRReference ...$referralRequest): self
     {
@@ -818,6 +846,8 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner that is the care manager/care coordinator for this patient.
+     *
+     * @return static
      */
     public function setCareManager(null|FHIRReference $careManager): self
     {
@@ -862,6 +892,8 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      *
      * The list of practitioners that may be facilitating this episode of care for
      * specific purposes.
+     *
+     * @return static
      */
     public function addTeam(FHIRReference $team): self
     {
@@ -879,6 +911,8 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      *
      * The list of practitioners that may be facilitating this episode of care for
      * specific purposes.
+     *
+     * @return static
      */
     public function setTeam(FHIRReference ...$team): self
     {
@@ -921,6 +955,8 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of accounts that may be used for billing for this EpisodeOfCare.
+     *
+     * @return static
      */
     public function addAccount(FHIRReference $account): self
     {
@@ -937,6 +973,8 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of accounts that may be used for billing for this EpisodeOfCare.
+     *
+     * @return static
      */
     public function setAccount(FHIRReference ...$account): self
     {

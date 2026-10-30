@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -360,6 +360,8 @@ class FHIRContractTerm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this particular Contract Provision.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -395,6 +397,8 @@ class FHIRContractTerm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When this Contract Provision was issued.
+     *
+     * @return static
      */
     public function setIssued(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $issued): self
     {
@@ -427,6 +431,8 @@ class FHIRContractTerm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Relevant time or time-period when this Contract Provision is applicable.
+     *
+     * @return static
      */
     public function setApplies(null|FHIRPeriod $applies): self
     {
@@ -458,6 +464,8 @@ class FHIRContractTerm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity that the term applies to.
+     *
+     * @return static
      */
     public function setTopicCodeableConcept(null|FHIRCodeableConcept $topicCodeableConcept): self
     {
@@ -487,6 +495,8 @@ class FHIRContractTerm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity that the term applies to.
+     *
+     * @return static
      */
     public function setTopicReference(null|FHIRReference $topicReference): self
     {
@@ -524,6 +534,8 @@ class FHIRContractTerm extends FHIRBackboneElement
      * both parties to perform a particular requirement by some specified time or
      * prevents one or both parties from performing a particular requirement by some
      * specified time.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -555,6 +567,8 @@ class FHIRContractTerm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A specialized legal clause or condition based on overarching contract type.
+     *
+     * @return static
      */
     public function setSubType(null|FHIRCodeableConcept $subType): self
     {
@@ -584,6 +598,8 @@ class FHIRContractTerm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Statement of a provision in a policy or a contract.
+     *
+     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -629,6 +645,8 @@ class FHIRContractTerm extends FHIRBackboneElement
      *
      * Security labels that protect the handling of information about the term and its
      * elements, which may be specifically identified..
+     *
+     * @return static
      */
     public function addSecurityLabel(FHIRContractSecurityLabel $securityLabel): self
     {
@@ -645,6 +663,8 @@ class FHIRContractTerm extends FHIRBackboneElement
      *
      * Security labels that protect the handling of information about the term and its
      * elements, which may be specifically identified..
+     *
+     * @return static
      */
     public function setSecurityLabel(FHIRContractSecurityLabel ...$securityLabel): self
     {
@@ -672,6 +692,8 @@ class FHIRContractTerm extends FHIRBackboneElement
      * policy or agreement.
      *
      * The matter of concern in the context of this provision of the agrement.
+     *
+     * @return static
      */
     public function setOffer(null|FHIRContractOffer $offer): self
     {
@@ -712,6 +734,8 @@ class FHIRContractTerm extends FHIRBackboneElement
      * policy or agreement.
      *
      * Contract Term Asset List.
+     *
+     * @return static
      */
     public function addAsset(FHIRContractAsset $asset): self
     {
@@ -727,6 +751,8 @@ class FHIRContractTerm extends FHIRBackboneElement
      * policy or agreement.
      *
      * Contract Term Asset List.
+     *
+     * @return static
      */
     public function setAsset(FHIRContractAsset ...$asset): self
     {
@@ -769,6 +795,8 @@ class FHIRContractTerm extends FHIRBackboneElement
      *
      * An actor taking a role in an activity for which it can be assigned some degree
      * of responsibility for the activity taking place.
+     *
+     * @return static
      */
     public function addAction(FHIRContractAction $action): self
     {
@@ -785,6 +813,8 @@ class FHIRContractTerm extends FHIRBackboneElement
      *
      * An actor taking a role in an activity for which it can be assigned some degree
      * of responsibility for the activity taking place.
+     *
+     * @return static
      */
     public function setAction(FHIRContractAction ...$action): self
     {
@@ -825,6 +855,8 @@ class FHIRContractTerm extends FHIRBackboneElement
      * policy or agreement.
      *
      * Nested group of Contract Provisions.
+     *
+     * @return static
      */
     public function addGroup(FHIRContractTerm $group): self
     {
@@ -840,6 +872,8 @@ class FHIRContractTerm extends FHIRBackboneElement
      * policy or agreement.
      *
      * Nested group of Contract Provisions.
+     *
+     * @return static
      */
     public function setGroup(FHIRContractTerm ...$group): self
     {

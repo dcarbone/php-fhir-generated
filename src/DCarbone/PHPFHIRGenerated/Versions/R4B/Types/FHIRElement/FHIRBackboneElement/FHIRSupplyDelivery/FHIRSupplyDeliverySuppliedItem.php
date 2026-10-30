@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -218,6 +218,8 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of supply that has been dispensed. Includes unit of measure.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -253,6 +255,8 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement
      * Identifies the medication, substance or device being dispensed. This is either a
      * link to a resource representing the details of the item or a code that
      * identifies the item from a known list.
+     *
+     * @return static
      */
     public function setItemCodeableConcept(null|FHIRCodeableConcept $itemCodeableConcept): self
     {
@@ -286,6 +290,8 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement
      * Identifies the medication, substance or device being dispensed. This is either a
      * link to a resource representing the details of the item or a code that
      * identifies the item from a known list.
+     *
+     * @return static
      */
     public function setItemReference(null|FHIRReference $itemReference): self
     {

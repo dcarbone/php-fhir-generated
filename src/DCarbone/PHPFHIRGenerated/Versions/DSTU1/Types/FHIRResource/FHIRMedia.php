@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -386,6 +386,8 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
      *
      * Whether the media is a photo (still image), an audio recording, or a video
      * recording.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRMediaTypeList|FHIRMediaType $type): self
     {
@@ -424,6 +426,8 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
      * Details of the type of the media - usually, how it was acquired (what type of
      * device). If images sourced from a DICOM system, are wrapped in a Media resource,
      * then this is the modality.
+     *
+     * @return static
      */
     public function setSubtype(null|FHIRCodeableConcept $subtype): self
     {
@@ -470,6 +474,8 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
      * Identifiers associated with the image - these may include identifiers for the
      * image itself, identifiers for the context of its collection (e.g. series ids)
      * and context ids such as accession numbers or other workflow identifiers.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -488,6 +494,8 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
      * Identifiers associated with the image - these may include identifiers for the
      * image itself, identifiers for the context of its collection (e.g. series ids)
      * and context ids such as accession numbers or other workflow identifiers.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -523,6 +531,8 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
      *
      * When the media was originally recorded. For video and audio, if the length of
      * the recording is not insignificant, this is the end of the recording.
+     *
+     * @return static
      */
     public function setDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateTime): self
     {
@@ -555,6 +565,8 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who/What this Media is a record of.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRResourceReference $subject): self
     {
@@ -584,6 +596,8 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who administered the collection of the image.
+     *
+     * @return static
      */
     public function setOperator(null|FHIRResourceReference $operator): self
     {
@@ -615,6 +629,8 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The name of the imaging view e.g Lateral or Antero-posterior (AP).
+     *
+     * @return static
      */
     public function setView(null|FHIRCodeableConcept $view): self
     {
@@ -644,6 +660,8 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
      *
      * The name of the device / manufacturer of the device that was used to make the
      * recording.
+     *
+     * @return static
      */
     public function setDeviceName(null|string|FHIRStringPrimitive|FHIRString $deviceName): self
     {
@@ -674,6 +692,8 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Height of the image in pixels(photo/video).
+     *
+     * @return static
      */
     public function setHeight(null|string|float|FHIRIntegerPrimitive|FHIRInteger $height): self
     {
@@ -704,6 +724,8 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Width of the image in pixels (photo/video).
+     *
+     * @return static
      */
     public function setWidth(null|string|float|FHIRIntegerPrimitive|FHIRInteger $width): self
     {
@@ -742,6 +764,8 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
      * animated gif. If there is more than one frame, this SHALL have a value in order
      * to alert interface software that a multi-frame capable rendering widget is
      * required.
+     *
+     * @return static
      */
     public function setFrames(null|string|float|FHIRIntegerPrimitive|FHIRInteger $frames): self
     {
@@ -772,6 +796,8 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The length of the recording in seconds - for audio and video.
+     *
+     * @return static
      */
     public function setLength(null|string|float|FHIRIntegerPrimitive|FHIRInteger $length): self
     {
@@ -806,6 +832,8 @@ class FHIRMedia extends FHIRResource implements VersionContainedTypeInterface
      *
      * The actual content of the media - inline or by direct reference to the media
      * source file.
+     *
+     * @return static
      */
     public function setContent(null|FHIRAttachment $content): self
     {

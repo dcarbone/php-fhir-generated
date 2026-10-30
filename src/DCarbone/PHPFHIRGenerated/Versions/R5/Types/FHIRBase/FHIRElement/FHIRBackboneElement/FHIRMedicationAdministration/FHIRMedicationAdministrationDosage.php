@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -205,8 +205,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * Identifies the speed with which the medication was or will be introduced into
      * the patient. Typically, the rate for an infusion e.g. 100 ml per 1 hour or 100
      * ml/hr. May also be expressed as a rate per unit of time, e.g. 500 ml per 2
-     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose
-     * any one of rate*, but only one)
+     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
      */
     #[FHIRRatio]
     protected FHIRRatio $rateRatio;
@@ -220,8 +219,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * Identifies the speed with which the medication was or will be introduced into
      * the patient. Typically, the rate for an infusion e.g. 100 ml per 1 hour or 100
      * ml/hr. May also be expressed as a rate per unit of time, e.g. 500 ml per 2
-     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose
-     * any one of rate*, but only one)
+     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $rateQuantity;
@@ -303,6 +301,8 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * complex to code. When coded dosage is present, the free text dosage may still be
      * present for display to humans. The dosage instructions should reflect the dosage
      * of the medication that was administered.
+     *
+     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -339,6 +339,8 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      *
      * A coded specification of the anatomic site where the medication first entered
      * the body. For example, "left arm".
+     *
+     * @return static
      */
     public function setSite(null|FHIRCodeableConcept $site): self
     {
@@ -374,6 +376,8 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * A code specifying the route or physiological path of administration of a
      * therapeutic agent into or onto the patient. For example, topical, intravenous,
      * etc.
+     *
+     * @return static
      */
     public function setRoute(null|FHIRCodeableConcept $route): self
     {
@@ -411,6 +415,8 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * was introduced into or on the body. This attribute will most often NOT be
      * populated. It is most commonly used for injections. For example, Slow Push, Deep
      * IV.
+     *
+     * @return static
      */
     public function setMethod(null|FHIRCodeableConcept $method): self
     {
@@ -448,6 +454,8 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * The amount of the medication given at one administration event. Use this value
      * when the administration is essentially an instantaneous event such as a
      * swallowing a tablet or giving an injection.
+     *
+     * @return static
      */
     public function setDose(null|FHIRQuantity $dose): self
     {
@@ -468,8 +476,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * Identifies the speed with which the medication was or will be introduced into
      * the patient. Typically, the rate for an infusion e.g. 100 ml per 1 hour or 100
      * ml/hr. May also be expressed as a rate per unit of time, e.g. 500 ml per 2
-     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose
-     * any one of rate*, but only one)
+     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
      */
     public function getRateRatio(): null|FHIRRatio
     {
@@ -485,8 +492,9 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * Identifies the speed with which the medication was or will be introduced into
      * the patient. Typically, the rate for an infusion e.g. 100 ml per 1 hour or 100
      * ml/hr. May also be expressed as a rate per unit of time, e.g. 500 ml per 2
-     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose
-     * any one of rate*, but only one)
+     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
+     *
+     * @return static
      */
     public function setRateRatio(null|FHIRRatio $rateRatio): self
     {
@@ -508,8 +516,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * Identifies the speed with which the medication was or will be introduced into
      * the patient. Typically, the rate for an infusion e.g. 100 ml per 1 hour or 100
      * ml/hr. May also be expressed as a rate per unit of time, e.g. 500 ml per 2
-     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose
-     * any one of rate*, but only one)
+     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
      */
     public function getRateQuantity(): null|FHIRQuantity
     {
@@ -526,8 +533,9 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * Identifies the speed with which the medication was or will be introduced into
      * the patient. Typically, the rate for an infusion e.g. 100 ml per 1 hour or 100
      * ml/hr. May also be expressed as a rate per unit of time, e.g. 500 ml per 2
-     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose
-     * any one of rate*, but only one)
+     * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
+     *
+     * @return static
      */
     public function setRateQuantity(null|FHIRQuantity $rateQuantity): self
     {

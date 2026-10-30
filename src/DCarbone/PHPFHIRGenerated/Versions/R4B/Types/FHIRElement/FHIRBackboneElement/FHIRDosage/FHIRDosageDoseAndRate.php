@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -260,6 +260,8 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of dose or rate specified, for example, ordered or calculated.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -289,6 +291,8 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per dose.
+     *
+     * @return static
      */
     public function setDoseRange(null|FHIRRange $doseRange): self
     {
@@ -322,6 +326,8 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per dose.
+     *
+     * @return static
      */
     public function setDoseQuantity(null|FHIRQuantity $doseQuantity): self
     {
@@ -353,6 +359,8 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per unit of time.
+     *
+     * @return static
      */
     public function setRateRatio(null|FHIRRatio $rateRatio): self
     {
@@ -382,6 +390,8 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per unit of time.
+     *
+     * @return static
      */
     public function setRateRange(null|FHIRRange $rateRange): self
     {
@@ -415,6 +425,8 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per unit of time.
+     *
+     * @return static
      */
     public function setRateQuantity(null|FHIRQuantity $rateQuantity): self
     {

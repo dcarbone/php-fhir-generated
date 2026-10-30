@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -198,6 +198,8 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The code identifying which tooth is missing.
+     *
+     * @return static
      */
     public function setTooth(null|FHIRCoding $tooth): self
     {
@@ -227,6 +229,8 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Missing reason may be: E-extraction, O-other.
+     *
+     * @return static
      */
     public function setReason(null|FHIRCoding $reason): self
     {
@@ -260,6 +264,8 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
      *
      * The date of the extraction either known from records or patient reported
      * estimate.
+     *
+     * @return static
      */
     public function setExtractionDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $extractionDate): self
     {

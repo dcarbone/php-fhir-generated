@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -225,6 +225,8 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
      *
      * Coded expression for the type of tissue for which the withdrawal period applies,
      * e.g. meat, milk.
+     *
+     * @return static
      */
     public function setTissue(null|FHIRCodeableConcept $tissue): self
     {
@@ -258,6 +260,8 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value for the time.
+     *
+     * @return static
      */
     public function setValue(null|FHIRQuantity $value): self
     {
@@ -287,6 +291,8 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Extra information about the withdrawal period.
+     *
+     * @return static
      */
     public function setSupportingInformation(null|string|FHIRStringPrimitive|FHIRString $supportingInformation): self
     {

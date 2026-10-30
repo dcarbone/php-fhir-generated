@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -214,6 +214,8 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The meaning of the population group as defined in the measure definition.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -256,6 +258,8 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * The populations that make up the population group, one for each type of
      * population appropriate for the measure.
+     *
+     * @return static
      */
     public function addPopulation(FHIRMeasureReportPopulation $population): self
     {
@@ -272,6 +276,8 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * The populations that make up the population group, one for each type of
      * population appropriate for the measure.
+     *
+     * @return static
      */
     public function setPopulation(FHIRMeasureReportPopulation ...$population): self
     {
@@ -309,6 +315,8 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * The measure score for this population group, calculated as appropriate for the
      * measure type and scoring method, and based on the contents of the populations
      * defined in the group.
+     *
+     * @return static
      */
     public function setMeasureScore(null|FHIRQuantity $measureScore): self
     {
@@ -351,6 +359,8 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * When a measure includes multiple stratifiers, there will be a stratifier group
      * for each stratifier defined by the measure.
+     *
+     * @return static
      */
     public function addStratifier(FHIRMeasureReportStratifier $stratifier): self
     {
@@ -367,6 +377,8 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * When a measure includes multiple stratifiers, there will be a stratifier group
      * for each stratifier defined by the measure.
+     *
+     * @return static
      */
     public function setStratifier(FHIRMeasureReportStratifier ...$stratifier): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -328,6 +328,8 @@ class FHIRMedicationStatement extends FHIRResource implements VersionContainedTy
      * while the patient was off the ward might be made with a different system and
      * entered after the event. Particularly important if these records have to be
      * updated.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -350,6 +352,8 @@ class FHIRMedicationStatement extends FHIRResource implements VersionContainedTy
      * while the patient was off the ward might be made with a different system and
      * entered after the event. Particularly important if these records have to be
      * updated.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -379,6 +383,8 @@ class FHIRMedicationStatement extends FHIRResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or animal who is /was taking the medication.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRResourceReference $patient): self
     {
@@ -406,6 +412,8 @@ class FHIRMedicationStatement extends FHIRResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Set this to true if the record is saying that the medication was NOT taken.
+     *
+     * @return static
      */
     public function setWasNotGiven(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $wasNotGiven): self
     {
@@ -453,6 +461,8 @@ class FHIRMedicationStatement extends FHIRResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code indicating why the medication was not taken.
+     *
+     * @return static
      */
     public function addReasonNotGiven(FHIRCodeableConcept $reasonNotGiven): self
     {
@@ -470,6 +480,8 @@ class FHIRMedicationStatement extends FHIRResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code indicating why the medication was not taken.
+     *
+     * @return static
      */
     public function setReasonNotGiven(FHIRCodeableConcept ...$reasonNotGiven): self
     {
@@ -501,6 +513,8 @@ class FHIRMedicationStatement extends FHIRResource implements VersionContainedTy
      *
      * The interval of time during which it is being asserted that the patient was
      * taking the medication.
+     *
+     * @return static
      */
     public function setWhenGiven(null|FHIRPeriod $whenGiven): self
     {
@@ -534,6 +548,8 @@ class FHIRMedicationStatement extends FHIRResource implements VersionContainedTy
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
+     *
+     * @return static
      */
     public function setMedication(null|FHIRResourceReference $medication): self
     {
@@ -578,6 +594,8 @@ class FHIRMedicationStatement extends FHIRResource implements VersionContainedTy
      *
      * An identifier or a link to a resource that identifies a device used in
      * administering the medication to the patient.
+     *
+     * @return static
      */
     public function addDevice(FHIRResourceReference $device): self
     {
@@ -595,6 +613,8 @@ class FHIRMedicationStatement extends FHIRResource implements VersionContainedTy
      *
      * An identifier or a link to a resource that identifies a device used in
      * administering the medication to the patient.
+     *
+     * @return static
      */
     public function setDevice(FHIRResourceReference ...$device): self
     {
@@ -637,6 +657,8 @@ class FHIRMedicationStatement extends FHIRResource implements VersionContainedTy
      * or another clinician.
      *
      * Indicates how the medication is/was used by the patient.
+     *
+     * @return static
      */
     public function addDosage(FHIRMedicationStatementDosage $dosage): self
     {
@@ -653,6 +675,8 @@ class FHIRMedicationStatement extends FHIRResource implements VersionContainedTy
      * or another clinician.
      *
      * Indicates how the medication is/was used by the patient.
+     *
+     * @return static
      */
     public function setDosage(FHIRMedicationStatementDosage ...$dosage): self
     {

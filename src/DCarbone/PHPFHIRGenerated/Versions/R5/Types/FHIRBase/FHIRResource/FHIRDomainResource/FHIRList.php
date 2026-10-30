@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -439,6 +439,8 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Identifier for the List assigned for business purposes outside the context of
      * FHIR.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -457,6 +459,8 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Identifier for the List assigned for business purposes outside the context of
      * FHIR.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -482,6 +486,8 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the current state of this list.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRListStatusEnum|FHIRListStatus $status): self
     {
@@ -516,6 +522,8 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * being maintained on an ongoing basis, or if it represents a snapshot of a list
      * of items from another source, or whether it is a prepared list where items may
      * be marked as added, modified or deleted.
+     *
+     * @return static
      */
     public function setMode(null|string|FHIRListModeEnum|FHIRListMode $mode): self
     {
@@ -548,6 +556,8 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A label for the list assigned by the author.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -582,6 +592,8 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * This code defines the purpose of the list - why it was created.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -626,6 +638,8 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The common subject(s) (or patient(s)) of the resources that are in the list if
      * there is one (or a set of subjects).
+     *
+     * @return static
      */
     public function addSubject(FHIRReference $subject): self
     {
@@ -643,6 +657,8 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The common subject(s) (or patient(s)) of the resources that are in the list if
      * there is one (or a set of subjects).
+     *
+     * @return static
      */
     public function setSubject(FHIRReference ...$subject): self
     {
@@ -672,6 +688,8 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter that is the context in which this list was created.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -709,6 +727,8 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date list was last reviewed/revised and determined to be 'current'.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -743,6 +763,8 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The entity responsible for deciding what the contents of the list were. Where
      * the list was created by a human, this is the same as the author of the list.
+     *
+     * @return static
      */
     public function setSource(null|FHIRReference $source): self
     {
@@ -774,6 +796,8 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * What order applies to the items in the list.
+     *
+     * @return static
      */
     public function setOrderedBy(null|FHIRCodeableConcept $orderedBy): self
     {
@@ -818,6 +842,8 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments that apply to the overall list.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -835,6 +861,8 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments that apply to the overall list.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -875,6 +903,8 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * allergy lists, facility list, organization list, etc.
      *
      * Entries in this list.
+     *
+     * @return static
      */
     public function addEntry(FHIRListEntry $entry): self
     {
@@ -890,6 +920,8 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * allergy lists, facility list, organization list, etc.
      *
      * Entries in this list.
+     *
+     * @return static
      */
     public function setEntry(FHIRListEntry ...$entry): self
     {
@@ -921,6 +953,8 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the list is empty, why the list is empty.
+     *
+     * @return static
      */
     public function setEmptyReason(null|FHIRCodeableConcept $emptyReason): self
     {

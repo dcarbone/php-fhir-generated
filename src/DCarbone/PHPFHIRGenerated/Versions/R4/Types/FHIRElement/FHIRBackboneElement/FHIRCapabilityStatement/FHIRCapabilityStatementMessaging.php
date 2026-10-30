@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -242,6 +242,8 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      *
      * An endpoint (network accessible address) to which messages and/or replies are to
      * be sent.
+     *
+     * @return static
      */
     public function addEndpoint(FHIRCapabilityStatementEndpoint $endpoint): self
     {
@@ -260,6 +262,8 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      *
      * An endpoint (network accessible address) to which messages and/or replies are to
      * be sent.
+     *
+     * @return static
      */
     public function setEndpoint(FHIRCapabilityStatementEndpoint ...$endpoint): self
     {
@@ -291,6 +295,8 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      *
      * Length if the receiver's reliable messaging cache in minutes (if a receiver) or
      * how long the cache length on the receiver should be (if a sender).
+     *
+     * @return static
      */
     public function setReliableCache(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $reliableCache): self
     {
@@ -335,6 +341,8 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      * Documentation about the system's messaging capabilities for this endpoint not
      * otherwise documented by the capability statement. For example, the process for
      * becoming an authorized messaging exchange partner.
+     *
+     * @return static
      */
     public function setDocumentation(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $documentation): self
     {
@@ -382,6 +390,8 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      * implementation.
      *
      * References to message definitions for messages this system can send or receive.
+     *
+     * @return static
      */
     public function addSupportedMessage(FHIRCapabilityStatementSupportedMessage $supportedMessage): self
     {
@@ -399,6 +409,8 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      * implementation.
      *
      * References to message definitions for messages this system can send or receive.
+     *
+     * @return static
      */
     public function setSupportedMessage(FHIRCapabilityStatementSupportedMessage ...$supportedMessage): self
     {

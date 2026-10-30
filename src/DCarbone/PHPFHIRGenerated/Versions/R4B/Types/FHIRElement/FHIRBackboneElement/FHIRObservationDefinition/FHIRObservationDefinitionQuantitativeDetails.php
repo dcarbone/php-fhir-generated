@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -239,6 +239,8 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
      *
      * Customary unit used to report quantitative results of observations conforming to
      * this ObservationDefinition.
+     *
+     * @return static
      */
     public function setCustomaryUnit(null|FHIRCodeableConcept $customaryUnit): self
     {
@@ -272,6 +274,8 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
      *
      * SI unit used to report quantitative results of observations conforming to this
      * ObservationDefinition.
+     *
+     * @return static
      */
     public function setUnit(null|FHIRCodeableConcept $unit): self
     {
@@ -305,6 +309,8 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
      *
      * Factor for converting value expressed with SI unit to value expressed with
      * customary unit.
+     *
+     * @return static
      */
     public function setConversionFactor(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $conversionFactor): self
     {
@@ -339,6 +345,8 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
      *
      * Number of digits after decimal separator when the results of such observations
      * are of type Quantity.
+     *
+     * @return static
      */
     public function setDecimalPrecision(null|string|float|FHIRIntegerPrimitive|FHIRInteger $decimalPrecision): self
     {

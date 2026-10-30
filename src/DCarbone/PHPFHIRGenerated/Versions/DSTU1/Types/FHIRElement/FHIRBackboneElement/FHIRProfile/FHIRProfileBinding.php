@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -252,6 +252,8 @@ class FHIRProfileBinding extends FHIRBackboneElement
      *
      * A descriptive name for this - can be useful for generating implementation
      * artifacts.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -288,6 +290,8 @@ class FHIRProfileBinding extends FHIRBackboneElement
      * type permits) text alone to convey concepts not covered by the set of codes
      * identified in the binding. If false, then conformant systems are constrained to
      * the provided codes alone.
+     *
+     * @return static
      */
     public function setIsExtensible(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isExtensible): self
     {
@@ -318,6 +322,8 @@ class FHIRProfileBinding extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the degree of conformance expectations associated with this binding.
+     *
+     * @return static
      */
     public function setConformance(null|string|FHIRBindingConformanceList|FHIRBindingConformance $conformance): self
     {
@@ -348,6 +354,8 @@ class FHIRProfileBinding extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the intended use of this particular set of codes.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -380,6 +388,8 @@ class FHIRProfileBinding extends FHIRBackboneElement
      *
      * Points to the value set or external definition that identifies the set of codes
      * to be used.
+     *
+     * @return static
      */
     public function setReferenceUri(null|string|FHIRUriPrimitive|FHIRUri $referenceUri): self
     {
@@ -414,6 +424,8 @@ class FHIRProfileBinding extends FHIRBackboneElement
      *
      * Points to the value set or external definition that identifies the set of codes
      * to be used.
+     *
+     * @return static
      */
     public function setReferenceResource(null|FHIRResourceReference $referenceResource): self
     {

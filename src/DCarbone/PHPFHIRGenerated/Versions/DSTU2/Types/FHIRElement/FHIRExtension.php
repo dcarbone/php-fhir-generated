@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -744,6 +744,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -778,6 +780,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $valueInteger): self
     {
@@ -814,6 +818,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $valueDecimal): self
     {
@@ -848,6 +854,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueBase64Binary(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $valueBase64Binary): self
     {
@@ -886,6 +894,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueInstant(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $valueInstant): self
     {
@@ -920,6 +930,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -954,6 +966,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueUri(null|string|FHIRUriPrimitive|FHIRUri $valueUri): self
     {
@@ -990,6 +1004,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $valueDate): self
     {
@@ -1030,6 +1046,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime): self
     {
@@ -1062,6 +1080,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $valueTime): self
     {
@@ -1098,6 +1118,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueCode(null|string|FHIRCodePrimitive|FHIRCode $valueCode): self
     {
@@ -1134,6 +1156,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueOid(null|string|FHIROidPrimitive|FHIROid $valueOid): self
     {
@@ -1170,6 +1194,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueUuid(null|string|FHIRUuidPrimitive|FHIRUuid $valueUuid): self
     {
@@ -1210,6 +1236,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueId(null|string|FHIRIdPrimitive|FHIRId $valueId): self
     {
@@ -1244,6 +1272,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $valueUnsignedInt): self
     {
@@ -1278,6 +1308,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValuePositiveInt(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $valuePositiveInt): self
     {
@@ -1324,6 +1356,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $valueMarkdown): self
     {
@@ -1360,6 +1394,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueAnnotation(null|FHIRAnnotation $valueAnnotation): self
     {
@@ -1391,6 +1427,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueAttachment(null|FHIRAttachment $valueAttachment): self
     {
@@ -1422,6 +1460,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueIdentifier(null|FHIRIdentifier $valueIdentifier): self
     {
@@ -1455,6 +1495,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -1486,6 +1528,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueCoding(null|FHIRCoding $valueCoding): self
     {
@@ -1521,6 +1565,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -1552,6 +1598,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -1583,6 +1631,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValuePeriod(null|FHIRPeriod $valuePeriod): self
     {
@@ -1616,6 +1666,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueRatio(null|FHIRRatio $valueRatio): self
     {
@@ -1647,6 +1699,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueReference(null|FHIRReference $valueReference): self
     {
@@ -1680,6 +1734,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueSampledData(null|FHIRSampledData $valueSampledData): self
     {
@@ -1717,6 +1773,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueSignature(null|FHIRSignature $valueSignature): self
     {
@@ -1748,6 +1806,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueHumanName(null|FHIRHumanName $valueHumanName): self
     {
@@ -1781,6 +1841,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueAddress(null|FHIRAddress $valueAddress): self
     {
@@ -1814,6 +1876,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueContactPoint(null|FHIRContactPoint $valueContactPoint): self
     {
@@ -1851,6 +1915,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueTiming(null|FHIRTiming $valueTiming): self
     {
@@ -1886,6 +1952,8 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
+     *
+     * @return static
      */
     public function setValueMeta(null|FHIRMeta $valueMeta): self
     {
@@ -1902,6 +1970,9 @@ class FHIRExtension extends FHIRElement
         return $this->url ?? null;
     }
 
+    /**
+     * @return static
+     */
     public function setUrl(null|string|FHIRUriPrimitive $url): self
     {
         if (null === $url) {

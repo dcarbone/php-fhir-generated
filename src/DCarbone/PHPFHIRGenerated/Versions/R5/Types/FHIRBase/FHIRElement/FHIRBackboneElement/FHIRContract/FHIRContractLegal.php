@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -116,6 +116,12 @@ class FHIRContractLegal extends FHIRBackboneElement
 
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_CONTENT_ATTACHMENT => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_CONTENT_REFERENCE => [
+            'min_occurs' => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -128,8 +134,7 @@ class FHIRContractLegal extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Contract legal text in human renderable form. (choose any one of content*, but
-     * only one)
+     * Contract legal text in human renderable form.
      */
     #[FHIRAttachment]
     protected FHIRAttachment $contentAttachment;
@@ -138,8 +143,7 @@ class FHIRContractLegal extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Contract legal text in human renderable form. (choose any one of content*, but
-     * only one)
+     * Contract legal text in human renderable form.
      */
     #[FHIRReference]
     protected FHIRReference $contentReference;
@@ -182,8 +186,7 @@ class FHIRContractLegal extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Contract legal text in human renderable form. (choose any one of content*, but
-     * only one)
+     * Contract legal text in human renderable form.
      */
     public function getContentAttachment(): null|FHIRAttachment
     {
@@ -195,8 +198,9 @@ class FHIRContractLegal extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Contract legal text in human renderable form. (choose any one of content*, but
-     * only one)
+     * Contract legal text in human renderable form.
+     *
+     * @return static
      */
     public function setContentAttachment(null|FHIRAttachment $contentAttachment): self
     {
@@ -213,8 +217,7 @@ class FHIRContractLegal extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Contract legal text in human renderable form. (choose any one of content*, but
-     * only one)
+     * Contract legal text in human renderable form.
      */
     public function getContentReference(): null|FHIRReference
     {
@@ -226,8 +229,9 @@ class FHIRContractLegal extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Contract legal text in human renderable form. (choose any one of content*, but
-     * only one)
+     * Contract legal text in human renderable form.
+     *
+     * @return static
      */
     public function setContentReference(null|FHIRReference $contentReference): self
     {

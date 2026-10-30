@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -151,8 +151,7 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The analysis event or other GenomicStudy that generated this input file. (choose
-     * any one of generatedBy*, but only one)
+     * The analysis event or other GenomicStudy that generated this input file.
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $generatedByIdentifier;
@@ -161,8 +160,7 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The analysis event or other GenomicStudy that generated this input file. (choose
-     * any one of generatedBy*, but only one)
+     * The analysis event or other GenomicStudy that generated this input file.
      */
     #[FHIRReference]
     protected FHIRReference $generatedByReference;
@@ -226,6 +224,8 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * File containing input data.
+     *
+     * @return static
      */
     public function setFile(null|FHIRReference $file): self
     {
@@ -257,6 +257,8 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of input data, e.g., BAM, CRAM, or FASTA.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -274,8 +276,7 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The analysis event or other GenomicStudy that generated this input file. (choose
-     * any one of generatedBy*, but only one)
+     * The analysis event or other GenomicStudy that generated this input file.
      */
     public function getGeneratedByIdentifier(): null|FHIRIdentifier
     {
@@ -288,8 +289,9 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The analysis event or other GenomicStudy that generated this input file. (choose
-     * any one of generatedBy*, but only one)
+     * The analysis event or other GenomicStudy that generated this input file.
+     *
+     * @return static
      */
     public function setGeneratedByIdentifier(null|FHIRIdentifier $generatedByIdentifier): self
     {
@@ -306,8 +308,7 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The analysis event or other GenomicStudy that generated this input file. (choose
-     * any one of generatedBy*, but only one)
+     * The analysis event or other GenomicStudy that generated this input file.
      */
     public function getGeneratedByReference(): null|FHIRReference
     {
@@ -319,8 +320,9 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The analysis event or other GenomicStudy that generated this input file. (choose
-     * any one of generatedBy*, but only one)
+     * The analysis event or other GenomicStudy that generated this input file.
+     *
+     * @return static
      */
     public function setGeneratedByReference(null|FHIRReference $generatedByReference): self
     {

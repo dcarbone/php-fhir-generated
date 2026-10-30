@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -211,6 +211,8 @@ class FHIRCarePlanGoal extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable description of a specific desired objective of the care plan.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -241,6 +243,8 @@ class FHIRCarePlanGoal extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the goal has been reached and is still considered relevant.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRCarePlanGoalStatusList|FHIRCarePlanGoalStatus $status): self
     {
@@ -271,6 +275,8 @@ class FHIRCarePlanGoal extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Any comments related to the goal.
+     *
+     * @return static
      */
     public function setNotes(null|string|FHIRStringPrimitive|FHIRString $notes): self
     {
@@ -318,6 +324,8 @@ class FHIRCarePlanGoal extends FHIRBackboneElement
      *
      * The identified conditions that this goal relates to - the condition that caused
      * it to be created, or that it is intended to address.
+     *
+     * @return static
      */
     public function addConcern(FHIRResourceReference $concern): self
     {
@@ -335,6 +343,8 @@ class FHIRCarePlanGoal extends FHIRBackboneElement
      *
      * The identified conditions that this goal relates to - the condition that caused
      * it to be created, or that it is intended to address.
+     *
+     * @return static
      */
     public function setConcern(FHIRResourceReference ...$concern): self
     {

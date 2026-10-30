@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -242,6 +242,8 @@ class FHIRDeviceDefinitionConformsTo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the type of the standard, specification, or formal guidance.
+     *
+     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -277,6 +279,8 @@ class FHIRDeviceDefinitionConformsTo extends FHIRBackboneElement
      * Code that identifies the specific standard, specification, protocol, formal
      * guidance, regulation, legislation, or certification scheme to which the device
      * adheres.
+     *
+     * @return static
      */
     public function setSpecification(null|FHIRCodeableConcept $specification): self
     {
@@ -323,6 +327,8 @@ class FHIRDeviceDefinitionConformsTo extends FHIRBackboneElement
      * Identifies the specific form or variant of the standard, specification, or
      * formal guidance. This may be a 'version number', release, document edition,
      * publication year, or other label.
+     *
+     * @return static
      */
     public function addVersion(string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -344,6 +350,8 @@ class FHIRDeviceDefinitionConformsTo extends FHIRBackboneElement
      * Identifies the specific form or variant of the standard, specification, or
      * formal guidance. This may be a 'version number', release, document edition,
      * publication year, or other label.
+     *
+     * @return static
      */
     public function setVersion(string|FHIRStringPrimitive|FHIRString ...$version): self
     {
@@ -397,6 +405,8 @@ class FHIRDeviceDefinitionConformsTo extends FHIRBackboneElement
      *
      * Standard, regulation, certification, or guidance website, document, or other
      * publication, or similar, supporting the conformance.
+     *
+     * @return static
      */
     public function addSource(FHIRRelatedArtifact $source): self
     {
@@ -415,6 +425,8 @@ class FHIRDeviceDefinitionConformsTo extends FHIRBackboneElement
      *
      * Standard, regulation, certification, or guidance website, document, or other
      * publication, or similar, supporting the conformance.
+     *
+     * @return static
      */
     public function setSource(FHIRRelatedArtifact ...$source): self
     {

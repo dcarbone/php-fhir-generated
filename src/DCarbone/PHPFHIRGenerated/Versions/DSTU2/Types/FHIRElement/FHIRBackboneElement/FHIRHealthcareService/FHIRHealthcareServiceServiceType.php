@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -185,6 +185,8 @@ class FHIRHealthcareServiceServiceType extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific type of service being delivered or performed.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -231,6 +233,8 @@ class FHIRHealthcareServiceServiceType extends FHIRBackboneElement
      *
      * Collection of specialties handled by the service site. This is more of a medical
      * term.
+     *
+     * @return static
      */
     public function addSpecialty(FHIRCodeableConcept $specialty): self
     {
@@ -249,6 +253,8 @@ class FHIRHealthcareServiceServiceType extends FHIRBackboneElement
      *
      * Collection of specialties handled by the service site. This is more of a medical
      * term.
+     *
+     * @return static
      */
     public function setSpecialty(FHIRCodeableConcept ...$specialty): self
     {

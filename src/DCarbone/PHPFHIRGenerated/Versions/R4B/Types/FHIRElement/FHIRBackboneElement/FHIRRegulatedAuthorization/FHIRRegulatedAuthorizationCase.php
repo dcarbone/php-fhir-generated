@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -272,6 +272,8 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier by which this case can be referenced.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -303,6 +305,8 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The defining type of case.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -334,6 +338,8 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status associated with the case.
+     *
+     * @return static
      */
     public function setStatus(null|FHIRCodeableConcept $status): self
     {
@@ -363,6 +369,8 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Relevant date for this case.
+     *
+     * @return static
      */
     public function setDatePeriod(null|FHIRPeriod $datePeriod): self
     {
@@ -398,6 +406,8 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Relevant date for this case.
+     *
+     * @return static
      */
     public function setDateDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateDateTime): self
     {
@@ -453,6 +463,8 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
      * different information to support or modify the submission or the authorization.
      * The applications can be considered as steps within the longer running case or
      * procedure for this authorization process.
+     *
+     * @return static
      */
     public function addApplication(FHIRRegulatedAuthorizationCase $application): self
     {
@@ -474,6 +486,8 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
      * different information to support or modify the submission or the authorization.
      * The applications can be considered as steps within the longer running case or
      * procedure for this authorization process.
+     *
+     * @return static
      */
     public function setApplication(FHIRRegulatedAuthorizationCase ...$application): self
     {

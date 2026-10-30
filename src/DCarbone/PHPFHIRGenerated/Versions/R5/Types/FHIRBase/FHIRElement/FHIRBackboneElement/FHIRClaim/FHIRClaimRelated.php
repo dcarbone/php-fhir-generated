@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -212,6 +212,8 @@ class FHIRClaimRelated extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to a related claim.
+     *
+     * @return static
      */
     public function setClaim(null|FHIRReference $claim): self
     {
@@ -243,6 +245,8 @@ class FHIRClaimRelated extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code to convey how the claims are related.
+     *
+     * @return static
      */
     public function setRelationship(null|FHIRCodeableConcept $relationship): self
     {
@@ -276,6 +280,8 @@ class FHIRClaimRelated extends FHIRBackboneElement
      *
      * An alternate organizational reference to the case or file to which this
      * particular claim pertains.
+     *
+     * @return static
      */
     public function setReference(null|FHIRIdentifier $reference): self
     {

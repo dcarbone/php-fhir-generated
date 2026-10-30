@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -260,6 +260,8 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      *
      * Business identifiers assigned to this health insurance plan which remain
      * constant as the resource is updated and propagates from server to server.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -278,6 +280,8 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      *
      * Business identifiers assigned to this health insurance plan which remain
      * constant as the resource is updated and propagates from server to server.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -309,6 +313,8 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of plan. For example, "Platinum" or "High Deductable".
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -351,6 +357,8 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The geographic region in which a health insurance plan's benefits apply.
+     *
+     * @return static
      */
     public function addCoverageArea(FHIRReference $coverageArea): self
     {
@@ -367,6 +375,8 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The geographic region in which a health insurance plan's benefits apply.
+     *
+     * @return static
      */
     public function setCoverageArea(FHIRReference ...$coverageArea): self
     {
@@ -409,6 +419,8 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the network that providing the type of coverage.
+     *
+     * @return static
      */
     public function addNetwork(FHIRReference $network): self
     {
@@ -425,6 +437,8 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the network that providing the type of coverage.
+     *
+     * @return static
      */
     public function setNetwork(FHIRReference ...$network): self
     {
@@ -463,6 +477,8 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      * Details of a Health Insurance product/plan provided by an organization.
      *
      * Overall costs associated with the plan.
+     *
+     * @return static
      */
     public function addGeneralCost(FHIRInsurancePlanGeneralCost $generalCost): self
     {
@@ -477,6 +493,8 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      * Details of a Health Insurance product/plan provided by an organization.
      *
      * Overall costs associated with the plan.
+     *
+     * @return static
      */
     public function setGeneralCost(FHIRInsurancePlanGeneralCost ...$generalCost): self
     {
@@ -515,6 +533,8 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      * Details of a Health Insurance product/plan provided by an organization.
      *
      * Costs associated with the coverage provided by the product.
+     *
+     * @return static
      */
     public function addSpecificCost(FHIRInsurancePlanSpecificCost $specificCost): self
     {
@@ -529,6 +549,8 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      * Details of a Health Insurance product/plan provided by an organization.
      *
      * Costs associated with the coverage provided by the product.
+     *
+     * @return static
      */
     public function setSpecificCost(FHIRInsurancePlanSpecificCost ...$specificCost): self
     {

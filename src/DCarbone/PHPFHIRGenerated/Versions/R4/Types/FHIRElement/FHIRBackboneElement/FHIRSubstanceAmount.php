@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -270,6 +270,8 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
      * value for a given element is given, it would be captured in this field.
+     *
+     * @return static
      */
     public function setAmountQuantity(null|FHIRQuantity $amountQuantity): self
     {
@@ -303,6 +305,8 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
      * value for a given element is given, it would be captured in this field.
+     *
+     * @return static
      */
     public function setAmountRange(null|FHIRRange $amountRange): self
     {
@@ -336,6 +340,8 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
      * value for a given element is given, it would be captured in this field.
+     *
+     * @return static
      */
     public function setAmountString(null|string|FHIRStringPrimitive|FHIRString $amountString): self
     {
@@ -382,6 +388,8 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * the amount refers to a mole ratio or weight ratio. For any given element an
      * effort should be made to use same the amount type for all related definitional
      * elements.
+     *
+     * @return static
      */
     public function setAmountType(null|FHIRCodeableConcept $amountType): self
     {
@@ -411,6 +419,8 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A textual comment on a numeric value.
+     *
+     * @return static
      */
     public function setAmountText(null|string|FHIRStringPrimitive|FHIRString $amountText): self
     {
@@ -453,6 +463,8 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference range of possible or expected values.
+     *
+     * @return static
      */
     public function setReferenceRange(null|FHIRSubstanceAmountReferenceRange $referenceRange): self
     {

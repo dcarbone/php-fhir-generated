@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -216,6 +216,8 @@ class FHIRStructureMapStructure extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The canonical URL that identifies the structure.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -246,6 +248,8 @@ class FHIRStructureMapStructure extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the referenced structure is used in this mapping.
+     *
+     * @return static
      */
     public function setMode(null|string|FHIRStructureMapModelModeList|FHIRStructureMapModelMode $mode): self
     {
@@ -278,6 +282,8 @@ class FHIRStructureMapStructure extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name used for this type in the map.
+     *
+     * @return static
      */
     public function setAlias(null|string|FHIRStringPrimitive|FHIRString $alias): self
     {
@@ -310,6 +316,8 @@ class FHIRStructureMapStructure extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Documentation that describes how the structure is used in the mapping.
+     *
+     * @return static
      */
     public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation): self
     {

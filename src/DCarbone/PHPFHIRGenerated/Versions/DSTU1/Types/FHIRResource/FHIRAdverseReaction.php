@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -306,6 +306,8 @@ class FHIRAdverseReaction extends FHIRResource implements VersionContainedTypeIn
      * business processed and/ or used to refer to it when a direct URL reference to
      * the resource itself is not appropriate (e.g. in CDA documents, or in written /
      * printed documentation).
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -325,6 +327,8 @@ class FHIRAdverseReaction extends FHIRResource implements VersionContainedTypeIn
      * business processed and/ or used to refer to it when a direct URL reference to
      * the resource itself is not appropriate (e.g. in CDA documents, or in written /
      * printed documentation).
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -358,6 +362,8 @@ class FHIRAdverseReaction extends FHIRResource implements VersionContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and possibly time) when the reaction began.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -390,6 +396,8 @@ class FHIRAdverseReaction extends FHIRResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject of the adverse reaction.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRResourceReference $subject): self
     {
@@ -417,6 +425,8 @@ class FHIRAdverseReaction extends FHIRResource implements VersionContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, indicates that no reaction occurred.
+     *
+     * @return static
      */
     public function setDidNotOccurFlag(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $didNotOccurFlag): self
     {
@@ -451,6 +461,8 @@ class FHIRAdverseReaction extends FHIRResource implements VersionContainedTypeIn
      *
      * Identifies the individual responsible for the information in the reaction
      * record.
+     *
+     * @return static
      */
     public function setRecorder(null|FHIRResourceReference $recorder): self
     {
@@ -491,6 +503,8 @@ class FHIRAdverseReaction extends FHIRResource implements VersionContainedTypeIn
      * reaction subject to a substance.
      *
      * The signs and symptoms that were observed as part of the reaction.
+     *
+     * @return static
      */
     public function addSymptom(FHIRAdverseReactionSymptom $symptom): self
     {
@@ -506,6 +520,8 @@ class FHIRAdverseReaction extends FHIRResource implements VersionContainedTypeIn
      * reaction subject to a substance.
      *
      * The signs and symptoms that were observed as part of the reaction.
+     *
+     * @return static
      */
     public function setSymptom(FHIRAdverseReactionSymptom ...$symptom): self
     {
@@ -546,6 +562,8 @@ class FHIRAdverseReaction extends FHIRResource implements VersionContainedTypeIn
      * reaction subject to a substance.
      *
      * An exposure to a substance that preceded a reaction occurrence.
+     *
+     * @return static
      */
     public function addExposure(FHIRAdverseReactionExposure $exposure): self
     {
@@ -561,6 +579,8 @@ class FHIRAdverseReaction extends FHIRResource implements VersionContainedTypeIn
      * reaction subject to a substance.
      *
      * An exposure to a substance that preceded a reaction occurrence.
+     *
+     * @return static
      */
     public function setExposure(FHIRAdverseReactionExposure ...$exposure): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -209,6 +209,8 @@ class FHIRReference extends FHIRElement
      * found. The reference may be version specific or not. If the reference is not to
      * a FHIR RESTful server, then it should be assumed to be version specific.
      * Internal fragment references (start with '#') refer to contained resources.
+     *
+     * @return static
      */
     public function setReference(null|string|FHIRStringPrimitive|FHIRString $reference): self
     {
@@ -255,6 +257,8 @@ class FHIRReference extends FHIRElement
      * exposed as a FHIR instance, but it SHALL point to a business concept that would
      * be expected to be exposed as a FHIR instance, and that instance would need to be
      * of a FHIR resource type allowed by the reference.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -286,6 +290,8 @@ class FHIRReference extends FHIRElement
      *
      * Plain text narrative that identifies the resource in addition to the resource
      * reference.
+     *
+     * @return static
      */
     public function setDisplay(null|string|FHIRStringPrimitive|FHIRString $display): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -441,6 +441,8 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A unique identifier for this particular sequence instance. This is a
      * FHIR-defined id.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -458,6 +460,8 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A unique identifier for this particular sequence instance. This is a
      * FHIR-defined id.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -489,6 +493,8 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * the Narrative, or extensions
      *
      * Amino Acid Sequence/ DNA Sequence / RNA Sequence.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRCodePrimitive|FHIRCode $type): self
     {
@@ -525,6 +531,8 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * Whether the sequence is numbered starting at (0-based numbering or coordinates,
      * inclusive start, exclusive end) or starting at 1 (1-based numbering, inclusive
      * start and inclusive end).
+     *
+     * @return static
      */
     public function setCoordinateSystem(null|string|float|FHIRIntegerPrimitive|FHIRInteger $coordinateSystem): self
     {
@@ -557,6 +565,8 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient whose sequencing results are described by this resource.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -586,6 +596,8 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specimen used for sequencing.
+     *
+     * @return static
      */
     public function setSpecimen(null|FHIRReference $specimen): self
     {
@@ -615,6 +627,8 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method for sequencing, for example, chip information.
+     *
+     * @return static
      */
     public function setDevice(null|FHIRReference $device): self
     {
@@ -644,6 +658,8 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization or lab that should be responsible for this result.
+     *
+     * @return static
      */
     public function setPerformer(null|FHIRReference $performer): self
     {
@@ -677,6 +693,8 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The number of copies of the seqeunce of interest. (RNASeq).
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -704,6 +722,8 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A sequence that is used as a reference to describe variants that are present in
      * a sequence analyzed.
+     *
+     * @return static
      */
     public function setReferenceSeq(null|FHIRSequenceReferenceSeq $referenceSeq): self
     {
@@ -750,6 +770,8 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * This element can represent amino acid or nucleic sequence change(including
      * insertion,deletion,SNP,etc.) It can represent some complex mutation or segment
      * variation with the assist of CIGAR string.
+     *
+     * @return static
      */
     public function addVariant(FHIRSequenceVariant $variant): self
     {
@@ -768,6 +790,8 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * This element can represent amino acid or nucleic sequence change(including
      * insertion,deletion,SNP,etc.) It can represent some complex mutation or segment
      * variation with the assist of CIGAR string.
+     *
+     * @return static
      */
     public function setVariant(FHIRSequenceVariant ...$variant): self
     {
@@ -801,6 +825,8 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * Sequence that was observed. It is the result marked by referenceSeq along with
      * variant records on referenceSeq. This shall starts from referenceSeq.windowStart
      * and end by referenceSeq.windowEnd.
+     *
+     * @return static
      */
     public function setObservedSeq(null|string|FHIRStringPrimitive|FHIRString $observedSeq): self
     {
@@ -846,6 +872,8 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * An experimental feature attribute that defines the quality of the feature in a
      * quantitative way, such as a phred quality score
      * ([SO:0001686](http://www.sequenceontology.org/browser/current_svn/term/SO:0001686)).
+     *
+     * @return static
      */
     public function addQuality(FHIRSequenceQuality $quality): self
     {
@@ -862,6 +890,8 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * An experimental feature attribute that defines the quality of the feature in a
      * quantitative way, such as a phred quality score
      * ([SO:0001686](http://www.sequenceontology.org/browser/current_svn/term/SO:0001686)).
+     *
+     * @return static
      */
     public function setQuality(FHIRSequenceQuality ...$quality): self
     {
@@ -893,6 +923,8 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Coverage (read depth or depth) is the average number of reads representing a
      * given nucleotide in the reconstructed sequence.
+     *
+     * @return static
      */
     public function setReadCoverage(null|string|float|FHIRIntegerPrimitive|FHIRInteger $readCoverage): self
     {
@@ -936,6 +968,8 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Configurations of the external repository. The repository shall store target's
      * observedSeq or records related with target's observedSeq.
+     *
+     * @return static
      */
     public function addRepository(FHIRSequenceRepository $repository): self
     {
@@ -951,6 +985,8 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Configurations of the external repository. The repository shall store target's
      * observedSeq or records related with target's observedSeq.
+     *
+     * @return static
      */
     public function setRepository(FHIRSequenceRepository ...$repository): self
     {
@@ -993,6 +1029,8 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Pointer to next atomic sequence which at most contains one variant.
+     *
+     * @return static
      */
     public function addPointer(FHIRReference $pointer): self
     {
@@ -1009,6 +1047,8 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Pointer to next atomic sequence which at most contains one variant.
+     *
+     * @return static
      */
     public function setPointer(FHIRReference ...$pointer): self
     {

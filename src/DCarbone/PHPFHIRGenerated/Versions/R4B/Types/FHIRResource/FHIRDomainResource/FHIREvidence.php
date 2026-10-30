@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -705,6 +705,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      * which at which an authoritative instance of this summary is (or will be)
      * published. This URL can be the target of a canonical reference. It SHALL remain
      * the same when the summary is stored on different servers.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -756,6 +758,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      * A formal identifier that is used to identify this summary when it is represented
      * in other formats, or referenced in a specification, model, design or an
      * instance.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -775,6 +779,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      * A formal identifier that is used to identify this summary when it is represented
      * in other formats, or referenced in a specification, model, design or an
      * instance.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -814,6 +820,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      * For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not
      * available. There is also no expectation that versions can be placed in a
      * lexicographical sequence.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -846,6 +854,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the summary.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -878,6 +888,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Citation Resource or display of suggested citation for this evidence.
+     *
+     * @return static
      */
     public function setCiteAsReference(null|FHIRReference $citeAsReference): self
     {
@@ -915,6 +927,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      * the Narrative, or extensions
      *
      * Citation Resource or display of suggested citation for this evidence.
+     *
+     * @return static
      */
     public function setCiteAsMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $citeAsMarkdown): self
     {
@@ -943,6 +957,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this summary. Enables tracking the life-cycle of the content.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -987,6 +1003,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      * change when the business version changes and it must change if the status code
      * changes. In addition, it should change when the substantive content of the
      * summary changes.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1046,6 +1064,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate evidence
      * instances.
+     *
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1069,6 +1089,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate evidence
      * instances.
+     *
+     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1102,6 +1124,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
+     *
+     * @return static
      */
     public function setApprovalDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $approvalDate): self
     {
@@ -1138,6 +1162,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
+     *
+     * @return static
      */
     public function setLastReviewDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lastReviewDate): self
     {
@@ -1170,6 +1196,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the evidence.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1217,6 +1245,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1234,6 +1264,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1278,6 +1310,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * An individiual, organization, or device primarily involved in the creation and
      * maintenance of the content.
+     *
+     * @return static
      */
     public function addAuthor(FHIRContactDetail $author): self
     {
@@ -1295,6 +1329,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * An individiual, organization, or device primarily involved in the creation and
      * maintenance of the content.
+     *
+     * @return static
      */
     public function setAuthor(FHIRContactDetail ...$author): self
     {
@@ -1339,6 +1375,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * An individiual, organization, or device primarily responsible for internal
      * coherence of the content.
+     *
+     * @return static
      */
     public function addEditor(FHIRContactDetail $editor): self
     {
@@ -1356,6 +1394,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * An individiual, organization, or device primarily responsible for internal
      * coherence of the content.
+     *
+     * @return static
      */
     public function setEditor(FHIRContactDetail ...$editor): self
     {
@@ -1400,6 +1440,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * An individiual, organization, or device primarily responsible for review of some
      * aspect of the content.
+     *
+     * @return static
      */
     public function addReviewer(FHIRContactDetail $reviewer): self
     {
@@ -1417,6 +1459,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * An individiual, organization, or device primarily responsible for review of some
      * aspect of the content.
+     *
+     * @return static
      */
     public function setReviewer(FHIRContactDetail ...$reviewer): self
     {
@@ -1461,6 +1505,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * An individiual, organization, or device responsible for officially endorsing the
      * content for use in some setting.
+     *
+     * @return static
      */
     public function addEndorser(FHIRContactDetail $endorser): self
     {
@@ -1478,6 +1524,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * An individiual, organization, or device responsible for officially endorsing the
      * content for use in some setting.
+     *
+     * @return static
      */
     public function setEndorser(FHIRContactDetail ...$endorser): self
     {
@@ -1522,6 +1570,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Link or citation to artifact associated with the summary.
+     *
+     * @return static
      */
     public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact): self
     {
@@ -1539,6 +1589,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Link or citation to artifact associated with the summary.
+     *
+     * @return static
      */
     public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
     {
@@ -1578,6 +1630,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A free text natural language description of the evidence from a consumer's
      * perspective.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1618,6 +1672,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      * the Narrative, or extensions
      *
      * Declarative description of the Evidence.
+     *
+     * @return static
      */
     public function setAssertion(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $assertion): self
     {
@@ -1665,6 +1721,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Footnotes and/or explanatory notes.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1682,6 +1740,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Footnotes and/or explanatory notes.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1726,6 +1786,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      * variables), the statistics, and the certainty of this evidence.
      *
      * Evidence variable such as population, exposure, or outcome.
+     *
+     * @return static
      */
     public function addVariableDefinition(FHIREvidenceVariableDefinition $variableDefinition): self
     {
@@ -1743,6 +1805,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      * variables), the statistics, and the certainty of this evidence.
      *
      * Evidence variable such as population, exposure, or outcome.
+     *
+     * @return static
      */
     public function setVariableDefinition(FHIREvidenceVariableDefinition ...$variableDefinition): self
     {
@@ -1774,6 +1838,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method to combine studies.
+     *
+     * @return static
      */
     public function setSynthesisType(null|FHIRCodeableConcept $synthesisType): self
     {
@@ -1805,6 +1871,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of study that produced this evidence.
+     *
+     * @return static
      */
     public function setStudyType(null|FHIRCodeableConcept $studyType): self
     {
@@ -1849,6 +1917,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      * variables), the statistics, and the certainty of this evidence.
      *
      * Values and parameters for a single statistic.
+     *
+     * @return static
      */
     public function addStatistic(FHIREvidenceStatistic $statistic): self
     {
@@ -1866,6 +1936,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      * variables), the statistics, and the certainty of this evidence.
      *
      * Values and parameters for a single statistic.
+     *
+     * @return static
      */
     public function setStatistic(FHIREvidenceStatistic ...$statistic): self
     {
@@ -1912,6 +1984,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Assessment of certainty, confidence in the estimates, or quality of the
      * evidence.
+     *
+     * @return static
      */
     public function addCertainty(FHIREvidenceCertainty $certainty): self
     {
@@ -1930,6 +2004,8 @@ class FHIREvidence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Assessment of certainty, confidence in the estimates, or quality of the
      * evidence.
+     *
+     * @return static
      */
     public function setCertainty(FHIREvidenceCertainty ...$certainty): self
     {

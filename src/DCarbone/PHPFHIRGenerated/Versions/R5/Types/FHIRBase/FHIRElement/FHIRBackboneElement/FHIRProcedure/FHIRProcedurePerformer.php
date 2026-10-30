@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -236,6 +236,8 @@ class FHIRProcedurePerformer extends FHIRBackboneElement
      *
      * Distinguishes the type of involvement of the performer in the procedure. For
      * example, surgeon, anaesthetist, endoscopist.
+     *
+     * @return static
      */
     public function setFunction(null|FHIRCodeableConcept $function): self
     {
@@ -265,6 +267,8 @@ class FHIRProcedurePerformer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates who or what performed the procedure.
+     *
+     * @return static
      */
     public function setActor(null|FHIRReference $actor): self
     {
@@ -296,6 +300,8 @@ class FHIRProcedurePerformer extends FHIRBackboneElement
      *
      * The Organization the Patient, RelatedPerson, Device, CareTeam, and
      * HealthcareService was acting on behalf of.
+     *
+     * @return static
      */
     public function setOnBehalfOf(null|FHIRReference $onBehalfOf): self
     {
@@ -325,6 +331,8 @@ class FHIRProcedurePerformer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period during which the performer performed the procedure.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {

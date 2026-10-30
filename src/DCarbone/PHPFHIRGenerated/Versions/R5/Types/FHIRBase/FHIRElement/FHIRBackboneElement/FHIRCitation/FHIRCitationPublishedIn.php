@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -251,6 +251,8 @@ class FHIRCitationPublishedIn extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Kind of container (e.g. Periodical, database, or book).
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -297,6 +299,8 @@ class FHIRCitationPublishedIn extends FHIRBackboneElement
      *
      * Journal identifiers include ISSN, ISO Abbreviation and NLMuniqueID; Book
      * identifiers include ISBN.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -315,6 +319,8 @@ class FHIRCitationPublishedIn extends FHIRBackboneElement
      *
      * Journal identifiers include ISSN, ISO Abbreviation and NLMuniqueID; Book
      * identifiers include ISBN.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -344,6 +350,8 @@ class FHIRCitationPublishedIn extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name of the database or title of the book or journal.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -376,6 +384,8 @@ class FHIRCitationPublishedIn extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Name of or resource describing the publisher.
+     *
+     * @return static
      */
     public function setPublisher(null|FHIRReference $publisher): self
     {
@@ -405,6 +415,8 @@ class FHIRCitationPublishedIn extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Geographic location of the publisher.
+     *
+     * @return static
      */
     public function setPublisherLocation(null|string|FHIRStringPrimitive|FHIRString $publisherLocation): self
     {

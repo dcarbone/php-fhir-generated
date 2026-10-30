@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -186,6 +186,8 @@ class FHIRTestScriptParam2 extends FHIRBackboneElement
      *
      * Descriptive name for this parameter that matches the external assert rule
      * parameter name.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -220,6 +222,8 @@ class FHIRTestScriptParam2 extends FHIRBackboneElement
      *
      * The value for the parameter that will be passed on to the external rule
      * template.
+     *
+     * @return static
      */
     public function setValue(null|string|FHIRStringPrimitive|FHIRString $value): self
     {

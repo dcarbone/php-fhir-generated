@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -229,6 +229,8 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Estimated total number of participants to be enrolled.
+     *
+     * @return static
      */
     public function setTargetNumber(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $targetNumber): self
     {
@@ -261,6 +263,8 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Actual total number of participants enrolled in study.
+     *
+     * @return static
      */
     public function setActualNumber(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $actualNumber): self
     {
@@ -293,6 +297,8 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Inclusion and exclusion criteria.
+     *
+     * @return static
      */
     public function setEligibility(null|FHIRReference $eligibility): self
     {
@@ -322,6 +328,8 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Group of participants who were enrolled in study.
+     *
+     * @return static
      */
     public function setActualGroup(null|FHIRReference $actualGroup): self
     {

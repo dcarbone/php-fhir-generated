@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -199,8 +199,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The minimum volume to be conditioned in the container. (choose any one of
-     * minimumVolume*, but only one)
+     * The minimum volume to be conditioned in the container.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $minimumVolumeQuantity;
@@ -209,8 +208,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The minimum volume to be conditioned in the container. (choose any one of
-     * minimumVolume*, but only one)
+     * The minimum volume to be conditioned in the container.
      */
     #[FHIRString]
     protected FHIRString $minimumVolumeString;
@@ -321,6 +319,8 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of material of the container.
+     *
+     * @return static
      */
     public function setMaterial(null|FHIRCodeableConcept $material): self
     {
@@ -352,6 +352,8 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of container used to contain this kind of specimen.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -383,6 +385,8 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Color of container cap.
+     *
+     * @return static
      */
     public function setCap(null|FHIRCodeableConcept $cap): self
     {
@@ -420,6 +424,8 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The textual description of the kind of container.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -456,6 +462,8 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The capacity (volume or other measure) of this kind of container.
+     *
+     * @return static
      */
     public function setCapacity(null|FHIRQuantity $capacity): self
     {
@@ -474,8 +482,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The minimum volume to be conditioned in the container. (choose any one of
-     * minimumVolume*, but only one)
+     * The minimum volume to be conditioned in the container.
      */
     public function getMinimumVolumeQuantity(): null|FHIRQuantity
     {
@@ -489,8 +496,9 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The minimum volume to be conditioned in the container. (choose any one of
-     * minimumVolume*, but only one)
+     * The minimum volume to be conditioned in the container.
+     *
+     * @return static
      */
     public function setMinimumVolumeQuantity(null|FHIRQuantity $minimumVolumeQuantity): self
     {
@@ -507,8 +515,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The minimum volume to be conditioned in the container. (choose any one of
-     * minimumVolume*, but only one)
+     * The minimum volume to be conditioned in the container.
      */
     public function getMinimumVolumeString(): null|FHIRString
     {
@@ -520,8 +527,9 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The minimum volume to be conditioned in the container. (choose any one of
-     * minimumVolume*, but only one)
+     * The minimum volume to be conditioned in the container.
+     *
+     * @return static
      */
     public function setMinimumVolumeString(null|string|FHIRStringPrimitive|FHIRString $minimumVolumeString): self
     {
@@ -565,6 +573,8 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      *
      * Substance introduced in the kind of container to preserve, maintain or enhance
      * the specimen. Examples: Formalin, Citrate, EDTA.
+     *
+     * @return static
      */
     public function addAdditive(FHIRSpecimenDefinitionAdditive $additive): self
     {
@@ -580,6 +590,8 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      *
      * Substance introduced in the kind of container to preserve, maintain or enhance
      * the specimen. Examples: Formalin, Citrate, EDTA.
+     *
+     * @return static
      */
     public function setAdditive(FHIRSpecimenDefinitionAdditive ...$additive): self
     {
@@ -619,6 +631,8 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      *
      * Special processing that should be applied to the container for this kind of
      * specimen.
+     *
+     * @return static
      */
     public function setPreparation(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $preparation): self
     {

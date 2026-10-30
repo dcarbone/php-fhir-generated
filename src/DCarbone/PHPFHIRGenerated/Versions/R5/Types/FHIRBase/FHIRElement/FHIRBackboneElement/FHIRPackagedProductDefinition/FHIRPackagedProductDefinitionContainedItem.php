@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -221,6 +221,8 @@ class FHIRPackagedProductDefinitionContainedItem extends FHIRBackboneElement
      * which is solely for the case where a package of other entire packages is wanted
      * - such as a wholesale or distribution pack (for layers within one package, use
      * PackagedProductDefinition.packaging.packaging).
+     *
+     * @return static
      */
     public function setItem(null|FHIRCodeableReference $item): self
     {
@@ -260,6 +262,8 @@ class FHIRPackagedProductDefinitionContainedItem extends FHIRBackboneElement
      * such as liquids it is the quantity (for example 25ml). See also
      * PackagedProductDefinition.containedItemQuantity (especially the long
      * definition).
+     *
+     * @return static
      */
     public function setAmount(null|FHIRQuantity $amount): self
     {

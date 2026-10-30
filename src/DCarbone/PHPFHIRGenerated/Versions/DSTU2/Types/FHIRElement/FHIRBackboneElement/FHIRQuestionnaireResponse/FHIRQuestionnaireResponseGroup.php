@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -252,6 +252,8 @@ class FHIRQuestionnaireResponseGroup extends FHIRBackboneElement
      *
      * Identifies the group from the Questionnaire that corresponds to this group in
      * the QuestionnaireResponse resource.
+     *
+     * @return static
      */
     public function setLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId): self
     {
@@ -284,6 +286,8 @@ class FHIRQuestionnaireResponseGroup extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Text that is displayed above the contents of the group.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -316,6 +320,8 @@ class FHIRQuestionnaireResponseGroup extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional text for the group, used for display purposes.
+     *
+     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -350,6 +356,8 @@ class FHIRQuestionnaireResponseGroup extends FHIRBackboneElement
      *
      * More specific subject this section's answers are about, details the subject
      * given in QuestionnaireResponse.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -394,6 +402,8 @@ class FHIRQuestionnaireResponseGroup extends FHIRBackboneElement
      *
      * A sub-group within a group. The ordering of groups within this group is
      * relevant.
+     *
+     * @return static
      */
     public function addGroup(FHIRQuestionnaireResponseGroup $group): self
     {
@@ -411,6 +421,8 @@ class FHIRQuestionnaireResponseGroup extends FHIRBackboneElement
      *
      * A sub-group within a group. The ordering of groups within this group is
      * relevant.
+     *
+     * @return static
      */
     public function setGroup(FHIRQuestionnaireResponseGroup ...$group): self
     {
@@ -455,6 +467,8 @@ class FHIRQuestionnaireResponseGroup extends FHIRBackboneElement
      *
      * Set of questions within this group. The order of questions within the group is
      * relevant.
+     *
+     * @return static
      */
     public function addQuestion(FHIRQuestionnaireResponseQuestion $question): self
     {
@@ -472,6 +486,8 @@ class FHIRQuestionnaireResponseGroup extends FHIRBackboneElement
      *
      * Set of questions within this group. The order of questions within the group is
      * relevant.
+     *
+     * @return static
      */
     public function setQuestion(FHIRQuestionnaireResponseQuestion ...$question): self
     {

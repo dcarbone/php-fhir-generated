@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -311,6 +311,8 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      *
      * A persistent identifier for the bundle that won't change as a bundle is copied
      * from server to server.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -336,6 +338,8 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the purpose of this bundle - how it is intended to be used.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRBundleTypeEnum|FHIRBundleType $type): self
     {
@@ -376,6 +380,8 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      *
      * The date/time that the bundle was assembled - i.e. when the resources were
      * placed in the bundle.
+     *
+     * @return static
      */
     public function setTimestamp(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $timestamp): self
     {
@@ -414,6 +420,8 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      * across all pages in the search. It does not include search.mode = 'include' or
      * 'outcome' entries and it does not provide a count of the number of entries in
      * the Bundle.
+     *
+     * @return static
      */
     public function setTotal(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $total): self
     {
@@ -455,6 +463,8 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      * A container for a collection of resources.
      *
      * A series of links that provide context to this bundle.
+     *
+     * @return static
      */
     public function addLink(FHIRBundleLink $link): self
     {
@@ -469,6 +479,8 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      * A container for a collection of resources.
      *
      * A series of links that provide context to this bundle.
+     *
+     * @return static
      */
     public function setLink(FHIRBundleLink ...$link): self
     {
@@ -509,6 +521,8 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      *
      * An entry in a bundle resource - will either contain a resource or information
      * about a resource (transactions and history only).
+     *
+     * @return static
      */
     public function addEntry(FHIRBundleEntry $entry): self
     {
@@ -524,6 +538,8 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      *
      * An entry in a bundle resource - will either contain a resource or information
      * about a resource (transactions and history only).
+     *
+     * @return static
      */
     public function setEntry(FHIRBundleEntry ...$entry): self
     {
@@ -561,6 +577,8 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Digital Signature - base64 encoded. XML-DSig or a JWT.
+     *
+     * @return static
      */
     public function setSignature(null|FHIRSignature $signature): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -227,6 +227,8 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
      * satisfied. When using FHIRPath expressions, the %context environment variable
      * must be replaced at runtime with the ChargeItem resource to which this
      * definition is applied.
+     *
+     * @return static
      */
     public function setCondition(null|FHIRExpression $condition): self
     {
@@ -258,6 +260,8 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
      *
      * The period during which the charge item definition content was or is planned to
      * be in active use.
+     *
+     * @return static
      */
     public function setEffectivePeriod(null|FHIRPeriod $effectivePeriod): self
     {
@@ -289,6 +293,8 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to / quotation of the external source of the group of properties.
+     *
+     * @return static
      */
     public function setRelatedArtifact(null|FHIRRelatedArtifact $relatedArtifact): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -501,6 +501,8 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the order or by the receiver.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -517,6 +519,8 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the order or by the receiver.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -546,6 +550,8 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person, animal or group that should receive the procedure.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -579,6 +585,8 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * The specific procedure that is ordered. Use text if the exact nature of the
      * procedure cannot be coded.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -625,6 +633,8 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * Indicates the sites on the subject's body where the procedure should be
      * performed (I.e. the target sites).
+     *
+     * @return static
      */
     public function addBodySite(FHIRCodeableConcept $bodySite): self
     {
@@ -643,6 +653,8 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * Indicates the sites on the subject's body where the procedure should be
      * performed (I.e. the target sites).
+     *
+     * @return static
      */
     public function setBodySite(FHIRCodeableConcept ...$bodySite): self
     {
@@ -676,6 +688,8 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * The reason why the procedure is being proposed or ordered. This procedure
      * request may be motivated by a Condition for instance.
+     *
+     * @return static
      */
     public function setReasonCodeableConcept(null|FHIRCodeableConcept $reasonCodeableConcept): self
     {
@@ -707,6 +721,8 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * The reason why the procedure is being proposed or ordered. This procedure
      * request may be motivated by a Condition for instance.
+     *
+     * @return static
      */
     public function setReasonReference(null|FHIRReference $reasonReference): self
     {
@@ -748,6 +764,8 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * type allows many different expressions. E.g. "Every 8 hours"; "Three times a
      * day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct
      * 2013, 17 Oct 2013 and 1 Nov 2013".
+     *
+     * @return static
      */
     public function setScheduledDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $scheduledDateTime): self
     {
@@ -786,6 +804,8 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * type allows many different expressions. E.g. "Every 8 hours"; "Three times a
      * day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct
      * 2013, 17 Oct 2013 and 1 Nov 2013".
+     *
+     * @return static
      */
     public function setScheduledPeriod(null|FHIRPeriod $scheduledPeriod): self
     {
@@ -827,6 +847,8 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * type allows many different expressions. E.g. "Every 8 hours"; "Three times a
      * day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct
      * 2013, 17 Oct 2013 and 1 Nov 2013".
+     *
+     * @return static
      */
     public function setScheduledTiming(null|FHIRTiming $scheduledTiming): self
     {
@@ -856,6 +878,8 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter within which the procedure proposal or request was created.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -885,6 +909,8 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * For example, the surgeon, anaethetist, endoscopist, etc.
+     *
+     * @return static
      */
     public function setPerformer(null|FHIRReference $performer): self
     {
@@ -912,6 +938,8 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the order.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRProcedureRequestStatusList|FHIRProcedureRequestStatus $status): self
     {
@@ -961,6 +989,8 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * Any other notes associated with this proposal or order - e.g. provider
      * instructions.
+     *
+     * @return static
      */
     public function addNotes(FHIRAnnotation $notes): self
     {
@@ -979,6 +1009,8 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * Any other notes associated with this proposal or order - e.g. provider
      * instructions.
+     *
+     * @return static
      */
     public function setNotes(FHIRAnnotation ...$notes): self
     {
@@ -1008,6 +1040,8 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the procedure.
+     *
+     * @return static
      */
     public function setAsNeededBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $asNeededBoolean): self
     {
@@ -1044,6 +1078,8 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the procedure.
+     *
+     * @return static
      */
     public function setAsNeededCodeableConcept(null|FHIRCodeableConcept $asNeededCodeableConcept): self
     {
@@ -1079,6 +1115,8 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the request was made.
+     *
+     * @return static
      */
     public function setOrderedOn(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $orderedOn): self
     {
@@ -1111,6 +1149,8 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare professional responsible for proposing or ordering the procedure.
+     *
+     * @return static
      */
     public function setOrderer(null|FHIRReference $orderer): self
     {
@@ -1138,6 +1178,8 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The clinical priority associated with this order.
+     *
+     * @return static
      */
     public function setPriority(null|string|FHIRProcedureRequestPriorityList|FHIRProcedureRequestPriority $priority): self
     {

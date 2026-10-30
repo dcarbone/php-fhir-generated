@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -324,6 +324,8 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The sequential number of the interaction, e.g. 1.2.5.
+     *
+     * @return static
      */
     public function setNumber(null|string|FHIRStringPrimitive|FHIRString $number): self
     {
@@ -356,6 +358,8 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of operation - CRUD.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRStringPrimitive|FHIRString $type): self
     {
@@ -388,6 +392,8 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The human-friendly name of the interaction.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -420,6 +426,8 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Who starts the transaction.
+     *
+     * @return static
      */
     public function setInitiator(null|string|FHIRStringPrimitive|FHIRString $initiator): self
     {
@@ -452,6 +460,8 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Who receives the transaction.
+     *
+     * @return static
      */
     public function setReceiver(null|string|FHIRStringPrimitive|FHIRString $receiver): self
     {
@@ -492,6 +502,8 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A comment to be inserted in the diagram.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -522,6 +534,8 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the initiator is deactivated right after the transaction.
+     *
+     * @return static
      */
     public function setInitiatorActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $initiatorActive): self
     {
@@ -552,6 +566,8 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the receiver is deactivated right after the transaction.
+     *
+     * @return static
      */
     public function setReceiverActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $receiverActive): self
     {
@@ -580,6 +596,8 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * Each resource instance used by the initiator.
+     *
+     * @return static
      */
     public function setRequest(null|FHIRExampleScenarioContainedInstance $request): self
     {
@@ -605,6 +623,8 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * Each resource instance used by the responder.
+     *
+     * @return static
      */
     public function setResponse(null|FHIRExampleScenarioContainedInstance $response): self
     {

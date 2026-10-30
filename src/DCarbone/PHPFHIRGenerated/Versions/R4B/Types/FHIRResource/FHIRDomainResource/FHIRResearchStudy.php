@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -650,6 +650,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this research study by the sponsor or other systems.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -667,6 +669,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this research study by the sponsor or other systems.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -696,6 +700,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive user-friendly label for the study.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -741,6 +747,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of steps expected to be performed as part of the execution of the study.
+     *
+     * @return static
      */
     public function addProtocol(FHIRReference $protocol): self
     {
@@ -757,6 +765,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of steps expected to be performed as part of the execution of the study.
+     *
+     * @return static
      */
     public function setProtocol(FHIRReference ...$protocol): self
     {
@@ -799,6 +809,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger research study of which this particular study is a component or step.
+     *
+     * @return static
      */
     public function addPartOf(FHIRReference $partOf): self
     {
@@ -815,6 +827,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger research study of which this particular study is a component or step.
+     *
+     * @return static
      */
     public function setPartOf(FHIRReference ...$partOf): self
     {
@@ -840,6 +854,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the study.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRResearchStudyStatusEnum|FHIRResearchStudyStatus $status): self
     {
@@ -876,6 +892,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * The type of study based upon the intent of the study's activities. A
      * classification of the intent of the study.
+     *
+     * @return static
      */
     public function setPrimaryPurposeType(null|FHIRCodeableConcept $primaryPurposeType): self
     {
@@ -909,6 +927,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * The stage in the progression of a therapy from initial experimental use in
      * humans in clinical trials to post-market evaluation.
+     *
+     * @return static
      */
     public function setPhase(null|FHIRCodeableConcept $phase): self
     {
@@ -955,6 +975,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * Codes categorizing the type of study such as investigational vs. observational,
      * type of blinding, type of randomization, safety vs. efficacy, etc.
+     *
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -973,6 +995,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * Codes categorizing the type of study such as investigational vs. observational,
      * type of blinding, type of randomization, safety vs. efficacy, etc.
+     *
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -1019,6 +1043,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * The medication(s), food(s), therapy(ies), device(s) or other concerns or
      * interventions that the study is seeking to gain more information about.
+     *
+     * @return static
      */
     public function addFocus(FHIRCodeableConcept $focus): self
     {
@@ -1037,6 +1063,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * The medication(s), food(s), therapy(ies), device(s) or other concerns or
      * interventions that the study is seeking to gain more information about.
+     *
+     * @return static
      */
     public function setFocus(FHIRCodeableConcept ...$focus): self
     {
@@ -1085,6 +1113,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * The condition that is the focus of the study. For example, In a study to examine
      * risk factors for Lupus, might have as an inclusion criterion "healthy
      * volunteer", but the target condition code would be a Lupus SNOMED code.
+     *
+     * @return static
      */
     public function addCondition(FHIRCodeableConcept $condition): self
     {
@@ -1104,6 +1134,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * The condition that is the focus of the study. For example, In a study to examine
      * risk factors for Lupus, might have as an inclusion criterion "healthy
      * volunteer", but the target condition code would be a Lupus SNOMED code.
+     *
+     * @return static
      */
     public function setCondition(FHIRCodeableConcept ...$condition): self
     {
@@ -1148,6 +1180,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * Contact details to assist a user in learning more about or engaging with the
      * study.
+     *
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1165,6 +1199,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * Contact details to assist a user in learning more about or engaging with the
      * study.
+     *
+     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1209,6 +1245,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Citations, references and other related documents.
+     *
+     * @return static
      */
     public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact): self
     {
@@ -1226,6 +1264,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Citations, references and other related documents.
+     *
+     * @return static
      */
     public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
     {
@@ -1270,6 +1310,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Key terms to aid in searching for or filtering the study.
+     *
+     * @return static
      */
     public function addKeyword(FHIRCodeableConcept $keyword): self
     {
@@ -1287,6 +1329,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Key terms to aid in searching for or filtering the study.
+     *
+     * @return static
      */
     public function setKeyword(FHIRCodeableConcept ...$keyword): self
     {
@@ -1331,6 +1375,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates a country, state or other region where the study is taking place.
+     *
+     * @return static
      */
     public function addLocation(FHIRCodeableConcept $location): self
     {
@@ -1348,6 +1394,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates a country, state or other region where the study is taking place.
+     *
+     * @return static
      */
     public function setLocation(FHIRCodeableConcept ...$location): self
     {
@@ -1385,6 +1433,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * the Narrative, or extensions
      *
      * A full description of how the study is being conducted.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1434,6 +1484,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * Reference to a Group that defines the criteria for and quantity of subjects
      * participating in the study. E.g. " 200 female Europeans between the ages of 20
      * and 45 with early onset diabetes".
+     *
+     * @return static
      */
     public function addEnrollment(FHIRReference $enrollment): self
     {
@@ -1452,6 +1504,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * Reference to a Group that defines the criteria for and quantity of subjects
      * participating in the study. E.g. " 200 female Europeans between the ages of 20
      * and 45 with early onset diabetes".
+     *
+     * @return static
      */
     public function setEnrollment(FHIRReference ...$enrollment): self
     {
@@ -1483,6 +1537,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * Identifies the start date and the expected (or actual, depending on status) end
      * date for the study.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -1514,6 +1570,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * An organization that initiates the investigation and is legally responsible for
      * the study.
+     *
+     * @return static
      */
     public function setSponsor(null|FHIRReference $sponsor): self
     {
@@ -1549,6 +1607,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * concept development, protocol writing, protocol submission for IRB approval,
      * participant recruitment, informed consent, data collection, analysis,
      * interpretation and presentation.
+     *
+     * @return static
      */
     public function setPrincipalInvestigator(null|FHIRReference $principalInvestigator): self
     {
@@ -1591,6 +1651,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A facility in which study activities are conducted.
+     *
+     * @return static
      */
     public function addSite(FHIRReference $site): self
     {
@@ -1607,6 +1669,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A facility in which study activities are conducted.
+     *
+     * @return static
      */
     public function setSite(FHIRReference ...$site): self
     {
@@ -1638,6 +1702,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A description and/or code explaining the premature termination of the study.
+     *
+     * @return static
      */
     public function setReasonStopped(null|FHIRCodeableConcept $reasonStopped): self
     {
@@ -1682,6 +1748,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the study by the performer, subject or other participants.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1699,6 +1767,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the study by the performer, subject or other participants.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1749,6 +1819,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * Describes an expected sequence of events for one of the participants of a study.
      * E.g. Exposure to drug A, wash-out, exposure to drug B, wash-out, follow-up.
+     *
+     * @return static
      */
     public function addArm(FHIRResearchStudyArm $arm): self
     {
@@ -1769,6 +1841,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * Describes an expected sequence of events for one of the participants of a study.
      * E.g. Exposure to drug A, wash-out, exposure to drug B, wash-out, follow-up.
+     *
+     * @return static
      */
     public function setArm(FHIRResearchStudyArm ...$arm): self
     {
@@ -1819,6 +1893,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * A goal that the study is aiming to achieve in terms of a scientific question to
      * be answered by the analysis of data collected during the study.
+     *
+     * @return static
      */
     public function addObjective(FHIRResearchStudyObjective $objective): self
     {
@@ -1839,6 +1915,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * A goal that the study is aiming to achieve in terms of a scientific question to
      * be answered by the analysis of data collected during the study.
+     *
+     * @return static
      */
     public function setObjective(FHIRResearchStudyObjective ...$objective): self
     {

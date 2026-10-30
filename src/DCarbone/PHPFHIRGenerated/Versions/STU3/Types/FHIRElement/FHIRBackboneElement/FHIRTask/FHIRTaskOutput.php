@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -931,6 +931,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The name of the Output parameter.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -960,6 +962,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueBase64Binary(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $valueBase64Binary): self
     {
@@ -990,6 +994,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -1024,6 +1030,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueCode(null|string|FHIRCodePrimitive|FHIRCode $valueCode): self
     {
@@ -1058,6 +1066,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $valueDate): self
     {
@@ -1096,6 +1106,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime): self
     {
@@ -1130,6 +1142,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $valueDecimal): self
     {
@@ -1168,6 +1182,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueId(null|string|FHIRIdPrimitive|FHIRId $valueId): self
     {
@@ -1204,6 +1220,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueInstant(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $valueInstant): self
     {
@@ -1236,6 +1254,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $valueInteger): self
     {
@@ -1280,6 +1300,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $valueMarkdown): self
     {
@@ -1314,6 +1336,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueOid(null|string|FHIROidPrimitive|FHIROid $valueOid): self
     {
@@ -1346,6 +1370,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValuePositiveInt(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $valuePositiveInt): self
     {
@@ -1378,6 +1404,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -1408,6 +1436,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $valueTime): self
     {
@@ -1440,6 +1470,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $valueUnsignedInt): self
     {
@@ -1472,6 +1504,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueUri(null|string|FHIRUriPrimitive|FHIRUri $valueUri): self
     {
@@ -1512,6 +1546,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueAddress(null|FHIRAddress $valueAddress): self
     {
@@ -1541,6 +1577,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueAge(null|FHIRAge $valueAge): self
     {
@@ -1572,6 +1610,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueAnnotation(null|FHIRAnnotation $valueAnnotation): self
     {
@@ -1601,6 +1641,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueAttachment(null|FHIRAttachment $valueAttachment): self
     {
@@ -1632,6 +1674,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -1661,6 +1705,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueCoding(null|FHIRCoding $valueCoding): self
     {
@@ -1692,6 +1738,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueContactPoint(null|FHIRContactPoint $valueContactPoint): self
     {
@@ -1725,6 +1773,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueCount(null|FHIRCount $valueCount): self
     {
@@ -1754,6 +1804,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueDistance(null|FHIRDistance $valueDistance): self
     {
@@ -1783,6 +1835,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueDuration(null|FHIRDuration $valueDuration): self
     {
@@ -1812,6 +1866,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueHumanName(null|FHIRHumanName $valueHumanName): self
     {
@@ -1841,6 +1897,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueIdentifier(null|FHIRIdentifier $valueIdentifier): self
     {
@@ -1870,6 +1928,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueMoney(null|FHIRMoney $valueMoney): self
     {
@@ -1899,6 +1959,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValuePeriod(null|FHIRPeriod $valuePeriod): self
     {
@@ -1932,6 +1994,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -1961,6 +2025,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -1992,6 +2058,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueRatio(null|FHIRRatio $valueRatio): self
     {
@@ -2021,6 +2089,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueReference(null|FHIRReference $valueReference): self
     {
@@ -2052,6 +2122,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueSampledData(null|FHIRSampledData $valueSampledData): self
     {
@@ -2087,6 +2159,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueSignature(null|FHIRSignature $valueSignature): self
     {
@@ -2124,6 +2198,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueTiming(null|FHIRTiming $valueTiming): self
     {
@@ -2157,6 +2233,8 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
+     *
+     * @return static
      */
     public function setValueMeta(null|FHIRMeta $valueMeta): self
     {

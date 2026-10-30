@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -208,6 +208,8 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
      *
      * Specific text, code or reference for finding or diagnosis, which may include
      * ruled-out or resolved conditions.
+     *
+     * @return static
      */
     public function setItemCodeableConcept(null|FHIRCodeableConcept $itemCodeableConcept): self
     {
@@ -239,6 +241,8 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
      *
      * Specific text, code or reference for finding or diagnosis, which may include
      * ruled-out or resolved conditions.
+     *
+     * @return static
      */
     public function setItemReference(null|FHIRReference $itemReference): self
     {
@@ -268,6 +272,8 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Which investigations support finding or diagnosis.
+     *
+     * @return static
      */
     public function setBasis(null|string|FHIRStringPrimitive|FHIRString $basis): self
     {

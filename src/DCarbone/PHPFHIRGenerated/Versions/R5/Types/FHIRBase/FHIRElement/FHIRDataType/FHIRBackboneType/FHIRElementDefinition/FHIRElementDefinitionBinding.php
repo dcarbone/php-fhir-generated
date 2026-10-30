@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -245,6 +245,8 @@ class FHIRElementDefinitionBinding extends FHIRBackboneType
      * Indicates the degree of conformance expectations associated with this binding -
      * that is, the degree to which the provided value set must be adhered to in the
      * instances.
+     *
+     * @return static
      */
     public function setStrength(null|string|FHIRBindingStrengthEnum|FHIRBindingStrength $strength): self
     {
@@ -285,6 +287,8 @@ class FHIRElementDefinitionBinding extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * Describes the intended use of this particular set of codes.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -319,6 +323,8 @@ class FHIRElementDefinitionBinding extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * Refers to the value set that identifies the set of codes the binding refers to.
+     *
+     * @return static
      */
     public function setValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $valueSet): self
     {
@@ -368,6 +374,8 @@ class FHIRElementDefinitionBinding extends FHIRBackboneType
      * Additional bindings that help applications implementing this element. Additional
      * bindings do not replace the main binding but provide more information and/or
      * context.
+     *
+     * @return static
      */
     public function addAdditional(FHIRElementDefinitionAdditional $additional): self
     {
@@ -386,6 +394,8 @@ class FHIRElementDefinitionBinding extends FHIRBackboneType
      * Additional bindings that help applications implementing this element. Additional
      * bindings do not replace the main binding but provide more information and/or
      * context.
+     *
+     * @return static
      */
     public function setAdditional(FHIRElementDefinitionAdditional ...$additional): self
     {

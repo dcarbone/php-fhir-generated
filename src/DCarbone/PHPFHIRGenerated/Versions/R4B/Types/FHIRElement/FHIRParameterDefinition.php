@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -296,6 +296,8 @@ class FHIRParameterDefinition extends FHIRElement
      *
      * The name of the parameter used to allow access to the value of the parameter in
      * evaluation contexts.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRCodePrimitive|FHIRCode $name): self
     {
@@ -330,6 +332,8 @@ class FHIRParameterDefinition extends FHIRElement
      * the Narrative, or extensions
      *
      * Whether the parameter is input or output for the module.
+     *
+     * @return static
      */
     public function setUse(null|string|FHIRCodePrimitive|FHIRCode $use): self
     {
@@ -364,6 +368,8 @@ class FHIRParameterDefinition extends FHIRElement
      *
      * The minimum number of times this parameter SHALL appear in the request or
      * response.
+     *
+     * @return static
      */
     public function setMin(null|string|float|FHIRIntegerPrimitive|FHIRInteger $min): self
     {
@@ -398,6 +404,8 @@ class FHIRParameterDefinition extends FHIRElement
      *
      * The maximum number of times this element is permitted to appear in the request
      * or response.
+     *
+     * @return static
      */
     public function setMax(null|string|FHIRStringPrimitive|FHIRString $max): self
     {
@@ -432,6 +440,8 @@ class FHIRParameterDefinition extends FHIRElement
      *
      * A brief discussion of what the parameter is for and how it is used by the
      * module.
+     *
+     * @return static
      */
     public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation): self
     {
@@ -466,6 +476,8 @@ class FHIRParameterDefinition extends FHIRElement
      * the Narrative, or extensions
      *
      * The type of the parameter.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRCodePrimitive|FHIRCode $type): self
     {
@@ -502,6 +514,8 @@ class FHIRParameterDefinition extends FHIRElement
      *
      * If specified, this indicates a profile that the input data must conform to, or
      * that the output data will conform to.
+     *
+     * @return static
      */
     public function setProfile(null|string|FHIRCanonicalPrimitive|FHIRCanonical $profile): self
     {

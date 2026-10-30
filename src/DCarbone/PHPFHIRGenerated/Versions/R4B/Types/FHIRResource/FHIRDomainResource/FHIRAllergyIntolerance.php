@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -570,6 +570,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * Business identifiers assigned to this AllergyIntolerance by the performer or
      * other systems which remain constant as the resource is updated and propagates
      * from server to server.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -589,6 +591,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * Business identifiers assigned to this AllergyIntolerance by the performer or
      * other systems which remain constant as the resource is updated and propagates
      * from server to server.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -620,6 +624,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The clinical status of the allergy or intolerance.
+     *
+     * @return static
      */
     public function setClinicalStatus(null|FHIRCodeableConcept $clinicalStatus): self
     {
@@ -653,6 +659,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Assertion about certainty associated with the propensity, or potential risk, of
      * a reaction to the identified substance (including pharmaceutical product).
+     *
+     * @return static
      */
     public function setVerificationStatus(null|FHIRCodeableConcept $verificationStatus): self
     {
@@ -678,6 +686,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identification of the underlying physiological mechanism for the reaction risk.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRAllergyIntoleranceTypeEnum|FHIRAllergyIntoleranceType $type): self
     {
@@ -719,6 +729,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Category of the identified substance.
+     *
+     * @return static
      */
     public function addCategory(string|FHIRAllergyIntoleranceCategoryEnum|FHIRAllergyIntoleranceCategory $category): self
     {
@@ -736,6 +748,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Category of the identified substance.
+     *
+     * @return static
      */
     public function setCategory(string|FHIRAllergyIntoleranceCategoryEnum|FHIRAllergyIntoleranceCategory ...$category): self
     {
@@ -770,6 +784,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Estimate of the potential clinical harm, or seriousness, of the reaction to the
      * identified substance.
+     *
+     * @return static
      */
     public function setCriticality(null|string|FHIRAllergyIntoleranceCriticalityEnum|FHIRAllergyIntoleranceCriticality $criticality): self
     {
@@ -832,6 +848,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * AllergyIntolerance.reaction.substance falls within the semantic scope of
      * AllergyIntolerance.code, then the receiving system should ignore
      * AllergyIntolerance.reaction.substance.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -861,6 +879,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who has the allergy or intolerance.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -890,6 +910,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter when the allergy or intolerance was asserted.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -927,6 +949,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Estimated or actual date, date-time, or age when allergy or intolerance was
      * identified.
+     *
+     * @return static
      */
     public function setOnsetDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $onsetDateTime): self
     {
@@ -961,6 +985,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Estimated or actual date, date-time, or age when allergy or intolerance was
      * identified.
+     *
+     * @return static
      */
     public function setOnsetAge(null|FHIRAge $onsetAge): self
     {
@@ -992,6 +1018,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Estimated or actual date, date-time, or age when allergy or intolerance was
      * identified.
+     *
+     * @return static
      */
     public function setOnsetPeriod(null|FHIRPeriod $onsetPeriod): self
     {
@@ -1023,6 +1051,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Estimated or actual date, date-time, or age when allergy or intolerance was
      * identified.
+     *
+     * @return static
      */
     public function setOnsetRange(null|FHIRRange $onsetRange): self
     {
@@ -1054,6 +1084,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Estimated or actual date, date-time, or age when allergy or intolerance was
      * identified.
+     *
+     * @return static
      */
     public function setOnsetString(null|string|FHIRStringPrimitive|FHIRString $onsetString): self
     {
@@ -1094,6 +1126,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * The recordedDate represents when this particular AllergyIntolerance record was
      * created in the system, which is often a system-generated date.
+     *
+     * @return static
      */
     public function setRecordedDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $recordedDate): self
     {
@@ -1126,6 +1160,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual who recorded the record and takes responsibility for its content.
+     *
+     * @return static
      */
     public function setRecorder(null|FHIRReference $recorder): self
     {
@@ -1155,6 +1191,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The source of the information about the allergy that is recorded.
+     *
+     * @return static
      */
     public function setAsserter(null|FHIRReference $asserter): self
     {
@@ -1192,6 +1230,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Represents the date and/or time of the last known occurrence of a reaction
      * event.
+     *
+     * @return static
      */
     public function setLastOccurrence(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $lastOccurrence): self
     {
@@ -1241,6 +1281,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Additional narrative about the propensity for the Adverse Reaction, not captured
      * in other fields.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1259,6 +1301,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Additional narrative about the propensity for the Adverse Reaction, not captured
      * in other fields.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1301,6 +1345,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Details about each adverse reaction event linked to exposure to the identified
      * substance.
+     *
+     * @return static
      */
     public function addReaction(FHIRAllergyIntoleranceReaction $reaction): self
     {
@@ -1317,6 +1363,8 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Details about each adverse reaction event linked to exposure to the identified
      * substance.
+     *
+     * @return static
      */
     public function setReaction(FHIRAllergyIntoleranceReaction ...$reaction): self
     {

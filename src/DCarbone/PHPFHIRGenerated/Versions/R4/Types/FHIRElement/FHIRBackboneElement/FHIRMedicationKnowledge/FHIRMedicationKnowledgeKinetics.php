@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -214,6 +214,8 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The drug concentration measured at certain discrete points in time.
+     *
+     * @return static
      */
     public function addAreaUnderCurve(FHIRQuantity $areaUnderCurve): self
     {
@@ -232,6 +234,8 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The drug concentration measured at certain discrete points in time.
+     *
+     * @return static
      */
     public function setAreaUnderCurve(FHIRQuantity ...$areaUnderCurve): self
     {
@@ -278,6 +282,8 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The median lethal dose of a drug.
+     *
+     * @return static
      */
     public function addLethalDose50(FHIRQuantity $lethalDose50): self
     {
@@ -296,6 +302,8 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The median lethal dose of a drug.
+     *
+     * @return static
      */
     public function setLethalDose50(FHIRQuantity ...$lethalDose50): self
     {
@@ -327,6 +335,8 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      *
      * The time required for any specified property (e.g., the concentration of a
      * substance in the body) to decrease by half.
+     *
+     * @return static
      */
     public function setHalfLifePeriod(null|FHIRDuration $halfLifePeriod): self
     {

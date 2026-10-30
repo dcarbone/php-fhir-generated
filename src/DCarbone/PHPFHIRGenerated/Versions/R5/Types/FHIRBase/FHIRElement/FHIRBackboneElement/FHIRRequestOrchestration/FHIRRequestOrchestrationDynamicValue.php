@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -218,6 +218,8 @@ class FHIRRequestOrchestrationDynamicValue extends FHIRBackboneElement
      * (.) to traverse sub-elements, as well as indexers ([x]) to traverse
      * multiple-cardinality sub-elements (see the [Simple FHIRPath
      * Profile](fhirpath.html#simple) for full details).
+     *
+     * @return static
      */
     public function setPath(null|string|FHIRStringPrimitive|FHIRString $path): self
     {
@@ -254,6 +256,8 @@ class FHIRRequestOrchestrationDynamicValue extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An expression specifying the value of the customized element.
+     *
+     * @return static
      */
     public function setExpression(null|FHIRExpression $expression): self
     {

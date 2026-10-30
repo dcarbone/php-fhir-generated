@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -442,6 +442,8 @@ class FHIREligibilityRequest extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Response business identifier.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -458,6 +460,8 @@ class FHIREligibilityRequest extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Response business identifier.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -485,6 +489,8 @@ class FHIREligibilityRequest extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRFinancialResourceStatusCodesList|FHIRFinancialResourceStatusCodes $status): self
     {
@@ -519,6 +525,8 @@ class FHIREligibilityRequest extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Immediate (STAT), best effort (NORMAL), deferred (DEFER).
+     *
+     * @return static
      */
     public function setPriority(null|FHIRCodeableConcept $priority): self
     {
@@ -548,6 +556,8 @@ class FHIREligibilityRequest extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Patient Resource.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -581,6 +591,8 @@ class FHIREligibilityRequest extends FHIRDomainResource implements VersionContai
      *
      * The date or dates when the enclosed suite of services were performed or
      * completed.
+     *
+     * @return static
      */
     public function setServicedDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $servicedDate): self
     {
@@ -615,6 +627,8 @@ class FHIREligibilityRequest extends FHIRDomainResource implements VersionContai
      *
      * The date or dates when the enclosed suite of services were performed or
      * completed.
+     *
+     * @return static
      */
     public function setServicedPeriod(null|FHIRPeriod $servicedPeriod): self
     {
@@ -650,6 +664,8 @@ class FHIREligibilityRequest extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when this resource was created.
+     *
+     * @return static
      */
     public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created): self
     {
@@ -682,6 +698,8 @@ class FHIREligibilityRequest extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Person who created the invoice/claim/pre-determination or pre-authorization.
+     *
+     * @return static
      */
     public function setEnterer(null|FHIRReference $enterer): self
     {
@@ -711,6 +729,8 @@ class FHIREligibilityRequest extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who is responsible for the services rendered to the patient.
+     *
+     * @return static
      */
     public function setProvider(null|FHIRReference $provider): self
     {
@@ -740,6 +760,8 @@ class FHIREligibilityRequest extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization which is responsible for the services rendered to the patient.
+     *
+     * @return static
      */
     public function setOrganization(null|FHIRReference $organization): self
     {
@@ -769,6 +791,8 @@ class FHIREligibilityRequest extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Insurer who is target of the request.
+     *
+     * @return static
      */
     public function setInsurer(null|FHIRReference $insurer): self
     {
@@ -798,6 +822,8 @@ class FHIREligibilityRequest extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Facility where the services were provided.
+     *
+     * @return static
      */
     public function setFacility(null|FHIRReference $facility): self
     {
@@ -827,6 +853,8 @@ class FHIREligibilityRequest extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Financial instrument by which payment information for health care.
+     *
+     * @return static
      */
     public function setCoverage(null|FHIRReference $coverage): self
     {
@@ -858,6 +886,8 @@ class FHIREligibilityRequest extends FHIRDomainResource implements VersionContai
      *
      * The contract number of a business agreement which describes the terms and
      * conditions.
+     *
+     * @return static
      */
     public function setBusinessArrangement(null|string|FHIRStringPrimitive|FHIRString $businessArrangement): self
     {
@@ -892,6 +922,8 @@ class FHIREligibilityRequest extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dental, Vision, Medical, Pharmacy, Rehab etc.
+     *
+     * @return static
      */
     public function setBenefitCategory(null|FHIRCodeableConcept $benefitCategory): self
     {
@@ -923,6 +955,8 @@ class FHIREligibilityRequest extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dental: basic, major, ortho; Vision exam, glasses, contacts; etc.
+     *
+     * @return static
      */
     public function setBenefitSubCategory(null|FHIRCodeableConcept $benefitSubCategory): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -250,8 +250,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements VersionContainedTy
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The date or period when the detected issue was initially identified. (choose any
-     * one of identified*, but only one)
+     * The date or period when the detected issue was initially identified.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $identifiedDateTime;
@@ -260,8 +259,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The date or period when the detected issue was initially identified. (choose any
-     * one of identified*, but only one)
+     * The date or period when the detected issue was initially identified.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $identifiedPeriod;
@@ -479,6 +477,8 @@ class FHIRDetectedIssue extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier associated with the detected issue record.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -496,6 +496,8 @@ class FHIRDetectedIssue extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier associated with the detected issue record.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -521,6 +523,8 @@ class FHIRDetectedIssue extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the status of the detected issue.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRDetectedIssueStatusEnum|FHIRDetectedIssueStatus $status): self
     {
@@ -568,6 +572,8 @@ class FHIRDetectedIssue extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that classifies the general type of detected issue.
+     *
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -585,6 +591,8 @@ class FHIRDetectedIssue extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that classifies the general type of detected issue.
+     *
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -616,6 +624,8 @@ class FHIRDetectedIssue extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the specific type of issue identified.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -643,6 +653,8 @@ class FHIRDetectedIssue extends FHIRDomainResource implements VersionContainedTy
      *
      * Indicates the degree of importance associated with the identified issue based on
      * the potential impact on the patient.
+     *
+     * @return static
      */
     public function setSeverity(null|string|FHIRDetectedIssueSeverityEnum|FHIRDetectedIssueSeverity $severity): self
     {
@@ -675,6 +687,8 @@ class FHIRDetectedIssue extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the subject whose record the detected issue is associated with.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -704,6 +718,8 @@ class FHIRDetectedIssue extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter during which this issue was detected.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -724,8 +740,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements VersionContainedTy
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The date or period when the detected issue was initially identified. (choose any
-     * one of identified*, but only one)
+     * The date or period when the detected issue was initially identified.
      */
     public function getIdentifiedDateTime(): null|FHIRDateTime
     {
@@ -741,8 +756,9 @@ class FHIRDetectedIssue extends FHIRDomainResource implements VersionContainedTy
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The date or period when the detected issue was initially identified. (choose any
-     * one of identified*, but only one)
+     * The date or period when the detected issue was initially identified.
+     *
+     * @return static
      */
     public function setIdentifiedDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $identifiedDateTime): self
     {
@@ -762,8 +778,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The date or period when the detected issue was initially identified. (choose any
-     * one of identified*, but only one)
+     * The date or period when the detected issue was initially identified.
      */
     public function getIdentifiedPeriod(): null|FHIRPeriod
     {
@@ -775,8 +790,9 @@ class FHIRDetectedIssue extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The date or period when the detected issue was initially identified. (choose any
-     * one of identified*, but only one)
+     * The date or period when the detected issue was initially identified.
+     *
+     * @return static
      */
     public function setIdentifiedPeriod(null|FHIRPeriod $identifiedPeriod): self
     {
@@ -808,6 +824,8 @@ class FHIRDetectedIssue extends FHIRDomainResource implements VersionContainedTy
      *
      * Individual or device responsible for the issue being raised. For example, a
      * decision support application or a pharmacist conducting a medication review.
+     *
+     * @return static
      */
     public function setAuthor(null|FHIRReference $author): self
     {
@@ -852,6 +870,8 @@ class FHIRDetectedIssue extends FHIRDomainResource implements VersionContainedTy
      *
      * Indicates the resource representing the current activity or proposed activity
      * that is potentially problematic.
+     *
+     * @return static
      */
     public function addImplicated(FHIRReference $implicated): self
     {
@@ -869,6 +889,8 @@ class FHIRDetectedIssue extends FHIRDomainResource implements VersionContainedTy
      *
      * Indicates the resource representing the current activity or proposed activity
      * that is potentially problematic.
+     *
+     * @return static
      */
     public function setImplicated(FHIRReference ...$implicated): self
     {
@@ -915,6 +937,8 @@ class FHIRDetectedIssue extends FHIRDomainResource implements VersionContainedTy
      *
      * Supporting evidence or manifestations that provide the basis for identifying the
      * detected issue such as a GuidanceResponse or MeasureReport.
+     *
+     * @return static
      */
     public function addEvidence(FHIRDetectedIssueEvidence $evidence): self
     {
@@ -933,6 +957,8 @@ class FHIRDetectedIssue extends FHIRDomainResource implements VersionContainedTy
      *
      * Supporting evidence or manifestations that provide the basis for identifying the
      * detected issue such as a GuidanceResponse or MeasureReport.
+     *
+     * @return static
      */
     public function setEvidence(FHIRDetectedIssueEvidence ...$evidence): self
     {
@@ -970,6 +996,8 @@ class FHIRDetectedIssue extends FHIRDomainResource implements VersionContainedTy
      * the Narrative, or extensions
      *
      * A textual explanation of the detected issue.
+     *
+     * @return static
      */
     public function setDetail(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $detail): self
     {
@@ -1004,6 +1032,8 @@ class FHIRDetectedIssue extends FHIRDomainResource implements VersionContainedTy
      *
      * The literature, knowledge-base or similar reference that describes the
      * propensity for the detected issue identified.
+     *
+     * @return static
      */
     public function setReference(null|string|FHIRUriPrimitive|FHIRUri $reference): self
     {
@@ -1057,6 +1087,8 @@ class FHIRDetectedIssue extends FHIRDomainResource implements VersionContainedTy
      * the likelihood of the risk identified by the detected issue from manifesting.
      * Can also reflect an observation of known mitigating factors that may
      * reduce/eliminate the need for any action.
+     *
+     * @return static
      */
     public function addMitigation(FHIRDetectedIssueMitigation $mitigation): self
     {
@@ -1077,6 +1109,8 @@ class FHIRDetectedIssue extends FHIRDomainResource implements VersionContainedTy
      * the likelihood of the risk identified by the detected issue from manifesting.
      * Can also reflect an observation of known mitigating factors that may
      * reduce/eliminate the need for any action.
+     *
+     * @return static
      */
     public function setMitigation(FHIRDetectedIssueMitigation ...$mitigation): self
     {

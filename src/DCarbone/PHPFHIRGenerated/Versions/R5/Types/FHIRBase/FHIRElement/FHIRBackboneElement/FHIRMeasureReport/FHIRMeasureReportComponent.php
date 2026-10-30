@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -131,6 +131,21 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement
         self::FIELD_CODE => [
             'min_occurs' => 1,
         ],
+        self::FIELD_VALUE_CODEABLE_CONCEPT => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_BOOLEAN => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_QUANTITY => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_RANGE => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_REFERENCE => [
+            'min_occurs' => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -166,7 +181,7 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The stratum component value. (choose any one of value*, but only one)
+     * The stratum component value.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
@@ -174,7 +189,7 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The stratum component value. (choose any one of value*, but only one)
+     * The stratum component value.
      */
     #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
@@ -185,7 +200,7 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The stratum component value. (choose any one of value*, but only one)
+     * The stratum component value.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -194,7 +209,7 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The stratum component value. (choose any one of value*, but only one)
+     * The stratum component value.
      */
     #[FHIRRange]
     protected FHIRRange $valueRange;
@@ -203,7 +218,7 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The stratum component value. (choose any one of value*, but only one)
+     * The stratum component value.
      */
     #[FHIRReference]
     protected FHIRReference $valueReference;
@@ -281,6 +296,8 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement
      *
      * The stratifier component from the Measure that corresponds to this stratifier
      * component in the MeasureReport resource.
+     *
+     * @return static
      */
     public function setLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId): self
     {
@@ -315,6 +332,8 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The code for the stratum component value.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -332,7 +351,7 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The stratum component value. (choose any one of value*, but only one)
+     * The stratum component value.
      */
     public function getValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -345,7 +364,9 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The stratum component value. (choose any one of value*, but only one)
+     * The stratum component value.
+     *
+     * @return static
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -361,7 +382,7 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The stratum component value. (choose any one of value*, but only one)
+     * The stratum component value.
      */
     public function getValueBoolean(): null|FHIRBoolean
     {
@@ -372,7 +393,9 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The stratum component value. (choose any one of value*, but only one)
+     * The stratum component value.
+     *
+     * @return static
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -394,7 +417,7 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The stratum component value. (choose any one of value*, but only one)
+     * The stratum component value.
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -408,7 +431,9 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The stratum component value. (choose any one of value*, but only one)
+     * The stratum component value.
+     *
+     * @return static
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -425,7 +450,7 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The stratum component value. (choose any one of value*, but only one)
+     * The stratum component value.
      */
     public function getValueRange(): null|FHIRRange
     {
@@ -437,7 +462,9 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The stratum component value. (choose any one of value*, but only one)
+     * The stratum component value.
+     *
+     * @return static
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -454,7 +481,7 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The stratum component value. (choose any one of value*, but only one)
+     * The stratum component value.
      */
     public function getValueReference(): null|FHIRReference
     {
@@ -466,7 +493,9 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The stratum component value. (choose any one of value*, but only one)
+     * The stratum component value.
+     *
+     * @return static
      */
     public function setValueReference(null|FHIRReference $valueReference): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -225,6 +225,8 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * A reference to an element that holds a coded value that corresponds to a code
      * system property. The idea is that the information model carries an element
      * somwhere that is labeled to correspond with a code system property.
+     *
+     * @return static
      */
     public function setProperty(null|string|FHIRUriPrimitive|FHIRUri $property): self
     {
@@ -259,6 +261,8 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      *
      * An absolute URI that identifies the code system of the dependency code (if the
      * source/dependency is a value set that crosses code systems).
+     *
+     * @return static
      */
     public function setSystem(null|string|FHIRUriPrimitive|FHIRUri $system): self
     {
@@ -293,6 +297,8 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      *
      * Identity (code or path) or the element/item/ValueSet that the map depends on /
      * refers to.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRStringPrimitive|FHIRString $code): self
     {
@@ -327,6 +333,8 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      *
      * The display for the code. The display is only provided to help editors when
      * editing the concept map.
+     *
+     * @return static
      */
     public function setDisplay(null|string|FHIRStringPrimitive|FHIRString $display): self
     {

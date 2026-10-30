@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -236,6 +236,8 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
      *
      * A code that identifies a particular diagnostic investigation, or panel of
      * investigations, that have been requested.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -278,6 +280,8 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the item is related to a specific specimen.
+     *
+     * @return static
      */
     public function addSpecimen(FHIRReference $specimen): self
     {
@@ -294,6 +298,8 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the item is related to a specific specimen.
+     *
+     * @return static
      */
     public function setSpecimen(FHIRReference ...$specimen): self
     {
@@ -327,6 +333,8 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
      *
      * Anatomical location where the request test should be performed. This is the
      * target site.
+     *
+     * @return static
      */
     public function setBodySite(null|FHIRCodeableConcept $bodySite): self
     {
@@ -354,6 +362,8 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this individual item within the order.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRDiagnosticOrderStatusList|FHIRDiagnosticOrderStatus $status): self
     {
@@ -397,6 +407,8 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
      *
      * A summary of the events of interest that have occurred as this item of the
      * request is processed.
+     *
+     * @return static
      */
     public function addEvent(FHIRDiagnosticOrderEvent $event): self
     {
@@ -412,6 +424,8 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
      *
      * A summary of the events of interest that have occurred as this item of the
      * request is processed.
+     *
+     * @return static
      */
     public function setEvent(FHIRDiagnosticOrderEvent ...$event): self
     {

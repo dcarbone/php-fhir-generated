@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -270,7 +270,7 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which ValueSet is
-     * more current. (choose any one of versionAlgorithm*, but only one)
+     * more current.
      */
     #[FHIRString]
     protected FHIRString $versionAlgorithmString;
@@ -280,7 +280,7 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which ValueSet is
-     * more current. (choose any one of versionAlgorithm*, but only one)
+     * more current.
      */
     #[FHIRCoding]
     protected FHIRCoding $versionAlgorithmCoding;
@@ -802,6 +802,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      * which an authoritative instance of this value set is (or will be) published.
      * This URL can be the target of a canonical reference. It SHALL remain the same
      * when the value set is stored on different servers.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -853,6 +855,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      * A formal identifier that is used to identify this value set when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -872,6 +876,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      * A formal identifier that is used to identify this value set when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -911,6 +917,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      * For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not
      * available. There is also no expectation that versions can be placed in a
      * lexicographical sequence.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -931,7 +939,7 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which ValueSet is
-     * more current. (choose any one of versionAlgorithm*, but only one)
+     * more current.
      */
     public function getVersionAlgorithmString(): null|FHIRString
     {
@@ -944,7 +952,9 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which ValueSet is
-     * more current. (choose any one of versionAlgorithm*, but only one)
+     * more current.
+     *
+     * @return static
      */
     public function setVersionAlgorithmString(null|string|FHIRStringPrimitive|FHIRString $versionAlgorithmString): self
     {
@@ -965,7 +975,7 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which ValueSet is
-     * more current. (choose any one of versionAlgorithm*, but only one)
+     * more current.
      */
     public function getVersionAlgorithmCoding(): null|FHIRCoding
     {
@@ -978,7 +988,9 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which ValueSet is
-     * more current. (choose any one of versionAlgorithm*, but only one)
+     * more current.
+     *
+     * @return static
      */
     public function setVersionAlgorithmCoding(null|FHIRCoding $versionAlgorithmCoding): self
     {
@@ -1012,6 +1024,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      * A natural language name identifying the value set. This name should be usable as
      * an identifier for the module by machine processing applications such as code
      * generation.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -1044,6 +1058,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the value set.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -1078,6 +1094,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      * The status of the value set applies to the value set definition
      * (ValueSet.compose) and the associated ValueSet metadata. Expansions do not have
      * a state.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -1112,6 +1130,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      * A Boolean value to indicate that this value set is authored for testing purposes
      * (or education/evaluation/marketing) and is not intended to be used for genuine
      * usage.
+     *
+     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -1154,6 +1174,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      *
      * The date (and optionally time) when the value set metadata or content logical
      * definition (.compose) was created or revised.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1188,6 +1210,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the value set.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1235,6 +1259,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1252,6 +1278,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1295,6 +1323,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      * perspective. The textual description specifies the span of meanings for concepts
      * to be included within the Value Set Expansion, and also may specify the intended
      * use and limitations of the Value Set.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1354,6 +1384,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate value set
      * instances.
+     *
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1377,6 +1409,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate value set
      * instances.
+     *
+     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1421,6 +1455,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the value set is intended to be used.
+     *
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1438,6 +1474,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the value set is intended to be used.
+     *
+     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1467,6 +1505,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      *
      * If this is set to 'true', then no new versions of the content logical definition
      * can be created. Note: Other metadata might still change.
+     *
+     * @return static
      */
     public function setImmutable(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $immutable): self
     {
@@ -1509,6 +1549,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      *
      * Explanation of why this value set is needed and why it has been designed as it
      * has.
+     *
+     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1553,6 +1595,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      * A copyright statement relating to the value set and/or its contents. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * value set.
+     *
+     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1589,6 +1633,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
+     *
+     * @return static
      */
     public function setCopyrightLabel(null|string|FHIRStringPrimitive|FHIRString $copyrightLabel): self
     {
@@ -1625,6 +1671,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
+     *
+     * @return static
      */
     public function setApprovalDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $approvalDate): self
     {
@@ -1661,6 +1709,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
+     *
+     * @return static
      */
     public function setLastReviewDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lastReviewDate): self
     {
@@ -1695,6 +1745,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      *
      * The period during which the ValueSet content was or is planned to be in active
      * use.
+     *
+     * @return static
      */
     public function setEffectivePeriod(null|FHIRPeriod $effectivePeriod): self
     {
@@ -1743,6 +1795,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      * Descriptions related to the content of the ValueSet. Topics provide a high-level
      * categorization as well as keywords for the ValueSet that can be useful for
      * filtering and searching.
+     *
+     * @return static
      */
     public function addTopic(FHIRCodeableConcept $topic): self
     {
@@ -1762,6 +1816,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      * Descriptions related to the content of the ValueSet. Topics provide a high-level
      * categorization as well as keywords for the ValueSet that can be useful for
      * filtering and searching.
+     *
+     * @return static
      */
     public function setTopic(FHIRCodeableConcept ...$topic): self
     {
@@ -1806,6 +1862,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the ValueSet.
+     *
+     * @return static
      */
     public function addAuthor(FHIRContactDetail $author): self
     {
@@ -1823,6 +1881,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the ValueSet.
+     *
+     * @return static
      */
     public function setAuthor(FHIRContactDetail ...$author): self
     {
@@ -1867,6 +1927,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      *
      * An individual or organization primarily responsible for internal coherence of
      * the ValueSet.
+     *
+     * @return static
      */
     public function addEditor(FHIRContactDetail $editor): self
     {
@@ -1884,6 +1946,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      *
      * An individual or organization primarily responsible for internal coherence of
      * the ValueSet.
+     *
+     * @return static
      */
     public function setEditor(FHIRContactDetail ...$editor): self
     {
@@ -1928,6 +1992,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      *
      * An individual or organization asserted by the publisher to be primarily
      * responsible for review of some aspect of the ValueSet.
+     *
+     * @return static
      */
     public function addReviewer(FHIRContactDetail $reviewer): self
     {
@@ -1945,6 +2011,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      *
      * An individual or organization asserted by the publisher to be primarily
      * responsible for review of some aspect of the ValueSet.
+     *
+     * @return static
      */
     public function setReviewer(FHIRContactDetail ...$reviewer): self
     {
@@ -1989,6 +2057,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      *
      * An individual or organization asserted by the publisher to be responsible for
      * officially endorsing the ValueSet for use in some setting.
+     *
+     * @return static
      */
     public function addEndorser(FHIRContactDetail $endorser): self
     {
@@ -2006,6 +2076,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      *
      * An individual or organization asserted by the publisher to be responsible for
      * officially endorsing the ValueSet for use in some setting.
+     *
+     * @return static
      */
     public function setEndorser(FHIRContactDetail ...$endorser): self
     {
@@ -2052,6 +2124,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      *
      * Related artifacts such as additional documentation, justification, dependencies,
      * bibliographic references, and predecessor and successor artifacts.
+     *
+     * @return static
      */
     public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact): self
     {
@@ -2070,6 +2144,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      *
      * Related artifacts such as additional documentation, justification, dependencies,
      * bibliographic references, and predecessor and successor artifacts.
+     *
+     * @return static
      */
     public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
     {
@@ -2105,6 +2181,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      * A set of criteria that define the contents of the value set by including or
      * excluding codes selected from the specified code system(s) that the value set
      * draws from. This is also known as the Content Logical Definition (CLD).
+     *
+     * @return static
      */
     public function setCompose(null|FHIRValueSetCompose $compose): self
     {
@@ -2140,6 +2218,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      * A value set can also be "expanded", where the value set is turned into a simple
      * collection of enumerated codes. This element holds the expansion, if it has been
      * performed.
+     *
+     * @return static
      */
     public function setExpansion(null|FHIRValueSetExpansion $expansion): self
     {
@@ -2173,6 +2253,8 @@ class FHIRValueSet extends FHIRMetadataResource implements VersionContainedTypeI
      *
      * Description of the semantic space the Value Set Expansion is intended to cover
      * and should further clarify the text in ValueSet.description.
+     *
+     * @return static
      */
     public function setScope(null|FHIRValueSetScope $scope): self
     {

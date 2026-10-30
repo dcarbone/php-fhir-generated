@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -371,6 +371,8 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      *
      * The code assigned to the product, for example a USDA NDB number, a USDA FDC ID
      * number, or a Langual code.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -396,6 +398,8 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the product.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRNutritionProductStatusEnum|FHIRNutritionProductStatus $status): self
     {
@@ -445,6 +449,8 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      *
      * Nutrition products can have different classifications - according to its
      * nutritional properties, preparation methods, etc.
+     *
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -463,6 +469,8 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      *
      * Nutrition products can have different classifications - according to its
      * nutritional properties, preparation methods, etc.
+     *
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -507,6 +515,8 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      *
      * The organisation (manufacturer, representative or legal authorization holder)
      * that is responsible for the device.
+     *
+     * @return static
      */
     public function addManufacturer(FHIRReference $manufacturer): self
     {
@@ -524,6 +534,8 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      *
      * The organisation (manufacturer, representative or legal authorization holder)
      * that is responsible for the device.
+     *
+     * @return static
      */
     public function setManufacturer(FHIRReference ...$manufacturer): self
     {
@@ -562,6 +574,8 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      * A food or supplement that is consumed by patients.
      *
      * The product's nutritional information expressed by the nutrients.
+     *
+     * @return static
      */
     public function addNutrient(FHIRNutritionProductNutrient $nutrient): self
     {
@@ -576,6 +590,8 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      * A food or supplement that is consumed by patients.
      *
      * The product's nutritional information expressed by the nutrients.
+     *
+     * @return static
      */
     public function setNutrient(FHIRNutritionProductNutrient ...$nutrient): self
     {
@@ -614,6 +630,8 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      * A food or supplement that is consumed by patients.
      *
      * Ingredients contained in this product.
+     *
+     * @return static
      */
     public function addIngredient(FHIRNutritionProductIngredient $ingredient): self
     {
@@ -628,6 +646,8 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      * A food or supplement that is consumed by patients.
      *
      * Ingredients contained in this product.
+     *
+     * @return static
      */
     public function setIngredient(FHIRNutritionProductIngredient ...$ingredient): self
     {
@@ -672,6 +692,8 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allergens that are known or suspected to be a part of this nutrition product.
+     *
+     * @return static
      */
     public function addKnownAllergen(FHIRCodeableReference $knownAllergen): self
     {
@@ -689,6 +711,8 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allergens that are known or suspected to be a part of this nutrition product.
+     *
+     * @return static
      */
     public function setKnownAllergen(FHIRCodeableReference ...$knownAllergen): self
     {
@@ -727,6 +751,8 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      * A food or supplement that is consumed by patients.
      *
      * Specifies descriptive properties of the nutrition product.
+     *
+     * @return static
      */
     public function addCharacteristic(FHIRNutritionProductCharacteristic $characteristic): self
     {
@@ -741,6 +767,8 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      * A food or supplement that is consumed by patients.
      *
      * Specifies descriptive properties of the nutrition product.
+     *
+     * @return static
      */
     public function setCharacteristic(FHIRNutritionProductCharacteristic ...$characteristic): self
     {
@@ -781,6 +809,8 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      *
      * Conveys instance-level information about this product item. One or several
      * physical, countable instances or occurrences of the product.
+     *
+     * @return static
      */
     public function addInstance(FHIRNutritionProductInstance $instance): self
     {
@@ -796,6 +826,8 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      *
      * Conveys instance-level information about this product item. One or several
      * physical, countable instances or occurrences of the product.
+     *
+     * @return static
      */
     public function setInstance(FHIRNutritionProductInstance ...$instance): self
     {
@@ -840,6 +872,8 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the product.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -857,6 +891,8 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the product.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {

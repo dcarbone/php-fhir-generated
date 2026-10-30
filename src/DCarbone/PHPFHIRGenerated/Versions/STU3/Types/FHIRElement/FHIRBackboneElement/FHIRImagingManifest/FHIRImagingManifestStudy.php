@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -222,6 +222,8 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Study instance UID of the SOP instances in the selection.
+     *
+     * @return static
      */
     public function setUid(null|string|FHIROidPrimitive|FHIROid $uid): self
     {
@@ -254,6 +256,8 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the Imaging Study in FHIR form.
+     *
+     * @return static
      */
     public function setImagingStudy(null|FHIRReference $imagingStudy): self
     {
@@ -302,6 +306,8 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
      * study. See implementation notes for information about using DICOM endpoints. A
      * study-level endpoint applies to each series in the study, unless overridden by a
      * series-level endpoint with the same Endpoint.type.
+     *
+     * @return static
      */
     public function addEndpoint(FHIRReference $endpoint): self
     {
@@ -321,6 +327,8 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
      * study. See implementation notes for information about using DICOM endpoints. A
      * study-level endpoint applies to each series in the study, unless overridden by a
      * series-level endpoint with the same Endpoint.type.
+     *
+     * @return static
      */
     public function setEndpoint(FHIRReference ...$endpoint): self
     {
@@ -363,6 +371,8 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
      *
      * Series identity and locating information of the DICOM SOP instances in the
      * selection.
+     *
+     * @return static
      */
     public function addSeries(FHIRImagingManifestSeries $series): self
     {
@@ -379,6 +389,8 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
      *
      * Series identity and locating information of the DICOM SOP instances in the
      * selection.
+     *
+     * @return static
      */
     public function setSeries(FHIRImagingManifestSeries ...$series): self
     {

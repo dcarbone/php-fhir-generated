@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -524,6 +524,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * activity is representing. The CarePlan.activity.detail is an in-line definition
      * when a resource is not referenced using CarePlan.activity.reference. For
      * example, a MedicationRequest, a ServiceRequest, or a CommunicationRequest.
+     *
+     * @return static
      */
     public function setKind(null|string|FHIRCarePlanActivityKindEnum|FHIRCarePlanActivityKind $kind): self
     {
@@ -573,6 +575,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      *
      * The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other
      * definition that is adhered to in whole or in part by this CarePlan activity.
+     *
+     * @return static
      */
     public function addInstantiatesCanonical(string|FHIRCanonicalPrimitive|FHIRCanonical $instantiatesCanonical): self
     {
@@ -594,6 +598,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      *
      * The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other
      * definition that is adhered to in whole or in part by this CarePlan activity.
+     *
+     * @return static
      */
     public function setInstantiatesCanonical(string|FHIRCanonicalPrimitive|FHIRCanonical ...$instantiatesCanonical): self
     {
@@ -647,6 +653,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * The URL pointing to an externally maintained protocol, guideline, questionnaire
      * or other definition that is adhered to in whole or in part by this CarePlan
      * activity.
+     *
+     * @return static
      */
     public function addInstantiatesUri(string|FHIRUriPrimitive|FHIRUri $instantiatesUri): self
     {
@@ -668,6 +676,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * The URL pointing to an externally maintained protocol, guideline, questionnaire
      * or other definition that is adhered to in whole or in part by this CarePlan
      * activity.
+     *
+     * @return static
      */
     public function setInstantiatesUri(string|FHIRUriPrimitive|FHIRUri ...$instantiatesUri): self
     {
@@ -708,6 +718,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      *
      * Detailed description of the type of planned activity; e.g. what lab test, what
      * procedure, what kind of encounter.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -754,6 +766,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      *
      * Provides the rationale that drove the inclusion of this particular activity as
      * part of the plan or the reason why the activity was prohibited.
+     *
+     * @return static
      */
     public function addReasonCode(FHIRCodeableConcept $reasonCode): self
     {
@@ -772,6 +786,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      *
      * Provides the rationale that drove the inclusion of this particular activity as
      * part of the plan or the reason why the activity was prohibited.
+     *
+     * @return static
      */
     public function setReasonCode(FHIRCodeableConcept ...$reasonCode): self
     {
@@ -818,6 +834,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * Indicates another resource, such as the health condition(s), whose existence
      * justifies this request and drove the inclusion of this particular activity as
      * part of the plan.
+     *
+     * @return static
      */
     public function addReasonReference(FHIRReference $reasonReference): self
     {
@@ -836,6 +854,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * Indicates another resource, such as the health condition(s), whose existence
      * justifies this request and drove the inclusion of this particular activity as
      * part of the plan.
+     *
+     * @return static
      */
     public function setReasonReference(FHIRReference ...$reasonReference): self
     {
@@ -880,6 +900,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      *
      * Internal reference that identifies the goals that this activity is intended to
      * contribute towards meeting.
+     *
+     * @return static
      */
     public function addGoal(FHIRReference $goal): self
     {
@@ -897,6 +919,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      *
      * Internal reference that identifies the goals that this activity is intended to
      * contribute towards meeting.
+     *
+     * @return static
      */
     public function setGoal(FHIRReference ...$goal): self
     {
@@ -922,6 +946,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies what progress is being made for the specific activity.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRCarePlanActivityStatusEnum|FHIRCarePlanActivityStatus $status): self
     {
@@ -958,6 +984,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      *
      * Provides reason why the activity isn't yet started, is on hold, was cancelled,
      * etc.
+     *
+     * @return static
      */
     public function setStatusReason(null|FHIRCodeableConcept $statusReason): self
     {
@@ -989,6 +1017,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * If true, indicates that the described activity is one that must NOT be engaged
      * in when following the plan. If false, or missing, indicates that the described
      * activity is one that should be engaged in when following the plan.
+     *
+     * @return static
      */
     public function setDoNotPerform(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $doNotPerform): self
     {
@@ -1029,6 +1059,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     *
+     * @return static
      */
     public function setScheduledTiming(null|FHIRTiming $scheduledTiming): self
     {
@@ -1058,6 +1090,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     *
+     * @return static
      */
     public function setScheduledPeriod(null|FHIRPeriod $scheduledPeriod): self
     {
@@ -1087,6 +1121,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     *
+     * @return static
      */
     public function setScheduledString(null|string|FHIRStringPrimitive|FHIRString $scheduledString): self
     {
@@ -1121,6 +1157,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      *
      * Identifies the facility where the activity will occur; e.g. home, hospital,
      * specific clinic, etc.
+     *
+     * @return static
      */
     public function setLocation(null|FHIRReference $location): self
     {
@@ -1163,6 +1201,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who's expected to be involved in the activity.
+     *
+     * @return static
      */
     public function addPerformer(FHIRReference $performer): self
     {
@@ -1179,6 +1219,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who's expected to be involved in the activity.
+     *
+     * @return static
      */
     public function setPerformer(FHIRReference ...$performer): self
     {
@@ -1212,6 +1254,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      *
      * Identifies the food, drug or other product to be consumed or supplied in the
      * activity.
+     *
+     * @return static
      */
     public function setProductCodeableConcept(null|FHIRCodeableConcept $productCodeableConcept): self
     {
@@ -1243,6 +1287,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      *
      * Identifies the food, drug or other product to be consumed or supplied in the
      * activity.
+     *
+     * @return static
      */
     public function setProductReference(null|FHIRReference $productReference): self
     {
@@ -1276,6 +1322,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the quantity expected to be consumed in a given day.
+     *
+     * @return static
      */
     public function setDailyAmount(null|FHIRQuantity $dailyAmount): self
     {
@@ -1311,6 +1359,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      *
      * Identifies the quantity expected to be supplied, administered or consumed by the
      * subject.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -1346,6 +1396,8 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * occurrence, including relation to other activities. It may also include
      * objectives, pre-conditions and end-conditions. Finally, it may convey specifics
      * about the activity such as body site, method, route, etc.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {

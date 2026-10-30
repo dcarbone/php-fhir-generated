@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -252,6 +252,8 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The Resource or Data type being described.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRCodePrimitive|FHIRCode $type): self
     {
@@ -284,6 +286,8 @@ class FHIRProfileStructure extends FHIRBackboneElement
      *
      * The name of this resource constraint statement (to refer to it from other
      * resource constraints - from Profile.structure.element.definition.type.profile).
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -318,6 +322,8 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * This definition of a profile on a structure is published as a formal statement.
      * Some structural definitions might be defined purely for internal use within the
      * profile, and not intended to be used outside that context.
+     *
+     * @return static
      */
     public function setPublish(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $publish): self
     {
@@ -348,6 +354,8 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human summary: why describe this resource?.
+     *
+     * @return static
      */
     public function setPurpose(null|string|FHIRStringPrimitive|FHIRString $purpose): self
     {
@@ -393,6 +401,8 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * and Extension Definitions.
      *
      * Captures constraints on each element within the resource.
+     *
+     * @return static
      */
     public function addElement(FHIRProfileElement $element): self
     {
@@ -409,6 +419,8 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * and Extension Definitions.
      *
      * Captures constraints on each element within the resource.
+     *
+     * @return static
      */
     public function setElement(FHIRProfileElement ...$element): self
     {
@@ -451,6 +463,8 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * and Extension Definitions.
      *
      * Additional search parameters for implementations to support and/or make use of.
+     *
+     * @return static
      */
     public function addSearchParam(FHIRProfileSearchParam $searchParam): self
     {
@@ -467,6 +481,8 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * and Extension Definitions.
      *
      * Additional search parameters for implementations to support and/or make use of.
+     *
+     * @return static
      */
     public function setSearchParam(FHIRProfileSearchParam ...$searchParam): self
     {

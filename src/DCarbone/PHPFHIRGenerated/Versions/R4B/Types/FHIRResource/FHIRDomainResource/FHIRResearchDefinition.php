@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -872,6 +872,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      * is (or will be) published. This URL can be the target of a canonical reference.
      * It SHALL remain the same when the research definition is stored on different
      * servers.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -923,6 +925,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      * A formal identifier that is used to identify this research definition when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -942,6 +946,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      * A formal identifier that is used to identify this research definition when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -989,6 +995,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      * (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the
      * Decision Support Service specification. Note that a version is required for
      * non-experimental active artifacts.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -1025,6 +1033,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      * A natural language name identifying the research definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -1057,6 +1067,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the research definition.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -1091,6 +1103,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * The short title provides an alternate title for use in informal descriptive
      * contexts where the full, formal title is not necessary.
+     *
+     * @return static
      */
     public function setShortTitle(null|string|FHIRStringPrimitive|FHIRString $shortTitle): self
     {
@@ -1125,6 +1139,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * An explanatory or alternate title for the ResearchDefinition giving additional
      * information about its content.
+     *
+     * @return static
      */
     public function setSubtitle(null|string|FHIRStringPrimitive|FHIRString $subtitle): self
     {
@@ -1155,6 +1171,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * The status of this research definition. Enables tracking the life-cycle of the
      * content.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -1189,6 +1207,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      * A Boolean value to indicate that this research definition is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended to be
      * used for genuine usage.
+     *
+     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -1227,6 +1247,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      * The intended subjects for the ResearchDefinition. If this element is not
      * provided, a Patient subject is assumed, but the subject of the
      * ResearchDefinition can be anything.
+     *
+     * @return static
      */
     public function setSubjectCodeableConcept(null|FHIRCodeableConcept $subjectCodeableConcept): self
     {
@@ -1260,6 +1282,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      * The intended subjects for the ResearchDefinition. If this element is not
      * provided, a Patient subject is assumed, but the subject of the
      * ResearchDefinition can be anything.
+     *
+     * @return static
      */
     public function setSubjectReference(null|FHIRReference $subjectReference): self
     {
@@ -1301,6 +1325,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      * date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the research definition changes.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1335,6 +1361,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * The name of the organization or individual that published the research
      * definition.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1382,6 +1410,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1399,6 +1429,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1438,6 +1470,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * A free text natural language description of the research definition from a
      * consumer's perspective.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1483,6 +1517,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human-readable string to clarify or explain concepts about the resource.
+     *
+     * @return static
      */
     public function addComment(string|FHIRStringPrimitive|FHIRString $comment): self
     {
@@ -1502,6 +1538,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human-readable string to clarify or explain concepts about the resource.
+     *
+     * @return static
      */
     public function setComment(string|FHIRStringPrimitive|FHIRString ...$comment): self
     {
@@ -1565,6 +1603,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate research
      * definition instances.
+     *
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1588,6 +1628,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate research
      * definition instances.
+     *
+     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1634,6 +1676,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * A legal or geographic region in which the research definition is intended to be
      * used.
+     *
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1652,6 +1696,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * A legal or geographic region in which the research definition is intended to be
      * used.
+     *
+     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1691,6 +1737,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * Explanation of why this research definition is needed and why it has been
      * designed as it has.
+     *
+     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1725,6 +1773,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * A detailed description, from a clinical perspective, of how the
      * ResearchDefinition is used.
+     *
+     * @return static
      */
     public function setUsage(null|string|FHIRStringPrimitive|FHIRString $usage): self
     {
@@ -1769,6 +1819,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      * A copyright statement relating to the research definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the research definition.
+     *
+     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1805,6 +1857,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
+     *
+     * @return static
      */
     public function setApprovalDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $approvalDate): self
     {
@@ -1841,6 +1895,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
+     *
+     * @return static
      */
     public function setLastReviewDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lastReviewDate): self
     {
@@ -1875,6 +1931,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * The period during which the research definition content was or is planned to be
      * in active use.
+     *
+     * @return static
      */
     public function setEffectivePeriod(null|FHIRPeriod $effectivePeriod): self
     {
@@ -1923,6 +1981,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      * Descriptive topics related to the content of the ResearchDefinition. Topics
      * provide a high-level categorization grouping types of ResearchDefinitions that
      * can be useful for filtering and searching.
+     *
+     * @return static
      */
     public function addTopic(FHIRCodeableConcept $topic): self
     {
@@ -1942,6 +2002,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      * Descriptive topics related to the content of the ResearchDefinition. Topics
      * provide a high-level categorization grouping types of ResearchDefinitions that
      * can be useful for filtering and searching.
+     *
+     * @return static
      */
     public function setTopic(FHIRCodeableConcept ...$topic): self
     {
@@ -1986,6 +2048,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
+     *
+     * @return static
      */
     public function addAuthor(FHIRContactDetail $author): self
     {
@@ -2003,6 +2067,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
+     *
+     * @return static
      */
     public function setAuthor(FHIRContactDetail ...$author): self
     {
@@ -2047,6 +2113,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
+     *
+     * @return static
      */
     public function addEditor(FHIRContactDetail $editor): self
     {
@@ -2064,6 +2132,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
+     *
+     * @return static
      */
     public function setEditor(FHIRContactDetail ...$editor): self
     {
@@ -2108,6 +2178,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
+     *
+     * @return static
      */
     public function addReviewer(FHIRContactDetail $reviewer): self
     {
@@ -2125,6 +2197,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
+     *
+     * @return static
      */
     public function setReviewer(FHIRContactDetail ...$reviewer): self
     {
@@ -2169,6 +2243,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
+     *
+     * @return static
      */
     public function addEndorser(FHIRContactDetail $endorser): self
     {
@@ -2186,6 +2262,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
+     *
+     * @return static
      */
     public function setEndorser(FHIRContactDetail ...$endorser): self
     {
@@ -2232,6 +2310,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
+     *
+     * @return static
      */
     public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact): self
     {
@@ -2250,6 +2330,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
+     *
+     * @return static
      */
     public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
     {
@@ -2296,6 +2378,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * A reference to a Library resource containing the formal logic used by the
      * ResearchDefinition.
+     *
+     * @return static
      */
     public function addLibrary(string|FHIRCanonicalPrimitive|FHIRCanonical $library): self
     {
@@ -2317,6 +2401,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * A reference to a Library resource containing the formal logic used by the
      * ResearchDefinition.
+     *
+     * @return static
      */
     public function setLibrary(string|FHIRCanonicalPrimitive|FHIRCanonical ...$library): self
     {
@@ -2355,6 +2441,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * A reference to a ResearchElementDefinition resource that defines the population
      * for the research.
+     *
+     * @return static
      */
     public function setPopulation(null|FHIRReference $population): self
     {
@@ -2386,6 +2474,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * A reference to a ResearchElementDefinition resource that defines the exposure
      * for the research.
+     *
+     * @return static
      */
     public function setExposure(null|FHIRReference $exposure): self
     {
@@ -2417,6 +2507,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * A reference to a ResearchElementDefinition resource that defines the
      * exposureAlternative for the research.
+     *
+     * @return static
      */
     public function setExposureAlternative(null|FHIRReference $exposureAlternative): self
     {
@@ -2448,6 +2540,8 @@ class FHIRResearchDefinition extends FHIRDomainResource implements VersionContai
      *
      * A reference to a ResearchElementDefinition resomece that defines the outcome for
      * the research.
+     *
+     * @return static
      */
     public function setOutcome(null|FHIRReference $outcome): self
     {

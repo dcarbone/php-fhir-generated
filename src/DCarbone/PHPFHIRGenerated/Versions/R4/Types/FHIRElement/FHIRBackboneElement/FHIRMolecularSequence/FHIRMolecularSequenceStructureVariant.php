@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -219,6 +219,8 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Information about chromosome structure variation DNA change type.
+     *
+     * @return static
      */
     public function setVariantType(null|FHIRCodeableConcept $variantType): self
     {
@@ -246,6 +248,8 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used to indicate if the outer and inner start-end values have the same meaning.
+     *
+     * @return static
      */
     public function setExact(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $exact): self
     {
@@ -278,6 +282,8 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Length of the variant chromosome.
+     *
+     * @return static
      */
     public function setLength(null|string|float|FHIRIntegerPrimitive|FHIRInteger $length): self
     {
@@ -306,6 +312,8 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * Raw data describing a biological sequence.
      *
      * Structural variant outer.
+     *
+     * @return static
      */
     public function setOuter(null|FHIRMolecularSequenceOuter $outer): self
     {
@@ -331,6 +339,8 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * Raw data describing a biological sequence.
      *
      * Structural variant inner.
+     *
+     * @return static
      */
     public function setInner(null|FHIRMolecularSequenceInner $inner): self
     {

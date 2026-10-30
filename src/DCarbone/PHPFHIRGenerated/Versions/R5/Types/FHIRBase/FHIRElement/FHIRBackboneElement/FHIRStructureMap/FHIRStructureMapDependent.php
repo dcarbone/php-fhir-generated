@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -210,6 +210,8 @@ class FHIRStructureMapDependent extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Name of a rule or group to apply.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRIdPrimitive|FHIRId $name): self
     {
@@ -251,6 +253,8 @@ class FHIRStructureMapDependent extends FHIRBackboneElement
      * A Map of relationships between 2 structures that can be used to transform data.
      *
      * Parameter to pass to the rule or group.
+     *
+     * @return static
      */
     public function addParameter(FHIRStructureMapParameter $parameter): self
     {
@@ -265,6 +269,8 @@ class FHIRStructureMapDependent extends FHIRBackboneElement
      * A Map of relationships between 2 structures that can be used to transform data.
      *
      * Parameter to pass to the rule or group.
+     *
+     * @return static
      */
     public function setParameter(FHIRStructureMapParameter ...$parameter): self
     {

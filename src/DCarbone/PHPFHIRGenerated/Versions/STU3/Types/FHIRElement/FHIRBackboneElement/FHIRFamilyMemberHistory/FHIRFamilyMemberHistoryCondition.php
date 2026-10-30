@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -275,6 +275,8 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      * The actual condition specified. Could be a coded condition (like MI or Diabetes)
      * or a less specific string like 'cancer' depending on how much is known about the
      * condition and the capabilities of the creating system.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -308,6 +310,8 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      *
      * Indicates what happened as a result of this condition. If the condition resulted
      * in death, deceased date is captured on the relation.
+     *
+     * @return static
      */
     public function setOutcome(null|FHIRCodeableConcept $outcome): self
     {
@@ -341,6 +345,8 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
      * known occurrence.
+     *
+     * @return static
      */
     public function setOnsetAge(null|FHIRAge $onsetAge): self
     {
@@ -374,6 +380,8 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
      * known occurrence.
+     *
+     * @return static
      */
     public function setOnsetRange(null|FHIRRange $onsetRange): self
     {
@@ -407,6 +415,8 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
      * known occurrence.
+     *
+     * @return static
      */
     public function setOnsetPeriod(null|FHIRPeriod $onsetPeriod): self
     {
@@ -440,6 +450,8 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
      * known occurrence.
+     *
+     * @return static
      */
     public function setOnsetString(null|string|FHIRStringPrimitive|FHIRString $onsetString): self
     {
@@ -487,6 +499,8 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An area where general notes can be placed about this specific condition.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -504,6 +518,8 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An area where general notes can be placed about this specific condition.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -352,6 +352,8 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual name.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -386,6 +388,8 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Name type, for example 'systematic', 'scientific, 'brand'.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -417,6 +421,8 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the name, for example 'current', 'proposed'.
+     *
+     * @return static
      */
     public function setStatus(null|FHIRCodeableConcept $status): self
     {
@@ -444,6 +450,8 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If this is the preferred name for this substance.
+     *
+     * @return static
      */
     public function setPreferred(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $preferred): self
     {
@@ -491,6 +499,8 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Human language that the name is written in.
+     *
+     * @return static
      */
     public function addLanguage(FHIRCodeableConcept $language): self
     {
@@ -508,6 +518,8 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Human language that the name is written in.
+     *
+     * @return static
      */
     public function setLanguage(FHIRCodeableConcept ...$language): self
     {
@@ -554,6 +566,8 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      *
      * The use context of this name for example if there is a different name a drug
      * active ingredient as opposed to a food colour additive.
+     *
+     * @return static
      */
     public function addDomain(FHIRCodeableConcept $domain): self
     {
@@ -572,6 +586,8 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      *
      * The use context of this name for example if there is a different name a drug
      * active ingredient as opposed to a food colour additive.
+     *
+     * @return static
      */
     public function setDomain(FHIRCodeableConcept ...$domain): self
     {
@@ -616,6 +632,8 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The jurisdiction where this name applies.
+     *
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -633,6 +651,8 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The jurisdiction where this name applies.
+     *
+     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -673,6 +693,8 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      * used for prescribing.
      *
      * A synonym of this particular name, by which the substance is also known.
+     *
+     * @return static
      */
     public function addSynonym(FHIRSubstanceDefinitionName $synonym): self
     {
@@ -688,6 +710,8 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      * used for prescribing.
      *
      * A synonym of this particular name, by which the substance is also known.
+     *
+     * @return static
      */
     public function setSynonym(FHIRSubstanceDefinitionName ...$synonym): self
     {
@@ -728,6 +752,8 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      * used for prescribing.
      *
      * A translation for this name into another human language.
+     *
+     * @return static
      */
     public function addTranslation(FHIRSubstanceDefinitionName $translation): self
     {
@@ -743,6 +769,8 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      * used for prescribing.
      *
      * A translation for this name into another human language.
+     *
+     * @return static
      */
     public function setTranslation(FHIRSubstanceDefinitionName ...$translation): self
     {
@@ -783,6 +811,8 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      * used for prescribing.
      *
      * Details of the official nature of this name.
+     *
+     * @return static
      */
     public function addOfficial(FHIRSubstanceDefinitionOfficial $official): self
     {
@@ -798,6 +828,8 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      * used for prescribing.
      *
      * Details of the official nature of this name.
+     *
+     * @return static
      */
     public function setOfficial(FHIRSubstanceDefinitionOfficial ...$official): self
     {
@@ -840,6 +872,8 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting literature.
+     *
+     * @return static
      */
     public function addSource(FHIRReference $source): self
     {
@@ -856,6 +890,8 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting literature.
+     *
+     * @return static
      */
     public function setSource(FHIRReference ...$source): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -268,6 +268,8 @@ class FHIRDomainResource extends FHIRResource
      * make it "clinically safe" for a human to just read the narrative. Resource
      * definitions may define what content should be represented in the narrative to
      * ensure clinical safety.
+     *
+     * @return static
      */
     public function setText(null|FHIRNarrative $text): self
     {
@@ -306,6 +308,8 @@ class FHIRDomainResource extends FHIRResource
      * These resources do not have an independent existence apart from the resource
      * that contains them - they cannot be identified independently, and nor can they
      * have their own independent transaction scope.
+     *
+     * @return static
      */
     public function addContained(FHIRResourceContainer|VersionContainedTypeInterface $contained): self
     {
@@ -323,6 +327,8 @@ class FHIRDomainResource extends FHIRResource
      * These resources do not have an independent existence apart from the resource
      * that contains them - they cannot be identified independently, and nor can they
      * have their own independent transaction scope.
+     *
+     * @return static
      */
     public function setContained(FHIRResourceContainer|VersionContainedTypeInterface ...$contained): self
     {
@@ -380,6 +386,8 @@ class FHIRDomainResource extends FHIRResource
      * there is a strict set of governance applied to the definition and use of
      * extensions. Though any implementer can define an extension, there is a set of
      * requirements that SHALL be met as part of the definition of the extension.
+     *
+     * @return static
      */
     public function addExtension(FHIRExtension $extension): self
     {
@@ -400,6 +408,8 @@ class FHIRDomainResource extends FHIRResource
      * there is a strict set of governance applied to the definition and use of
      * extensions. Though any implementer can define an extension, there is a set of
      * requirements that SHALL be met as part of the definition of the extension.
+     *
+     * @return static
      */
     public function setExtension(FHIRExtension ...$extension): self
     {
@@ -464,6 +474,8 @@ class FHIRDomainResource extends FHIRResource
      * extensions SHALL NOT change the meaning of any elements on Resource or
      * DomainResource (including cannot change the meaning of modifierExtension
      * itself).
+     *
+     * @return static
      */
     public function addModifierExtension(FHIRExtension $modifierExtension): self
     {
@@ -491,6 +503,8 @@ class FHIRDomainResource extends FHIRResource
      * extensions SHALL NOT change the meaning of any elements on Resource or
      * DomainResource (including cannot change the meaning of modifierExtension
      * itself).
+     *
+     * @return static
      */
     public function setModifierExtension(FHIRExtension ...$modifierExtension): self
     {

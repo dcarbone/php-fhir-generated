@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -210,6 +210,8 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Assessment of if the entity caused the event.
+     *
+     * @return static
      */
     public function setAssessment(null|FHIRCodeableConcept $assessment): self
     {
@@ -239,6 +241,8 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * AdverseEvent.suspectEntity.causalityProductRelatedness.
+     *
+     * @return static
      */
     public function setProductRelatedness(null|string|FHIRStringPrimitive|FHIRString $productRelatedness): self
     {
@@ -271,6 +275,8 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * AdverseEvent.suspectEntity.causalityAuthor.
+     *
+     * @return static
      */
     public function setAuthor(null|FHIRReference $author): self
     {
@@ -302,6 +308,8 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * ProbabilityScale | Bayesian | Checklist.
+     *
+     * @return static
      */
     public function setMethod(null|FHIRCodeableConcept $method): self
     {

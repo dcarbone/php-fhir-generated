@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -183,6 +183,8 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
      *
      * The name of the parameter or dot-separated path of parameter names pointing to
      * the resource parameter that is expected to contain a reference to this resource.
+     *
+     * @return static
      */
     public function setSource(null|string|FHIRStringPrimitive|FHIRString $source): self
     {
@@ -217,6 +219,8 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
      *
      * The id of the element in the referencing resource that is expected to resolve to
      * this resource.
+     *
+     * @return static
      */
     public function setSourceId(null|string|FHIRStringPrimitive|FHIRString $sourceId): self
     {

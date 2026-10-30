@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -276,6 +276,8 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      *
      * Identifier assigned by the dispensing facility - this is an identifier assigned
      * outside FHIR.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -303,6 +305,8 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the set of dispense events.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRMedicationDispenseStatusList|FHIRMedicationDispenseStatus $status): self
     {
@@ -337,6 +341,8 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      *
      * A link to a resource representing the person to whom the medication will be
      * given.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRResourceReference $patient): self
     {
@@ -366,6 +372,8 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual responsible for dispensing the medication.
+     *
+     * @return static
      */
     public function setDispenser(null|FHIRResourceReference $dispenser): self
     {
@@ -408,6 +416,8 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the medication order that is being dispensed against.
+     *
+     * @return static
      */
     public function addAuthorizingPrescription(FHIRResourceReference $authorizingPrescription): self
     {
@@ -424,6 +434,8 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the medication order that is being dispensed against.
+     *
+     * @return static
      */
     public function setAuthorizingPrescription(FHIRResourceReference ...$authorizingPrescription): self
     {
@@ -466,6 +478,8 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      *
      * Indicates the details of the dispense event such as the days supply and quantity
      * of medication dispensed.
+     *
+     * @return static
      */
     public function addDispense(FHIRMedicationDispenseDispense $dispense): self
     {
@@ -482,6 +496,8 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      *
      * Indicates the details of the dispense event such as the days supply and quantity
      * of medication dispensed.
+     *
+     * @return static
      */
     public function setDispense(FHIRMedicationDispenseDispense ...$dispense): self
     {
@@ -515,6 +531,8 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      * cases substitution will be expected but doesn't happen, in other cases
      * substitution is not expected but does happen. This block explains what
      * substitition did or did not happen and why.
+     *
+     * @return static
      */
     public function setSubstitution(null|FHIRMedicationDispenseSubstitution $substitution): self
     {

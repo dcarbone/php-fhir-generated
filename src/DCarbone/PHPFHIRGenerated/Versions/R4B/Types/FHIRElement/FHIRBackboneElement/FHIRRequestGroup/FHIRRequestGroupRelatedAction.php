@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -244,6 +244,8 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The element id of the action this is related to.
+     *
+     * @return static
      */
     public function setActionId(null|string|FHIRIdPrimitive|FHIRId $actionId): self
     {
@@ -272,6 +274,8 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The relationship of this action to the related action.
+     *
+     * @return static
      */
     public function setRelationship(null|string|FHIRActionRelationshipTypeEnum|FHIRActionRelationshipType $relationship): self
     {
@@ -306,6 +310,8 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
      *
      * A duration or range of durations to apply to the relationship. For example,
      * 30-60 minutes before.
+     *
+     * @return static
      */
     public function setOffsetDuration(null|FHIRDuration $offsetDuration): self
     {
@@ -337,6 +343,8 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
      *
      * A duration or range of durations to apply to the relationship. For example,
      * 30-60 minutes before.
+     *
+     * @return static
      */
     public function setOffsetRange(null|FHIRRange $offsetRange): self
     {

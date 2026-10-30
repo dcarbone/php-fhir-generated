@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -289,6 +289,8 @@ class FHIRAttachment extends FHIRElement
      * Identifies the type of the data in the attachment and allows a method to be
      * chosen to interpret or render the data. Includes mime type parameters such as
      * charset where appropriate.
+     *
+     * @return static
      */
     public function setContentType(null|string|FHIRCodePrimitive|FHIRCode $contentType): self
     {
@@ -325,6 +327,8 @@ class FHIRAttachment extends FHIRElement
      *
      * The human language of the content. The value can be any valid value according to
      * BCP 47.
+     *
+     * @return static
      */
     public function setLanguage(null|string|FHIRCodePrimitive|FHIRCode $language): self
     {
@@ -359,6 +363,8 @@ class FHIRAttachment extends FHIRElement
      *
      * The actual data of the attachment - a sequence of bytes. In XML, represented
      * using base64.
+     *
+     * @return static
      */
     public function setData(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $data): self
     {
@@ -391,6 +397,8 @@ class FHIRAttachment extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An alternative location where the data can be accessed.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -425,6 +433,8 @@ class FHIRAttachment extends FHIRElement
      *
      * The number of bytes of data that make up this attachment (before base64
      * encoding, if that is done).
+     *
+     * @return static
      */
     public function setSize(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $size): self
     {
@@ -457,6 +467,8 @@ class FHIRAttachment extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The calculated hash of the data using SHA-1. Represented using base64.
+     *
+     * @return static
      */
     public function setHash(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $hash): self
     {
@@ -489,6 +501,8 @@ class FHIRAttachment extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A label or set of text to display in place of the data.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -527,6 +541,8 @@ class FHIRAttachment extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that the attachment was first created.
+     *
+     * @return static
      */
     public function setCreation(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $creation): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -232,6 +232,8 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Reference to additional information about the storage guidelines.
+     *
+     * @return static
      */
     public function setReference(null|string|FHIRUriPrimitive|FHIRUri $reference): self
     {
@@ -279,6 +281,8 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional notes about the storage.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -296,6 +300,8 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional notes about the storage.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -327,6 +333,8 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
      *
      * Duration that the medication remains stable if the environmentalSetting is
      * respected.
+     *
+     * @return static
      */
     public function setStabilityDuration(null|FHIRDuration $stabilityDuration): self
     {
@@ -369,6 +377,8 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
      * Describes a setting/value on the environment for the adequate storage of the
      * medication and other substances. Environment settings may involve temperature,
      * humidity, or exposure to light.
+     *
+     * @return static
      */
     public function addEnvironmentalSetting(FHIRMedicationKnowledgeEnvironmentalSetting $environmentalSetting): self
     {
@@ -385,6 +395,8 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
      * Describes a setting/value on the environment for the adequate storage of the
      * medication and other substances. Environment settings may involve temperature,
      * humidity, or exposure to light.
+     *
+     * @return static
      */
     public function setEnvironmentalSetting(FHIRMedicationKnowledgeEnvironmentalSetting ...$environmentalSetting): self
     {

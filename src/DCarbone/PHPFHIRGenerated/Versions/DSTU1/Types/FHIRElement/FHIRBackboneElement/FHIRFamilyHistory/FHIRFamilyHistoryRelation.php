@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -359,6 +359,8 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * This will either be a name or a description. E.g. "Aunt Susan", "my cousin with
      * the red hair".
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -395,6 +397,8 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * The type of relationship this person has to the patient (father, mother, brother
      * etc.).
+     *
+     * @return static
      */
     public function setRelationship(null|FHIRCodeableConcept $relationship): self
     {
@@ -424,6 +428,8 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual or approximate date of birth of the relative.
+     *
+     * @return static
      */
     public function setBornPeriod(null|FHIRPeriod $bornPeriod): self
     {
@@ -455,6 +461,8 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual or approximate date of birth of the relative.
+     *
+     * @return static
      */
     public function setBornDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $bornDate): self
     {
@@ -485,6 +493,8 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual or approximate date of birth of the relative.
+     *
+     * @return static
      */
     public function setBornString(null|string|FHIRStringPrimitive|FHIRString $bornString): self
     {
@@ -523,6 +533,8 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * range or description of age at death - can be indicated here. If the reason for
      * death is known, then it can be indicated in the outcome code of the condition -
      * in this case the deceased property should still be set.
+     *
+     * @return static
      */
     public function setDeceasedBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $deceasedBoolean): self
     {
@@ -555,6 +567,8 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * range or description of age at death - can be indicated here. If the reason for
      * death is known, then it can be indicated in the outcome code of the condition -
      * in this case the deceased property should still be set.
+     *
+     * @return static
      */
     public function setDeceasedAge(null|FHIRAge $deceasedAge): self
     {
@@ -592,6 +606,8 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * range or description of age at death - can be indicated here. If the reason for
      * death is known, then it can be indicated in the outcome code of the condition -
      * in this case the deceased property should still be set.
+     *
+     * @return static
      */
     public function setDeceasedRange(null|FHIRRange $deceasedRange): self
     {
@@ -631,6 +647,8 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * range or description of age at death - can be indicated here. If the reason for
      * death is known, then it can be indicated in the outcome code of the condition -
      * in this case the deceased property should still be set.
+     *
+     * @return static
      */
     public function setDeceasedDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $deceasedDate): self
     {
@@ -669,6 +687,8 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * range or description of age at death - can be indicated here. If the reason for
      * death is known, then it can be indicated in the outcome code of the condition -
      * in this case the deceased property should still be set.
+     *
+     * @return static
      */
     public function setDeceasedString(null|string|FHIRStringPrimitive|FHIRString $deceasedString): self
     {
@@ -703,6 +723,8 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * This property allows a non condition-specific note to the made about the related
      * person. Ideally, the note would be in the condition property, but this is not
      * always possible.
+     *
+     * @return static
      */
     public function setNote(null|string|FHIRStringPrimitive|FHIRString $note): self
     {
@@ -752,6 +774,8 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * repeating section to allow a system to represent more than one condition per
      * resource, though there is nothing stopping multiple resources - one per
      * condition.
+     *
+     * @return static
      */
     public function addCondition(FHIRFamilyHistoryCondition $condition): self
     {
@@ -770,6 +794,8 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * repeating section to allow a system to represent more than one condition per
      * resource, though there is nothing stopping multiple resources - one per
      * condition.
+     *
+     * @return static
      */
     public function setCondition(FHIRFamilyHistoryCondition ...$condition): self
     {

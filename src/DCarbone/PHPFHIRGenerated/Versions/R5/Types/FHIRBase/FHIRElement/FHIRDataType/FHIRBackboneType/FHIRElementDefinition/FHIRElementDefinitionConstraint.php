@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -318,6 +318,8 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneType
      * Allows identification of which elements have their cardinalities impacted by the
      * constraint. Will not be referenced for constraints that do not affect
      * cardinality.
+     *
+     * @return static
      */
     public function setKey(null|string|FHIRIdPrimitive|FHIRId $key): self
     {
@@ -358,6 +360,8 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * Description of why this constraint is necessary or appropriate.
+     *
+     * @return static
      */
     public function setRequirements(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $requirements): self
     {
@@ -390,6 +394,8 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneType
      *
      * Identifies the impact constraint violation has on the conformance of the
      * instance.
+     *
+     * @return static
      */
     public function setSeverity(null|string|FHIRConstraintSeverityEnum|FHIRConstraintSeverity $severity): self
     {
@@ -422,6 +428,8 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneType
      *
      * If true, indicates that the warning or best practice guideline should be
      * suppressed.
+     *
+     * @return static
      */
     public function setSuppress(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $suppress): self
     {
@@ -456,6 +464,8 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneType
      *
      * Text that can be used to describe the constraint in messages identifying that
      * the constraint has been violated.
+     *
+     * @return static
      */
     public function setHuman(null|string|FHIRStringPrimitive|FHIRString $human): self
     {
@@ -490,6 +500,8 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneType
      *
      * A [FHIRPath](fhirpath.html) expression of constraint that can be executed to see
      * if this constraint is met.
+     *
+     * @return static
      */
     public function setExpression(null|string|FHIRStringPrimitive|FHIRString $expression): self
     {
@@ -524,6 +536,8 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * A reference to the original source of the constraint, for traceability purposes.
+     *
+     * @return static
      */
     public function setSource(null|string|FHIRCanonicalPrimitive|FHIRCanonical $source): self
     {

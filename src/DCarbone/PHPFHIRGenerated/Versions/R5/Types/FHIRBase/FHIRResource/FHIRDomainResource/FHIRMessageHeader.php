@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -146,6 +146,12 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
 
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_EVENT_CODING => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_EVENT_CANONICAL => [
+            'min_occurs' => 1,
+        ],
         self::FIELD_SOURCE => [
             'min_occurs' => 1,
         ],
@@ -165,8 +171,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification are defined by the
-     * implementation. Alternatively a canonical uri to the EventDefinition. (choose
-     * any one of event*, but only one)
+     * implementation. Alternatively a canonical uri to the EventDefinition.
      */
     #[FHIRCoding]
     protected FHIRCoding $eventCoding;
@@ -178,8 +183,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification are defined by the
-     * implementation. Alternatively a canonical uri to the EventDefinition. (choose
-     * any one of event*, but only one)
+     * implementation. Alternatively a canonical uri to the EventDefinition.
      */
     #[FHIRCanonical]
     protected FHIRCanonical $eventCanonical;
@@ -376,8 +380,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification are defined by the
-     * implementation. Alternatively a canonical uri to the EventDefinition. (choose
-     * any one of event*, but only one)
+     * implementation. Alternatively a canonical uri to the EventDefinition.
      */
     public function getEventCoding(): null|FHIRCoding
     {
@@ -391,8 +394,9 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification are defined by the
-     * implementation. Alternatively a canonical uri to the EventDefinition. (choose
-     * any one of event*, but only one)
+     * implementation. Alternatively a canonical uri to the EventDefinition.
+     *
+     * @return static
      */
     public function setEventCoding(null|FHIRCoding $eventCoding): self
     {
@@ -412,8 +416,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification are defined by the
-     * implementation. Alternatively a canonical uri to the EventDefinition. (choose
-     * any one of event*, but only one)
+     * implementation. Alternatively a canonical uri to the EventDefinition.
      */
     public function getEventCanonical(): null|FHIRCanonical
     {
@@ -428,8 +431,9 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification are defined by the
-     * implementation. Alternatively a canonical uri to the EventDefinition. (choose
-     * any one of event*, but only one)
+     * implementation. Alternatively a canonical uri to the EventDefinition.
+     *
+     * @return static
      */
     public function setEventCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $eventCanonical): self
     {
@@ -477,6 +481,8 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * the MessageHeader resource instance is the first resource in the bundle.
      *
      * The destination application which the message is intended for.
+     *
+     * @return static
      */
     public function addDestination(FHIRMessageHeaderDestination $destination): self
     {
@@ -494,6 +500,8 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * the MessageHeader resource instance is the first resource in the bundle.
      *
      * The destination application which the message is intended for.
+     *
+     * @return static
      */
     public function setDestination(FHIRMessageHeaderDestination ...$destination): self
     {
@@ -523,6 +531,8 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the sending system to allow the use of a trust relationship.
+     *
+     * @return static
      */
     public function setSender(null|FHIRReference $sender): self
     {
@@ -556,6 +566,8 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * The logical author of the message - the personor device that decided the
      * described event should happen. When there is more than one candidate, pick the
      * most proximal to the MessageHeader. Can provide other authors in extensions.
+     *
+     * @return static
      */
     public function setAuthor(null|FHIRReference $author): self
     {
@@ -587,6 +599,8 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * the MessageHeader resource instance is the first resource in the bundle.
      *
      * The source application from which this message originated.
+     *
+     * @return static
      */
     public function setSource(null|FHIRMessageHeaderSource $source): self
     {
@@ -620,6 +634,8 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * The person or organization that accepts overall responsibility for the contents
      * of the message. The implication is that the message event happened under the
      * policies of the responsible party.
+     *
+     * @return static
      */
     public function setResponsible(null|FHIRReference $responsible): self
     {
@@ -653,6 +669,8 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * Coded indication of the cause for the event - indicates a reason for the
      * occurrence of the event that is a focus of this message.
+     *
+     * @return static
      */
     public function setReason(null|FHIRCodeableConcept $reason): self
     {
@@ -686,6 +704,8 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * Information about the message that this message is a response to. Only present
      * if this message is a response.
+     *
+     * @return static
      */
     public function setResponse(null|FHIRMessageHeaderResponse $response): self
     {
@@ -730,6 +750,8 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * The actual data of the message - a reference to the root/focus class of the
      * event. This is allowed to be a Parameters resource.
+     *
+     * @return static
      */
     public function addFocus(FHIRReference $focus): self
     {
@@ -747,6 +769,8 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * The actual data of the message - a reference to the root/focus class of the
      * event. This is allowed to be a Parameters resource.
+     *
+     * @return static
      */
     public function setFocus(FHIRReference ...$focus): self
     {
@@ -778,6 +802,8 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * the Narrative, or extensions
      *
      * Permanent link to the MessageDefinition for this message.
+     *
+     * @return static
      */
     public function setDefinition(null|string|FHIRCanonicalPrimitive|FHIRCanonical $definition): self
     {

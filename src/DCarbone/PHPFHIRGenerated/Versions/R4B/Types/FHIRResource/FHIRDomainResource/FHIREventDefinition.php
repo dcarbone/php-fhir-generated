@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -764,6 +764,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      * address at which at which an authoritative instance of this event definition is
      * (or will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the event definition is stored on different servers.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -815,6 +817,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      * A formal identifier that is used to identify this event definition when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -834,6 +838,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      * A formal identifier that is used to identify this event definition when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -873,6 +879,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -909,6 +917,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      * A natural language name identifying the event definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -941,6 +951,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the event definition.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -975,6 +987,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      *
      * An explanatory or alternate title for the event definition giving additional
      * information about its content.
+     *
+     * @return static
      */
     public function setSubtitle(null|string|FHIRStringPrimitive|FHIRString $subtitle): self
     {
@@ -1005,6 +1019,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      *
      * The status of this event definition. Enables tracking the life-cycle of the
      * content.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -1039,6 +1055,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      * A Boolean value to indicate that this event definition is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
+     *
+     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -1075,6 +1093,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      *
      * A code or group definition that describes the intended subject of the event
      * definition.
+     *
+     * @return static
      */
     public function setSubjectCodeableConcept(null|FHIRCodeableConcept $subjectCodeableConcept): self
     {
@@ -1106,6 +1126,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      *
      * A code or group definition that describes the intended subject of the event
      * definition.
+     *
+     * @return static
      */
     public function setSubjectReference(null|FHIRReference $subjectReference): self
     {
@@ -1147,6 +1169,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      * must change when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * event definition changes.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1179,6 +1203,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the event definition.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1226,6 +1252,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1243,6 +1271,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1282,6 +1312,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      *
      * A free text natural language description of the event definition from a
      * consumer's perspective.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1341,6 +1373,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate event definition
      * instances.
+     *
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1364,6 +1398,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate event definition
      * instances.
+     *
+     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1410,6 +1446,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      *
      * A legal or geographic region in which the event definition is intended to be
      * used.
+     *
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1428,6 +1466,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      *
      * A legal or geographic region in which the event definition is intended to be
      * used.
+     *
+     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1467,6 +1507,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      *
      * Explanation of why this event definition is needed and why it has been designed
      * as it has.
+     *
+     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1501,6 +1543,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      *
      * A detailed description of how the event definition is used from a clinical
      * perspective.
+     *
+     * @return static
      */
     public function setUsage(null|string|FHIRStringPrimitive|FHIRString $usage): self
     {
@@ -1545,6 +1589,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      * A copyright statement relating to the event definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the event definition.
+     *
+     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1581,6 +1627,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
+     *
+     * @return static
      */
     public function setApprovalDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $approvalDate): self
     {
@@ -1617,6 +1665,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
+     *
+     * @return static
      */
     public function setLastReviewDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lastReviewDate): self
     {
@@ -1651,6 +1701,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      *
      * The period during which the event definition content was or is planned to be in
      * active use.
+     *
+     * @return static
      */
     public function setEffectivePeriod(null|FHIRPeriod $effectivePeriod): self
     {
@@ -1697,6 +1749,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      *
      * Descriptive topics related to the module. Topics provide a high-level
      * categorization of the module that can be useful for filtering and searching.
+     *
+     * @return static
      */
     public function addTopic(FHIRCodeableConcept $topic): self
     {
@@ -1715,6 +1769,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      *
      * Descriptive topics related to the module. Topics provide a high-level
      * categorization of the module that can be useful for filtering and searching.
+     *
+     * @return static
      */
     public function setTopic(FHIRCodeableConcept ...$topic): self
     {
@@ -1759,6 +1815,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
+     *
+     * @return static
      */
     public function addAuthor(FHIRContactDetail $author): self
     {
@@ -1776,6 +1834,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
+     *
+     * @return static
      */
     public function setAuthor(FHIRContactDetail ...$author): self
     {
@@ -1820,6 +1880,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
+     *
+     * @return static
      */
     public function addEditor(FHIRContactDetail $editor): self
     {
@@ -1837,6 +1899,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
+     *
+     * @return static
      */
     public function setEditor(FHIRContactDetail ...$editor): self
     {
@@ -1881,6 +1945,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
+     *
+     * @return static
      */
     public function addReviewer(FHIRContactDetail $reviewer): self
     {
@@ -1898,6 +1964,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
+     *
+     * @return static
      */
     public function setReviewer(FHIRContactDetail ...$reviewer): self
     {
@@ -1942,6 +2010,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
+     *
+     * @return static
      */
     public function addEndorser(FHIRContactDetail $endorser): self
     {
@@ -1959,6 +2029,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
+     *
+     * @return static
      */
     public function setEndorser(FHIRContactDetail ...$endorser): self
     {
@@ -2005,6 +2077,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      *
      * Related resources such as additional documentation, justification, or
      * bibliographic references.
+     *
+     * @return static
      */
     public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact): self
     {
@@ -2023,6 +2097,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      *
      * Related resources such as additional documentation, justification, or
      * bibliographic references.
+     *
+     * @return static
      */
     public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
     {
@@ -2071,6 +2147,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      * The trigger element defines when the event occurs. If more than one trigger
      * condition is specified, the event fires whenever any one of the trigger
      * conditions is met.
+     *
+     * @return static
      */
     public function addTrigger(FHIRTriggerDefinition $trigger): self
     {
@@ -2090,6 +2168,8 @@ class FHIREventDefinition extends FHIRDomainResource implements VersionContained
      * The trigger element defines when the event occurs. If more than one trigger
      * condition is specified, the event fires whenever any one of the trigger
      * conditions is met.
+     *
+     * @return static
      */
     public function setTrigger(FHIRTriggerDefinition ...$trigger): self
     {

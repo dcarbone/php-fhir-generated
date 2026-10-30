@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -313,6 +313,8 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * replication through the interaction of specific proteins at one or more origins
      * of replication
      * ([SO:0000340](http://www.sequenceontology.org/browser/current_svn/term/SO:0000340)).
+     *
+     * @return static
      */
     public function setChromosome(null|FHIRCodeableConcept $chromosome): self
     {
@@ -346,6 +348,8 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * The Genome Build used for reference, following GRCh build versions e.g. 'GRCh
      * 37'. Version number must be included if a versioned release of a primary build
      * was used.
+     *
+     * @return static
      */
     public function setGenomeBuild(null|string|FHIRStringPrimitive|FHIRString $genomeBuild): self
     {
@@ -380,6 +384,8 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * A relative reference to a DNA strand based on gene orientation. The strand that
      * contains the open reading frame of the gene is the "sense" strand, and the
      * opposite complementary strand is the "antisense" strand.
+     *
+     * @return static
      */
     public function setOrientation(null|string|FHIROrientationTypeList|FHIROrientationType $orientation): self
     {
@@ -420,6 +426,8 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * type in the MolecularSequence.type field. For example, the prefix, “NG_”
      * identifies reference sequence for genes, “NM_” for messenger RNA
      * transcripts, and “NP_” for amino acid sequences.
+     *
+     * @return static
      */
     public function setReferenceSeqId(null|FHIRCodeableConcept $referenceSeqId): self
     {
@@ -449,6 +457,8 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A pointer to another MolecularSequence entity as reference sequence.
+     *
+     * @return static
      */
     public function setReferenceSeqPointer(null|FHIRReference $referenceSeqPointer): self
     {
@@ -478,6 +488,8 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A string like "ACGT".
+     *
+     * @return static
      */
     public function setReferenceSeqString(null|string|FHIRStringPrimitive|FHIRString $referenceSeqString): self
     {
@@ -512,6 +524,8 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * An absolute reference to a strand. The Watson strand is the strand whose 5'-end
      * is on the short arm of the chromosome, and the Crick strand as the one whose
      * 5'-end is on the long arm.
+     *
+     * @return static
      */
     public function setStrand(null|string|FHIRStrandTypeList|FHIRStrandType $strand): self
     {
@@ -546,6 +560,8 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      *
      * Start position of the window on the reference sequence. If the coordinate system
      * is either 0-based or 1-based, then start position is inclusive.
+     *
+     * @return static
      */
     public function setWindowStart(null|string|float|FHIRIntegerPrimitive|FHIRInteger $windowStart): self
     {
@@ -584,6 +600,8 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * is 0-based then end is exclusive and does not include the last position. If the
      * coordinate system is 1-base, then end is inclusive and includes the last
      * position.
+     *
+     * @return static
      */
     public function setWindowEnd(null|string|float|FHIRIntegerPrimitive|FHIRInteger $windowEnd): self
     {

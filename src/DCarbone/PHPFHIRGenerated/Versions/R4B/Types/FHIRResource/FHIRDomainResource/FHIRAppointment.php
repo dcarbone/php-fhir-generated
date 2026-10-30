@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -646,6 +646,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * defined by business processes and/or used to refer to it when a direct URL
      * reference to the resource itself is not appropriate (e.g. in CDA documents, or
      * in written / printed documentation).
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -666,6 +668,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * defined by business processes and/or used to refer to it when a direct URL
      * reference to the resource itself is not appropriate (e.g. in CDA documents, or
      * in written / printed documentation).
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -695,6 +699,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * The overall status of the Appointment. Each of the participants has their own
      * participation status which indicates their involvement in the process, however
      * this status indicates the shared status.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRAppointmentStatusEnum|FHIRAppointmentStatus $status): self
     {
@@ -733,6 +739,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * The coded reason for the appointment being cancelled. This is often used in
      * reporting/billing/futher processing to determine if further actions are
      * required, or specific fees apply.
+     *
+     * @return static
      */
     public function setCancelationReason(null|FHIRCodeableConcept $cancelationReason): self
     {
@@ -779,6 +787,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      *
      * A broad categorization of the service that is to be performed during this
      * appointment.
+     *
+     * @return static
      */
     public function addServiceCategory(FHIRCodeableConcept $serviceCategory): self
     {
@@ -797,6 +807,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      *
      * A broad categorization of the service that is to be performed during this
      * appointment.
+     *
+     * @return static
      */
     public function setServiceCategory(FHIRCodeableConcept ...$serviceCategory): self
     {
@@ -841,6 +853,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific service that is to be performed during this appointment.
+     *
+     * @return static
      */
     public function addServiceType(FHIRCodeableConcept $serviceType): self
     {
@@ -858,6 +872,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific service that is to be performed during this appointment.
+     *
+     * @return static
      */
     public function setServiceType(FHIRCodeableConcept ...$serviceType): self
     {
@@ -904,6 +920,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      *
      * The specialty of a practitioner that would be required to perform the service
      * requested in this appointment.
+     *
+     * @return static
      */
     public function addSpecialty(FHIRCodeableConcept $specialty): self
     {
@@ -922,6 +940,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      *
      * The specialty of a practitioner that would be required to perform the service
      * requested in this appointment.
+     *
+     * @return static
      */
     public function setSpecialty(FHIRCodeableConcept ...$specialty): self
     {
@@ -955,6 +975,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      *
      * The style of appointment or patient that has been booked in the slot (not
      * service type).
+     *
+     * @return static
      */
     public function setAppointmentType(null|FHIRCodeableConcept $appointmentType): self
     {
@@ -1001,6 +1023,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      *
      * The coded reason that this appointment is being scheduled. This is more clinical
      * than administrative.
+     *
+     * @return static
      */
     public function addReasonCode(FHIRCodeableConcept $reasonCode): self
     {
@@ -1019,6 +1043,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      *
      * The coded reason that this appointment is being scheduled. This is more clinical
      * than administrative.
+     *
+     * @return static
      */
     public function setReasonCode(FHIRCodeableConcept ...$reasonCode): self
     {
@@ -1069,6 +1095,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * begins it may be used as the admission diagnosis. The indication will typically
      * be a Condition (with other resources referenced in the evidence.detail), or a
      * Procedure.
+     *
+     * @return static
      */
     public function addReasonReference(FHIRReference $reasonReference): self
     {
@@ -1089,6 +1117,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * begins it may be used as the admission diagnosis. The indication will typically
      * be a Condition (with other resources referenced in the evidence.detail), or a
      * Procedure.
+     *
+     * @return static
      */
     public function setReasonReference(FHIRReference ...$reasonReference): self
     {
@@ -1122,6 +1152,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * The priority of the appointment. Can be used to make informed decisions if
      * needing to re-prioritize appointments. (The iCal Standard specifies as
      * undefined, 1 as highest, 9 as lowest priority).
+     *
+     * @return static
      */
     public function setPriority(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $priority): self
     {
@@ -1158,6 +1190,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * The brief description of the appointment as would be shown on a subject line in
      * a meeting request, or appointment list. Detailed or expanded information should
      * be put in the comment field.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -1205,6 +1239,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      *
      * Additional information to support the appointment provided when making the
      * appointment.
+     *
+     * @return static
      */
     public function addSupportingInformation(FHIRReference $supportingInformation): self
     {
@@ -1222,6 +1258,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      *
      * Additional information to support the appointment provided when making the
      * appointment.
+     *
+     * @return static
      */
     public function setSupportingInformation(FHIRReference ...$supportingInformation): self
     {
@@ -1257,6 +1295,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the appointment is to take place.
+     *
+     * @return static
      */
     public function setStart(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $start): self
     {
@@ -1295,6 +1335,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the appointment is to conclude.
+     *
+     * @return static
      */
     public function setEnd(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $end): self
     {
@@ -1337,6 +1379,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * requested, but any time would work. Also, if there is, for example, a planned 15
      * minute break in the middle of a long appointment, the duration may be 15 minutes
      * less than the difference between the start and end.
+     *
+     * @return static
      */
     public function setMinutesDuration(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $minutesDuration): self
     {
@@ -1384,6 +1428,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      *
      * The slots from the participants' schedules that will be filled by the
      * appointment.
+     *
+     * @return static
      */
     public function addSlot(FHIRReference $slot): self
     {
@@ -1401,6 +1447,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      *
      * The slots from the participants' schedules that will be filled by the
      * appointment.
+     *
+     * @return static
      */
     public function setSlot(FHIRReference ...$slot): self
     {
@@ -1442,6 +1490,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * the meta.lastModified value on the initial entry, as this could have been before
      * the resource was created on the FHIR server, and should remain unchanged over
      * the lifespan of the appointment.
+     *
+     * @return static
      */
     public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created): self
     {
@@ -1474,6 +1524,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional comments about the appointment.
+     *
+     * @return static
      */
     public function setComment(null|string|FHIRStringPrimitive|FHIRString $comment): self
     {
@@ -1512,6 +1564,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * Appointment.patientInstructions is used to capture patient facing information
      * about the Appointment (e.g. please bring your referral or fast from 8pm night
      * before).
+     *
+     * @return static
      */
     public function setPatientInstruction(null|string|FHIRStringPrimitive|FHIRString $patientInstruction): self
     {
@@ -1559,6 +1613,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      *
      * The service request this appointment is allocated to assess (e.g. incoming
      * referral or procedure request).
+     *
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -1576,6 +1632,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      *
      * The service request this appointment is allocated to assess (e.g. incoming
      * referral or procedure request).
+     *
+     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -1618,6 +1676,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * more Encounter(s).
      *
      * List of participants involved in the appointment.
+     *
+     * @return static
      */
     public function addParticipant(FHIRAppointmentParticipant $participant): self
     {
@@ -1634,6 +1694,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * more Encounter(s).
      *
      * List of participants involved in the appointment.
+     *
+     * @return static
      */
     public function setParticipant(FHIRAppointmentParticipant ...$participant): self
     {
@@ -1684,6 +1746,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * be provided to indicate the length of the appointment to fill and populate the
      * start/end times for the actual allocated time. However, in other situations the
      * duration may be calculated by the scheduling system.
+     *
+     * @return static
      */
     public function addRequestedPeriod(FHIRPeriod $requestedPeriod): self
     {
@@ -1704,6 +1768,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * be provided to indicate the length of the appointment to fill and populate the
      * start/end times for the actual allocated time. However, in other situations the
      * duration may be calculated by the scheduling system.
+     *
+     * @return static
      */
     public function setRequestedPeriod(FHIRPeriod ...$requestedPeriod): self
     {

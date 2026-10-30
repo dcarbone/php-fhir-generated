@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -267,6 +267,8 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      * References are URLs that are relative to http://hl7.org/fhir/StructureDefinition
      * e.g. "string" is a reference to http://hl7.org/fhir/StructureDefinition/string.
      * Absolute URLs are only allowed in logical models.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRUriPrimitive|FHIRUri $code): self
     {
@@ -326,6 +328,8 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      * Implementation Guide by a canonical URL. When an implementation guide is
      * specified, the type SHALL conform to at least one profile defined in the
      * implementation guide.
+     *
+     * @return static
      */
     public function addProfile(string|FHIRCanonicalPrimitive|FHIRCanonical $profile): self
     {
@@ -352,6 +356,8 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      * Implementation Guide by a canonical URL. When an implementation guide is
      * specified, the type SHALL conform to at least one profile defined in the
      * implementation guide.
+     *
+     * @return static
      */
     public function setProfile(string|FHIRCanonicalPrimitive|FHIRCanonical ...$profile): self
     {
@@ -417,6 +423,8 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      * Implementation Guide by a canonical URL. When an implementation guide is
      * specified, the target resource SHALL conform to at least one profile defined in
      * the implementation guide.
+     *
+     * @return static
      */
     public function addTargetProfile(string|FHIRCanonicalPrimitive|FHIRCanonical $targetProfile): self
     {
@@ -444,6 +452,8 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      * Implementation Guide by a canonical URL. When an implementation guide is
      * specified, the target resource SHALL conform to at least one profile defined in
      * the implementation guide.
+     *
+     * @return static
      */
     public function setTargetProfile(string|FHIRCanonicalPrimitive|FHIRCanonical ...$targetProfile): self
     {
@@ -495,6 +505,8 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      * If the type is a reference to another resource, how the resource is or can be
      * aggregated - is it a contained resource, or a reference, and if the context is a
      * bundle, is it included in the bundle.
+     *
+     * @return static
      */
     public function addAggregation(string|FHIRAggregationModeList|FHIRAggregationMode $aggregation): self
     {
@@ -515,6 +527,8 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      * If the type is a reference to another resource, how the resource is or can be
      * aggregated - is it a contained resource, or a reference, and if the context is a
      * bundle, is it included in the bundle.
+     *
+     * @return static
      */
     public function setAggregation(string|FHIRAggregationModeList|FHIRAggregationMode ...$aggregation): self
     {
@@ -553,6 +567,8 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      *
      * Whether this reference needs to be version specific or version independent, or
      * whether either can be used.
+     *
+     * @return static
      */
     public function setVersioning(null|string|FHIRReferenceVersionRulesList|FHIRReferenceVersionRules $versioning): self
     {

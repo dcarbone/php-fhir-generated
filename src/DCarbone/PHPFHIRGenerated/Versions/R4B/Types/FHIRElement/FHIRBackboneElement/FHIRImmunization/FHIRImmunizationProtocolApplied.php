@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -290,6 +290,8 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      *
      * One possible path to achieve presumed immunity against a disease - within the
      * context of an authority.
+     *
+     * @return static
      */
     public function setSeries(null|string|FHIRStringPrimitive|FHIRString $series): self
     {
@@ -324,6 +326,8 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      *
      * Indicates the authority who published the protocol (e.g. ACIP) that is being
      * followed.
+     *
+     * @return static
      */
     public function setAuthority(null|FHIRReference $authority): self
     {
@@ -368,6 +372,8 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The vaccine preventable disease the dose is being administered against.
+     *
+     * @return static
      */
     public function addTargetDisease(FHIRCodeableConcept $targetDisease): self
     {
@@ -385,6 +391,8 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The vaccine preventable disease the dose is being administered against.
+     *
+     * @return static
      */
     public function setTargetDisease(FHIRCodeableConcept ...$targetDisease): self
     {
@@ -414,6 +422,8 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Nominal position in a series.
+     *
+     * @return static
      */
     public function setDoseNumberPositiveInt(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $doseNumberPositiveInt): self
     {
@@ -446,6 +456,8 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Nominal position in a series.
+     *
+     * @return static
      */
     public function setDoseNumberString(null|string|FHIRStringPrimitive|FHIRString $doseNumberString): self
     {
@@ -478,6 +490,8 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The recommended number of doses to achieve immunity.
+     *
+     * @return static
      */
     public function setSeriesDosesPositiveInt(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $seriesDosesPositiveInt): self
     {
@@ -510,6 +524,8 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The recommended number of doses to achieve immunity.
+     *
+     * @return static
      */
     public function setSeriesDosesString(null|string|FHIRStringPrimitive|FHIRString $seriesDosesString): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -278,6 +278,8 @@ class FHIRMedication extends FHIRResource implements VersionContainedTypeInterfa
      * The common/commercial name of the medication absent information such as
      * strength, form, etc. E.g. Acetaminophen, Tylenol 3, etc. The fully coordinated
      * name is communicated as the display of Medication.code.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -318,6 +320,8 @@ class FHIRMedication extends FHIRResource implements VersionContainedTypeInterfa
      * be a standard drug code such as a drug regulator code, RxNorm code, SNOMED CT
      * code, etc. It could also be a local formulary code, optionally with translations
      * to the standard drug codes.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -347,6 +351,8 @@ class FHIRMedication extends FHIRResource implements VersionContainedTypeInterfa
      *
      * Set to true if the item is attributable to a specific manufacturer (even if we
      * don't know who that is).
+     *
+     * @return static
      */
     public function setIsBrand(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isBrand): self
     {
@@ -379,6 +385,8 @@ class FHIRMedication extends FHIRResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the details of the manufacturer.
+     *
+     * @return static
      */
     public function setManufacturer(null|FHIRResourceReference $manufacturer): self
     {
@@ -408,6 +416,8 @@ class FHIRMedication extends FHIRResource implements VersionContainedTypeInterfa
      *
      * Medications are either a single administrable product or a package that contains
      * one or more products.
+     *
+     * @return static
      */
     public function setKind(null|string|FHIRMedicationKindList|FHIRMedicationKind $kind): self
     {
@@ -438,6 +448,8 @@ class FHIRMedication extends FHIRResource implements VersionContainedTypeInterfa
      * ingredients and packaging.
      *
      * Information that only applies to products (not packages).
+     *
+     * @return static
      */
     public function setProduct(null|FHIRMedicationProduct $product): self
     {
@@ -465,6 +477,8 @@ class FHIRMedication extends FHIRResource implements VersionContainedTypeInterfa
      * ingredients and packaging.
      *
      * Information that only applies to packages (not products).
+     *
+     * @return static
      */
     public function setPackage(null|FHIRMedicationPackage $package): self
     {

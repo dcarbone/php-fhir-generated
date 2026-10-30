@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -664,6 +664,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * Unique instance identifiers assigned to a device by manufacturers other
      * organizations or owners.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -682,6 +684,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * Unique instance identifiers assigned to a device by manufacturers other
      * organizations or owners.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -711,6 +715,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reference to the definition for the device.
+     *
+     * @return static
      */
     public function setDefinition(null|FHIRReference $definition): self
     {
@@ -759,6 +765,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * the Device may include multiple udiCarriers as it either may include just the
      * udiCarrier for the jurisdiction it is sold, or for multiple jurisdictions it
      * could have been sold.
+     *
+     * @return static
      */
     public function addUdiCarrier(FHIRDeviceUdiCarrier $udiCarrier): self
     {
@@ -778,6 +786,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * the Device may include multiple udiCarriers as it either may include just the
      * udiCarrier for the jurisdiction it is sold, or for multiple jurisdictions it
      * could have been sold.
+     *
+     * @return static
      */
     public function setUdiCarrier(FHIRDeviceUdiCarrier ...$udiCarrier): self
     {
@@ -803,6 +813,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the Device availability.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRFHIRDeviceStatusEnum|FHIRFHIRDeviceStatus $status): self
     {
@@ -850,6 +862,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason for the dtatus of the Device availability.
+     *
+     * @return static
      */
     public function addStatusReason(FHIRCodeableConcept $statusReason): self
     {
@@ -867,6 +881,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason for the dtatus of the Device availability.
+     *
+     * @return static
      */
     public function setStatusReason(FHIRCodeableConcept ...$statusReason): self
     {
@@ -898,6 +914,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * The distinct identification string as required by regulation for a human cell,
      * tissue, or cellular and tissue-based product.
+     *
+     * @return static
      */
     public function setDistinctIdentifier(null|string|FHIRStringPrimitive|FHIRString $distinctIdentifier): self
     {
@@ -930,6 +948,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A name of the manufacturer.
+     *
+     * @return static
      */
     public function setManufacturer(null|string|FHIRStringPrimitive|FHIRString $manufacturer): self
     {
@@ -968,6 +988,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time when the device was manufactured.
+     *
+     * @return static
      */
     public function setManufactureDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $manufactureDate): self
     {
@@ -1008,6 +1030,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * The date and time beyond which this device is no longer valid or should not be
      * used (if applicable).
+     *
+     * @return static
      */
     public function setExpirationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $expirationDate): self
     {
@@ -1040,6 +1064,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Lot number assigned by the manufacturer.
+     *
+     * @return static
      */
     public function setLotNumber(null|string|FHIRStringPrimitive|FHIRString $lotNumber): self
     {
@@ -1072,6 +1098,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The serial number assigned by the organization when the device was manufactured.
+     *
+     * @return static
      */
     public function setSerialNumber(null|string|FHIRStringPrimitive|FHIRString $serialNumber): self
     {
@@ -1123,6 +1151,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * from a UDI label, or by a person describing the Device. This typically would be
      * used when a person provides the name(s) or when the device represents one of the
      * names available from DeviceDefinition.
+     *
+     * @return static
      */
     public function addDeviceName(FHIRDeviceDeviceName $deviceName): self
     {
@@ -1142,6 +1172,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * from a UDI label, or by a person describing the Device. This typically would be
      * used when a person provides the name(s) or when the device represents one of the
      * names available from DeviceDefinition.
+     *
+     * @return static
      */
     public function setDeviceName(FHIRDeviceDeviceName ...$deviceName): self
     {
@@ -1171,6 +1203,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The manufacturer's model number for the device.
+     *
+     * @return static
      */
     public function setModelNumber(null|string|FHIRStringPrimitive|FHIRString $modelNumber): self
     {
@@ -1203,6 +1237,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The part number or catalog number of the device.
+     *
+     * @return static
      */
     public function setPartNumber(null|string|FHIRStringPrimitive|FHIRString $partNumber): self
     {
@@ -1237,6 +1273,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind or type of device.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -1281,6 +1319,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * The capabilities supported on a device, the standards to which the device
      * conforms for a particular purpose, and used for the communication.
+     *
+     * @return static
      */
     public function addSpecialization(FHIRDeviceSpecialization $specialization): self
     {
@@ -1298,6 +1338,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * The capabilities supported on a device, the standards to which the device
      * conforms for a particular purpose, and used for the communication.
+     *
+     * @return static
      */
     public function setSpecialization(FHIRDeviceSpecialization ...$specialization): self
     {
@@ -1340,6 +1382,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * medical or non-medical device.
      *
      * The actual design of the device or software version running on the device.
+     *
+     * @return static
      */
     public function addVersion(FHIRDeviceVersion $version): self
     {
@@ -1356,6 +1400,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * medical or non-medical device.
      *
      * The actual design of the device or software version running on the device.
+     *
+     * @return static
      */
     public function setVersion(FHIRDeviceVersion ...$version): self
     {
@@ -1400,6 +1446,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * The actual configuration settings of a device as it actually operates, e.g.,
      * regulation status, time properties.
+     *
+     * @return static
      */
     public function addProperty(FHIRDeviceProperty $property): self
     {
@@ -1417,6 +1465,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * The actual configuration settings of a device as it actually operates, e.g.,
      * regulation status, time properties.
+     *
+     * @return static
      */
     public function setProperty(FHIRDeviceProperty ...$property): self
     {
@@ -1446,6 +1496,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Patient information, If the device is affixed to a person.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -1477,6 +1529,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * An organization that is responsible for the provision and ongoing maintenance of
      * the device.
+     *
+     * @return static
      */
     public function setOwner(null|FHIRReference $owner): self
     {
@@ -1523,6 +1577,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * Contact details for an organization or a particular human that is responsible
      * for the device.
+     *
+     * @return static
      */
     public function addContact(FHIRContactPoint $contact): self
     {
@@ -1541,6 +1597,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * Contact details for an organization or a particular human that is responsible
      * for the device.
+     *
+     * @return static
      */
     public function setContact(FHIRContactPoint ...$contact): self
     {
@@ -1570,6 +1628,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The place where the device can be found.
+     *
+     * @return static
      */
     public function setLocation(null|FHIRReference $location): self
     {
@@ -1599,6 +1659,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A network address on which the device may be contacted directly.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -1648,6 +1710,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * Descriptive information, usage information or implantation information that is
      * not captured in an existing element.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1666,6 +1730,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * Descriptive information, usage information or implantation information that is
      * not captured in an existing element.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1712,6 +1778,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * Provides additional safety characteristics about a medical device. For example
      * devices containing latex.
+     *
+     * @return static
      */
     public function addSafety(FHIRCodeableConcept $safety): self
     {
@@ -1730,6 +1798,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * Provides additional safety characteristics about a medical device. For example
      * devices containing latex.
+     *
+     * @return static
      */
     public function setSafety(FHIRCodeableConcept ...$safety): self
     {
@@ -1759,6 +1829,8 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The device that this device is attached to or is part of.
+     *
+     * @return static
      */
     public function setParent(null|FHIRReference $parent): self
     {

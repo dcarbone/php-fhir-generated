@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -127,6 +127,12 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
 
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_INSTANCE_CODEABLE_CONCEPT => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_INSTANCE_REFERENCE => [
+            'min_occurs' => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -142,7 +148,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      *
      * Identifies the actual instance of what caused the adverse event. May be a
      * substance, medication, medication administration, medication statement or a
-     * device. (choose any one of instance*, but only one)
+     * device.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $instanceCodeableConcept;
@@ -153,7 +159,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      *
      * Identifies the actual instance of what caused the adverse event. May be a
      * substance, medication, medication administration, medication statement or a
-     * device. (choose any one of instance*, but only one)
+     * device.
      */
     #[FHIRReference]
     protected FHIRReference $instanceReference;
@@ -221,7 +227,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      *
      * Identifies the actual instance of what caused the adverse event. May be a
      * substance, medication, medication administration, medication statement or a
-     * device. (choose any one of instance*, but only one)
+     * device.
      */
     public function getInstanceCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -236,7 +242,9 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      *
      * Identifies the actual instance of what caused the adverse event. May be a
      * substance, medication, medication administration, medication statement or a
-     * device. (choose any one of instance*, but only one)
+     * device.
+     *
+     * @return static
      */
     public function setInstanceCodeableConcept(null|FHIRCodeableConcept $instanceCodeableConcept): self
     {
@@ -255,7 +263,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      *
      * Identifies the actual instance of what caused the adverse event. May be a
      * substance, medication, medication administration, medication statement or a
-     * device. (choose any one of instance*, but only one)
+     * device.
      */
     public function getInstanceReference(): null|FHIRReference
     {
@@ -269,7 +277,9 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      *
      * Identifies the actual instance of what caused the adverse event. May be a
      * substance, medication, medication administration, medication statement or a
-     * device. (choose any one of instance*, but only one)
+     * device.
+     *
+     * @return static
      */
     public function setInstanceReference(null|FHIRReference $instanceReference): self
     {
@@ -317,6 +327,8 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      * implementation guides include specific extensions, value sets and constraints.
      *
      * Information on the possible cause of the event.
+     *
+     * @return static
      */
     public function setCausality(null|FHIRAdverseEventCausality $causality): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -216,6 +216,8 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier for the supplemental data.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -268,6 +270,8 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * augment the measure information. Risk adjustment factor indicates the data is
      * additional information used to calculate risk adjustment factors when applying a
      * risk model to the measure calculation.
+     *
+     * @return static
      */
     public function addUsage(FHIRCodeableConcept $usage): self
     {
@@ -289,6 +293,8 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * augment the measure information. Risk adjustment factor indicates the data is
      * additional information used to calculate risk adjustment factors when applying a
      * risk model to the measure calculation.
+     *
+     * @return static
      */
     public function setUsage(FHIRCodeableConcept ...$usage): self
     {
@@ -322,6 +328,8 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * The criteria for the supplemental data. This must be the name of a valid
      * expression defined within a referenced library, and defines the data to be
      * returned for this element.
+     *
+     * @return static
      */
     public function setCriteria(null|string|FHIRStringPrimitive|FHIRString $criteria): self
     {
@@ -356,6 +364,8 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      *
      * The supplemental data to be supplied as part of the measure response, specified
      * as a valid FHIR Resource Path.
+     *
+     * @return static
      */
     public function setPath(null|string|FHIRStringPrimitive|FHIRString $path): self
     {

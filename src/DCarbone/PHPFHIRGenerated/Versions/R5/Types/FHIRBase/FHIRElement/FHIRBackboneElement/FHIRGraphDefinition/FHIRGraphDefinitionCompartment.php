@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -256,6 +256,8 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement
      * Defines how the compartment rule is used - whether it it is used to test whether
      * resources are subject to the rule, or whether it is a rule that must be
      * followed.
+     *
+     * @return static
      */
     public function setUse(null|string|FHIRGraphCompartmentUseEnum|FHIRGraphCompartmentUse $use): self
     {
@@ -284,6 +286,8 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * identical | matching | different | no-rule | custom.
+     *
+     * @return static
      */
     public function setRule(null|string|FHIRGraphCompartmentRuleEnum|FHIRGraphCompartmentRule $rule): self
     {
@@ -312,6 +316,8 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the compartment.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCompartmentTypeEnum|FHIRCompartmentType $code): self
     {
@@ -344,6 +350,8 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Custom rule, as a FHIRPath expression.
+     *
+     * @return static
      */
     public function setExpression(null|string|FHIRStringPrimitive|FHIRString $expression): self
     {
@@ -376,6 +384,8 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Documentation for FHIRPath expression.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {

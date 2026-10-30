@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -300,6 +300,8 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The medication for which this is a described interaction.
+     *
+     * @return static
      */
     public function addSubject(FHIRReference $subject): self
     {
@@ -316,6 +318,8 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The medication for which this is a described interaction.
+     *
+     * @return static
      */
     public function setSubject(FHIRReference ...$subject): self
     {
@@ -345,6 +349,8 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The interaction described.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -388,6 +394,8 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      * other forms of interactions.
      *
      * The specific medication, food or laboratory test that interacts.
+     *
+     * @return static
      */
     public function addInteractant(FHIRMedicinalProductInteractionInteractant $interactant): self
     {
@@ -403,6 +411,8 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      * other forms of interactions.
      *
      * The specific medication, food or laboratory test that interacts.
+     *
+     * @return static
      */
     public function setInteractant(FHIRMedicinalProductInteractionInteractant ...$interactant): self
     {
@@ -436,6 +446,8 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      *
      * The type of the interaction e.g. drug-drug interaction, drug-food interaction,
      * drug-lab test interaction.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -469,6 +481,8 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      *
      * The effect of the interaction, for example "reduced gastric absorption of
      * primary medication".
+     *
+     * @return static
      */
     public function setEffect(null|FHIRCodeableConcept $effect): self
     {
@@ -500,6 +514,8 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The incidence of the interaction, e.g. theoretical, observed.
+     *
+     * @return static
      */
     public function setIncidence(null|FHIRCodeableConcept $incidence): self
     {
@@ -531,6 +547,8 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Actions for managing the interaction.
+     *
+     * @return static
      */
     public function setManagement(null|FHIRCodeableConcept $management): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -214,6 +214,8 @@ class FHIREffectEvidenceSynthesisCertainty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A rating of the certainty of the effect estimate.
+     *
+     * @return static
      */
     public function addRating(FHIRCodeableConcept $rating): self
     {
@@ -231,6 +233,8 @@ class FHIREffectEvidenceSynthesisCertainty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A rating of the certainty of the effect estimate.
+     *
+     * @return static
      */
     public function setRating(FHIRCodeableConcept ...$rating): self
     {
@@ -275,6 +279,8 @@ class FHIREffectEvidenceSynthesisCertainty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable string to clarify or explain concepts about the resource.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -292,6 +298,8 @@ class FHIREffectEvidenceSynthesisCertainty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable string to clarify or explain concepts about the resource.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -334,6 +342,8 @@ class FHIREffectEvidenceSynthesisCertainty extends FHIRBackboneElement
      * from a combination of research studies.
      *
      * A description of a component of the overall certainty.
+     *
+     * @return static
      */
     public function addCertaintySubcomponent(FHIREffectEvidenceSynthesisCertaintySubcomponent $certaintySubcomponent): self
     {
@@ -350,6 +360,8 @@ class FHIREffectEvidenceSynthesisCertainty extends FHIRBackboneElement
      * from a combination of research studies.
      *
      * A description of a component of the overall certainty.
+     *
+     * @return static
      */
     public function setCertaintySubcomponent(FHIREffectEvidenceSynthesisCertaintySubcomponent ...$certaintySubcomponent): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -297,6 +297,8 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      *
      * The type of enteral or infant formula such as an adult standard formula with
      * fiber or a soy-based infant formula.
+     *
+     * @return static
      */
     public function setBaseFormulaType(null|FHIRCodeableConcept $baseFormulaType): self
     {
@@ -328,6 +330,8 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      *
      * The product or brand name of the enteral or infant formula product such as "ACME
      * Adult Standard Formula".
+     *
+     * @return static
      */
     public function setBaseFormulaProductName(null|string|FHIRStringPrimitive|FHIRString $baseFormulaProductName): self
     {
@@ -364,6 +368,8 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      *
      * Indicates the type of modular component such as protein, carbohydrate, fat or
      * fiber to be provided in addition to or mixed with the base formula.
+     *
+     * @return static
      */
     public function setAdditiveType(null|FHIRCodeableConcept $additiveType): self
     {
@@ -395,6 +401,8 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      *
      * The product or brand name of the type of modular component to be added to the
      * formula.
+     *
+     * @return static
      */
     public function setAdditiveProductName(null|string|FHIRStringPrimitive|FHIRString $additiveProductName): self
     {
@@ -425,6 +433,8 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * volume, typically per mL or fluid oz. For example, an infant may require a
      * formula that provides 24 Calories per fluid ounce or an adult may require an
      * enteral formula that provides 1.5 Calorie/mL.
+     *
+     * @return static
      */
     public function setCaloricDensity(null|FHIRSimpleQuantity $caloricDensity): self
     {
@@ -460,6 +470,8 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * The route or physiological path of administration into the patient's
      * gastrointestinal tract for purposes of providing the formula feeding, e.g.
      * nasogastric tube.
+     *
+     * @return static
      */
     public function setRouteofAdministration(null|FHIRCodeableConcept $routeofAdministration): self
     {
@@ -506,6 +518,8 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * allows for changing the administration rate or volume over time for both bolus
      * and continuous feeding. An example of this would be an instruction to increase
      * the rate of continuous feeding every 2 hours.
+     *
+     * @return static
      */
     public function addAdministration(FHIRNutritionOrderAdministration $administration): self
     {
@@ -524,6 +538,8 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * allows for changing the administration rate or volume over time for both bolus
      * and continuous feeding. An example of this would be an instruction to increase
      * the rate of continuous feeding every 2 hours.
+     *
+     * @return static
      */
     public function setAdministration(FHIRNutritionOrderAdministration ...$administration): self
     {
@@ -547,6 +563,8 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
     /**
      * The maximum total quantity of formula that may be administered to a subject over
      * the period of time, e.g. 1440 mL over 24 hours.
+     *
+     * @return static
      */
     public function setMaxVolumeToDeliver(null|FHIRSimpleQuantity $maxVolumeToDeliver): self
     {
@@ -578,6 +596,8 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      *
      * Free text formula administration, feeding instructions or additional
      * instructions or information.
+     *
+     * @return static
      */
     public function setAdministrationInstruction(null|string|FHIRStringPrimitive|FHIRString $administrationInstruction): self
     {

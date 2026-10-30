@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -367,8 +367,7 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
+     * An optional value describing when the action should be performed.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $timingDateTime;
@@ -377,8 +376,7 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
+     * An optional value describing when the action should be performed.
      */
     #[FHIRAge]
     protected FHIRAge $timingAge;
@@ -387,8 +385,7 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
+     * An optional value describing when the action should be performed.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $timingPeriod;
@@ -397,8 +394,7 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
+     * An optional value describing when the action should be performed.
      */
     #[FHIRDuration]
     protected FHIRDuration $timingDuration;
@@ -407,8 +403,7 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
+     * An optional value describing when the action should be performed.
      */
     #[FHIRRange]
     protected FHIRRange $timingRange;
@@ -421,8 +416,7 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
+     * An optional value describing when the action should be performed.
      */
     #[FHIRTiming]
     protected FHIRTiming $timingTiming;
@@ -511,7 +505,7 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * detail, a PlanDefinition that describes a series of actions to be taken, a
      * Questionnaire that should be filled out, a SpecimenDefinition describing a
      * specimen to be collected, or an ObservationDefinition that specifies what
-     * observation should be captured. (choose any one of definition*, but only one)
+     * observation should be captured.
      */
     #[FHIRCanonical]
     protected FHIRCanonical $definitionCanonical;
@@ -524,7 +518,7 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * detail, a PlanDefinition that describes a series of actions to be taken, a
      * Questionnaire that should be filled out, a SpecimenDefinition describing a
      * specimen to be collected, or an ObservationDefinition that specifies what
-     * observation should be captured. (choose any one of definition*, but only one)
+     * observation should be captured.
      */
     #[FHIRUri]
     protected FHIRUri $definitionUri;
@@ -751,6 +745,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      *
      * The linkId of the action from the PlanDefinition that corresponds to this action
      * in the RequestOrchestration resource.
+     *
+     * @return static
      */
     public function setLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId): self
     {
@@ -785,6 +781,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      *
      * A user-visible prefix for the action. For example a section or item numbering
      * such as 1. or A.
+     *
+     * @return static
      */
     public function setPrefix(null|string|FHIRStringPrimitive|FHIRString $prefix): self
     {
@@ -817,6 +815,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The title of the action displayed to a user.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -859,6 +859,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      *
      * A short description of the action used to provide a summary to display to the
      * user.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -903,6 +905,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * A text equivalent of the action to be performed. This provides a
      * human-interpretable description of the action when the definition is consumed by
      * a system that might not be capable of interpreting it dynamically.
+     *
+     * @return static
      */
     public function setTextEquivalent(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $textEquivalent): self
     {
@@ -933,6 +937,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      *
      * Indicates how quickly the action should be addressed with respect to other
      * actions.
+     *
+     * @return static
      */
     public function setPriority(null|string|FHIRRequestPriorityEnum|FHIRRequestPriority $priority): self
     {
@@ -982,6 +988,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      *
      * A code that provides meaning for the action or action group. For example, a
      * section may have a LOINC code for a section of a documentation template.
+     *
+     * @return static
      */
     public function addCode(FHIRCodeableConcept $code): self
     {
@@ -1000,6 +1008,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      *
      * A code that provides meaning for the action or action group. For example, a
      * section may have a LOINC code for a section of a documentation template.
+     *
+     * @return static
      */
     public function setCode(FHIRCodeableConcept ...$code): self
     {
@@ -1048,6 +1058,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * Didactic or other informational resources associated with the action that can be
      * provided to the CDS recipient. Information resources can include inline text
      * commentary and links to web resources.
+     *
+     * @return static
      */
     public function addDocumentation(FHIRRelatedArtifact $documentation): self
     {
@@ -1067,6 +1079,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * Didactic or other informational resources associated with the action that can be
      * provided to the CDS recipient. Information resources can include inline text
      * commentary and links to web resources.
+     *
+     * @return static
      */
     public function setDocumentation(FHIRRelatedArtifact ...$documentation): self
     {
@@ -1109,6 +1123,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Goals that are intended to be achieved by following the requests in this action.
+     *
+     * @return static
      */
     public function addGoal(FHIRReference $goal): self
     {
@@ -1125,6 +1141,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Goals that are intended to be achieved by following the requests in this action.
+     *
+     * @return static
      */
     public function setGoal(FHIRReference ...$goal): self
     {
@@ -1167,6 +1185,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      *
      * An expression that describes applicability criteria, or start/stop conditions
      * for the action.
+     *
+     * @return static
      */
     public function addCondition(FHIRRequestOrchestrationCondition $condition): self
     {
@@ -1183,6 +1203,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      *
      * An expression that describes applicability criteria, or start/stop conditions
      * for the action.
+     *
+     * @return static
      */
     public function setCondition(FHIRRequestOrchestrationCondition ...$condition): self
     {
@@ -1223,6 +1245,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * have inter-dependencies such as "give this medication after that one".
      *
      * Defines input data requirements for the action.
+     *
+     * @return static
      */
     public function addInput(FHIRRequestOrchestrationInput $input): self
     {
@@ -1238,6 +1262,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * have inter-dependencies such as "give this medication after that one".
      *
      * Defines input data requirements for the action.
+     *
+     * @return static
      */
     public function setInput(FHIRRequestOrchestrationInput ...$input): self
     {
@@ -1278,6 +1304,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * have inter-dependencies such as "give this medication after that one".
      *
      * Defines the outputs of the action, if any.
+     *
+     * @return static
      */
     public function addOutput(FHIRRequestOrchestrationOutput $output): self
     {
@@ -1293,6 +1321,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * have inter-dependencies such as "give this medication after that one".
      *
      * Defines the outputs of the action, if any.
+     *
+     * @return static
      */
     public function setOutput(FHIRRequestOrchestrationOutput ...$output): self
     {
@@ -1335,6 +1365,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      *
      * A relationship to another action such as "before" or "30-60 minutes after start
      * of".
+     *
+     * @return static
      */
     public function addRelatedAction(FHIRRequestOrchestrationRelatedAction $relatedAction): self
     {
@@ -1351,6 +1383,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      *
      * A relationship to another action such as "before" or "30-60 minutes after start
      * of".
+     *
+     * @return static
      */
     public function setRelatedAction(FHIRRequestOrchestrationRelatedAction ...$relatedAction): self
     {
@@ -1371,8 +1405,7 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
+     * An optional value describing when the action should be performed.
      */
     public function getTimingDateTime(): null|FHIRDateTime
     {
@@ -1388,8 +1421,9 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
+     * An optional value describing when the action should be performed.
+     *
+     * @return static
      */
     public function setTimingDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timingDateTime): self
     {
@@ -1409,8 +1443,7 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
+     * An optional value describing when the action should be performed.
      */
     public function getTimingAge(): null|FHIRAge
     {
@@ -1422,8 +1455,9 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
+     * An optional value describing when the action should be performed.
+     *
+     * @return static
      */
     public function setTimingAge(null|FHIRAge $timingAge): self
     {
@@ -1440,8 +1474,7 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
+     * An optional value describing when the action should be performed.
      */
     public function getTimingPeriod(): null|FHIRPeriod
     {
@@ -1453,8 +1486,9 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
+     * An optional value describing when the action should be performed.
+     *
+     * @return static
      */
     public function setTimingPeriod(null|FHIRPeriod $timingPeriod): self
     {
@@ -1471,8 +1505,7 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
+     * An optional value describing when the action should be performed.
      */
     public function getTimingDuration(): null|FHIRDuration
     {
@@ -1484,8 +1517,9 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
+     * An optional value describing when the action should be performed.
+     *
+     * @return static
      */
     public function setTimingDuration(null|FHIRDuration $timingDuration): self
     {
@@ -1502,8 +1536,7 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
+     * An optional value describing when the action should be performed.
      */
     public function getTimingRange(): null|FHIRRange
     {
@@ -1515,8 +1548,9 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
+     * An optional value describing when the action should be performed.
+     *
+     * @return static
      */
     public function setTimingRange(null|FHIRRange $timingRange): self
     {
@@ -1537,8 +1571,7 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
+     * An optional value describing when the action should be performed.
      */
     public function getTimingTiming(): null|FHIRTiming
     {
@@ -1554,8 +1587,9 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
+     * An optional value describing when the action should be performed.
+     *
+     * @return static
      */
     public function setTimingTiming(null|FHIRTiming $timingTiming): self
     {
@@ -1589,6 +1623,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      *
      * Identifies the facility where the action will occur; e.g. home, hospital,
      * specific clinic, etc.
+     *
+     * @return static
      */
     public function setLocation(null|FHIRCodeableReference $location): self
     {
@@ -1629,6 +1665,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * have inter-dependencies such as "give this medication after that one".
      *
      * The participant that should perform or be responsible for this action.
+     *
+     * @return static
      */
     public function addParticipant(FHIRRequestOrchestrationParticipant $participant): self
     {
@@ -1644,6 +1682,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * have inter-dependencies such as "give this medication after that one".
      *
      * The participant that should perform or be responsible for this action.
+     *
+     * @return static
      */
     public function setParticipant(FHIRRequestOrchestrationParticipant ...$participant): self
     {
@@ -1675,6 +1715,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of action to perform (create, update, remove).
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -1700,6 +1742,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the grouping behavior for the action and its children.
+     *
+     * @return static
      */
     public function setGroupingBehavior(null|string|FHIRActionGroupingBehaviorEnum|FHIRActionGroupingBehavior $groupingBehavior): self
     {
@@ -1728,6 +1772,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the selection behavior for the action and its children.
+     *
+     * @return static
      */
     public function setSelectionBehavior(null|string|FHIRActionSelectionBehaviorEnum|FHIRActionSelectionBehavior $selectionBehavior): self
     {
@@ -1756,6 +1802,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines expectations around whether an action is required.
+     *
+     * @return static
      */
     public function setRequiredBehavior(null|string|FHIRActionRequiredBehaviorEnum|FHIRActionRequiredBehavior $requiredBehavior): self
     {
@@ -1784,6 +1832,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines whether the action should usually be preselected.
+     *
+     * @return static
      */
     public function setPrecheckBehavior(null|string|FHIRActionPrecheckBehaviorEnum|FHIRActionPrecheckBehavior $precheckBehavior): self
     {
@@ -1812,6 +1862,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines whether the action can be selected multiple times.
+     *
+     * @return static
      */
     public function setCardinalityBehavior(null|string|FHIRActionCardinalityBehaviorEnum|FHIRActionCardinalityBehavior $cardinalityBehavior): self
     {
@@ -1844,6 +1896,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The resource that is the target of the action (e.g. CommunicationRequest).
+     *
+     * @return static
      */
     public function setResource(null|FHIRReference $resource): self
     {
@@ -1865,7 +1919,7 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * detail, a PlanDefinition that describes a series of actions to be taken, a
      * Questionnaire that should be filled out, a SpecimenDefinition describing a
      * specimen to be collected, or an ObservationDefinition that specifies what
-     * observation should be captured. (choose any one of definition*, but only one)
+     * observation should be captured.
      */
     public function getDefinitionCanonical(): null|FHIRCanonical
     {
@@ -1882,7 +1936,9 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * detail, a PlanDefinition that describes a series of actions to be taken, a
      * Questionnaire that should be filled out, a SpecimenDefinition describing a
      * specimen to be collected, or an ObservationDefinition that specifies what
-     * observation should be captured. (choose any one of definition*, but only one)
+     * observation should be captured.
+     *
+     * @return static
      */
     public function setDefinitionCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $definitionCanonical): self
     {
@@ -1906,7 +1962,7 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * detail, a PlanDefinition that describes a series of actions to be taken, a
      * Questionnaire that should be filled out, a SpecimenDefinition describing a
      * specimen to be collected, or an ObservationDefinition that specifies what
-     * observation should be captured. (choose any one of definition*, but only one)
+     * observation should be captured.
      */
     public function getDefinitionUri(): null|FHIRUri
     {
@@ -1922,7 +1978,9 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * detail, a PlanDefinition that describes a series of actions to be taken, a
      * Questionnaire that should be filled out, a SpecimenDefinition describing a
      * specimen to be collected, or an ObservationDefinition that specifies what
-     * observation should be captured. (choose any one of definition*, but only one)
+     * observation should be captured.
+     *
+     * @return static
      */
     public function setDefinitionUri(null|string|FHIRUriPrimitive|FHIRUri $definitionUri): self
     {
@@ -1961,6 +2019,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * A reference to a StructureMap resource that defines a transform that can be
      * executed to produce the intent resource using the ActivityDefinition instance as
      * the input.
+     *
+     * @return static
      */
     public function setTransform(null|string|FHIRCanonicalPrimitive|FHIRCanonical $transform): self
     {
@@ -2010,6 +2070,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * example, if the dosage of a medication must be computed based on the patient's
      * weight, a customization would be used to specify an expression that calculated
      * the weight, and the path on the resource that would contain the result.
+     *
+     * @return static
      */
     public function addDynamicValue(FHIRRequestOrchestrationDynamicValue $dynamicValue): self
     {
@@ -2028,6 +2090,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * example, if the dosage of a medication must be computed based on the patient's
      * weight, a customization would be used to specify an expression that calculated
      * the weight, and the path on the resource that would contain the result.
+     *
+     * @return static
      */
     public function setDynamicValue(FHIRRequestOrchestrationDynamicValue ...$dynamicValue): self
     {
@@ -2068,6 +2132,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * have inter-dependencies such as "give this medication after that one".
      *
      * Sub actions.
+     *
+     * @return static
      */
     public function addAction(FHIRRequestOrchestrationAction $action): self
     {
@@ -2083,6 +2149,8 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * have inter-dependencies such as "give this medication after that one".
      *
      * Sub actions.
+     *
+     * @return static
      */
     public function setAction(FHIRRequestOrchestrationAction ...$action): self
     {

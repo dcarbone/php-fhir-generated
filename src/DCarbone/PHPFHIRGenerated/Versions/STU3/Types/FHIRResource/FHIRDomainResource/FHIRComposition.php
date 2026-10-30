@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -473,6 +473,8 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      *
      * Logical identifier for the composition, assigned when created. This identifier
      * stays constant as the composition is changed over time.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -502,6 +504,8 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      *
      * The workflow/clinical status of this composition. The status is a marker for the
      * clinical standing of the document.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRCompositionStatusList|FHIRCompositionStatus $status): self
     {
@@ -540,6 +544,8 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      * Specifies the particular kind of composition (e.g. History and Physical,
      * Discharge Summary, Progress Note). This usually equates to the purpose of making
      * the composition.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -575,6 +581,8 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      * A categorization for the type of the composition - helps for indexing and
      * searching. This may be implied by or derived from the code specified in the
      * Composition Type.
+     *
+     * @return static
      */
     public function setClass(null|FHIRCodeableConcept $class): self
     {
@@ -610,6 +618,8 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      * (patient or healthcare practitioner), a device (e.g. a machine) or even a group
      * of subjects (such as a document about a herd of livestock, or a set of patients
      * that share a common exposure).
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -641,6 +651,8 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      *
      * Describes the clinical encounter or type of care this documentation is
      * associated with.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -678,6 +690,8 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      *
      * The composition editing time, when the composition was last logically changed by
      * the author.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -725,6 +739,8 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      *
      * Identifies who is responsible for the information in the composition, not
      * necessarily who typed it in.
+     *
+     * @return static
      */
     public function addAuthor(FHIRReference $author): self
     {
@@ -742,6 +758,8 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      *
      * Identifies who is responsible for the information in the composition, not
      * necessarily who typed it in.
+     *
+     * @return static
      */
     public function setAuthor(FHIRReference ...$author): self
     {
@@ -771,6 +789,8 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Official human-readable label for the composition.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -801,6 +821,8 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The code specifying the level of confidentiality of the Composition.
+     *
+     * @return static
      */
     public function setConfidentiality(null|string|FHIRConfidentialityClassificationList|FHIRConfidentialityClassification $confidentiality): self
     {
@@ -852,6 +874,8 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      * in a Bundle, of which the Composition is the first resource contained.
      *
      * A participant who has attested to the accuracy of the composition/document.
+     *
+     * @return static
      */
     public function addAttester(FHIRCompositionAttester $attester): self
     {
@@ -871,6 +895,8 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      * in a Bundle, of which the Composition is the first resource contained.
      *
      * A participant who has attested to the accuracy of the composition/document.
+     *
+     * @return static
      */
     public function setAttester(FHIRCompositionAttester ...$attester): self
     {
@@ -902,6 +928,8 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      *
      * Identifies the organization or group who is responsible for ongoing maintenance
      * of and access to the composition/document information.
+     *
+     * @return static
      */
     public function setCustodian(null|FHIRReference $custodian): self
     {
@@ -952,6 +980,8 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      *
      * Relationships that this composition has with other compositions or documents
      * that already exist.
+     *
+     * @return static
      */
     public function addRelatesTo(FHIRCompositionRelatesTo $relatesTo): self
     {
@@ -972,6 +1002,8 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      *
      * Relationships that this composition has with other compositions or documents
      * that already exist.
+     *
+     * @return static
      */
     public function setRelatesTo(FHIRCompositionRelatesTo ...$relatesTo): self
     {
@@ -1022,6 +1054,8 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      *
      * The clinical service, such as a colonoscopy or an appendectomy, being
      * documented.
+     *
+     * @return static
      */
     public function addEvent(FHIRCompositionEvent $event): self
     {
@@ -1042,6 +1076,8 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      *
      * The clinical service, such as a colonoscopy or an appendectomy, being
      * documented.
+     *
+     * @return static
      */
     public function setEvent(FHIRCompositionEvent ...$event): self
     {
@@ -1090,6 +1126,8 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      * in a Bundle, of which the Composition is the first resource contained.
      *
      * The root of the sections that make up the composition.
+     *
+     * @return static
      */
     public function addSection(FHIRCompositionSection $section): self
     {
@@ -1109,6 +1147,8 @@ class FHIRComposition extends FHIRDomainResource implements VersionContainedType
      * in a Bundle, of which the Composition is the first resource contained.
      *
      * The root of the sections that make up the composition.
+     *
+     * @return static
      */
     public function setSection(FHIRCompositionSection ...$section): self
     {

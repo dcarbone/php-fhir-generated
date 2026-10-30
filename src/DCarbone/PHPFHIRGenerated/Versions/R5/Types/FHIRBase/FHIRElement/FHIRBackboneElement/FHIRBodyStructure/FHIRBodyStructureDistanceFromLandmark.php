@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -217,6 +217,8 @@ class FHIRBodyStructureDistanceFromLandmark extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An instrument, tool, analyzer, etc. used in the measurement.
+     *
+     * @return static
      */
     public function addDevice(FHIRCodeableReference $device): self
     {
@@ -234,6 +236,8 @@ class FHIRBodyStructureDistanceFromLandmark extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An instrument, tool, analyzer, etc. used in the measurement.
+     *
+     * @return static
      */
     public function setDevice(FHIRCodeableReference ...$device): self
     {
@@ -280,6 +284,8 @@ class FHIRBodyStructureDistanceFromLandmark extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The measured distance (e.g., in cm) from a body landmark.
+     *
+     * @return static
      */
     public function addValue(FHIRQuantity $value): self
     {
@@ -298,6 +304,8 @@ class FHIRBodyStructureDistanceFromLandmark extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The measured distance (e.g., in cm) from a body landmark.
+     *
+     * @return static
      */
     public function setValue(FHIRQuantity ...$value): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -666,6 +666,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      * be) published. The URL SHOULD include the major version of the code system. For
      * more information see [Technical and Business Versions](resource.html#versions).
      * This is used in [Coding]{datatypes.html#Coding}.system.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -702,6 +704,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      * A formal identifier that is used to identify this code system when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -743,6 +747,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence. This is used in
      * [Coding]{datatypes.html#Coding}.version.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -779,6 +785,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      * A natural language name identifying the code system. This name should be usable
      * as an identifier for the module by machine processing applications such as code
      * generation.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -811,6 +819,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the code system.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -839,6 +849,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this code system. Enables tracking the life-cycle of the content.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusList|FHIRPublicationStatus $status): self
     {
@@ -873,6 +885,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      * A boolean value to indicate that this code system is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
+     *
+     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -917,6 +931,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      * change if and when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * code system changes.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -949,6 +965,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the code system.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -996,6 +1014,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1013,6 +1033,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1056,6 +1078,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * A free text natural language description of the code system from a consumer's
      * perspective.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1111,6 +1135,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate code system instances.
+     *
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1132,6 +1158,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate code system instances.
+     *
+     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1176,6 +1204,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the code system is intended to be used.
+     *
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1193,6 +1223,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the code system is intended to be used.
+     *
+     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1236,6 +1268,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Explaination of why this code system is needed and why it has been designed as
      * it has.
+     *
+     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1284,6 +1318,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      * A copyright statement relating to the code system and/or its contents. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * code system.
+     *
+     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1316,6 +1352,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * If code comparison is case sensitive when codes within this system are compared
      * to each other.
+     *
+     * @return static
      */
     public function setCaseSensitive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $caseSensitive): self
     {
@@ -1348,6 +1386,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Canonical URL of value set that contains the entire code system.
+     *
+     * @return static
      */
     public function setValueSet(null|string|FHIRUriPrimitive|FHIRUri $valueSet): self
     {
@@ -1378,6 +1418,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The meaning of the hierarchy of concepts.
+     *
+     * @return static
      */
     public function setHierarchyMeaning(null|string|FHIRCodeSystemHierarchyMeaningList|FHIRCodeSystemHierarchyMeaning $hierarchyMeaning): self
     {
@@ -1408,6 +1450,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True If code system defines a post-composition grammar.
+     *
+     * @return static
      */
     public function setCompositional(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $compositional): self
     {
@@ -1442,6 +1486,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      * This flag is used to signify that the code system has not (or does not) maintain
      * the definitions, and a version must be specified when referencing this code
      * system.
+     *
+     * @return static
      */
     public function setVersionNeeded(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $versionNeeded): self
     {
@@ -1476,6 +1522,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * How much of the content of the code system - the concepts and codes it defines -
      * are represented in this resource.
+     *
+     * @return static
      */
     public function setContent(null|string|FHIRCodeSystemContentModeList|FHIRCodeSystemContentMode $content): self
     {
@@ -1512,6 +1560,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      * The total number of concepts defined by the code system. Where the code system
      * has a compositional grammar, the count refers to the number of base (primitive)
      * concepts.
+     *
+     * @return static
      */
     public function setCount(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $count): self
     {
@@ -1557,6 +1607,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * A filter that can be used in a value set compose statement when selecting
      * concepts using a filter.
+     *
+     * @return static
      */
     public function addFilter(FHIRCodeSystemFilter $filter): self
     {
@@ -1573,6 +1625,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * A filter that can be used in a value set compose statement when selecting
      * concepts using a filter.
+     *
+     * @return static
      */
     public function setFilter(FHIRCodeSystemFilter ...$filter): self
     {
@@ -1615,6 +1669,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * A property defines an additional slot through which additional information can
      * be provided about a concept.
+     *
+     * @return static
      */
     public function addProperty(FHIRCodeSystemProperty $property): self
     {
@@ -1631,6 +1687,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * A property defines an additional slot through which additional information can
      * be provided about a concept.
+     *
+     * @return static
      */
     public function setProperty(FHIRCodeSystemProperty ...$property): self
     {
@@ -1675,6 +1733,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      * Concepts that are in the code system. The concept definitions are inherently
      * hierarchical, but the definitions must be consulted to determine what the
      * meaning of the hierarchical relationships are.
+     *
+     * @return static
      */
     public function addConcept(FHIRCodeSystemConcept $concept): self
     {
@@ -1692,6 +1752,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements VersionContainedTypeI
      * Concepts that are in the code system. The concept definitions are inherently
      * hierarchical, but the definitions must be consulted to determine what the
      * meaning of the hierarchical relationships are.
+     *
+     * @return static
      */
     public function setConcept(FHIRCodeSystemConcept ...$concept): self
     {

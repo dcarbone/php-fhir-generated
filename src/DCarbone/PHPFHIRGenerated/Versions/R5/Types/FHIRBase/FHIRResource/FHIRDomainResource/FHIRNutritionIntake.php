@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -315,7 +315,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The interval of time during which it is being asserted that the patient is/was
-     * consuming the food or fluid. (choose any one of occurrence*, but only one)
+     * consuming the food or fluid.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $occurrenceDateTime;
@@ -325,7 +325,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The interval of time during which it is being asserted that the patient is/was
-     * consuming the food or fluid. (choose any one of occurrence*, but only one)
+     * consuming the food or fluid.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $occurrencePeriod;
@@ -348,7 +348,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      *
      * The person or organization that provided the information about the consumption
      * of this food or fluid. Note: Use derivedFrom when a NutritionIntake is derived
-     * from other resources. (choose any one of reported*, but only one)
+     * from other resources.
      */
     #[FHIRBoolean]
     protected FHIRBoolean $reportedBoolean;
@@ -359,7 +359,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      *
      * The person or organization that provided the information about the consumption
      * of this food or fluid. Note: Use derivedFrom when a NutritionIntake is derived
-     * from other resources. (choose any one of reported*, but only one)
+     * from other resources.
      */
     #[FHIRReference]
     protected FHIRReference $reportedReference;
@@ -645,6 +645,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * itself is not appropriate. They are business identifiers assigned to this
      * resource by the performer or other systems and remain constant as the resource
      * is updated and propagates from server to server.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -666,6 +668,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * itself is not appropriate. They are business identifiers assigned to this
      * resource by the performer or other systems and remain constant as the resource
      * is updated and propagates from server to server.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -710,6 +714,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * the Narrative, or extensions
      *
      * Instantiates FHIR protocol or definition.
+     *
+     * @return static
      */
     public function addInstantiatesCanonical(string|FHIRCanonicalPrimitive|FHIRCanonical $instantiatesCanonical): self
     {
@@ -730,6 +736,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * the Narrative, or extensions
      *
      * Instantiates FHIR protocol or definition.
+     *
+     * @return static
      */
     public function setInstantiatesCanonical(string|FHIRCanonicalPrimitive|FHIRCanonical ...$instantiatesCanonical): self
     {
@@ -779,6 +787,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Instantiates external protocol or definition.
+     *
+     * @return static
      */
     public function addInstantiatesUri(string|FHIRUriPrimitive|FHIRUri $instantiatesUri): self
     {
@@ -798,6 +808,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Instantiates external protocol or definition.
+     *
+     * @return static
      */
     public function setInstantiatesUri(string|FHIRUriPrimitive|FHIRUri ...$instantiatesUri): self
     {
@@ -847,6 +859,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A plan, proposal or order that is fulfilled in whole or in part by this event.
+     *
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -863,6 +877,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A plan, proposal or order that is fulfilled in whole or in part by this event.
+     *
+     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -905,6 +921,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger event of which this particular event is a component or step.
+     *
+     * @return static
      */
     public function addPartOf(FHIRReference $partOf): self
     {
@@ -921,6 +939,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger event of which this particular event is a component or step.
+     *
+     * @return static
      */
     public function setPartOf(FHIRReference ...$partOf): self
     {
@@ -950,6 +970,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * A code representing the patient or other source's judgment about the state of
      * the intake that this assertion is about. Generally, this will be active or
      * completed.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIREventStatusEnum|FHIREventStatus $status): self
     {
@@ -997,6 +1019,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Captures the reason for the current state of the NutritionIntake.
+     *
+     * @return static
      */
     public function addStatusReason(FHIRCodeableConcept $statusReason): self
     {
@@ -1014,6 +1038,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Captures the reason for the current state of the NutritionIntake.
+     *
+     * @return static
      */
     public function setStatusReason(FHIRCodeableConcept ...$statusReason): self
     {
@@ -1045,6 +1071,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Overall type of nutrition intake.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -1074,6 +1102,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person, animal or group who is/was consuming the food or fluid.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -1103,6 +1133,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter that establishes the context for this NutritionIntake.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -1124,7 +1156,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The interval of time during which it is being asserted that the patient is/was
-     * consuming the food or fluid. (choose any one of occurrence*, but only one)
+     * consuming the food or fluid.
      */
     public function getOccurrenceDateTime(): null|FHIRDateTime
     {
@@ -1141,7 +1173,9 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The interval of time during which it is being asserted that the patient is/was
-     * consuming the food or fluid. (choose any one of occurrence*, but only one)
+     * consuming the food or fluid.
+     *
+     * @return static
      */
     public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime): self
     {
@@ -1162,7 +1196,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The interval of time during which it is being asserted that the patient is/was
-     * consuming the food or fluid. (choose any one of occurrence*, but only one)
+     * consuming the food or fluid.
      */
     public function getOccurrencePeriod(): null|FHIRPeriod
     {
@@ -1175,7 +1209,9 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The interval of time during which it is being asserted that the patient is/was
-     * consuming the food or fluid. (choose any one of occurrence*, but only one)
+     * consuming the food or fluid.
+     *
+     * @return static
      */
     public function setOccurrencePeriod(null|FHIRPeriod $occurrencePeriod): self
     {
@@ -1213,6 +1249,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the Nutrition Intake was asserted by the information source.
+     *
+     * @return static
      */
     public function setRecorded(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $recorded): self
     {
@@ -1233,7 +1271,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      *
      * The person or organization that provided the information about the consumption
      * of this food or fluid. Note: Use derivedFrom when a NutritionIntake is derived
-     * from other resources. (choose any one of reported*, but only one)
+     * from other resources.
      */
     public function getReportedBoolean(): null|FHIRBoolean
     {
@@ -1246,7 +1284,9 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      *
      * The person or organization that provided the information about the consumption
      * of this food or fluid. Note: Use derivedFrom when a NutritionIntake is derived
-     * from other resources. (choose any one of reported*, but only one)
+     * from other resources.
+     *
+     * @return static
      */
     public function setReportedBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $reportedBoolean): self
     {
@@ -1268,7 +1308,7 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      *
      * The person or organization that provided the information about the consumption
      * of this food or fluid. Note: Use derivedFrom when a NutritionIntake is derived
-     * from other resources. (choose any one of reported*, but only one)
+     * from other resources.
      */
     public function getReportedReference(): null|FHIRReference
     {
@@ -1282,7 +1322,9 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      *
      * The person or organization that provided the information about the consumption
      * of this food or fluid. Note: Use derivedFrom when a NutritionIntake is derived
-     * from other resources. (choose any one of reported*, but only one)
+     * from other resources.
+     *
+     * @return static
      */
     public function setReportedReference(null|FHIRReference $reportedReference): self
     {
@@ -1337,6 +1379,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * clinician documenting observed intake.
      *
      * What food or fluid product or item was consumed.
+     *
+     * @return static
      */
     public function addConsumedItem(FHIRNutritionIntakeConsumedItem $consumedItem): self
     {
@@ -1359,6 +1403,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * clinician documenting observed intake.
      *
      * What food or fluid product or item was consumed.
+     *
+     * @return static
      */
     public function setConsumedItem(FHIRNutritionIntakeConsumedItem ...$consumedItem): self
     {
@@ -1413,6 +1459,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * clinician documenting observed intake.
      *
      * Total nutrient amounts for the whole meal, product, serving, etc.
+     *
+     * @return static
      */
     public function addIngredientLabel(FHIRNutritionIntakeIngredientLabel $ingredientLabel): self
     {
@@ -1435,6 +1483,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * clinician documenting observed intake.
      *
      * Total nutrient amounts for the whole meal, product, serving, etc.
+     *
+     * @return static
      */
     public function setIngredientLabel(FHIRNutritionIntakeIngredientLabel ...$ingredientLabel): self
     {
@@ -1489,6 +1539,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * clinician documenting observed intake.
      *
      * Who performed the intake and how they were involved.
+     *
+     * @return static
      */
     public function addPerformer(FHIRNutritionIntakePerformer $performer): self
     {
@@ -1511,6 +1563,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * clinician documenting observed intake.
      *
      * Who performed the intake and how they were involved.
+     *
+     * @return static
      */
     public function setPerformer(FHIRNutritionIntakePerformer ...$performer): self
     {
@@ -1540,6 +1594,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the intake occurred.
+     *
+     * @return static
      */
     public function setLocation(null|FHIRReference $location): self
     {
@@ -1586,6 +1642,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * Allows linking the NutritionIntake to the underlying NutritionOrder, or to other
      * information, such as AllergyIntolerance, that supports or is used to derive the
      * NutritionIntake.
+     *
+     * @return static
      */
     public function addDerivedFrom(FHIRReference $derivedFrom): self
     {
@@ -1604,6 +1662,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * Allows linking the NutritionIntake to the underlying NutritionOrder, or to other
      * information, such as AllergyIntolerance, that supports or is used to derive the
      * NutritionIntake.
+     *
+     * @return static
      */
     public function setDerivedFrom(FHIRReference ...$derivedFrom): self
     {
@@ -1648,6 +1708,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reason, Condition or observation for why the food or fluid is /was consumed.
+     *
+     * @return static
      */
     public function addReason(FHIRCodeableReference $reason): self
     {
@@ -1665,6 +1727,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reason, Condition or observation for why the food or fluid is /was consumed.
+     *
+     * @return static
      */
     public function setReason(FHIRCodeableReference ...$reason): self
     {
@@ -1711,6 +1775,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      *
      * Provides extra information about the Nutrition Intake that is not conveyed by
      * the other attributes.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1729,6 +1795,8 @@ class FHIRNutritionIntake extends FHIRDomainResource implements VersionContained
      *
      * Provides extra information about the Nutrition Intake that is not conveyed by
      * the other attributes.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {

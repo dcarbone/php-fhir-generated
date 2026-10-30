@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -343,6 +343,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier assigned by the dispensing facility when the item(s) is dispensed.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -370,6 +372,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the dispense event.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRSupplyDeliveryStatusList|FHIRSupplyDeliveryStatus $status): self
     {
@@ -402,6 +406,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A link to a resource representing the person whom the delivered item is for.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -435,6 +441,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      *
      * Indicates the type of dispensing event that is performed. Examples include:
      * Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -456,6 +464,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
 
     /**
      * The amount of supply that has been dispensed. Includes unit of measure.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRSimpleQuantity $quantity): self
     {
@@ -489,6 +499,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * Identifies the medication, substance or device being dispensed. This is either a
      * link to a resource representing the details of the item or a simple attribute
      * carrying a code that identifies the item from a known list.
+     *
+     * @return static
      */
     public function setSuppliedItem(null|FHIRReference $suppliedItem): self
     {
@@ -518,6 +530,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual responsible for dispensing the medication, supplier or device.
+     *
+     * @return static
      */
     public function setSupplier(null|FHIRReference $supplier): self
     {
@@ -547,6 +561,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time the dispense event occurred.
+     *
+     * @return static
      */
     public function setWhenPrepared(null|FHIRPeriod $whenPrepared): self
     {
@@ -582,6 +598,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time the dispensed item was sent or handed to the patient (or agent).
+     *
+     * @return static
      */
     public function setTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $time): self
     {
@@ -616,6 +634,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      *
      * Identification of the facility/location where the Supply was shipped to, as part
      * of the dispense event.
+     *
+     * @return static
      */
     public function setDestination(null|FHIRReference $destination): self
     {
@@ -658,6 +678,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the person who picked up the Supply.
+     *
+     * @return static
      */
     public function addReceiver(FHIRReference $receiver): self
     {
@@ -674,6 +696,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the person who picked up the Supply.
+     *
+     * @return static
      */
     public function setReceiver(FHIRReference ...$receiver): self
     {

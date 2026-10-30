@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -181,6 +181,8 @@ class FHIRMolecularSequenceOuter extends FHIRBackboneElement
      *
      * Structural variant outer start. If the coordinate system is either 0-based or
      * 1-based, then start position is inclusive.
+     *
+     * @return static
      */
     public function setStart(null|string|float|FHIRIntegerPrimitive|FHIRInteger $start): self
     {
@@ -217,6 +219,8 @@ class FHIRMolecularSequenceOuter extends FHIRBackboneElement
      * Structural variant outer end. If the coordinate system is 0-based then end is
      * exclusive and does not include the last position. If the coordinate system is
      * 1-base, then end is inclusive and includes the last position.
+     *
+     * @return static
      */
     public function setEnd(null|string|float|FHIRIntegerPrimitive|FHIRInteger $end): self
     {

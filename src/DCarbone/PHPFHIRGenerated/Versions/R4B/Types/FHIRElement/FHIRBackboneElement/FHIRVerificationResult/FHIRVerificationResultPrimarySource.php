@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -288,6 +288,8 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the primary source.
+     *
+     * @return static
      */
     public function setWho(null|FHIRReference $who): self
     {
@@ -336,6 +338,8 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * Type of primary source (License Board; Primary Education; Continuing Education;
      * Postal Service; Relationship owner; Registration Authority; legal source;
      * issuing source; authoritative source).
+     *
+     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -355,6 +359,8 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * Type of primary source (License Board; Primary Education; Continuing Education;
      * Postal Service; Relationship owner; Registration Authority; legal source;
      * issuing source; authoritative source).
+     *
+     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -399,6 +405,8 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Method for communicating with the primary source (manual; API; Push).
+     *
+     * @return static
      */
     public function addCommunicationMethod(FHIRCodeableConcept $communicationMethod): self
     {
@@ -416,6 +424,8 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Method for communicating with the primary source (manual; API; Push).
+     *
+     * @return static
      */
     public function setCommunicationMethod(FHIRCodeableConcept ...$communicationMethod): self
     {
@@ -449,6 +459,8 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      *
      * Status of the validation of the target against the primary source (successful;
      * failed; unknown).
+     *
+     * @return static
      */
     public function setValidationStatus(null|FHIRCodeableConcept $validationStatus): self
     {
@@ -484,6 +496,8 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the target was validated against the primary source.
+     *
+     * @return static
      */
     public function setValidationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $validationDate): self
     {
@@ -518,6 +532,8 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ability of the primary source to push updates/alerts (yes; no; undetermined).
+     *
+     * @return static
      */
     public function setCanPushUpdates(null|FHIRCodeableConcept $canPushUpdates): self
     {
@@ -564,6 +580,8 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      *
      * Type of alerts/updates the primary source can send (specific requested changes;
      * any changes; as defined by source).
+     *
+     * @return static
      */
     public function addPushTypeAvailable(FHIRCodeableConcept $pushTypeAvailable): self
     {
@@ -582,6 +600,8 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      *
      * Type of alerts/updates the primary source can send (specific requested changes;
      * any changes; as defined by source).
+     *
+     * @return static
      */
     public function setPushTypeAvailable(FHIRCodeableConcept ...$pushTypeAvailable): self
     {

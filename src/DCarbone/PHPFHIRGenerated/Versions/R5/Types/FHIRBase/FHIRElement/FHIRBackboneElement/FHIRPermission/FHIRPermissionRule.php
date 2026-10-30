@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -225,6 +225,8 @@ class FHIRPermissionRule extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * deny | permit.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRConsentProvisionTypeEnum|FHIRConsentProvisionType $type): self
     {
@@ -268,6 +270,8 @@ class FHIRPermissionRule extends FHIRBackboneElement
      *
      * A description or definition of which activities are allowed to be done on the
      * data.
+     *
+     * @return static
      */
     public function addData(FHIRPermissionData $data): self
     {
@@ -283,6 +287,8 @@ class FHIRPermissionRule extends FHIRBackboneElement
      *
      * A description or definition of which activities are allowed to be done on the
      * data.
+     *
+     * @return static
      */
     public function setData(FHIRPermissionData ...$data): self
     {
@@ -323,6 +329,8 @@ class FHIRPermissionRule extends FHIRBackboneElement
      *
      * A description or definition of which activities are allowed to be done on the
      * data.
+     *
+     * @return static
      */
     public function addActivity(FHIRPermissionActivity $activity): self
     {
@@ -338,6 +346,8 @@ class FHIRPermissionRule extends FHIRBackboneElement
      *
      * A description or definition of which activities are allowed to be done on the
      * data.
+     *
+     * @return static
      */
     public function setActivity(FHIRPermissionActivity ...$activity): self
     {
@@ -382,6 +392,8 @@ class FHIRPermissionRule extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * What limits apply to the use of the data.
+     *
+     * @return static
      */
     public function addLimit(FHIRCodeableConcept $limit): self
     {
@@ -399,6 +411,8 @@ class FHIRPermissionRule extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * What limits apply to the use of the data.
+     *
+     * @return static
      */
     public function setLimit(FHIRCodeableConcept ...$limit): self
     {

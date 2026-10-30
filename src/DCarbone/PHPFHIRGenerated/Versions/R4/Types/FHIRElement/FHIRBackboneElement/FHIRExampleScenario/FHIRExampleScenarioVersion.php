@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -187,6 +187,8 @@ class FHIRExampleScenarioVersion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier of a specific version of a resource.
+     *
+     * @return static
      */
     public function setVersionId(null|string|FHIRStringPrimitive|FHIRString $versionId): self
     {
@@ -227,6 +229,8 @@ class FHIRExampleScenarioVersion extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The description of the resource version.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {

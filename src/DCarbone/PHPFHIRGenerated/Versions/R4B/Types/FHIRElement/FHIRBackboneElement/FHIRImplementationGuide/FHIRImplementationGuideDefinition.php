@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -274,6 +274,8 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * A logical group of resources. Logical groups can be used when building pages.
+     *
+     * @return static
      */
     public function addGrouping(FHIRImplementationGuideGrouping $grouping): self
     {
@@ -291,6 +293,8 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * A logical group of resources. Logical groups can be used when building pages.
+     *
+     * @return static
      */
     public function setGrouping(FHIRImplementationGuideGrouping ...$grouping): self
     {
@@ -341,6 +345,8 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * (value set, structure definition, capability statements etc.) are obvious
      * candidates for inclusion, but any kind of resource can be included as an example
      * resource.
+     *
+     * @return static
      */
     public function addResource(FHIRImplementationGuideResource $resource): self
     {
@@ -361,6 +367,8 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * (value set, structure definition, capability statements etc.) are obvious
      * candidates for inclusion, but any kind of resource can be included as an example
      * resource.
+     *
+     * @return static
      */
     public function setResource(FHIRImplementationGuideResource ...$resource): self
     {
@@ -394,6 +402,8 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      *
      * A page / section in the implementation guide. The root page is the
      * implementation guide home page.
+     *
+     * @return static
      */
     public function setPage(null|FHIRImplementationGuidePage $page): self
     {
@@ -438,6 +448,8 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * Defines how IG is built by tools.
+     *
+     * @return static
      */
     public function addParameter(FHIRImplementationGuideParameter $parameter): self
     {
@@ -455,6 +467,8 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * Defines how IG is built by tools.
+     *
+     * @return static
      */
     public function setParameter(FHIRImplementationGuideParameter ...$parameter): self
     {
@@ -499,6 +513,8 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * A template for building resources.
+     *
+     * @return static
      */
     public function addTemplate(FHIRImplementationGuideTemplate $template): self
     {
@@ -516,6 +532,8 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * A template for building resources.
+     *
+     * @return static
      */
     public function setTemplate(FHIRImplementationGuideTemplate ...$template): self
     {

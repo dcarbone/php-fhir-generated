@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -236,8 +236,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The date or time(s) the activity occurred. (choose any one of occurrence*, but
-     * only one)
+     * The date or time(s) the activity occurred.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $occurrenceDateTime;
@@ -246,8 +245,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The date or time(s) the activity occurred. (choose any one of occurrence*, but
-     * only one)
+     * The date or time(s) the activity occurred.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $occurrencePeriod;
@@ -260,8 +258,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The date or time(s) the activity occurred. (choose any one of occurrence*, but
-     * only one)
+     * The date or time(s) the activity occurred.
      */
     #[FHIRTiming]
     protected FHIRTiming $occurrenceTiming;
@@ -429,6 +426,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      *
      * Identifier for the supply delivery event that is used to identify it across
      * multiple disparate systems.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -447,6 +446,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      *
      * Identifier for the supply delivery event that is used to identify it across
      * multiple disparate systems.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -489,6 +490,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A plan, proposal or order that is fulfilled in whole or in part by this event.
+     *
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -505,6 +508,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A plan, proposal or order that is fulfilled in whole or in part by this event.
+     *
+     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -547,6 +552,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger event of which this particular event is a component or step.
+     *
+     * @return static
      */
     public function addPartOf(FHIRReference $partOf): self
     {
@@ -563,6 +570,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger event of which this particular event is a component or step.
+     *
+     * @return static
      */
     public function setPartOf(FHIRReference ...$partOf): self
     {
@@ -588,6 +597,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the dispense event.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRSupplyDeliveryStatusEnum|FHIRSupplyDeliveryStatus $status): self
     {
@@ -620,6 +631,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A link to a resource representing the person whom the delivered item is for.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -653,6 +666,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      *
      * Indicates the type of supply being provided. Examples include: Medication,
      * Device, Biologically Derived Product.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -691,6 +706,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * Record of delivery of what is supplied.
      *
      * The item that is being delivered or has been supplied.
+     *
+     * @return static
      */
     public function addSuppliedItem(FHIRSupplyDeliverySuppliedItem $suppliedItem): self
     {
@@ -705,6 +722,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * Record of delivery of what is supplied.
      *
      * The item that is being delivered or has been supplied.
+     *
+     * @return static
      */
     public function setSuppliedItem(FHIRSupplyDeliverySuppliedItem ...$suppliedItem): self
     {
@@ -725,8 +744,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The date or time(s) the activity occurred. (choose any one of occurrence*, but
-     * only one)
+     * The date or time(s) the activity occurred.
      */
     public function getOccurrenceDateTime(): null|FHIRDateTime
     {
@@ -742,8 +760,9 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The date or time(s) the activity occurred. (choose any one of occurrence*, but
-     * only one)
+     * The date or time(s) the activity occurred.
+     *
+     * @return static
      */
     public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime): self
     {
@@ -763,8 +782,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The date or time(s) the activity occurred. (choose any one of occurrence*, but
-     * only one)
+     * The date or time(s) the activity occurred.
      */
     public function getOccurrencePeriod(): null|FHIRPeriod
     {
@@ -776,8 +794,9 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The date or time(s) the activity occurred. (choose any one of occurrence*, but
-     * only one)
+     * The date or time(s) the activity occurred.
+     *
+     * @return static
      */
     public function setOccurrencePeriod(null|FHIRPeriod $occurrencePeriod): self
     {
@@ -798,8 +817,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The date or time(s) the activity occurred. (choose any one of occurrence*, but
-     * only one)
+     * The date or time(s) the activity occurred.
      */
     public function getOccurrenceTiming(): null|FHIRTiming
     {
@@ -815,8 +833,9 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The date or time(s) the activity occurred. (choose any one of occurrence*, but
-     * only one)
+     * The date or time(s) the activity occurred.
+     *
+     * @return static
      */
     public function setOccurrenceTiming(null|FHIRTiming $occurrenceTiming): self
     {
@@ -846,6 +865,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or organization responsible for supplying the delivery.
+     *
+     * @return static
      */
     public function setSupplier(null|FHIRReference $supplier): self
     {
@@ -875,6 +896,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identification of the facility/location where the delivery was shipped to.
+     *
+     * @return static
      */
     public function setDestination(null|FHIRReference $destination): self
     {
@@ -917,6 +940,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the individual or organization that received the delivery.
+     *
+     * @return static
      */
     public function addReceiver(FHIRReference $receiver): self
     {
@@ -933,6 +958,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the individual or organization that received the delivery.
+     *
+     * @return static
      */
     public function setReceiver(FHIRReference ...$receiver): self
     {

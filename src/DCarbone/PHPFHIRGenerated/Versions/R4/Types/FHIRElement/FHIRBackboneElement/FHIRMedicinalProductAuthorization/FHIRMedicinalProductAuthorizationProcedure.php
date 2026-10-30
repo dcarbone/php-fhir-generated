@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -230,6 +230,8 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for this procedure.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -261,6 +263,8 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of procedure.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -290,6 +294,8 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Date of procedure.
+     *
+     * @return static
      */
     public function setDatePeriod(null|FHIRPeriod $datePeriod): self
     {
@@ -325,6 +331,8 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date of procedure.
+     *
+     * @return static
      */
     public function setDateDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateDateTime): self
     {
@@ -366,6 +374,8 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
      * The regulatory authorization of a medicinal product.
      *
      * Applcations submitted to obtain a marketing authorization.
+     *
+     * @return static
      */
     public function addApplication(FHIRMedicinalProductAuthorizationProcedure $application): self
     {
@@ -380,6 +390,8 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
      * The regulatory authorization of a medicinal product.
      *
      * Applcations submitted to obtain a marketing authorization.
+     *
+     * @return static
      */
     public function setApplication(FHIRMedicinalProductAuthorizationProcedure ...$application): self
     {

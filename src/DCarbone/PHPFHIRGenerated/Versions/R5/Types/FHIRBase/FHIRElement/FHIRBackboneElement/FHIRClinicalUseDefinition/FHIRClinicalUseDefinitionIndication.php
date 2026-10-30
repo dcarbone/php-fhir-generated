@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -186,7 +186,7 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      * Timing or duration information, that may be associated with use with the
      * indicated condition e.g. Adult patients suffering from myocardial infarction
      * (from a few days until less than 35 days), ischaemic stroke (from 7 days until
-     * less than 6 months). (choose any one of duration*, but only one)
+     * less than 6 months).
      */
     #[FHIRRange]
     protected FHIRRange $durationRange;
@@ -198,7 +198,7 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      * Timing or duration information, that may be associated with use with the
      * indicated condition e.g. Adult patients suffering from myocardial infarction
      * (from a few days until less than 35 days), ischaemic stroke (from 7 days until
-     * less than 6 months). (choose any one of duration*, but only one)
+     * less than 6 months).
      */
     #[FHIRString]
     protected FHIRString $durationString;
@@ -322,6 +322,8 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The situation that is being documented as an indicaton for this item.
+     *
+     * @return static
      */
     public function setDiseaseSymptomProcedure(null|FHIRCodeableReference $diseaseSymptomProcedure): self
     {
@@ -355,6 +357,8 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      *
      * The status of the disease or symptom for the indication, for example "chronic"
      * or "metastatic".
+     *
+     * @return static
      */
     public function setDiseaseStatus(null|FHIRCodeableReference $diseaseStatus): self
     {
@@ -399,6 +403,8 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A comorbidity (concurrent condition) or coinfection as part of the indication.
+     *
+     * @return static
      */
     public function addComorbidity(FHIRCodeableReference $comorbidity): self
     {
@@ -416,6 +422,8 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A comorbidity (concurrent condition) or coinfection as part of the indication.
+     *
+     * @return static
      */
     public function setComorbidity(FHIRCodeableReference ...$comorbidity): self
     {
@@ -447,6 +455,8 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended effect, aim or strategy to be achieved.
+     *
+     * @return static
      */
     public function setIntendedEffect(null|FHIRCodeableReference $intendedEffect): self
     {
@@ -466,7 +476,7 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      * Timing or duration information, that may be associated with use with the
      * indicated condition e.g. Adult patients suffering from myocardial infarction
      * (from a few days until less than 35 days), ischaemic stroke (from 7 days until
-     * less than 6 months). (choose any one of duration*, but only one)
+     * less than 6 months).
      */
     public function getDurationRange(): null|FHIRRange
     {
@@ -481,7 +491,9 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      * Timing or duration information, that may be associated with use with the
      * indicated condition e.g. Adult patients suffering from myocardial infarction
      * (from a few days until less than 35 days), ischaemic stroke (from 7 days until
-     * less than 6 months). (choose any one of duration*, but only one)
+     * less than 6 months).
+     *
+     * @return static
      */
     public function setDurationRange(null|FHIRRange $durationRange): self
     {
@@ -501,7 +513,7 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      * Timing or duration information, that may be associated with use with the
      * indicated condition e.g. Adult patients suffering from myocardial infarction
      * (from a few days until less than 35 days), ischaemic stroke (from 7 days until
-     * less than 6 months). (choose any one of duration*, but only one)
+     * less than 6 months).
      */
     public function getDurationString(): null|FHIRString
     {
@@ -516,7 +528,9 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      * Timing or duration information, that may be associated with use with the
      * indicated condition e.g. Adult patients suffering from myocardial infarction
      * (from a few days until less than 35 days), ischaemic stroke (from 7 days until
-     * less than 6 months). (choose any one of duration*, but only one)
+     * less than 6 months).
+     *
+     * @return static
      */
     public function setDurationString(null|string|FHIRStringPrimitive|FHIRString $durationString): self
     {
@@ -564,6 +578,8 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      *
      * An unwanted side effect or negative outcome that may happen if you use the drug
      * (or other subject of this resource) for this indication.
+     *
+     * @return static
      */
     public function addUndesirableEffect(FHIRReference $undesirableEffect): self
     {
@@ -581,6 +597,8 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      *
      * An unwanted side effect or negative outcome that may happen if you use the drug
      * (or other subject of this resource) for this indication.
+     *
+     * @return static
      */
     public function setUndesirableEffect(FHIRReference ...$undesirableEffect): self
     {
@@ -616,6 +634,8 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      *
      * An expression that returns true or false, indicating whether the indication is
      * applicable or not, after having applied its other elements.
+     *
+     * @return static
      */
     public function setApplicability(null|FHIRExpression $applicability): self
     {
@@ -658,6 +678,8 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      *
      * Information about the use of the medicinal product in relation to other
      * therapies described as part of the indication.
+     *
+     * @return static
      */
     public function addOtherTherapy(FHIRClinicalUseDefinitionOtherTherapy $otherTherapy): self
     {
@@ -674,6 +696,8 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      *
      * Information about the use of the medicinal product in relation to other
      * therapies described as part of the indication.
+     *
+     * @return static
      */
     public function setOtherTherapy(FHIRClinicalUseDefinitionOtherTherapy ...$otherTherapy): self
     {

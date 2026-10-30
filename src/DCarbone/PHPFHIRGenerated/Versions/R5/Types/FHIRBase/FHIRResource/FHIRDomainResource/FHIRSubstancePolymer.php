@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -311,6 +311,8 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
      *
      * A business idenfier for this polymer, but typically this is handled by a
      * SubstanceDefinition identifier.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -342,6 +344,8 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Overall type of the polymer.
+     *
+     * @return static
      */
     public function setClass(null|FHIRCodeableConcept $class): self
     {
@@ -373,6 +377,8 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Polymer geometry, e.g. linear, branched, cross-linked, network or dendritic.
+     *
+     * @return static
      */
     public function setGeometry(null|FHIRCodeableConcept $geometry): self
     {
@@ -417,6 +423,8 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Descrtibes the copolymer sequence type (polymer connectivity).
+     *
+     * @return static
      */
     public function addCopolymerConnectivity(FHIRCodeableConcept $copolymerConnectivity): self
     {
@@ -434,6 +442,8 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Descrtibes the copolymer sequence type (polymer connectivity).
+     *
+     * @return static
      */
     public function setCopolymerConnectivity(FHIRCodeableConcept ...$copolymerConnectivity): self
     {
@@ -465,6 +475,8 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
      *
      * Todo - this is intended to connect to a repeating full modification structure,
      * also used by Protein and Nucleic Acid . String is just a placeholder.
+     *
+     * @return static
      */
     public function setModification(null|string|FHIRStringPrimitive|FHIRString $modification): self
     {
@@ -506,6 +518,8 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
      * Properties of a substance specific to it being a polymer.
      *
      * Todo.
+     *
+     * @return static
      */
     public function addMonomerSet(FHIRSubstancePolymerMonomerSet $monomerSet): self
     {
@@ -520,6 +534,8 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
      * Properties of a substance specific to it being a polymer.
      *
      * Todo.
+     *
+     * @return static
      */
     public function setMonomerSet(FHIRSubstancePolymerMonomerSet ...$monomerSet): self
     {
@@ -558,6 +574,8 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
      * Properties of a substance specific to it being a polymer.
      *
      * Specifies and quantifies the repeated units and their configuration.
+     *
+     * @return static
      */
     public function addRepeat(FHIRSubstancePolymerRepeat $repeat): self
     {
@@ -572,6 +590,8 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
      * Properties of a substance specific to it being a polymer.
      *
      * Specifies and quantifies the repeated units and their configuration.
+     *
+     * @return static
      */
     public function setRepeat(FHIRSubstancePolymerRepeat ...$repeat): self
     {

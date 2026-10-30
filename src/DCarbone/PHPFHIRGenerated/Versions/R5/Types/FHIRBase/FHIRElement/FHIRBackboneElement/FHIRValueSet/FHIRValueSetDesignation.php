@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -239,6 +239,8 @@ class FHIRValueSetDesignation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The language this designation is defined for.
+     *
+     * @return static
      */
     public function setLanguage(null|string|FHIRCodePrimitive|FHIRCode $language): self
     {
@@ -271,6 +273,8 @@ class FHIRValueSetDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that represents types of uses of designations.
+     *
+     * @return static
      */
     public function setUse(null|FHIRCoding $use): self
     {
@@ -315,6 +319,8 @@ class FHIRValueSetDesignation extends FHIRBackboneElement
      *
      * Additional codes that detail how this designation would be used, if there is
      * more than one use.
+     *
+     * @return static
      */
     public function addAdditionalUse(FHIRCoding $additionalUse): self
     {
@@ -332,6 +338,8 @@ class FHIRValueSetDesignation extends FHIRBackboneElement
      *
      * Additional codes that detail how this designation would be used, if there is
      * more than one use.
+     *
+     * @return static
      */
     public function setAdditionalUse(FHIRCoding ...$additionalUse): self
     {
@@ -361,6 +369,8 @@ class FHIRValueSetDesignation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The text value for this designation.
+     *
+     * @return static
      */
     public function setValue(null|string|FHIRStringPrimitive|FHIRString $value): self
     {

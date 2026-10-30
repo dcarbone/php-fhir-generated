@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -217,6 +217,8 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the organization validating information.
+     *
+     * @return static
      */
     public function setOrganization(null|FHIRReference $organization): self
     {
@@ -246,6 +248,8 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A digital identity certificate associated with the validator.
+     *
+     * @return static
      */
     public function setIdentityCertificate(null|string|FHIRStringPrimitive|FHIRString $identityCertificate): self
     {
@@ -286,6 +290,8 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Signed assertion by the validator that they have validated the information.
+     *
+     * @return static
      */
     public function setAttestationSignature(null|FHIRSignature $attestationSignature): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDataRequi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -211,6 +211,8 @@ class FHIRDataRequirementSort extends FHIRElement
      * of the required data. The path is allowed to contain qualifiers (.) to traverse
      * sub-elements, as well as indexers ([x]) to traverse multiple-cardinality
      * sub-elements. Note that the index must be an integer constant.
+     *
+     * @return static
      */
     public function setPath(null|string|FHIRStringPrimitive|FHIRString $path): self
     {
@@ -241,6 +243,8 @@ class FHIRDataRequirementSort extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The direction of the sort, ascending or descending.
+     *
+     * @return static
      */
     public function setDirection(null|string|FHIRSortDirectionEnum|FHIRSortDirection $direction): self
     {

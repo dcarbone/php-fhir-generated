@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -236,6 +236,8 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The category of patient centric costs associated with treatment.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -269,6 +271,8 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount due from the patient for the cost category.
+     *
+     * @return static
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -298,6 +302,8 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount due from the patient for the cost category.
+     *
+     * @return static
      */
     public function setValueMoney(null|FHIRMoney $valueMoney): self
     {
@@ -340,6 +346,8 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      *
      * A suite of codes indicating exceptions or reductions to patient costs and their
      * effective periods.
+     *
+     * @return static
      */
     public function addException(FHIRCoverageException $exception): self
     {
@@ -356,6 +364,8 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      *
      * A suite of codes indicating exceptions or reductions to patient costs and their
      * effective periods.
+     *
+     * @return static
      */
     public function setException(FHIRCoverageException ...$exception): self
     {

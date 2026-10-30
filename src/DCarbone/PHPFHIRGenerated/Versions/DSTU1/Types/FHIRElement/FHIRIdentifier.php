@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -229,6 +229,8 @@ class FHIRIdentifier extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The purpose of this identifier.
+     *
+     * @return static
      */
     public function setUse(null|string|FHIRIdentifierUseList|FHIRIdentifierUse $use): self
     {
@@ -261,6 +263,8 @@ class FHIRIdentifier extends FHIRElement
      *
      * A text string for the identifier that can be displayed to a human so they can
      * recognize the identifier.
+     *
+     * @return static
      */
     public function setLabel(null|string|FHIRStringPrimitive|FHIRString $label): self
     {
@@ -291,6 +295,8 @@ class FHIRIdentifier extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Establishes the namespace in which set of possible id values is unique.
+     *
+     * @return static
      */
     public function setSystem(null|string|FHIRUriPrimitive|FHIRUri $system): self
     {
@@ -323,6 +329,8 @@ class FHIRIdentifier extends FHIRElement
      *
      * The portion of the identifier typically displayed to the user and which is
      * unique within the context of the system.
+     *
+     * @return static
      */
     public function setValue(null|string|FHIRStringPrimitive|FHIRString $value): self
     {
@@ -355,6 +363,8 @@ class FHIRIdentifier extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period during which identifier is/was valid for use.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -384,6 +394,8 @@ class FHIRIdentifier extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization that issued/manages the identifier.
+     *
+     * @return static
      */
     public function setAssigner(null|FHIRResourceReference $assigner): self
     {

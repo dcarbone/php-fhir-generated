@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -231,6 +231,8 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Code that identifies concept.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -261,6 +263,8 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If this code is not for use as a real concept.
+     *
+     * @return static
      */
     public function setAbstract(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $abstract): self
     {
@@ -291,6 +295,8 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Text to Display to the user.
+     *
+     * @return static
      */
     public function setDisplay(null|string|FHIRStringPrimitive|FHIRString $display): self
     {
@@ -327,6 +333,8 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      * because of the prevalence of legacy systems without them, but they are highly
      * recommended, as without them there is no formal meaning associated with the
      * concept.
+     *
+     * @return static
      */
     public function setDefinition(null|string|FHIRStringPrimitive|FHIRString $definition): self
     {
@@ -368,6 +376,8 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      * A value set specifies a set of codes drawn from one or more code systems.
      *
      * Child Concepts (is-a / contains).
+     *
+     * @return static
      */
     public function addConcept(FHIRValueSetConcept $concept): self
     {
@@ -382,6 +392,8 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      * A value set specifies a set of codes drawn from one or more code systems.
      *
      * Child Concepts (is-a / contains).
+     *
+     * @return static
      */
     public function setConcept(FHIRValueSetConcept ...$concept): self
     {

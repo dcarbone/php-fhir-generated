@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -469,6 +469,8 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
      *
      * Indicates the site on the subject's body where the device should be used ( i.e.
      * the target site).
+     *
+     * @return static
      */
     public function setBodySiteCodeableConcept(null|FHIRCodeableConcept $bodySiteCodeableConcept): self
     {
@@ -500,6 +502,8 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
      *
      * Indicates the site on the subject's body where the device should be used ( i.e.
      * the target site).
+     *
+     * @return static
      */
     public function setBodySiteReference(null|FHIRReference $bodySiteReference): self
     {
@@ -527,6 +531,8 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the request.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRDeviceUseRequestStatusList|FHIRDeviceUseRequestStatus $status): self
     {
@@ -559,6 +565,8 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The details of the device to be used.
+     *
+     * @return static
      */
     public function setDevice(null|FHIRReference $device): self
     {
@@ -588,6 +596,8 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An encounter that provides additional context in which this request is made.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -630,6 +640,8 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the orderer or by the receiver.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -646,6 +658,8 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the orderer or by the receiver.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -690,6 +704,8 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason or justification for the use of this device.
+     *
+     * @return static
      */
     public function addIndication(FHIRCodeableConcept $indication): self
     {
@@ -707,6 +723,8 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason or justification for the use of this device.
+     *
+     * @return static
      */
     public function setIndication(FHIRCodeableConcept ...$indication): self
     {
@@ -753,6 +771,8 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
      * Details about this request that were not represented at all or sufficiently in
      * one of the attributes provided in a class. These may include for example a
      * comment, an instruction, or a note associated with the statement.
+     *
+     * @return static
      */
     public function addNotes(string|FHIRStringPrimitive|FHIRString $notes): self
     {
@@ -774,6 +794,8 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
      * Details about this request that were not represented at all or sufficiently in
      * one of the attributes provided in a class. These may include for example a
      * comment, an instruction, or a note associated with the statement.
+     *
+     * @return static
      */
     public function setNotes(string|FHIRStringPrimitive|FHIRString ...$notes): self
     {
@@ -827,6 +849,8 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
      *
      * The proposed act must be performed if the indicated conditions occur, e.g..,
      * shortness of breath, SpO2 less than x%.
+     *
+     * @return static
      */
     public function addPrnReason(FHIRCodeableConcept $prnReason): self
     {
@@ -845,6 +869,8 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
      *
      * The proposed act must be performed if the indicated conditions occur, e.g..,
      * shortness of breath, SpO2 less than x%.
+     *
+     * @return static
      */
     public function setPrnReason(FHIRCodeableConcept ...$prnReason): self
     {
@@ -880,6 +906,8 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the request was made.
+     *
+     * @return static
      */
     public function setOrderedOn(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $orderedOn): self
     {
@@ -918,6 +946,8 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time at which the request was made/recorded.
+     *
+     * @return static
      */
     public function setRecordedOn(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $recordedOn): self
     {
@@ -950,6 +980,8 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who will use the device.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -991,6 +1023,8 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
      * different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2
      * an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct
      * 2013 and 1 Nov 2013".
+     *
+     * @return static
      */
     public function setTimingTiming(null|FHIRTiming $timingTiming): self
     {
@@ -1026,6 +1060,8 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
      * different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2
      * an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct
      * 2013 and 1 Nov 2013".
+     *
+     * @return static
      */
     public function setTimingPeriod(null|FHIRPeriod $timingPeriod): self
     {
@@ -1067,6 +1103,8 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
      * different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2
      * an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct
      * 2013 and 1 Nov 2013".
+     *
+     * @return static
      */
     public function setTimingDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timingDateTime): self
     {
@@ -1099,6 +1137,8 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements VersionContaine
      *
      * Characterizes how quickly the use of device must be initiated. Includes concepts
      * such as stat, urgent, routine.
+     *
+     * @return static
      */
     public function setPriority(null|string|FHIRDeviceUseRequestPriorityList|FHIRDeviceUseRequestPriority $priority): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -225,6 +225,8 @@ class FHIRInventoryReportItem extends FHIRBackboneElement
      * The inventory category or classification of the items being reported. This is
      * meant not for defining the product, but for inventory categories e.g. 'pending
      * recount' or 'damaged'.
+     *
+     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -258,6 +260,8 @@ class FHIRInventoryReportItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity of the item or items being reported.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -289,6 +293,8 @@ class FHIRInventoryReportItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The code or reference to the item type.
+     *
+     * @return static
      */
     public function setItem(null|FHIRCodeableReference $item): self
     {

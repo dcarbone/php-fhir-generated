@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -158,8 +158,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * What address or number needs to be used for a user to connect to the virtual
      * service to join. The channelType informs as to which datatype is appropriate to
-     * use (requires knowledge of the specific type). (choose any one of address*, but
-     * only one)
+     * use (requires knowledge of the specific type).
      */
     #[FHIRUrl]
     protected FHIRUrl $addressUrl;
@@ -170,8 +169,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * What address or number needs to be used for a user to connect to the virtual
      * service to join. The channelType informs as to which datatype is appropriate to
-     * use (requires knowledge of the specific type). (choose any one of address*, but
-     * only one)
+     * use (requires knowledge of the specific type).
      */
     #[FHIRString]
     protected FHIRString $addressString;
@@ -183,8 +181,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * What address or number needs to be used for a user to connect to the virtual
      * service to join. The channelType informs as to which datatype is appropriate to
-     * use (requires knowledge of the specific type). (choose any one of address*, but
-     * only one)
+     * use (requires knowledge of the specific type).
      */
     #[FHIRContactPoint]
     protected FHIRContactPoint $addressContactPoint;
@@ -196,8 +193,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * What address or number needs to be used for a user to connect to the virtual
      * service to join. The channelType informs as to which datatype is appropriate to
-     * use (requires knowledge of the specific type). (choose any one of address*, but
-     * only one)
+     * use (requires knowledge of the specific type).
      */
     #[FHIRExtendedContactDetail]
     protected FHIRExtendedContactDetail $addressExtendedContactDetail;
@@ -306,6 +302,8 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * The type of virtual service to connect to (i.e. Teams, Zoom, Specific VMR
      * technology, WhatsApp).
+     *
+     * @return static
      */
     public function setChannelType(null|FHIRCoding $channelType): self
     {
@@ -324,8 +322,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * What address or number needs to be used for a user to connect to the virtual
      * service to join. The channelType informs as to which datatype is appropriate to
-     * use (requires knowledge of the specific type). (choose any one of address*, but
-     * only one)
+     * use (requires knowledge of the specific type).
      */
     public function getAddressUrl(): null|FHIRUrl
     {
@@ -339,8 +336,9 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * What address or number needs to be used for a user to connect to the virtual
      * service to join. The channelType informs as to which datatype is appropriate to
-     * use (requires knowledge of the specific type). (choose any one of address*, but
-     * only one)
+     * use (requires knowledge of the specific type).
+     *
+     * @return static
      */
     public function setAddressUrl(null|string|FHIRUrlPrimitive|FHIRUrl $addressUrl): self
     {
@@ -362,8 +360,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * What address or number needs to be used for a user to connect to the virtual
      * service to join. The channelType informs as to which datatype is appropriate to
-     * use (requires knowledge of the specific type). (choose any one of address*, but
-     * only one)
+     * use (requires knowledge of the specific type).
      */
     public function getAddressString(): null|FHIRString
     {
@@ -377,8 +374,9 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * What address or number needs to be used for a user to connect to the virtual
      * service to join. The channelType informs as to which datatype is appropriate to
-     * use (requires knowledge of the specific type). (choose any one of address*, but
-     * only one)
+     * use (requires knowledge of the specific type).
+     *
+     * @return static
      */
     public function setAddressString(null|string|FHIRStringPrimitive|FHIRString $addressString): self
     {
@@ -401,8 +399,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * What address or number needs to be used for a user to connect to the virtual
      * service to join. The channelType informs as to which datatype is appropriate to
-     * use (requires knowledge of the specific type). (choose any one of address*, but
-     * only one)
+     * use (requires knowledge of the specific type).
      */
     public function getAddressContactPoint(): null|FHIRContactPoint
     {
@@ -417,8 +414,9 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * What address or number needs to be used for a user to connect to the virtual
      * service to join. The channelType informs as to which datatype is appropriate to
-     * use (requires knowledge of the specific type). (choose any one of address*, but
-     * only one)
+     * use (requires knowledge of the specific type).
+     *
+     * @return static
      */
     public function setAddressContactPoint(null|FHIRContactPoint $addressContactPoint): self
     {
@@ -438,8 +436,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * What address or number needs to be used for a user to connect to the virtual
      * service to join. The channelType informs as to which datatype is appropriate to
-     * use (requires knowledge of the specific type). (choose any one of address*, but
-     * only one)
+     * use (requires knowledge of the specific type).
      */
     public function getAddressExtendedContactDetail(): null|FHIRExtendedContactDetail
     {
@@ -454,8 +451,9 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * What address or number needs to be used for a user to connect to the virtual
      * service to join. The channelType informs as to which datatype is appropriate to
-     * use (requires knowledge of the specific type). (choose any one of address*, but
-     * only one)
+     * use (requires knowledge of the specific type).
+     *
+     * @return static
      */
     public function setAddressExtendedContactDetail(null|FHIRExtendedContactDetail $addressExtendedContactDetail): self
     {
@@ -498,6 +496,8 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      * the Narrative, or extensions
      *
      * Address to see alternative connection details.
+     *
+     * @return static
      */
     public function addAdditionalInfo(string|FHIRUrlPrimitive|FHIRUrl $additionalInfo): self
     {
@@ -517,6 +517,8 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      * the Narrative, or extensions
      *
      * Address to see alternative connection details.
+     *
+     * @return static
      */
     public function setAdditionalInfo(string|FHIRUrlPrimitive|FHIRUrl ...$additionalInfo): self
     {
@@ -553,6 +555,8 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      * the Narrative, or extensions
      *
      * Maximum number of participants supported by the virtual service.
+     *
+     * @return static
      */
     public function setMaxParticipants(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $maxParticipants): self
     {
@@ -585,6 +589,8 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Session Key required by the virtual service.
+     *
+     * @return static
      */
     public function setSessionKey(null|string|FHIRStringPrimitive|FHIRString $sessionKey): self
     {

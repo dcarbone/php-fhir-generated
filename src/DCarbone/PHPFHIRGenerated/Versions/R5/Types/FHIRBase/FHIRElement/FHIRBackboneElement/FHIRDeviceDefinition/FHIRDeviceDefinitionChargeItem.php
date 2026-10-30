@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -240,6 +240,8 @@ class FHIRDeviceDefinitionChargeItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The code or reference for the charge item.
+     *
+     * @return static
      */
     public function setChargeItemCode(null|FHIRCodeableReference $chargeItemCode): self
     {
@@ -273,6 +275,8 @@ class FHIRDeviceDefinitionChargeItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Coefficient applicable to the billing code.
+     *
+     * @return static
      */
     public function setCount(null|FHIRQuantity $count): self
     {
@@ -302,6 +306,8 @@ class FHIRDeviceDefinitionChargeItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A specific time period in which this charge item applies.
+     *
+     * @return static
      */
     public function setEffectivePeriod(null|FHIRPeriod $effectivePeriod): self
     {
@@ -350,6 +356,8 @@ class FHIRDeviceDefinitionChargeItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The context to which this charge item applies.
+     *
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -369,6 +377,8 @@ class FHIRDeviceDefinitionChargeItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The context to which this charge item applies.
+     *
+     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {

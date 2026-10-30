@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -699,6 +699,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this immunization record.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -716,6 +718,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this immunization record.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -743,6 +747,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the current status of the immunization event.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRImmunizationStatusCodesList|FHIRImmunizationStatusCodes $status): self
     {
@@ -777,6 +783,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the reason the immunization event was not performed.
+     *
+     * @return static
      */
     public function setStatusReason(null|FHIRCodeableConcept $statusReason): self
     {
@@ -808,6 +816,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Vaccine that was administered or was to be administered.
+     *
+     * @return static
      */
     public function setVaccineCode(null|FHIRCodeableConcept $vaccineCode): self
     {
@@ -837,6 +847,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who either received or did not receive the immunization.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -868,6 +880,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      *
      * The visit or admission or other contact between patient and health care provider
      * the immunization was performed as part of.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -903,6 +917,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date vaccine administered or was to be administered.
+     *
+     * @return static
      */
     public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime): self
     {
@@ -935,6 +951,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date vaccine administered or was to be administered.
+     *
+     * @return static
      */
     public function setOccurrenceString(null|string|FHIRStringPrimitive|FHIRString $occurrenceString): self
     {
@@ -975,6 +993,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      *
      * The date the occurrence of the immunization was first captured in the record -
      * potentially significantly after the occurrence of the event.
+     *
+     * @return static
      */
     public function setRecorded(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $recorded): self
     {
@@ -1009,6 +1029,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * An indication that the content of the record is based on information from the
      * person who administered the vaccine. This reflects the context under which the
      * data was originally recorded.
+     *
+     * @return static
      */
     public function setPrimarySource(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $primarySource): self
     {
@@ -1045,6 +1067,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      *
      * The source of the data when the report of the immunization event is not based on
      * information from the person who administered the vaccine.
+     *
+     * @return static
      */
     public function setReportOrigin(null|FHIRCodeableConcept $reportOrigin): self
     {
@@ -1074,6 +1098,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The service delivery location where the vaccine administration occurred.
+     *
+     * @return static
      */
     public function setLocation(null|FHIRReference $location): self
     {
@@ -1103,6 +1129,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Name of vaccine manufacturer.
+     *
+     * @return static
      */
     public function setManufacturer(null|FHIRReference $manufacturer): self
     {
@@ -1132,6 +1160,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Lot number of the vaccine product.
+     *
+     * @return static
      */
     public function setLotNumber(null|string|FHIRStringPrimitive|FHIRString $lotNumber): self
     {
@@ -1166,6 +1196,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date vaccine batch expires.
+     *
+     * @return static
      */
     public function setExpirationDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $expirationDate): self
     {
@@ -1200,6 +1232,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Body site where vaccine was administered.
+     *
+     * @return static
      */
     public function setSite(null|FHIRCodeableConcept $site): self
     {
@@ -1231,6 +1265,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The path by which the vaccine product is taken into the body.
+     *
+     * @return static
      */
     public function setRoute(null|FHIRCodeableConcept $route): self
     {
@@ -1264,6 +1300,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity of vaccine product that was administered.
+     *
+     * @return static
      */
     public function setDoseQuantity(null|FHIRQuantity $doseQuantity): self
     {
@@ -1304,6 +1342,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * immunization as reported by a patient, a clinician or another party.
      *
      * Indicates who performed the immunization event.
+     *
+     * @return static
      */
     public function addPerformer(FHIRImmunizationPerformer $performer): self
     {
@@ -1319,6 +1359,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * immunization as reported by a patient, a clinician or another party.
      *
      * Indicates who performed the immunization event.
+     *
+     * @return static
      */
     public function setPerformer(FHIRImmunizationPerformer ...$performer): self
     {
@@ -1365,6 +1407,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      *
      * Extra information about the immunization that is not conveyed by the other
      * attributes.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1383,6 +1427,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      *
      * Extra information about the immunization that is not conveyed by the other
      * attributes.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1427,6 +1473,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reasons why the vaccine was administered.
+     *
+     * @return static
      */
     public function addReasonCode(FHIRCodeableConcept $reasonCode): self
     {
@@ -1444,6 +1492,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reasons why the vaccine was administered.
+     *
+     * @return static
      */
     public function setReasonCode(FHIRCodeableConcept ...$reasonCode): self
     {
@@ -1488,6 +1538,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      *
      * Condition, Observation or DiagnosticReport that supports why the immunization
      * was administered.
+     *
+     * @return static
      */
     public function addReasonReference(FHIRReference $reasonReference): self
     {
@@ -1505,6 +1557,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      *
      * Condition, Observation or DiagnosticReport that supports why the immunization
      * was administered.
+     *
+     * @return static
      */
     public function setReasonReference(FHIRReference ...$reasonReference): self
     {
@@ -1534,6 +1588,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      *
      * Indication if a dose is considered to be subpotent. By default, a dose should be
      * considered to be potent.
+     *
+     * @return static
      */
     public function setIsSubpotent(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isSubpotent): self
     {
@@ -1581,6 +1637,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason why a dose is considered to be subpotent.
+     *
+     * @return static
      */
     public function addSubpotentReason(FHIRCodeableConcept $subpotentReason): self
     {
@@ -1598,6 +1656,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason why a dose is considered to be subpotent.
+     *
+     * @return static
      */
     public function setSubpotentReason(FHIRCodeableConcept ...$subpotentReason): self
     {
@@ -1640,6 +1700,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      *
      * Educational material presented to the patient (or guardian) at the time of
      * vaccine administration.
+     *
+     * @return static
      */
     public function addEducation(FHIRImmunizationEducation $education): self
     {
@@ -1656,6 +1718,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      *
      * Educational material presented to the patient (or guardian) at the time of
      * vaccine administration.
+     *
+     * @return static
      */
     public function setEducation(FHIRImmunizationEducation ...$education): self
     {
@@ -1700,6 +1764,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates a patient's eligibility for a funding program.
+     *
+     * @return static
      */
     public function addProgramEligibility(FHIRCodeableConcept $programEligibility): self
     {
@@ -1717,6 +1783,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates a patient's eligibility for a funding program.
+     *
+     * @return static
      */
     public function setProgramEligibility(FHIRCodeableConcept ...$programEligibility): self
     {
@@ -1754,6 +1822,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      * than the patient eligibility (e.g. the patient may be eligible for a publically
      * purchased vaccine but due to inventory issues, vaccine purchased with private
      * funds was actually administered).
+     *
+     * @return static
      */
     public function setFundingSource(null|FHIRCodeableConcept $fundingSource): self
     {
@@ -1796,6 +1866,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      *
      * Categorical data indicating that an adverse event is associated in time to an
      * immunization.
+     *
+     * @return static
      */
     public function addReaction(FHIRImmunizationReaction $reaction): self
     {
@@ -1812,6 +1884,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      *
      * Categorical data indicating that an adverse event is associated in time to an
      * immunization.
+     *
+     * @return static
      */
     public function setReaction(FHIRImmunizationReaction ...$reaction): self
     {
@@ -1854,6 +1928,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      *
      * The protocol (set of recommendations) being followed by the provider who
      * administered the dose.
+     *
+     * @return static
      */
     public function addProtocolApplied(FHIRImmunizationProtocolApplied $protocolApplied): self
     {
@@ -1870,6 +1946,8 @@ class FHIRImmunization extends FHIRDomainResource implements VersionContainedTyp
      *
      * The protocol (set of recommendations) being followed by the provider who
      * administered the dose.
+     *
+     * @return static
      */
     public function setProtocolApplied(FHIRImmunizationProtocolApplied ...$protocolApplied): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -274,6 +274,8 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * An absolute URI that identifies the source system where the concepts to be
      * mapped are defined.
+     *
+     * @return static
      */
     public function setSource(null|string|FHIRUriPrimitive|FHIRUri $source): self
     {
@@ -308,6 +310,8 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * The specific version of the code system, as determined by the code system
      * authority.
+     *
+     * @return static
      */
     public function setSourceVersion(null|string|FHIRStringPrimitive|FHIRString $sourceVersion): self
     {
@@ -342,6 +346,8 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * An absolute URI that identifies the target system that the concepts will be
      * mapped to.
+     *
+     * @return static
      */
     public function setTarget(null|string|FHIRUriPrimitive|FHIRUri $target): self
     {
@@ -376,6 +382,8 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * The specific version of the code system, as determined by the code system
      * authority.
+     *
+     * @return static
      */
     public function setTargetVersion(null|string|FHIRStringPrimitive|FHIRString $targetVersion): self
     {
@@ -423,6 +431,8 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * Mappings for an individual concept in the source to one or more concepts in the
      * target.
+     *
+     * @return static
      */
     public function addElement(FHIRConceptMapElement $element): self
     {
@@ -440,6 +450,8 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * Mappings for an individual concept in the source to one or more concepts in the
      * target.
+     *
+     * @return static
      */
     public function setElement(FHIRConceptMapElement ...$element): self
     {
@@ -473,6 +485,8 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      * What to do when there is no mapping for the source concept. "Unmapped" does not
      * include codes that are unmatched, and the unmapped element is ignored in a code
      * is specified to have equivalence = unmatched.
+     *
+     * @return static
      */
     public function setUnmapped(null|FHIRConceptMapUnmapped $unmapped): self
     {

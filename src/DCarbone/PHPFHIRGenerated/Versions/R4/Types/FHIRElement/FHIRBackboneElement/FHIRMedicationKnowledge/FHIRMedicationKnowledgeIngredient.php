@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -221,6 +221,8 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      *
      * The actual ingredient - either a substance (simple ingredient) or another
      * medication.
+     *
+     * @return static
      */
     public function setItemCodeableConcept(null|FHIRCodeableConcept $itemCodeableConcept): self
     {
@@ -252,6 +254,8 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      *
      * The actual ingredient - either a substance (simple ingredient) or another
      * medication.
+     *
+     * @return static
      */
     public function setItemReference(null|FHIRReference $itemReference): self
     {
@@ -281,6 +285,8 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      *
      * Indication of whether this ingredient affects the therapeutic action of the
      * drug.
+     *
+     * @return static
      */
     public function setIsActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isActive): self
     {
@@ -319,6 +325,8 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet.
+     *
+     * @return static
      */
     public function setStrength(null|FHIRRatio $strength): self
     {

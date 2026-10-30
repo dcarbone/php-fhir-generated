@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -243,6 +243,8 @@ class FHIRSubstanceNucleicAcidLinkage extends FHIRBackboneElement
      * For many synthetic oligonucleotides phosphorothioate linkages are often seen.
      * Linkage connectivity is assumed to be 3’-5’. If the linkage is either
      * 3’-3’ or 5’-5’ this should be specified.
+     *
+     * @return static
      */
     public function setConnectivity(null|string|FHIRStringPrimitive|FHIRString $connectivity): self
     {
@@ -277,6 +279,8 @@ class FHIRSubstanceNucleicAcidLinkage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Each linkage will be registered as a fragment and have an ID.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -308,6 +312,8 @@ class FHIRSubstanceNucleicAcidLinkage extends FHIRBackboneElement
      *
      * Each linkage will be registered as a fragment and have at least one name. A
      * single name shall be assigned to each linkage.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -340,6 +346,8 @@ class FHIRSubstanceNucleicAcidLinkage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Residues shall be captured as described in 5.3.6.8.3.
+     *
+     * @return static
      */
     public function setResidueSite(null|string|FHIRStringPrimitive|FHIRString $residueSite): self
     {

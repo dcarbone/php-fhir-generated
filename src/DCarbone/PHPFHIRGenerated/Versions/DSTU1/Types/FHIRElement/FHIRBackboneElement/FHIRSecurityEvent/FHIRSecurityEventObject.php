@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -313,6 +313,8 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      *
      * Identifies a specific instance of the participant object. The reference should
      * always be version specific.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -344,6 +346,8 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      *
      * Identifies a specific instance of the participant object. The reference should
      * always be version specific.
+     *
+     * @return static
      */
     public function setReference(null|FHIRResourceReference $reference): self
     {
@@ -371,6 +375,8 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Object type being audited.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRSecurityEventObjectTypeList|FHIRSecurityEventObjectType $type): self
     {
@@ -405,6 +411,8 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      *
      * Code representing the functional application role of Participant Object being
      * audited.
+     *
+     * @return static
      */
     public function setRole(null|string|FHIRSecurityEventObjectRoleList|FHIRSecurityEventObjectRole $role): self
     {
@@ -435,6 +443,8 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifier for the data life-cycle stage for the participant object.
+     *
+     * @return static
      */
     public function setLifecycle(null|string|FHIRSecurityEventObjectLifecycleList|FHIRSecurityEventObjectLifecycle $lifecycle): self
     {
@@ -471,6 +481,8 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      *
      * Denotes policy-defined sensitivity for the Participant Object ID such as VIP,
      * HIV status, mental health status or similar topics.
+     *
+     * @return static
      */
     public function setSensitivity(null|FHIRCodeableConcept $sensitivity): self
     {
@@ -500,6 +512,8 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      *
      * An instance-specific descriptor of the Participant Object ID audited, such as a
      * person's name.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -530,6 +544,8 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Text that describes the object in more detail.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -560,6 +576,8 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual query for a query-type participant object.
+     *
+     * @return static
      */
     public function setQuery(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $query): self
     {
@@ -605,6 +623,8 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      * usage.
      *
      * Additional Information about the Object.
+     *
+     * @return static
      */
     public function addDetail(FHIRSecurityEventDetail $detail): self
     {
@@ -621,6 +641,8 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      * usage.
      *
      * Additional Information about the Object.
+     *
+     * @return static
      */
     public function setDetail(FHIRSecurityEventDetail ...$detail): self
     {

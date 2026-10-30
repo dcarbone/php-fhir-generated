@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -203,6 +203,8 @@ class FHIRElement implements ElementTypeInterface, CommentContainerInterface
      * use of extensions. Though any implementer is allowed to define an extension,
      * there is a set of requirements that SHALL be met as part of the definition of
      * the extension.
+     *
+     * @return static
      */
     public function addExtension(FHIRExtension $extension): self
     {
@@ -224,6 +226,8 @@ class FHIRElement implements ElementTypeInterface, CommentContainerInterface
      * use of extensions. Though any implementer is allowed to define an extension,
      * there is a set of requirements that SHALL be met as part of the definition of
      * the extension.
+     *
+     * @return static
      */
     public function setExtension(FHIRExtension ...$extension): self
     {
@@ -240,6 +244,9 @@ class FHIRElement implements ElementTypeInterface, CommentContainerInterface
         return $this->id ?? null;
     }
 
+    /**
+     * @return static
+     */
     public function setId(null|string|FHIRIdPrimitive $id): self
     {
         if (null === $id) {

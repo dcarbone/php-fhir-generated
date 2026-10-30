@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -227,6 +227,8 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The authority that is specifying the regulations.
+     *
+     * @return static
      */
     public function setRegulatoryAuthority(null|FHIRReference $regulatoryAuthority): self
     {
@@ -267,6 +269,8 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      *
      * Specifies if changes are allowed when dispensing a medication from a regulatory
      * perspective.
+     *
+     * @return static
      */
     public function addSubstitution(FHIRMedicationKnowledgeSubstitution $substitution): self
     {
@@ -282,6 +286,8 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      *
      * Specifies if changes are allowed when dispensing a medication from a regulatory
      * perspective.
+     *
+     * @return static
      */
     public function setSubstitution(FHIRMedicationKnowledgeSubstitution ...$substitution): self
     {
@@ -326,6 +332,8 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the schedule of a medication in jurisdiction.
+     *
+     * @return static
      */
     public function addSchedule(FHIRCodeableConcept $schedule): self
     {
@@ -343,6 +351,8 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the schedule of a medication in jurisdiction.
+     *
+     * @return static
      */
     public function setSchedule(FHIRCodeableConcept ...$schedule): self
     {
@@ -368,6 +378,8 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      * Information about a medication that is used to support knowledge.
      *
      * The maximum number of units of the medication that can be dispensed in a period.
+     *
+     * @return static
      */
     public function setMaxDispense(null|FHIRMedicationKnowledgeMaxDispense $maxDispense): self
     {

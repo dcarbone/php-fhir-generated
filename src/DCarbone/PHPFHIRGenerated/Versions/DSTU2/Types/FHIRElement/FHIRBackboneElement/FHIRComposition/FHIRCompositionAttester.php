@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -219,6 +219,8 @@ class FHIRCompositionAttester extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of attestation the authenticator offers.
+     *
+     * @return static
      */
     public function addMode(string|FHIRCompositionAttestationModeList|FHIRCompositionAttestationMode $mode): self
     {
@@ -237,6 +239,8 @@ class FHIRCompositionAttester extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of attestation the authenticator offers.
+     *
+     * @return static
      */
     public function setMode(string|FHIRCompositionAttestationModeList|FHIRCompositionAttestationMode ...$mode): self
     {
@@ -279,6 +283,8 @@ class FHIRCompositionAttester extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When composition was attested by the party.
+     *
+     * @return static
      */
     public function setTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $time): self
     {
@@ -311,6 +317,8 @@ class FHIRCompositionAttester extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who attested the composition in the specified way.
+     *
+     * @return static
      */
     public function setParty(null|FHIRReference $party): self
     {

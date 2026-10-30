@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -233,6 +233,8 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      * unmapped code (this is useful when doing a mapping between versions, and only a
      * few codes have changed), use a fixed code (a default code), or alternatively, a
      * reference to a different concept map can be provided (by canonical URL).
+     *
+     * @return static
      */
     public function setMode(null|string|FHIRConceptMapGroupUnmappedModeList|FHIRConceptMapGroupUnmappedMode $mode): self
     {
@@ -269,6 +271,8 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      *
      * The fixed code to use when the mode = 'fixed' - all unmapped codes are mapped to
      * a single fixed code.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -303,6 +307,8 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      *
      * The display for the code. The display is only provided to help editors when
      * editing the concept map.
+     *
+     * @return static
      */
     public function setDisplay(null|string|FHIRStringPrimitive|FHIRString $display): self
     {
@@ -341,6 +347,8 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      * The canonical reference to an additional ConceptMap resource instance to use for
      * mapping if this ConceptMap resource contains no matching mapping for the source
      * concept.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRCanonicalPrimitive|FHIRCanonical $url): self
     {

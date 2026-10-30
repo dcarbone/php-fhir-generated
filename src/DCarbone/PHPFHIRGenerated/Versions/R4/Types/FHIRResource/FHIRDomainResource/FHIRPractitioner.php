@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -377,6 +377,8 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier that applies to this person in this role.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -394,6 +396,8 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier that applies to this person in this role.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -421,6 +425,8 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this practitioner's record is in active use.
+     *
+     * @return static
      */
     public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active): self
     {
@@ -466,6 +472,8 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The name(s) associated with the practitioner.
+     *
+     * @return static
      */
     public function addName(FHIRHumanName $name): self
     {
@@ -482,6 +490,8 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The name(s) associated with the practitioner.
+     *
+     * @return static
      */
     public function setName(FHIRHumanName ...$name): self
     {
@@ -528,6 +538,8 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      *
      * A contact detail for the practitioner, e.g. a telephone number or an email
      * address.
+     *
+     * @return static
      */
     public function addTelecom(FHIRContactPoint $telecom): self
     {
@@ -546,6 +558,8 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      *
      * A contact detail for the practitioner, e.g. a telephone number or an email
      * address.
+     *
+     * @return static
      */
     public function setTelecom(FHIRContactPoint ...$telecom): self
     {
@@ -600,6 +614,8 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * Address(es) of the practitioner that are not role specific (typically home
      * address). Work addresses are not typically entered in this property as they are
      * usually role dependent.
+     *
+     * @return static
      */
     public function addAddress(FHIRAddress $address): self
     {
@@ -622,6 +638,8 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * Address(es) of the practitioner that are not role specific (typically home
      * address). Work addresses are not typically entered in this property as they are
      * usually role dependent.
+     *
+     * @return static
      */
     public function setAddress(FHIRAddress ...$address): self
     {
@@ -649,6 +667,8 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      *
      * Administrative Gender - the gender that the person is considered to have for
      * administration and record keeping purposes.
+     *
+     * @return static
      */
     public function setGender(null|string|FHIRAdministrativeGenderList|FHIRAdministrativeGender $gender): self
     {
@@ -683,6 +703,8 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date of birth for the practitioner.
+     *
+     * @return static
      */
     public function setBirthDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $birthDate): self
     {
@@ -728,6 +750,8 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Image of the person.
+     *
+     * @return static
      */
     public function addPhoto(FHIRAttachment $photo): self
     {
@@ -744,6 +768,8 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Image of the person.
+     *
+     * @return static
      */
     public function setPhoto(FHIRAttachment ...$photo): self
     {
@@ -790,6 +816,8 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * pertain to the provision of care by the practitioner. For example, a medical
      * license issued by a medical board authorizing the practitioner to practice
      * medicine within a certian locality.
+     *
+     * @return static
      */
     public function addQualification(FHIRPractitionerQualification $qualification): self
     {
@@ -808,6 +836,8 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * pertain to the provision of care by the practitioner. For example, a medical
      * license issued by a medical board authorizing the practitioner to practice
      * medicine within a certian locality.
+     *
+     * @return static
      */
     public function setQualification(FHIRPractitionerQualification ...$qualification): self
     {
@@ -852,6 +882,8 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A language the practitioner can use in patient communication.
+     *
+     * @return static
      */
     public function addCommunication(FHIRCodeableConcept $communication): self
     {
@@ -869,6 +901,8 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A language the practitioner can use in patient communication.
+     *
+     * @return static
      */
     public function setCommunication(FHIRCodeableConcept ...$communication): self
     {

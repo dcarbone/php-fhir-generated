@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -301,6 +301,8 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or organization attesting to information.
+     *
+     * @return static
      */
     public function setWho(null|FHIRReference $who): self
     {
@@ -330,6 +332,8 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * When the who is asserting on behalf of another (organization or individual).
+     *
+     * @return static
      */
     public function setOnBehalfOf(null|FHIRReference $onBehalfOf): self
     {
@@ -363,6 +367,8 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      *
      * The method by which attested information was submitted/retrieved (manual; API;
      * Push).
+     *
+     * @return static
      */
     public function setCommunicationMethod(null|FHIRCodeableConcept $communicationMethod): self
     {
@@ -394,6 +400,8 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date the information was attested to.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $date): self
     {
@@ -426,6 +434,8 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A digital identity certificate associated with the attestation source.
+     *
+     * @return static
      */
     public function setSourceIdentityCertificate(null|string|FHIRStringPrimitive|FHIRString $sourceIdentityCertificate): self
     {
@@ -460,6 +470,8 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      *
      * A digital identity certificate associated with the proxy entity submitting
      * attested information on behalf of the attestation source.
+     *
+     * @return static
      */
     public function setProxyIdentityCertificate(null|string|FHIRStringPrimitive|FHIRString $proxyIdentityCertificate): self
     {
@@ -502,6 +514,8 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      *
      * Signed assertion by the proxy entity indicating that they have the right to
      * submit attested information on behalf of the attestation source.
+     *
+     * @return static
      */
     public function setProxySignature(null|FHIRSignature $proxySignature): self
     {
@@ -541,6 +555,8 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      *
      * Signed assertion by the attestation source that they have attested to the
      * information.
+     *
+     * @return static
      */
     public function setSourceSignature(null|FHIRSignature $sourceSignature): self
     {

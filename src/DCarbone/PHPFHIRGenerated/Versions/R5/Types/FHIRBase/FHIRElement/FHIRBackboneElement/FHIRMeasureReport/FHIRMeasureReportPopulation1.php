@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -265,6 +265,8 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      *
      * The population from the Measure that corresponds to this population in the
      * MeasureReport resource.
+     *
+     * @return static
      */
     public function setLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId): self
     {
@@ -299,6 +301,8 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of the population.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -328,6 +332,8 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of members of the population in this stratum.
+     *
+     * @return static
      */
     public function setCount(null|string|float|FHIRIntegerPrimitive|FHIRInteger $count): self
     {
@@ -362,6 +368,8 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      *
      * This element refers to a List of individual level MeasureReport resources, one
      * for each subject in this population in this stratum.
+     *
+     * @return static
      */
     public function setSubjectResults(null|FHIRReference $subjectResults): self
     {
@@ -406,6 +414,8 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      *
      * A reference to an individual level MeasureReport resource for a member of the
      * population.
+     *
+     * @return static
      */
     public function addSubjectReport(FHIRReference $subjectReport): self
     {
@@ -423,6 +433,8 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      *
      * A reference to an individual level MeasureReport resource for a member of the
      * population.
+     *
+     * @return static
      */
     public function setSubjectReport(FHIRReference ...$subjectReport): self
     {
@@ -452,6 +464,8 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Optional Group identifying the individuals that make up the population.
+     *
+     * @return static
      */
     public function setSubjects(null|FHIRReference $subjects): self
     {

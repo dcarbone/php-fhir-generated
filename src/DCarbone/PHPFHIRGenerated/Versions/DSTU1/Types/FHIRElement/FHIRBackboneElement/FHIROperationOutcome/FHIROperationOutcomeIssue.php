@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -210,6 +210,8 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the issue indicates a variation from successful processing.
+     *
+     * @return static
      */
     public function setSeverity(null|string|FHIRIssueSeverityList|FHIRIssueSeverity $severity): self
     {
@@ -242,6 +244,8 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code indicating the type of error, warning or information message.
+     *
+     * @return static
      */
     public function setType(null|FHIRCoding $type): self
     {
@@ -269,6 +273,8 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional description of the issue.
+     *
+     * @return static
      */
     public function setDetails(null|string|FHIRStringPrimitive|FHIRString $details): self
     {
@@ -316,6 +322,8 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * A simple XPath limited to element names, repetition indicators and the default
      * child access that identifies one of the elements in the resource that caused
      * this issue to be raised.
+     *
+     * @return static
      */
     public function addLocation(string|FHIRStringPrimitive|FHIRString $location): self
     {
@@ -336,6 +344,8 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * A simple XPath limited to element names, repetition indicators and the default
      * child access that identifies one of the elements in the resource that caused
      * this issue to be raised.
+     *
+     * @return static
      */
     public function setLocation(string|FHIRStringPrimitive|FHIRString ...$location): self
     {

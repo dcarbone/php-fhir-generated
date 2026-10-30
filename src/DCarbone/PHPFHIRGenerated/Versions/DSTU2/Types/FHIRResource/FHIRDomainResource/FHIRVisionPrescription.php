@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -316,6 +316,8 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      *
      * Business identifier which may be used by other parties to reference or identify
      * the prescription.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -333,6 +335,8 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      *
      * Business identifier which may be used by other parties to reference or identify
      * the prescription.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -368,6 +372,8 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and perhaps time) when the prescription was written.
+     *
+     * @return static
      */
     public function setDateWritten(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateWritten): self
     {
@@ -402,6 +408,8 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      *
      * A link to a resource representing the person to whom the vision products will be
      * supplied.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -431,6 +439,8 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare professional responsible for authorizing the prescription.
+     *
+     * @return static
      */
     public function setPrescriber(null|FHIRReference $prescriber): self
     {
@@ -462,6 +472,8 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      *
      * A link to a resource that identifies the particular occurrence of contact
      * between patient and health care provider.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -493,6 +505,8 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Can be the reason or the indication for writing the prescription.
+     *
+     * @return static
      */
     public function setReasonCodeableConcept(null|FHIRCodeableConcept $reasonCodeableConcept): self
     {
@@ -522,6 +536,8 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Can be the reason or the indication for writing the prescription.
+     *
+     * @return static
      */
     public function setReasonReference(null|FHIRReference $reasonReference): self
     {
@@ -560,6 +576,8 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * An authorization for the supply of glasses and/or contact lenses to a patient.
      *
      * Deals with details of the dispense part of the supply specification.
+     *
+     * @return static
      */
     public function addDispense(FHIRVisionPrescriptionDispense $dispense): self
     {
@@ -574,6 +592,8 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * An authorization for the supply of glasses and/or contact lenses to a patient.
      *
      * Deals with details of the dispense part of the supply specification.
+     *
+     * @return static
      */
     public function setDispense(FHIRVisionPrescriptionDispense ...$dispense): self
     {

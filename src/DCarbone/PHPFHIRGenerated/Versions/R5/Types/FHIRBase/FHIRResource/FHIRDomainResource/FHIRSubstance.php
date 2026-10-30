@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -382,6 +382,8 @@ class FHIRSubstance extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Unique identifier for the substance. For an instance, an identifier associated
      * with the package/container (usually a label affixed directly).
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -400,6 +402,8 @@ class FHIRSubstance extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Unique identifier for the substance. For an instance, an identifier associated
      * with the package/container (usually a label affixed directly).
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -429,6 +433,8 @@ class FHIRSubstance extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * A boolean to indicate if this an instance of a substance or a kind of one (a
      * definition).
+     *
+     * @return static
      */
     public function setInstance(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $instance): self
     {
@@ -457,6 +463,8 @@ class FHIRSubstance extends FHIRDomainResource implements VersionContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code to indicate if the substance is actively used.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRFHIRSubstanceStatusEnum|FHIRFHIRSubstanceStatus $status): self
     {
@@ -506,6 +514,8 @@ class FHIRSubstance extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * A code that classifies the general type of substance. This is used for
      * searching, sorting and display purposes.
+     *
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -524,6 +534,8 @@ class FHIRSubstance extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * A code that classifies the general type of substance. This is used for
      * searching, sorting and display purposes.
+     *
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -555,6 +567,8 @@ class FHIRSubstance extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code (or set of codes) that identify this substance.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableReference $code): self
     {
@@ -594,6 +608,8 @@ class FHIRSubstance extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * A description of the substance - its appearance, handling requirements, and
      * other usage notes.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -636,6 +652,8 @@ class FHIRSubstance extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * When the substance is no longer valid to use. For some substances, a single
      * arbitrary date is used for expiry.
+     *
+     * @return static
      */
     public function setExpiry(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $expiry): self
     {
@@ -672,6 +690,8 @@ class FHIRSubstance extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of the substance.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -710,6 +730,8 @@ class FHIRSubstance extends FHIRDomainResource implements VersionContainedTypeIn
      * A homogeneous material with a definite composition.
      *
      * A substance can be composed of other substances.
+     *
+     * @return static
      */
     public function addIngredient(FHIRSubstanceIngredient $ingredient): self
     {
@@ -724,6 +746,8 @@ class FHIRSubstance extends FHIRDomainResource implements VersionContainedTypeIn
      * A homogeneous material with a definite composition.
      *
      * A substance can be composed of other substances.
+     *
+     * @return static
      */
     public function setIngredient(FHIRSubstanceIngredient ...$ingredient): self
     {

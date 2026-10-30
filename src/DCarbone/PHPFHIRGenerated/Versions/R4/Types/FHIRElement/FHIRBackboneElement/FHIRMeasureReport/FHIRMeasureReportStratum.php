@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -218,6 +218,8 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * The value for this stratum, expressed as a CodeableConcept. When defining
      * stratifiers on complex values, the value must be rendered such that the value
      * for each stratum within the stratifier is unique.
+     *
+     * @return static
      */
     public function setValue(null|FHIRCodeableConcept $value): self
     {
@@ -258,6 +260,8 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * and optionally a reference to the resources involved in that calculation.
      *
      * A stratifier component value.
+     *
+     * @return static
      */
     public function addComponent(FHIRMeasureReportComponent $component): self
     {
@@ -273,6 +277,8 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * and optionally a reference to the resources involved in that calculation.
      *
      * A stratifier component value.
+     *
+     * @return static
      */
     public function setComponent(FHIRMeasureReportComponent ...$component): self
     {
@@ -315,6 +321,8 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * The populations that make up the stratum, one for each type of population
      * appropriate to the measure.
+     *
+     * @return static
      */
     public function addPopulation(FHIRMeasureReportPopulation1 $population): self
     {
@@ -331,6 +339,8 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * The populations that make up the stratum, one for each type of population
      * appropriate to the measure.
+     *
+     * @return static
      */
     public function setPopulation(FHIRMeasureReportPopulation1 ...$population): self
     {
@@ -366,6 +376,8 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * The measure score for this stratum, calculated as appropriate for the measure
      * type and scoring method, and based on only the members of this stratum.
+     *
+     * @return static
      */
     public function setMeasureScore(null|FHIRQuantity $measureScore): self
     {

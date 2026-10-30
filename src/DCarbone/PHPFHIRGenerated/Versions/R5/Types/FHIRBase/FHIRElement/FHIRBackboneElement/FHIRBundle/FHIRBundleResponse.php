@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -187,8 +187,6 @@ class FHIRBundleResponse extends FHIRBackboneElement
     #[FHIRInstant]
     protected FHIRInstant $lastModified;
     /**
-     * (choose any one of the elements, but only one)
-     *
      * An OperationOutcome containing hints and warnings produced as part of processing
      * this entry in a batch or transaction.
      */
@@ -262,6 +260,8 @@ class FHIRBundleResponse extends FHIRBackboneElement
      * The status code returned by processing this entry. The status SHALL start with a
      * 3 digit HTTP code (e.g. 404) and may contain the standard HTTP description
      * associated with the status code.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRStringPrimitive|FHIRString $status): self
     {
@@ -296,6 +296,8 @@ class FHIRBundleResponse extends FHIRBackboneElement
      *
      * The location header created by processing this operation, populated if the
      * operation returns a location.
+     *
+     * @return static
      */
     public function setLocation(null|string|FHIRUriPrimitive|FHIRUri $location): self
     {
@@ -332,6 +334,8 @@ class FHIRBundleResponse extends FHIRBackboneElement
      * The Etag for the resource, if the operation for the entry produced a versioned
      * resource (see [Resource Metadata and Versioning](http.html#versioning) and
      * [Managing Resource Contention](http.html#concurrency)).
+     *
+     * @return static
      */
     public function setEtag(null|string|FHIRStringPrimitive|FHIRString $etag): self
     {
@@ -370,6 +374,8 @@ class FHIRBundleResponse extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date/time that the resource was modified on the server.
+     *
+     * @return static
      */
     public function setLastModified(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $lastModified): self
     {
@@ -385,8 +391,6 @@ class FHIRBundleResponse extends FHIRBackboneElement
     }
 
     /**
-     * (choose any one of the elements, but only one)
-     *
      * An OperationOutcome containing hints and warnings produced as part of processing
      * this entry in a batch or transaction.
      */
@@ -396,10 +400,10 @@ class FHIRBundleResponse extends FHIRBackboneElement
     }
 
     /**
-     * (choose any one of the elements, but only one)
-     *
      * An OperationOutcome containing hints and warnings produced as part of processing
      * this entry in a batch or transaction.
+     *
+     * @return static
      */
     public function setOutcome(null|FHIRResourceContainer|VersionContainedTypeInterface $outcome): self
     {

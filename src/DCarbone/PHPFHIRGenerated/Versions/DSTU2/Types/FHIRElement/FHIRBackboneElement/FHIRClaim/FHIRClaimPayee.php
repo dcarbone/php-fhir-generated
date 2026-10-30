@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -207,6 +207,8 @@ class FHIRClaimPayee extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Party to be reimbursed: Subscriber, provider, other.
+     *
+     * @return static
      */
     public function setType(null|FHIRCoding $type): self
     {
@@ -238,6 +240,8 @@ class FHIRClaimPayee extends FHIRBackboneElement
      *
      * The provider who is to be reimbursed for the claim (the party to whom any
      * benefit is assigned).
+     *
+     * @return static
      */
     public function setProvider(null|FHIRReference $provider): self
     {
@@ -269,6 +273,8 @@ class FHIRClaimPayee extends FHIRBackboneElement
      *
      * The organization who is to be reimbursed for the claim (the party to whom any
      * benefit is assigned).
+     *
+     * @return static
      */
     public function setOrganization(null|FHIRReference $organization): self
     {
@@ -300,6 +306,8 @@ class FHIRClaimPayee extends FHIRBackboneElement
      *
      * The person other than the subscriber who is to be reimbursed for the claim (the
      * party to whom any benefit is assigned).
+     *
+     * @return static
      */
     public function setPerson(null|FHIRReference $person): self
     {

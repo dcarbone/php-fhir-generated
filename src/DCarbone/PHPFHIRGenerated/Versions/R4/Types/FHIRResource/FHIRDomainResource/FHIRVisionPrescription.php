@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -343,6 +343,8 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this vision prescription.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -360,6 +362,8 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this vision prescription.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -387,6 +391,8 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRFinancialResourceStatusCodesList|FHIRFinancialResourceStatusCodes $status): self
     {
@@ -425,6 +431,8 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this resource was created.
+     *
+     * @return static
      */
     public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created): self
     {
@@ -457,6 +465,8 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A resource reference to the person to whom the vision prescription applies.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -490,6 +500,8 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * A reference to a resource that identifies the particular occurrence of contact
      * between patient and health care provider during which the prescription was
      * issued.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -525,6 +537,8 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and perhaps time) when the prescription was written.
+     *
+     * @return static
      */
     public function setDateWritten(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateWritten): self
     {
@@ -557,6 +571,8 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare professional responsible for authorizing the prescription.
+     *
+     * @return static
      */
     public function setPrescriber(null|FHIRReference $prescriber): self
     {
@@ -599,6 +615,8 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      *
      * Contain the details of the individual lens specifications and serves as the
      * authorization for the fullfillment by certified professionals.
+     *
+     * @return static
      */
     public function addLensSpecification(FHIRVisionPrescriptionLensSpecification $lensSpecification): self
     {
@@ -615,6 +633,8 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      *
      * Contain the details of the individual lens specifications and serves as the
      * authorization for the fullfillment by certified professionals.
+     *
+     * @return static
      */
     public function setLensSpecification(FHIRVisionPrescriptionLensSpecification ...$lensSpecification): self
     {

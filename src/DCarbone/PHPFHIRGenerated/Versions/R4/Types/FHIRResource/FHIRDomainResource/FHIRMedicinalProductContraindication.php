@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -305,6 +305,8 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The medication for which this is an indication.
+     *
+     * @return static
      */
     public function addSubject(FHIRReference $subject): self
     {
@@ -321,6 +323,8 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The medication for which this is an indication.
+     *
+     * @return static
      */
     public function setSubject(FHIRReference ...$subject): self
     {
@@ -352,6 +356,8 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The disease, symptom or procedure for the contraindication.
+     *
+     * @return static
      */
     public function setDisease(null|FHIRCodeableConcept $disease): self
     {
@@ -383,6 +389,8 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the disease or symptom for the contraindication.
+     *
+     * @return static
      */
     public function setDiseaseStatus(null|FHIRCodeableConcept $diseaseStatus): self
     {
@@ -427,6 +435,8 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A comorbidity (concurrent condition) or coinfection.
+     *
+     * @return static
      */
     public function addComorbidity(FHIRCodeableConcept $comorbidity): self
     {
@@ -444,6 +454,8 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A comorbidity (concurrent condition) or coinfection.
+     *
+     * @return static
      */
     public function setComorbidity(FHIRCodeableConcept ...$comorbidity): self
     {
@@ -488,6 +500,8 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
      *
      * Information about the use of the medicinal product in relation to other
      * therapies as part of the indication.
+     *
+     * @return static
      */
     public function addTherapeuticIndication(FHIRReference $therapeuticIndication): self
     {
@@ -505,6 +519,8 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
      *
      * Information about the use of the medicinal product in relation to other
      * therapies as part of the indication.
+     *
+     * @return static
      */
     public function setTherapeuticIndication(FHIRReference ...$therapeuticIndication): self
     {
@@ -547,6 +563,8 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
      *
      * Information about the use of the medicinal product in relation to other
      * therapies described as part of the indication.
+     *
+     * @return static
      */
     public function addOtherTherapy(FHIRMedicinalProductContraindicationOtherTherapy $otherTherapy): self
     {
@@ -563,6 +581,8 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
      *
      * Information about the use of the medicinal product in relation to other
      * therapies described as part of the indication.
+     *
+     * @return static
      */
     public function setOtherTherapy(FHIRMedicinalProductContraindicationOtherTherapy ...$otherTherapy): self
     {
@@ -605,6 +625,8 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The population group to which this applies.
+     *
+     * @return static
      */
     public function addPopulation(FHIRPopulation $population): self
     {
@@ -621,6 +643,8 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The population group to which this applies.
+     *
+     * @return static
      */
     public function setPopulation(FHIRPopulation ...$population): self
     {

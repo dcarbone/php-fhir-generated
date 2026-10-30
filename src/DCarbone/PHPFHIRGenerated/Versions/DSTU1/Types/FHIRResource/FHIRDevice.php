@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -405,6 +405,8 @@ class FHIRDevice extends FHIRResource implements VersionContainedTypeInterface
      * organizations to assign identifiers are the manufacturer and the owner, though
      * regulatory agencies may also assign an identifier. The identifiers identify the
      * particular device, not the kind of device.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -424,6 +426,8 @@ class FHIRDevice extends FHIRResource implements VersionContainedTypeInterface
      * organizations to assign identifiers are the manufacturer and the owner, though
      * regulatory agencies may also assign an identifier. The identifiers identify the
      * particular device, not the kind of device.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -455,6 +459,8 @@ class FHIRDevice extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A kind of this device.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -482,6 +488,8 @@ class FHIRDevice extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A name of the manufacturer.
+     *
+     * @return static
      */
     public function setManufacturer(null|string|FHIRStringPrimitive|FHIRString $manufacturer): self
     {
@@ -514,6 +522,8 @@ class FHIRDevice extends FHIRResource implements VersionContainedTypeInterface
      *
      * The "model" - an identifier assigned by the manufacturer to identify the product
      * by its type. This number is shared by the all devices sold as the same type.
+     *
+     * @return static
      */
     public function setModel(null|string|FHIRStringPrimitive|FHIRString $model): self
     {
@@ -546,6 +556,8 @@ class FHIRDevice extends FHIRResource implements VersionContainedTypeInterface
      *
      * The version of the device, if the device has multiple releases under the same
      * model, or if the device is software or carries firmware.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -580,6 +592,8 @@ class FHIRDevice extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date of expiry of this device (if applicable).
+     *
+     * @return static
      */
     public function setExpiry(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $expiry): self
     {
@@ -616,6 +630,8 @@ class FHIRDevice extends FHIRResource implements VersionContainedTypeInterface
      * content that the user sees, which is sometimes different to the exact syntax
      * represented in the barcode) - see
      * http://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/UniqueDeviceIdentification/default.htm.
+     *
+     * @return static
      */
     public function setUdi(null|string|FHIRStringPrimitive|FHIRString $udi): self
     {
@@ -646,6 +662,8 @@ class FHIRDevice extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Lot number assigned by the manufacturer.
+     *
+     * @return static
      */
     public function setLotNumber(null|string|FHIRStringPrimitive|FHIRString $lotNumber): self
     {
@@ -680,6 +698,8 @@ class FHIRDevice extends FHIRResource implements VersionContainedTypeInterface
      *
      * An organization that is responsible for the provision and ongoing maintenance of
      * the device.
+     *
+     * @return static
      */
     public function setOwner(null|FHIRResourceReference $owner): self
     {
@@ -711,6 +731,8 @@ class FHIRDevice extends FHIRResource implements VersionContainedTypeInterface
      *
      * The resource may be found in a literal location (i.e. GPS coordinates), a
      * logical place (i.e. "in/with the patient"), or a coded location.
+     *
+     * @return static
      */
     public function setLocation(null|FHIRResourceReference $location): self
     {
@@ -740,6 +762,8 @@ class FHIRDevice extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Patient information, if the resource is affixed to a person.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRResourceReference $patient): self
     {
@@ -786,6 +810,8 @@ class FHIRDevice extends FHIRResource implements VersionContainedTypeInterface
      *
      * Contact details for an organization or a particular human that is responsible
      * for the device.
+     *
+     * @return static
      */
     public function addContact(FHIRContact $contact): self
     {
@@ -804,6 +830,8 @@ class FHIRDevice extends FHIRResource implements VersionContainedTypeInterface
      *
      * Contact details for an organization or a particular human that is responsible
      * for the device.
+     *
+     * @return static
      */
     public function setContact(FHIRContact ...$contact): self
     {
@@ -831,6 +859,8 @@ class FHIRDevice extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A network address on which the device may be contacted directly.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {

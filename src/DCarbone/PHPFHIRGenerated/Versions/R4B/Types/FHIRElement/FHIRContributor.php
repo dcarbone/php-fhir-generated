@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -215,6 +215,8 @@ class FHIRContributor extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of contributor.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRContributorTypeEnum|FHIRContributorType $type): self
     {
@@ -247,6 +249,8 @@ class FHIRContributor extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization responsible for the contribution.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -294,6 +298,8 @@ class FHIRContributor extends FHIRElement
      *
      * Contact details to assist a user in finding and communicating with the
      * contributor.
+     *
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -311,6 +317,8 @@ class FHIRContributor extends FHIRElement
      *
      * Contact details to assist a user in finding and communicating with the
      * contributor.
+     *
+     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {

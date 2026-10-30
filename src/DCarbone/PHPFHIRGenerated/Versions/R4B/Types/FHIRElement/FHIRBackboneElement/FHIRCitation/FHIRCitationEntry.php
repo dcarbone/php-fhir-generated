@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -379,6 +379,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the individual.
+     *
+     * @return static
      */
     public function setName(null|FHIRHumanName $name): self
     {
@@ -408,6 +410,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Initials for forename.
+     *
+     * @return static
      */
     public function setInitials(null|string|FHIRStringPrimitive|FHIRString $initials): self
     {
@@ -440,6 +444,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used for collective or corporate name as an author.
+     *
+     * @return static
      */
     public function setCollectiveName(null|string|FHIRStringPrimitive|FHIRString $collectiveName): self
     {
@@ -487,6 +493,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique person identifier.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -504,6 +512,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique person identifier.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -548,6 +558,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * Organization affiliated with the entity.
+     *
+     * @return static
      */
     public function addAffiliationInfo(FHIRCitationAffiliationInfo $affiliationInfo): self
     {
@@ -565,6 +577,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * Organization affiliated with the entity.
+     *
+     * @return static
      */
     public function setAffiliationInfo(FHIRCitationAffiliationInfo ...$affiliationInfo): self
     {
@@ -615,6 +629,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Physical mailing address for the author or contributor.
+     *
+     * @return static
      */
     public function addAddress(FHIRAddress $address): self
     {
@@ -635,6 +651,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Physical mailing address for the author or contributor.
+     *
+     * @return static
      */
     public function setAddress(FHIRAddress ...$address): self
     {
@@ -679,6 +697,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Email or telephone contact methods for the author or contributor.
+     *
+     * @return static
      */
     public function addTelecom(FHIRContactPoint $telecom): self
     {
@@ -696,6 +716,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Email or telephone contact methods for the author or contributor.
+     *
+     * @return static
      */
     public function setTelecom(FHIRContactPoint ...$telecom): self
     {
@@ -742,6 +764,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * This element identifies the specific nature of an individual’s contribution
      * with respect to the cited work.
+     *
+     * @return static
      */
     public function addContributionType(FHIRCodeableConcept $contributionType): self
     {
@@ -760,6 +784,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * This element identifies the specific nature of an individual’s contribution
      * with respect to the cited work.
+     *
+     * @return static
      */
     public function setContributionType(FHIRCodeableConcept ...$contributionType): self
     {
@@ -791,6 +817,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The role of the contributor (e.g. author, editor, reviewer).
+     *
+     * @return static
      */
     public function setRole(null|FHIRCodeableConcept $role): self
     {
@@ -835,6 +863,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * Contributions with accounting for time or number.
+     *
+     * @return static
      */
     public function addContributionInstance(FHIRCitationContributionInstance $contributionInstance): self
     {
@@ -852,6 +882,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * Contributions with accounting for time or number.
+     *
+     * @return static
      */
     public function setContributionInstance(FHIRCitationContributionInstance ...$contributionInstance): self
     {
@@ -879,6 +911,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indication of which contributor is the corresponding contributor for the role.
+     *
+     * @return static
      */
     public function setCorrespondingContact(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $correspondingContact): self
     {
@@ -911,6 +945,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Used to code order of authors.
+     *
+     * @return static
      */
     public function setListOrder(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $listOrder): self
     {

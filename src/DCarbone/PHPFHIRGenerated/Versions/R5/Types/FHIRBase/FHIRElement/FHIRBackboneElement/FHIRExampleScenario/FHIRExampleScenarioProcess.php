@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -261,6 +261,8 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short descriptive label the process to be used in tables or diagrams.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -301,6 +303,8 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * An explanation of what the process represents and what it does.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -343,6 +347,8 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      *
      * Description of the initial state of the actors, environment and data before the
      * process starts.
+     *
+     * @return static
      */
     public function setPreConditions(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $preConditions): self
     {
@@ -385,6 +391,8 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      *
      * Description of the final state of the actors, environment and data after the
      * process has been successfully completed.
+     *
+     * @return static
      */
     public function setPostConditions(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $postConditions): self
     {
@@ -426,6 +434,8 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * A significant action that occurs as part of the process.
+     *
+     * @return static
      */
     public function addStep(FHIRExampleScenarioStep $step): self
     {
@@ -440,6 +450,8 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * A significant action that occurs as part of the process.
+     *
+     * @return static
      */
     public function setStep(FHIRExampleScenarioStep ...$step): self
     {

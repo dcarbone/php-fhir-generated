@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -451,6 +451,8 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * The identifier that is used to identify this profile when it is referenced in a
      * specification, model, design or an instance (should be globally unique OID,
      * UUID, or URI).
+     *
+     * @return static
      */
     public function setIdentifier(null|string|FHIRStringPrimitive|FHIRString $identifier): self
     {
@@ -487,6 +489,8 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * referenced in a specification, model, design or instance. This is an arbitrary
      * value managed by the profile author manually and the value should be a
      * timestamp.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -517,6 +521,8 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name identifying the Profile.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -549,6 +555,8 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      *
      * Details of the individual or organization who accepts responsibility for
      * publishing the profile.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -598,6 +606,8 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function addTelecom(FHIRContact $telecom): self
     {
@@ -616,6 +626,8 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function setTelecom(FHIRContact ...$telecom): self
     {
@@ -643,6 +655,8 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language description of the profile and its use.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -690,6 +704,8 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      *
      * A set of terms from external terminologies that may be used to assist with
      * indexing and searching of templates.
+     *
+     * @return static
      */
     public function addCode(FHIRCoding $code): self
     {
@@ -707,6 +723,8 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      *
      * A set of terms from external terminologies that may be used to assist with
      * indexing and searching of templates.
+     *
+     * @return static
      */
     public function setCode(FHIRCoding ...$code): self
     {
@@ -734,6 +752,8 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the profile.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRResourceProfileStatusList|FHIRResourceProfileStatus $status): self
     {
@@ -768,6 +788,8 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * This profile was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
+     *
+     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -804,6 +826,8 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that this version of the profile was published.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -834,6 +858,8 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The Scope and Usage that this profile was created to meet.
+     *
+     * @return static
      */
     public function setRequirements(null|string|FHIRStringPrimitive|FHIRString $requirements): self
     {
@@ -870,6 +896,8 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * the Narrative, or extensions
      *
      * The version of the FHIR specification on which this profile is based.
+     *
+     * @return static
      */
     public function setFhirVersion(null|string|FHIRIdPrimitive|FHIRId $fhirVersion): self
     {
@@ -915,6 +943,8 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * and Extension Definitions.
      *
      * An external specification that the content is mapped to.
+     *
+     * @return static
      */
     public function addMapping(FHIRProfileMapping $mapping): self
     {
@@ -931,6 +961,8 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * and Extension Definitions.
      *
      * An external specification that the content is mapped to.
+     *
+     * @return static
      */
     public function setMapping(FHIRProfileMapping ...$mapping): self
     {
@@ -973,6 +1005,8 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * and Extension Definitions.
      *
      * A constraint statement about what contents a resource or data type may have.
+     *
+     * @return static
      */
     public function addStructure(FHIRProfileStructure $structure): self
     {
@@ -989,6 +1023,8 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * and Extension Definitions.
      *
      * A constraint statement about what contents a resource or data type may have.
+     *
+     * @return static
      */
     public function setStructure(FHIRProfileStructure ...$structure): self
     {
@@ -1031,6 +1067,8 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * and Extension Definitions.
      *
      * An extension defined as part of the profile.
+     *
+     * @return static
      */
     public function addExtensionDefn(FHIRProfileExtensionDefn $extensionDefn): self
     {
@@ -1047,6 +1085,8 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * and Extension Definitions.
      *
      * An extension defined as part of the profile.
+     *
+     * @return static
      */
     public function setExtensionDefn(FHIRProfileExtensionDefn ...$extensionDefn): self
     {
@@ -1089,6 +1129,8 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * and Extension Definitions.
      *
      * Definition of a named query and its parameters and their meaning.
+     *
+     * @return static
      */
     public function addQuery(FHIRProfileQuery $query): self
     {
@@ -1105,6 +1147,8 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * and Extension Definitions.
      *
      * Definition of a named query and its parameters and their meaning.
+     *
+     * @return static
      */
     public function setQuery(FHIRProfileQuery ...$query): self
     {

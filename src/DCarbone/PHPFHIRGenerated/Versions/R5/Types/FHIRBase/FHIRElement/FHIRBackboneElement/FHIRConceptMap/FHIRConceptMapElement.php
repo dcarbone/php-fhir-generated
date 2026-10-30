@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -258,6 +258,8 @@ class FHIRConceptMapElement extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Identity (code or path) or the element/item being mapped.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -292,6 +294,8 @@ class FHIRConceptMapElement extends FHIRBackboneElement
      *
      * The display for the code. The display is only provided to help editors when
      * editing the concept map.
+     *
+     * @return static
      */
     public function setDisplay(null|string|FHIRStringPrimitive|FHIRString $display): self
     {
@@ -328,6 +332,8 @@ class FHIRConceptMapElement extends FHIRBackboneElement
      *
      * The set of concepts from the ConceptMap.group.source code system which are all
      * being mapped to the target as part of this mapping rule.
+     *
+     * @return static
      */
     public function setValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $valueSet): self
     {
@@ -360,6 +366,8 @@ class FHIRConceptMapElement extends FHIRBackboneElement
      *
      * If noMap = true this indicates that no mapping to a target concept exists for
      * this source concept.
+     *
+     * @return static
      */
     public function setNoMap(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $noMap): self
     {
@@ -405,6 +413,8 @@ class FHIRConceptMapElement extends FHIRBackboneElement
      * concepts, or classes in class models.
      *
      * A concept from the target value set that this concept maps to.
+     *
+     * @return static
      */
     public function addTarget(FHIRConceptMapTarget $target): self
     {
@@ -421,6 +431,8 @@ class FHIRConceptMapElement extends FHIRBackboneElement
      * concepts, or classes in class models.
      *
      * A concept from the target value set that this concept maps to.
+     *
+     * @return static
      */
     public function setTarget(FHIRConceptMapTarget ...$target): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -243,6 +243,8 @@ class FHIRSubstanceDefinitionCharacterization extends FHIRBackboneElement
      *
      * The method used to elucidate the characterization of the drug substance.
      * Example: HPLC.
+     *
+     * @return static
      */
     public function setTechnique(null|FHIRCodeableConcept $technique): self
     {
@@ -276,6 +278,8 @@ class FHIRSubstanceDefinitionCharacterization extends FHIRBackboneElement
      *
      * Describes the nature of the chemical entity and explains, for instance, whether
      * this is a base or a salt form.
+     *
+     * @return static
      */
     public function setForm(null|FHIRCodeableConcept $form): self
     {
@@ -315,6 +319,8 @@ class FHIRSubstanceDefinitionCharacterization extends FHIRBackboneElement
      *
      * The description or justification in support of the interpretation of the data
      * file.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -364,6 +370,8 @@ class FHIRSubstanceDefinitionCharacterization extends FHIRBackboneElement
      * The data produced by the analytical instrument or a pictorial representation of
      * that data. Examples: a JCAMP, JDX, or ADX file, or a chromatogram or spectrum
      * analysis.
+     *
+     * @return static
      */
     public function addFile(FHIRAttachment $file): self
     {
@@ -382,6 +390,8 @@ class FHIRSubstanceDefinitionCharacterization extends FHIRBackboneElement
      * The data produced by the analytical instrument or a pictorial representation of
      * that data. Examples: a JCAMP, JDX, or ADX file, or a chromatogram or spectrum
      * analysis.
+     *
+     * @return static
      */
     public function setFile(FHIRAttachment ...$file): self
     {

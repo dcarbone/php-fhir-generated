@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -418,6 +418,8 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      *
      * A single identifier that uniquely identifies this manifest. Principally used to
      * refer to the manifest in non-FHIR contexts.
+     *
+     * @return static
      */
     public function setMasterIdentifier(null|FHIRIdentifier $masterIdentifier): self
     {
@@ -464,6 +466,8 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      *
      * Other identifiers associated with the document manifest, including version
      * independent identifiers.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -482,6 +486,8 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      *
      * Other identifiers associated with the document manifest, including version
      * independent identifiers.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -507,6 +513,8 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this document manifest.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRDocumentReferenceStatusEnum|FHIRDocumentReferenceStatus $status): self
     {
@@ -543,6 +551,8 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      *
      * The code specifying the type of clinical activity that resulted in placing the
      * associated content into the DocumentManifest.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -580,6 +590,8 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      * subjects (such as a document about a herd of farm animals, or a set of patients
      * that share a common exposure). If the documents cross more than one subject,
      * then more than one subject is allowed here (unusual use case).
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -619,6 +631,8 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      * When the document manifest was created for submission to the server (not
      * necessarily the same thing as the actual resource last modified time, since it
      * may be modified, replicated, etc.).
+     *
+     * @return static
      */
     public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created): self
     {
@@ -666,6 +680,8 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      *
      * Identifies who is the author of the manifest. Manifest author is not necessarly
      * the author of the references included.
+     *
+     * @return static
      */
     public function addAuthor(FHIRReference $author): self
     {
@@ -683,6 +699,8 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      *
      * Identifies who is the author of the manifest. Manifest author is not necessarly
      * the author of the references included.
+     *
+     * @return static
      */
     public function setAuthor(FHIRReference ...$author): self
     {
@@ -727,6 +745,8 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      *
      * A patient, practitioner, or organization for which this set of documents is
      * intended.
+     *
+     * @return static
      */
     public function addRecipient(FHIRReference $recipient): self
     {
@@ -744,6 +764,8 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      *
      * A patient, practitioner, or organization for which this set of documents is
      * intended.
+     *
+     * @return static
      */
     public function setRecipient(FHIRReference ...$recipient): self
     {
@@ -775,6 +797,8 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      *
      * Identifies the source system, application, or software that produced the
      * document manifest.
+     *
+     * @return static
      */
     public function setSource(null|string|FHIRUriPrimitive|FHIRUri $source): self
     {
@@ -809,6 +833,8 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      *
      * Human-readable description of the source document. This is sometimes known as
      * the "title".
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -854,6 +880,8 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The list of Resources that consist of the parts of this manifest.
+     *
+     * @return static
      */
     public function addContent(FHIRReference $content): self
     {
@@ -870,6 +898,8 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The list of Resources that consist of the parts of this manifest.
+     *
+     * @return static
      */
     public function setContent(FHIRReference ...$content): self
     {
@@ -910,6 +940,8 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      * applies to the collection.
      *
      * Related identifiers or resources associated with the DocumentManifest.
+     *
+     * @return static
      */
     public function addRelated(FHIRDocumentManifestRelated $related): self
     {
@@ -925,6 +957,8 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      * applies to the collection.
      *
      * Related identifiers or resources associated with the DocumentManifest.
+     *
+     * @return static
      */
     public function setRelated(FHIRDocumentManifestRelated ...$related): self
     {

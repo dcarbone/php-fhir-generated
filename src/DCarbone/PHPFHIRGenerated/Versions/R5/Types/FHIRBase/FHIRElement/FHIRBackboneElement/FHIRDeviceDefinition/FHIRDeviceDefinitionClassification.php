@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -203,6 +203,8 @@ class FHIRDeviceDefinitionClassification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A classification or risk class of the device model.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -247,6 +249,8 @@ class FHIRDeviceDefinitionClassification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Further information qualifying this classification of the device model.
+     *
+     * @return static
      */
     public function addJustification(FHIRRelatedArtifact $justification): self
     {
@@ -264,6 +268,8 @@ class FHIRDeviceDefinitionClassification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Further information qualifying this classification of the device model.
+     *
+     * @return static
      */
     public function setJustification(FHIRRelatedArtifact ...$justification): self
     {

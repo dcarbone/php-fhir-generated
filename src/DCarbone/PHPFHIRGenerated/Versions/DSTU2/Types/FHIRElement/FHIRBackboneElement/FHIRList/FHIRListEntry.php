@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -222,6 +222,8 @@ class FHIRListEntry extends FHIRBackboneElement
      *
      * The flag allows the system constructing the list to indicate the role and
      * significance of the item in the list.
+     *
+     * @return static
      */
     public function setFlag(null|FHIRCodeableConcept $flag): self
     {
@@ -249,6 +251,8 @@ class FHIRListEntry extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True if this item is marked as deleted in the list.
+     *
+     * @return static
      */
     public function setDeleted(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $deleted): self
     {
@@ -287,6 +291,8 @@ class FHIRListEntry extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When this item was added to the list.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -319,6 +325,8 @@ class FHIRListEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the actual resource from which data was derived.
+     *
+     * @return static
      */
     public function setItem(null|FHIRReference $item): self
     {

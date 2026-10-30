@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -222,6 +222,8 @@ class FHIRInsurancePlanCoverage extends FHIRBackboneElement
      *
      * Type of coverage (Medical; Dental; Mental Health; Substance Abuse; Vision; Drug;
      * Short Term; Long Term Care; Hospice; Home Health).
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -264,6 +266,8 @@ class FHIRInsurancePlanCoverage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the network that providing the type of coverage.
+     *
+     * @return static
      */
     public function addNetwork(FHIRReference $network): self
     {
@@ -280,6 +284,8 @@ class FHIRInsurancePlanCoverage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the network that providing the type of coverage.
+     *
+     * @return static
      */
     public function setNetwork(FHIRReference ...$network): self
     {
@@ -318,6 +324,8 @@ class FHIRInsurancePlanCoverage extends FHIRBackboneElement
      * Details of a Health Insurance product/plan provided by an organization.
      *
      * Specific benefits under this type of coverage.
+     *
+     * @return static
      */
     public function addBenefit(FHIRInsurancePlanBenefit $benefit): self
     {
@@ -332,6 +340,8 @@ class FHIRInsurancePlanCoverage extends FHIRBackboneElement
      * Details of a Health Insurance product/plan provided by an organization.
      *
      * Specific benefits under this type of coverage.
+     *
+     * @return static
      */
     public function setBenefit(FHIRInsurancePlanBenefit ...$benefit): self
     {

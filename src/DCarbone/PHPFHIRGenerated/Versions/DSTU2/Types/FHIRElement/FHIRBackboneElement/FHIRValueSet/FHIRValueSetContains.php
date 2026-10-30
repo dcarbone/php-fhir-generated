@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -255,6 +255,8 @@ class FHIRValueSetContains extends FHIRBackboneElement
      *
      * An absolute URI which is the code system in which the code for this item in the
      * expansion is defined.
+     *
+     * @return static
      */
     public function setSystem(null|string|FHIRUriPrimitive|FHIRUri $system): self
     {
@@ -287,6 +289,8 @@ class FHIRValueSetContains extends FHIRBackboneElement
      *
      * If true, this entry is included in the expansion for navigational purposes, and
      * the user cannot select the code directly as a proper value.
+     *
+     * @return static
      */
     public function setAbstract(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $abstract): self
     {
@@ -321,6 +325,8 @@ class FHIRValueSetContains extends FHIRBackboneElement
      *
      * The version of this code system that defined this code and/or display. This
      * should only be used with code systems that do not enforce concept permanence.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -359,6 +365,8 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * The code for this item in the expansion hierarchy. If this code is missing the
      * entry in the hierarchy is a place holder (abstract) and does not represent a
      * valid code in the value set.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -391,6 +399,8 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The recommended display for this item in the expansion.
+     *
+     * @return static
      */
     public function setDisplay(null|string|FHIRStringPrimitive|FHIRString $display): self
     {
@@ -432,6 +442,8 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * A value set specifies a set of codes drawn from one or more code systems.
      *
      * Other codes and entries contained under this entry in the hierarchy.
+     *
+     * @return static
      */
     public function addContains(FHIRValueSetContains $contains): self
     {
@@ -446,6 +458,8 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * A value set specifies a set of codes drawn from one or more code systems.
      *
      * Other codes and entries contained under this entry in the hierarchy.
+     *
+     * @return static
      */
     public function setContains(FHIRValueSetContains ...$contains): self
     {

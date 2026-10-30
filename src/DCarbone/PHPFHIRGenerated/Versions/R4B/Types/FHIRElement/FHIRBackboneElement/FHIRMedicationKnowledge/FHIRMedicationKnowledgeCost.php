@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -221,6 +221,8 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      *
      * The category of the cost information. For example, manufacturers' cost, patient
      * cost, claim reimbursement cost, actual acquisition cost.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -250,6 +252,8 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The source or owner that assigns the price to the medication.
+     *
+     * @return static
      */
     public function setSource(null|string|FHIRStringPrimitive|FHIRString $source): self
     {
@@ -282,6 +286,8 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The price of the medication.
+     *
+     * @return static
      */
     public function setCost(null|FHIRMoney $cost): self
     {

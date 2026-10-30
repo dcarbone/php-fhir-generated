@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -265,6 +265,8 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The medication for which this is an indication.
+     *
+     * @return static
      */
     public function addSubject(FHIRReference $subject): self
     {
@@ -281,6 +283,8 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The medication for which this is an indication.
+     *
+     * @return static
      */
     public function setSubject(FHIRReference ...$subject): self
     {
@@ -312,6 +316,8 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The symptom, condition or undesirable effect.
+     *
+     * @return static
      */
     public function setSymptomConditionEffect(null|FHIRCodeableConcept $symptomConditionEffect): self
     {
@@ -343,6 +349,8 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Classification of the effect.
+     *
+     * @return static
      */
     public function setClassification(null|FHIRCodeableConcept $classification): self
     {
@@ -374,6 +382,8 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The frequency of occurrence of the effect.
+     *
+     * @return static
      */
     public function setFrequencyOfOccurrence(null|FHIRCodeableConcept $frequencyOfOccurrence): self
     {
@@ -416,6 +426,8 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The population group to which this applies.
+     *
+     * @return static
      */
     public function addPopulation(FHIRPopulation $population): self
     {
@@ -432,6 +444,8 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The population group to which this applies.
+     *
+     * @return static
      */
     public function setPopulation(FHIRPopulation ...$population): self
     {

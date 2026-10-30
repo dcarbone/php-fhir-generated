@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -241,6 +241,8 @@ class FHIRPermissionData extends FHIRBackboneElement
      * Permission resource holds access rules for a given data and context.
      *
      * Explicit FHIR Resource references.
+     *
+     * @return static
      */
     public function addResource(FHIRPermissionResource $resource): self
     {
@@ -255,6 +257,8 @@ class FHIRPermissionData extends FHIRBackboneElement
      * Permission resource holds access rules for a given data and context.
      *
      * Explicit FHIR Resource references.
+     *
+     * @return static
      */
     public function setResource(FHIRPermissionResource ...$resource): self
     {
@@ -299,6 +303,8 @@ class FHIRPermissionData extends FHIRBackboneElement
      *
      * The data in scope are those with the given codes present in that data
      * .meta.security element.
+     *
+     * @return static
      */
     public function addSecurity(FHIRCoding $security): self
     {
@@ -316,6 +322,8 @@ class FHIRPermissionData extends FHIRBackboneElement
      *
      * The data in scope are those with the given codes present in that data
      * .meta.security element.
+     *
+     * @return static
      */
     public function setSecurity(FHIRCoding ...$security): self
     {
@@ -360,6 +368,8 @@ class FHIRPermissionData extends FHIRBackboneElement
      *
      * Clinical or Operational Relevant period of time that bounds the data controlled
      * by this rule.
+     *
+     * @return static
      */
     public function addPeriod(FHIRPeriod $period): self
     {
@@ -377,6 +387,8 @@ class FHIRPermissionData extends FHIRBackboneElement
      *
      * Clinical or Operational Relevant period of time that bounds the data controlled
      * by this rule.
+     *
+     * @return static
      */
     public function setPeriod(FHIRPeriod ...$period): self
     {
@@ -410,6 +422,8 @@ class FHIRPermissionData extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used when other data selection elements are insufficient.
+     *
+     * @return static
      */
     public function setExpression(null|FHIRExpression $expression): self
     {

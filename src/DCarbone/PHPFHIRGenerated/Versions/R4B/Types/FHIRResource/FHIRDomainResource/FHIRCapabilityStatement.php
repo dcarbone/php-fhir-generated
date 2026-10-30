@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -744,6 +744,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * is (or will be) published. This URL can be the target of a canonical reference.
      * It SHALL remain the same when the capability statement is stored on different
      * servers.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -786,6 +788,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -822,6 +826,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * A natural language name identifying the capability statement. This name should
      * be usable as an identifier for the module by machine processing applications
      * such as code generation.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -854,6 +860,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the capability statement.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -884,6 +892,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * The status of this capability statement. Enables tracking the life-cycle of the
      * content.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -918,6 +928,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * A Boolean value to indicate that this capability statement is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended to be
      * used for genuine usage.
+     *
+     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -962,6 +974,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the capability statement changes.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -996,6 +1010,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * The name of the organization or individual that published the capability
      * statement.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1043,6 +1059,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1060,6 +1078,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1103,6 +1123,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * consumer's perspective. Typically, this is used when the capability statement
      * describes a desired rather than an actual solution, for example as a formal
      * expression of requirements as part of an RFP.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1162,6 +1184,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate capability
      * statement instances.
+     *
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1185,6 +1209,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate capability
      * statement instances.
+     *
+     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1231,6 +1257,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * A legal or geographic region in which the capability statement is intended to be
      * used.
+     *
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1249,6 +1277,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * A legal or geographic region in which the capability statement is intended to be
      * used.
+     *
+     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1288,6 +1318,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * Explanation of why this capability statement is needed and why it has been
      * designed as it has.
+     *
+     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1332,6 +1364,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * A copyright statement relating to the capability statement and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the capability statement.
+     *
+     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1364,6 +1398,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * The way that this statement is intended to be used, to describe an actual
      * running instance of software, a particular product (kind, not instance of
      * software) or a class of implementation (e.g. a desired purchase).
+     *
+     * @return static
      */
     public function setKind(null|string|FHIRCapabilityStatementKindEnum|FHIRCapabilityStatementKind $kind): self
     {
@@ -1419,6 +1455,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * corresponds to a business service. The server may actually implement a subset of
      * the capability statement it claims to implement, so the capability statement
      * must specify the full capability details.
+     *
+     * @return static
      */
     public function addInstantiates(string|FHIRCanonicalPrimitive|FHIRCanonical $instantiates): self
     {
@@ -1443,6 +1481,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * corresponds to a business service. The server may actually implement a subset of
      * the capability statement it claims to implement, so the capability statement
      * must specify the full capability details.
+     *
+     * @return static
      */
     public function setInstantiates(string|FHIRCanonicalPrimitive|FHIRCanonical ...$instantiates): self
     {
@@ -1500,6 +1540,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * adds to. The capability statement automatically includes everything in the other
      * statement, and it is not duplicated, though the server may repeat the same
      * resources, interactions and operations to add additional details to them.
+     *
+     * @return static
      */
     public function addImports(string|FHIRCanonicalPrimitive|FHIRCanonical $imports): self
     {
@@ -1523,6 +1565,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * adds to. The capability statement automatically includes everything in the other
      * statement, and it is not duplicated, though the server may repeat the same
      * resources, interactions and operations to add additional details to them.
+     *
+     * @return static
      */
     public function setImports(string|FHIRCanonicalPrimitive|FHIRCanonical ...$imports): self
     {
@@ -1565,6 +1609,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * Software that is covered by this capability statement. It is used when the
      * capability statement describes the capabilities of a particular software
      * version, independent of an installation.
+     *
+     * @return static
      */
     public function setSoftware(null|FHIRCapabilityStatementSoftware $software): self
     {
@@ -1600,6 +1646,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * Identifies a specific implementation instance that is described by the
      * capability statement - i.e. a particular installation, rather than the
      * capabilities of a software program.
+     *
+     * @return static
      */
     public function setImplementation(null|FHIRCapabilityStatementImplementation $implementation): self
     {
@@ -1629,6 +1677,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * The version of the FHIR specification that this CapabilityStatement describes
      * (which SHALL be the same as the FHIR version of the CapabilityStatement itself).
      * There is no default value.
+     *
+     * @return static
      */
     public function setFhirVersion(null|string|FHIRFHIRVersionEnum|FHIRFHIRVersion $fhirVersion): self
     {
@@ -1678,6 +1728,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * A list of the formats supported by this implementation using their content
      * types.
+     *
+     * @return static
      */
     public function addFormat(string|FHIRCodePrimitive|FHIRCode $format): self
     {
@@ -1699,6 +1751,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * A list of the formats supported by this implementation using their content
      * types.
+     *
+     * @return static
      */
     public function setFormat(string|FHIRCodePrimitive|FHIRCode ...$format): self
     {
@@ -1752,6 +1806,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * A list of the patch formats supported by this implementation using their content
      * types.
+     *
+     * @return static
      */
     public function addPatchFormat(string|FHIRCodePrimitive|FHIRCode $patchFormat): self
     {
@@ -1773,6 +1829,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * A list of the patch formats supported by this implementation using their content
      * types.
+     *
+     * @return static
      */
     public function setPatchFormat(string|FHIRCodePrimitive|FHIRCode ...$patchFormat): self
     {
@@ -1826,6 +1884,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * A list of implementation guides that the server does (or should) support in
      * their entirety.
+     *
+     * @return static
      */
     public function addImplementationGuide(string|FHIRCanonicalPrimitive|FHIRCanonical $implementationGuide): self
     {
@@ -1847,6 +1907,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * A list of implementation guides that the server does (or should) support in
      * their entirety.
+     *
+     * @return static
      */
     public function setImplementationGuide(string|FHIRCanonicalPrimitive|FHIRCanonical ...$implementationGuide): self
     {
@@ -1898,6 +1960,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * implementation.
      *
      * A definition of the restful capabilities of the solution, if any.
+     *
+     * @return static
      */
     public function addRest(FHIRCapabilityStatementRest $rest): self
     {
@@ -1915,6 +1979,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * implementation.
      *
      * A definition of the restful capabilities of the solution, if any.
+     *
+     * @return static
      */
     public function setRest(FHIRCapabilityStatementRest ...$rest): self
     {
@@ -1959,6 +2025,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * implementation.
      *
      * A description of the messaging capabilities of the solution.
+     *
+     * @return static
      */
     public function addMessaging(FHIRCapabilityStatementMessaging $messaging): self
     {
@@ -1976,6 +2044,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * implementation.
      *
      * A description of the messaging capabilities of the solution.
+     *
+     * @return static
      */
     public function setMessaging(FHIRCapabilityStatementMessaging ...$messaging): self
     {
@@ -2020,6 +2090,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * implementation.
      *
      * A document definition.
+     *
+     * @return static
      */
     public function addDocument(FHIRCapabilityStatementDocument $document): self
     {
@@ -2037,6 +2109,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * implementation.
      *
      * A document definition.
+     *
+     * @return static
      */
     public function setDocument(FHIRCapabilityStatementDocument ...$document): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -264,6 +264,8 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      *
      * Sequence of test case - an ordinal number that indicates the order for the
      * present test case in the test plan.
+     *
+     * @return static
      */
     public function setSequence(null|string|float|FHIRIntegerPrimitive|FHIRInteger $sequence): self
     {
@@ -311,6 +313,8 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      *
      * The scope or artifact covered by the case, when the individual test case is
      * associated with a testable artifact.
+     *
+     * @return static
      */
     public function addScope(FHIRReference $scope): self
     {
@@ -328,6 +332,8 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      *
      * The scope or artifact covered by the case, when the individual test case is
      * associated with a testable artifact.
+     *
+     * @return static
      */
     public function setScope(FHIRReference ...$scope): self
     {
@@ -368,6 +374,8 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      *
      * The required criteria to execute the test case - e.g. preconditions, previous
      * tests.
+     *
+     * @return static
      */
     public function addDependency(FHIRTestPlanDependency1 $dependency): self
     {
@@ -383,6 +391,8 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      *
      * The required criteria to execute the test case - e.g. preconditions, previous
      * tests.
+     *
+     * @return static
      */
     public function setDependency(FHIRTestPlanDependency1 ...$dependency): self
     {
@@ -421,6 +431,8 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      * A plan for executing testing on an artifact or specifications.
      *
      * The actual test to be executed.
+     *
+     * @return static
      */
     public function addTestRun(FHIRTestPlanTestRun $testRun): self
     {
@@ -435,6 +447,8 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      * A plan for executing testing on an artifact or specifications.
      *
      * The actual test to be executed.
+     *
+     * @return static
      */
     public function setTestRun(FHIRTestPlanTestRun ...$testRun): self
     {
@@ -473,6 +487,8 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      * A plan for executing testing on an artifact or specifications.
      *
      * The test data used in the test case.
+     *
+     * @return static
      */
     public function addTestData(FHIRTestPlanTestData $testData): self
     {
@@ -487,6 +503,8 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      * A plan for executing testing on an artifact or specifications.
      *
      * The test data used in the test case.
+     *
+     * @return static
      */
     public function setTestData(FHIRTestPlanTestData ...$testData): self
     {
@@ -527,6 +545,8 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      *
      * The test assertions - the expectations of test results from the execution of the
      * test case.
+     *
+     * @return static
      */
     public function addAssertion(FHIRTestPlanAssertion $assertion): self
     {
@@ -542,6 +562,8 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      *
      * The test assertions - the expectations of test results from the execution of the
      * test case.
+     *
+     * @return static
      */
     public function setAssertion(FHIRTestPlanAssertion ...$assertion): self
     {

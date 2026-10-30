@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -217,6 +217,8 @@ class FHIRCitationAffiliationInfo extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Display for the organization.
+     *
+     * @return static
      */
     public function setAffiliation(null|string|FHIRStringPrimitive|FHIRString $affiliation): self
     {
@@ -249,6 +251,8 @@ class FHIRCitationAffiliationInfo extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Role within the organization, such as professional title.
+     *
+     * @return static
      */
     public function setRole(null|string|FHIRStringPrimitive|FHIRString $role): self
     {
@@ -296,6 +300,8 @@ class FHIRCitationAffiliationInfo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the organization.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -313,6 +319,8 @@ class FHIRCitationAffiliationInfo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the organization.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {

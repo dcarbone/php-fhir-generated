@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -478,6 +478,8 @@ class FHIRGenomicStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers for this genomic study.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -495,6 +497,8 @@ class FHIRGenomicStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers for this genomic study.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -520,6 +524,8 @@ class FHIRGenomicStudy extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the genomic study.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRGenomicStudyStatusEnum|FHIRGenomicStudyStatus $status): self
     {
@@ -569,6 +575,8 @@ class FHIRGenomicStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * The type of the study, e.g., Familial variant segregation, Functional variation
      * detection, or Gene expression profiling.
+     *
+     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -587,6 +595,8 @@ class FHIRGenomicStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * The type of the study, e.g., Familial variant segregation, Functional variation
      * detection, or Gene expression profiling.
+     *
+     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -616,6 +626,8 @@ class FHIRGenomicStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The primary subject of the genomic study.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -645,6 +657,8 @@ class FHIRGenomicStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare event with which this genomics study is associated.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -682,6 +696,8 @@ class FHIRGenomicStudy extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the genomic study was started.
+     *
+     * @return static
      */
     public function setStartDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $startDate): self
     {
@@ -727,6 +743,8 @@ class FHIRGenomicStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Event resources that the genomic study is based on.
+     *
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -743,6 +761,8 @@ class FHIRGenomicStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Event resources that the genomic study is based on.
+     *
+     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -772,6 +792,8 @@ class FHIRGenomicStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Healthcare professional who requested or referred the genomic study.
+     *
+     * @return static
      */
     public function setReferrer(null|FHIRReference $referrer): self
     {
@@ -814,6 +836,8 @@ class FHIRGenomicStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Healthcare professionals who interpreted the genomic study.
+     *
+     * @return static
      */
     public function addInterpreter(FHIRReference $interpreter): self
     {
@@ -830,6 +854,8 @@ class FHIRGenomicStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Healthcare professionals who interpreted the genomic study.
+     *
+     * @return static
      */
     public function setInterpreter(FHIRReference ...$interpreter): self
     {
@@ -874,6 +900,8 @@ class FHIRGenomicStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Why the genomic study was performed.
+     *
+     * @return static
      */
     public function addReason(FHIRCodeableReference $reason): self
     {
@@ -891,6 +919,8 @@ class FHIRGenomicStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Why the genomic study was performed.
+     *
+     * @return static
      */
     public function setReason(FHIRCodeableReference ...$reason): self
     {
@@ -922,6 +952,8 @@ class FHIRGenomicStudy extends FHIRDomainResource implements VersionContainedTyp
      * the Narrative, or extensions
      *
      * The defined protocol that describes the study.
+     *
+     * @return static
      */
     public function setInstantiatesCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $instantiatesCanonical): self
     {
@@ -954,6 +986,8 @@ class FHIRGenomicStudy extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The URL pointing to an externally maintained protocol that describes the study.
+     *
+     * @return static
      */
     public function setInstantiatesUri(null|string|FHIRUriPrimitive|FHIRUri $instantiatesUri): self
     {
@@ -1001,6 +1035,8 @@ class FHIRGenomicStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments related to the genomic study.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1018,6 +1054,8 @@ class FHIRGenomicStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments related to the genomic study.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1055,6 +1093,8 @@ class FHIRGenomicStudy extends FHIRDomainResource implements VersionContainedTyp
      * the Narrative, or extensions
      *
      * Description of the genomic study.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1098,6 +1138,8 @@ class FHIRGenomicStudy extends FHIRDomainResource implements VersionContainedTyp
      * data.
      *
      * The details about a specific analysis that was performed in this GenomicStudy.
+     *
+     * @return static
      */
     public function addAnalysis(FHIRGenomicStudyAnalysis $analysis): self
     {
@@ -1113,6 +1155,8 @@ class FHIRGenomicStudy extends FHIRDomainResource implements VersionContainedTyp
      * data.
      *
      * The details about a specific analysis that was performed in this GenomicStudy.
+     *
+     * @return static
      */
     public function setAnalysis(FHIRGenomicStudyAnalysis ...$analysis): self
     {

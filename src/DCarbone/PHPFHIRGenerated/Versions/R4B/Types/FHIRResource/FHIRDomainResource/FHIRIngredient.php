@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -347,6 +347,8 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * The identifier(s) of this Ingredient that are assigned by business processes
      * and/or used to refer to it when a direct URL reference to the resource itself is
      * not appropriate.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -372,6 +374,8 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this ingredient. Enables tracking the life-cycle of the content.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -417,6 +421,8 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The product which this ingredient is a constituent part of.
+     *
+     * @return static
      */
     public function addFor(FHIRReference $for): self
     {
@@ -433,6 +439,8 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The product which this ingredient is a constituent part of.
+     *
+     * @return static
      */
     public function setFor(FHIRReference ...$for): self
     {
@@ -466,6 +474,8 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      *
      * A classification of the ingredient identifying its purpose within the product,
      * e.g. active, inactive.
+     *
+     * @return static
      */
     public function setRole(null|FHIRCodeableConcept $role): self
     {
@@ -514,6 +524,8 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * A classification of the ingredient identifying its precise purpose(s) in the
      * drug product. This extends the Ingredient.role to add more detail. Example:
      * antioxidant, alkalizing agent.
+     *
+     * @return static
      */
     public function addFunction(FHIRCodeableConcept $function): self
     {
@@ -533,6 +545,8 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * A classification of the ingredient identifying its precise purpose(s) in the
      * drug product. This extends the Ingredient.role to add more detail. Example:
      * antioxidant, alkalizing agent.
+     *
+     * @return static
      */
     public function setFunction(FHIRCodeableConcept ...$function): self
     {
@@ -566,6 +580,8 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * of the substance, so if a reference to a SubstanceDefinition is used to decribe
      * that (rather than just a code), the allergen information should go there, not
      * here.
+     *
+     * @return static
      */
     public function setAllergenicIndicator(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $allergenicIndicator): self
     {
@@ -615,6 +631,8 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * Manufacturer(s) currently being used 3) Set of organisations allowed to
      * manufacture this ingredient for this product Users must be clear on the
      * application of context relevant to their use case.
+     *
+     * @return static
      */
     public function addManufacturer(FHIRIngredientManufacturer $manufacturer): self
     {
@@ -633,6 +651,8 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * Manufacturer(s) currently being used 3) Set of organisations allowed to
      * manufacture this ingredient for this product Users must be clear on the
      * application of context relevant to their use case.
+     *
+     * @return static
      */
     public function setManufacturer(FHIRIngredientManufacturer ...$manufacturer): self
     {
@@ -658,6 +678,8 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * An ingredient of a manufactured item or pharmaceutical product.
      *
      * The substance that comprises this ingredient.
+     *
+     * @return static
      */
     public function setSubstance(null|FHIRIngredientSubstance $substance): self
     {

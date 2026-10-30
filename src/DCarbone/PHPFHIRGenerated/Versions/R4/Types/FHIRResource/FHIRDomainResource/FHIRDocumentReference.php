@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -478,6 +478,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * Document identifier as assigned by the source of the document. This identifier
      * is specific to this version of the document. This unique identifier may be used
      * elsewhere to identify this version of the document.
+     *
+     * @return static
      */
     public function setMasterIdentifier(null|FHIRIdentifier $masterIdentifier): self
     {
@@ -524,6 +526,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      *
      * Other identifiers associated with the document, including version independent
      * identifiers.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -542,6 +546,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      *
      * Other identifiers associated with the document, including version independent
      * identifiers.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -567,6 +573,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this document reference.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRDocumentReferenceStatusList|FHIRDocumentReferenceStatus $status): self
     {
@@ -597,6 +605,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the underlying document.
+     *
+     * @return static
      */
     public function setDocStatus(null|string|FHIRCompositionStatusList|FHIRCompositionStatus $docStatus): self
     {
@@ -635,6 +645,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * Specifies the particular kind of document referenced (e.g. History and Physical,
      * Discharge Summary, Progress Note). This usually equates to the purpose of making
      * the document referenced.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -683,6 +695,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * A categorization for the type of document referenced - helps for indexing and
      * searching. This may be implied by or derived from the code specified in the
      * DocumentReference.type.
+     *
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -702,6 +716,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * A categorization for the type of document referenced - helps for indexing and
      * searching. This may be implied by or derived from the code specified in the
      * DocumentReference.type.
+     *
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -737,6 +753,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * or healthcare practitioner), a device (e.g. a machine) or even a group of
      * subjects (such as a document about a herd of farm animals, or a set of patients
      * that share a common exposure).
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -772,6 +790,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the document reference was created.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $date): self
     {
@@ -817,6 +837,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who is responsible for adding the information to the document.
+     *
+     * @return static
      */
     public function addAuthor(FHIRReference $author): self
     {
@@ -833,6 +855,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who is responsible for adding the information to the document.
+     *
+     * @return static
      */
     public function setAuthor(FHIRReference ...$author): self
     {
@@ -862,6 +886,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Which person or organization authenticates that this document is valid.
+     *
+     * @return static
      */
     public function setAuthenticator(null|FHIRReference $authenticator): self
     {
@@ -893,6 +919,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      *
      * Identifies the organization or group who is responsible for ongoing maintenance
      * of and access to the document.
+     *
+     * @return static
      */
     public function setCustodian(null|FHIRReference $custodian): self
     {
@@ -941,6 +969,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      *
      * Relationships that this document has with other document references that already
      * exist.
+     *
+     * @return static
      */
     public function addRelatesTo(FHIRDocumentReferenceRelatesTo $relatesTo): self
     {
@@ -960,6 +990,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      *
      * Relationships that this document has with other document references that already
      * exist.
+     *
+     * @return static
      */
     public function setRelatesTo(FHIRDocumentReferenceRelatesTo ...$relatesTo): self
     {
@@ -989,6 +1021,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable description of the source document.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -1044,6 +1078,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * of the "reference" to the document, while DocumentReference.securityLabel
      * contains a snapshot of the security labels on the document the reference refers
      * to.
+     *
+     * @return static
      */
     public function addSecurityLabel(FHIRCodeableConcept $securityLabel): self
     {
@@ -1065,6 +1101,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * of the "reference" to the document, while DocumentReference.securityLabel
      * contains a snapshot of the security labels on the document the reference refers
      * to.
+     *
+     * @return static
      */
     public function setSecurityLabel(FHIRCodeableConcept ...$securityLabel): self
     {
@@ -1113,6 +1151,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      *
      * The document and format referenced. There may be multiple content element
      * repetitions, each with a different format.
+     *
+     * @return static
      */
     public function addContent(FHIRDocumentReferenceContent $content): self
     {
@@ -1132,6 +1172,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      *
      * The document and format referenced. There may be multiple content element
      * repetitions, each with a different format.
+     *
+     * @return static
      */
     public function setContent(FHIRDocumentReferenceContent ...$content): self
     {
@@ -1165,6 +1207,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * documents like policy text.
      *
      * The clinical context in which the document was prepared.
+     *
+     * @return static
      */
     public function setContext(null|FHIRDocumentReferenceContext $context): self
     {

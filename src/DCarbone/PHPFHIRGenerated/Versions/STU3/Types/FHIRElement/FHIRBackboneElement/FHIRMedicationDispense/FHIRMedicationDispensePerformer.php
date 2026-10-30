@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -180,6 +180,8 @@ class FHIRMedicationDispensePerformer extends FHIRBackboneElement
      *
      * The device, practitioner, etc. who performed the action. It should be assumed
      * that the actor is the dispenser of the medication.
+     *
+     * @return static
      */
     public function setActor(null|FHIRReference $actor): self
     {
@@ -209,6 +211,8 @@ class FHIRMedicationDispensePerformer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization the device or practitioner was acting on behalf of.
+     *
+     * @return static
      */
     public function setOnBehalfOf(null|FHIRReference $onBehalfOf): self
     {

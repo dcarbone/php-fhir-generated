@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -153,6 +153,42 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
 
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_VALUE_BOOLEAN => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_DECIMAL => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_INTEGER => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_DATE => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_DATE_TIME => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_TIME => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_STRING => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_URI => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_ATTACHMENT => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_CODING => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_QUANTITY => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_REFERENCE => [
+            'min_occurs' => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -173,7 +209,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      */
     #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
@@ -184,7 +219,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      */
     #[FHIRDecimal]
     protected FHIRDecimal $valueDecimal;
@@ -194,7 +228,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      */
     #[FHIRInteger]
     protected FHIRInteger $valueInteger;
@@ -205,7 +238,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      */
     #[FHIRDate]
     protected FHIRDate $valueDate;
@@ -219,7 +251,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      */
     #[FHIRDateTime]
     protected FHIRDateTime $valueDateTime;
@@ -228,7 +259,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      */
     #[FHIRTime]
     protected FHIRTime $valueTime;
@@ -238,7 +268,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      */
     #[FHIRString]
     protected FHIRString $valueString;
@@ -248,7 +277,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      */
     #[FHIRUri]
     protected FHIRUri $valueUri;
@@ -258,7 +286,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      */
     #[FHIRAttachment]
     protected FHIRAttachment $valueAttachment;
@@ -268,7 +295,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      */
     #[FHIRCoding]
     protected FHIRCoding $valueCoding;
@@ -280,7 +306,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -290,7 +315,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      */
     #[FHIRReference]
     protected FHIRReference $valueReference;
@@ -389,7 +413,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      */
     public function getValueBoolean(): null|FHIRBoolean
     {
@@ -401,7 +424,8 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
+     *
+     * @return static
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -423,7 +447,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      */
     public function getValueDecimal(): null|FHIRDecimal
     {
@@ -437,7 +460,8 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
+     *
+     * @return static
      */
     public function setValueDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $valueDecimal): self
     {
@@ -458,7 +482,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      */
     public function getValueInteger(): null|FHIRInteger
     {
@@ -471,7 +494,8 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
+     *
+     * @return static
      */
     public function setValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $valueInteger): self
     {
@@ -493,7 +517,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      */
     public function getValueDate(): null|FHIRDate
     {
@@ -507,7 +530,8 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
+     *
+     * @return static
      */
     public function setValueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $valueDate): self
     {
@@ -532,7 +556,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      */
     public function getValueDateTime(): null|FHIRDateTime
     {
@@ -549,7 +572,8 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
+     *
+     * @return static
      */
     public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime): self
     {
@@ -569,7 +593,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      */
     public function getValueTime(): null|FHIRTime
     {
@@ -581,7 +604,8 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
+     *
+     * @return static
      */
     public function setValueTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $valueTime): self
     {
@@ -602,7 +626,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      */
     public function getValueString(): null|FHIRString
     {
@@ -615,7 +638,8 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
+     *
+     * @return static
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -636,7 +660,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      */
     public function getValueUri(): null|FHIRUri
     {
@@ -649,7 +672,8 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
+     *
+     * @return static
      */
     public function setValueUri(null|string|FHIRUriPrimitive|FHIRUri $valueUri): self
     {
@@ -670,7 +694,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      */
     public function getValueAttachment(): null|FHIRAttachment
     {
@@ -683,7 +706,8 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
+     *
+     * @return static
      */
     public function setValueAttachment(null|FHIRAttachment $valueAttachment): self
     {
@@ -701,7 +725,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      */
     public function getValueCoding(): null|FHIRCoding
     {
@@ -714,7 +737,8 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
+     *
+     * @return static
      */
     public function setValueCoding(null|FHIRCoding $valueCoding): self
     {
@@ -734,7 +758,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -749,7 +772,8 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
+     *
+     * @return static
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -767,7 +791,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
      */
     public function getValueReference(): null|FHIRReference
     {
@@ -780,7 +803,8 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
-     * (choose any one of value*, but only one)
+     *
+     * @return static
      */
     public function setValueReference(null|FHIRReference $valueReference): self
     {
@@ -823,6 +847,8 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * the questionnaire being responded to.
      *
      * Nested groups and/or questions found within this particular answer.
+     *
+     * @return static
      */
     public function addItem(FHIRQuestionnaireResponseItem $item): self
     {
@@ -839,6 +865,8 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * the questionnaire being responded to.
      *
      * Nested groups and/or questions found within this particular answer.
+     *
+     * @return static
      */
     public function setItem(FHIRQuestionnaireResponseItem ...$item): self
     {

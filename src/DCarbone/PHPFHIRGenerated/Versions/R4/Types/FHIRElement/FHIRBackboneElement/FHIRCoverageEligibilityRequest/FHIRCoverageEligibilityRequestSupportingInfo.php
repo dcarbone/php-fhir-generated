@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -204,6 +204,8 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A number to uniquely identify supporting information entries.
+     *
+     * @return static
      */
     public function setSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
     {
@@ -238,6 +240,8 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
+     *
+     * @return static
      */
     public function setInformation(null|FHIRReference $information): self
     {
@@ -267,6 +271,8 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
      *
      * The supporting materials are applicable for all detail items, product/servce
      * categories and specific billing codes.
+     *
+     * @return static
      */
     public function setAppliesToAll(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $appliesToAll): self
     {

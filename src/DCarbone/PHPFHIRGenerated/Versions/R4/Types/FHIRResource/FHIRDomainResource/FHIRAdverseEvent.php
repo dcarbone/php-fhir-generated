@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -531,6 +531,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * Business identifiers assigned to this adverse event by the performer or other
      * systems which remain constant as the resource is updated and propagates from
      * server to server.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -560,6 +562,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      *
      * Whether the event actually happened, or just had the potential to. Note that
      * this is independent of whether anyone was affected or harmed or how severely.
+     *
+     * @return static
      */
     public function setActuality(null|string|FHIRAdverseEventActualityList|FHIRAdverseEventActuality $actuality): self
     {
@@ -607,6 +611,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The overall type of event, intended for search and filtering purposes.
+     *
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -624,6 +630,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The overall type of event, intended for search and filtering purposes.
+     *
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -657,6 +665,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      *
      * This element defines the specific type of event that occurred or that was
      * prevented from occurring.
+     *
+     * @return static
      */
     public function setEvent(null|FHIRCodeableConcept $event): self
     {
@@ -686,6 +696,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * This subject or group impacted by the event.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -717,6 +729,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      *
      * The Encounter during which AdverseEvent was created or to which the creation of
      * this record is tightly associated.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -752,6 +766,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and perhaps time) when the adverse event occurred.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -790,6 +806,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Estimated or actual date the AdverseEvent began, in the opinion of the reporter.
+     *
+     * @return static
      */
     public function setDetected(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $detected): self
     {
@@ -828,6 +846,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the existence of the AdverseEvent was first recorded.
+     *
+     * @return static
      */
     public function setRecordedDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $recordedDate): self
     {
@@ -875,6 +895,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      *
      * Includes information about the reaction that occurred as a result of exposure to
      * a substance (for example, a drug or a chemical).
+     *
+     * @return static
      */
     public function addResultingCondition(FHIRReference $resultingCondition): self
     {
@@ -892,6 +914,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      *
      * Includes information about the reaction that occurred as a result of exposure to
      * a substance (for example, a drug or a chemical).
+     *
+     * @return static
      */
     public function setResultingCondition(FHIRReference ...$resultingCondition): self
     {
@@ -921,6 +945,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information about where the adverse event occurred.
+     *
+     * @return static
      */
     public function setLocation(null|FHIRReference $location): self
     {
@@ -952,6 +978,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Assessment whether this event was of real importance.
+     *
+     * @return static
      */
     public function setSeriousness(null|FHIRCodeableConcept $seriousness): self
     {
@@ -987,6 +1015,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * Describes the severity of the adverse event, in relation to the subject.
      * Contrast to AdverseEvent.seriousness - a severe rash might not be serious, but a
      * mild heart problem is.
+     *
+     * @return static
      */
     public function setSeverity(null|FHIRCodeableConcept $severity): self
     {
@@ -1018,6 +1048,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the type of outcome from the adverse event.
+     *
+     * @return static
      */
     public function setOutcome(null|FHIRCodeableConcept $outcome): self
     {
@@ -1049,6 +1081,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      *
      * Information on who recorded the adverse event. May be the patient or a
      * practitioner.
+     *
+     * @return static
      */
     public function setRecorder(null|FHIRReference $recorder): self
     {
@@ -1101,6 +1135,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * perform the activity (e.g. consultant), information that the activity itself
      * seeks to reveal (e.g. informant of clinical history), or information about what
      * activity was performed (e.g. informant witness).
+     *
+     * @return static
      */
     public function addContributor(FHIRReference $contributor): self
     {
@@ -1122,6 +1158,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * perform the activity (e.g. consultant), information that the activity itself
      * seeks to reveal (e.g. informant of clinical history), or information about what
      * activity was performed (e.g. informant witness).
+     *
+     * @return static
      */
     public function setContributor(FHIRReference ...$contributor): self
     {
@@ -1166,6 +1204,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * hospitalization, or that results in death.
      *
      * Describes the entity that is suspected to have caused the adverse event.
+     *
+     * @return static
      */
     public function addSuspectEntity(FHIRAdverseEventSuspectEntity $suspectEntity): self
     {
@@ -1183,6 +1223,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * hospitalization, or that results in death.
      *
      * Describes the entity that is suspected to have caused the adverse event.
+     *
+     * @return static
      */
     public function setSuspectEntity(FHIRAdverseEventSuspectEntity ...$suspectEntity): self
     {
@@ -1225,6 +1267,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * AdverseEvent.subjectMedicalHistory.
+     *
+     * @return static
      */
     public function addSubjectMedicalHistory(FHIRReference $subjectMedicalHistory): self
     {
@@ -1241,6 +1285,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * AdverseEvent.subjectMedicalHistory.
+     *
+     * @return static
      */
     public function setSubjectMedicalHistory(FHIRReference ...$subjectMedicalHistory): self
     {
@@ -1283,6 +1329,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * AdverseEvent.referenceDocument.
+     *
+     * @return static
      */
     public function addReferenceDocument(FHIRReference $referenceDocument): self
     {
@@ -1299,6 +1347,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * AdverseEvent.referenceDocument.
+     *
+     * @return static
      */
     public function setReferenceDocument(FHIRReference ...$referenceDocument): self
     {
@@ -1341,6 +1391,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * AdverseEvent.study.
+     *
+     * @return static
      */
     public function addStudy(FHIRReference $study): self
     {
@@ -1357,6 +1409,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * AdverseEvent.study.
+     *
+     * @return static
      */
     public function setStudy(FHIRReference ...$study): self
     {

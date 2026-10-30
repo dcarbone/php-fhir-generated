@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -256,6 +256,8 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements Ve
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Todo.
+     *
+     * @return static
      */
     public function setComment(null|string|FHIRStringPrimitive|FHIRString $comment): self
     {
@@ -297,6 +299,8 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements Ve
      * Todo.
      *
      * Todo.
+     *
+     * @return static
      */
     public function addGene(FHIRSubstanceReferenceInformationGene $gene): self
     {
@@ -311,6 +315,8 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements Ve
      * Todo.
      *
      * Todo.
+     *
+     * @return static
      */
     public function setGene(FHIRSubstanceReferenceInformationGene ...$gene): self
     {
@@ -349,6 +355,8 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements Ve
      * Todo.
      *
      * Todo.
+     *
+     * @return static
      */
     public function addGeneElement(FHIRSubstanceReferenceInformationGeneElement $geneElement): self
     {
@@ -363,6 +371,8 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements Ve
      * Todo.
      *
      * Todo.
+     *
+     * @return static
      */
     public function setGeneElement(FHIRSubstanceReferenceInformationGeneElement ...$geneElement): self
     {
@@ -401,6 +411,8 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements Ve
      * Todo.
      *
      * Todo.
+     *
+     * @return static
      */
     public function addTarget(FHIRSubstanceReferenceInformationTarget $target): self
     {
@@ -415,6 +427,8 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements Ve
      * Todo.
      *
      * Todo.
+     *
+     * @return static
      */
     public function setTarget(FHIRSubstanceReferenceInformationTarget ...$target): self
     {

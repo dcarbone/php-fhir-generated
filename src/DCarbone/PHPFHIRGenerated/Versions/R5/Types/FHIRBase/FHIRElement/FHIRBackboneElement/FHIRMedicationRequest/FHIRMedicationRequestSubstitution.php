@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -122,6 +122,12 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
 
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_ALLOWED_BOOLEAN => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_ALLOWED_CODEABLE_CONCEPT => [
+            'min_occurs' => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -135,7 +141,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True if the prescriber allows a different drug to be dispensed from what was
-     * prescribed. (choose any one of allowed*, but only one)
+     * prescribed.
      */
     #[FHIRBoolean]
     protected FHIRBoolean $allowedBoolean;
@@ -146,7 +152,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * True if the prescriber allows a different drug to be dispensed from what was
-     * prescribed. (choose any one of allowed*, but only one)
+     * prescribed.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $allowedCodeableConcept;
@@ -204,7 +210,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True if the prescriber allows a different drug to be dispensed from what was
-     * prescribed. (choose any one of allowed*, but only one)
+     * prescribed.
      */
     public function getAllowedBoolean(): null|FHIRBoolean
     {
@@ -216,7 +222,9 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True if the prescriber allows a different drug to be dispensed from what was
-     * prescribed. (choose any one of allowed*, but only one)
+     * prescribed.
+     *
+     * @return static
      */
     public function setAllowedBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $allowedBoolean): self
     {
@@ -238,7 +246,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * True if the prescriber allows a different drug to be dispensed from what was
-     * prescribed. (choose any one of allowed*, but only one)
+     * prescribed.
      */
     public function getAllowedCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -252,7 +260,9 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * True if the prescriber allows a different drug to be dispensed from what was
-     * prescribed. (choose any one of allowed*, but only one)
+     * prescribed.
+     *
+     * @return static
      */
     public function setAllowedCodeableConcept(null|FHIRCodeableConcept $allowedCodeableConcept): self
     {
@@ -286,6 +296,8 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      *
      * Indicates the reason for the substitution, or why substitution must or must not
      * be performed.
+     *
+     * @return static
      */
     public function setReason(null|FHIRCodeableConcept $reason): self
     {

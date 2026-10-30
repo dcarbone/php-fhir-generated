@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -257,6 +257,8 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The sequential number of the step, e.g. 1.2.5.
+     *
+     * @return static
      */
     public function setNumber(null|string|FHIRStringPrimitive|FHIRString $number): self
     {
@@ -285,6 +287,8 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * Indicates that the step is a complex sub-process with its own steps.
+     *
+     * @return static
      */
     public function setProcess(null|FHIRExampleScenarioProcess $process): self
     {
@@ -316,6 +320,8 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Indicates that the step is defined by a seaparate scenario instance.
+     *
+     * @return static
      */
     public function setWorkflow(null|string|FHIRCanonicalPrimitive|FHIRCanonical $workflow): self
     {
@@ -344,6 +350,8 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * The step represents a single operation invoked on receiver by sender.
+     *
+     * @return static
      */
     public function setOperation(null|FHIRExampleScenarioOperation $operation): self
     {
@@ -386,6 +394,8 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * Indicates an alternative step that can be taken instead of the sub-process,
      * scenario or operation. E.g. to represent non-happy-path/exceptional/atypical
      * circumstances.
+     *
+     * @return static
      */
     public function addAlternative(FHIRExampleScenarioAlternative $alternative): self
     {
@@ -402,6 +412,8 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * Indicates an alternative step that can be taken instead of the sub-process,
      * scenario or operation. E.g. to represent non-happy-path/exceptional/atypical
      * circumstances.
+     *
+     * @return static
      */
     public function setAlternative(FHIRExampleScenarioAlternative ...$alternative): self
     {
@@ -431,6 +443,8 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      *
      * If true, indicates that, following this step, there is a pause in the flow and
      * the subsequent step will occur at some later time (triggered by some event).
+     *
+     * @return static
      */
     public function setPause(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $pause): self
     {

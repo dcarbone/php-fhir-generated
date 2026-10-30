@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -203,6 +203,8 @@ class FHIRAllergyIntoleranceParticipant extends FHIRBackboneElement
      *
      * Distinguishes the type of involvement of the actor in the activities related to
      * the allergy or intolerance.
+     *
+     * @return static
      */
     public function setFunction(null|FHIRCodeableConcept $function): self
     {
@@ -234,6 +236,8 @@ class FHIRAllergyIntoleranceParticipant extends FHIRBackboneElement
      *
      * Indicates who or what participated in the activities related to the allergy or
      * intolerance.
+     *
+     * @return static
      */
     public function setActor(null|FHIRReference $actor): self
     {

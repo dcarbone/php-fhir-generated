@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -322,6 +322,8 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * Identifies whether this portion of the statement is describing the ability to
      * initiate or receive restful operations.
+     *
+     * @return static
      */
     public function setMode(null|string|FHIRRestfulCapabilityModeEnum|FHIRRestfulCapabilityMode $mode): self
     {
@@ -364,6 +366,8 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * Information about the system's restful capabilities that apply across all
      * applications, such as security.
+     *
+     * @return static
      */
     public function setDocumentation(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $documentation): self
     {
@@ -400,6 +404,8 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * Information about security implementation from an interface perspective - what a
      * client needs to know.
+     *
+     * @return static
      */
     public function setSecurity(null|FHIRCapabilityStatementSecurity $security): self
     {
@@ -446,6 +452,8 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * A specification of the restful capabilities of the solution for a specific
      * resource type.
+     *
+     * @return static
      */
     public function addResource(FHIRCapabilityStatementResource $resource): self
     {
@@ -464,6 +472,8 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * A specification of the restful capabilities of the solution for a specific
      * resource type.
+     *
+     * @return static
      */
     public function setResource(FHIRCapabilityStatementResource ...$resource): self
     {
@@ -508,6 +518,8 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      * implementation.
      *
      * A specification of restful operations supported by the system.
+     *
+     * @return static
      */
     public function addInteraction(FHIRCapabilityStatementInteraction1 $interaction): self
     {
@@ -525,6 +537,8 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      * implementation.
      *
      * A specification of restful operations supported by the system.
+     *
+     * @return static
      */
     public function setInteraction(FHIRCapabilityStatementInteraction1 ...$interaction): self
     {
@@ -575,6 +589,8 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      * implementations to support and/or make use of - either references to ones
      * defined in the specification, or additional ones defined for/by the
      * implementation.
+     *
+     * @return static
      */
     public function addSearchParam(FHIRCapabilityStatementSearchParam $searchParam): self
     {
@@ -595,6 +611,8 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      * implementations to support and/or make use of - either references to ones
      * defined in the specification, or additional ones defined for/by the
      * implementation.
+     *
+     * @return static
      */
     public function setSearchParam(FHIRCapabilityStatementSearchParam ...$searchParam): self
     {
@@ -641,6 +659,8 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * Definition of an operation or a named query together with its parameters and
      * their meaning and type.
+     *
+     * @return static
      */
     public function addOperation(FHIRCapabilityStatementOperation $operation): self
     {
@@ -659,6 +679,8 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * Definition of an operation or a named query together with its parameters and
      * their meaning and type.
+     *
+     * @return static
      */
     public function setOperation(FHIRCapabilityStatementOperation ...$operation): self
     {
@@ -707,6 +729,8 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      * An absolute URI which is a reference to the definition of a compartment that the
      * system supports. The reference is to a CompartmentDefinition resource by its
      * canonical URL .
+     *
+     * @return static
      */
     public function addCompartment(string|FHIRCanonicalPrimitive|FHIRCanonical $compartment): self
     {
@@ -729,6 +753,8 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      * An absolute URI which is a reference to the definition of a compartment that the
      * system supports. The reference is to a CompartmentDefinition resource by its
      * canonical URL .
+     *
+     * @return static
      */
     public function setCompartment(string|FHIRCanonicalPrimitive|FHIRCanonical ...$compartment): self
     {

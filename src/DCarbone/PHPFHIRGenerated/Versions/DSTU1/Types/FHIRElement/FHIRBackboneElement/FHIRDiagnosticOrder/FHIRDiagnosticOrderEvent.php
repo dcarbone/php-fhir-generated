@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -213,6 +213,8 @@ class FHIRDiagnosticOrderEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status for the event.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRDiagnosticOrderStatusList|FHIRDiagnosticOrderStatus $status): self
     {
@@ -249,6 +251,8 @@ class FHIRDiagnosticOrderEvent extends FHIRBackboneElement
      *
      * Additional information about the event that occurred - e.g. if the status
      * remained unchanged.
+     *
+     * @return static
      */
     public function setDescription(null|FHIRCodeableConcept $description): self
     {
@@ -282,6 +286,8 @@ class FHIRDiagnosticOrderEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date/time at which the event occurred.
+     *
+     * @return static
      */
     public function setDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateTime): self
     {
@@ -314,6 +320,8 @@ class FHIRDiagnosticOrderEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who was responsible for performing or recording the action.
+     *
+     * @return static
      */
     public function setActor(null|FHIRResourceReference $actor): self
     {

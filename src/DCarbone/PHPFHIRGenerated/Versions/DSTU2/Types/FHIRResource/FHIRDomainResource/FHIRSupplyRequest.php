@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -345,6 +345,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A link to a resource representing the person whom the ordered item is for.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -376,6 +378,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      *
      * The Practitioner , Organization or Patient who initiated this order for the
      * supply.
+     *
+     * @return static
      */
     public function setSource(null|FHIRReference $source): self
     {
@@ -411,6 +415,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the request was made.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -443,6 +449,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this supply request.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -470,6 +478,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the supply request.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRSupplyRequestStatusList|FHIRSupplyRequestStatus $status): self
     {
@@ -506,6 +516,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      *
      * Category of supply, e.g. central, non-stock, etc. This is used to support work
      * flows associated with the supply process.
+     *
+     * @return static
      */
     public function setKind(null|FHIRCodeableConcept $kind): self
     {
@@ -535,6 +547,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The item that is requested to be supplied.
+     *
+     * @return static
      */
     public function setOrderedItem(null|FHIRReference $orderedItem): self
     {
@@ -577,6 +591,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who is intended to fulfill the request.
+     *
+     * @return static
      */
     public function addSupplier(FHIRReference $supplier): self
     {
@@ -593,6 +609,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who is intended to fulfill the request.
+     *
+     * @return static
      */
     public function setSupplier(FHIRReference ...$supplier): self
     {
@@ -624,6 +642,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Why the supply item was requested.
+     *
+     * @return static
      */
     public function setReasonCodeableConcept(null|FHIRCodeableConcept $reasonCodeableConcept): self
     {
@@ -653,6 +673,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Why the supply item was requested.
+     *
+     * @return static
      */
     public function setReasonReference(null|FHIRReference $reasonReference): self
     {
@@ -680,6 +702,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * healthcare setting.
      *
      * When the request should be fulfilled.
+     *
+     * @return static
      */
     public function setWhen(null|FHIRSupplyRequestWhen $when): self
     {

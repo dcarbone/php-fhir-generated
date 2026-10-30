@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -296,6 +296,8 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Stereochemistry type.
+     *
+     * @return static
      */
     public function setStereochemistry(null|FHIRCodeableConcept $stereochemistry): self
     {
@@ -327,6 +329,8 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Optical activity type.
+     *
+     * @return static
      */
     public function setOpticalActivity(null|FHIRCodeableConcept $opticalActivity): self
     {
@@ -356,6 +360,8 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Molecular formula of this substance, typically using the Hill system.
+     *
+     * @return static
      */
     public function setMolecularFormula(null|string|FHIRStringPrimitive|FHIRString $molecularFormula): self
     {
@@ -390,6 +396,8 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      *
      * Specified per moiety according to the Hill system, i.e. first C, then H, then
      * alphabetical, each moiety separated by a dot.
+     *
+     * @return static
      */
     public function setMolecularFormulaByMoiety(null|string|FHIRStringPrimitive|FHIRString $molecularFormulaByMoiety): self
     {
@@ -420,6 +428,8 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      * used for prescribing.
      *
      * The molecular weight or weight range (for proteins, polymers or nucleic acids).
+     *
+     * @return static
      */
     public function setMolecularWeight(null|FHIRSubstanceDefinitionMolecularWeight $molecularWeight): self
     {
@@ -466,6 +476,8 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      *
      * The method used to elucidate the structure or characterization of the drug
      * substance. Examples: X-ray, HPLC, NMR, Peptide mapping, Ligand binding assay.
+     *
+     * @return static
      */
     public function addTechnique(FHIRCodeableConcept $technique): self
     {
@@ -484,6 +496,8 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      *
      * The method used to elucidate the structure or characterization of the drug
      * substance. Examples: X-ray, HPLC, NMR, Peptide mapping, Ligand binding assay.
+     *
+     * @return static
      */
     public function setTechnique(FHIRCodeableConcept ...$technique): self
     {
@@ -526,6 +540,8 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The source of information about the structure.
+     *
+     * @return static
      */
     public function addSourceDocument(FHIRReference $sourceDocument): self
     {
@@ -542,6 +558,8 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The source of information about the structure.
+     *
+     * @return static
      */
     public function setSourceDocument(FHIRReference ...$sourceDocument): self
     {
@@ -582,6 +600,8 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      * used for prescribing.
      *
      * A depiction of the structure or characterization of the substance.
+     *
+     * @return static
      */
     public function addRepresentation(FHIRSubstanceDefinitionRepresentation $representation): self
     {
@@ -597,6 +617,8 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      * used for prescribing.
      *
      * A depiction of the structure or characterization of the substance.
+     *
+     * @return static
      */
     public function setRepresentation(FHIRSubstanceDefinitionRepresentation ...$representation): self
     {

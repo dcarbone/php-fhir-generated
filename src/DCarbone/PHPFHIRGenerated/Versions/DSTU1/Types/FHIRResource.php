@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -247,6 +247,8 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      *
      * The human language of the content. The value can be any valid value according to
      * BCP-47
+     *
+     * @return static
      */
     public function setLanguage(null|string|FHIRCodePrimitive|FHIRCode $language): self
     {
@@ -279,6 +281,8 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Text summary of resource content (for human interpretation)
+     *
+     * @return static
      */
     public function setText(null|FHIRNarrative $text): self
     {
@@ -317,6 +321,8 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * Contained, inline Resources. These resources do not have an independent
      * existence apart from the resource that contains them - they cannot be identified
      * independently, and nor can they have their own independent transaction scope
+     *
+     * @return static
      */
     public function addContained(FHIRResourceInline|VersionContainedTypeInterface $contained): self
     {
@@ -334,6 +340,8 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * Contained, inline Resources. These resources do not have an independent
      * existence apart from the resource that contains them - they cannot be identified
      * independently, and nor can they have their own independent transaction scope
+     *
+     * @return static
      */
     public function setContained(FHIRResourceInline|VersionContainedTypeInterface ...$contained): self
     {
@@ -379,6 +387,8 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * Optional Extensions Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * @return static
      */
     public function addExtension(FHIRExtension $extension): self
     {
@@ -393,6 +403,8 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * Optional Extensions Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * @return static
      */
     public function setExtension(FHIRExtension ...$extension): self
     {
@@ -422,6 +434,8 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * with a length limit of 36 characters
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
+     *
+     * @return static
      */
     public function setId(null|string|FHIRIdPrimitive|FHIRId $id): self
     {
@@ -463,6 +477,8 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * Optional Extensions Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * @return static
      */
     public function addModifierExtension(FHIRExtension $modifierExtension): self
     {
@@ -477,6 +493,8 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * Optional Extensions Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * @return static
      */
     public function setModifierExtension(FHIRExtension ...$modifierExtension): self
     {

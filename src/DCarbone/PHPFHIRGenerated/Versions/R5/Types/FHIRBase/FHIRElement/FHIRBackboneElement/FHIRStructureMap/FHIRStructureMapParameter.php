@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -142,6 +142,30 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
 
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_VALUE_ID => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_STRING => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_BOOLEAN => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_INTEGER => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_DECIMAL => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_DATE => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_TIME => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_VALUE_DATE_TIME => [
+            'min_occurs' => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -165,7 +189,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Parameter value - variable or literal. (choose any one of value*, but only one)
+     * Parameter value - variable or literal.
      */
     #[FHIRId]
     protected FHIRId $valueId;
@@ -174,7 +198,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Parameter value - variable or literal. (choose any one of value*, but only one)
+     * Parameter value - variable or literal.
      */
     #[FHIRString]
     protected FHIRString $valueString;
@@ -182,7 +206,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Parameter value - variable or literal. (choose any one of value*, but only one)
+     * Parameter value - variable or literal.
      */
     #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
@@ -191,7 +215,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Parameter value - variable or literal. (choose any one of value*, but only one)
+     * Parameter value - variable or literal.
      */
     #[FHIRInteger]
     protected FHIRInteger $valueInteger;
@@ -201,7 +225,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Parameter value - variable or literal. (choose any one of value*, but only one)
+     * Parameter value - variable or literal.
      */
     #[FHIRDecimal]
     protected FHIRDecimal $valueDecimal;
@@ -211,7 +235,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Parameter value - variable or literal. (choose any one of value*, but only one)
+     * Parameter value - variable or literal.
      */
     #[FHIRDate]
     protected FHIRDate $valueDate;
@@ -219,7 +243,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      * A time during the day, with no date specified
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Parameter value - variable or literal. (choose any one of value*, but only one)
+     * Parameter value - variable or literal.
      */
     #[FHIRTime]
     protected FHIRTime $valueTime;
@@ -232,7 +256,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Parameter value - variable or literal. (choose any one of value*, but only one)
+     * Parameter value - variable or literal.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $valueDateTime;
@@ -302,7 +326,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Parameter value - variable or literal. (choose any one of value*, but only one)
+     * Parameter value - variable or literal.
      */
     public function getValueId(): null|FHIRId
     {
@@ -317,7 +341,9 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Parameter value - variable or literal. (choose any one of value*, but only one)
+     * Parameter value - variable or literal.
+     *
+     * @return static
      */
     public function setValueId(null|string|FHIRIdPrimitive|FHIRId $valueId): self
     {
@@ -337,7 +363,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Parameter value - variable or literal. (choose any one of value*, but only one)
+     * Parameter value - variable or literal.
      */
     public function getValueString(): null|FHIRString
     {
@@ -349,7 +375,9 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Parameter value - variable or literal. (choose any one of value*, but only one)
+     * Parameter value - variable or literal.
+     *
+     * @return static
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -368,7 +396,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Parameter value - variable or literal. (choose any one of value*, but only one)
+     * Parameter value - variable or literal.
      */
     public function getValueBoolean(): null|FHIRBoolean
     {
@@ -379,7 +407,9 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Parameter value - variable or literal. (choose any one of value*, but only one)
+     * Parameter value - variable or literal.
+     *
+     * @return static
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -399,7 +429,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Parameter value - variable or literal. (choose any one of value*, but only one)
+     * Parameter value - variable or literal.
      */
     public function getValueInteger(): null|FHIRInteger
     {
@@ -411,7 +441,9 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Parameter value - variable or literal. (choose any one of value*, but only one)
+     * Parameter value - variable or literal.
+     *
+     * @return static
      */
     public function setValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $valueInteger): self
     {
@@ -432,7 +464,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Parameter value - variable or literal. (choose any one of value*, but only one)
+     * Parameter value - variable or literal.
      */
     public function getValueDecimal(): null|FHIRDecimal
     {
@@ -445,7 +477,9 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Parameter value - variable or literal. (choose any one of value*, but only one)
+     * Parameter value - variable or literal.
+     *
+     * @return static
      */
     public function setValueDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $valueDecimal): self
     {
@@ -466,7 +500,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Parameter value - variable or literal. (choose any one of value*, but only one)
+     * Parameter value - variable or literal.
      */
     public function getValueDate(): null|FHIRDate
     {
@@ -479,7 +513,9 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Parameter value - variable or literal. (choose any one of value*, but only one)
+     * Parameter value - variable or literal.
+     *
+     * @return static
      */
     public function setValueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $valueDate): self
     {
@@ -498,7 +534,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      * A time during the day, with no date specified
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Parameter value - variable or literal. (choose any one of value*, but only one)
+     * Parameter value - variable or literal.
      */
     public function getValueTime(): null|FHIRTime
     {
@@ -509,7 +545,9 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      * A time during the day, with no date specified
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Parameter value - variable or literal. (choose any one of value*, but only one)
+     * Parameter value - variable or literal.
+     *
+     * @return static
      */
     public function setValueTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $valueTime): self
     {
@@ -533,7 +571,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Parameter value - variable or literal. (choose any one of value*, but only one)
+     * Parameter value - variable or literal.
      */
     public function getValueDateTime(): null|FHIRDateTime
     {
@@ -549,7 +587,9 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Parameter value - variable or literal. (choose any one of value*, but only one)
+     * Parameter value - variable or literal.
+     *
+     * @return static
      */
     public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime): self
     {

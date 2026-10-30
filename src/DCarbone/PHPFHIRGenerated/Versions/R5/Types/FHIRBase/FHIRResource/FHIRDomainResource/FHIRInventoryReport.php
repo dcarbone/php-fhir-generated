@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -385,6 +385,8 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for the InventoryReport.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -402,6 +404,8 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for the InventoryReport.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -429,6 +433,8 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
      *
      * The status of the inventory check or notification - whether this is draft (e.g.
      * the report is still pending some updates) or active.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRInventoryReportStatusEnum|FHIRInventoryReportStatus $status): self
     {
@@ -459,6 +465,8 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
      *
      * Whether the report is about the current inventory count (snapshot) or a
      * differential change in inventory (change).
+     *
+     * @return static
      */
     public function setCountType(null|string|FHIRInventoryCountTypeEnum|FHIRInventoryCountType $countType): self
     {
@@ -493,6 +501,8 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * What type of operation is being performed - addition or subtraction.
+     *
+     * @return static
      */
     public function setOperationType(null|FHIRCodeableConcept $operationType): self
     {
@@ -524,6 +534,8 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason for this count - regular count, ad-hoc count, new arrivals, etc.
+     *
+     * @return static
      */
     public function setOperationTypeReason(null|FHIRCodeableConcept $operationTypeReason): self
     {
@@ -561,6 +573,8 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the report has been submitted.
+     *
+     * @return static
      */
     public function setReportedDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $reportedDateTime): self
     {
@@ -593,6 +607,8 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who submits the report.
+     *
+     * @return static
      */
     public function setReporter(null|FHIRReference $reporter): self
     {
@@ -622,6 +638,8 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period the report refers to.
+     *
+     * @return static
      */
     public function setReportingPeriod(null|FHIRPeriod $reportingPeriod): self
     {
@@ -660,6 +678,8 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
      * A report of inventory or stock items.
      *
      * An inventory listing section (grouped by any of the attributes).
+     *
+     * @return static
      */
     public function addInventoryListing(FHIRInventoryReportInventoryListing $inventoryListing): self
     {
@@ -674,6 +694,8 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
      * A report of inventory or stock items.
      *
      * An inventory listing section (grouped by any of the attributes).
+     *
+     * @return static
      */
     public function setInventoryListing(FHIRInventoryReportInventoryListing ...$inventoryListing): self
     {
@@ -718,6 +740,8 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A note associated with the InventoryReport.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -735,6 +759,8 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A note associated with the InventoryReport.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {

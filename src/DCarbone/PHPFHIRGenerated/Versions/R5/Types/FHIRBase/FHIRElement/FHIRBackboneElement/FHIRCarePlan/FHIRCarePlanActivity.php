@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -247,6 +247,8 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * activity that was performed. The requested activity can be conveyed using the
      * CarePlan.activity.plannedActivityReference (a reference to a “request”
      * resource).
+     *
+     * @return static
      */
     public function addPerformedActivity(FHIRCodeableReference $performedActivity): self
     {
@@ -269,6 +271,8 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * activity that was performed. The requested activity can be conveyed using the
      * CarePlan.activity.plannedActivityReference (a reference to a “request”
      * resource).
+     *
+     * @return static
      */
     public function setPerformedActivity(FHIRCodeableReference ...$performedActivity): self
     {
@@ -313,6 +317,8 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Notes about the adherence/status/progress of the activity.
+     *
+     * @return static
      */
     public function addProgress(FHIRAnnotation $progress): self
     {
@@ -330,6 +336,8 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Notes about the adherence/status/progress of the activity.
+     *
+     * @return static
      */
     public function setProgress(FHIRAnnotation ...$progress): self
     {
@@ -359,6 +367,8 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The details of the proposed activity represented in a specific resource.
+     *
+     * @return static
      */
     public function setPlannedActivityReference(null|FHIRReference $plannedActivityReference): self
     {

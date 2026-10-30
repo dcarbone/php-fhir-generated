@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -334,6 +334,8 @@ class FHIROrganization extends FHIRResource implements VersionContainedTypeInter
      *
      * Identifier for the organization that is used to identify the organization across
      * multiple disparate systems.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -351,6 +353,8 @@ class FHIROrganization extends FHIRResource implements VersionContainedTypeInter
      *
      * Identifier for the organization that is used to identify the organization across
      * multiple disparate systems.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -378,6 +382,8 @@ class FHIROrganization extends FHIRResource implements VersionContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A name associated with the organization.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -412,6 +418,8 @@ class FHIROrganization extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of organization that this is.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -456,6 +464,8 @@ class FHIROrganization extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail for the organization.
+     *
+     * @return static
      */
     public function addTelecom(FHIRContact $telecom): self
     {
@@ -473,6 +483,8 @@ class FHIROrganization extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail for the organization.
+     *
+     * @return static
      */
     public function setTelecom(FHIRContact ...$telecom): self
     {
@@ -517,6 +529,8 @@ class FHIROrganization extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An address for the organization.
+     *
+     * @return static
      */
     public function addAddress(FHIRAddress $address): self
     {
@@ -534,6 +548,8 @@ class FHIROrganization extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An address for the organization.
+     *
+     * @return static
      */
     public function setAddress(FHIRAddress ...$address): self
     {
@@ -563,6 +579,8 @@ class FHIROrganization extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization of which this organization forms a part.
+     *
+     * @return static
      */
     public function setPartOf(null|FHIRResourceReference $partOf): self
     {
@@ -607,6 +625,8 @@ class FHIROrganization extends FHIRResource implements VersionContainedTypeInter
      * groups, etc.
      *
      * Contact for the organization for a certain purpose.
+     *
+     * @return static
      */
     public function addContact(FHIROrganizationContact $contact): self
     {
@@ -624,6 +644,8 @@ class FHIROrganization extends FHIRResource implements VersionContainedTypeInter
      * groups, etc.
      *
      * Contact for the organization for a certain purpose.
+     *
+     * @return static
      */
     public function setContact(FHIROrganizationContact ...$contact): self
     {
@@ -666,6 +688,8 @@ class FHIROrganization extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Location(s) the organization uses to provide services.
+     *
+     * @return static
      */
     public function addLocation(FHIRResourceReference $location): self
     {
@@ -682,6 +706,8 @@ class FHIROrganization extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Location(s) the organization uses to provide services.
+     *
+     * @return static
      */
     public function setLocation(FHIRResourceReference ...$location): self
     {
@@ -709,6 +735,8 @@ class FHIROrganization extends FHIRResource implements VersionContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the organization's record is still in active use.
+     *
+     * @return static
      */
     public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active): self
     {

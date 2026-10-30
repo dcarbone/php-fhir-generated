@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -333,7 +333,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed. (choose any one of serviced*, but only one)
+     * completed.
      */
     #[FHIRDate]
     protected FHIRDate $servicedDate;
@@ -343,7 +343,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed. (choose any one of serviced*, but only one)
+     * completed.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $servicedPeriod;
@@ -353,8 +353,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided. (choose any one of location*, but
-     * only one)
+     * Where the product or service was provided.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $locationCodeableConcept;
@@ -368,8 +367,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided. (choose any one of location*, but
-     * only one)
+     * Where the product or service was provided.
      */
     #[FHIRAddress]
     protected FHIRAddress $locationAddress;
@@ -378,8 +376,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided. (choose any one of location*, but
-     * only one)
+     * Where the product or service was provided.
      */
     #[FHIRReference]
     protected FHIRReference $locationReference;
@@ -659,6 +656,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A number to uniquely identify item entries.
+     *
+     * @return static
      */
     public function setSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
     {
@@ -708,6 +707,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * Trace number for tracking purposes. May be defined at the jurisdiction level or
      * between trading partners.
+     *
+     * @return static
      */
     public function addTraceNumber(FHIRIdentifier $traceNumber): self
     {
@@ -726,6 +727,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * Trace number for tracking purposes. May be defined at the jurisdiction level or
      * between trading partners.
+     *
+     * @return static
      */
     public function setTraceNumber(FHIRIdentifier ...$traceNumber): self
     {
@@ -768,6 +771,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * CareTeam members related to this service or product.
+     *
+     * @return static
      */
     public function addCareTeamSequence(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $careTeamSequence): self
     {
@@ -787,6 +792,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * CareTeam members related to this service or product.
+     *
+     * @return static
      */
     public function setCareTeamSequence(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$careTeamSequence): self
     {
@@ -836,6 +843,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Diagnosis applicable for this service or product.
+     *
+     * @return static
      */
     public function addDiagnosisSequence(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $diagnosisSequence): self
     {
@@ -855,6 +864,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Diagnosis applicable for this service or product.
+     *
+     * @return static
      */
     public function setDiagnosisSequence(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$diagnosisSequence): self
     {
@@ -904,6 +915,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Procedures applicable for this service or product.
+     *
+     * @return static
      */
     public function addProcedureSequence(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $procedureSequence): self
     {
@@ -923,6 +936,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Procedures applicable for this service or product.
+     *
+     * @return static
      */
     public function setProcedureSequence(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$procedureSequence): self
     {
@@ -974,6 +989,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * Exceptions, special conditions and supporting information applicable for this
      * service or product.
+     *
+     * @return static
      */
     public function addInformationSequence(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $informationSequence): self
     {
@@ -994,6 +1011,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * Exceptions, special conditions and supporting information applicable for this
      * service or product.
+     *
+     * @return static
      */
     public function setInformationSequence(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$informationSequence): self
     {
@@ -1032,6 +1051,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of revenue or cost center providing the product and/or service.
+     *
+     * @return static
      */
     public function setRevenue(null|FHIRCodeableConcept $revenue): self
     {
@@ -1065,6 +1086,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * Code to identify the general type of benefits under which products and services
      * are provided.
+     *
+     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -1104,6 +1127,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      * code for the item. This element may be the start of a range of .productOrService
      * codes used in conjunction with .productOrServiceEnd or it may be a solo element
      * where .productOrServiceEnd is not used.
+     *
+     * @return static
      */
     public function setProductOrService(null|FHIRCodeableConcept $productOrService): self
     {
@@ -1143,6 +1168,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      * group code. This value may only be present when a .productOfService code has
      * been provided to convey the start of the range. Typically this value may be used
      * only with preauthorizations and not with claims.
+     *
+     * @return static
      */
     public function setProductOrServiceEnd(null|FHIRCodeableConcept $productOrServiceEnd): self
     {
@@ -1185,6 +1212,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Request or Referral for Goods or Service to be rendered.
+     *
+     * @return static
      */
     public function addRequest(FHIRReference $request): self
     {
@@ -1201,6 +1230,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Request or Referral for Goods or Service to be rendered.
+     *
+     * @return static
      */
     public function setRequest(FHIRReference ...$request): self
     {
@@ -1247,6 +1278,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * Item typification or modifiers codes to convey additional context for the
      * product or service.
+     *
+     * @return static
      */
     public function addModifier(FHIRCodeableConcept $modifier): self
     {
@@ -1265,6 +1298,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * Item typification or modifiers codes to convey additional context for the
      * product or service.
+     *
+     * @return static
      */
     public function setModifier(FHIRCodeableConcept ...$modifier): self
     {
@@ -1309,6 +1344,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the program under which this may be recovered.
+     *
+     * @return static
      */
     public function addProgramCode(FHIRCodeableConcept $programCode): self
     {
@@ -1326,6 +1363,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the program under which this may be recovered.
+     *
+     * @return static
      */
     public function setProgramCode(FHIRCodeableConcept ...$programCode): self
     {
@@ -1344,7 +1383,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed. (choose any one of serviced*, but only one)
+     * completed.
      */
     public function getServicedDate(): null|FHIRDate
     {
@@ -1358,7 +1397,9 @@ class FHIRClaimItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed. (choose any one of serviced*, but only one)
+     * completed.
+     *
+     * @return static
      */
     public function setServicedDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $servicedDate): self
     {
@@ -1379,7 +1420,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed. (choose any one of serviced*, but only one)
+     * completed.
      */
     public function getServicedPeriod(): null|FHIRPeriod
     {
@@ -1392,7 +1433,9 @@ class FHIRClaimItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date or dates when the service or product was supplied, performed or
-     * completed. (choose any one of serviced*, but only one)
+     * completed.
+     *
+     * @return static
      */
     public function setServicedPeriod(null|FHIRPeriod $servicedPeriod): self
     {
@@ -1410,8 +1453,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided. (choose any one of location*, but
-     * only one)
+     * Where the product or service was provided.
      */
     public function getLocationCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -1424,8 +1466,9 @@ class FHIRClaimItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided. (choose any one of location*, but
-     * only one)
+     * Where the product or service was provided.
+     *
+     * @return static
      */
     public function setLocationCodeableConcept(null|FHIRCodeableConcept $locationCodeableConcept): self
     {
@@ -1447,8 +1490,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided. (choose any one of location*, but
-     * only one)
+     * Where the product or service was provided.
      */
     public function getLocationAddress(): null|FHIRAddress
     {
@@ -1465,8 +1507,9 @@ class FHIRClaimItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided. (choose any one of location*, but
-     * only one)
+     * Where the product or service was provided.
+     *
+     * @return static
      */
     public function setLocationAddress(null|FHIRAddress $locationAddress): self
     {
@@ -1483,8 +1526,7 @@ class FHIRClaimItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided. (choose any one of location*, but
-     * only one)
+     * Where the product or service was provided.
      */
     public function getLocationReference(): null|FHIRReference
     {
@@ -1496,8 +1538,9 @@ class FHIRClaimItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the product or service was provided. (choose any one of location*, but
-     * only one)
+     * Where the product or service was provided.
+     *
+     * @return static
      */
     public function setLocationReference(null|FHIRReference $locationReference): self
     {
@@ -1531,6 +1574,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      * The amount paid by the patient, in total at the claim claim level or
      * specifically for the item and detail level, to the provider for goods and
      * services.
+     *
+     * @return static
      */
     public function setPatientPaid(null|FHIRMoney $patientPaid): self
     {
@@ -1564,6 +1609,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The number of repetitions of a service or product.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -1595,6 +1642,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * If the item is not a group then this is the fee for the product or service,
      * otherwise this is the total of the fees for the details of the group.
+     *
+     * @return static
      */
     public function setUnitPrice(null|FHIRMoney $unitPrice): self
     {
@@ -1630,6 +1679,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      * A real number that represents a multiplier used in determining the overall value
      * of services delivered and/or goods received. The concept of a Factor allows for
      * a discount or surcharge multiplier to be applied to a monetary amount.
+     *
+     * @return static
      */
     public function setFactor(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $factor): self
     {
@@ -1662,6 +1713,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The total of taxes applicable for this product or service.
+     *
+     * @return static
      */
     public function setTax(null|FHIRMoney $tax): self
     {
@@ -1693,6 +1746,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * The total amount claimed for the group (if a grouper) or the line item. Net =
      * unit price * quantity * factor.
+     *
+     * @return static
      */
     public function setNet(null|FHIRMoney $net): self
     {
@@ -1735,6 +1790,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique Device Identifiers associated with this line item.
+     *
+     * @return static
      */
     public function addUdi(FHIRReference $udi): self
     {
@@ -1751,6 +1808,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique Device Identifiers associated with this line item.
+     *
+     * @return static
      */
     public function setUdi(FHIRReference ...$udi): self
     {
@@ -1793,6 +1852,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      * reimbursement.
      *
      * Physical location where the service is performed or applies.
+     *
+     * @return static
      */
     public function addBodySite(FHIRClaimBodySite $bodySite): self
     {
@@ -1809,6 +1870,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      * reimbursement.
      *
      * Physical location where the service is performed or applies.
+     *
+     * @return static
      */
     public function setBodySite(FHIRClaimBodySite ...$bodySite): self
     {
@@ -1851,6 +1914,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Healthcare encounters related to this claim.
+     *
+     * @return static
      */
     public function addEncounter(FHIRReference $encounter): self
     {
@@ -1867,6 +1932,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Healthcare encounters related to this claim.
+     *
+     * @return static
      */
     public function setEncounter(FHIRReference ...$encounter): self
     {
@@ -1911,6 +1978,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * A claim detail line. Either a simple (a product or service) or a 'group' of
      * sub-details which are simple items.
+     *
+     * @return static
      */
     public function addDetail(FHIRClaimDetail $detail): self
     {
@@ -1928,6 +1997,8 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * A claim detail line. Either a simple (a product or service) or a 'group' of
      * sub-details which are simple items.
+     *
+     * @return static
      */
     public function setDetail(FHIRClaimDetail ...$detail): self
     {

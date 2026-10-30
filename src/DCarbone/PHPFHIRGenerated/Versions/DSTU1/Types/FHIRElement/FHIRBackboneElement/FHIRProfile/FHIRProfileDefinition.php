@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -1286,6 +1286,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      *
      * A concise definition that is shown in the generated XML format that summarizes
      * profiles (used throughout the specification).
+     *
+     * @return static
      */
     public function setShort(null|string|FHIRStringPrimitive|FHIRString $short): self
     {
@@ -1318,6 +1320,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      *
      * The definition SHALL be consistent with the base definition, but convey the
      * meaning of the element in the particular context of use of the resource.
+     *
+     * @return static
      */
     public function setFormal(null|string|FHIRStringPrimitive|FHIRString $formal): self
     {
@@ -1350,6 +1354,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      *
      * Comments about the use of the element, including notes about how to use the data
      * properly, exceptions to proper use, etc.
+     *
+     * @return static
      */
     public function setComments(null|string|FHIRStringPrimitive|FHIRString $comments): self
     {
@@ -1380,6 +1386,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Explains why this element is needed and why it's been constrained as it has.
+     *
+     * @return static
      */
     public function setRequirements(null|string|FHIRStringPrimitive|FHIRString $requirements): self
     {
@@ -1423,6 +1431,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies additional names by which this element might also be known.
+     *
+     * @return static
      */
     public function addSynonym(string|FHIRStringPrimitive|FHIRString $synonym): self
     {
@@ -1441,6 +1451,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies additional names by which this element might also be known.
+     *
+     * @return static
      */
     public function setSynonym(string|FHIRStringPrimitive|FHIRString ...$synonym): self
     {
@@ -1475,6 +1487,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The minimum number of times this element SHALL appear in the instance.
+     *
+     * @return static
      */
     public function setMin(null|string|float|FHIRIntegerPrimitive|FHIRInteger $min): self
     {
@@ -1505,6 +1519,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum number of times this element is permitted to appear in the instance.
+     *
+     * @return static
      */
     public function setMax(null|string|FHIRStringPrimitive|FHIRString $max): self
     {
@@ -1550,6 +1566,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * and Extension Definitions.
      *
      * The data type or resource that the value of this element is permitted to be.
+     *
+     * @return static
      */
     public function addType(FHIRProfileType $type): self
     {
@@ -1566,6 +1584,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * and Extension Definitions.
      *
      * The data type or resource that the value of this element is permitted to be.
+     *
+     * @return static
      */
     public function setType(FHIRProfileType ...$type): self
     {
@@ -1595,6 +1615,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      *
      * Identifies the name of a slice defined elsewhere in the profile whose
      * constraints should be applied to the current element.
+     *
+     * @return static
      */
     public function setNameReference(null|string|FHIRStringPrimitive|FHIRString $nameReference): self
     {
@@ -1625,6 +1647,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -1655,6 +1679,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $valueInteger): self
     {
@@ -1685,6 +1711,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValueDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $valueDecimal): self
     {
@@ -1715,6 +1743,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValueBase64Binary(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $valueBase64Binary): self
     {
@@ -1745,6 +1775,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValueInstant(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $valueInstant): self
     {
@@ -1775,6 +1807,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -1805,6 +1839,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValueUri(null|string|FHIRUriPrimitive|FHIRUri $valueUri): self
     {
@@ -1839,6 +1875,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $valueDate): self
     {
@@ -1875,6 +1913,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime): self
     {
@@ -1909,6 +1949,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValueCode(null|string|FHIRCodePrimitive|FHIRCode $valueCode): self
     {
@@ -1941,6 +1983,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValueOid(null|string|FHIROidPrimitive|FHIROid $valueOid): self
     {
@@ -1973,6 +2017,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValueUuid(null|string|FHIRUuidPrimitive|FHIRUuid $valueUuid): self
     {
@@ -2009,6 +2055,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValueId(null|string|FHIRIdPrimitive|FHIRId $valueId): self
     {
@@ -2041,6 +2089,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValueAttachment(null|FHIRAttachment $valueAttachment): self
     {
@@ -2070,6 +2120,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValueIdentifier(null|FHIRIdentifier $valueIdentifier): self
     {
@@ -2101,6 +2153,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -2130,6 +2184,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValueCoding(null|FHIRCoding $valueCoding): self
     {
@@ -2163,6 +2219,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -2192,6 +2250,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -2221,6 +2281,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValuePeriod(null|FHIRPeriod $valuePeriod): self
     {
@@ -2252,6 +2314,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValueRatio(null|FHIRRatio $valueRatio): self
     {
@@ -2281,6 +2345,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValueResource(null|FHIRResourceReference $valueResource): self
     {
@@ -2312,6 +2378,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValueSampledData(null|FHIRSampledData $valueSampledData): self
     {
@@ -2341,6 +2409,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValueHumanName(null|FHIRHumanName $valueHumanName): self
     {
@@ -2372,6 +2442,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValueAddress(null|FHIRAddress $valueAddress): self
     {
@@ -2403,6 +2475,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValueContact(null|FHIRContact $valueContact): self
     {
@@ -2434,6 +2508,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
+     *
+     * @return static
      */
     public function setValueSchedule(null|FHIRSchedule $valueSchedule): self
     {
@@ -2461,6 +2537,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExampleBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $exampleBoolean): self
     {
@@ -2491,6 +2569,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExampleInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $exampleInteger): self
     {
@@ -2521,6 +2601,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExampleDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $exampleDecimal): self
     {
@@ -2551,6 +2633,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExampleBase64Binary(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $exampleBase64Binary): self
     {
@@ -2581,6 +2665,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExampleInstant(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $exampleInstant): self
     {
@@ -2611,6 +2697,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExampleString(null|string|FHIRStringPrimitive|FHIRString $exampleString): self
     {
@@ -2641,6 +2729,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExampleUri(null|string|FHIRUriPrimitive|FHIRUri $exampleUri): self
     {
@@ -2675,6 +2765,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExampleDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $exampleDate): self
     {
@@ -2711,6 +2803,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExampleDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $exampleDateTime): self
     {
@@ -2745,6 +2839,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExampleCode(null|string|FHIRCodePrimitive|FHIRCode $exampleCode): self
     {
@@ -2777,6 +2873,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExampleOid(null|string|FHIROidPrimitive|FHIROid $exampleOid): self
     {
@@ -2809,6 +2907,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExampleUuid(null|string|FHIRUuidPrimitive|FHIRUuid $exampleUuid): self
     {
@@ -2845,6 +2945,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExampleId(null|string|FHIRIdPrimitive|FHIRId $exampleId): self
     {
@@ -2877,6 +2979,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExampleAttachment(null|FHIRAttachment $exampleAttachment): self
     {
@@ -2906,6 +3010,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExampleIdentifier(null|FHIRIdentifier $exampleIdentifier): self
     {
@@ -2937,6 +3043,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExampleCodeableConcept(null|FHIRCodeableConcept $exampleCodeableConcept): self
     {
@@ -2966,6 +3074,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExampleCoding(null|FHIRCoding $exampleCoding): self
     {
@@ -2999,6 +3109,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExampleQuantity(null|FHIRQuantity $exampleQuantity): self
     {
@@ -3028,6 +3140,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExampleRange(null|FHIRRange $exampleRange): self
     {
@@ -3057,6 +3171,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExamplePeriod(null|FHIRPeriod $examplePeriod): self
     {
@@ -3088,6 +3204,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExampleRatio(null|FHIRRatio $exampleRatio): self
     {
@@ -3117,6 +3235,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExampleResource(null|FHIRResourceReference $exampleResource): self
     {
@@ -3148,6 +3268,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExampleSampledData(null|FHIRSampledData $exampleSampledData): self
     {
@@ -3177,6 +3299,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExampleHumanName(null|FHIRHumanName $exampleHumanName): self
     {
@@ -3208,6 +3332,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExampleAddress(null|FHIRAddress $exampleAddress): self
     {
@@ -3239,6 +3365,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExampleContact(null|FHIRContact $exampleContact): self
     {
@@ -3270,6 +3398,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
+     *
+     * @return static
      */
     public function setExampleSchedule(null|FHIRSchedule $exampleSchedule): self
     {
@@ -3299,6 +3429,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      *
      * Indicates the shortest length that SHALL be supported by conformant instances
      * without truncation.
+     *
+     * @return static
      */
     public function setMaxLength(null|string|float|FHIRIntegerPrimitive|FHIRInteger $maxLength): self
     {
@@ -3350,6 +3482,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      *
      * A reference to an invariant that may make additional statements about the
      * cardinality or value in the instance.
+     *
+     * @return static
      */
     public function addCondition(string|FHIRIdPrimitive|FHIRId $condition): self
     {
@@ -3372,6 +3506,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      *
      * A reference to an invariant that may make additional statements about the
      * cardinality or value in the instance.
+     *
+     * @return static
      */
     public function setCondition(string|FHIRIdPrimitive|FHIRId ...$condition): self
     {
@@ -3423,6 +3559,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      *
      * Formal constraints such as co-occurrence and other constraints that can be
      * computationally evaluated within the context of the instance.
+     *
+     * @return static
      */
     public function addConstraint(FHIRProfileConstraint $constraint): self
     {
@@ -3440,6 +3578,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      *
      * Formal constraints such as co-occurrence and other constraints that can be
      * computationally evaluated within the context of the instance.
+     *
+     * @return static
      */
     public function setConstraint(FHIRProfileConstraint ...$constraint): self
     {
@@ -3473,6 +3613,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * the element and resource consumers SHALL be capable of extracting and doing
      * something useful with the data element. If false, the element may be ignored and
      * not supported.
+     *
+     * @return static
      */
     public function setMustSupport(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $mustSupport): self
     {
@@ -3513,6 +3655,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * of this is that the element cannot be ignored by systems: they SHALL either
      * recognize the element and process it, and/or a pre-determination has been made
      * that it is not relevant to their particular system.
+     *
+     * @return static
      */
     public function setIsModifier(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isModifier): self
     {
@@ -3545,6 +3689,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * and Extension Definitions.
      *
      * Binds to a value set if this element is coded (code, Coding, CodeableConcept).
+     *
+     * @return static
      */
     public function setBinding(null|FHIRProfileBinding $binding): self
     {
@@ -3589,6 +3735,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      *
      * Identifies a concept from an external specification that roughly corresponds to
      * this element.
+     *
+     * @return static
      */
     public function addMapping(FHIRProfileMapping1 $mapping): self
     {
@@ -3606,6 +3754,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      *
      * Identifies a concept from an external specification that roughly corresponds to
      * this element.
+     *
+     * @return static
      */
     public function setMapping(FHIRProfileMapping1 ...$mapping): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -298,6 +298,8 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      * Specification of the role(s) the user plays when performing the event. Usually
      * the codes used in this element are local codes defined by the role-based access
      * control security system used in the local context.
+     *
+     * @return static
      */
     public function addRole(FHIRCodeableConcept $role): self
     {
@@ -317,6 +319,8 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      * Specification of the role(s) the user plays when performing the event. Usually
      * the codes used in this element are local codes defined by the role-based access
      * control security system used in the local context.
+     *
+     * @return static
      */
     public function setRole(FHIRCodeableConcept ...$role): self
     {
@@ -346,6 +350,8 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Direct reference to a resource that identifies the participant.
+     *
+     * @return static
      */
     public function setReference(null|FHIRResourceReference $reference): self
     {
@@ -373,6 +379,8 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Unique identifier for the user actively participating in the event.
+     *
+     * @return static
      */
     public function setUserId(null|string|FHIRStringPrimitive|FHIRString $userId): self
     {
@@ -407,6 +415,8 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      * Alternative Participant Identifier. For a human, this should be a user
      * identifier text string from authentication system. This identifier would be one
      * known to a common authentication system (e.g., single sign-on), if available.
+     *
+     * @return static
      */
     public function setAltId(null|string|FHIRStringPrimitive|FHIRString $altId): self
     {
@@ -437,6 +447,8 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-meaningful name for the user.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -469,6 +481,8 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      *
      * Indicator that the user is or is not the requestor, or initiator, for the event
      * being audited.
+     *
+     * @return static
      */
     public function setRequestor(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $requestor): self
     {
@@ -503,6 +517,8 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      *
      * Type of media involved. Used when the event is about exporting/importing onto
      * media.
+     *
+     * @return static
      */
     public function setMedia(null|FHIRCoding $media): self
     {
@@ -534,6 +550,8 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      *
      * Logical network location for application activity, if the activity has a network
      * location.
+     *
+     * @return static
      */
     public function setNetwork(null|FHIRSecurityEventNetwork $network): self
     {

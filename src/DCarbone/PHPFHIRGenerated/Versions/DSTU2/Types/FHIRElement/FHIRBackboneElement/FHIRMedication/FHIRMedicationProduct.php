@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -197,6 +197,8 @@ class FHIRMedicationProduct extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the item. Powder; tablets; carton.
+     *
+     * @return static
      */
     public function setForm(null|FHIRCodeableConcept $form): self
     {
@@ -237,6 +239,8 @@ class FHIRMedicationProduct extends FHIRBackboneElement
      * medication. It covers the ingredients and the packaging for a medication.
      *
      * Identifies a particular constituent of interest in the product.
+     *
+     * @return static
      */
     public function addIngredient(FHIRMedicationIngredient $ingredient): self
     {
@@ -252,6 +256,8 @@ class FHIRMedicationProduct extends FHIRBackboneElement
      * medication. It covers the ingredients and the packaging for a medication.
      *
      * Identifies a particular constituent of interest in the product.
+     *
+     * @return static
      */
     public function setIngredient(FHIRMedicationIngredient ...$ingredient): self
     {
@@ -294,6 +300,8 @@ class FHIRMedicationProduct extends FHIRBackboneElement
      *
      * Information about a group of medication produced or packaged from one production
      * run.
+     *
+     * @return static
      */
     public function addBatch(FHIRMedicationBatch $batch): self
     {
@@ -310,6 +318,8 @@ class FHIRMedicationProduct extends FHIRBackboneElement
      *
      * Information about a group of medication produced or packaged from one production
      * run.
+     *
+     * @return static
      */
     public function setBatch(FHIRMedicationBatch ...$batch): self
     {

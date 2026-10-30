@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -193,7 +193,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Todo. (choose any one of amount*, but only one)
+     * Todo.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $amountQuantity;
@@ -202,7 +202,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Todo. (choose any one of amount*, but only one)
+     * Todo.
      */
     #[FHIRRange]
     protected FHIRRange $amountRange;
@@ -211,7 +211,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Todo. (choose any one of amount*, but only one)
+     * Todo.
      */
     #[FHIRString]
     protected FHIRString $amountString;
@@ -323,6 +323,8 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
+     *
+     * @return static
      */
     public function setTarget(null|FHIRIdentifier $target): self
     {
@@ -354,6 +356,8 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -385,6 +389,8 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
+     *
+     * @return static
      */
     public function setInteraction(null|FHIRCodeableConcept $interaction): self
     {
@@ -416,6 +422,8 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
+     *
+     * @return static
      */
     public function setOrganism(null|FHIRCodeableConcept $organism): self
     {
@@ -447,6 +455,8 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
+     *
+     * @return static
      */
     public function setOrganismType(null|FHIRCodeableConcept $organismType): self
     {
@@ -465,7 +475,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Todo. (choose any one of amount*, but only one)
+     * Todo.
      */
     public function getAmountQuantity(): null|FHIRQuantity
     {
@@ -479,7 +489,9 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Todo. (choose any one of amount*, but only one)
+     * Todo.
+     *
+     * @return static
      */
     public function setAmountQuantity(null|FHIRQuantity $amountQuantity): self
     {
@@ -496,7 +508,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Todo. (choose any one of amount*, but only one)
+     * Todo.
      */
     public function getAmountRange(): null|FHIRRange
     {
@@ -508,7 +520,9 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Todo. (choose any one of amount*, but only one)
+     * Todo.
+     *
+     * @return static
      */
     public function setAmountRange(null|FHIRRange $amountRange): self
     {
@@ -525,7 +539,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Todo. (choose any one of amount*, but only one)
+     * Todo.
      */
     public function getAmountString(): null|FHIRString
     {
@@ -537,7 +551,9 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Todo. (choose any one of amount*, but only one)
+     * Todo.
+     *
+     * @return static
      */
     public function setAmountString(null|string|FHIRStringPrimitive|FHIRString $amountString): self
     {
@@ -572,6 +588,8 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
+     *
+     * @return static
      */
     public function setAmountType(null|FHIRCodeableConcept $amountType): self
     {
@@ -614,6 +632,8 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
+     *
+     * @return static
      */
     public function addSource(FHIRReference $source): self
     {
@@ -630,6 +650,8 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
+     *
+     * @return static
      */
     public function setSource(FHIRReference ...$source): self
     {

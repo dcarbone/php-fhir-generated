@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -587,6 +587,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      * referenced in a specification, model, design or an instance. This SHALL be a
      * URL, SHOULD be globally unique, and SHOULD be an address at which this
      * conformance statement is (or will be) published.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -625,6 +627,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      * statement when it is referenced in a specification, model, design or instance.
      * This is an arbitrary value managed by the profile author manually and the value
      * should be a timestamp.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -657,6 +661,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name identifying the conformance statement.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -691,6 +697,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      * the Narrative, or extensions
      *
      * The status of this conformance statement.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRCodePrimitive|FHIRCode $status): self
     {
@@ -725,6 +733,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      * A flag to indicate that this conformance statement is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
+     *
+     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -757,6 +767,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the conformance.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -802,6 +814,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      * desired server implementation.
      *
      * Contacts to assist a user in finding and communicating with the publisher.
+     *
+     * @return static
      */
     public function addContact(FHIRConformanceContact $contact): self
     {
@@ -818,6 +832,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      * desired server implementation.
      *
      * Contacts to assist a user in finding and communicating with the publisher.
+     *
+     * @return static
      */
     public function setContact(FHIRConformanceContact ...$contact): self
     {
@@ -859,6 +875,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      * date must change when the business version changes, if it does, and it must
      * change if the status code changes. In addition, it should change when the
      * substantive content of the conformance statement changes.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -897,6 +915,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      * use. Typically, this is used when the conformance statement describes a desired
      * rather than an actual solution, for example as a formal expression of
      * requirements as part of an RFP.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -931,6 +951,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      *
      * Explains why this conformance statement is needed and why it's been constrained
      * as it has.
+     *
+     * @return static
      */
     public function setRequirements(null|string|FHIRStringPrimitive|FHIRString $requirements): self
     {
@@ -967,6 +989,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      * A copyright statement relating to the conformance statement and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the details of the system described by the conformance statement.
+     *
+     * @return static
      */
     public function setCopyright(null|string|FHIRStringPrimitive|FHIRString $copyright): self
     {
@@ -1001,6 +1025,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      * The way that this statement is intended to be used, to describe an actual
      * running instance of software, a particular product (kind not instance of
      * software) or a class of implementation (e.g. a desired purchase).
+     *
+     * @return static
      */
     public function setKind(null|string|FHIRConformanceStatementKindList|FHIRConformanceStatementKind $kind): self
     {
@@ -1037,6 +1063,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      * Software that is covered by this conformance statement. It is used when the
      * conformance statement describes the capabilities of a particular software
      * version, independent of an installation.
+     *
+     * @return static
      */
     public function setSoftware(null|FHIRConformanceSoftware $software): self
     {
@@ -1070,6 +1098,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      * Identifies a specific implementation instance that is described by the
      * conformance statement - i.e. a particular installation, rather than the
      * capabilities of a software program.
+     *
+     * @return static
      */
     public function setImplementation(null|FHIRConformanceImplementation $implementation): self
     {
@@ -1107,6 +1137,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      *
      * The version of the FHIR specification on which this conformance statement is
      * based.
+     *
+     * @return static
      */
     public function setFhirVersion(null|string|FHIRIdPrimitive|FHIRId $fhirVersion): self
     {
@@ -1141,6 +1173,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      *
      * A code that indicates whether the application accepts unknown elements or
      * extensions when reading resources.
+     *
+     * @return static
      */
     public function setAcceptUnknown(null|string|FHIRUnknownContentCodeList|FHIRUnknownContentCode $acceptUnknown): self
     {
@@ -1190,6 +1224,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      *
      * A list of the formats supported by this implementation using their content
      * types.
+     *
+     * @return static
      */
     public function addFormat(string|FHIRCodePrimitive|FHIRCode $format): self
     {
@@ -1211,6 +1247,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      *
      * A list of the formats supported by this implementation using their content
      * types.
+     *
+     * @return static
      */
     public function setFormat(string|FHIRCodePrimitive|FHIRCode ...$format): self
     {
@@ -1272,6 +1310,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      * a client, it means the system will search by this profile and process data
      * according to the guidance implicit in the profile. See further discussion in
      * [Using Profiles]{profiling.html#profile-uses}.
+     *
+     * @return static
      */
     public function addProfile(FHIRReference $profile): self
     {
@@ -1294,6 +1334,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      * a client, it means the system will search by this profile and process data
      * according to the guidance implicit in the profile. See further discussion in
      * [Using Profiles]{profiling.html#profile-uses}.
+     *
+     * @return static
      */
     public function setProfile(FHIRReference ...$profile): self
     {
@@ -1336,6 +1378,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      * desired server implementation.
      *
      * A definition of the restful capabilities of the solution, if any.
+     *
+     * @return static
      */
     public function addRest(FHIRConformanceRest $rest): self
     {
@@ -1352,6 +1396,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      * desired server implementation.
      *
      * A definition of the restful capabilities of the solution, if any.
+     *
+     * @return static
      */
     public function setRest(FHIRConformanceRest ...$rest): self
     {
@@ -1394,6 +1440,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      * desired server implementation.
      *
      * A description of the messaging capabilities of the solution.
+     *
+     * @return static
      */
     public function addMessaging(FHIRConformanceMessaging $messaging): self
     {
@@ -1410,6 +1458,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      * desired server implementation.
      *
      * A description of the messaging capabilities of the solution.
+     *
+     * @return static
      */
     public function setMessaging(FHIRConformanceMessaging ...$messaging): self
     {
@@ -1452,6 +1502,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      * desired server implementation.
      *
      * A document definition.
+     *
+     * @return static
      */
     public function addDocument(FHIRConformanceDocument $document): self
     {
@@ -1468,6 +1520,8 @@ class FHIRConformance extends FHIRDomainResource implements VersionContainedType
      * desired server implementation.
      *
      * A document definition.
+     *
+     * @return static
      */
     public function setDocument(FHIRConformanceDocument ...$document): self
     {

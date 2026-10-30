@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -363,6 +363,8 @@ class FHIRCarePlan extends FHIRResource implements VersionContainedTypeInterface
      * business processed and/ or used to refer to it when a direct URL reference to
      * the resource itself is not appropriate (e.g. in CDA documents, or in written /
      * printed documentation).
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -382,6 +384,8 @@ class FHIRCarePlan extends FHIRResource implements VersionContainedTypeInterface
      * business processed and/ or used to refer to it when a direct URL reference to
      * the resource itself is not appropriate (e.g. in CDA documents, or in written /
      * printed documentation).
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -411,6 +415,8 @@ class FHIRCarePlan extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the patient/subject whose intended care is described by the plan.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRResourceReference $patient): self
     {
@@ -442,6 +448,8 @@ class FHIRCarePlan extends FHIRResource implements VersionContainedTypeInterface
      *
      * Indicates whether the plan is currently being acted upon, represents future
      * intentions or is now just historical record.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRCarePlanStatusList|FHIRCarePlanStatus $status): self
     {
@@ -474,6 +482,8 @@ class FHIRCarePlan extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates when the plan did (or is intended to) come into effect and end.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -507,6 +517,8 @@ class FHIRCarePlan extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the most recent date on which the plan has been revised.
+     *
+     * @return static
      */
     public function setModified(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $modified): self
     {
@@ -554,6 +566,8 @@ class FHIRCarePlan extends FHIRResource implements VersionContainedTypeInterface
      *
      * Identifies the conditions/problems/concerns/diagnoses/etc. whose management
      * and/or mitigation are handled by this plan.
+     *
+     * @return static
      */
     public function addConcern(FHIRResourceReference $concern): self
     {
@@ -571,6 +585,8 @@ class FHIRCarePlan extends FHIRResource implements VersionContainedTypeInterface
      *
      * Identifies the conditions/problems/concerns/diagnoses/etc. whose management
      * and/or mitigation are handled by this plan.
+     *
+     * @return static
      */
     public function setConcern(FHIRResourceReference ...$concern): self
     {
@@ -615,6 +631,8 @@ class FHIRCarePlan extends FHIRResource implements VersionContainedTypeInterface
      *
      * Identifies all people and organizations who are expected to be involved in the
      * care envisioned by this plan.
+     *
+     * @return static
      */
     public function addParticipant(FHIRCarePlanParticipant $participant): self
     {
@@ -632,6 +650,8 @@ class FHIRCarePlan extends FHIRResource implements VersionContainedTypeInterface
      *
      * Identifies all people and organizations who are expected to be involved in the
      * care envisioned by this plan.
+     *
+     * @return static
      */
     public function setParticipant(FHIRCarePlanParticipant ...$participant): self
     {
@@ -674,6 +694,8 @@ class FHIRCarePlan extends FHIRResource implements VersionContainedTypeInterface
      * specific condition or set of conditions.
      *
      * Describes the intended objective(s) of carrying out the Care Plan.
+     *
+     * @return static
      */
     public function addGoal(FHIRCarePlanGoal $goal): self
     {
@@ -690,6 +712,8 @@ class FHIRCarePlan extends FHIRResource implements VersionContainedTypeInterface
      * specific condition or set of conditions.
      *
      * Describes the intended objective(s) of carrying out the Care Plan.
+     *
+     * @return static
      */
     public function setGoal(FHIRCarePlanGoal ...$goal): self
     {
@@ -734,6 +758,8 @@ class FHIRCarePlan extends FHIRResource implements VersionContainedTypeInterface
      *
      * Identifies a planned action to occur as part of the plan. For example, a
      * medication to be used, lab tests to perform, self-monitoring, education, etc.
+     *
+     * @return static
      */
     public function addActivity(FHIRCarePlanActivity $activity): self
     {
@@ -751,6 +777,8 @@ class FHIRCarePlan extends FHIRResource implements VersionContainedTypeInterface
      *
      * Identifies a planned action to occur as part of the plan. For example, a
      * medication to be used, lab tests to perform, self-monitoring, education, etc.
+     *
+     * @return static
      */
     public function setActivity(FHIRCarePlanActivity ...$activity): self
     {
@@ -778,6 +806,8 @@ class FHIRCarePlan extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * General notes about the care plan not covered elsewhere.
+     *
+     * @return static
      */
     public function setNotes(null|string|FHIRStringPrimitive|FHIRString $notes): self
     {

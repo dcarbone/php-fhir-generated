@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -212,6 +212,8 @@ class FHIRConceptMapConcept extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * System that defines the concept being mapped.
+     *
+     * @return static
      */
     public function setSystem(null|string|FHIRUriPrimitive|FHIRUri $system): self
     {
@@ -246,6 +248,8 @@ class FHIRConceptMapConcept extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Identifies concept being mapped.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -293,6 +297,8 @@ class FHIRConceptMapConcept extends FHIRBackboneElement
      * A set of additional dependencies for this mapping to hold. This mapping is only
      * applicable if the specified concept can be resolved, and it has the specified
      * value.
+     *
+     * @return static
      */
     public function addDependsOn(FHIRConceptMapDependsOn $dependsOn): self
     {
@@ -310,6 +316,8 @@ class FHIRConceptMapConcept extends FHIRBackboneElement
      * A set of additional dependencies for this mapping to hold. This mapping is only
      * applicable if the specified concept can be resolved, and it has the specified
      * value.
+     *
+     * @return static
      */
     public function setDependsOn(FHIRConceptMapDependsOn ...$dependsOn): self
     {
@@ -350,6 +358,8 @@ class FHIRConceptMapConcept extends FHIRBackboneElement
      * concept systems.
      *
      * A concept from the target value set that this concept maps to.
+     *
+     * @return static
      */
     public function addMap(FHIRConceptMapMap $map): self
     {
@@ -365,6 +375,8 @@ class FHIRConceptMapConcept extends FHIRBackboneElement
      * concept systems.
      *
      * A concept from the target value set that this concept maps to.
+     *
+     * @return static
      */
     public function setMap(FHIRConceptMapMap ...$map): self
     {

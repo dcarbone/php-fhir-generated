@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -181,6 +181,8 @@ class FHIRMedicationPrescriptionSubstitution extends FHIRBackboneElement
      *
      * A code signifying whether a different drug should be dispensed from what was
      * prescribed.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -214,6 +216,8 @@ class FHIRMedicationPrescriptionSubstitution extends FHIRBackboneElement
      *
      * Indicates the reason for the substitution, or why substitution must or must not
      * be performed.
+     *
+     * @return static
      */
     public function setReason(null|FHIRCodeableConcept $reason): self
     {

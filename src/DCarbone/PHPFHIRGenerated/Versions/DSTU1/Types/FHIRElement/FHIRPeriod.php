@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -180,6 +180,8 @@ class FHIRPeriod extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The start of the period. The boundary is inclusive.
+     *
+     * @return static
      */
     public function setStart(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $start): self
     {
@@ -218,6 +220,8 @@ class FHIRPeriod extends FHIRElement
      *
      * The end of the period. If the end of the period is missing, it means that the
      * period is ongoing.
+     *
+     * @return static
      */
     public function setEnd(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $end): self
     {

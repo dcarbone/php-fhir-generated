@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -262,6 +262,8 @@ class FHIRManufacturedItemDefinitionConstituent extends FHIRBackboneElement
      *
      * The measurable amount of the substance, expressable in different ways (e.g. by
      * mass or volume).
+     *
+     * @return static
      */
     public function addAmount(FHIRQuantity $amount): self
     {
@@ -281,6 +283,8 @@ class FHIRManufacturedItemDefinitionConstituent extends FHIRBackboneElement
      *
      * The measurable amount of the substance, expressable in different ways (e.g. by
      * mass or volume).
+     *
+     * @return static
      */
     public function setAmount(FHIRQuantity ...$amount): self
     {
@@ -331,6 +335,8 @@ class FHIRManufacturedItemDefinitionConstituent extends FHIRBackboneElement
      * Example – if the component is the bead in the capsule, then the location would
      * be where the ingredient resides within the product part – intragranular,
      * extra-granular, etc.
+     *
+     * @return static
      */
     public function addLocation(FHIRCodeableConcept $location): self
     {
@@ -351,6 +357,8 @@ class FHIRManufacturedItemDefinitionConstituent extends FHIRBackboneElement
      * Example – if the component is the bead in the capsule, then the location would
      * be where the ingredient resides within the product part – intragranular,
      * extra-granular, etc.
+     *
+     * @return static
      */
     public function setLocation(FHIRCodeableConcept ...$location): self
     {
@@ -395,6 +403,8 @@ class FHIRManufacturedItemDefinitionConstituent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The function of this constituent within the component e.g. binder.
+     *
+     * @return static
      */
     public function addFunction(FHIRCodeableConcept $function): self
     {
@@ -412,6 +422,8 @@ class FHIRManufacturedItemDefinitionConstituent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The function of this constituent within the component e.g. binder.
+     *
+     * @return static
      */
     public function setFunction(FHIRCodeableConcept ...$function): self
     {
@@ -456,6 +468,8 @@ class FHIRManufacturedItemDefinitionConstituent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The ingredient that is the constituent of the given component.
+     *
+     * @return static
      */
     public function addHasIngredient(FHIRCodeableReference $hasIngredient): self
     {
@@ -473,6 +487,8 @@ class FHIRManufacturedItemDefinitionConstituent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The ingredient that is the constituent of the given component.
+     *
+     * @return static
      */
     public function setHasIngredient(FHIRCodeableReference ...$hasIngredient): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -266,7 +266,7 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
      */
     #[FHIRString]
     protected FHIRString $versionAlgorithmString;
@@ -276,7 +276,7 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
      */
     #[FHIRCoding]
     protected FHIRCoding $versionAlgorithmCoding;
@@ -748,6 +748,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the condition definition is stored on different
      * servers.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -799,6 +801,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * A formal identifier that is used to identify this condition definition when it
      * is represented in other formats, or referenced in a specification, model, design
      * or an instance.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -818,6 +822,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * A formal identifier that is used to identify this condition definition when it
      * is represented in other formats, or referenced in a specification, model, design
      * or an instance.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -857,6 +863,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -877,7 +885,7 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
      */
     public function getVersionAlgorithmString(): null|FHIRString
     {
@@ -890,7 +898,9 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
+     *
+     * @return static
      */
     public function setVersionAlgorithmString(null|string|FHIRStringPrimitive|FHIRString $versionAlgorithmString): self
     {
@@ -911,7 +921,7 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
      */
     public function getVersionAlgorithmCoding(): null|FHIRCoding
     {
@@ -924,7 +934,9 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
+     *
+     * @return static
      */
     public function setVersionAlgorithmCoding(null|FHIRCoding $versionAlgorithmCoding): self
     {
@@ -958,6 +970,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * A natural language name identifying the condition definition. This name should
      * be usable as an identifier for the module by machine processing applications
      * such as code generation.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -990,6 +1004,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the condition definition.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -1024,6 +1040,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      *
      * An explanatory or alternate title for the event definition giving additional
      * information about its content.
+     *
+     * @return static
      */
     public function setSubtitle(null|string|FHIRStringPrimitive|FHIRString $subtitle): self
     {
@@ -1054,6 +1072,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      *
      * The status of this condition definition. Enables tracking the life-cycle of the
      * content.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -1088,6 +1108,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * A Boolean value to indicate that this condition definition is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended to be
      * used for genuine usage.
+     *
+     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -1134,6 +1156,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * significantly changed. The date must change when the business version changes
      * and it must change if the status code changes. In addition, it should change
      * when the substantive content of the condition definition changes.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1168,6 +1192,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the condition definition.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1215,6 +1241,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1232,6 +1260,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1271,6 +1301,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      *
      * A free text natural language description of the condition definition from a
      * consumer's perspective.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1330,6 +1362,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate condition
      * definition instances.
+     *
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1353,6 +1387,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate condition
      * definition instances.
+     *
+     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1399,6 +1435,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      *
      * A legal or geographic region in which the condition definition is intended to be
      * used.
+     *
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1417,6 +1455,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      *
      * A legal or geographic region in which the condition definition is intended to be
      * used.
+     *
+     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1448,6 +1488,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identification of the condition, problem or diagnosis.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -1481,6 +1523,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      *
      * A subjective assessment of the severity of the condition as evaluated by the
      * clinician.
+     *
+     * @return static
      */
     public function setSeverity(null|FHIRCodeableConcept $severity): self
     {
@@ -1512,6 +1556,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The anatomical location where this condition manifests itself.
+     *
+     * @return static
      */
     public function setBodySite(null|FHIRCodeableConcept $bodySite): self
     {
@@ -1543,6 +1589,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Clinical stage or grade of a condition. May include formal severity assessments.
+     *
+     * @return static
      */
     public function setStage(null|FHIRCodeableConcept $stage): self
     {
@@ -1570,6 +1618,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether Severity is appropriate to collect for this condition.
+     *
+     * @return static
      */
     public function setHasSeverity(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $hasSeverity): self
     {
@@ -1600,6 +1650,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether bodySite is appropriate to collect for this condition.
+     *
+     * @return static
      */
     public function setHasBodySite(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $hasBodySite): self
     {
@@ -1630,6 +1682,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether stage is appropriate to collect for this condition.
+     *
+     * @return static
      */
     public function setHasStage(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $hasStage): self
     {
@@ -1677,6 +1731,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      *
      * Formal definitions of the condition. These may be references to ontologies,
      * published clinical protocols or research papers.
+     *
+     * @return static
      */
     public function addDefinition(string|FHIRUriPrimitive|FHIRUri $definition): self
     {
@@ -1697,6 +1753,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      *
      * Formal definitions of the condition. These may be references to ontologies,
      * published clinical protocols or research papers.
+     *
+     * @return static
      */
     public function setDefinition(string|FHIRUriPrimitive|FHIRUri ...$definition): self
     {
@@ -1742,6 +1800,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * A definition of a condition and information relevant to managing it.
      *
      * Observations particularly relevant to this condition.
+     *
+     * @return static
      */
     public function addObservation(FHIRConditionDefinitionObservation $observation): self
     {
@@ -1756,6 +1816,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * A definition of a condition and information relevant to managing it.
      *
      * Observations particularly relevant to this condition.
+     *
+     * @return static
      */
     public function setObservation(FHIRConditionDefinitionObservation ...$observation): self
     {
@@ -1794,6 +1856,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * A definition of a condition and information relevant to managing it.
      *
      * Medications particularly relevant for this condition.
+     *
+     * @return static
      */
     public function addMedication(FHIRConditionDefinitionMedication $medication): self
     {
@@ -1808,6 +1872,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * A definition of a condition and information relevant to managing it.
      *
      * Medications particularly relevant for this condition.
+     *
+     * @return static
      */
     public function setMedication(FHIRConditionDefinitionMedication ...$medication): self
     {
@@ -1846,6 +1912,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * A definition of a condition and information relevant to managing it.
      *
      * An observation that suggests that this condition applies.
+     *
+     * @return static
      */
     public function addPrecondition(FHIRConditionDefinitionPrecondition $precondition): self
     {
@@ -1860,6 +1928,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * A definition of a condition and information relevant to managing it.
      *
      * An observation that suggests that this condition applies.
+     *
+     * @return static
      */
     public function setPrecondition(FHIRConditionDefinitionPrecondition ...$precondition): self
     {
@@ -1902,6 +1972,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Appropriate team for this condition.
+     *
+     * @return static
      */
     public function addTeam(FHIRReference $team): self
     {
@@ -1918,6 +1990,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Appropriate team for this condition.
+     *
+     * @return static
      */
     public function setTeam(FHIRReference ...$team): self
     {
@@ -1956,6 +2030,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * A definition of a condition and information relevant to managing it.
      *
      * Questionnaire for this condition.
+     *
+     * @return static
      */
     public function addQuestionnaire(FHIRConditionDefinitionQuestionnaire $questionnaire): self
     {
@@ -1970,6 +2046,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * A definition of a condition and information relevant to managing it.
      *
      * Questionnaire for this condition.
+     *
+     * @return static
      */
     public function setQuestionnaire(FHIRConditionDefinitionQuestionnaire ...$questionnaire): self
     {
@@ -2008,6 +2086,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * A definition of a condition and information relevant to managing it.
      *
      * Plan that is appropriate.
+     *
+     * @return static
      */
     public function addPlan(FHIRConditionDefinitionPlan $plan): self
     {
@@ -2022,6 +2102,8 @@ class FHIRConditionDefinition extends FHIRMetadataResource implements VersionCon
      * A definition of a condition and information relevant to managing it.
      *
      * Plan that is appropriate.
+     *
+     * @return static
      */
     public function setPlan(FHIRConditionDefinitionPlan ...$plan): self
     {

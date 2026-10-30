@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -215,6 +215,8 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code indicating: Co-Pay, deductable, elegible, benefit, tax, etc.
+     *
+     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -246,6 +248,8 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Adjudication reason such as limit reached.
+     *
+     * @return static
      */
     public function setReason(null|FHIRCodeableConcept $reason): self
     {
@@ -275,6 +279,8 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Monitory amount associated with the code.
+     *
+     * @return static
      */
     public function setAmount(null|FHIRMoney $amount): self
     {
@@ -308,6 +314,8 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
      *
      * A non-monetary value for example a percentage. Mutually exclusive to the amount
      * element above.
+     *
+     * @return static
      */
     public function setValue(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $value): self
     {

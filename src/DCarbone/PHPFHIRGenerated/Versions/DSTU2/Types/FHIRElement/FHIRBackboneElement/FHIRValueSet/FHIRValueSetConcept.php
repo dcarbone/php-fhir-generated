@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -260,6 +260,8 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      *
      * A code - a text symbol - that uniquely identifies the concept within the code
      * system.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -290,6 +292,8 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If this code is not for use as a real concept.
+     *
+     * @return static
      */
     public function setAbstract(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $abstract): self
     {
@@ -324,6 +328,8 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      *
      * A human readable string that is the recommended default way to present this
      * concept to a user.
+     *
+     * @return static
      */
     public function setDisplay(null|string|FHIRStringPrimitive|FHIRString $display): self
     {
@@ -362,6 +368,8 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      * formal definitions required, because of the prevalence of legacy systems.
      * However, they are highly recommended, as without them there is no formal meaning
      * associated with the concept.
+     *
+     * @return static
      */
     public function setDefinition(null|string|FHIRStringPrimitive|FHIRString $definition): self
     {
@@ -405,6 +413,8 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      *
      * Additional representations for the concept - other languages, aliases,
      * specialized purposes, used for particular purposes, etc.
+     *
+     * @return static
      */
     public function addDesignation(FHIRValueSetDesignation $designation): self
     {
@@ -420,6 +430,8 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      *
      * Additional representations for the concept - other languages, aliases,
      * specialized purposes, used for particular purposes, etc.
+     *
+     * @return static
      */
     public function setDesignation(FHIRValueSetDesignation ...$designation): self
     {
@@ -462,6 +474,8 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      * Defines children of a concept to produce a hierarchy of concepts. The nature of
      * the relationships is variable (is-a/contains/categorizes) and can only be
      * determined by examining the definitions of the concepts.
+     *
+     * @return static
      */
     public function addConcept(FHIRValueSetConcept $concept): self
     {
@@ -478,6 +492,8 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      * Defines children of a concept to produce a hierarchy of concepts. The nature of
      * the relationships is variable (is-a/contains/categorizes) and can only be
      * determined by examining the definitions of the concepts.
+     *
+     * @return static
      */
     public function setConcept(FHIRValueSetConcept ...$concept): self
     {

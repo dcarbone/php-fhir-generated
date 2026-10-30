@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -400,6 +400,8 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      *
      * Identifies the type of vision correction product which is required for the
      * patient.
+     *
+     * @return static
      */
     public function setProduct(null|FHIRCoding $product): self
     {
@@ -427,6 +429,8 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The eye for which the lens applies.
+     *
+     * @return static
      */
     public function setEye(null|string|FHIRVisionEyesList|FHIRVisionEyes $eye): self
     {
@@ -461,6 +465,8 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Lens power measured in diopters (0.25 units).
+     *
+     * @return static
      */
     public function setSphere(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $sphere): self
     {
@@ -495,6 +501,8 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Power adjustment for astigmatism measured in diopters (0.25 units).
+     *
+     * @return static
      */
     public function setCylinder(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $cylinder): self
     {
@@ -527,6 +535,8 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Adjustment for astigmatism measured in integer degrees.
+     *
+     * @return static
      */
     public function setAxis(null|string|float|FHIRIntegerPrimitive|FHIRInteger $axis): self
     {
@@ -561,6 +571,8 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Amount of prism to compensate for eye alignment in fractional units.
+     *
+     * @return static
      */
     public function setPrism(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $prism): self
     {
@@ -591,6 +603,8 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The relative base, or reference lens edge, for the prism.
+     *
+     * @return static
      */
     public function setBase(null|string|FHIRVisionBaseList|FHIRVisionBase $base): self
     {
@@ -625,6 +639,8 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Power adjustment for multifocal lenses measured in diopters (0.25 units).
+     *
+     * @return static
      */
     public function setAdd(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $add): self
     {
@@ -659,6 +675,8 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Contact lens power measured in diopters (0.25 units).
+     *
+     * @return static
      */
     public function setPower(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $power): self
     {
@@ -693,6 +711,8 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Back curvature measured in millimeters.
+     *
+     * @return static
      */
     public function setBackCurve(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $backCurve): self
     {
@@ -727,6 +747,8 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Contact lens diameter measured in millimeters.
+     *
+     * @return static
      */
     public function setDiameter(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $diameter): self
     {
@@ -751,6 +773,8 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
 
     /**
      * The recommended maximum wear period for the lens.
+     *
+     * @return static
      */
     public function setDuration(null|FHIRSimpleQuantity $duration): self
     {
@@ -780,6 +804,8 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Special color or pattern.
+     *
+     * @return static
      */
     public function setColor(null|string|FHIRStringPrimitive|FHIRString $color): self
     {
@@ -812,6 +838,8 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Brand recommendations or restrictions.
+     *
+     * @return static
      */
     public function setBrand(null|string|FHIRStringPrimitive|FHIRString $brand): self
     {
@@ -844,6 +872,8 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Notes for special requirements such as coatings and lens materials.
+     *
+     * @return static
      */
     public function setNotes(null|string|FHIRStringPrimitive|FHIRString $notes): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -128,6 +128,12 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
 
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_CHARGE_ITEM_REFERENCE => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT => [
+            'min_occurs' => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -152,8 +158,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Date/time(s) range when this service was delivered or completed. (choose any one
-     * of serviced*, but only one)
+     * Date/time(s) range when this service was delivered or completed.
      */
     #[FHIRDate]
     protected FHIRDate $servicedDate;
@@ -162,8 +167,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Date/time(s) range when this service was delivered or completed. (choose any one
-     * of serviced*, but only one)
+     * Date/time(s) range when this service was delivered or completed.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $servicedPeriod;
@@ -174,8 +178,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      *
      * The ChargeItem contains information such as the billing code, date, amount etc.
      * If no further details are required for the lineItem, inline billing codes can be
-     * added using the CodeableConcept data type instead of the Reference. (choose any
-     * one of chargeItem*, but only one)
+     * added using the CodeableConcept data type instead of the Reference.
      */
     #[FHIRReference]
     protected FHIRReference $chargeItemReference;
@@ -187,8 +190,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      *
      * The ChargeItem contains information such as the billing code, date, amount etc.
      * If no further details are required for the lineItem, inline billing codes can be
-     * added using the CodeableConcept data type instead of the Reference. (choose any
-     * one of chargeItem*, but only one)
+     * added using the CodeableConcept data type instead of the Reference.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $chargeItemCodeableConcept;
@@ -277,6 +279,8 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Sequence in which the items appear on the invoice.
+     *
+     * @return static
      */
     public function setSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
     {
@@ -297,8 +301,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Date/time(s) range when this service was delivered or completed. (choose any one
-     * of serviced*, but only one)
+     * Date/time(s) range when this service was delivered or completed.
      */
     public function getServicedDate(): null|FHIRDate
     {
@@ -311,8 +314,9 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Date/time(s) range when this service was delivered or completed. (choose any one
-     * of serviced*, but only one)
+     * Date/time(s) range when this service was delivered or completed.
+     *
+     * @return static
      */
     public function setServicedDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $servicedDate): self
     {
@@ -332,8 +336,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Date/time(s) range when this service was delivered or completed. (choose any one
-     * of serviced*, but only one)
+     * Date/time(s) range when this service was delivered or completed.
      */
     public function getServicedPeriod(): null|FHIRPeriod
     {
@@ -345,8 +348,9 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Date/time(s) range when this service was delivered or completed. (choose any one
-     * of serviced*, but only one)
+     * Date/time(s) range when this service was delivered or completed.
+     *
+     * @return static
      */
     public function setServicedPeriod(null|FHIRPeriod $servicedPeriod): self
     {
@@ -365,8 +369,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      *
      * The ChargeItem contains information such as the billing code, date, amount etc.
      * If no further details are required for the lineItem, inline billing codes can be
-     * added using the CodeableConcept data type instead of the Reference. (choose any
-     * one of chargeItem*, but only one)
+     * added using the CodeableConcept data type instead of the Reference.
      */
     public function getChargeItemReference(): null|FHIRReference
     {
@@ -380,8 +383,9 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      *
      * The ChargeItem contains information such as the billing code, date, amount etc.
      * If no further details are required for the lineItem, inline billing codes can be
-     * added using the CodeableConcept data type instead of the Reference. (choose any
-     * one of chargeItem*, but only one)
+     * added using the CodeableConcept data type instead of the Reference.
+     *
+     * @return static
      */
     public function setChargeItemReference(null|FHIRReference $chargeItemReference): self
     {
@@ -401,8 +405,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      *
      * The ChargeItem contains information such as the billing code, date, amount etc.
      * If no further details are required for the lineItem, inline billing codes can be
-     * added using the CodeableConcept data type instead of the Reference. (choose any
-     * one of chargeItem*, but only one)
+     * added using the CodeableConcept data type instead of the Reference.
      */
     public function getChargeItemCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -417,8 +420,9 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      *
      * The ChargeItem contains information such as the billing code, date, amount etc.
      * If no further details are required for the lineItem, inline billing codes can be
-     * added using the CodeableConcept data type instead of the Reference. (choose any
-     * one of chargeItem*, but only one)
+     * added using the CodeableConcept data type instead of the Reference.
+     *
+     * @return static
      */
     public function setChargeItemCodeableConcept(null|FHIRCodeableConcept $chargeItemCodeableConcept): self
     {
@@ -471,6 +475,8 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      * code is currently under development. The priceComponent element can be used to
      * offer transparency to the recipient of the Invoice as to how the prices have
      * been calculated.
+     *
+     * @return static
      */
     public function addPriceComponent(FHIRMonetaryComponent $priceComponent): self
     {
@@ -492,6 +498,8 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      * code is currently under development. The priceComponent element can be used to
      * offer transparency to the recipient of the Invoice as to how the prices have
      * been calculated.
+     *
+     * @return static
      */
     public function setPriceComponent(FHIRMonetaryComponent ...$priceComponent): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -325,6 +325,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * A business identifier assigned to a particular completed (or partially
      * completed) questionnaire.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -356,6 +358,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * Indicates the Questionnaire resource that defines the form for which answers are
      * being provided.
+     *
+     * @return static
      */
     public function setQuestionnaire(null|FHIRReference $questionnaire): self
     {
@@ -383,6 +387,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The lifecycle status of the questionnaire response as a whole.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRQuestionnaireResponseStatusList|FHIRQuestionnaireResponseStatus $status): self
     {
@@ -419,6 +425,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      * The subject of the questionnaire response. This could be a patient,
      * organization, practitioner, device, etc. This is who/what the answers apply to,
      * but is not necessarily the source of information.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -450,6 +458,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * Person who received the answers to the questions in the QuestionnaireResponse
      * and recorded them in the system.
+     *
+     * @return static
      */
     public function setAuthor(null|FHIRReference $author): self
     {
@@ -487,6 +497,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * The date and/or time that this version of the questionnaire response was
      * authored.
+     *
+     * @return static
      */
     public function setAuthored(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $authored): self
     {
@@ -519,6 +531,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who answered the questions about the subject.
+     *
+     * @return static
      */
     public function setSource(null|FHIRReference $source): self
     {
@@ -552,6 +566,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      * Encounter during which this set of questionnaire response were collected. When
      * there were multiple encounters, this is the one considered most relevant to the
      * context of the answers.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -583,6 +599,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * A group of questions to a possibly similarly grouped set of questions in the
      * questionnaire response.
+     *
+     * @return static
      */
     public function setGroup(null|FHIRQuestionnaireResponseGroup $group): self
     {

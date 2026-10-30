@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -274,6 +274,8 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
      *
      * The human readable description of this resource trigger for the
      * SubscriptionTopic - for example, "An Encounter enters the 'in-progress' state".
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -316,6 +318,8 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
      * maps to http://hl7.org/fhir/StructureDefinition/Patient. For more information,
      * see <a
      * href="elementdefinition-definitions.html#ElementDefinition.type.code">ElementDefinition.type.code</a>.
+     *
+     * @return static
      */
     public function setResource(null|string|FHIRUriPrimitive|FHIRUri $resource): self
     {
@@ -361,6 +365,8 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
      * The FHIR RESTful interaction which can be used to trigger a notification for the
      * SubscriptionTopic. Multiple values are considered OR joined (e.g., CREATE or
      * UPDATE).
+     *
+     * @return static
      */
     public function addSupportedInteraction(string|FHIRInteractionTriggerEnum|FHIRInteractionTrigger $supportedInteraction): self
     {
@@ -380,6 +386,8 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
      * The FHIR RESTful interaction which can be used to trigger a notification for the
      * SubscriptionTopic. Multiple values are considered OR joined (e.g., CREATE or
      * UPDATE).
+     *
+     * @return static
      */
     public function setSupportedInteraction(string|FHIRInteractionTriggerEnum|FHIRInteractionTrigger ...$supportedInteraction): self
     {
@@ -416,6 +424,8 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
      *
      * The FHIR query based rules that the server should use to determine when to
      * trigger a notification for this subscription topic.
+     *
+     * @return static
      */
     public function setQueryCriteria(null|FHIRSubscriptionTopicQueryCriteria $queryCriteria): self
     {
@@ -447,6 +457,8 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
      *
      * The FHIRPath based rules that the server should use to determine when to trigger
      * a notification for this topic.
+     *
+     * @return static
      */
     public function setFhirPathCriteria(null|string|FHIRStringPrimitive|FHIRString $fhirPathCriteria): self
     {

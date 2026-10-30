@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -177,6 +177,15 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
         self::FIELD_SUBJECT => [
             'min_occurs' => 1,
         ],
+        self::FIELD_OCCURENCE_DATE_TIME => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_OCCURENCE_PERIOD => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_OCCURENCE_TIMING => [
+            'min_occurs' => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -318,8 +327,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A specific date/time or interval of time during which the administration took
      * place (or did not take place). For many administrations, such as swallowing a
-     * tablet the use of dateTime is more appropriate. (choose any one of occurence*,
-     * but only one)
+     * tablet the use of dateTime is more appropriate.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $occurenceDateTime;
@@ -330,8 +338,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A specific date/time or interval of time during which the administration took
      * place (or did not take place). For many administrations, such as swallowing a
-     * tablet the use of dateTime is more appropriate. (choose any one of occurence*,
-     * but only one)
+     * tablet the use of dateTime is more appropriate.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $occurencePeriod;
@@ -346,8 +353,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A specific date/time or interval of time during which the administration took
      * place (or did not take place). For many administrations, such as swallowing a
-     * tablet the use of dateTime is more appropriate. (choose any one of occurence*,
-     * but only one)
+     * tablet the use of dateTime is more appropriate.
      */
     #[FHIRTiming]
     protected FHIRTiming $occurenceTiming;
@@ -661,6 +667,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * resource itself is not appropriate. They are business identifiers assigned to
      * this resource by the performer or other systems and remain constant as the
      * resource is updated and propagates from server to server.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -682,6 +690,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * resource itself is not appropriate. They are business identifiers assigned to
      * this resource by the performer or other systems and remain constant as the
      * resource is updated and propagates from server to server.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -724,6 +734,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A plan that is fulfilled in whole or in part by this MedicationAdministration.
+     *
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -740,6 +752,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A plan that is fulfilled in whole or in part by this MedicationAdministration.
+     *
+     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -782,6 +796,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger event of which this particular event is a component or step.
+     *
+     * @return static
      */
     public function addPartOf(FHIRReference $partOf): self
     {
@@ -798,6 +814,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger event of which this particular event is a component or step.
+     *
+     * @return static
      */
     public function setPartOf(FHIRReference ...$partOf): self
     {
@@ -829,6 +847,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * some long running administrations such as infusions, it is possible for an
      * administration to be started but not completed or it may be paused while some
      * other process is under way.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRMedicationAdministrationStatusCodesEnum|FHIRMedicationAdministrationStatusCodes $status): self
     {
@@ -876,6 +896,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code indicating why the administration was not performed.
+     *
+     * @return static
      */
     public function addStatusReason(FHIRCodeableConcept $statusReason): self
     {
@@ -893,6 +915,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code indicating why the administration was not performed.
+     *
+     * @return static
      */
     public function setStatusReason(FHIRCodeableConcept ...$statusReason): self
     {
@@ -939,6 +963,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * The type of medication administration (for example, drug classification like
      * ATC, where meds would be administered, legal category of the medication).
+     *
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -957,6 +983,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * The type of medication administration (for example, drug classification like
      * ATC, where meds would be administered, legal category of the medication).
+     *
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -992,6 +1020,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * Identifies the medication that was administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
+     *
+     * @return static
      */
     public function setMedication(null|FHIRCodeableReference $medication): self
     {
@@ -1021,6 +1051,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or animal or group receiving the medication.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -1052,6 +1084,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * The visit, admission, or other contact between patient and health care provider
      * during which the medication administration was performed.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -1102,6 +1136,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * documentation of specific characteristics of the patient present at the time of
      * administration. For example, if the dose says "give "x" if the heartrate exceeds
      * "y"", then the heart rate can be included using this attribute.
+     *
+     * @return static
      */
     public function addSupportingInformation(FHIRReference $supportingInformation): self
     {
@@ -1122,6 +1158,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * documentation of specific characteristics of the patient present at the time of
      * administration. For example, if the dose says "give "x" if the heartrate exceeds
      * "y"", then the heart rate can be included using this attribute.
+     *
+     * @return static
      */
     public function setSupportingInformation(FHIRReference ...$supportingInformation): self
     {
@@ -1144,8 +1182,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A specific date/time or interval of time during which the administration took
      * place (or did not take place). For many administrations, such as swallowing a
-     * tablet the use of dateTime is more appropriate. (choose any one of occurence*,
-     * but only one)
+     * tablet the use of dateTime is more appropriate.
      */
     public function getOccurenceDateTime(): null|FHIRDateTime
     {
@@ -1163,8 +1200,9 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A specific date/time or interval of time during which the administration took
      * place (or did not take place). For many administrations, such as swallowing a
-     * tablet the use of dateTime is more appropriate. (choose any one of occurence*,
-     * but only one)
+     * tablet the use of dateTime is more appropriate.
+     *
+     * @return static
      */
     public function setOccurenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurenceDateTime): self
     {
@@ -1186,8 +1224,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A specific date/time or interval of time during which the administration took
      * place (or did not take place). For many administrations, such as swallowing a
-     * tablet the use of dateTime is more appropriate. (choose any one of occurence*,
-     * but only one)
+     * tablet the use of dateTime is more appropriate.
      */
     public function getOccurencePeriod(): null|FHIRPeriod
     {
@@ -1201,8 +1238,9 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A specific date/time or interval of time during which the administration took
      * place (or did not take place). For many administrations, such as swallowing a
-     * tablet the use of dateTime is more appropriate. (choose any one of occurence*,
-     * but only one)
+     * tablet the use of dateTime is more appropriate.
+     *
+     * @return static
      */
     public function setOccurencePeriod(null|FHIRPeriod $occurencePeriod): self
     {
@@ -1225,8 +1263,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A specific date/time or interval of time during which the administration took
      * place (or did not take place). For many administrations, such as swallowing a
-     * tablet the use of dateTime is more appropriate. (choose any one of occurence*,
-     * but only one)
+     * tablet the use of dateTime is more appropriate.
      */
     public function getOccurenceTiming(): null|FHIRTiming
     {
@@ -1244,8 +1281,9 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A specific date/time or interval of time during which the administration took
      * place (or did not take place). For many administrations, such as swallowing a
-     * tablet the use of dateTime is more appropriate. (choose any one of occurence*,
-     * but only one)
+     * tablet the use of dateTime is more appropriate.
+     *
+     * @return static
      */
     public function setOccurenceTiming(null|FHIRTiming $occurenceTiming): self
     {
@@ -1285,6 +1323,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * The date the occurrence of the MedicationAdministration was first captured in
      * the record - potentially significantly after the occurrence of the event.
+     *
+     * @return static
      */
     public function setRecorded(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $recorded): self
     {
@@ -1315,6 +1355,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An indication that the full dose was not administered.
+     *
+     * @return static
      */
     public function setIsSubPotent(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isSubPotent): self
     {
@@ -1362,6 +1404,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason or reasons why the full dose was not administered.
+     *
+     * @return static
      */
     public function addSubPotentReason(FHIRCodeableConcept $subPotentReason): self
     {
@@ -1379,6 +1423,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason or reasons why the full dose was not administered.
+     *
+     * @return static
      */
     public function setSubPotentReason(FHIRCodeableConcept ...$subPotentReason): self
     {
@@ -1431,6 +1477,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * performed the administration of the medication. An IV Pump would be an example
      * of a device that is performing the administration. Both the IV Pump and the
      * practitioner that set the rate or bolus on the pump can be listed as performers.
+     *
+     * @return static
      */
     public function addPerformer(FHIRMedicationAdministrationPerformer $performer): self
     {
@@ -1452,6 +1500,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * performed the administration of the medication. An IV Pump would be an example
      * of a device that is performing the administration. Both the IV Pump and the
      * practitioner that set the rate or bolus on the pump can be listed as performers.
+     *
+     * @return static
      */
     public function setPerformer(FHIRMedicationAdministrationPerformer ...$performer): self
     {
@@ -1498,6 +1548,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A code, Condition or observation that supports why the medication was
      * administered.
+     *
+     * @return static
      */
     public function addReason(FHIRCodeableReference $reason): self
     {
@@ -1516,6 +1568,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A code, Condition or observation that supports why the medication was
      * administered.
+     *
+     * @return static
      */
     public function setReason(FHIRCodeableReference ...$reason): self
     {
@@ -1545,6 +1599,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The original request, instruction or authority to perform the administration.
+     *
+     * @return static
      */
     public function setRequest(null|FHIRReference $request): self
     {
@@ -1591,6 +1647,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * The device that is to be used for the administration of the medication (for
      * example, PCA Pump).
+     *
+     * @return static
      */
     public function addDevice(FHIRCodeableReference $device): self
     {
@@ -1609,6 +1667,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * The device that is to be used for the administration of the medication (for
      * example, PCA Pump).
+     *
+     * @return static
      */
     public function setDevice(FHIRCodeableReference ...$device): self
     {
@@ -1655,6 +1715,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * Extra information about the medication administration that is not conveyed by
      * the other attributes.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1673,6 +1735,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * Extra information about the medication administration that is not conveyed by
      * the other attributes.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1708,6 +1772,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * Describes the medication dosage information details e.g. dose, rate, site,
      * route, etc.
+     *
+     * @return static
      */
     public function setDosage(null|FHIRMedicationAdministrationDosage $dosage): self
     {
@@ -1752,6 +1818,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A summary of the events of interest that have occurred, such as when the
      * administration was verified.
+     *
+     * @return static
      */
     public function addEventHistory(FHIRReference $eventHistory): self
     {
@@ -1769,6 +1837,8 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements Version
      *
      * A summary of the events of interest that have occurred, such as when the
      * administration was verified.
+     *
+     * @return static
      */
     public function setEventHistory(FHIRReference ...$eventHistory): self
     {

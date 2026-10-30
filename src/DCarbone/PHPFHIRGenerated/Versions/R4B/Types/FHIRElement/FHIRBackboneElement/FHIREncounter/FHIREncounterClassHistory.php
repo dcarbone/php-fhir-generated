@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -199,6 +199,8 @@ class FHIREncounterClassHistory extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * inpatient | outpatient | ambulatory | emergency +.
+     *
+     * @return static
      */
     public function setClass(null|FHIRCoding $class): self
     {
@@ -228,6 +230,8 @@ class FHIREncounterClassHistory extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time that the episode was in the specified class.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -279,6 +279,8 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Ranking of the procedure (for each type).
+     *
+     * @return static
      */
     public function setSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
     {
@@ -313,6 +315,8 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The procedure relevant to the account.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableReference $code): self
     {
@@ -352,6 +356,8 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      *
      * Date of the procedure when using a coded procedure. If using a reference to a
      * procedure, then the date on the procedure should be used.
+     *
+     * @return static
      */
     public function setDateOfService(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateOfService): self
     {
@@ -399,6 +405,8 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How this procedure value should be used in charging the account.
+     *
+     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -416,6 +424,8 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How this procedure value should be used in charging the account.
+     *
+     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -462,6 +472,8 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      *
      * The package code can be used to group procedures that may be priced or delivered
      * as a single product. Such as DRGs.
+     *
+     * @return static
      */
     public function addPackageCode(FHIRCodeableConcept $packageCode): self
     {
@@ -480,6 +492,8 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      *
      * The package code can be used to group procedures that may be priced or delivered
      * as a single product. Such as DRGs.
+     *
+     * @return static
      */
     public function setPackageCode(FHIRCodeableConcept ...$packageCode): self
     {
@@ -522,6 +536,8 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any devices that were associated with the procedure relevant to the account.
+     *
+     * @return static
      */
     public function addDevice(FHIRReference $device): self
     {
@@ -538,6 +554,8 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any devices that were associated with the procedure relevant to the account.
+     *
+     * @return static
      */
     public function setDevice(FHIRReference ...$device): self
     {

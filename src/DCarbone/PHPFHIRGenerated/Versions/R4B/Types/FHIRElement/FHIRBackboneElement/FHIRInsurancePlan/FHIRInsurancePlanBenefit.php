@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -215,6 +215,8 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of benefit (primary care; speciality care; inpatient; outpatient).
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -244,6 +246,8 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The referral requirements to have access/coverage for this benefit.
+     *
+     * @return static
      */
     public function setRequirement(null|string|FHIRStringPrimitive|FHIRString $requirement): self
     {
@@ -285,6 +289,8 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
      * Details of a Health Insurance product/plan provided by an organization.
      *
      * The specific limits on the benefit.
+     *
+     * @return static
      */
     public function addLimit(FHIRInsurancePlanLimit $limit): self
     {
@@ -299,6 +305,8 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
      * Details of a Health Insurance product/plan provided by an organization.
      *
      * The specific limits on the benefit.
+     *
+     * @return static
      */
     public function setLimit(FHIRInsurancePlanLimit ...$limit): self
     {

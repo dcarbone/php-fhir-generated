@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -431,6 +431,8 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Encounter associated with this set of historic values.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -475,6 +477,8 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier(s) by which this encounter is known.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -492,6 +496,8 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier(s) by which this encounter is known.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -519,6 +525,8 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
      *
      * planned | in-progress | on-hold | discharged | completed | cancelled |
      * discontinued | entered-in-error | unknown.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIREncounterStatusEnum|FHIREncounterStatus $status): self
     {
@@ -557,6 +565,8 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
      * Concepts representing classification of patient encounter such as ambulatory
      * (outpatient), inpatient, emergency, home health or others due to local
      * variations.
+     *
+     * @return static
      */
     public function setClass(null|FHIRCodeableConcept $class): self
     {
@@ -603,6 +613,8 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
      *
      * Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled
      * nursing, rehabilitation).
+     *
+     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -621,6 +633,8 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
      *
      * Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled
      * nursing, rehabilitation).
+     *
+     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -665,6 +679,8 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Broad categorization of the service that is to be provided (e.g. cardiology).
+     *
+     * @return static
      */
     public function addServiceType(FHIRCodeableReference $serviceType): self
     {
@@ -682,6 +698,8 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Broad categorization of the service that is to be provided (e.g. cardiology).
+     *
+     * @return static
      */
     public function setServiceType(FHIRCodeableReference ...$serviceType): self
     {
@@ -715,6 +733,8 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
      * The patient or group related to this encounter. In some use-cases the patient
      * MAY not be present, such as a case meeting about a patient between several
      * practitioners or a careteam.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -750,6 +770,8 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
      * The subjectStatus value can be used to track the patient's status within the
      * encounter. It details whether the patient has arrived or departed, has been
      * triaged or is currently in a waiting status.
+     *
+     * @return static
      */
     public function setSubjectStatus(null|FHIRCodeableConcept $subjectStatus): self
     {
@@ -781,6 +803,8 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
      *
      * The start and end time associated with this set of values associated with the
      * encounter, may be different to the planned times for various reasons.
+     *
+     * @return static
      */
     public function setActualPeriod(null|FHIRPeriod $actualPeriod): self
     {
@@ -818,6 +842,8 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The planned start date/time (or admission date) of the encounter.
+     *
+     * @return static
      */
     public function setPlannedStartDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $plannedStartDate): self
     {
@@ -858,6 +884,8 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The planned end date/time (or discharge date) of the encounter.
+     *
+     * @return static
      */
     public function setPlannedEndDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $plannedEndDate): self
     {
@@ -894,6 +922,8 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
      * Actual quantity of time the encounter lasted. This excludes the time during
      * leaves of absence. When missing it is the time in between the start and end
      * values.
+     *
+     * @return static
      */
     public function setLength(null|FHIRDuration $length): self
     {
@@ -938,6 +968,8 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
      * The location of the patient at this point in the encounter, the multiple
      * cardinality permits de-normalizing the levels of the location hierarchy, such as
      * site/ward/room/bed.
+     *
+     * @return static
      */
     public function addLocation(FHIREncounterHistoryLocation $location): self
     {
@@ -955,6 +987,8 @@ class FHIREncounterHistory extends FHIRDomainResource implements VersionContaine
      * The location of the patient at this point in the encounter, the multiple
      * cardinality permits de-normalizing the levels of the location hierarchy, such as
      * site/ward/room/bed.
+     *
+     * @return static
      */
     public function setLocation(FHIREncounterHistoryLocation ...$location): self
     {

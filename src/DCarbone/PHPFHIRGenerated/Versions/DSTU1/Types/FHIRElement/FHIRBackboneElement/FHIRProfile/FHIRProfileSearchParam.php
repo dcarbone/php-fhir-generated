@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -236,6 +236,8 @@ class FHIRProfileSearchParam extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the standard or custom search parameter.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -266,6 +268,8 @@ class FHIRProfileSearchParam extends FHIRBackboneElement
      *
      * The type of value a search parameter refers to, and how the content is
      * interpreted.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRSearchParamTypeList|FHIRSearchParamType $type): self
     {
@@ -300,6 +304,8 @@ class FHIRProfileSearchParam extends FHIRBackboneElement
      * A specification for search parameters. For standard parameters, provides
      * additional information on how the parameter is used in this solution. For custom
      * parameters, provides a description of what the parameter does.
+     *
+     * @return static
      */
     public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation): self
     {
@@ -330,6 +336,8 @@ class FHIRProfileSearchParam extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An XPath expression that returns a set of elements for the search parameter.
+     *
+     * @return static
      */
     public function setXpath(null|string|FHIRStringPrimitive|FHIRString $xpath): self
     {
@@ -377,6 +385,8 @@ class FHIRProfileSearchParam extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Types of resource (if a resource is referenced).
+     *
+     * @return static
      */
     public function addTarget(string|FHIRCodePrimitive|FHIRCode $target): self
     {
@@ -397,6 +407,8 @@ class FHIRProfileSearchParam extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Types of resource (if a resource is referenced).
+     *
+     * @return static
      */
     public function setTarget(string|FHIRCodePrimitive|FHIRCode ...$target): self
     {

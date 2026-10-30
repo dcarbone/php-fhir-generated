@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -135,8 +135,7 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Instructions in terms that are understood by the patient or consumer. (choose
-     * any one of instruction*, but only one)
+     * Instructions in terms that are understood by the patient or consumer.
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $instructionMarkdown;
@@ -145,8 +144,7 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Instructions in terms that are understood by the patient or consumer. (choose
-     * any one of instruction*, but only one)
+     * Instructions in terms that are understood by the patient or consumer.
      */
     #[FHIRReference]
     protected FHIRReference $instructionReference;
@@ -193,8 +191,7 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Instructions in terms that are understood by the patient or consumer. (choose
-     * any one of instruction*, but only one)
+     * Instructions in terms that are understood by the patient or consumer.
      */
     public function getInstructionMarkdown(): null|FHIRMarkdown
     {
@@ -210,8 +207,9 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Instructions in terms that are understood by the patient or consumer. (choose
-     * any one of instruction*, but only one)
+     * Instructions in terms that are understood by the patient or consumer.
+     *
+     * @return static
      */
     public function setInstructionMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $instructionMarkdown): self
     {
@@ -231,8 +229,7 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Instructions in terms that are understood by the patient or consumer. (choose
-     * any one of instruction*, but only one)
+     * Instructions in terms that are understood by the patient or consumer.
      */
     public function getInstructionReference(): null|FHIRReference
     {
@@ -244,8 +241,9 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Instructions in terms that are understood by the patient or consumer. (choose
-     * any one of instruction*, but only one)
+     * Instructions in terms that are understood by the patient or consumer.
+     *
+     * @return static
      */
     public function setInstructionReference(null|FHIRReference $instructionReference): self
     {

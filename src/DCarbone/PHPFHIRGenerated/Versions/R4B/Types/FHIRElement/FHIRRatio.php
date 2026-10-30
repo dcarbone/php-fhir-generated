@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -197,6 +197,8 @@ class FHIRRatio extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the numerator.
+     *
+     * @return static
      */
     public function setNumerator(null|FHIRQuantity $numerator): self
     {
@@ -230,6 +232,8 @@ class FHIRRatio extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the denominator.
+     *
+     * @return static
      */
     public function setDenominator(null|FHIRQuantity $denominator): self
     {

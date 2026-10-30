@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -604,6 +604,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * questionnaire is (or will be) published. The URL SHOULD include the major
      * version of the questionnaire. For more information see [Technical and Business
      * Versions](resource.html#versions).
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -653,6 +655,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * A formal identifier that is used to identify this questionnaire when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -671,6 +675,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * A formal identifier that is used to identify this questionnaire when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -710,6 +716,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -746,6 +754,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * A natural language name identifying the questionnaire. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -778,6 +788,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the questionnaire.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -808,6 +820,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * The status of this questionnaire. Enables tracking the life-cycle of the
      * content.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusList|FHIRPublicationStatus $status): self
     {
@@ -842,6 +856,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * A boolean value to indicate that this questionnaire is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
+     *
+     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -886,6 +902,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * must change if and when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the questionnaire changes.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -918,6 +936,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the questionnaire.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -964,6 +984,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * A free text natural language description of the questionnaire from a consumer's
      * perspective.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1010,6 +1032,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * Explaination of why this questionnaire is needed and why it has been designed as
      * it has.
+     *
+     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1046,6 +1070,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
+     *
+     * @return static
      */
     public function setApprovalDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $approvalDate): self
     {
@@ -1082,6 +1108,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval, but doesn't change the original approval date.
+     *
+     * @return static
      */
     public function setLastReviewDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lastReviewDate): self
     {
@@ -1116,6 +1144,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * The period during which the questionnaire content was or is planned to be in
      * active use.
+     *
+     * @return static
      */
     public function setEffectivePeriod(null|FHIRPeriod $effectivePeriod): self
     {
@@ -1168,6 +1198,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate questionnaire instances.
+     *
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1189,6 +1221,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate questionnaire instances.
+     *
+     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1233,6 +1267,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the questionnaire is intended to be used.
+     *
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1250,6 +1286,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the questionnaire is intended to be used.
+     *
+     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1294,6 +1332,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1311,6 +1351,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1356,6 +1398,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      * A copyright statement relating to the questionnaire and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the questionnaire.
+     *
+     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1403,6 +1447,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * An identifier for this question or group of questions in a particular
      * terminology such as LOINC.
+     *
+     * @return static
      */
     public function addCode(FHIRCoding $code): self
     {
@@ -1420,6 +1466,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * An identifier for this question or group of questions in a particular
      * terminology such as LOINC.
+     *
+     * @return static
      */
     public function setCode(FHIRCoding ...$code): self
     {
@@ -1462,6 +1510,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * The types of subjects that can be the subject of responses created for the
      * questionnaire.
+     *
+     * @return static
      */
     public function addSubjectType(string|FHIRResourceTypeList|FHIRResourceType $subjectType): self
     {
@@ -1481,6 +1531,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * The types of subjects that can be the subject of responses created for the
      * questionnaire.
+     *
+     * @return static
      */
     public function setSubjectType(string|FHIRResourceTypeList|FHIRResourceType ...$subjectType): self
     {
@@ -1532,6 +1584,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * A particular question, question grouping or display text that is part of the
      * questionnaire.
+     *
+     * @return static
      */
     public function addItem(FHIRQuestionnaireItem $item): self
     {
@@ -1549,6 +1603,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements VersionContainedTy
      *
      * A particular question, question grouping or display text that is part of the
      * questionnaire.
+     *
+     * @return static
      */
     public function setItem(FHIRQuestionnaireItem ...$item): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -189,6 +189,8 @@ class FHIRParameters extends FHIRResource implements VersionContainedTypeInterfa
      * RESTful endpoint associated with it.
      *
      * A parameter passed to or received from the operation.
+     *
+     * @return static
      */
     public function addParameter(FHIRParametersParameter $parameter): self
     {
@@ -205,6 +207,8 @@ class FHIRParameters extends FHIRResource implements VersionContainedTypeInterfa
      * RESTful endpoint associated with it.
      *
      * A parameter passed to or received from the operation.
+     *
+     * @return static
      */
     public function setParameter(FHIRParametersParameter ...$parameter): self
     {

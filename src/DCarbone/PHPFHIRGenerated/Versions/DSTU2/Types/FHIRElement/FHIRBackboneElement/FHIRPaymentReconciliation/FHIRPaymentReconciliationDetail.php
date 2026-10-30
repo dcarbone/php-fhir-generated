@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -251,6 +251,8 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code to indicate the nature of the payment, adjustment, funds advance, etc.
+     *
+     * @return static
      */
     public function setType(null|FHIRCoding $type): self
     {
@@ -280,6 +282,8 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The claim or financial resource.
+     *
+     * @return static
      */
     public function setRequest(null|FHIRReference $request): self
     {
@@ -309,6 +313,8 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The claim response resource.
+     *
+     * @return static
      */
     public function setResponce(null|FHIRReference $responce): self
     {
@@ -338,6 +344,8 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Organization which submitted the invoice or financial transaction.
+     *
+     * @return static
      */
     public function setSubmitter(null|FHIRReference $submitter): self
     {
@@ -367,6 +375,8 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization which is receiving the payment.
+     *
+     * @return static
      */
     public function setPayee(null|FHIRReference $payee): self
     {
@@ -398,6 +408,8 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date of the invoice or financial resource.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $date): self
     {
@@ -422,6 +434,8 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement
 
     /**
      * Amount paid for this detail.
+     *
+     * @return static
      */
     public function setAmount(null|FHIRMoney $amount): self
     {

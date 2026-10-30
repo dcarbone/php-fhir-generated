@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -262,7 +262,7 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
      */
     #[FHIRString]
     protected FHIRString $versionAlgorithmString;
@@ -272,7 +272,7 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
      */
     #[FHIRCoding]
     protected FHIRCoding $versionAlgorithmCoding;
@@ -344,7 +344,7 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject from which this
-     * kind of specimen is to be collected. (choose any one of subject*, but only one)
+     * kind of specimen is to be collected.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $subjectCodeableConcept;
@@ -354,7 +354,7 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject from which this
-     * kind of specimen is to be collected. (choose any one of subject*, but only one)
+     * kind of specimen is to be collected.
      */
     #[FHIRReference]
     protected FHIRReference $subjectReference;
@@ -760,6 +760,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * SpecimenDefinition is (or will be) published. The URL SHOULD include the major
      * version of the SpecimenDefinition. For more information see Technical and
      * Business Versions.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -794,6 +796,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A business identifier assigned to this SpecimenDefinition.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -829,6 +833,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * when it is referenced in a specification, model, design or instance. This is an
      * arbitrary value managed by the SpecimenDefinition author and is not expected to
      * be globally unique.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -849,7 +855,7 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
      */
     public function getVersionAlgorithmString(): null|FHIRString
     {
@@ -862,7 +868,9 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
+     *
+     * @return static
      */
     public function setVersionAlgorithmString(null|string|FHIRStringPrimitive|FHIRString $versionAlgorithmString): self
     {
@@ -883,7 +891,7 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
      */
     public function getVersionAlgorithmCoding(): null|FHIRCoding
     {
@@ -896,7 +904,9 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
+     *
+     * @return static
      */
     public function setVersionAlgorithmCoding(null|FHIRCoding $versionAlgorithmCoding): self
     {
@@ -930,6 +940,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * A natural language name identifying the {{title}}. This name should be usable as
      * an identifier for the module by machine processing applications such as code
      * generation.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -962,6 +974,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the SpecimenDefinition.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -1011,6 +1025,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      *
      * The canonical URL pointing to another FHIR-defined SpecimenDefinition that is
      * adhered to in whole or in part by this definition.
+     *
+     * @return static
      */
     public function addDerivedFromCanonical(string|FHIRCanonicalPrimitive|FHIRCanonical $derivedFromCanonical): self
     {
@@ -1032,6 +1048,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      *
      * The canonical URL pointing to another FHIR-defined SpecimenDefinition that is
      * adhered to in whole or in part by this definition.
+     *
+     * @return static
      */
     public function setDerivedFromCanonical(string|FHIRCanonicalPrimitive|FHIRCanonical ...$derivedFromCanonical): self
     {
@@ -1083,6 +1101,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      *
      * The URL pointing to an externally-defined type of specimen, guideline or other
      * definition that is adhered to in whole or in part by this definition.
+     *
+     * @return static
      */
     public function addDerivedFromUri(string|FHIRUriPrimitive|FHIRUri $derivedFromUri): self
     {
@@ -1103,6 +1123,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      *
      * The URL pointing to an externally-defined type of specimen, guideline or other
      * definition that is adhered to in whole or in part by this definition.
+     *
+     * @return static
      */
     public function setDerivedFromUri(string|FHIRUriPrimitive|FHIRUri ...$derivedFromUri): self
     {
@@ -1135,6 +1157,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of theSpecimenDefinition.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -1167,6 +1191,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      *
      * A flag to indicate that this SpecimenDefinition is not authored for genuine
      * usage.
+     *
+     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -1188,7 +1214,7 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject from which this
-     * kind of specimen is to be collected. (choose any one of subject*, but only one)
+     * kind of specimen is to be collected.
      */
     public function getSubjectCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -1202,7 +1228,9 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject from which this
-     * kind of specimen is to be collected. (choose any one of subject*, but only one)
+     * kind of specimen is to be collected.
+     *
+     * @return static
      */
     public function setSubjectCodeableConcept(null|FHIRCodeableConcept $subjectCodeableConcept): self
     {
@@ -1220,7 +1248,7 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject from which this
-     * kind of specimen is to be collected. (choose any one of subject*, but only one)
+     * kind of specimen is to be collected.
      */
     public function getSubjectReference(): null|FHIRReference
     {
@@ -1233,7 +1261,9 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject from which this
-     * kind of specimen is to be collected. (choose any one of subject*, but only one)
+     * kind of specimen is to be collected.
+     *
+     * @return static
      */
     public function setSubjectReference(null|FHIRReference $subjectReference): self
     {
@@ -1275,6 +1305,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * For draft definitions, indicates the date of initial creation. For active
      * definitions, represents the date of activation. For withdrawn definitions,
      * indicates the date of withdrawal.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1309,6 +1341,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Helps establish the "authority/credibility" of the SpecimenDefinition. May also
      * allow for contact.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1356,6 +1390,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1373,6 +1409,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1412,6 +1450,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      *
      * A free text natural language description of the SpecimenDefinition from the
      * consumer's perspective.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1467,6 +1507,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * of specimen definitions.
+     *
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1488,6 +1530,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * of specimen definitions.
+     *
+     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1532,6 +1576,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A jurisdiction in which the SpecimenDefinition is intended to be used.
+     *
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1549,6 +1595,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A jurisdiction in which the SpecimenDefinition is intended to be used.
+     *
+     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1588,6 +1636,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Explains why this SpecimeDefinition is needed and why it has been designed as it
      * has.
+     *
+     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1632,6 +1682,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * Copyright statement relating to the SpecimenDefinition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the SpecimenDefinition.
+     *
+     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1668,6 +1720,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
+     *
+     * @return static
      */
     public function setCopyrightLabel(null|string|FHIRStringPrimitive|FHIRString $copyrightLabel): self
     {
@@ -1704,6 +1758,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      *
      * The date on which the asset content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
+     *
+     * @return static
      */
     public function setApprovalDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $approvalDate): self
     {
@@ -1740,6 +1796,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      *
      * The date on which the asset content was last reviewed. Review happens
      * periodically after that, but doesn't change the original approval date.
+     *
+     * @return static
      */
     public function setLastReviewDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lastReviewDate): self
     {
@@ -1774,6 +1832,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      *
      * The period during which the SpecimenDefinition content was or is planned to be
      * effective.
+     *
+     * @return static
      */
     public function setEffectivePeriod(null|FHIRPeriod $effectivePeriod): self
     {
@@ -1805,6 +1865,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of material to be collected.
+     *
+     * @return static
      */
     public function setTypeCollected(null|FHIRCodeableConcept $typeCollected): self
     {
@@ -1849,6 +1911,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Preparation of the patient for specimen collection.
+     *
+     * @return static
      */
     public function addPatientPreparation(FHIRCodeableConcept $patientPreparation): self
     {
@@ -1866,6 +1930,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Preparation of the patient for specimen collection.
+     *
+     * @return static
      */
     public function setPatientPreparation(FHIRCodeableConcept ...$patientPreparation): self
     {
@@ -1895,6 +1961,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time aspect of specimen collection (duration or offset).
+     *
+     * @return static
      */
     public function setTimeAspect(null|string|FHIRStringPrimitive|FHIRString $timeAspect): self
     {
@@ -1942,6 +2010,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The action to be performed for collecting the specimen.
+     *
+     * @return static
      */
     public function addCollection(FHIRCodeableConcept $collection): self
     {
@@ -1959,6 +2029,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The action to be performed for collecting the specimen.
+     *
+     * @return static
      */
     public function setCollection(FHIRCodeableConcept ...$collection): self
     {
@@ -1997,6 +2069,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * A kind of specimen with associated set of requirements.
      *
      * Specimen conditioned in a container as expected by the testing laboratory.
+     *
+     * @return static
      */
     public function addTypeTested(FHIRSpecimenDefinitionTypeTested $typeTested): self
     {
@@ -2011,6 +2085,8 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements VersionCont
      * A kind of specimen with associated set of requirements.
      *
      * Specimen conditioned in a container as expected by the testing laboratory.
+     *
+     * @return static
      */
     public function setTypeTested(FHIRSpecimenDefinitionTypeTested ...$typeTested): self
     {

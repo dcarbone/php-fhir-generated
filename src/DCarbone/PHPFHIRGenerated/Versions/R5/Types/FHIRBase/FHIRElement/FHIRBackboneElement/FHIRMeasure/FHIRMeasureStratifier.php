@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -273,6 +273,8 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      *
      * An identifier that is unique within the Measure allowing linkage to the
      * equivalent item in a MeasureReport resource.
+     *
+     * @return static
      */
     public function setLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId): self
     {
@@ -311,6 +313,8 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      * Indicates a meaning for the stratifier. This can be as simple as a unique
      * identifier, or it can establish meaning in a broader context by drawing from a
      * terminology, allowing stratifiers to be correlated across measures.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -348,6 +352,8 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The human readable description of this stratifier criteria.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -388,6 +394,8 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      * An expression that specifies the criteria for the stratifier. This is typically
      * the name of an expression defined within a referenced library, but it may also
      * be a path to a stratifier element.
+     *
+     * @return static
      */
     public function setCriteria(null|FHIRExpression $criteria): self
     {
@@ -417,6 +425,8 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A Group resource that defines this population as a set of characteristics.
+     *
+     * @return static
      */
     public function setGroupDefinition(null|FHIRReference $groupDefinition): self
     {
@@ -459,6 +469,8 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      * A component of the stratifier criteria for the measure report, specified as
      * either the name of a valid CQL expression defined within a referenced library or
      * a valid FHIR Resource Path.
+     *
+     * @return static
      */
     public function addComponent(FHIRMeasureComponent $component): self
     {
@@ -475,6 +487,8 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      * A component of the stratifier criteria for the measure report, specified as
      * either the name of a valid CQL expression defined within a referenced library or
      * a valid FHIR Resource Path.
+     *
+     * @return static
      */
     public function setComponent(FHIRMeasureComponent ...$component): self
     {

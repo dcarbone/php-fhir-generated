@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -222,6 +222,8 @@ class FHIREncounterReason extends FHIRBackboneElement
      *
      * What the reason value should be used as e.g. Chief Complaint, Health Concern,
      * Health Maintenance (including screening).
+     *
+     * @return static
      */
     public function addUse(FHIRCodeableConcept $use): self
     {
@@ -240,6 +242,8 @@ class FHIREncounterReason extends FHIRBackboneElement
      *
      * What the reason value should be used as e.g. Chief Complaint, Health Concern,
      * Health Maintenance (including screening).
+     *
+     * @return static
      */
     public function setUse(FHIRCodeableConcept ...$use): self
     {
@@ -286,6 +290,8 @@ class FHIREncounterReason extends FHIRBackboneElement
      *
      * Reason the encounter takes place, expressed as a code or a reference to another
      * resource. For admissions, this can be used for a coded admission diagnosis.
+     *
+     * @return static
      */
     public function addValue(FHIRCodeableReference $value): self
     {
@@ -304,6 +310,8 @@ class FHIREncounterReason extends FHIRBackboneElement
      *
      * Reason the encounter takes place, expressed as a code or a reference to another
      * resource. For admissions, this can be used for a coded admission diagnosis.
+     *
+     * @return static
      */
     public function setValue(FHIRCodeableReference ...$value): self
     {

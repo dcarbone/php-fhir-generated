@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -194,6 +194,8 @@ class FHIRPatientAnimal extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the high level taxonomic categorization of the kind of animal.
+     *
+     * @return static
      */
     public function setSpecies(null|FHIRCodeableConcept $species): self
     {
@@ -225,6 +227,8 @@ class FHIRPatientAnimal extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the detailed categorization of the kind of animal.
+     *
+     * @return static
      */
     public function setBreed(null|FHIRCodeableConcept $breed): self
     {
@@ -256,6 +260,8 @@ class FHIRPatientAnimal extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the current state of the animal's reproductive organs.
+     *
+     * @return static
      */
     public function setGenderStatus(null|FHIRCodeableConcept $genderStatus): self
     {

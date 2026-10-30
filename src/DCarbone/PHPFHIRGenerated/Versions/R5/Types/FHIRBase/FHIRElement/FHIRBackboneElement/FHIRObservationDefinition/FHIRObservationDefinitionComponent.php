@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -240,6 +240,8 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes what will be observed.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -280,6 +282,8 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
      *
      * The data types allowed for the value element of the instance of this component
      * observations.
+     *
+     * @return static
      */
     public function addPermittedDataType(string|FHIRObservationDataTypeEnum|FHIRObservationDataType $permittedDataType): self
     {
@@ -298,6 +302,8 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
      *
      * The data types allowed for the value element of the instance of this component
      * observations.
+     *
+     * @return static
      */
     public function setPermittedDataType(string|FHIRObservationDataTypeEnum|FHIRObservationDataType ...$permittedDataType): self
     {
@@ -349,6 +355,8 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
      *
      * Units allowed for the valueQuantity element in the instance observations
      * conforming to this ObservationDefinition.
+     *
+     * @return static
      */
     public function addPermittedUnit(FHIRCoding $permittedUnit): self
     {
@@ -366,6 +374,8 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
      *
      * Units allowed for the valueQuantity element in the instance observations
      * conforming to this ObservationDefinition.
+     *
+     * @return static
      */
     public function setPermittedUnit(FHIRCoding ...$permittedUnit): self
     {
@@ -410,6 +420,8 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
      * A set of qualified values associated with a context and a set of conditions -
      * provides a range for quantitative and ordinal observations and a collection of
      * value sets for qualitative observations.
+     *
+     * @return static
      */
     public function addQualifiedValue(FHIRObservationDefinitionQualifiedValue $qualifiedValue): self
     {
@@ -427,6 +439,8 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
      * A set of qualified values associated with a context and a set of conditions -
      * provides a range for quantitative and ordinal observations and a collection of
      * value sets for qualitative observations.
+     *
+     * @return static
      */
     public function setQualifiedValue(FHIRObservationDefinitionQualifiedValue ...$qualifiedValue): self
     {

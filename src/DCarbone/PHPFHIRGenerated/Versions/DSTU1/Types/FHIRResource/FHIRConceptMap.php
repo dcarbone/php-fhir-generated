@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -394,6 +394,8 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * The identifier that is used to identify this concept map when it is referenced
      * in a specification, model, design or an instance (should be globally unique OID,
      * UUID, or URI).
+     *
+     * @return static
      */
     public function setIdentifier(null|string|FHIRStringPrimitive|FHIRString $identifier): self
     {
@@ -430,6 +432,8 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * is referenced in a specification, model, design or instance. This is an
      * arbitrary value managed by the profile author manually and the value should be a
      * timestamp.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -460,6 +464,8 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name describing the concept map.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -490,6 +496,8 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the concept map.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -539,6 +547,8 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      *
      * Contacts of the publisher to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function addTelecom(FHIRContact $telecom): self
     {
@@ -557,6 +567,8 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      *
      * Contacts of the publisher to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function setTelecom(FHIRContact ...$telecom): self
     {
@@ -586,6 +598,8 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      *
      * A free text natural language description of the use of the concept map - reason
      * for definition, conditions of use, etc.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -616,6 +630,8 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A copyright statement relating to the concept map and/or its contents.
+     *
+     * @return static
      */
     public function setCopyright(null|string|FHIRStringPrimitive|FHIRString $copyright): self
     {
@@ -644,6 +660,8 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the concept map.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRValueSetStatusList|FHIRValueSetStatus $status): self
     {
@@ -678,6 +696,8 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * This ConceptMap was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
+     *
+     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -714,6 +734,8 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that the concept map status was last changed.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -746,6 +768,8 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The source value set that specifies the concepts that are being mapped.
+     *
+     * @return static
      */
     public function setSource(null|FHIRResourceReference $source): self
     {
@@ -779,6 +803,8 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * The target value set provides context to the mappings. Note that the mapping is
      * made between concepts, not between value sets, but the value set provides
      * important context about how the concept mapping choices are made.
+     *
+     * @return static
      */
     public function setTarget(null|FHIRResourceReference $target): self
     {
@@ -819,6 +845,8 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * concept systems.
      *
      * Mappings for a concept from the source valueset.
+     *
+     * @return static
      */
     public function addConcept(FHIRConceptMapConcept $concept): self
     {
@@ -834,6 +862,8 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * concept systems.
      *
      * Mappings for a concept from the source valueset.
+     *
+     * @return static
      */
     public function setConcept(FHIRConceptMapConcept ...$concept): self
     {

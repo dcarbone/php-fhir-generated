@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -263,6 +263,8 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      * Identifies the actual instance of what caused the adverse event. May be a
      * substance, medication, medication administration, medication statement or a
      * device.
+     *
+     * @return static
      */
     public function setInstance(null|FHIRReference $instance): self
     {
@@ -290,6 +292,8 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * causality1 | causality2.
+     *
+     * @return static
      */
     public function setCausality(null|string|FHIRAdverseEventCausalityList|FHIRAdverseEventCausality $causality): self
     {
@@ -324,6 +328,8 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * assess1 | assess2.
+     *
+     * @return static
      */
     public function setCausalityAssessment(null|FHIRCodeableConcept $causalityAssessment): self
     {
@@ -353,6 +359,8 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * AdverseEvent.suspectEntity.causalityProductRelatedness.
+     *
+     * @return static
      */
     public function setCausalityProductRelatedness(null|string|FHIRStringPrimitive|FHIRString $causalityProductRelatedness): self
     {
@@ -387,6 +395,8 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * method1 | method2.
+     *
+     * @return static
      */
     public function setCausalityMethod(null|FHIRCodeableConcept $causalityMethod): self
     {
@@ -416,6 +426,8 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * AdverseEvent.suspectEntity.causalityAuthor.
+     *
+     * @return static
      */
     public function setCausalityAuthor(null|FHIRReference $causalityAuthor): self
     {
@@ -447,6 +459,8 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * result1 | result2.
+     *
+     * @return static
      */
     public function setCausalityResult(null|FHIRCodeableConcept $causalityResult): self
     {

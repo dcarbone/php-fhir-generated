@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -415,6 +415,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      * Business identifiers assigned to this questionnaire response by the performer
      * and/or other systems. These identifiers remain constant as the resource is
      * updated and propagates from server to server.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -434,6 +436,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      * Business identifiers assigned to this questionnaire response by the performer
      * and/or other systems. These identifiers remain constant as the resource is
      * updated and propagates from server to server.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -482,6 +486,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      * questionnaire response. For example, a ServiceRequest seeking an intake
      * assessment or a decision support recommendation to assess for post-partum
      * depression.
+     *
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -501,6 +507,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      * questionnaire response. For example, a ServiceRequest seeking an intake
      * assessment or a decision support recommendation to assess for post-partum
      * depression.
+     *
+     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -545,6 +553,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * A procedure or observation that this questionnaire was performed as part of the
      * execution of. For example, the surgery a checklist was executed as part of.
+     *
+     * @return static
      */
     public function addPartOf(FHIRReference $partOf): self
     {
@@ -562,6 +572,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * A procedure or observation that this questionnaire was performed as part of the
      * execution of. For example, the surgery a checklist was executed as part of.
+     *
+     * @return static
      */
     public function setPartOf(FHIRReference ...$partOf): self
     {
@@ -595,6 +607,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * The Questionnaire that defines and organizes the questions for which answers are
      * being provided.
+     *
+     * @return static
      */
     public function setQuestionnaire(null|string|FHIRCanonicalPrimitive|FHIRCanonical $questionnaire): self
     {
@@ -623,6 +637,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the questionnaire response.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRQuestionnaireResponseStatusEnum|FHIRQuestionnaireResponseStatus $status): self
     {
@@ -659,6 +675,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      * The subject of the questionnaire response. This could be a patient,
      * organization, practitioner, device, etc. This is who/what the answers apply to,
      * but is not necessarily the source of information.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -690,6 +708,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * The Encounter during which this questionnaire response was created or to which
      * the creation of this record is tightly associated.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -729,6 +749,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * The date and/or time that this questionnaire response was last modified by the
      * user - e.g. changing answers or revising status.
+     *
+     * @return static
      */
     public function setAuthored(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $authored): self
     {
@@ -763,6 +785,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * The individual or device that received the answers to the questions in the
      * QuestionnaireResponse and recorded them in the system.
+     *
+     * @return static
      */
     public function setAuthor(null|FHIRReference $author): self
     {
@@ -792,6 +816,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or device that answered the questions about the subject.
+     *
+     * @return static
      */
     public function setSource(null|FHIRReference $source): self
     {
@@ -836,6 +862,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * A group or question item from the original questionnaire for which answers are
      * provided.
+     *
+     * @return static
      */
     public function addItem(FHIRQuestionnaireResponseItem $item): self
     {
@@ -853,6 +881,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * A group or question item from the original questionnaire for which answers are
      * provided.
+     *
+     * @return static
      */
     public function setItem(FHIRQuestionnaireResponseItem ...$item): self
     {

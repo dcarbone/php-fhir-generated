@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -324,6 +324,8 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * High-level categorization of the type of activity in a care plan.
+     *
+     * @return static
      */
     public function setCategory(null|string|FHIRCarePlanActivityCategoryList|FHIRCarePlanActivityCategory $category): self
     {
@@ -360,6 +362,8 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      *
      * Detailed description of the type of activity. E.g. What lab test, what
      * procedure, what kind of encounter.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -391,6 +395,8 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     *
+     * @return static
      */
     public function setTimingSchedule(null|FHIRSchedule $timingSchedule): self
     {
@@ -420,6 +426,8 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     *
+     * @return static
      */
     public function setTimingPeriod(null|FHIRPeriod $timingPeriod): self
     {
@@ -447,6 +455,8 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     *
+     * @return static
      */
     public function setTimingString(null|string|FHIRStringPrimitive|FHIRString $timingString): self
     {
@@ -481,6 +491,8 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      *
      * Identifies the facility where the activity will occur. E.g. home, hospital,
      * specific clinic, etc.
+     *
+     * @return static
      */
     public function setLocation(null|FHIRResourceReference $location): self
     {
@@ -523,6 +535,8 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who's expected to be involved in the activity.
+     *
+     * @return static
      */
     public function addPerformer(FHIRResourceReference $performer): self
     {
@@ -539,6 +553,8 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who's expected to be involved in the activity.
+     *
+     * @return static
      */
     public function setPerformer(FHIRResourceReference ...$performer): self
     {
@@ -570,6 +586,8 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      *
      * Identifies the food, drug or other product being consumed or supplied in the
      * activity.
+     *
+     * @return static
      */
     public function setProduct(null|FHIRResourceReference $product): self
     {
@@ -603,6 +621,8 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the quantity expected to be consumed in a given day.
+     *
+     * @return static
      */
     public function setDailyAmount(null|FHIRQuantity $dailyAmount): self
     {
@@ -636,6 +656,8 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the quantity expected to be supplied.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -669,6 +691,8 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * including relation to other activities. It may also include objectives,
      * pre-conditions and end-conditions. Finally, it may convey specifics about the
      * activity such as body site, method, route, etc.
+     *
+     * @return static
      */
     public function setDetails(null|string|FHIRStringPrimitive|FHIRString $details): self
     {

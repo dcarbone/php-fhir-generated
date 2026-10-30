@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -186,6 +186,8 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
      *
      * An identifier for the network access point of the user device for the audit
      * event.
+     *
+     * @return static
      */
     public function setAddress(null|string|FHIRStringPrimitive|FHIRString $address): self
     {
@@ -218,6 +220,8 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
      *
      * An identifier for the type of network access point that originated the audit
      * event.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRAuditEventParticipantNetworkTypeList|FHIRAuditEventParticipantNetworkType $type): self
     {

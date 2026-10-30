@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -262,6 +262,8 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that identifies the kind of trait being asserted.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -295,6 +297,8 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
      * of the group.
+     *
+     * @return static
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -324,6 +328,8 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
      * of the group.
+     *
+     * @return static
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -362,6 +368,8 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
      * of the group.
+     *
+     * @return static
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -393,6 +401,8 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
      * of the group.
+     *
+     * @return static
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -422,6 +432,8 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      *
      * If true, indicates the characteristic is one that is NOT held by members of the
      * group.
+     *
+     * @return static
      */
     public function setExclude(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $exclude): self
     {

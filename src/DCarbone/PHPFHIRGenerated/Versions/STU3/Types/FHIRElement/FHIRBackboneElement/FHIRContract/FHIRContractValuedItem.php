@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -304,6 +304,8 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific type of Contract Valued Item that may be priced.
+     *
+     * @return static
      */
     public function setEntityCodeableConcept(null|FHIRCodeableConcept $entityCodeableConcept): self
     {
@@ -333,6 +335,8 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific type of Contract Valued Item that may be priced.
+     *
+     * @return static
      */
     public function setEntityReference(null|FHIRReference $entityReference): self
     {
@@ -362,6 +366,8 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies a Contract Valued Item instance.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -399,6 +405,8 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      *
      * Indicates the time during which this Contract ValuedItem information is
      * effective.
+     *
+     * @return static
      */
     public function setEffectiveTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $effectiveTime): self
     {
@@ -437,6 +445,8 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      *
      * Specifies the units by which the Contract Valued Item is measured or counted,
      * and quantifies the countable or measurable Contract Valued Item instances.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -466,6 +476,8 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A Contract Valued Item unit valuation measure.
+     *
+     * @return static
      */
     public function setUnitPrice(null|FHIRMoney $unitPrice): self
     {
@@ -501,6 +513,8 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * A real number that represents a multiplier used in determining the overall value
      * of the Contract Valued Item delivered. The concept of a Factor allows for a
      * discount or surcharge multiplier to be applied to a monetary amount.
+     *
+     * @return static
      */
     public function setFactor(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $factor): self
     {
@@ -541,6 +555,8 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * resource intensiveness) associated with the Contract Valued Item delivered. The
      * concept of Points allows for assignment of point values for a Contract Valued
      * Item, such that a monetary amount can be assigned to each point.
+     *
+     * @return static
      */
     public function setPoints(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $points): self
     {
@@ -579,6 +595,8 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * unitPriceAmt. For example, the formula: unit Quantity * unit Price (Cost per
      * Point) * factor Number * points = net Amount. Quantity, factor and points are
      * assumed to be 1 if not supplied.
+     *
+     * @return static
      */
     public function setNet(null|FHIRMoney $net): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -254,6 +254,8 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
      * represents the medication which may be the details of the medication or simply
      * an attribute carrying a code that identifies the medication from a known list of
      * medications.
+     *
+     * @return static
      */
     public function setMedicationCodeableConcept(null|FHIRCodeableConcept $medicationCodeableConcept): self
     {
@@ -289,6 +291,8 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
      * represents the medication which may be the details of the medication or simply
      * an attribute carrying a code that identifies the medication from a known list of
      * medications.
+     *
+     * @return static
      */
     public function setMedicationReference(null|FHIRReference $medicationReference): self
     {
@@ -320,6 +324,8 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
      *
      * This indicates the validity period of a prescription (stale dating the
      * Prescription).
+     *
+     * @return static
      */
     public function setValidityPeriod(null|FHIRPeriod $validityPeriod): self
     {
@@ -357,6 +363,8 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
      * does NOT include the original order dispense. This means that if an order
      * indicates dispense 30 tablets plus "3 repeats", then the order can be dispensed
      * a total of 4 times and the patient can receive a total of 120 tablets.
+     *
+     * @return static
      */
     public function setNumberOfRepeatsAllowed(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $numberOfRepeatsAllowed): self
     {
@@ -381,6 +389,8 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
 
     /**
      * The amount that is to be dispensed for one fill.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRSimpleQuantity $quantity): self
     {
@@ -404,6 +414,8 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
     /**
      * Identifies the period time over which the supplied product is expected to be
      * used, or the length of time the dispense is expected to last.
+     *
+     * @return static
      */
     public function setExpectedSupplyDuration(null|FHIRDuration $expectedSupplyDuration): self
     {

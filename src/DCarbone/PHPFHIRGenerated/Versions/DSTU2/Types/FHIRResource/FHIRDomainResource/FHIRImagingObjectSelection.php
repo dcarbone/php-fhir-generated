@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -334,6 +334,8 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements VersionCo
      * the Narrative, or extensions
      *
      * Instance UID of the DICOM KOS SOP Instances represented in this resource.
+     *
+     * @return static
      */
     public function setUid(null|string|FHIROidPrimitive|FHIROid $uid): self
     {
@@ -368,6 +370,8 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements VersionCo
      *
      * A patient resource reference which is the patient subject of all DICOM SOP
      * Instances in this ImagingObjectSelection.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -401,6 +405,8 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements VersionCo
      *
      * The reason for, or significance of, the selection of objects referenced in the
      * resource.
+     *
+     * @return static
      */
     public function setTitle(null|FHIRCodeableConcept $title): self
     {
@@ -436,6 +442,8 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements VersionCo
      * ImagingObjectSelection. This should be aligned with the content of the title
      * element, and can provide further explanation of the SOP instances in the
      * selection.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -476,6 +484,8 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements VersionCo
      * selected a set of imaging SOP instances to attach in a diagnostic report, and a
      * CAD application may author a selection to describe SOP instances it used to
      * generate a detection conclusion.
+     *
+     * @return static
      */
     public function setAuthor(null|FHIRReference $author): self
     {
@@ -517,6 +527,8 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements VersionCo
      * (typically) different from the creation date of the selection resource, and from
      * dates associated with the referenced instances (e.g. capture time of the
      * referenced image).
+     *
+     * @return static
      */
     public function setAuthoringTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $authoringTime): self
     {
@@ -578,6 +590,8 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements VersionCo
      *
      * Study identity and locating information of the DICOM SOP instances in the
      * selection.
+     *
+     * @return static
      */
     public function addStudy(FHIRImagingObjectSelectionStudy $study): self
     {
@@ -602,6 +616,8 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements VersionCo
      *
      * Study identity and locating information of the DICOM SOP instances in the
      * selection.
+     *
+     * @return static
      */
     public function setStudy(FHIRImagingObjectSelectionStudy ...$study): self
     {

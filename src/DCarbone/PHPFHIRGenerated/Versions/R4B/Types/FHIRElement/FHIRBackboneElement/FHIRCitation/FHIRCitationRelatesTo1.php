@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -280,6 +280,8 @@ class FHIRCitationRelatesTo1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How the cited artifact relates to the target artifact.
+     *
+     * @return static
      */
     public function setRelationshipType(null|FHIRCodeableConcept $relationshipType): self
     {
@@ -324,6 +326,8 @@ class FHIRCitationRelatesTo1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The clasification of the related artifact.
+     *
+     * @return static
      */
     public function addTargetClassifier(FHIRCodeableConcept $targetClassifier): self
     {
@@ -341,6 +345,8 @@ class FHIRCitationRelatesTo1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The clasification of the related artifact.
+     *
+     * @return static
      */
     public function setTargetClassifier(FHIRCodeableConcept ...$targetClassifier): self
     {
@@ -370,6 +376,8 @@ class FHIRCitationRelatesTo1 extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The article or artifact that the cited artifact is related to.
+     *
+     * @return static
      */
     public function setTargetUri(null|string|FHIRUriPrimitive|FHIRUri $targetUri): self
     {
@@ -404,6 +412,8 @@ class FHIRCitationRelatesTo1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The article or artifact that the cited artifact is related to.
+     *
+     * @return static
      */
     public function setTargetIdentifier(null|FHIRIdentifier $targetIdentifier): self
     {
@@ -433,6 +443,8 @@ class FHIRCitationRelatesTo1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The article or artifact that the cited artifact is related to.
+     *
+     * @return static
      */
     public function setTargetReference(null|FHIRReference $targetReference): self
     {
@@ -462,6 +474,8 @@ class FHIRCitationRelatesTo1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The article or artifact that the cited artifact is related to.
+     *
+     * @return static
      */
     public function setTargetAttachment(null|FHIRAttachment $targetAttachment): self
     {

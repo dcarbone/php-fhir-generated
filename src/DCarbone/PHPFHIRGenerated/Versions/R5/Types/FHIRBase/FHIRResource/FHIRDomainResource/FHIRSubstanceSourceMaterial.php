@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -477,6 +477,8 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      *
      * General high level classification of the source material specific to the origin
      * of the material.
+     *
+     * @return static
      */
     public function setSourceMaterialClass(null|FHIRCodeableConcept $sourceMaterialClass): self
     {
@@ -512,6 +514,8 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * The type of the source material shall be specified based on a controlled
      * vocabulary. For vaccines, this subclause refers to the class of infectious
      * agent.
+     *
+     * @return static
      */
     public function setSourceMaterialType(null|FHIRCodeableConcept $sourceMaterialType): self
     {
@@ -543,6 +547,8 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The state of the source material when extracted.
+     *
+     * @return static
      */
     public function setSourceMaterialState(null|FHIRCodeableConcept $sourceMaterialState): self
     {
@@ -576,6 +582,8 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      *
      * The unique identifier associated with the source material parent organism shall
      * be specified.
+     *
+     * @return static
      */
     public function setOrganismId(null|FHIRIdentifier $organismId): self
     {
@@ -607,6 +615,8 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      *
      * The organism accepted Scientific name shall be provided based on the organism
      * taxonomy.
+     *
+     * @return static
      */
     public function setOrganismName(null|string|FHIRStringPrimitive|FHIRString $organismName): self
     {
@@ -656,6 +666,8 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      *
      * The parent of the herbal drug Ginkgo biloba, Leaf is the substance ID of the
      * substance (fresh) of Ginkgo biloba L. or Ginkgo biloba L. (Whole plant).
+     *
+     * @return static
      */
     public function addParentSubstanceId(FHIRIdentifier $parentSubstanceId): self
     {
@@ -674,6 +686,8 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      *
      * The parent of the herbal drug Ginkgo biloba, Leaf is the substance ID of the
      * substance (fresh) of Ginkgo biloba L. or Ginkgo biloba L. (Whole plant).
+     *
+     * @return static
      */
     public function setParentSubstanceId(FHIRIdentifier ...$parentSubstanceId): self
     {
@@ -716,6 +730,8 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The parent substance of the Herbal Drug, or Herbal preparation.
+     *
+     * @return static
      */
     public function addParentSubstanceName(string|FHIRStringPrimitive|FHIRString $parentSubstanceName): self
     {
@@ -735,6 +751,8 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The parent substance of the Herbal Drug, or Herbal preparation.
+     *
+     * @return static
      */
     public function setParentSubstanceName(string|FHIRStringPrimitive|FHIRString ...$parentSubstanceName): self
     {
@@ -794,6 +812,8 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * For “Plasma-derived substances” the attribute country of origin provides
      * information about the countries used for the manufacturing of the Cryopoor plama
      * or Crioprecipitate.
+     *
+     * @return static
      */
     public function addCountryOfOrigin(FHIRCodeableConcept $countryOfOrigin): self
     {
@@ -815,6 +835,8 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * For “Plasma-derived substances” the attribute country of origin provides
      * information about the countries used for the manufacturing of the Cryopoor plama
      * or Crioprecipitate.
+     *
+     * @return static
      */
     public function setCountryOfOrigin(FHIRCodeableConcept ...$countryOfOrigin): self
     {
@@ -859,6 +881,8 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      *
      * The place/region where the plant is harvested or the places/regions where the
      * animal source material has its habitat.
+     *
+     * @return static
      */
     public function addGeographicalLocation(string|FHIRStringPrimitive|FHIRString $geographicalLocation): self
     {
@@ -879,6 +903,8 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      *
      * The place/region where the plant is harvested or the places/regions where the
      * animal source material has its habitat.
+     *
+     * @return static
      */
     public function setGeographicalLocation(string|FHIRStringPrimitive|FHIRString ...$geographicalLocation): self
     {
@@ -921,6 +947,8 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * Stage of life for animals, plants, insects and microorganisms. This information
      * shall be provided only when the substance is significantly different in these
      * stages (e.g. foetal bovine serum).
+     *
+     * @return static
      */
     public function setDevelopmentStage(null|FHIRCodeableConcept $developmentStage): self
     {
@@ -997,6 +1025,8 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * composition, will be captured at the Specified Substance Group 1 information
      * level. For plasma-derived products fraction information will be captured at the
      * Substance and the Specified Substance Group 1 levels.
+     *
+     * @return static
      */
     public function addFractionDescription(FHIRSubstanceSourceMaterialFractionDescription $fractionDescription): self
     {
@@ -1030,6 +1060,8 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * composition, will be captured at the Specified Substance Group 1 information
      * level. For plasma-derived products fraction information will be captured at the
      * Substance and the Specified Substance Group 1 levels.
+     *
+     * @return static
      */
     public function setFractionDescription(FHIRSubstanceSourceMaterialFractionDescription ...$fractionDescription): self
     {
@@ -1085,6 +1117,8 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * vaccines, the parent organism shall be specified based on these subclause
      * elements. As an example, full taxonomy will be described for the Substance Name:
      * ., Leaf.
+     *
+     * @return static
      */
     public function setOrganism(null|FHIRSubstanceSourceMaterialOrganism $organism): self
     {
@@ -1147,6 +1181,8 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * explanation the Substance Class: Structurally Diverse and the herbal annex.
      *
      * To do.
+     *
+     * @return static
      */
     public function addPartDescription(FHIRSubstanceSourceMaterialPartDescription $partDescription): self
     {
@@ -1173,6 +1209,8 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * explanation the Substance Class: Structurally Diverse and the herbal annex.
      *
      * To do.
+     *
+     * @return static
      */
     public function setPartDescription(FHIRSubstanceSourceMaterialPartDescription ...$partDescription): self
     {

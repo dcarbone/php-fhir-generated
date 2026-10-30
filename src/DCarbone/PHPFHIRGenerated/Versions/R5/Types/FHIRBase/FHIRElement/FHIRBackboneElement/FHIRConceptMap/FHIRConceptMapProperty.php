@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -269,6 +269,8 @@ class FHIRConceptMapProperty extends FHIRBackboneElement
      * A code that is used to identify the property. The code is used internally (in
      * ConceptMap.group.element.target.property.code) and also in the $translate
      * operation.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -301,6 +303,8 @@ class FHIRConceptMapProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Reference to the formal meaning of the property.
+     *
+     * @return static
      */
     public function setUri(null|string|FHIRUriPrimitive|FHIRUri $uri): self
     {
@@ -335,6 +339,8 @@ class FHIRConceptMapProperty extends FHIRBackboneElement
      *
      * A description of the property - why it is defined, and how its value might be
      * used.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -363,6 +369,8 @@ class FHIRConceptMapProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of the property value.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRConceptMapPropertyTypeEnum|FHIRConceptMapPropertyType $type): self
     {
@@ -399,6 +407,8 @@ class FHIRConceptMapProperty extends FHIRBackboneElement
      *
      * The CodeSystem that defines the codes from which values of type ```code``` in
      * property values.
+     *
+     * @return static
      */
     public function setSystem(null|string|FHIRCanonicalPrimitive|FHIRCanonical $system): self
     {

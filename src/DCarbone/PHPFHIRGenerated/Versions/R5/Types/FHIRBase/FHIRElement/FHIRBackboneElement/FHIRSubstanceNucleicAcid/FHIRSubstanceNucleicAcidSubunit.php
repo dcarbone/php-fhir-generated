@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -312,6 +312,8 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * Index of linear sequences of nucleic acids in order of decreasing length.
      * Sequences of the same length will be ordered by molecular weight. Subunits that
      * have identical sequences will be repeated and have sequential subscripts.
+     *
+     * @return static
      */
     public function setSubunit(null|string|float|FHIRIntegerPrimitive|FHIRInteger $subunit): self
     {
@@ -348,6 +350,8 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * Actual nucleotide sequence notation from 5' to 3' end using standard single
      * letter codes. In addition to the base sequence, sugar and type of phosphate or
      * non-phosphate linkage should also be captured.
+     *
+     * @return static
      */
     public function setSequence(null|string|FHIRStringPrimitive|FHIRString $sequence): self
     {
@@ -380,6 +384,8 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The length of the sequence shall be captured.
+     *
+     * @return static
      */
     public function setLength(null|string|float|FHIRIntegerPrimitive|FHIRInteger $length): self
     {
@@ -412,6 +418,8 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * (TBC).
+     *
+     * @return static
      */
     public function setSequenceAttachment(null|FHIRAttachment $sequenceAttachment): self
     {
@@ -449,6 +457,8 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * controlled vocabulary. Since the sequence is represented from the 5' to the 3'
      * end, the 5’ prime nucleotide is the letter at the first position in the
      * sequence. A separate representation would be redundant.
+     *
+     * @return static
      */
     public function setFivePrime(null|FHIRCodeableConcept $fivePrime): self
     {
@@ -486,6 +496,8 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * controlled vocabulary. Since the sequence is represented from the 5' to the 3'
      * end, the 5’ prime nucleotide is the letter at the last position in the
      * sequence. A separate representation would be redundant.
+     *
+     * @return static
      */
     public function setThreePrime(null|FHIRCodeableConcept $threePrime): self
     {
@@ -530,6 +542,8 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * direction.
      *
      * The linkages between sugar residues will also be captured.
+     *
+     * @return static
      */
     public function addLinkage(FHIRSubstanceNucleicAcidLinkage $linkage): self
     {
@@ -547,6 +561,8 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * direction.
      *
      * The linkages between sugar residues will also be captured.
+     *
+     * @return static
      */
     public function setLinkage(FHIRSubstanceNucleicAcidLinkage ...$linkage): self
     {
@@ -591,6 +607,8 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * direction.
      *
      * 5.3.6.8.1 Sugar ID (Mandatory).
+     *
+     * @return static
      */
     public function addSugar(FHIRSubstanceNucleicAcidSugar $sugar): self
     {
@@ -608,6 +626,8 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * direction.
      *
      * 5.3.6.8.1 Sugar ID (Mandatory).
+     *
+     * @return static
      */
     public function setSugar(FHIRSubstanceNucleicAcidSugar ...$sugar): self
     {

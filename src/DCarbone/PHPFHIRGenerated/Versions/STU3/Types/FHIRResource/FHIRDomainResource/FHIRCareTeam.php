@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -399,6 +399,8 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * This records identifiers associated with this care team that are defined by
      * business processes and/or used to refer to it when a direct URL reference to the
      * resource itself is not appropriate.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -417,6 +419,8 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * This records identifiers associated with this care team that are defined by
      * business processes and/or used to refer to it when a direct URL reference to the
      * resource itself is not appropriate.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -444,6 +448,8 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the current state of the care team.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRCareTeamStatusList|FHIRCareTeamStatus $status): self
     {
@@ -495,6 +501,8 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * Identifies what kind of team. This is to support differentiation between
      * multiple co-existing teams, such as care plan team, episode of care team,
      * longitudinal care team.
+     *
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -514,6 +522,8 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * Identifies what kind of team. This is to support differentiation between
      * multiple co-existing teams, such as care plan team, episode of care team,
      * longitudinal care team.
+     *
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -545,6 +555,8 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A label for human use intended to distinguish like teams. E.g. the "red" vs.
      * "green" trauma teams.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -577,6 +589,8 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the patient or group whose intended care is handled by the team.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -608,6 +622,8 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The encounter or episode of care that establishes the context for this care
      * team.
+     *
+     * @return static
      */
     public function setContext(null|FHIRReference $context): self
     {
@@ -637,6 +653,8 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates when the team did (or is intended to) come into effect and end.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -679,6 +697,8 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Identifies all people and organizations who are expected to be involved in the
      * care team.
+     *
+     * @return static
      */
     public function addParticipant(FHIRCareTeamParticipant $participant): self
     {
@@ -695,6 +715,8 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Identifies all people and organizations who are expected to be involved in the
      * care team.
+     *
+     * @return static
      */
     public function setParticipant(FHIRCareTeamParticipant ...$participant): self
     {
@@ -739,6 +761,8 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes why the care team exists.
+     *
+     * @return static
      */
     public function addReasonCode(FHIRCodeableConcept $reasonCode): self
     {
@@ -756,6 +780,8 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes why the care team exists.
+     *
+     * @return static
      */
     public function setReasonCode(FHIRCodeableConcept ...$reasonCode): self
     {
@@ -798,6 +824,8 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Condition(s) that this care team addresses.
+     *
+     * @return static
      */
     public function addReasonReference(FHIRReference $reasonReference): self
     {
@@ -814,6 +842,8 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Condition(s) that this care team addresses.
+     *
+     * @return static
      */
     public function setReasonReference(FHIRReference ...$reasonReference): self
     {
@@ -856,6 +886,8 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization responsible for the care team.
+     *
+     * @return static
      */
     public function addManagingOrganization(FHIRReference $managingOrganization): self
     {
@@ -872,6 +904,8 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization responsible for the care team.
+     *
+     * @return static
      */
     public function setManagingOrganization(FHIRReference ...$managingOrganization): self
     {
@@ -916,6 +950,8 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the CareTeam.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -933,6 +969,8 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the CareTeam.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {

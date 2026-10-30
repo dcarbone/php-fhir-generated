@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -263,7 +263,7 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * How often the device was used. (choose any one of timing*, but only one)
+     * How often the device was used.
      */
     #[FHIRTiming]
     protected FHIRTiming $timingTiming;
@@ -272,7 +272,7 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * How often the device was used. (choose any one of timing*, but only one)
+     * How often the device was used.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $timingPeriod;
@@ -285,7 +285,7 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * How often the device was used. (choose any one of timing*, but only one)
+     * How often the device was used.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $timingDateTime;
@@ -550,6 +550,8 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An external identifier for this statement such as an IRI.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -567,6 +569,8 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An external identifier for this statement such as an IRI.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -611,6 +615,8 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      *
      * A plan, proposal or order that is fulfilled in whole or in part by this
      * DeviceUsage.
+     *
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -628,6 +634,8 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      *
      * A plan, proposal or order that is fulfilled in whole or in part by this
      * DeviceUsage.
+     *
+     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -657,6 +665,8 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * A code representing the patient or other source's judgment about the state of
      * the device used that this statement is about. Generally this will be active or
      * completed.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRDeviceUsageStatusEnum|FHIRDeviceUsageStatus $status): self
     {
@@ -708,6 +718,8 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * This attribute indicates a category for the statement - The device statement may
      * be made in an inpatient or outpatient settting (inpatient | outpatient |
      * community | patientspecified).
+     *
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -727,6 +739,8 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * This attribute indicates a category for the statement - The device statement may
      * be made in an inpatient or outpatient settting (inpatient | outpatient |
      * community | patientspecified).
+     *
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -756,6 +770,8 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who used the device.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -800,6 +816,8 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      *
      * Allows linking the DeviceUsage to the underlying Request, or to other
      * information that supports or is used to derive the DeviceUsage.
+     *
+     * @return static
      */
     public function addDerivedFrom(FHIRReference $derivedFrom): self
     {
@@ -817,6 +835,8 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      *
      * Allows linking the DeviceUsage to the underlying Request, or to other
      * information that supports or is used to derive the DeviceUsage.
+     *
+     * @return static
      */
     public function setDerivedFrom(FHIRReference ...$derivedFrom): self
     {
@@ -848,6 +868,8 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      *
      * The encounter or episode of care that establishes the context for this device
      * use statement.
+     *
+     * @return static
      */
     public function setContext(null|FHIRReference $context): self
     {
@@ -868,7 +890,7 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * How often the device was used. (choose any one of timing*, but only one)
+     * How often the device was used.
      */
     public function getTimingTiming(): null|FHIRTiming
     {
@@ -884,7 +906,9 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * How often the device was used. (choose any one of timing*, but only one)
+     * How often the device was used.
+     *
+     * @return static
      */
     public function setTimingTiming(null|FHIRTiming $timingTiming): self
     {
@@ -901,7 +925,7 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * How often the device was used. (choose any one of timing*, but only one)
+     * How often the device was used.
      */
     public function getTimingPeriod(): null|FHIRPeriod
     {
@@ -913,7 +937,9 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * How often the device was used. (choose any one of timing*, but only one)
+     * How often the device was used.
+     *
+     * @return static
      */
     public function setTimingPeriod(null|FHIRPeriod $timingPeriod): self
     {
@@ -934,7 +960,7 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * How often the device was used. (choose any one of timing*, but only one)
+     * How often the device was used.
      */
     public function getTimingDateTime(): null|FHIRDateTime
     {
@@ -950,7 +976,9 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * How often the device was used. (choose any one of timing*, but only one)
+     * How often the device was used.
+     *
+     * @return static
      */
     public function setTimingDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timingDateTime): self
     {
@@ -991,6 +1019,8 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time at which the statement was recorded by informationSource.
+     *
+     * @return static
      */
     public function setDateAsserted(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateAsserted): self
     {
@@ -1027,6 +1057,8 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      *
      * The status of the device usage, for example always, sometimes, never. This is
      * not the same as the status of the statement.
+     *
+     * @return static
      */
     public function setUsageStatus(null|FHIRCodeableConcept $usageStatus): self
     {
@@ -1073,6 +1105,8 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      *
      * The reason for asserting the usage status - for example forgot, lost, stolen,
      * broken.
+     *
+     * @return static
      */
     public function addUsageReason(FHIRCodeableConcept $usageReason): self
     {
@@ -1091,6 +1125,8 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      *
      * The reason for asserting the usage status - for example forgot, lost, stolen,
      * broken.
+     *
+     * @return static
      */
     public function setUsageReason(FHIRCodeableConcept ...$usageReason): self
     {
@@ -1118,6 +1154,8 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * report from the patient or a clinician.
      *
      * This indicates how or if the device is being used.
+     *
+     * @return static
      */
     public function setAdherence(null|FHIRDeviceUsageAdherence $adherence): self
     {
@@ -1147,6 +1185,8 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who reported the device was being used by the patient.
+     *
+     * @return static
      */
     public function setInformationSource(null|FHIRReference $informationSource): self
     {
@@ -1178,6 +1218,8 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code or Reference to device used.
+     *
+     * @return static
      */
     public function setDevice(null|FHIRCodeableReference $device): self
     {
@@ -1224,6 +1266,8 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      *
      * Reason or justification for the use of the device. A coded concept, or another
      * resource whose existence justifies this DeviceUsage.
+     *
+     * @return static
      */
     public function addReason(FHIRCodeableReference $reason): self
     {
@@ -1242,6 +1286,8 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      *
      * Reason or justification for the use of the device. A coded concept, or another
      * resource whose existence justifies this DeviceUsage.
+     *
+     * @return static
      */
     public function setReason(FHIRCodeableReference ...$reason): self
     {
@@ -1275,6 +1321,8 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      *
      * Indicates the anotomic location on the subject's body where the device was used
      * ( i.e. the target).
+     *
+     * @return static
      */
     public function setBodySite(null|FHIRCodeableReference $bodySite): self
     {
@@ -1323,6 +1371,8 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * Details about the device statement that were not represented at all or
      * sufficiently in one of the attributes provided in a class. These may include for
      * example a comment, an instruction, or a note associated with the statement.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1342,6 +1392,8 @@ class FHIRDeviceUsage extends FHIRDomainResource implements VersionContainedType
      * Details about the device statement that were not represented at all or
      * sufficiently in one of the attributes provided in a class. These may include for
      * example a comment, an instruction, or a note associated with the statement.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {

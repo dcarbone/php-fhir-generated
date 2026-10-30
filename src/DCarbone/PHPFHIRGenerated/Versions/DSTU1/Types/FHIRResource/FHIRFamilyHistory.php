@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -252,6 +252,8 @@ class FHIRFamilyHistory extends FHIRResource implements VersionContainedTypeInte
      * defined by business processes and/ or used to refer to it when a direct URL
      * reference to the resource itself is not appropriate (e.g. in CDA documents, or
      * in written / printed documentation).
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -271,6 +273,8 @@ class FHIRFamilyHistory extends FHIRResource implements VersionContainedTypeInte
      * defined by business processes and/ or used to refer to it when a direct URL
      * reference to the resource itself is not appropriate (e.g. in CDA documents, or
      * in written / printed documentation).
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -300,6 +304,8 @@ class FHIRFamilyHistory extends FHIRResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who this history concerns.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRResourceReference $subject): self
     {
@@ -327,6 +333,8 @@ class FHIRFamilyHistory extends FHIRResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Conveys information about family history not specific to individual relations.
+     *
+     * @return static
      */
     public function setNote(null|string|FHIRStringPrimitive|FHIRString $note): self
     {
@@ -372,6 +380,8 @@ class FHIRFamilyHistory extends FHIRResource implements VersionContainedTypeInte
      *
      * The related person. Each FamilyHistory resource contains the entire family
      * history for a single person.
+     *
+     * @return static
      */
     public function addRelation(FHIRFamilyHistoryRelation $relation): self
     {
@@ -388,6 +398,8 @@ class FHIRFamilyHistory extends FHIRResource implements VersionContainedTypeInte
      *
      * The related person. Each FamilyHistory resource contains the entire family
      * history for a single person.
+     *
+     * @return static
      */
     public function setRelation(FHIRFamilyHistoryRelation ...$relation): self
     {

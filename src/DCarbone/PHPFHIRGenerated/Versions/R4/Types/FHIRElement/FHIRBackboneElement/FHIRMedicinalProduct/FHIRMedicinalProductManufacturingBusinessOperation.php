@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -245,6 +245,8 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of manufacturing operation.
+     *
+     * @return static
      */
     public function setOperationType(null|FHIRCodeableConcept $operationType): self
     {
@@ -276,6 +278,8 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Regulatory authorization reference number.
+     *
+     * @return static
      */
     public function setAuthorisationReferenceNumber(null|FHIRIdentifier $authorisationReferenceNumber): self
     {
@@ -311,6 +315,8 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Regulatory authorization date.
+     *
+     * @return static
      */
     public function setEffectiveDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $effectiveDate): self
     {
@@ -345,6 +351,8 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * To indicate if this proces is commercially confidential.
+     *
+     * @return static
      */
     public function setConfidentialityIndicator(null|FHIRCodeableConcept $confidentialityIndicator): self
     {
@@ -387,6 +395,8 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The manufacturer or establishment associated with the process.
+     *
+     * @return static
      */
     public function addManufacturer(FHIRReference $manufacturer): self
     {
@@ -403,6 +413,8 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The manufacturer or establishment associated with the process.
+     *
+     * @return static
      */
     public function setManufacturer(FHIRReference ...$manufacturer): self
     {
@@ -432,6 +444,8 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A regulator which oversees the operation.
+     *
+     * @return static
      */
     public function setRegulator(null|FHIRReference $regulator): self
     {

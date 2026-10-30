@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -290,6 +290,8 @@ class FHIRClaimCoverage extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A service line item.
+     *
+     * @return static
      */
     public function setSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
     {
@@ -322,6 +324,8 @@ class FHIRClaimCoverage extends FHIRBackboneElement
      *
      * The instance number of the Coverage which is the focus for adjudication. The
      * Coverage against which the claim is to be adjudicated.
+     *
+     * @return static
      */
     public function setFocal(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $focal): self
     {
@@ -354,6 +358,8 @@ class FHIRClaimCoverage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the program or plan identification, underwriter or payor.
+     *
+     * @return static
      */
     public function setCoverage(null|FHIRReference $coverage): self
     {
@@ -385,6 +391,8 @@ class FHIRClaimCoverage extends FHIRBackboneElement
      *
      * The contract number of a business agreement which describes the terms and
      * conditions.
+     *
+     * @return static
      */
     public function setBusinessArrangement(null|string|FHIRStringPrimitive|FHIRString $businessArrangement): self
     {
@@ -417,6 +425,8 @@ class FHIRClaimCoverage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The relationship of the patient to the subscriber.
+     *
+     * @return static
      */
     public function setRelationship(null|FHIRCoding $relationship): self
     {
@@ -459,6 +469,8 @@ class FHIRClaimCoverage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of references from the Insurer to which these services pertain.
+     *
+     * @return static
      */
     public function addPreAuthRef(string|FHIRStringPrimitive|FHIRString $preAuthRef): self
     {
@@ -478,6 +490,8 @@ class FHIRClaimCoverage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of references from the Insurer to which these services pertain.
+     *
+     * @return static
      */
     public function setPreAuthRef(string|FHIRStringPrimitive|FHIRString ...$preAuthRef): self
     {
@@ -514,6 +528,8 @@ class FHIRClaimCoverage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Coverages adjudication details.
+     *
+     * @return static
      */
     public function setClaimResponse(null|FHIRReference $claimResponse): self
     {
@@ -545,6 +561,8 @@ class FHIRClaimCoverage extends FHIRBackboneElement
      *
      * The style (standard) and version of the original material which was converted
      * into this resource.
+     *
+     * @return static
      */
     public function setOriginalRuleset(null|FHIRCoding $originalRuleset): self
     {

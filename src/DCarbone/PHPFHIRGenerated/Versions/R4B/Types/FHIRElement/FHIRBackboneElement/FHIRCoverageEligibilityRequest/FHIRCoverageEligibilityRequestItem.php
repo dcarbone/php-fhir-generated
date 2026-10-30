@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -351,6 +351,8 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      *
      * Exceptions, special conditions and supporting information applicable for this
      * service or product line.
+     *
+     * @return static
      */
     public function addSupportingInfoSequence(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $supportingInfoSequence): self
     {
@@ -371,6 +373,8 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      *
      * Exceptions, special conditions and supporting information applicable for this
      * service or product line.
+     *
+     * @return static
      */
     public function setSupportingInfoSequence(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$supportingInfoSequence): self
     {
@@ -411,6 +415,8 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      *
      * Code to identify the general type of benefits under which products and services
      * are provided.
+     *
+     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -442,6 +448,8 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * This contains the product, service, drug or other billing code for the item.
+     *
+     * @return static
      */
     public function setProductOrService(null|FHIRCodeableConcept $productOrService): self
     {
@@ -488,6 +496,8 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      *
      * Item typification or modifiers codes to convey additional context for the
      * product or service.
+     *
+     * @return static
      */
     public function addModifier(FHIRCodeableConcept $modifier): self
     {
@@ -506,6 +516,8 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      *
      * Item typification or modifiers codes to convey additional context for the
      * product or service.
+     *
+     * @return static
      */
     public function setModifier(FHIRCodeableConcept ...$modifier): self
     {
@@ -537,6 +549,8 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      *
      * The practitioner who is responsible for the product or service to be rendered to
      * the patient.
+     *
+     * @return static
      */
     public function setProvider(null|FHIRReference $provider): self
     {
@@ -570,6 +584,8 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The number of repetitions of a service or product.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -599,6 +615,8 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount charged to the patient by the provider for a single unit.
+     *
+     * @return static
      */
     public function setUnitPrice(null|FHIRMoney $unitPrice): self
     {
@@ -628,6 +646,8 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Facility where the services will be provided.
+     *
+     * @return static
      */
     public function setFacility(null|FHIRReference $facility): self
     {
@@ -674,6 +694,8 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      * of the policy.
      *
      * Patient diagnosis for which care is sought.
+     *
+     * @return static
      */
     public function addDiagnosis(FHIRCoverageEligibilityRequestDiagnosis $diagnosis): self
     {
@@ -692,6 +714,8 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      * of the policy.
      *
      * Patient diagnosis for which care is sought.
+     *
+     * @return static
      */
     public function setDiagnosis(FHIRCoverageEligibilityRequestDiagnosis ...$diagnosis): self
     {
@@ -734,6 +758,8 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The plan/proposal/order describing the proposed service in detail.
+     *
+     * @return static
      */
     public function addDetail(FHIRReference $detail): self
     {
@@ -750,6 +776,8 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The plan/proposal/order describing the proposed service in detail.
+     *
+     * @return static
      */
     public function setDetail(FHIRReference ...$detail): self
     {

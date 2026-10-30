@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -424,6 +424,8 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Response business identifier.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -440,6 +442,8 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Response business identifier.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -469,6 +473,8 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Original request resource reference.
+     *
+     * @return static
      */
     public function setRequest(null|FHIRReference $request): self
     {
@@ -500,6 +506,8 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * the Narrative, or extensions
      *
      * Transaction status: error, complete.
+     *
+     * @return static
      */
     public function setOutcome(null|string|FHIRCodePrimitive|FHIRCode $outcome): self
     {
@@ -532,6 +540,8 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the status of the adjudication.
+     *
+     * @return static
      */
     public function setDisposition(null|string|FHIRStringPrimitive|FHIRString $disposition): self
     {
@@ -566,6 +576,8 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      *
      * The version of the style of resource contents. This should be mapped to the
      * allowable profiles for this and supporting resources.
+     *
+     * @return static
      */
     public function setRuleset(null|FHIRCoding $ruleset): self
     {
@@ -597,6 +609,8 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      *
      * The style (standard) and version of the original material which was converted
      * into this resource.
+     *
+     * @return static
      */
     public function setOriginalRuleset(null|FHIRCoding $originalRuleset): self
     {
@@ -632,6 +646,8 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the enclosed suite of services were performed or completed.
+     *
+     * @return static
      */
     public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created): self
     {
@@ -666,6 +682,8 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      *
      * The period of time for which payments have been gathered into this bulk payment
      * for settlement.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -695,6 +713,8 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Insurer who produced this adjudicated response.
+     *
+     * @return static
      */
     public function setOrganization(null|FHIRReference $organization): self
     {
@@ -724,6 +744,8 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who is responsible for the services rendered to the patient.
+     *
+     * @return static
      */
     public function setRequestProvider(null|FHIRReference $requestProvider): self
     {
@@ -753,6 +775,8 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization which is responsible for the services rendered to the patient.
+     *
+     * @return static
      */
     public function setRequestOrganization(null|FHIRReference $requestOrganization): self
     {
@@ -793,6 +817,8 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * payment.
      *
      * List of individual settlement amounts and the corresponding transaction.
+     *
+     * @return static
      */
     public function addDetail(FHIRPaymentReconciliationDetail $detail): self
     {
@@ -808,6 +834,8 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * payment.
      *
      * List of individual settlement amounts and the corresponding transaction.
+     *
+     * @return static
      */
     public function setDetail(FHIRPaymentReconciliationDetail ...$detail): self
     {
@@ -837,6 +865,8 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The form to be used for printing the content.
+     *
+     * @return static
      */
     public function setForm(null|FHIRCoding $form): self
     {
@@ -858,6 +888,8 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
 
     /**
      * Total payment amount.
+     *
+     * @return static
      */
     public function setTotal(null|FHIRMoney $total): self
     {
@@ -898,6 +930,8 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * payment.
      *
      * Suite of notes.
+     *
+     * @return static
      */
     public function addNote(FHIRPaymentReconciliationNote $note): self
     {
@@ -913,6 +947,8 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * payment.
      *
      * Suite of notes.
+     *
+     * @return static
      */
     public function setNote(FHIRPaymentReconciliationNote ...$note): self
     {

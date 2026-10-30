@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -304,6 +304,8 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
      *
      * Indicates what a category of item that was consumed: e.g., food, fluid, enteral,
      * etc.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -341,6 +343,8 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
      * link to a resource representing the details of the food product (TBD) or a
      * simple attribute carrying a code that identifies the food from a known list of
      * foods.
+     *
+     * @return static
      */
     public function setNutritionProduct(null|FHIRCodeableReference $nutritionProduct): self
     {
@@ -378,6 +382,8 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Scheduled frequency of consumption.
+     *
+     * @return static
      */
     public function setSchedule(null|FHIRTiming $schedule): self
     {
@@ -411,6 +417,8 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Quantity of the specified food.
+     *
+     * @return static
      */
     public function setAmount(null|FHIRQuantity $amount): self
     {
@@ -444,6 +452,8 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Rate at which enteral feeding was administered.
+     *
+     * @return static
      */
     public function setRate(null|FHIRQuantity $rate): self
     {
@@ -477,6 +487,8 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
      * not consumed, such as it was refused, held (as in tube feedings), or otherwise
      * not provided. If a consumption is being recorded from an app, such as
      * MyFitnessPal, this indicator will likely not be used.
+     *
+     * @return static
      */
     public function setNotConsumed(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $notConsumed): self
     {
@@ -513,6 +525,8 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
      *
      * Document the reason the food or fluid was not consumed, such as refused, held,
      * etc.
+     *
+     * @return static
      */
     public function setNotConsumedReason(null|FHIRCodeableConcept $notConsumedReason): self
     {

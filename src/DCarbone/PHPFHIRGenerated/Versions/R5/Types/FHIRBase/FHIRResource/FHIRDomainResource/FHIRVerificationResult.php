@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -456,6 +456,8 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A resource that was validated.
+     *
+     * @return static
      */
     public function addTarget(FHIRReference $target): self
     {
@@ -472,6 +474,8 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A resource that was validated.
+     *
+     * @return static
      */
     public function setTarget(FHIRReference ...$target): self
     {
@@ -514,6 +518,8 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The fhirpath location(s) within the resource that was validated.
+     *
+     * @return static
      */
     public function addTargetLocation(string|FHIRStringPrimitive|FHIRString $targetLocation): self
     {
@@ -533,6 +539,8 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The fhirpath location(s) within the resource that was validated.
+     *
+     * @return static
      */
     public function setTargetLocation(string|FHIRStringPrimitive|FHIRString ...$targetLocation): self
     {
@@ -571,6 +579,8 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The frequency with which the target must be validated (none; initial; periodic).
+     *
+     * @return static
      */
     public function setNeed(null|FHIRCodeableConcept $need): self
     {
@@ -598,6 +608,8 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      *
      * The validation status of the target (attested; validated; in process; requires
      * revalidation; validation failed; revalidation failed).
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRVerificationResultStatusEnum|FHIRVerificationResultStatus $status): self
     {
@@ -638,6 +650,8 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the validation status was updated.
+     *
+     * @return static
      */
     public function setStatusDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $statusDate): self
     {
@@ -674,6 +688,8 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      *
      * What the target is validated against (nothing; primary source; multiple
      * sources).
+     *
+     * @return static
      */
     public function setValidationType(null|FHIRCodeableConcept $validationType): self
     {
@@ -720,6 +736,8 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      *
      * The primary process by which the target is validated (edit check; value set;
      * primary source; multiple sources; standalone; in context).
+     *
+     * @return static
      */
     public function addValidationProcess(FHIRCodeableConcept $validationProcess): self
     {
@@ -738,6 +756,8 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      *
      * The primary process by which the target is validated (edit check; value set;
      * primary source; multiple sources; standalone; in context).
+     *
+     * @return static
      */
     public function setValidationProcess(FHIRCodeableConcept ...$validationProcess): self
     {
@@ -775,6 +795,8 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Frequency of revalidation.
+     *
+     * @return static
      */
     public function setFrequency(null|FHIRTiming $frequency): self
     {
@@ -812,6 +834,8 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date/time validation was last completed (including failed validations).
+     *
+     * @return static
      */
     public function setLastPerformed(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $lastPerformed): self
     {
@@ -846,6 +870,8 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when target is next validated, if appropriate.
+     *
+     * @return static
      */
     public function setNextScheduled(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $nextScheduled): self
     {
@@ -880,6 +906,8 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The result if validation fails (fatal; warning; record only; none).
+     *
+     * @return static
      */
     public function setFailureAction(null|FHIRCodeableConcept $failureAction): self
     {
@@ -920,6 +948,8 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements.
      *
      * Information about the primary source(s) involved in validation.
+     *
+     * @return static
      */
     public function addPrimarySource(FHIRVerificationResultPrimarySource $primarySource): self
     {
@@ -935,6 +965,8 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements.
      *
      * Information about the primary source(s) involved in validation.
+     *
+     * @return static
      */
     public function setPrimarySource(FHIRVerificationResultPrimarySource ...$primarySource): self
     {
@@ -962,6 +994,8 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements.
      *
      * Information about the entity attesting to information.
+     *
+     * @return static
      */
     public function setAttestation(null|FHIRVerificationResultAttestation $attestation): self
     {
@@ -1002,6 +1036,8 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements.
      *
      * Information about the entity validating information.
+     *
+     * @return static
      */
     public function addValidator(FHIRVerificationResultValidator $validator): self
     {
@@ -1017,6 +1053,8 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements.
      *
      * Information about the entity validating information.
+     *
+     * @return static
      */
     public function setValidator(FHIRVerificationResultValidator ...$validator): self
     {

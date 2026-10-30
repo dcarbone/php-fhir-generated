@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -251,6 +251,8 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable summary of population sample size.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -298,6 +300,8 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Footnote or explanatory note about the sample size.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -315,6 +319,8 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Footnote or explanatory note about the sample size.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -344,6 +350,8 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Number of participants in the population.
+     *
+     * @return static
      */
     public function setNumberOfStudies(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $numberOfStudies): self
     {
@@ -376,6 +384,8 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A human-readable string to clarify or explain concepts about the sample size.
+     *
+     * @return static
      */
     public function setNumberOfParticipants(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $numberOfParticipants): self
     {
@@ -408,6 +418,8 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Number of participants with known results for measured variables.
+     *
+     * @return static
      */
     public function setKnownDataCount(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $knownDataCount): self
     {

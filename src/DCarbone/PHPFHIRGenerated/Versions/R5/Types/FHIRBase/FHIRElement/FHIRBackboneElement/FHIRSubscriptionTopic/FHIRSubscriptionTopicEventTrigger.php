@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -248,6 +248,8 @@ class FHIRSubscriptionTopicEventTrigger extends FHIRBackboneElement
      * SubscriptionTopic - for example, "Patient Admission, as defined in HL7v2 via
      * message ADT^A01". Multiple values are considered OR joined (e.g., matching any
      * single event listed).
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -284,6 +286,8 @@ class FHIRSubscriptionTopicEventTrigger extends FHIRBackboneElement
      *
      * A well-defined event which can be used to trigger notifications from the
      * SubscriptionTopic.
+     *
+     * @return static
      */
     public function setEvent(null|FHIRCodeableConcept $event): self
     {
@@ -323,6 +327,8 @@ class FHIRSubscriptionTopicEventTrigger extends FHIRBackboneElement
      * maps to http://hl7.org/fhir/StructureDefinition/Patient. For more information,
      * see <a
      * href="elementdefinition-definitions.html#ElementDefinition.type.code">ElementDefinition.type.code</a>.
+     *
+     * @return static
      */
     public function setResource(null|string|FHIRUriPrimitive|FHIRUri $resource): self
     {

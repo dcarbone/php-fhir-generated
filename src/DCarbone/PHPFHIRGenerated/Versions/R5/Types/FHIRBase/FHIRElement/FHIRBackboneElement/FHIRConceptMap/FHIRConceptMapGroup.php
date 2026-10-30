@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -244,6 +244,8 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * An absolute URI that identifies the source system where the concepts to be
      * mapped are defined.
+     *
+     * @return static
      */
     public function setSource(null|string|FHIRCanonicalPrimitive|FHIRCanonical $source): self
     {
@@ -280,6 +282,8 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * An absolute URI that identifies the target system that the concepts will be
      * mapped to.
+     *
+     * @return static
      */
     public function setTarget(null|string|FHIRCanonicalPrimitive|FHIRCanonical $target): self
     {
@@ -327,6 +331,8 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * Mappings for an individual concept in the source to one or more concepts in the
      * target.
+     *
+     * @return static
      */
     public function addElement(FHIRConceptMapElement $element): self
     {
@@ -344,6 +350,8 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * Mappings for an individual concept in the source to one or more concepts in the
      * target.
+     *
+     * @return static
      */
     public function setElement(FHIRConceptMapElement ...$element): self
     {
@@ -379,6 +387,8 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      * and ConceptMap.group.element.noMap is not true. This provides the "default" to
      * be applied when there is no target concept mapping specified or the expansion of
      * ConceptMap.group.element.target.valueSet is empty.
+     *
+     * @return static
      */
     public function setUnmapped(null|FHIRConceptMapUnmapped $unmapped): self
     {

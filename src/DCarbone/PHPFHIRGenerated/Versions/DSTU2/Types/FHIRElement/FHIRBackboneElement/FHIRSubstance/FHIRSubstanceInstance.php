@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -196,6 +196,8 @@ class FHIRSubstanceInstance extends FHIRBackboneElement
      *
      * Identifier associated with the package/container (usually a label affixed
      * directly).
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -233,6 +235,8 @@ class FHIRSubstanceInstance extends FHIRBackboneElement
      *
      * When the substance is no longer valid to use. For some substances, a single
      * arbitrary date is used for expiry.
+     *
+     * @return static
      */
     public function setExpiry(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $expiry): self
     {
@@ -257,6 +261,8 @@ class FHIRSubstanceInstance extends FHIRBackboneElement
 
     /**
      * The amount of the substance.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRSimpleQuantity $quantity): self
     {

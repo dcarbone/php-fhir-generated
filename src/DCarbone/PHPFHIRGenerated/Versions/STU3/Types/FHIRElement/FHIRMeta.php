@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -248,6 +248,8 @@ class FHIRMeta extends FHIRElement
      *
      * The version specific identifier, as it appears in the version portion of the
      * URL. This values changes when the resource is created, updated, or deleted.
+     *
+     * @return static
      */
     public function setVersionId(null|string|FHIRIdPrimitive|FHIRId $versionId): self
     {
@@ -284,6 +286,8 @@ class FHIRMeta extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the resource last changed - e.g. when the version changed.
+     *
+     * @return static
      */
     public function setLastUpdated(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $lastUpdated): self
     {
@@ -333,6 +337,8 @@ class FHIRMeta extends FHIRElement
      * A list of profiles (references to [[[StructureDefinition]]] resources) that this
      * resource claims to conform to. The URL is a reference to
      * [[[StructureDefinition.url]]].
+     *
+     * @return static
      */
     public function addProfile(string|FHIRUriPrimitive|FHIRUri $profile): self
     {
@@ -354,6 +360,8 @@ class FHIRMeta extends FHIRElement
      * A list of profiles (references to [[[StructureDefinition]]] resources) that this
      * resource claims to conform to. The URL is a reference to
      * [[[StructureDefinition.url]]].
+     *
+     * @return static
      */
     public function setProfile(string|FHIRUriPrimitive|FHIRUri ...$profile): self
     {
@@ -405,6 +413,8 @@ class FHIRMeta extends FHIRElement
      *
      * Security labels applied to this resource. These tags connect specific resources
      * to the overall security policy and infrastructure.
+     *
+     * @return static
      */
     public function addSecurity(FHIRCoding $security): self
     {
@@ -422,6 +432,8 @@ class FHIRMeta extends FHIRElement
      *
      * Security labels applied to this resource. These tags connect specific resources
      * to the overall security policy and infrastructure.
+     *
+     * @return static
      */
     public function setSecurity(FHIRCoding ...$security): self
     {
@@ -468,6 +480,8 @@ class FHIRMeta extends FHIRElement
      * Tags applied to this resource. Tags are intended to be used to identify and
      * relate resources to process and workflow, and applications are not required to
      * consider the tags when interpreting the meaning of a resource.
+     *
+     * @return static
      */
     public function addTag(FHIRCoding $tag): self
     {
@@ -486,6 +500,8 @@ class FHIRMeta extends FHIRElement
      * Tags applied to this resource. Tags are intended to be used to identify and
      * relate resources to process and workflow, and applications are not required to
      * consider the tags when interpreting the meaning of a resource.
+     *
+     * @return static
      */
     public function setTag(FHIRCoding ...$tag): self
     {

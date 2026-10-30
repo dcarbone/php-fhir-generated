@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -271,6 +271,8 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      *
      * The function of the agent with respect to the activity. The security role
      * enabling the agent with respect to the activity.
+     *
+     * @return static
      */
     public function addRole(FHIRCodeableConcept $role): self
     {
@@ -289,6 +291,8 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      *
      * The function of the agent with respect to the activity. The security role
      * enabling the agent with respect to the activity.
+     *
+     * @return static
      */
     public function setRole(FHIRCodeableConcept ...$role): self
     {
@@ -318,6 +322,8 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The individual, device or organization that participated in the event.
+     *
+     * @return static
      */
     public function setWhoUri(null|string|FHIRUriPrimitive|FHIRUri $whoUri): self
     {
@@ -350,6 +356,8 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual, device or organization that participated in the event.
+     *
+     * @return static
      */
     public function setWhoReference(null|FHIRReference $whoReference): self
     {
@@ -379,6 +387,8 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The individual, device, or organization for whom the change was made.
+     *
+     * @return static
      */
     public function setOnBehalfOfUri(null|string|FHIRUriPrimitive|FHIRUri $onBehalfOfUri): self
     {
@@ -411,6 +421,8 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual, device, or organization for whom the change was made.
+     *
+     * @return static
      */
     public function setOnBehalfOfReference(null|FHIRReference $onBehalfOfReference): self
     {
@@ -442,6 +454,8 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of relationship between agents.
+     *
+     * @return static
      */
     public function setRelatedAgentType(null|FHIRCodeableConcept $relatedAgentType): self
     {

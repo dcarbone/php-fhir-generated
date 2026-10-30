@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -267,6 +267,8 @@ class FHIRCitationDateOfPublication extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date on which the issue of the journal was published.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $date): self
     {
@@ -299,6 +301,8 @@ class FHIRCitationDateOfPublication extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Year on which the issue of the journal was published.
+     *
+     * @return static
      */
     public function setYear(null|string|FHIRStringPrimitive|FHIRString $year): self
     {
@@ -331,6 +335,8 @@ class FHIRCitationDateOfPublication extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Month on which the issue of the journal was published.
+     *
+     * @return static
      */
     public function setMonth(null|string|FHIRStringPrimitive|FHIRString $month): self
     {
@@ -363,6 +369,8 @@ class FHIRCitationDateOfPublication extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Day on which the issue of the journal was published.
+     *
+     * @return static
      */
     public function setDay(null|string|FHIRStringPrimitive|FHIRString $day): self
     {
@@ -395,6 +403,8 @@ class FHIRCitationDateOfPublication extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Spring, Summer, Fall/Autumn, Winter.
+     *
+     * @return static
      */
     public function setSeason(null|string|FHIRStringPrimitive|FHIRString $season): self
     {
@@ -427,6 +437,8 @@ class FHIRCitationDateOfPublication extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Text representation of the date of which the issue of the journal was published.
+     *
+     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {

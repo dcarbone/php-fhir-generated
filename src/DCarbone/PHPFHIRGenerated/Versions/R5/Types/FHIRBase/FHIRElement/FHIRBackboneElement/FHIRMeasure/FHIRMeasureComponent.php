@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -256,6 +256,8 @@ class FHIRMeasureComponent extends FHIRBackboneElement
      *
      * An identifier that is unique within the Measure allowing linkage to the
      * equivalent item in a MeasureReport resource.
+     *
+     * @return static
      */
     public function setLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId): self
     {
@@ -294,6 +296,8 @@ class FHIRMeasureComponent extends FHIRBackboneElement
      * Indicates a meaning for the stratifier component. This can be as simple as a
      * unique identifier, or it can establish meaning in a broader context by drawing
      * from a terminology, allowing stratifiers to be correlated across measures.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -331,6 +335,8 @@ class FHIRMeasureComponent extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The human readable description of this stratifier criteria component.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -371,6 +377,8 @@ class FHIRMeasureComponent extends FHIRBackboneElement
      * An expression that specifies the criteria for this component of the stratifier.
      * This is typically the name of an expression defined within a referenced library,
      * but it may also be a path to a stratifier element.
+     *
+     * @return static
      */
     public function setCriteria(null|FHIRExpression $criteria): self
     {
@@ -400,6 +408,8 @@ class FHIRMeasureComponent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A Group resource that defines this population as a set of characteristics.
+     *
+     * @return static
      */
     public function setGroupDefinition(null|FHIRReference $groupDefinition): self
     {

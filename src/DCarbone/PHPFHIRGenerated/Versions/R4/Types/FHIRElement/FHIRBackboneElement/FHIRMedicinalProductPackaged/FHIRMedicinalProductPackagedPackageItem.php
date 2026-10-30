@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -372,6 +372,8 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Including possibly Data Carrier Identifier.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -389,6 +391,8 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Including possibly Data Carrier Identifier.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -420,6 +424,8 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The physical type of the container of the medicine.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -455,6 +461,8 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      *
      * The quantity of this package in the medicinal product, at the current level of
      * packaging. The outermost is always 1.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -499,6 +507,8 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Material type of the package item.
+     *
+     * @return static
      */
     public function addMaterial(FHIRCodeableConcept $material): self
     {
@@ -516,6 +526,8 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Material type of the package item.
+     *
+     * @return static
      */
     public function setMaterial(FHIRCodeableConcept ...$material): self
     {
@@ -560,6 +572,8 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A possible alternate material for the packaging.
+     *
+     * @return static
      */
     public function addAlternateMaterial(FHIRCodeableConcept $alternateMaterial): self
     {
@@ -577,6 +591,8 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A possible alternate material for the packaging.
+     *
+     * @return static
      */
     public function setAlternateMaterial(FHIRCodeableConcept ...$alternateMaterial): self
     {
@@ -619,6 +635,8 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A device accompanying a medicinal product.
+     *
+     * @return static
      */
     public function addDevice(FHIRReference $device): self
     {
@@ -635,6 +653,8 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A device accompanying a medicinal product.
+     *
+     * @return static
      */
     public function setDevice(FHIRReference ...$device): self
     {
@@ -677,6 +697,8 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The manufactured item as contained in the packaged medicinal product.
+     *
+     * @return static
      */
     public function addManufacturedItem(FHIRReference $manufacturedItem): self
     {
@@ -693,6 +715,8 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The manufactured item as contained in the packaged medicinal product.
+     *
+     * @return static
      */
     public function setManufacturedItem(FHIRReference ...$manufacturedItem): self
     {
@@ -731,6 +755,8 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * A medicinal product in a container or package.
      *
      * Allows containers within containers.
+     *
+     * @return static
      */
     public function addPackageItem(FHIRMedicinalProductPackagedPackageItem $packageItem): self
     {
@@ -745,6 +771,8 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * A medicinal product in a container or package.
      *
      * Allows containers within containers.
+     *
+     * @return static
      */
     public function setPackageItem(FHIRMedicinalProductPackagedPackageItem ...$packageItem): self
     {
@@ -776,6 +804,8 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dimensions, color etc.
+     *
+     * @return static
      */
     public function setPhysicalCharacteristics(null|FHIRProdCharacteristic $physicalCharacteristics): self
     {
@@ -820,6 +850,8 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other codeable characteristics.
+     *
+     * @return static
      */
     public function addOtherCharacteristics(FHIRCodeableConcept $otherCharacteristics): self
     {
@@ -837,6 +869,8 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other codeable characteristics.
+     *
+     * @return static
      */
     public function setOtherCharacteristics(FHIRCodeableConcept ...$otherCharacteristics): self
     {
@@ -881,6 +915,8 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Shelf Life and storage information.
+     *
+     * @return static
      */
     public function addShelfLifeStorage(FHIRProductShelfLife $shelfLifeStorage): self
     {
@@ -898,6 +934,8 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Shelf Life and storage information.
+     *
+     * @return static
      */
     public function setShelfLifeStorage(FHIRProductShelfLife ...$shelfLifeStorage): self
     {
@@ -940,6 +978,8 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of this Package Item.
+     *
+     * @return static
      */
     public function addManufacturer(FHIRReference $manufacturer): self
     {
@@ -956,6 +996,8 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of this Package Item.
+     *
+     * @return static
      */
     public function setManufacturer(FHIRReference ...$manufacturer): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -310,6 +310,8 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of relationship to the related artifact.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRRelatedArtifactTypeExpandedEnum|FHIRRelatedArtifactTypeExpanded $type): self
     {
@@ -357,6 +359,8 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides additional classifiers of the related artifact.
+     *
+     * @return static
      */
     public function addClassifier(FHIRCodeableConcept $classifier): self
     {
@@ -374,6 +378,8 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides additional classifiers of the related artifact.
+     *
+     * @return static
      */
     public function setClassifier(FHIRCodeableConcept ...$classifier): self
     {
@@ -405,6 +411,8 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      *
      * A short label that can be used to reference the related artifact from elsewhere
      * in the containing artifact, such as a footnote index.
+     *
+     * @return static
      */
     public function setLabel(null|string|FHIRStringPrimitive|FHIRString $label): self
     {
@@ -439,6 +447,8 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      *
      * A brief description of the document or knowledge resource being referenced,
      * suitable for display to a consumer.
+     *
+     * @return static
      */
     public function setDisplay(null|string|FHIRStringPrimitive|FHIRString $display): self
     {
@@ -481,6 +491,8 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      *
      * A bibliographic citation for the related artifact. This text SHOULD be formatted
      * according to an accepted citation format.
+     *
+     * @return static
      */
     public function setCitation(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $citation): self
     {
@@ -517,6 +529,8 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      * The document being referenced, represented as an attachment. Do not use this
      * element if using the resource element to provide the canonical to the related
      * artifact.
+     *
+     * @return static
      */
     public function setDocument(null|FHIRAttachment $document): self
     {
@@ -550,6 +564,8 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      *
      * The related artifact, such as a library, value set, profile, or other knowledge
      * resource.
+     *
+     * @return static
      */
     public function setResource(null|string|FHIRCanonicalPrimitive|FHIRCanonical $resource): self
     {
@@ -584,6 +600,8 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      *
      * The related artifact, if the artifact is not a canonical resource, or a resource
      * reference to a canonical resource.
+     *
+     * @return static
      */
     public function setResourceReference(null|FHIRReference $resourceReference): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -233,6 +233,8 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The result of the claim, predetermination, or preauthorization adjudication.
+     *
+     * @return static
      */
     public function setDecision(null|FHIRCodeableConcept $decision): self
     {
@@ -279,6 +281,8 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
      *
      * The reasons for the result of the claim, predetermination, or preauthorization
      * adjudication.
+     *
+     * @return static
      */
     public function addReason(FHIRCodeableConcept $reason): self
     {
@@ -297,6 +301,8 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
      *
      * The reasons for the result of the claim, predetermination, or preauthorization
      * adjudication.
+     *
+     * @return static
      */
     public function setReason(FHIRCodeableConcept ...$reason): self
     {
@@ -328,6 +334,8 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
      *
      * Reference from the Insurer which is used in later communications which refers to
      * this adjudication.
+     *
+     * @return static
      */
     public function setPreAuthRef(null|string|FHIRStringPrimitive|FHIRString $preAuthRef): self
     {
@@ -360,6 +368,8 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time frame during which this authorization is effective.
+     *
+     * @return static
      */
     public function setPreAuthPeriod(null|FHIRPeriod $preAuthPeriod): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -282,6 +282,8 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      * Identifier for a family of the event. For example, a menu item, program, rule,
      * policy, function code, application name or URL. It identifies the performed
      * function.
+     *
+     * @return static
      */
     public function setType(null|FHIRCoding $type): self
     {
@@ -324,6 +326,8 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the category of event.
+     *
+     * @return static
      */
     public function addSubtype(FHIRCoding $subtype): self
     {
@@ -340,6 +344,8 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the category of event.
+     *
+     * @return static
      */
     public function setSubtype(FHIRCoding ...$subtype): self
     {
@@ -371,6 +377,8 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      *
      * Indicator for type of action performed during the event that generated the
      * audit.
+     *
+     * @return static
      */
     public function setAction(null|string|FHIRAuditEventActionList|FHIRAuditEventAction $action): self
     {
@@ -407,6 +415,8 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the event occurred on the source.
+     *
+     * @return static
      */
     public function setDateTime(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $dateTime): self
     {
@@ -437,6 +447,8 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the event succeeded or failed.
+     *
+     * @return static
      */
     public function setOutcome(null|string|FHIRAuditEventOutcomeList|FHIRAuditEventOutcome $outcome): self
     {
@@ -469,6 +481,8 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text description of the outcome of the event.
+     *
+     * @return static
      */
     public function setOutcomeDesc(null|string|FHIRStringPrimitive|FHIRString $outcomeDesc): self
     {
@@ -514,6 +528,8 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The purposeOfUse (reason) that was used during the event being recorded.
+     *
+     * @return static
      */
     public function addPurposeOfEvent(FHIRCoding $purposeOfEvent): self
     {
@@ -530,6 +546,8 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The purposeOfUse (reason) that was used during the event being recorded.
+     *
+     * @return static
      */
     public function setPurposeOfEvent(FHIRCoding ...$purposeOfEvent): self
     {

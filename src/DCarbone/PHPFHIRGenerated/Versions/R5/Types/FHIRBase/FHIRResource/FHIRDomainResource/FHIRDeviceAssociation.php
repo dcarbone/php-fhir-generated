@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -357,6 +357,8 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Instance identifier.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -374,6 +376,8 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Instance identifier.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -403,6 +407,8 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the devices associated with the patient or group.
+     *
+     * @return static
      */
     public function setDevice(null|FHIRReference $device): self
     {
@@ -447,6 +453,8 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the relationship between the device and subject.
+     *
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -464,6 +472,8 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the relationship between the device and subject.
+     *
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -495,6 +505,8 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the state of the Device association.
+     *
+     * @return static
      */
     public function setStatus(null|FHIRCodeableConcept $status): self
     {
@@ -539,6 +551,8 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reasons given for the current association status.
+     *
+     * @return static
      */
     public function addStatusReason(FHIRCodeableConcept $statusReason): self
     {
@@ -556,6 +570,8 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reasons given for the current association status.
+     *
+     * @return static
      */
     public function setStatusReason(FHIRCodeableConcept ...$statusReason): self
     {
@@ -587,6 +603,8 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      *
      * The individual, group of individuals or device that the device is on or
      * associated with.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -616,6 +634,8 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Current anatomical location of the device in/on subject.
+     *
+     * @return static
      */
     public function setBodyStructure(null|FHIRReference $bodyStructure): self
     {
@@ -645,6 +665,8 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Begin and end dates and times for the device association.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -683,6 +705,8 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * A record of association or dissociation of a device with a patient.
      *
      * The details about the device when it is in use to describe its operation.
+     *
+     * @return static
      */
     public function addOperation(FHIRDeviceAssociationOperation $operation): self
     {
@@ -697,6 +721,8 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * A record of association or dissociation of a device with a patient.
      *
      * The details about the device when it is in use to describe its operation.
+     *
+     * @return static
      */
     public function setOperation(FHIRDeviceAssociationOperation ...$operation): self
     {

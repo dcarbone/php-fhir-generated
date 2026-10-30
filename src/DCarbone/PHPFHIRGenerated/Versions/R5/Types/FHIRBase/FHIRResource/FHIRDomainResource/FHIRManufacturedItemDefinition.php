@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -391,6 +391,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -408,6 +410,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -433,6 +437,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this item. Enables tracking the life-cycle of the content.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -465,6 +471,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A descriptive name applied to this item.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -501,6 +509,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      *
      * Dose form as manufactured and before any transformation into the pharmaceutical
      * product.
+     *
+     * @return static
      */
     public function setManufacturedDoseForm(null|FHIRCodeableConcept $manufacturedDoseForm): self
     {
@@ -534,6 +544,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      *
      * The “real-world” units in which the quantity of the manufactured item is
      * described.
+     *
+     * @return static
      */
     public function setUnitOfPresentation(null|FHIRCodeableConcept $unitOfPresentation): self
     {
@@ -576,6 +588,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of the item, one of several possible.
+     *
+     * @return static
      */
     public function addManufacturer(FHIRReference $manufacturer): self
     {
@@ -592,6 +606,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of the item, one of several possible.
+     *
+     * @return static
      */
     public function setManufacturer(FHIRReference ...$manufacturer): self
     {
@@ -638,6 +654,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      *
      * Allows specifying that an item is on the market for sale, or that it is not
      * available, and the dates and locations associated.
+     *
+     * @return static
      */
     public function addMarketingStatus(FHIRMarketingStatus $marketingStatus): self
     {
@@ -656,6 +674,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      *
      * Allows specifying that an item is on the market for sale, or that it is not
      * available, and the dates and locations associated.
+     *
+     * @return static
      */
     public function setMarketingStatus(FHIRMarketingStatus ...$marketingStatus): self
     {
@@ -704,6 +724,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * The ingredients of this manufactured item. This is only needed if the
      * ingredients are not specified by incoming references from the Ingredient
      * resource.
+     *
+     * @return static
      */
     public function addIngredient(FHIRCodeableConcept $ingredient): self
     {
@@ -723,6 +745,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * The ingredients of this manufactured item. This is only needed if the
      * ingredients are not specified by incoming references from the Ingredient
      * resource.
+     *
+     * @return static
      */
     public function setIngredient(FHIRCodeableConcept ...$ingredient): self
     {
@@ -763,6 +787,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * tablet or capsule, as contained in a packaged medicinal product.
      *
      * General characteristics of this item.
+     *
+     * @return static
      */
     public function addProperty(FHIRManufacturedItemDefinitionProperty $property): self
     {
@@ -778,6 +804,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * tablet or capsule, as contained in a packaged medicinal product.
      *
      * General characteristics of this item.
+     *
+     * @return static
      */
     public function setProperty(FHIRManufacturedItemDefinitionProperty ...$property): self
     {
@@ -820,6 +848,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      *
      * Physical parts of the manufactured item, that it is intrisically made from. This
      * is distinct from the ingredients that are part of its chemical makeup.
+     *
+     * @return static
      */
     public function addComponent(FHIRManufacturedItemDefinitionComponent $component): self
     {
@@ -836,6 +866,8 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      *
      * Physical parts of the manufactured item, that it is intrisically made from. This
      * is distinct from the ingredients that are part of its chemical makeup.
+     *
+     * @return static
      */
     public function setComponent(FHIRManufacturedItemDefinitionComponent ...$component): self
     {

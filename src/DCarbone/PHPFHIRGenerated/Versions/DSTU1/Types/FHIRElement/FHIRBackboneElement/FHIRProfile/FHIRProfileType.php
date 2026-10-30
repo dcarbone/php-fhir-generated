@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -206,6 +206,8 @@ class FHIRProfileType extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Name of Data type or Resource.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -240,6 +242,8 @@ class FHIRProfileType extends FHIRBackboneElement
      * Identifies a profile that SHALL hold for resources or datatypes referenced as
      * the type of this element. Can be a local reference - to another structure in
      * this profile, or a reference to a structure in another profile.
+     *
+     * @return static
      */
     public function setProfile(null|string|FHIRUriPrimitive|FHIRUri $profile): self
     {
@@ -287,6 +291,8 @@ class FHIRProfileType extends FHIRBackboneElement
      * If the type is a reference to another resource, how the resource is or can be
      * aggreated - is it a contained resource, or a reference, and if the context is a
      * bundle, is it included in the bundle.
+     *
+     * @return static
      */
     public function addAggregation(string|FHIRAggregationModeList|FHIRAggregationMode $aggregation): self
     {
@@ -307,6 +313,8 @@ class FHIRProfileType extends FHIRBackboneElement
      * If the type is a reference to another resource, how the resource is or can be
      * aggreated - is it a contained resource, or a reference, and if the context is a
      * bundle, is it included in the bundle.
+     *
+     * @return static
      */
     public function setAggregation(string|FHIRAggregationModeList|FHIRAggregationMode ...$aggregation): self
     {

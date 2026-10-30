@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequ
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -281,6 +281,8 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * multiple-cardinality sub-elements. Note that the index must be an integer
      * constant. The path must resolve to an element of type code, Coding, or
      * CodeableConcept.
+     *
+     * @return static
      */
     public function setPath(null|string|FHIRStringPrimitive|FHIRString $path): self
     {
@@ -319,6 +321,8 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * If valueSet is specified, the filter will return only those data items for which
      * the value of the code-valued element specified in the path is a member of the
      * specified valueset.
+     *
+     * @return static
      */
     public function setValueSetString(null|string|FHIRStringPrimitive|FHIRString $valueSetString): self
     {
@@ -357,6 +361,8 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * If valueSet is specified, the filter will return only those data items for which
      * the value of the code-valued element specified in the path is a member of the
      * specified valueset.
+     *
+     * @return static
      */
     public function setValueSetReference(null|FHIRReference $valueSetReference): self
     {
@@ -407,6 +413,8 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * valueCodeableConcept may be specified. If values are given, the filter will
      * return only those data items for which the code-valued attribute specified by
      * the path has a value that is one of the specified codes.
+     *
+     * @return static
      */
     public function addValueCode(string|FHIRCodePrimitive|FHIRCode $valueCode): self
     {
@@ -430,6 +438,8 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * valueCodeableConcept may be specified. If values are given, the filter will
      * return only those data items for which the code-valued attribute specified by
      * the path has a value that is one of the specified codes.
+     *
+     * @return static
      */
     public function setValueCode(string|FHIRCodePrimitive|FHIRCode ...$valueCode): self
     {
@@ -485,6 +495,8 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * or valueCodeableConcept may be specified. If values are given, the filter will
      * return only those data items for which the code-valued attribute specified by
      * the path has a value that is one of the specified Codings.
+     *
+     * @return static
      */
     public function addValueCoding(FHIRCoding $valueCoding): self
     {
@@ -504,6 +516,8 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * or valueCodeableConcept may be specified. If values are given, the filter will
      * return only those data items for which the code-valued attribute specified by
      * the path has a value that is one of the specified Codings.
+     *
+     * @return static
      */
     public function setValueCoding(FHIRCoding ...$valueCoding): self
     {
@@ -554,6 +568,8 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * valueConding, or valueCodeableConcept may be specified. If values are given, the
      * filter will return only those data items for which the code-valued attribute
      * specified by the path has a value that is one of the specified CodeableConcepts.
+     *
+     * @return static
      */
     public function addValueCodeableConcept(FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -574,6 +590,8 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * valueConding, or valueCodeableConcept may be specified. If values are given, the
      * filter will return only those data items for which the code-valued attribute
      * specified by the path has a value that is one of the specified CodeableConcepts.
+     *
+     * @return static
      */
     public function setValueCodeableConcept(FHIRCodeableConcept ...$valueCodeableConcept): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -267,6 +267,8 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
      *
      * Click and see / RESTful API / Need login to see / RESTful API with
      * authentication / Other ways to see resource.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRRepositoryTypeEnum|FHIRRepositoryType $type): self
     {
@@ -301,6 +303,8 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
      *
      * URI of an external repository which contains further details about the genetics
      * data.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -335,6 +339,8 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
      *
      * URI of an external repository which contains further details about the genetics
      * data.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -369,6 +375,8 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
      *
      * Id of the variant in this external repository. The server will understand how to
      * use this id to call for more info about datasets in external repository.
+     *
+     * @return static
      */
     public function setDatasetId(null|string|FHIRStringPrimitive|FHIRString $datasetId): self
     {
@@ -403,6 +411,8 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
      *
      * Id of the variantset in this external repository. The server will understand how
      * to use this id to call for more info about variantsets in external repository.
+     *
+     * @return static
      */
     public function setVariantsetId(null|string|FHIRStringPrimitive|FHIRString $variantsetId): self
     {
@@ -435,6 +445,8 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Id of the read in this external repository.
+     *
+     * @return static
      */
     public function setReadsetId(null|string|FHIRStringPrimitive|FHIRString $readsetId): self
     {

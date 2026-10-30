@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -231,6 +231,8 @@ class FHIRSubstanceDefinitionRepresentation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of structural representation (e.g. full, partial).
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -260,6 +262,8 @@ class FHIRSubstanceDefinitionRepresentation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The structural representation as a text string in a standard format.
+     *
+     * @return static
      */
     public function setRepresentation(null|string|FHIRStringPrimitive|FHIRString $representation): self
     {
@@ -298,6 +302,8 @@ class FHIRSubstanceDefinitionRepresentation extends FHIRBackboneElement
      * The format of the representation e.g. InChI, SMILES, MOLFILE, CDX, SDF, PDB,
      * mmCIF. The logical content type rather than the physical file format of a
      * document.
+     *
+     * @return static
      */
     public function setFormat(null|FHIRCodeableConcept $format): self
     {
@@ -329,6 +335,8 @@ class FHIRSubstanceDefinitionRepresentation extends FHIRBackboneElement
      *
      * An attached file with the structural representation e.g. a molecular structure
      * graphic of the substance, a JCAMP or AnIML file.
+     *
+     * @return static
      */
     public function setDocument(null|FHIRReference $document): self
     {

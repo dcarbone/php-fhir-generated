@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRElement
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -246,6 +246,8 @@ class FHIRElementDefinitionSlicing extends FHIRElement
      * the child elements in the instance data SHALL completely distinguish which slice
      * the element in the resource matches based on the allowed values for those
      * elements in each of the slices.
+     *
+     * @return static
      */
     public function addDiscriminator(string|FHIRStringPrimitive|FHIRString $discriminator): self
     {
@@ -269,6 +271,8 @@ class FHIRElementDefinitionSlicing extends FHIRElement
      * the child elements in the instance data SHALL completely distinguish which slice
      * the element in the resource matches based on the allowed values for those
      * elements in each of the slices.
+     *
+     * @return static
      */
     public function setDiscriminator(string|FHIRStringPrimitive|FHIRString ...$discriminator): self
     {
@@ -309,6 +313,8 @@ class FHIRElementDefinitionSlicing extends FHIRElement
      * A human-readable text description of how the slicing works. If there is no
      * discriminator, this is required to be present to provide whatever information is
      * possible about how the slices can be differentiated.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -341,6 +347,8 @@ class FHIRElementDefinitionSlicing extends FHIRElement
      *
      * If the matching elements have to occur in the same order as defined in the
      * profile.
+     *
+     * @return static
      */
     public function setOrdered(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $ordered): self
     {
@@ -373,6 +381,8 @@ class FHIRElementDefinitionSlicing extends FHIRElement
      *
      * Whether additional slices are allowed or not. When the slices are ordered,
      * profile authors can also say that additional slices are only allowed at the end.
+     *
+     * @return static
      */
     public function setRules(null|string|FHIRSlicingRulesList|FHIRSlicingRules $rules): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -314,6 +314,8 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement
      * When the value is a group code then this item collects a set of related claim
      * details, otherwise this contains the product, service, drug or other billing
      * code for the item.
+     *
+     * @return static
      */
     public function setProductOrService(null|FHIRCodeableConcept $productOrService): self
     {
@@ -360,6 +362,8 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement
      *
      * Item typification or modifiers codes to convey additional context for the
      * product or service.
+     *
+     * @return static
      */
     public function addModifier(FHIRCodeableConcept $modifier): self
     {
@@ -378,6 +382,8 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement
      *
      * Item typification or modifiers codes to convey additional context for the
      * product or service.
+     *
+     * @return static
      */
     public function setModifier(FHIRCodeableConcept ...$modifier): self
     {
@@ -411,6 +417,8 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The number of repetitions of a service or product.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -442,6 +450,8 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement
      *
      * If the item is not a group then this is the fee for the product or service,
      * otherwise this is the total of the fees for the details of the group.
+     *
+     * @return static
      */
     public function setUnitPrice(null|FHIRMoney $unitPrice): self
     {
@@ -477,6 +487,8 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement
      * A real number that represents a multiplier used in determining the overall value
      * of services delivered and/or goods received. The concept of a Factor allows for
      * a discount or surcharge multiplier to be applied to a monetary amount.
+     *
+     * @return static
      */
     public function setFactor(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $factor): self
     {
@@ -511,6 +523,8 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement
      *
      * The quantity times the unit price for an additional service or product or
      * charge.
+     *
+     * @return static
      */
     public function setNet(null|FHIRMoney $net): self
     {
@@ -555,6 +569,8 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement
      *
      * The numbers associated with notes below which apply to the adjudication of this
      * item.
+     *
+     * @return static
      */
     public function addNoteNumber(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $noteNumber): self
     {
@@ -575,6 +591,8 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement
      *
      * The numbers associated with notes below which apply to the adjudication of this
      * item.
+     *
+     * @return static
      */
     public function setNoteNumber(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$noteNumber): self
     {
@@ -624,6 +642,8 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement
      * the subscriber of the benefits provided.
      *
      * The adjudication results.
+     *
+     * @return static
      */
     public function addAdjudication(FHIRExplanationOfBenefitAdjudication $adjudication): self
     {
@@ -640,6 +660,8 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement
      * the subscriber of the benefits provided.
      *
      * The adjudication results.
+     *
+     * @return static
      */
     public function setAdjudication(FHIRExplanationOfBenefitAdjudication ...$adjudication): self
     {
@@ -682,6 +704,8 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement
      * the subscriber of the benefits provided.
      *
      * The third-tier service adjudications for payor added services.
+     *
+     * @return static
      */
     public function addSubDetail(FHIRExplanationOfBenefitSubDetail1 $subDetail): self
     {
@@ -698,6 +722,8 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement
      * the subscriber of the benefits provided.
      *
      * The third-tier service adjudications for payor added services.
+     *
+     * @return static
      */
     public function setSubDetail(FHIRExplanationOfBenefitSubDetail1 ...$subDetail): self
     {

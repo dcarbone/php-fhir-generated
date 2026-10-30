@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -214,6 +214,8 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Type of resource this link refers to.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRResourceTypeList|FHIRResourceType $type): self
     {
@@ -246,6 +248,8 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Profile for the target resource.
+     *
+     * @return static
      */
     public function setProfile(null|string|FHIRUriPrimitive|FHIRUri $profile): self
     {
@@ -291,6 +295,8 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
      * resource defines a set and makes rules about the set.
      *
      * Compartment Consistency Rules.
+     *
+     * @return static
      */
     public function addCompartment(FHIRGraphDefinitionCompartment $compartment): self
     {
@@ -307,6 +313,8 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
      * resource defines a set and makes rules about the set.
      *
      * Compartment Consistency Rules.
+     *
+     * @return static
      */
     public function setCompartment(FHIRGraphDefinitionCompartment ...$compartment): self
     {
@@ -349,6 +357,8 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
      * resource defines a set and makes rules about the set.
      *
      * Additional links from target resource.
+     *
+     * @return static
      */
     public function addLink(FHIRGraphDefinitionLink $link): self
     {
@@ -365,6 +375,8 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
      * resource defines a set and makes rules about the set.
      *
      * Additional links from target resource.
+     *
+     * @return static
      */
     public function setLink(FHIRGraphDefinitionLink ...$link): self
     {

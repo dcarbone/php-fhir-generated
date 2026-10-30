@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -203,6 +203,8 @@ class FHIRDeviceDispensePerformer extends FHIRBackboneElement
      *
      * Distinguishes the type of performer in the dispense. For example, date enterer,
      * packager, final checker.
+     *
+     * @return static
      */
     public function setFunction(null|FHIRCodeableConcept $function): self
     {
@@ -234,6 +236,8 @@ class FHIRDeviceDispensePerformer extends FHIRBackboneElement
      *
      * The device, practitioner, etc. who performed the action. It should be assumed
      * that the actor is the dispenser of the device.
+     *
+     * @return static
      */
     public function setActor(null|FHIRReference $actor): self
     {

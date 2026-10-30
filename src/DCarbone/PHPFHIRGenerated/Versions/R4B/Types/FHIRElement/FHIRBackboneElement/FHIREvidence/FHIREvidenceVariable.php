@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -256,6 +256,8 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description of the variable.
+     *
+     * @return static
      */
     public function setVariableDefinition(null|FHIRReference $variableDefinition): self
     {
@@ -281,6 +283,8 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the variable is classified for use in adjusted analysis.
+     *
+     * @return static
      */
     public function setHandling(null|string|FHIREvidenceVariableHandlingEnum|FHIREvidenceVariableHandling $handling): self
     {
@@ -328,6 +332,8 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description for grouping of ordinal or polychotomous variables.
+     *
+     * @return static
      */
     public function addValueCategory(FHIRCodeableConcept $valueCategory): self
     {
@@ -345,6 +351,8 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description for grouping of ordinal or polychotomous variables.
+     *
+     * @return static
      */
     public function setValueCategory(FHIRCodeableConcept ...$valueCategory): self
     {
@@ -391,6 +399,8 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Discrete value for grouping of ordinal or polychotomous variables.
+     *
+     * @return static
      */
     public function addValueQuantity(FHIRQuantity $valueQuantity): self
     {
@@ -409,6 +419,8 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Discrete value for grouping of ordinal or polychotomous variables.
+     *
+     * @return static
      */
     public function setValueQuantity(FHIRQuantity ...$valueQuantity): self
     {
@@ -451,6 +463,8 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Range of values for grouping of ordinal or polychotomous variables.
+     *
+     * @return static
      */
     public function addValueRange(FHIRRange $valueRange): self
     {
@@ -467,6 +481,8 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Range of values for grouping of ordinal or polychotomous variables.
+     *
+     * @return static
      */
     public function setValueRange(FHIRRange ...$valueRange): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedul
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -247,6 +247,8 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates how often the event should occur.
+     *
+     * @return static
      */
     public function setFrequency(null|string|float|FHIRIntegerPrimitive|FHIRInteger $frequency): self
     {
@@ -277,6 +279,8 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the occurrence of daily life that determines timing.
+     *
+     * @return static
      */
     public function setWhen(null|string|FHIREventTimingList|FHIREventTiming $when): self
     {
@@ -307,6 +311,8 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How long each repetition should last.
+     *
+     * @return static
      */
     public function setDuration(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $duration): self
     {
@@ -337,6 +343,8 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The units of time for the duration.
+     *
+     * @return static
      */
     public function setUnits(null|string|FHIRUnitsOfTimeList|FHIRUnitsOfTime $units): self
     {
@@ -367,6 +375,8 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A total count of the desired number of repetitions.
+     *
+     * @return static
      */
     public function setCount(null|string|float|FHIRIntegerPrimitive|FHIRInteger $count): self
     {
@@ -403,6 +413,8 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When to stop repeating the schedule.
+     *
+     * @return static
      */
     public function setEnd(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $end): self
     {

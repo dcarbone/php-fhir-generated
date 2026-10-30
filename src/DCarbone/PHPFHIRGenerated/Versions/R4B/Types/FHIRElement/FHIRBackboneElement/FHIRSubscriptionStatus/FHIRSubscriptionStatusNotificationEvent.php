@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -242,6 +242,8 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
      *
      * The sequential number of this event in this subscription context. Note that this
      * value is a 64-bit integer value, encoded as a string.
+     *
+     * @return static
      */
     public function setEventNumber(null|string|FHIRStringPrimitive|FHIRString $eventNumber): self
     {
@@ -280,6 +282,8 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual time this event occured on the server.
+     *
+     * @return static
      */
     public function setTimestamp(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $timestamp): self
     {
@@ -314,6 +318,8 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
      *
      * The focus of this event. While this will usually be a reference to the focus
      * resource of the event, it MAY contain a reference to a non-FHIR object.
+     *
+     * @return static
      */
     public function setFocus(null|FHIRReference $focus): self
     {
@@ -360,6 +366,8 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
      * Additional context information for this event. Generally, this will contain
      * references to additional resources included with the event (e.g., the Patient
      * relevant to an Encounter), however it MAY refer to non-FHIR objects.
+     *
+     * @return static
      */
     public function addAdditionalContext(FHIRReference $additionalContext): self
     {
@@ -378,6 +386,8 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
      * Additional context information for this event. Generally, this will contain
      * references to additional resources included with the event (e.g., the Patient
      * relevant to an Encounter), however it MAY refer to non-FHIR objects.
+     *
+     * @return static
      */
     public function setAdditionalContext(FHIRReference ...$additionalContext): self
     {

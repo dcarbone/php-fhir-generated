@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -193,8 +193,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Refers to a profile, template or other ruleset the instance adheres to. (choose
-     * any one of structureProfile*, but only one)
+     * Refers to a profile, template or other ruleset the instance adheres to.
      */
     #[FHIRCanonical]
     protected FHIRCanonical $structureProfileCanonical;
@@ -203,8 +202,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Refers to a profile, template or other ruleset the instance adheres to. (choose
-     * any one of structureProfile*, but only one)
+     * Refers to a profile, template or other ruleset the instance adheres to.
      */
     #[FHIRUri]
     protected FHIRUri $structureProfileUri;
@@ -345,6 +343,8 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A unique string within the scenario that is used to reference the instance.
+     *
+     * @return static
      */
     public function setKey(null|string|FHIRStringPrimitive|FHIRString $key): self
     {
@@ -379,6 +379,8 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      *
      * A code indicating the kind of data structure (FHIR resource or some other
      * standard) this is an instance of.
+     *
+     * @return static
      */
     public function setStructureType(null|FHIRCoding $structureType): self
     {
@@ -410,6 +412,8 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      *
      * Conveys the version of the data structure instantiated. I.e. what release of
      * FHIR, X12, OpenEHR, etc. is instance compliant with.
+     *
+     * @return static
      */
     public function setStructureVersion(null|string|FHIRStringPrimitive|FHIRString $structureVersion): self
     {
@@ -430,8 +434,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Refers to a profile, template or other ruleset the instance adheres to. (choose
-     * any one of structureProfile*, but only one)
+     * Refers to a profile, template or other ruleset the instance adheres to.
      */
     public function getStructureProfileCanonical(): null|FHIRCanonical
     {
@@ -444,8 +447,9 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Refers to a profile, template or other ruleset the instance adheres to. (choose
-     * any one of structureProfile*, but only one)
+     * Refers to a profile, template or other ruleset the instance adheres to.
+     *
+     * @return static
      */
     public function setStructureProfileCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $structureProfileCanonical): self
     {
@@ -465,8 +469,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Refers to a profile, template or other ruleset the instance adheres to. (choose
-     * any one of structureProfile*, but only one)
+     * Refers to a profile, template or other ruleset the instance adheres to.
      */
     public function getStructureProfileUri(): null|FHIRUri
     {
@@ -478,8 +481,9 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Refers to a profile, template or other ruleset the instance adheres to. (choose
-     * any one of structureProfile*, but only one)
+     * Refers to a profile, template or other ruleset the instance adheres to.
+     *
+     * @return static
      */
     public function setStructureProfileUri(null|string|FHIRUriPrimitive|FHIRUri $structureProfileUri): self
     {
@@ -512,6 +516,8 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short descriptive label the instance to be used in tables or diagrams.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -552,6 +558,8 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * An explanation of what the instance contains and what it's for.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -586,6 +594,8 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      *
      * Points to an instance (typically an example) that shows the data that would
      * corespond to this instance.
+     *
+     * @return static
      */
     public function setContent(null|FHIRReference $content): self
     {
@@ -624,6 +634,8 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * Represents the instance as it was at a specific time-point.
+     *
+     * @return static
      */
     public function addVersion(FHIRExampleScenarioVersion $version): self
     {
@@ -638,6 +650,8 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * Represents the instance as it was at a specific time-point.
+     *
+     * @return static
      */
     public function setVersion(FHIRExampleScenarioVersion ...$version): self
     {
@@ -678,6 +692,8 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      *
      * References to other instances that can be found within this instance (e.g. the
      * observations contained in a bundle).
+     *
+     * @return static
      */
     public function addContainedInstance(FHIRExampleScenarioContainedInstance $containedInstance): self
     {
@@ -693,6 +709,8 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      *
      * References to other instances that can be found within this instance (e.g. the
      * observations contained in a bundle).
+     *
+     * @return static
      */
     public function setContainedInstance(FHIRExampleScenarioContainedInstance ...$containedInstance): self
     {

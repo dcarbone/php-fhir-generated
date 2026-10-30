@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -351,6 +351,8 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A description of the content value of the statistic.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -398,6 +400,8 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Footnotes and/or explanatory notes.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -415,6 +419,8 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Footnotes and/or explanatory notes.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -446,6 +452,8 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of statistic, e.g., relative risk.
+     *
+     * @return static
      */
     public function setStatisticType(null|FHIRCodeableConcept $statisticType): self
     {
@@ -479,6 +487,8 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      *
      * When the measured variable is handled categorically, the category element is
      * used to define which category the statistic is reporting.
+     *
+     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -512,6 +522,8 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Statistic value.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -545,6 +557,8 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * The number of events associated with the statistic, where the unit of analysis
      * is different from numberAffected, sampleSize.knownDataCount and
      * sampleSize.numberOfParticipants.
+     *
+     * @return static
      */
     public function setNumberOfEvents(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $numberOfEvents): self
     {
@@ -579,6 +593,8 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      *
      * The number of participants affected where the unit of analysis is the same as
      * sampleSize.knownDataCount and sampleSize.numberOfParticipants.
+     *
+     * @return static
      */
     public function setNumberAffected(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $numberAffected): self
     {
@@ -613,6 +629,8 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * variables), the statistics, and the certainty of this evidence.
      *
      * Number of samples in the statistic.
+     *
+     * @return static
      */
     public function setSampleSize(null|FHIREvidenceSampleSize $sampleSize): self
     {
@@ -657,6 +675,8 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * variables), the statistics, and the certainty of this evidence.
      *
      * A statistical attribute of the statistic such as a measure of heterogeneity.
+     *
+     * @return static
      */
     public function addAttributeEstimate(FHIREvidenceAttributeEstimate $attributeEstimate): self
     {
@@ -674,6 +694,8 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * variables), the statistics, and the certainty of this evidence.
      *
      * A statistical attribute of the statistic such as a measure of heterogeneity.
+     *
+     * @return static
      */
     public function setAttributeEstimate(FHIREvidenceAttributeEstimate ...$attributeEstimate): self
     {
@@ -718,6 +740,8 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * variables), the statistics, and the certainty of this evidence.
      *
      * A component of the method to generate the statistic.
+     *
+     * @return static
      */
     public function addModelCharacteristic(FHIREvidenceModelCharacteristic $modelCharacteristic): self
     {
@@ -735,6 +759,8 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * variables), the statistics, and the certainty of this evidence.
      *
      * A component of the method to generate the statistic.
+     *
+     * @return static
      */
     public function setModelCharacteristic(FHIREvidenceModelCharacteristic ...$modelCharacteristic): self
     {

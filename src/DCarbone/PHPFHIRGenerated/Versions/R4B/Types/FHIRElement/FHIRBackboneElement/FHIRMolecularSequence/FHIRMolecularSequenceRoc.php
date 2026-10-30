@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -311,6 +311,8 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Invidual data point representing the GQ (genotype quality) score threshold.
+     *
+     * @return static
      */
     public function addScore(string|float|FHIRIntegerPrimitive|FHIRInteger $score): self
     {
@@ -330,6 +332,8 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Invidual data point representing the GQ (genotype quality) score threshold.
+     *
+     * @return static
      */
     public function setScore(string|float|FHIRIntegerPrimitive|FHIRInteger ...$score): self
     {
@@ -381,6 +385,8 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      *
      * The number of true positives if the GQ score threshold was set to "score" field
      * value.
+     *
+     * @return static
      */
     public function addNumTP(string|float|FHIRIntegerPrimitive|FHIRInteger $numTP): self
     {
@@ -401,6 +407,8 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      *
      * The number of true positives if the GQ score threshold was set to "score" field
      * value.
+     *
+     * @return static
      */
     public function setNumTP(string|float|FHIRIntegerPrimitive|FHIRInteger ...$numTP): self
     {
@@ -452,6 +460,8 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      *
      * The number of false positives if the GQ score threshold was set to "score" field
      * value.
+     *
+     * @return static
      */
     public function addNumFP(string|float|FHIRIntegerPrimitive|FHIRInteger $numFP): self
     {
@@ -472,6 +482,8 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      *
      * The number of false positives if the GQ score threshold was set to "score" field
      * value.
+     *
+     * @return static
      */
     public function setNumFP(string|float|FHIRIntegerPrimitive|FHIRInteger ...$numFP): self
     {
@@ -523,6 +535,8 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      *
      * The number of false negatives if the GQ score threshold was set to "score" field
      * value.
+     *
+     * @return static
      */
     public function addNumFN(string|float|FHIRIntegerPrimitive|FHIRInteger $numFN): self
     {
@@ -543,6 +557,8 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      *
      * The number of false negatives if the GQ score threshold was set to "score" field
      * value.
+     *
+     * @return static
      */
     public function setNumFN(string|float|FHIRIntegerPrimitive|FHIRInteger ...$numFN): self
     {
@@ -594,6 +610,8 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Calculated precision if the GQ score threshold was set to "score" field value.
+     *
+     * @return static
      */
     public function addPrecision(string|int|float|FHIRDecimalPrimitive|FHIRDecimal $precision): self
     {
@@ -614,6 +632,8 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Calculated precision if the GQ score threshold was set to "score" field value.
+     *
+     * @return static
      */
     public function setPrecision(string|int|float|FHIRDecimalPrimitive|FHIRDecimal ...$precision): self
     {
@@ -665,6 +685,8 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Calculated sensitivity if the GQ score threshold was set to "score" field value.
+     *
+     * @return static
      */
     public function addSensitivity(string|int|float|FHIRDecimalPrimitive|FHIRDecimal $sensitivity): self
     {
@@ -685,6 +707,8 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Calculated sensitivity if the GQ score threshold was set to "score" field value.
+     *
+     * @return static
      */
     public function setSensitivity(string|int|float|FHIRDecimalPrimitive|FHIRDecimal ...$sensitivity): self
     {
@@ -736,6 +760,8 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Calculated fScore if the GQ score threshold was set to "score" field value.
+     *
+     * @return static
      */
     public function addFMeasure(string|int|float|FHIRDecimalPrimitive|FHIRDecimal $fMeasure): self
     {
@@ -756,6 +782,8 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Calculated fScore if the GQ score threshold was set to "score" field value.
+     *
+     * @return static
      */
     public function setFMeasure(string|int|float|FHIRDecimalPrimitive|FHIRDecimal ...$fMeasure): self
     {

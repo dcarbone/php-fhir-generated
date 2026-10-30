@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -219,6 +219,8 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifier of the material presented to the patient.
+     *
+     * @return static
      */
     public function setDocumentType(null|string|FHIRStringPrimitive|FHIRString $documentType): self
     {
@@ -253,6 +255,8 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
      *
      * Reference pointer to the educational material given to the patient if the
      * information was on line.
+     *
+     * @return static
      */
     public function setReference(null|string|FHIRUriPrimitive|FHIRUri $reference): self
     {
@@ -291,6 +295,8 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date the educational material was published.
+     *
+     * @return static
      */
     public function setPublicationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $publicationDate): self
     {
@@ -329,6 +335,8 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date the educational material was given to the patient.
+     *
+     * @return static
      */
     public function setPresentationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $presentationDate): self
     {

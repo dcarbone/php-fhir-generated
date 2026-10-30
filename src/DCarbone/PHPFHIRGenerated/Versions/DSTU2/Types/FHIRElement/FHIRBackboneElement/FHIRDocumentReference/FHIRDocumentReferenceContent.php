@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -185,6 +185,8 @@ class FHIRDocumentReferenceContent extends FHIRBackboneElement
      *
      * The document or url of the document along with critical metadata to prove
      * content has integrity.
+     *
+     * @return static
      */
     public function setAttachment(null|FHIRAttachment $attachment): self
     {
@@ -229,6 +231,8 @@ class FHIRDocumentReferenceContent extends FHIRBackboneElement
      *
      * An identifier of the document encoding, structure, and template that the
      * document conforms to beyond the base format indicated in the mimeType.
+     *
+     * @return static
      */
     public function addFormat(FHIRCoding $format): self
     {
@@ -246,6 +250,8 @@ class FHIRDocumentReferenceContent extends FHIRBackboneElement
      *
      * An identifier of the document encoding, structure, and template that the
      * document conforms to beyond the base format indicated in the mimeType.
+     *
+     * @return static
      */
     public function setFormat(FHIRCoding ...$format): self
     {

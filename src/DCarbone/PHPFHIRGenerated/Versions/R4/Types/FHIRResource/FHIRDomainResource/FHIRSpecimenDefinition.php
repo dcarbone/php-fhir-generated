@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -274,6 +274,8 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A business identifier associated with the kind of specimen.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -305,6 +307,8 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of material to be collected.
+     *
+     * @return static
      */
     public function setTypeCollected(null|FHIRCodeableConcept $typeCollected): self
     {
@@ -349,6 +353,8 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Preparation of the patient for specimen collection.
+     *
+     * @return static
      */
     public function addPatientPreparation(FHIRCodeableConcept $patientPreparation): self
     {
@@ -366,6 +372,8 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Preparation of the patient for specimen collection.
+     *
+     * @return static
      */
     public function setPatientPreparation(FHIRCodeableConcept ...$patientPreparation): self
     {
@@ -395,6 +403,8 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time aspect of specimen collection (duration or offset).
+     *
+     * @return static
      */
     public function setTimeAspect(null|string|FHIRStringPrimitive|FHIRString $timeAspect): self
     {
@@ -442,6 +452,8 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The action to be performed for collecting the specimen.
+     *
+     * @return static
      */
     public function addCollection(FHIRCodeableConcept $collection): self
     {
@@ -459,6 +471,8 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The action to be performed for collecting the specimen.
+     *
+     * @return static
      */
     public function setCollection(FHIRCodeableConcept ...$collection): self
     {
@@ -497,6 +511,8 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements VersionContai
      * A kind of specimen with associated set of requirements.
      *
      * Specimen conditioned in a container as expected by the testing laboratory.
+     *
+     * @return static
      */
     public function addTypeTested(FHIRSpecimenDefinitionTypeTested $typeTested): self
     {
@@ -511,6 +527,8 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements VersionContai
      * A kind of specimen with associated set of requirements.
      *
      * Specimen conditioned in a container as expected by the testing laboratory.
+     *
+     * @return static
      */
     public function setTypeTested(FHIRSpecimenDefinitionTypeTested ...$typeTested): self
     {

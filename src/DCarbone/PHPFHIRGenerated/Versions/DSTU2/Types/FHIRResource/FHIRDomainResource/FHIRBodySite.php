@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -279,6 +279,8 @@ class FHIRBodySite extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person to which the body site belongs.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -321,6 +323,8 @@ class FHIRBodySite extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for this instance of the anatomical location.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -337,6 +341,8 @@ class FHIRBodySite extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for this instance of the anatomical location.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -368,6 +374,8 @@ class FHIRBodySite extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Named anatomical location - ideally coded where possible.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -414,6 +422,8 @@ class FHIRBodySite extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Modifier to refine the anatomical location. These include modifiers for
      * laterality, relative location, directionality, number, and plane.
+     *
+     * @return static
      */
     public function addModifier(FHIRCodeableConcept $modifier): self
     {
@@ -432,6 +442,8 @@ class FHIRBodySite extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Modifier to refine the anatomical location. These include modifiers for
      * laterality, relative location, directionality, number, and plane.
+     *
+     * @return static
      */
     public function setModifier(FHIRCodeableConcept ...$modifier): self
     {
@@ -461,6 +473,8 @@ class FHIRBodySite extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Description of anatomical location.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -506,6 +520,8 @@ class FHIRBodySite extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Image or images used to identify a location.
+     *
+     * @return static
      */
     public function addImage(FHIRAttachment $image): self
     {
@@ -522,6 +538,8 @@ class FHIRBodySite extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Image or images used to identify a location.
+     *
+     * @return static
      */
     public function setImage(FHIRAttachment ...$image): self
     {

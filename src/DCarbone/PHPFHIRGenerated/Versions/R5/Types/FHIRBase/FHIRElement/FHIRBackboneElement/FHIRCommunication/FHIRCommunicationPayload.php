@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -120,6 +120,15 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
 
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_CONTENT_ATTACHMENT => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_CONTENT_REFERENCE => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_CONTENT_CODEABLE_CONCEPT => [
+            'min_occurs' => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -133,7 +142,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication). (choose any one of content*, but only one)
+     * communication).
      */
     #[FHIRAttachment]
     protected FHIRAttachment $contentAttachment;
@@ -143,7 +152,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication). (choose any one of content*, but only one)
+     * communication).
      */
     #[FHIRReference]
     protected FHIRReference $contentReference;
@@ -154,7 +163,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication). (choose any one of content*, but only one)
+     * communication).
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $contentCodeableConcept;
@@ -202,7 +211,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication). (choose any one of content*, but only one)
+     * communication).
      */
     public function getContentAttachment(): null|FHIRAttachment
     {
@@ -215,7 +224,9 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication). (choose any one of content*, but only one)
+     * communication).
+     *
+     * @return static
      */
     public function setContentAttachment(null|FHIRAttachment $contentAttachment): self
     {
@@ -233,7 +244,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication). (choose any one of content*, but only one)
+     * communication).
      */
     public function getContentReference(): null|FHIRReference
     {
@@ -246,7 +257,9 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication). (choose any one of content*, but only one)
+     * communication).
+     *
+     * @return static
      */
     public function setContentReference(null|FHIRReference $contentReference): self
     {
@@ -265,7 +278,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication). (choose any one of content*, but only one)
+     * communication).
      */
     public function getContentCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -279,7 +292,9 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
-     * communication). (choose any one of content*, but only one)
+     * communication).
+     *
+     * @return static
      */
     public function setContentCodeableConcept(null|FHIRCodeableConcept $contentCodeableConcept): self
     {

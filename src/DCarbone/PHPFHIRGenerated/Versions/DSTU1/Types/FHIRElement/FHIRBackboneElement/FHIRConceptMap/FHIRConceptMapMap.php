@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -232,6 +232,8 @@ class FHIRConceptMapMap extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * System of the target.
+     *
+     * @return static
      */
     public function setSystem(null|string|FHIRUriPrimitive|FHIRUri $system): self
     {
@@ -266,6 +268,8 @@ class FHIRConceptMapMap extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Code that identifies the target concept.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -298,6 +302,8 @@ class FHIRConceptMapMap extends FHIRBackboneElement
      *
      * equal | equivalent | wider | subsumes | narrower | specialises | inexact |
      * unmatched | disjoint.
+     *
+     * @return static
      */
     public function setEquivalence(null|string|FHIRConceptMapEquivalenceList|FHIRConceptMapEquivalence $equivalence): self
     {
@@ -328,6 +334,8 @@ class FHIRConceptMapMap extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Description of status/issues in mapping.
+     *
+     * @return static
      */
     public function setComments(null|string|FHIRStringPrimitive|FHIRString $comments): self
     {
@@ -377,6 +385,8 @@ class FHIRConceptMapMap extends FHIRBackboneElement
      * execute this mapping, the specified value set must be mapped to some data
      * element or source that is in context. The mapping may still be useful without a
      * place for the additional data elements, but the equivalence cannot be relied on.
+     *
+     * @return static
      */
     public function addProduct(FHIRConceptMapDependsOn $product): self
     {
@@ -395,6 +405,8 @@ class FHIRConceptMapMap extends FHIRBackboneElement
      * execute this mapping, the specified value set must be mapped to some data
      * element or source that is in context. The mapping may still be useful without a
      * place for the additional data elements, but the equivalence cannot be relied on.
+     *
+     * @return static
      */
     public function setProduct(FHIRConceptMapDependsOn ...$product): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -301,6 +301,8 @@ class FHIREvidenceAttributeEstimate extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Human-readable summary of the estimate.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -348,6 +350,8 @@ class FHIREvidenceAttributeEstimate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Footnote or explanatory note about the estimate.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -365,6 +369,8 @@ class FHIREvidenceAttributeEstimate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Footnote or explanatory note about the estimate.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -396,6 +402,8 @@ class FHIREvidenceAttributeEstimate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of attribute estimate, e.g., confidence interval or p value.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -431,6 +439,8 @@ class FHIREvidenceAttributeEstimate extends FHIRBackboneElement
      *
      * The singular quantity of the attribute estimate, for attribute estimates
      * represented as single values; also used to report unit of measure.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -462,6 +472,8 @@ class FHIREvidenceAttributeEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Use 95 for a 95% confidence interval.
+     *
+     * @return static
      */
     public function setLevel(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $level): self
     {
@@ -494,6 +506,8 @@ class FHIREvidenceAttributeEstimate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Lower bound of confidence interval.
+     *
+     * @return static
      */
     public function setRange(null|FHIRRange $range): self
     {
@@ -540,6 +554,8 @@ class FHIREvidenceAttributeEstimate extends FHIRBackboneElement
      *
      * A nested attribute estimate; which is the attribute estimate of an attribute
      * estimate.
+     *
+     * @return static
      */
     public function addAttributeEstimate(FHIREvidenceAttributeEstimate $attributeEstimate): self
     {
@@ -558,6 +574,8 @@ class FHIREvidenceAttributeEstimate extends FHIRBackboneElement
      *
      * A nested attribute estimate; which is the attribute estimate of an attribute
      * estimate.
+     *
+     * @return static
      */
     public function setAttributeEstimate(FHIREvidenceAttributeEstimate ...$attributeEstimate): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -240,6 +240,8 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates which days of the week are available between the start and end Times.
+     *
+     * @return static
      */
     public function addDaysOfWeek(string|FHIRDaysOfWeekEnum|FHIRDaysOfWeek $daysOfWeek): self
     {
@@ -257,6 +259,8 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates which days of the week are available between the start and end Times.
+     *
+     * @return static
      */
     public function setDaysOfWeek(string|FHIRDaysOfWeekEnum|FHIRDaysOfWeek ...$daysOfWeek): self
     {
@@ -291,6 +295,8 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The Location is open all day.
+     *
+     * @return static
      */
     public function setAllDay(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $allDay): self
     {
@@ -321,6 +327,8 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time that the Location opens.
+     *
+     * @return static
      */
     public function setOpeningTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $openingTime): self
     {
@@ -351,6 +359,8 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time that the Location closes.
+     *
+     * @return static
      */
     public function setClosingTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $closingTime): self
     {

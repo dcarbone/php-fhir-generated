@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -400,6 +400,8 @@ class FHIRProcessResponse extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Response business identifier.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -416,6 +418,8 @@ class FHIRProcessResponse extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Response business identifier.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -443,6 +447,8 @@ class FHIRProcessResponse extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRFinancialResourceStatusCodesList|FHIRFinancialResourceStatusCodes $status): self
     {
@@ -481,6 +487,8 @@ class FHIRProcessResponse extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the enclosed suite of services were performed or completed.
+     *
+     * @return static
      */
     public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created): self
     {
@@ -513,6 +521,8 @@ class FHIRProcessResponse extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization who produced this adjudicated response.
+     *
+     * @return static
      */
     public function setOrganization(null|FHIRReference $organization): self
     {
@@ -542,6 +552,8 @@ class FHIRProcessResponse extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Original request resource reference.
+     *
+     * @return static
      */
     public function setRequest(null|FHIRReference $request): self
     {
@@ -573,6 +585,8 @@ class FHIRProcessResponse extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Transaction status: error, complete, held.
+     *
+     * @return static
      */
     public function setOutcome(null|FHIRCodeableConcept $outcome): self
     {
@@ -602,6 +616,8 @@ class FHIRProcessResponse extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the status of the adjudication or processing.
+     *
+     * @return static
      */
     public function setDisposition(null|string|FHIRStringPrimitive|FHIRString $disposition): self
     {
@@ -634,6 +650,8 @@ class FHIRProcessResponse extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who is responsible for the services rendered to the patient.
+     *
+     * @return static
      */
     public function setRequestProvider(null|FHIRReference $requestProvider): self
     {
@@ -663,6 +681,8 @@ class FHIRProcessResponse extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization which is responsible for the services rendered to the patient.
+     *
+     * @return static
      */
     public function setRequestOrganization(null|FHIRReference $requestOrganization): self
     {
@@ -694,6 +714,8 @@ class FHIRProcessResponse extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The form to be used for printing the content.
+     *
+     * @return static
      */
     public function setForm(null|FHIRCodeableConcept $form): self
     {
@@ -736,6 +758,8 @@ class FHIRProcessResponse extends FHIRDomainResource implements VersionContained
      *
      * Suite of processing notes or additional requirements if the processing has been
      * held.
+     *
+     * @return static
      */
     public function addProcessNote(FHIRProcessResponseProcessNote $processNote): self
     {
@@ -752,6 +776,8 @@ class FHIRProcessResponse extends FHIRDomainResource implements VersionContained
      *
      * Suite of processing notes or additional requirements if the processing has been
      * held.
+     *
+     * @return static
      */
     public function setProcessNote(FHIRProcessResponseProcessNote ...$processNote): self
     {
@@ -796,6 +822,8 @@ class FHIRProcessResponse extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Processing errors.
+     *
+     * @return static
      */
     public function addError(FHIRCodeableConcept $error): self
     {
@@ -813,6 +841,8 @@ class FHIRProcessResponse extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Processing errors.
+     *
+     * @return static
      */
     public function setError(FHIRCodeableConcept ...$error): self
     {
@@ -857,6 +887,8 @@ class FHIRProcessResponse extends FHIRDomainResource implements VersionContained
      *
      * Request for additional supporting or authorizing information, such as:
      * documents, images or resources.
+     *
+     * @return static
      */
     public function addCommunicationRequest(FHIRReference $communicationRequest): self
     {
@@ -874,6 +906,8 @@ class FHIRProcessResponse extends FHIRDomainResource implements VersionContained
      *
      * Request for additional supporting or authorizing information, such as:
      * documents, images or resources.
+     *
+     * @return static
      */
     public function setCommunicationRequest(FHIRReference ...$communicationRequest): self
     {

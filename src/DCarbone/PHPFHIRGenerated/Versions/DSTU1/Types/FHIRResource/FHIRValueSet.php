@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -396,6 +396,8 @@ class FHIRValueSet extends FHIRResource implements VersionContainedTypeInterface
      * The identifier that is used to identify this value set when it is referenced in
      * a specification, model, design or an instance (should be globally unique OID,
      * UUID, or URI).
+     *
+     * @return static
      */
     public function setIdentifier(null|string|FHIRStringPrimitive|FHIRString $identifier): self
     {
@@ -432,6 +434,8 @@ class FHIRValueSet extends FHIRResource implements VersionContainedTypeInterface
      * referenced in a specification, model, design or instance. This is an arbitrary
      * value managed by the profile author manually and the value should be a
      * timestamp.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -462,6 +466,8 @@ class FHIRValueSet extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name describing the value set.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -492,6 +498,8 @@ class FHIRValueSet extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the value set.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -541,6 +549,8 @@ class FHIRValueSet extends FHIRResource implements VersionContainedTypeInterface
      *
      * Contacts of the publisher to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function addTelecom(FHIRContact $telecom): self
     {
@@ -559,6 +569,8 @@ class FHIRValueSet extends FHIRResource implements VersionContainedTypeInterface
      *
      * Contacts of the publisher to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function setTelecom(FHIRContact ...$telecom): self
     {
@@ -588,6 +600,8 @@ class FHIRValueSet extends FHIRResource implements VersionContainedTypeInterface
      *
      * A free text natural language description of the use of the value set - reason
      * for definition, conditions of use, etc.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -618,6 +632,8 @@ class FHIRValueSet extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A copyright statement relating to the value set and/or its contents.
+     *
+     * @return static
      */
     public function setCopyright(null|string|FHIRStringPrimitive|FHIRString $copyright): self
     {
@@ -646,6 +662,8 @@ class FHIRValueSet extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the value set.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRValueSetStatusList|FHIRValueSetStatus $status): self
     {
@@ -680,6 +698,8 @@ class FHIRValueSet extends FHIRResource implements VersionContainedTypeInterface
      * This valueset was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
+     *
+     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -710,6 +730,8 @@ class FHIRValueSet extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this is intended to be used with an extensible binding or not.
+     *
+     * @return static
      */
     public function setExtensible(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $extensible): self
     {
@@ -746,6 +768,8 @@ class FHIRValueSet extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that the value set status was last changed.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -774,6 +798,8 @@ class FHIRValueSet extends FHIRResource implements VersionContainedTypeInterface
      * A value set specifies a set of codes drawn from one or more code systems.
      *
      * When value set defines its own codes.
+     *
+     * @return static
      */
     public function setDefine(null|FHIRValueSetDefine $define): self
     {
@@ -799,6 +825,8 @@ class FHIRValueSet extends FHIRResource implements VersionContainedTypeInterface
      * A value set specifies a set of codes drawn from one or more code systems.
      *
      * When value set includes codes from elsewhere.
+     *
+     * @return static
      */
     public function setCompose(null|FHIRValueSetCompose $compose): self
     {
@@ -824,6 +852,8 @@ class FHIRValueSet extends FHIRResource implements VersionContainedTypeInterface
      * A value set specifies a set of codes drawn from one or more code systems.
      *
      * When value set is an expansion.
+     *
+     * @return static
      */
     public function setExpansion(null|FHIRValueSetExpansion $expansion): self
     {

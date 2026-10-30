@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -221,6 +221,8 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A number to uniquely reference the claim item entries.
+     *
+     * @return static
      */
     public function setItemSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $itemSequence): self
     {
@@ -268,6 +270,8 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
      *
      * The numbers associated with notes below which apply to the adjudication of this
      * item.
+     *
+     * @return static
      */
     public function addNoteNumber(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $noteNumber): self
     {
@@ -288,6 +292,8 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
      *
      * The numbers associated with notes below which apply to the adjudication of this
      * item.
+     *
+     * @return static
      */
     public function setNoteNumber(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$noteNumber): self
     {
@@ -339,6 +345,8 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
      * If this item is a group then the values here are a summary of the adjudication
      * of the detail items. If this item is a simple product or service then this is
      * the result of the adjudication of this item.
+     *
+     * @return static
      */
     public function addAdjudication(FHIRClaimResponseAdjudication $adjudication): self
     {
@@ -356,6 +364,8 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
      * If this item is a group then the values here are a summary of the adjudication
      * of the detail items. If this item is a simple product or service then this is
      * the result of the adjudication of this item.
+     *
+     * @return static
      */
     public function setAdjudication(FHIRClaimResponseAdjudication ...$adjudication): self
     {
@@ -398,6 +408,8 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
      *
      * A claim detail. Either a simple (a product or service) or a 'group' of
      * sub-details which are simple items.
+     *
+     * @return static
      */
     public function addDetail(FHIRClaimResponseDetail $detail): self
     {
@@ -414,6 +426,8 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
      *
      * A claim detail. Either a simple (a product or service) or a 'group' of
      * sub-details which are simple items.
+     *
+     * @return static
      */
     public function setDetail(FHIRClaimResponseDetail ...$detail): self
     {

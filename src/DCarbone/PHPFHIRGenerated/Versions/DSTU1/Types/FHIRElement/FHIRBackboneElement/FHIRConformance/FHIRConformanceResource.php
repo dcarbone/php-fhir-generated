@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -275,6 +275,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A type of resource exposed via the restful interface.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRCodePrimitive|FHIRCode $type): self
     {
@@ -311,6 +313,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * A specification of the profile that describes the solution's support for the
      * resource, including any constraints on cardinality, bindings, lengths or other
      * limitations.
+     *
+     * @return static
      */
     public function setProfile(null|FHIRResourceReference $profile): self
     {
@@ -353,6 +357,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * particular implementation.
      *
      * Identifies a restful operation supported by the solution.
+     *
+     * @return static
      */
     public function addOperation(FHIRConformanceOperation $operation): self
     {
@@ -369,6 +375,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * particular implementation.
      *
      * Identifies a restful operation supported by the solution.
+     *
+     * @return static
      */
     public function setOperation(FHIRConformanceOperation ...$operation): self
     {
@@ -398,6 +406,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
      *
      * A flag for whether the server is able to return past versions as part of the
      * vRead operation.
+     *
+     * @return static
      */
     public function setReadHistory(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $readHistory): self
     {
@@ -434,6 +444,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * the server. If the update operation is used (client) or allowed (server) to a
      * new location where a resource doesn't already exist. This means that the server
      * allows the client to create new identities on the server.
+     *
+     * @return static
      */
     public function setUpdateCreate(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $updateCreate): self
     {
@@ -477,6 +489,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of _include values supported by the server.
+     *
+     * @return static
      */
     public function addSearchInclude(string|FHIRStringPrimitive|FHIRString $searchInclude): self
     {
@@ -495,6 +509,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of _include values supported by the server.
+     *
+     * @return static
      */
     public function setSearchInclude(string|FHIRStringPrimitive|FHIRString ...$searchInclude): self
     {
@@ -544,6 +560,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * particular implementation.
      *
      * Additional search parameters for implementations to support and/or make use of.
+     *
+     * @return static
      */
     public function addSearchParam(FHIRConformanceSearchParam $searchParam): self
     {
@@ -560,6 +578,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * particular implementation.
      *
      * Additional search parameters for implementations to support and/or make use of.
+     *
+     * @return static
      */
     public function setSearchParam(FHIRConformanceSearchParam ...$searchParam): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -432,6 +432,8 @@ class FHIRPractitionerRole extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business Identifiers that are specific to a role/location.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -449,6 +451,8 @@ class FHIRPractitionerRole extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business Identifiers that are specific to a role/location.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -476,6 +480,8 @@ class FHIRPractitionerRole extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this practitioner role record is in active use.
+     *
+     * @return static
      */
     public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active): self
     {
@@ -510,6 +516,8 @@ class FHIRPractitionerRole extends FHIRDomainResource implements VersionContaine
      *
      * The period during which the person is authorized to act as a practitioner in
      * these role(s) for the organization.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -539,6 +547,8 @@ class FHIRPractitionerRole extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Practitioner that is able to provide the defined services for the organization.
+     *
+     * @return static
      */
     public function setPractitioner(null|FHIRReference $practitioner): self
     {
@@ -568,6 +578,8 @@ class FHIRPractitionerRole extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization where the Practitioner performs the roles associated.
+     *
+     * @return static
      */
     public function setOrganization(null|FHIRReference $organization): self
     {
@@ -612,6 +624,8 @@ class FHIRPractitionerRole extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Roles which this practitioner is authorized to perform for the organization.
+     *
+     * @return static
      */
     public function addCode(FHIRCodeableConcept $code): self
     {
@@ -629,6 +643,8 @@ class FHIRPractitionerRole extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Roles which this practitioner is authorized to perform for the organization.
+     *
+     * @return static
      */
     public function setCode(FHIRCodeableConcept ...$code): self
     {
@@ -673,6 +689,8 @@ class FHIRPractitionerRole extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific specialty of the practitioner.
+     *
+     * @return static
      */
     public function addSpecialty(FHIRCodeableConcept $specialty): self
     {
@@ -690,6 +708,8 @@ class FHIRPractitionerRole extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific specialty of the practitioner.
+     *
+     * @return static
      */
     public function setSpecialty(FHIRCodeableConcept ...$specialty): self
     {
@@ -732,6 +752,8 @@ class FHIRPractitionerRole extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) at which this practitioner provides care.
+     *
+     * @return static
      */
     public function addLocation(FHIRReference $location): self
     {
@@ -748,6 +770,8 @@ class FHIRPractitionerRole extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) at which this practitioner provides care.
+     *
+     * @return static
      */
     public function setLocation(FHIRReference ...$location): self
     {
@@ -792,6 +816,8 @@ class FHIRPractitionerRole extends FHIRDomainResource implements VersionContaine
      *
      * The list of healthcare services that this worker provides for this role's
      * Organization/Location(s).
+     *
+     * @return static
      */
     public function addHealthcareService(FHIRReference $healthcareService): self
     {
@@ -809,6 +835,8 @@ class FHIRPractitionerRole extends FHIRDomainResource implements VersionContaine
      *
      * The list of healthcare services that this worker provides for this role's
      * Organization/Location(s).
+     *
+     * @return static
      */
     public function setHealthcareService(FHIRReference ...$healthcareService): self
     {
@@ -853,6 +881,8 @@ class FHIRPractitionerRole extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details that are specific to the role/location/service.
+     *
+     * @return static
      */
     public function addTelecom(FHIRContactPoint $telecom): self
     {
@@ -870,6 +900,8 @@ class FHIRPractitionerRole extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details that are specific to the role/location/service.
+     *
+     * @return static
      */
     public function setTelecom(FHIRContactPoint ...$telecom): self
     {
@@ -912,6 +944,8 @@ class FHIRPractitionerRole extends FHIRDomainResource implements VersionContaine
      *
      * A collection of times the practitioner is available or performing this role at
      * the location and/or healthcareservice.
+     *
+     * @return static
      */
     public function addAvailableTime(FHIRPractitionerRoleAvailableTime $availableTime): self
     {
@@ -928,6 +962,8 @@ class FHIRPractitionerRole extends FHIRDomainResource implements VersionContaine
      *
      * A collection of times the practitioner is available or performing this role at
      * the location and/or healthcareservice.
+     *
+     * @return static
      */
     public function setAvailableTime(FHIRPractitionerRoleAvailableTime ...$availableTime): self
     {
@@ -970,6 +1006,8 @@ class FHIRPractitionerRole extends FHIRDomainResource implements VersionContaine
      *
      * The practitioner is not available or performing this role during this period of
      * time due to the provided reason.
+     *
+     * @return static
      */
     public function addNotAvailable(FHIRPractitionerRoleNotAvailable $notAvailable): self
     {
@@ -986,6 +1024,8 @@ class FHIRPractitionerRole extends FHIRDomainResource implements VersionContaine
      *
      * The practitioner is not available or performing this role during this period of
      * time due to the provided reason.
+     *
+     * @return static
      */
     public function setNotAvailable(FHIRPractitionerRoleNotAvailable ...$notAvailable): self
     {
@@ -1019,6 +1059,8 @@ class FHIRPractitionerRole extends FHIRDomainResource implements VersionContaine
      * A description of site availability exceptions, e.g. public holiday availability.
      * Succinctly describing all possible exceptions to normal site availability as
      * details in the available Times and not available Times.
+     *
+     * @return static
      */
     public function setAvailabilityExceptions(null|string|FHIRStringPrimitive|FHIRString $availabilityExceptions): self
     {
@@ -1066,6 +1108,8 @@ class FHIRPractitionerRole extends FHIRDomainResource implements VersionContaine
      *
      * Technical endpoints providing access to services operated for the practitioner
      * with this role.
+     *
+     * @return static
      */
     public function addEndpoint(FHIRReference $endpoint): self
     {
@@ -1083,6 +1127,8 @@ class FHIRPractitionerRole extends FHIRDomainResource implements VersionContaine
      *
      * Technical endpoints providing access to services operated for the practitioner
      * with this role.
+     *
+     * @return static
      */
     public function setEndpoint(FHIRReference ...$endpoint): self
     {

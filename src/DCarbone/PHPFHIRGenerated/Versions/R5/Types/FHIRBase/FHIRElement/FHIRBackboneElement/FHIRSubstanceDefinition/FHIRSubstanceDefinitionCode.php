@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -256,6 +256,8 @@ class FHIRSubstanceDefinitionCode extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific code.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -287,6 +289,8 @@ class FHIRSubstanceDefinitionCode extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Status of the code assignment, for example 'provisional', 'approved'.
+     *
+     * @return static
      */
     public function setStatus(null|FHIRCodeableConcept $status): self
     {
@@ -326,6 +330,8 @@ class FHIRSubstanceDefinitionCode extends FHIRBackboneElement
      *
      * The date at which the code status was changed as part of the terminology
      * maintenance.
+     *
+     * @return static
      */
     public function setStatusDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $statusDate): self
     {
@@ -373,6 +379,8 @@ class FHIRSubstanceDefinitionCode extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any comment can be provided in this field, if necessary.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -390,6 +398,8 @@ class FHIRSubstanceDefinitionCode extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any comment can be provided in this field, if necessary.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -432,6 +442,8 @@ class FHIRSubstanceDefinitionCode extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting literature.
+     *
+     * @return static
      */
     public function addSource(FHIRReference $source): self
     {
@@ -448,6 +460,8 @@ class FHIRSubstanceDefinitionCode extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting literature.
+     *
+     * @return static
      */
     public function setSource(FHIRReference ...$source): self
     {

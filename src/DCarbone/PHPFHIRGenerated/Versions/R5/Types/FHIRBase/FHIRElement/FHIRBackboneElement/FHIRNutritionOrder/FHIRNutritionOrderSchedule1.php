@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -247,6 +247,8 @@ class FHIRNutritionOrderSchedule1 extends FHIRBackboneElement
      * The time period and frequency at which the supplement should be given. The
      * supplement should be given for the combination of all schedules if more than one
      * schedule is present.
+     *
+     * @return static
      */
     public function addTiming(FHIRTiming $timing): self
     {
@@ -269,6 +271,8 @@ class FHIRNutritionOrderSchedule1 extends FHIRBackboneElement
      * The time period and frequency at which the supplement should be given. The
      * supplement should be given for the combination of all schedules if more than one
      * schedule is present.
+     *
+     * @return static
      */
     public function setTiming(FHIRTiming ...$timing): self
     {
@@ -298,6 +302,8 @@ class FHIRNutritionOrderSchedule1 extends FHIRBackboneElement
      *
      * Indicates whether the supplement is only taken when needed within a specific
      * dosing schedule.
+     *
+     * @return static
      */
     public function setAsNeeded(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $asNeeded): self
     {
@@ -334,6 +340,8 @@ class FHIRNutritionOrderSchedule1 extends FHIRBackboneElement
      *
      * Indicates whether the supplement is only taken based on a precondition for
      * taking the supplement.
+     *
+     * @return static
      */
     public function setAsNeededFor(null|FHIRCodeableConcept $asNeededFor): self
     {

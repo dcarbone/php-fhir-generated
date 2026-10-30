@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -371,6 +371,8 @@ class FHIRGoalTarget extends FHIRBackboneElement
      *
      * The parameter whose value is being tracked, e.g. body weight, blood pressure, or
      * hemoglobin A1c level.
+     *
+     * @return static
      */
     public function setMeasure(null|FHIRCodeableConcept $measure): self
     {
@@ -414,6 +416,8 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
+     *
+     * @return static
      */
     public function setDetailQuantity(null|FHIRQuantity $detailQuantity): self
     {
@@ -453,6 +457,8 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
+     *
+     * @return static
      */
     public function setDetailRange(null|FHIRRange $detailRange): self
     {
@@ -494,6 +500,8 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
+     *
+     * @return static
      */
     public function setDetailCodeableConcept(null|FHIRCodeableConcept $detailCodeableConcept): self
     {
@@ -533,6 +541,8 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
+     *
+     * @return static
      */
     public function setDetailString(null|string|FHIRStringPrimitive|FHIRString $detailString): self
     {
@@ -573,6 +583,8 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
+     *
+     * @return static
      */
     public function setDetailBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $detailBoolean): self
     {
@@ -615,6 +627,8 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
+     *
+     * @return static
      */
     public function setDetailInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $detailInteger): self
     {
@@ -659,6 +673,8 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
+     *
+     * @return static
      */
     public function setDetailRatio(null|FHIRRatio $detailRatio): self
     {
@@ -692,6 +708,8 @@ class FHIRGoalTarget extends FHIRBackboneElement
      *
      * Indicates either the date or the duration after start by which the goal should
      * be met.
+     *
+     * @return static
      */
     public function setDueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $dueDate): self
     {
@@ -726,6 +744,8 @@ class FHIRGoalTarget extends FHIRBackboneElement
      *
      * Indicates either the date or the duration after start by which the goal should
      * be met.
+     *
+     * @return static
      */
     public function setDueDuration(null|FHIRDuration $dueDuration): self
     {

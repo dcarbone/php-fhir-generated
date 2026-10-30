@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -253,6 +253,8 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable name for the source system.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -285,6 +287,8 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * May include configuration or other information useful in debugging.
+     *
+     * @return static
      */
     public function setSoftware(null|string|FHIRStringPrimitive|FHIRString $software): self
     {
@@ -319,6 +323,8 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      *
      * Can convey versions of multiple systems in situations where a message passes
      * through multiple hands.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -355,6 +361,8 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      *
      * An e-mail, phone, website or other contact point to use to resolve issues with
      * message communications.
+     *
+     * @return static
      */
     public function setContact(null|FHIRContactPoint $contact): self
     {
@@ -384,6 +392,8 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Identifies the routing target to send acknowledgements to.
+     *
+     * @return static
      */
     public function setEndpoint(null|string|FHIRUrlPrimitive|FHIRUrl $endpoint): self
     {

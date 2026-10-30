@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -364,7 +364,6 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
-     * (choose any one of occurrence*, but only one)
      */
     #[FHIRDateTime]
     protected FHIRDateTime $occurrenceDateTime;
@@ -376,7 +375,6 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
-     * (choose any one of occurrence*, but only one)
      */
     #[FHIRPeriod]
     protected FHIRPeriod $occurrencePeriod;
@@ -388,7 +386,6 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
-     * (choose any one of occurrence*, but only one)
      */
     #[FHIRString]
     protected FHIRString $occurrenceString;
@@ -400,7 +397,6 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
-     * (choose any one of occurrence*, but only one)
      */
     #[FHIRAge]
     protected FHIRAge $occurrenceAge;
@@ -412,7 +408,6 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
-     * (choose any one of occurrence*, but only one)
      */
     #[FHIRRange]
     protected FHIRRange $occurrenceRange;
@@ -428,7 +423,6 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
-     * (choose any one of occurrence*, but only one)
      */
     #[FHIRTiming]
     protected FHIRTiming $occurrenceTiming;
@@ -461,7 +455,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Indicates if this record was captured as a secondary 'reported' record rather
      * than as an original primary source-of-truth record. It may also indicate the
-     * source of the report. (choose any one of reported*, but only one)
+     * source of the report.
      */
     #[FHIRBoolean]
     protected FHIRBoolean $reportedBoolean;
@@ -472,7 +466,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Indicates if this record was captured as a secondary 'reported' record rather
      * than as an original primary source-of-truth record. It may also indicate the
-     * source of the report. (choose any one of reported*, but only one)
+     * source of the report.
      */
     #[FHIRReference]
     protected FHIRReference $reportedReference;
@@ -865,6 +859,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Business identifiers assigned to this procedure by the performer or other
      * systems which remain constant as the resource is updated and is propagated from
      * server to server.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -884,6 +880,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Business identifiers assigned to this procedure by the performer or other
      * systems which remain constant as the resource is updated and is propagated from
      * server to server.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -930,6 +928,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The URL pointing to a FHIR-defined protocol, guideline, order set or other
      * definition that is adhered to in whole or in part by this Procedure.
+     *
+     * @return static
      */
     public function addInstantiatesCanonical(string|FHIRCanonicalPrimitive|FHIRCanonical $instantiatesCanonical): self
     {
@@ -951,6 +951,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The URL pointing to a FHIR-defined protocol, guideline, order set or other
      * definition that is adhered to in whole or in part by this Procedure.
+     *
+     * @return static
      */
     public function setInstantiatesCanonical(string|FHIRCanonicalPrimitive|FHIRCanonical ...$instantiatesCanonical): self
     {
@@ -1002,6 +1004,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The URL pointing to an externally maintained protocol, guideline, order set or
      * other definition that is adhered to in whole or in part by this Procedure.
+     *
+     * @return static
      */
     public function addInstantiatesUri(string|FHIRUriPrimitive|FHIRUri $instantiatesUri): self
     {
@@ -1022,6 +1026,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The URL pointing to an externally maintained protocol, guideline, order set or
      * other definition that is adhered to in whole or in part by this Procedure.
+     *
+     * @return static
      */
     public function setInstantiatesUri(string|FHIRUriPrimitive|FHIRUri ...$instantiatesUri): self
     {
@@ -1073,6 +1079,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * A reference to a resource that contains details of the request for this
      * procedure.
+     *
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -1090,6 +1098,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * A reference to a resource that contains details of the request for this
      * procedure.
+     *
+     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -1132,6 +1142,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger event of which this particular procedure is a component or step.
+     *
+     * @return static
      */
     public function addPartOf(FHIRReference $partOf): self
     {
@@ -1148,6 +1160,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger event of which this particular procedure is a component or step.
+     *
+     * @return static
      */
     public function setPartOf(FHIRReference ...$partOf): self
     {
@@ -1175,6 +1189,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * A code specifying the state of the procedure. Generally, this will be the
      * in-progress or completed state.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIREventStatusEnum|FHIREventStatus $status): self
     {
@@ -1209,6 +1225,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Captures the reason for the current state of the procedure.
+     *
+     * @return static
      */
     public function setStatusReason(null|FHIRCodeableConcept $statusReason): self
     {
@@ -1255,6 +1273,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * A code that classifies the procedure for searching, sorting and display purposes
      * (e.g. "Surgical Procedure").
+     *
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -1273,6 +1293,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * A code that classifies the procedure for searching, sorting and display purposes
      * (e.g. "Surgical Procedure").
+     *
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -1306,6 +1328,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The specific procedure that is performed. Use text if the exact nature of the
      * procedure cannot be coded (e.g. "Laparoscopic Appendectomy").
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -1345,6 +1369,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * inspections or regulatory authorizations). If the actual focus of the procedure
      * is different from the subject, the focus element specifies the actual focus of
      * the procedure.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -1390,6 +1416,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * procedure record is associated with the subject (e.g. patient). For example, use
      * focus when recording the target of the education, training, or counseling is the
      * parent or relative of a patient.
+     *
+     * @return static
      */
     public function setFocus(null|FHIRReference $focus): self
     {
@@ -1421,6 +1449,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The Encounter during which this Procedure was created or performed or to which
      * the creation of this record is tightly associated.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -1444,7 +1474,6 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
-     * (choose any one of occurrence*, but only one)
      */
     public function getOccurrenceDateTime(): null|FHIRDateTime
     {
@@ -1463,7 +1492,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
-     * (choose any one of occurrence*, but only one)
+     *
+     * @return static
      */
     public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime): self
     {
@@ -1486,7 +1516,6 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
-     * (choose any one of occurrence*, but only one)
      */
     public function getOccurrencePeriod(): null|FHIRPeriod
     {
@@ -1501,7 +1530,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
-     * (choose any one of occurrence*, but only one)
+     *
+     * @return static
      */
     public function setOccurrencePeriod(null|FHIRPeriod $occurrencePeriod): self
     {
@@ -1521,7 +1551,6 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
-     * (choose any one of occurrence*, but only one)
      */
     public function getOccurrenceString(): null|FHIRString
     {
@@ -1536,7 +1565,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
-     * (choose any one of occurrence*, but only one)
+     *
+     * @return static
      */
     public function setOccurrenceString(null|string|FHIRStringPrimitive|FHIRString $occurrenceString): self
     {
@@ -1559,7 +1589,6 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
-     * (choose any one of occurrence*, but only one)
      */
     public function getOccurrenceAge(): null|FHIRAge
     {
@@ -1574,7 +1603,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
-     * (choose any one of occurrence*, but only one)
+     *
+     * @return static
      */
     public function setOccurrenceAge(null|FHIRAge $occurrenceAge): self
     {
@@ -1594,7 +1624,6 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
-     * (choose any one of occurrence*, but only one)
      */
     public function getOccurrenceRange(): null|FHIRRange
     {
@@ -1609,7 +1638,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
-     * (choose any one of occurrence*, but only one)
+     *
+     * @return static
      */
     public function setOccurrenceRange(null|FHIRRange $occurrenceRange): self
     {
@@ -1633,7 +1663,6 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
-     * (choose any one of occurrence*, but only one)
      */
     public function getOccurrenceTiming(): null|FHIRTiming
     {
@@ -1652,7 +1681,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
-     * (choose any one of occurrence*, but only one)
+     *
+     * @return static
      */
     public function setOccurrenceTiming(null|FHIRTiming $occurrenceTiming): self
     {
@@ -1692,6 +1722,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The date the occurrence of the procedure was first captured in the record
      * regardless of Procedure.status (potentially after the occurrence of the event).
+     *
+     * @return static
      */
     public function setRecorded(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $recorded): self
     {
@@ -1724,6 +1756,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual who recorded the record and takes responsibility for its content.
+     *
+     * @return static
      */
     public function setRecorder(null|FHIRReference $recorder): self
     {
@@ -1741,7 +1775,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Indicates if this record was captured as a secondary 'reported' record rather
      * than as an original primary source-of-truth record. It may also indicate the
-     * source of the report. (choose any one of reported*, but only one)
+     * source of the report.
      */
     public function getReportedBoolean(): null|FHIRBoolean
     {
@@ -1754,7 +1788,9 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Indicates if this record was captured as a secondary 'reported' record rather
      * than as an original primary source-of-truth record. It may also indicate the
-     * source of the report. (choose any one of reported*, but only one)
+     * source of the report.
+     *
+     * @return static
      */
     public function setReportedBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $reportedBoolean): self
     {
@@ -1776,7 +1812,7 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Indicates if this record was captured as a secondary 'reported' record rather
      * than as an original primary source-of-truth record. It may also indicate the
-     * source of the report. (choose any one of reported*, but only one)
+     * source of the report.
      */
     public function getReportedReference(): null|FHIRReference
     {
@@ -1790,7 +1826,9 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Indicates if this record was captured as a secondary 'reported' record rather
      * than as an original primary source-of-truth record. It may also indicate the
-     * source of the report. (choose any one of reported*, but only one)
+     * source of the report.
+     *
+     * @return static
      */
     public function setReportedReference(null|FHIRReference $reportedReference): self
     {
@@ -1839,6 +1877,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * practitioner for licensing.
      *
      * Indicates who or what performed the procedure and how they were involved.
+     *
+     * @return static
      */
     public function addPerformer(FHIRProcedurePerformer $performer): self
     {
@@ -1858,6 +1898,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * practitioner for licensing.
      *
      * Indicates who or what performed the procedure and how they were involved.
+     *
+     * @return static
      */
     public function setPerformer(FHIRProcedurePerformer ...$performer): self
     {
@@ -1889,6 +1931,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The location where the procedure actually happened. E.g. a newborn at home, a
      * tracheostomy at a restaurant.
+     *
+     * @return static
      */
     public function setLocation(null|FHIRReference $location): self
     {
@@ -1937,6 +1981,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * The coded reason or reference why the procedure was performed. This may be a
      * coded entity of some type, be present as text, or be a reference to one of
      * several resources that justify the procedure.
+     *
+     * @return static
      */
     public function addReason(FHIRCodeableReference $reason): self
     {
@@ -1956,6 +2002,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * The coded reason or reference why the procedure was performed. This may be a
      * coded entity of some type, be present as text, or be a reference to one of
      * several resources that justify the procedure.
+     *
+     * @return static
      */
     public function setReason(FHIRCodeableReference ...$reason): self
     {
@@ -2002,6 +2050,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Detailed and structured anatomical location information. Multiple locations are
      * allowed - e.g. multiple punch biopsies of a lesion.
+     *
+     * @return static
      */
     public function addBodySite(FHIRCodeableConcept $bodySite): self
     {
@@ -2020,6 +2070,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Detailed and structured anatomical location information. Multiple locations are
      * allowed - e.g. multiple punch biopsies of a lesion.
+     *
+     * @return static
      */
     public function setBodySite(FHIRCodeableConcept ...$bodySite): self
     {
@@ -2053,6 +2105,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The outcome of the procedure - did it resolve the reasons for the procedure
      * being performed?
+     *
+     * @return static
      */
     public function setOutcome(null|FHIRCodeableConcept $outcome): self
     {
@@ -2095,6 +2149,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * This could be a histology result, pathology report, surgical report, etc.
+     *
+     * @return static
      */
     public function addReport(FHIRReference $report): self
     {
@@ -2111,6 +2167,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * This could be a histology result, pathology report, surgical report, etc.
+     *
+     * @return static
      */
     public function setReport(FHIRReference ...$report): self
     {
@@ -2161,6 +2219,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * post-performance period. These are generally tracked separately from the notes,
      * which will typically describe the procedure itself rather than any 'post
      * procedure' issues.
+     *
+     * @return static
      */
     public function addComplication(FHIRCodeableReference $complication): self
     {
@@ -2181,6 +2241,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * post-performance period. These are generally tracked separately from the notes,
      * which will typically describe the procedure itself rather than any 'post
      * procedure' issues.
+     *
+     * @return static
      */
     public function setComplication(FHIRCodeableReference ...$complication): self
     {
@@ -2229,6 +2291,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * If the procedure required specific follow up - e.g. removal of sutures. The
      * follow up may be represented as a simple note or could potentially be more
      * complex, in which case the CarePlan resource can be used.
+     *
+     * @return static
      */
     public function addFollowUp(FHIRCodeableConcept $followUp): self
     {
@@ -2248,6 +2312,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * If the procedure required specific follow up - e.g. removal of sutures. The
      * follow up may be represented as a simple note or could potentially be more
      * complex, in which case the CarePlan resource can be used.
+     *
+     * @return static
      */
     public function setFollowUp(FHIRCodeableConcept ...$followUp): self
     {
@@ -2292,6 +2358,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any other notes and comments about the procedure.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -2309,6 +2377,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any other notes and comments about the procedure.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -2361,6 +2431,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * A device that is implanted, removed or otherwise manipulated (calibration,
      * battery replacement, fitting a prosthesis, attaching a wound-vac, etc.) as a
      * focal portion of the Procedure.
+     *
+     * @return static
      */
     public function addFocalDevice(FHIRProcedureFocalDevice $focalDevice): self
     {
@@ -2382,6 +2454,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * A device that is implanted, removed or otherwise manipulated (calibration,
      * battery replacement, fitting a prosthesis, attaching a wound-vac, etc.) as a
      * focal portion of the Procedure.
+     *
+     * @return static
      */
     public function setFocalDevice(FHIRProcedureFocalDevice ...$focalDevice): self
     {
@@ -2428,6 +2502,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Identifies medications, devices and any other substance used as part of the
      * procedure.
+     *
+     * @return static
      */
     public function addUsed(FHIRCodeableReference $used): self
     {
@@ -2446,6 +2522,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Identifies medications, devices and any other substance used as part of the
      * procedure.
+     *
+     * @return static
      */
     public function setUsed(FHIRCodeableReference ...$used): self
     {
@@ -2494,6 +2572,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * The information from these resources was either used to create the instance or
      * is provided to help with its interpretation. This extension should not be used
      * if more specific inline elements or extensions are available.
+     *
+     * @return static
      */
     public function addSupportingInfo(FHIRReference $supportingInfo): self
     {
@@ -2513,6 +2593,8 @@ class FHIRProcedure extends FHIRDomainResource implements VersionContainedTypeIn
      * The information from these resources was either used to create the instance or
      * is provided to help with its interpretation. This extension should not be used
      * if more specific inline elements or extensions are available.
+     *
+     * @return static
      */
     public function setSupportingInfo(FHIRReference ...$supportingInfo): self
     {

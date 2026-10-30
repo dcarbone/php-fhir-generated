@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -253,6 +253,8 @@ class FHIRCoding extends FHIRElement
      *
      * The identification of the code system that defines the meaning of the symbol in
      * the code.
+     *
+     * @return static
      */
     public function setSystem(null|string|FHIRUriPrimitive|FHIRUri $system): self
     {
@@ -293,6 +295,8 @@ class FHIRCoding extends FHIRElement
      * meaning of codes is consistent across versions. However this cannot consistently
      * be assured, and when the meaning is not guaranteed to be consistent, the version
      * SHOULD be exchanged.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -329,6 +333,8 @@ class FHIRCoding extends FHIRElement
      *
      * A symbol in syntax defined by the system. The symbol may be a predefined code or
      * an expression in a syntax defined by the coding system (e.g. post-coordination).
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -363,6 +369,8 @@ class FHIRCoding extends FHIRElement
      *
      * A representation of the meaning of the code in the system, following the rules
      * of the system.
+     *
+     * @return static
      */
     public function setDisplay(null|string|FHIRStringPrimitive|FHIRString $display): self
     {
@@ -395,6 +403,8 @@ class FHIRCoding extends FHIRElement
      *
      * Indicates that this coding was chosen by a user directly - e.g. off a pick list
      * of available items (codes or displays).
+     *
+     * @return static
      */
     public function setUserSelected(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $userSelected): self
     {

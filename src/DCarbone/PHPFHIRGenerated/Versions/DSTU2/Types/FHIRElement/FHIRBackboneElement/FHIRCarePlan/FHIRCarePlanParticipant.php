@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -184,6 +184,8 @@ class FHIRCarePlanParticipant extends FHIRBackboneElement
      *
      * Indicates specific responsibility of an individual within the care plan; e.g.
      * "Primary physician", "Team coordinator", "Caregiver", etc.
+     *
+     * @return static
      */
     public function setRole(null|FHIRCodeableConcept $role): self
     {
@@ -215,6 +217,8 @@ class FHIRCarePlanParticipant extends FHIRBackboneElement
      *
      * The specific person or organization who is participating/expected to participate
      * in the care plan.
+     *
+     * @return static
      */
     public function setMember(null|FHIRReference $member): self
     {

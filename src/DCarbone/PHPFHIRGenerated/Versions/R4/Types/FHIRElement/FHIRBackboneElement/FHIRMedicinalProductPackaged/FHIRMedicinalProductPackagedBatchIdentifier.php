@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -178,6 +178,8 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A number appearing on the outer packaging of a specific batch.
+     *
+     * @return static
      */
     public function setOuterPackaging(null|FHIRIdentifier $outerPackaging): self
     {
@@ -209,6 +211,8 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A number appearing on the immediate packaging (and not the outer packaging).
+     *
+     * @return static
      */
     public function setImmediatePackaging(null|FHIRIdentifier $immediatePackaging): self
     {

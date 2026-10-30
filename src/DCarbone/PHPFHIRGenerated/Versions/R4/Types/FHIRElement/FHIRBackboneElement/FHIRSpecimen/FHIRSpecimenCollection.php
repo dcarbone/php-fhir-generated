@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -292,6 +292,8 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Person who collected the specimen.
+     *
+     * @return static
      */
     public function setCollector(null|FHIRReference $collector): self
     {
@@ -329,6 +331,8 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * Time when specimen was collected from subject - the physiologically relevant
      * time.
+     *
+     * @return static
      */
     public function setCollectedDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $collectedDateTime): self
     {
@@ -363,6 +367,8 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * Time when specimen was collected from subject - the physiologically relevant
      * time.
+     *
+     * @return static
      */
     public function setCollectedPeriod(null|FHIRPeriod $collectedPeriod): self
     {
@@ -392,6 +398,8 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The span of time over which the collection of a specimen occurred.
+     *
+     * @return static
      */
     public function setDuration(null|FHIRDuration $duration): self
     {
@@ -427,6 +435,8 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * The quantity of specimen collected; for instance the volume of a blood sample,
      * or the physical measurement of an anatomic pathology sample.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -458,6 +468,8 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A coded value specifying the technique that is used to perform the procedure.
+     *
+     * @return static
      */
     public function setMethod(null|FHIRCodeableConcept $method): self
     {
@@ -493,6 +505,8 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * Anatomical location from which the specimen was collected (if subject is a
      * patient). This is the target site. This element is not used for environmental
      * specimens.
+     *
+     * @return static
      */
     public function setBodySite(null|FHIRCodeableConcept $bodySite): self
     {
@@ -526,6 +540,8 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * Abstinence or reduction from some or all food, drink, or both, for a period of
      * time prior to sample collection.
+     *
+     * @return static
      */
     public function setFastingStatusCodeableConcept(null|FHIRCodeableConcept $fastingStatusCodeableConcept): self
     {
@@ -557,6 +573,8 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * Abstinence or reduction from some or all food, drink, or both, for a period of
      * time prior to sample collection.
+     *
+     * @return static
      */
     public function setFastingStatusDuration(null|FHIRDuration $fastingStatusDuration): self
     {

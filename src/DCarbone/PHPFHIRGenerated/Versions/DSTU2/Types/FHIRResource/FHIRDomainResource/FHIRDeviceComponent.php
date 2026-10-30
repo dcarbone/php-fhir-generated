@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -356,6 +356,8 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * Describes the specific component type as defined in the object-oriented or
      * metric nomenclature partition.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -387,6 +389,8 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * Describes the local assigned unique identification by the software. For example:
      * handle ID.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -422,6 +426,8 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * Describes the timestamp for the most recent system change which includes device
      * configuration or setting change.
+     *
+     * @return static
      */
     public function setLastSystemChange(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $lastSystemChange): self
     {
@@ -456,6 +462,8 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * Describes the link to the source Device that contains administrative device
      * information such as manufacture, serial number, etc.
+     *
+     * @return static
      */
     public function setSource(null|FHIRReference $source): self
     {
@@ -487,6 +495,8 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * Describes the link to the parent resource. For example: Channel is linked to its
      * VMD parent.
+     *
+     * @return static
      */
     public function setParent(null|FHIRReference $parent): self
     {
@@ -533,6 +543,8 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * Indicates current operational status of the device. For example: On, Off,
      * Standby, etc.
+     *
+     * @return static
      */
     public function addOperationalStatus(FHIRCodeableConcept $operationalStatus): self
     {
@@ -551,6 +563,8 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * Indicates current operational status of the device. For example: On, Off,
      * Standby, etc.
+     *
+     * @return static
      */
     public function setOperationalStatus(FHIRCodeableConcept ...$operationalStatus): self
     {
@@ -584,6 +598,8 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * Describes the parameter group supported by the current device component that is
      * based on some nomenclature, e.g. cardiovascular.
+     *
+     * @return static
      */
     public function setParameterGroup(null|FHIRCodeableConcept $parameterGroup): self
     {
@@ -613,6 +629,8 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * Describes the physical principle of the measurement. For example: thermal,
      * chemical, acoustical, etc.
+     *
+     * @return static
      */
     public function setMeasurementPrinciple(null|string|FHIRMeasmnt_PrincipleList|FHIRMeasmnt_Principle $measurementPrinciple): self
     {
@@ -658,6 +676,8 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * Describes the production specification such as component revision, serial
      * number, etc.
+     *
+     * @return static
      */
     public function addProductionSpecification(FHIRDeviceComponentProductionSpecification $productionSpecification): self
     {
@@ -674,6 +694,8 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * Describes the production specification such as component revision, serial
      * number, etc.
+     *
+     * @return static
      */
     public function setProductionSpecification(FHIRDeviceComponentProductionSpecification ...$productionSpecification): self
     {
@@ -707,6 +729,8 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * Describes the language code for the human-readable text string produced by the
      * device. This language code will follow the IETF language tag. Example: en-US.
+     *
+     * @return static
      */
     public function setLanguageCode(null|FHIRCodeableConcept $languageCode): self
     {

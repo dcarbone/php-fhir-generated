@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -261,6 +261,8 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of this image in the series.
+     *
+     * @return static
      */
     public function setNumber(null|string|float|FHIRIntegerPrimitive|FHIRInteger $number): self
     {
@@ -293,6 +295,8 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Formal identifier for this image.
+     *
+     * @return static
      */
     public function setUid(null|string|FHIROidPrimitive|FHIROid $uid): self
     {
@@ -325,6 +329,8 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * DICOM Image type.
+     *
+     * @return static
      */
     public function setSopclass(null|string|FHIROidPrimitive|FHIROid $sopclass): self
     {
@@ -355,6 +361,8 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Type of instance (image etc) (0004,1430).
+     *
+     * @return static
      */
     public function setType(null|string|FHIRStringPrimitive|FHIRString $type): self
     {
@@ -385,6 +393,8 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Description (0070,0080 | 0040,A043 > 0008,0104 | 0042,0010 | 0008,0008).
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -415,6 +425,8 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * WADO-RS url where image is available.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -447,6 +459,8 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A FHIR resource with content for this instance.
+     *
+     * @return static
      */
     public function setAttachment(null|FHIRResourceReference $attachment): self
     {

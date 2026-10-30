@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -307,6 +307,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * An identifier that is unique within the questionnaire allowing linkage to the
      * equivalent group in a [[[QuestionnaireResponse]]] resource.
+     *
+     * @return static
      */
     public function setLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId): self
     {
@@ -354,6 +356,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Identifies a how this question is known in a particular terminology such as
      * LOINC.
+     *
+     * @return static
      */
     public function addConcept(FHIRCoding $concept): self
     {
@@ -371,6 +375,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Identifies a how this question is known in a particular terminology such as
      * LOINC.
+     *
+     * @return static
      */
     public function setConcept(FHIRCoding ...$concept): self
     {
@@ -400,6 +406,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual question as shown to the user to prompt them for an answer.
+     *
+     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -432,6 +440,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * The expected format of the answer, e.g. the type of input (string, integer) or
      * whether a (multiple) choice is expected.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRAnswerFormatList|FHIRAnswerFormat $type): self
     {
@@ -466,6 +476,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If true, indicates that the question must be answered and have required groups
      * within it also present. If false, the question and any contained groups may be
      * skipped when answering the questionnaire.
+     *
+     * @return static
      */
     public function setRequired(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $required): self
     {
@@ -496,6 +508,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, the question may have more than one answer.
+     *
+     * @return static
      */
     public function setRepeats(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $repeats): self
     {
@@ -530,6 +544,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Reference to a value set containing a list of codes representing permitted
      * answers for the question.
+     *
+     * @return static
      */
     public function setOptions(null|FHIRReference $options): self
     {
@@ -574,6 +590,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * For a "choice" question, identifies one of the permitted answers for the
      * question.
+     *
+     * @return static
      */
     public function addOption(FHIRCoding $option): self
     {
@@ -591,6 +609,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * For a "choice" question, identifies one of the permitted answers for the
      * question.
+     *
+     * @return static
      */
     public function setOption(FHIRCoding ...$option): self
     {
@@ -635,6 +655,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Nested group, containing nested question for this question. The order of groups
      * within the question is relevant.
+     *
+     * @return static
      */
     public function addGroup(FHIRQuestionnaireGroup $group): self
     {
@@ -652,6 +674,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Nested group, containing nested question for this question. The order of groups
      * within the question is relevant.
+     *
+     * @return static
      */
     public function setGroup(FHIRQuestionnaireGroup ...$group): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -257,6 +257,8 @@ class FHIRClinicalUseDefinitionInteraction extends FHIRBackboneElement
      * undesirable effect for a medicinal product, medication, device or procedure.
      *
      * The specific medication, food, substance or laboratory test that interacts.
+     *
+     * @return static
      */
     public function addInteractant(FHIRClinicalUseDefinitionInteractant $interactant): self
     {
@@ -272,6 +274,8 @@ class FHIRClinicalUseDefinitionInteraction extends FHIRBackboneElement
      * undesirable effect for a medicinal product, medication, device or procedure.
      *
      * The specific medication, food, substance or laboratory test that interacts.
+     *
+     * @return static
      */
     public function setInteractant(FHIRClinicalUseDefinitionInteractant ...$interactant): self
     {
@@ -305,6 +309,8 @@ class FHIRClinicalUseDefinitionInteraction extends FHIRBackboneElement
      *
      * The type of the interaction e.g. drug-drug interaction, drug-food interaction,
      * drug-lab test interaction.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -338,6 +344,8 @@ class FHIRClinicalUseDefinitionInteraction extends FHIRBackboneElement
      *
      * The effect of the interaction, for example "reduced gastric absorption of
      * primary medication".
+     *
+     * @return static
      */
     public function setEffect(null|FHIRCodeableReference $effect): self
     {
@@ -369,6 +377,8 @@ class FHIRClinicalUseDefinitionInteraction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The incidence of the interaction, e.g. theoretical, observed.
+     *
+     * @return static
      */
     public function setIncidence(null|FHIRCodeableConcept $incidence): self
     {
@@ -413,6 +423,8 @@ class FHIRClinicalUseDefinitionInteraction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Actions for managing the interaction.
+     *
+     * @return static
      */
     public function addManagement(FHIRCodeableConcept $management): self
     {
@@ -430,6 +442,8 @@ class FHIRClinicalUseDefinitionInteraction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Actions for managing the interaction.
+     *
+     * @return static
      */
     public function setManagement(FHIRCodeableConcept ...$management): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -288,6 +288,8 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      *
      * Allows the comparisonGroup for the study and the comparisonGroup for the subject
      * to be linked easily.
+     *
+     * @return static
      */
     public function setLinkId(null|string|FHIRIdPrimitive|FHIRId $linkId): self
     {
@@ -320,6 +322,8 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Unique, human-readable label for this comparisonGroup of the study.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -356,6 +360,8 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      *
      * Categorization of study comparisonGroup, e.g. experimental, active comparator,
      * placebo comparater.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -395,6 +401,8 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      *
      * A succinct description of the path through the study that would be followed by a
      * subject adhering to this comparisonGroup.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -440,6 +448,8 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Interventions or exposures in this comparisonGroup or cohort.
+     *
+     * @return static
      */
     public function addIntendedExposure(FHIRReference $intendedExposure): self
     {
@@ -456,6 +466,8 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Interventions or exposures in this comparisonGroup or cohort.
+     *
+     * @return static
      */
     public function setIntendedExposure(FHIRReference ...$intendedExposure): self
     {
@@ -485,6 +497,8 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Group of participants who were enrolled in study comparisonGroup.
+     *
+     * @return static
      */
     public function setObservedGroup(null|FHIRReference $observedGroup): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -227,6 +227,8 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
      * fixture is automatically created on each server being tested during setup,
      * therefore no create operation is required for this fixture in the
      * TestScript.setup section.
+     *
+     * @return static
      */
     public function setAutocreate(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $autocreate): self
     {
@@ -263,6 +265,8 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
      * fixture is automatically deleted on each server being tested during teardown,
      * therefore no delete operation is required for this fixture in the
      * TestScript.teardown section.
+     *
+     * @return static
      */
     public function setAutodelete(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $autodelete): self
     {
@@ -297,6 +301,8 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
      *
      * Reference to the resource (containing the contents of the resource needed for
      * operations).
+     *
+     * @return static
      */
     public function setResource(null|FHIRReference $resource): self
     {

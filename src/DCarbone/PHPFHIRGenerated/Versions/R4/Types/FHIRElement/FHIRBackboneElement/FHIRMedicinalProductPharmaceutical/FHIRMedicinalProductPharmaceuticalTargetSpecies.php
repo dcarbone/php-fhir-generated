@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -179,6 +179,8 @@ class FHIRMedicinalProductPharmaceuticalTargetSpecies extends FHIRBackboneElemen
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Coded expression for the species.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -219,6 +221,8 @@ class FHIRMedicinalProductPharmaceuticalTargetSpecies extends FHIRBackboneElemen
      *
      * A species specific time during which consumption of animal product is not
      * appropriate.
+     *
+     * @return static
      */
     public function addWithdrawalPeriod(FHIRMedicinalProductPharmaceuticalWithdrawalPeriod $withdrawalPeriod): self
     {
@@ -234,6 +238,8 @@ class FHIRMedicinalProductPharmaceuticalTargetSpecies extends FHIRBackboneElemen
      *
      * A species specific time during which consumption of animal product is not
      * appropriate.
+     *
+     * @return static
      */
     public function setWithdrawalPeriod(FHIRMedicinalProductPharmaceuticalWithdrawalPeriod ...$withdrawalPeriod): self
     {

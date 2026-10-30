@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -223,6 +223,8 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of channel to send notifications on.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRSubscriptionChannelTypeList|FHIRSubscriptionChannelType $type): self
     {
@@ -255,6 +257,8 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The url that describes the actual end-point to send messages to.
+     *
+     * @return static
      */
     public function setEndpoint(null|string|FHIRUrlPrimitive|FHIRUrl $endpoint): self
     {
@@ -295,6 +299,8 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      * application/fhir+json. If the payload is not present, then there is no payload
      * in the notification, just a notification. The mime type "text/plain" may also be
      * used for Email and SMS subscriptions.
+     *
+     * @return static
      */
     public function setPayload(null|string|FHIRCodePrimitive|FHIRCode $payload): self
     {
@@ -340,6 +346,8 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional headers / information to send as part of the notification.
+     *
+     * @return static
      */
     public function addHeader(string|FHIRStringPrimitive|FHIRString $header): self
     {
@@ -359,6 +367,8 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional headers / information to send as part of the notification.
+     *
+     * @return static
      */
     public function setHeader(string|FHIRStringPrimitive|FHIRString ...$header): self
     {

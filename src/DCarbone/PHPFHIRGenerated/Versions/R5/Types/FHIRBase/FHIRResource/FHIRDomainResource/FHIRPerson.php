@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -237,8 +237,7 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Indicates if the individual is deceased or not. (choose any one of deceased*,
-     * but only one)
+     * Indicates if the individual is deceased or not.
      */
     #[FHIRBoolean]
     protected FHIRBoolean $deceasedBoolean;
@@ -251,8 +250,7 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Indicates if the individual is deceased or not. (choose any one of deceased*,
-     * but only one)
+     * Indicates if the individual is deceased or not.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $deceasedDateTime;
@@ -463,6 +461,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for a person within a particular scope.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -480,6 +480,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for a person within a particular scope.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -507,6 +509,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this person's record is in active use.
+     *
+     * @return static
      */
     public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active): self
     {
@@ -556,6 +560,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the person.
+     *
+     * @return static
      */
     public function addName(FHIRHumanName $name): self
     {
@@ -574,6 +580,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the person.
+     *
+     * @return static
      */
     public function setName(FHIRHumanName ...$name): self
     {
@@ -618,6 +626,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail for the person, e.g. a telephone number or an email address.
+     *
+     * @return static
      */
     public function addTelecom(FHIRContactPoint $telecom): self
     {
@@ -635,6 +645,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail for the person, e.g. a telephone number or an email address.
+     *
+     * @return static
      */
     public function setTelecom(FHIRContactPoint ...$telecom): self
     {
@@ -660,6 +672,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Administrative Gender.
+     *
+     * @return static
      */
     public function setGender(null|string|FHIRAdministrativeGenderEnum|FHIRAdministrativeGender $gender): self
     {
@@ -694,6 +708,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The birth date for the person.
+     *
+     * @return static
      */
     public function setBirthDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $birthDate): self
     {
@@ -712,8 +728,7 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Indicates if the individual is deceased or not. (choose any one of deceased*,
-     * but only one)
+     * Indicates if the individual is deceased or not.
      */
     public function getDeceasedBoolean(): null|FHIRBoolean
     {
@@ -724,8 +739,9 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Indicates if the individual is deceased or not. (choose any one of deceased*,
-     * but only one)
+     * Indicates if the individual is deceased or not.
+     *
+     * @return static
      */
     public function setDeceasedBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $deceasedBoolean): self
     {
@@ -749,8 +765,7 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Indicates if the individual is deceased or not. (choose any one of deceased*,
-     * but only one)
+     * Indicates if the individual is deceased or not.
      */
     public function getDeceasedDateTime(): null|FHIRDateTime
     {
@@ -766,8 +781,9 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Indicates if the individual is deceased or not. (choose any one of deceased*,
-     * but only one)
+     * Indicates if the individual is deceased or not.
+     *
+     * @return static
      */
     public function setDeceasedDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $deceasedDateTime): self
     {
@@ -823,6 +839,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * One or more addresses for the person.
+     *
+     * @return static
      */
     public function addAddress(FHIRAddress $address): self
     {
@@ -844,6 +862,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * One or more addresses for the person.
+     *
+     * @return static
      */
     public function setAddress(FHIRAddress ...$address): self
     {
@@ -875,6 +895,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * This field contains a person's most recent marital (civil) status.
+     *
+     * @return static
      */
     public function setMaritalStatus(null|FHIRCodeableConcept $maritalStatus): self
     {
@@ -919,6 +941,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * An image that can be displayed as a thumbnail of the person to enhance the
      * identification of the individual.
+     *
+     * @return static
      */
     public function addPhoto(FHIRAttachment $photo): self
     {
@@ -936,6 +960,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * An image that can be displayed as a thumbnail of the person to enhance the
      * identification of the individual.
+     *
+     * @return static
      */
     public function setPhoto(FHIRAttachment ...$photo): self
     {
@@ -978,6 +1004,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * A language which may be used to communicate with the person about his or her
      * health.
+     *
+     * @return static
      */
     public function addCommunication(FHIRPersonCommunication $communication): self
     {
@@ -994,6 +1022,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * A language which may be used to communicate with the person about his or her
      * health.
+     *
+     * @return static
      */
     public function setCommunication(FHIRPersonCommunication ...$communication): self
     {
@@ -1023,6 +1053,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization that is the custodian of the person record.
+     *
+     * @return static
      */
     public function setManagingOrganization(null|FHIRReference $managingOrganization): self
     {
@@ -1063,6 +1095,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * specific health-related context.
      *
      * Link to a resource that concerns the same actual person.
+     *
+     * @return static
      */
     public function addLink(FHIRPersonLink $link): self
     {
@@ -1078,6 +1112,8 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * specific health-related context.
      *
      * Link to a resource that concerns the same actual person.
+     *
+     * @return static
      */
     public function setLink(FHIRPersonLink ...$link): self
     {

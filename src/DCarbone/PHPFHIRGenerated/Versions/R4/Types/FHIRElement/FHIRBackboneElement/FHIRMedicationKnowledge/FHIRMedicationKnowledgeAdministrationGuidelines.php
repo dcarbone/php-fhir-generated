@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -213,6 +213,8 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * Information about a medication that is used to support knowledge.
      *
      * Dosage for the medication for the specific guidelines.
+     *
+     * @return static
      */
     public function addDosage(FHIRMedicationKnowledgeDosage $dosage): self
     {
@@ -227,6 +229,8 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * Information about a medication that is used to support knowledge.
      *
      * Dosage for the medication for the specific guidelines.
+     *
+     * @return static
      */
     public function setDosage(FHIRMedicationKnowledgeDosage ...$dosage): self
     {
@@ -258,6 +262,8 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indication for use that apply to the specific administration guidelines.
+     *
+     * @return static
      */
     public function setIndicationCodeableConcept(null|FHIRCodeableConcept $indicationCodeableConcept): self
     {
@@ -287,6 +293,8 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indication for use that apply to the specific administration guidelines.
+     *
+     * @return static
      */
     public function setIndicationReference(null|FHIRReference $indicationReference): self
     {
@@ -327,6 +335,8 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      *
      * Characteristics of the patient that are relevant to the administration
      * guidelines (for example, height, weight, gender, etc.).
+     *
+     * @return static
      */
     public function addPatientCharacteristics(FHIRMedicationKnowledgePatientCharacteristics $patientCharacteristics): self
     {
@@ -342,6 +352,8 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      *
      * Characteristics of the patient that are relevant to the administration
      * guidelines (for example, height, weight, gender, etc.).
+     *
+     * @return static
      */
     public function setPatientCharacteristics(FHIRMedicationKnowledgePatientCharacteristics ...$patientCharacteristics): self
     {

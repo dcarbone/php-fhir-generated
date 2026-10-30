@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -1259,6 +1259,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the purpose of this example amoung the set of examples.
+     *
+     * @return static
      */
     public function setLabel(null|string|FHIRStringPrimitive|FHIRString $label): self
     {
@@ -1293,6 +1295,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueBase64Binary(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $valueBase64Binary): self
     {
@@ -1325,6 +1329,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -1361,6 +1367,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $valueCanonical): self
     {
@@ -1397,6 +1405,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueCode(null|string|FHIRCodePrimitive|FHIRCode $valueCode): self
     {
@@ -1433,6 +1443,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $valueDate): self
     {
@@ -1473,6 +1485,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime): self
     {
@@ -1509,6 +1523,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $valueDecimal): self
     {
@@ -1549,6 +1565,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueId(null|string|FHIRIdPrimitive|FHIRId $valueId): self
     {
@@ -1589,6 +1607,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueInstant(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $valueInstant): self
     {
@@ -1623,6 +1643,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $valueInteger): self
     {
@@ -1665,6 +1687,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $valueMarkdown): self
     {
@@ -1701,6 +1725,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueOid(null|string|FHIROidPrimitive|FHIROid $valueOid): self
     {
@@ -1735,6 +1761,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValuePositiveInt(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $valuePositiveInt): self
     {
@@ -1769,6 +1797,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -1801,6 +1831,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $valueTime): self
     {
@@ -1835,6 +1867,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $valueUnsignedInt): self
     {
@@ -1869,6 +1903,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueUri(null|string|FHIRUriPrimitive|FHIRUri $valueUri): self
     {
@@ -1903,6 +1939,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueUrl(null|string|FHIRUrlPrimitive|FHIRUrl $valueUrl): self
     {
@@ -1939,6 +1977,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueUuid(null|string|FHIRUuidPrimitive|FHIRUuid $valueUuid): self
     {
@@ -1981,6 +2021,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueAddress(null|FHIRAddress $valueAddress): self
     {
@@ -2012,6 +2054,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueAge(null|FHIRAge $valueAge): self
     {
@@ -2045,6 +2089,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueAnnotation(null|FHIRAnnotation $valueAnnotation): self
     {
@@ -2076,6 +2122,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueAttachment(null|FHIRAttachment $valueAttachment): self
     {
@@ -2109,6 +2157,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -2142,6 +2192,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueCodeableReference(null|FHIRCodeableReference $valueCodeableReference): self
     {
@@ -2173,6 +2225,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueCoding(null|FHIRCoding $valueCoding): self
     {
@@ -2206,6 +2260,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueContactPoint(null|FHIRContactPoint $valueContactPoint): self
     {
@@ -2241,6 +2297,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueCount(null|FHIRCount $valueCount): self
     {
@@ -2272,6 +2330,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueDistance(null|FHIRDistance $valueDistance): self
     {
@@ -2303,6 +2363,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueDuration(null|FHIRDuration $valueDuration): self
     {
@@ -2334,6 +2396,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueHumanName(null|FHIRHumanName $valueHumanName): self
     {
@@ -2367,6 +2431,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueIdentifier(null|FHIRIdentifier $valueIdentifier): self
     {
@@ -2398,6 +2464,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueMoney(null|FHIRMoney $valueMoney): self
     {
@@ -2429,6 +2497,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValuePeriod(null|FHIRPeriod $valuePeriod): self
     {
@@ -2464,6 +2534,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -2495,6 +2567,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -2528,6 +2602,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueRatio(null|FHIRRatio $valueRatio): self
     {
@@ -2559,6 +2635,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueRatioRange(null|FHIRRatioRange $valueRatioRange): self
     {
@@ -2590,6 +2668,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueReference(null|FHIRReference $valueReference): self
     {
@@ -2623,6 +2703,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueSampledData(null|FHIRSampledData $valueSampledData): self
     {
@@ -2662,6 +2744,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueSignature(null|FHIRSignature $valueSignature): self
     {
@@ -2701,6 +2785,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueTiming(null|FHIRTiming $valueTiming): self
     {
@@ -2732,6 +2818,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueContactDetail(null|FHIRContactDetail $valueContactDetail): self
     {
@@ -2765,6 +2853,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueContributor(null|FHIRContributor $valueContributor): self
     {
@@ -2798,6 +2888,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueDataRequirement(null|FHIRDataRequirement $valueDataRequirement): self
     {
@@ -2833,6 +2925,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueExpression(null|FHIRExpression $valueExpression): self
     {
@@ -2868,6 +2962,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueParameterDefinition(null|FHIRParameterDefinition $valueParameterDefinition): self
     {
@@ -2901,6 +2997,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueRelatedArtifact(null|FHIRRelatedArtifact $valueRelatedArtifact): self
     {
@@ -2934,6 +3032,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueTriggerDefinition(null|FHIRTriggerDefinition $valueTriggerDefinition): self
     {
@@ -2971,6 +3071,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueUsageContext(null|FHIRUsageContext $valueUsageContext): self
     {
@@ -3002,6 +3104,8 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
+     *
+     * @return static
      */
     public function setValueDosage(null|FHIRDosage $valueDosage): self
     {

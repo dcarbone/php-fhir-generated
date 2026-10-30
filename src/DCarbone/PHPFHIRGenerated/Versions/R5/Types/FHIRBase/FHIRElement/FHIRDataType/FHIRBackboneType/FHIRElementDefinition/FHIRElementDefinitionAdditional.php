@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -293,6 +293,8 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The use of this additional binding.
+     *
+     * @return static
      */
     public function setPurpose(null|string|FHIRCodePrimitive|FHIRCode $purpose): self
     {
@@ -327,6 +329,8 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The valueSet that is being bound for the purpose.
+     *
+     * @return static
      */
     public function setValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $valueSet): self
     {
@@ -369,6 +373,8 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      *
      * Documentation of the purpose of use of the bindingproviding additional
      * information about how it is intended to be used.
+     *
+     * @return static
      */
     public function setDocumentation(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $documentation): self
     {
@@ -401,6 +407,8 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Concise documentation - for summary tables.
+     *
+     * @return static
      */
     public function setShortDoco(null|string|FHIRStringPrimitive|FHIRString $shortDoco): self
     {
@@ -460,6 +468,8 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      * clinical domain etc. The information to decide whether a usege context applies
      * is usually outside the resource, determined by context, and this might present
      * challenges for validation tooling.
+     *
+     * @return static
      */
     public function addUsage(FHIRUsageContext $usage): self
     {
@@ -483,6 +493,8 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      * clinical domain etc. The information to decide whether a usege context applies
      * is usually outside the resource, determined by context, and this might present
      * challenges for validation tooling.
+     *
+     * @return static
      */
     public function setUsage(FHIRUsageContext ...$usage): self
     {
@@ -512,6 +524,8 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      *
      * Whether the binding applies to all repeats, or just to any one of them. This is
      * only relevant for elements that can repeat.
+     *
+     * @return static
      */
     public function setAny(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $any): self
     {

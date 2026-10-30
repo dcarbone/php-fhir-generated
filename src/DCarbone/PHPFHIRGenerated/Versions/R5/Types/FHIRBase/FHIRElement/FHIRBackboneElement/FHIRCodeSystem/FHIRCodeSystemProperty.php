@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -251,6 +251,8 @@ class FHIRCodeSystemProperty extends FHIRBackboneElement
      * A code that is used to identify the property. The code is used internally (in
      * CodeSystem.concept.property.code) and also externally, such as in property
      * filters.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -285,6 +287,8 @@ class FHIRCodeSystemProperty extends FHIRBackboneElement
      *
      * Reference to the formal meaning of the property. One possible source of meaning
      * is the [Concept Properties](codesystem-concept-properties.html) code system.
+     *
+     * @return static
      */
     public function setUri(null|string|FHIRUriPrimitive|FHIRUri $uri): self
     {
@@ -319,6 +323,8 @@ class FHIRCodeSystemProperty extends FHIRBackboneElement
      *
      * A description of the property- why it is defined, and how its value might be
      * used.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -349,6 +355,8 @@ class FHIRCodeSystemProperty extends FHIRBackboneElement
      *
      * The type of the property value. Properties of type "code" contain a code defined
      * by the code system (e.g. a reference to another defined concept).
+     *
+     * @return static
      */
     public function setType(null|string|FHIRPropertyTypeEnum|FHIRPropertyType $type): self
     {

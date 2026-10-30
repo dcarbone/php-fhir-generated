@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -405,6 +405,8 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
      * administering the medication. It is expected that the text instructions will
      * always be populated. If the dosage.timing attribute is also populated, then the
      * dosage.text should reflect the same information as the timing.
+     *
+     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -441,6 +443,8 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
      *
      * Additional instructions such as "Swallow with plenty of water" which may or may
      * not be coded.
+     *
+     * @return static
      */
     public function setAdditionalInstructions(null|FHIRCodeableConcept $additionalInstructions): self
     {
@@ -482,6 +486,8 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
      * type allows many different expressions. For example: "Every 8 hours"; "Three
      * times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15
      * Oct 2013, 17 Oct 2013 and 1 Nov 2013".
+     *
+     * @return static
      */
     public function setTiming(null|FHIRTiming $timing): self
     {
@@ -513,6 +519,8 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
      * Indicates whether the Medication is only taken when needed within a specific
      * dosing schedule (Boolean option), or it indicates the precondition for taking
      * the Medication (CodeableConcept).
+     *
+     * @return static
      */
     public function setAsNeededBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $asNeededBoolean): self
     {
@@ -551,6 +559,8 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
      * Indicates whether the Medication is only taken when needed within a specific
      * dosing schedule (Boolean option), or it indicates the precondition for taking
      * the Medication (CodeableConcept).
+     *
+     * @return static
      */
     public function setAsNeededCodeableConcept(null|FHIRCodeableConcept $asNeededCodeableConcept): self
     {
@@ -584,6 +594,8 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
      *
      * A coded specification of the anatomic site where the medication first enters the
      * body.
+     *
+     * @return static
      */
     public function setSiteCodeableConcept(null|FHIRCodeableConcept $siteCodeableConcept): self
     {
@@ -615,6 +627,8 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
      *
      * A coded specification of the anatomic site where the medication first enters the
      * body.
+     *
+     * @return static
      */
     public function setSiteReference(null|FHIRReference $siteReference): self
     {
@@ -648,6 +662,8 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
      *
      * A code specifying the route or physiological path of administration of a
      * therapeutic agent into or onto a patient's body.
+     *
+     * @return static
      */
     public function setRoute(null|FHIRCodeableConcept $route): self
     {
@@ -683,6 +699,8 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
      * A coded value indicating the method by which the medication is introduced into
      * or onto the body. Most commonly used for injections. For examples, Slow Push;
      * Deep IV.
+     *
+     * @return static
      */
     public function setMethod(null|FHIRCodeableConcept $method): self
     {
@@ -712,6 +730,8 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of therapeutic or other substance given at one administration event.
+     *
+     * @return static
      */
     public function setDoseRange(null|FHIRRange $doseRange): self
     {
@@ -733,6 +753,8 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
 
     /**
      * The amount of therapeutic or other substance given at one administration event.
+     *
+     * @return static
      */
     public function setDoseQuantity(null|FHIRSimpleQuantity $doseQuantity): self
     {
@@ -774,6 +796,8 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
      * Currently we do not specify a default of '1' in the denominator, but this is
      * being discussed. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8
      * hours.
+     *
+     * @return static
      */
     public function setRateRatio(null|FHIRRatio $rateRatio): self
     {
@@ -813,6 +837,8 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
      * Currently we do not specify a default of '1' in the denominator, but this is
      * being discussed. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8
      * hours.
+     *
+     * @return static
      */
     public function setRateRange(null|FHIRRange $rateRange): self
     {
@@ -846,6 +872,8 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
      *
      * The maximum total quantity of a therapeutic substance that may be administered
      * to a subject over the period of time. For example, 1000mg in 24 hours.
+     *
+     * @return static
      */
     public function setMaxDosePerPeriod(null|FHIRRatio $maxDosePerPeriod): self
     {

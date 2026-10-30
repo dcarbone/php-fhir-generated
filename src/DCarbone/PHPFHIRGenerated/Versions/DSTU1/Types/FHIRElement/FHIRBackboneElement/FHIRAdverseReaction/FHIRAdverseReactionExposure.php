@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -218,6 +218,8 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
      *
      * Identifies the initial date of the exposure that is suspected to be related to
      * the reaction.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -248,6 +250,8 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of exposure: Drug Administration, Immunization, Coincidental.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRExposureTypeList|FHIRExposureType $type): self
     {
@@ -280,6 +284,8 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
      *
      * A statement of how confident that the recorder was that this exposure caused the
      * reaction.
+     *
+     * @return static
      */
     public function setCausalityExpectation(null|string|FHIRCausalityExpectationList|FHIRCausalityExpectation $causalityExpectation): self
     {
@@ -312,6 +318,8 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Substance that is presumed to have caused the adverse reaction.
+     *
+     * @return static
      */
     public function setSubstance(null|FHIRResourceReference $substance): self
     {

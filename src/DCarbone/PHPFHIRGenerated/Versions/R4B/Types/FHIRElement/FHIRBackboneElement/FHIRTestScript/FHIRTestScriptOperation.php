@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -466,6 +466,8 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Server interaction or operation type.
+     *
+     * @return static
      */
     public function setType(null|FHIRCoding $type): self
     {
@@ -491,6 +493,8 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of the resource. See http://build.fhir.org/resourcelist.html.
+     *
+     * @return static
      */
     public function setResource(null|string|FHIRFHIRDefinedTypeEnum|FHIRFHIRDefinedType $resource): self
     {
@@ -523,6 +527,8 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The label would be used for tracking/logging purposes by test engines.
+     *
+     * @return static
      */
     public function setLabel(null|string|FHIRStringPrimitive|FHIRString $label): self
     {
@@ -557,6 +563,8 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      *
      * The description would be used by test engines for tracking and reporting
      * purposes.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -591,6 +599,8 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The mime-type to use for RESTful operation in the 'Accept' header.
+     *
+     * @return static
      */
     public function setAccept(null|string|FHIRCodePrimitive|FHIRCode $accept): self
     {
@@ -625,6 +635,8 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The mime-type to use for RESTful operation in the 'Content-Type' header.
+     *
+     * @return static
      */
     public function setContentType(null|string|FHIRCodePrimitive|FHIRCode $contentType): self
     {
@@ -659,6 +671,8 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      *
      * The server where the request message is destined for. Must be one of the server
      * numbers listed in TestScript.destination section.
+     *
+     * @return static
      */
     public function setDestination(null|string|float|FHIRIntegerPrimitive|FHIRInteger $destination): self
     {
@@ -693,6 +707,8 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * Whether or not to implicitly send the request url in encoded format. The default
      * is true to match the standard RESTful client behavior. Set to false when
      * communicating with a server that does not support encoded url paths.
+     *
+     * @return static
      */
     public function setEncodeRequestUrl(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $encodeRequestUrl): self
     {
@@ -723,6 +739,8 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      *
      * The HTTP method the test engine MUST use for this operation regardless of any
      * other operation details.
+     *
+     * @return static
      */
     public function setMethod(null|string|FHIRTestScriptRequestMethodCodeEnum|FHIRTestScriptRequestMethodCode $method): self
     {
@@ -757,6 +775,8 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      *
      * The server where the request message originates from. Must be one of the server
      * numbers listed in TestScript.origin section.
+     *
+     * @return static
      */
     public function setOrigin(null|string|float|FHIRIntegerPrimitive|FHIRInteger $origin): self
     {
@@ -791,6 +811,8 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      *
      * Path plus parameters after [type]. Used to set parts of the request URL
      * explicitly.
+     *
+     * @return static
      */
     public function setParams(null|string|FHIRStringPrimitive|FHIRString $params): self
     {
@@ -834,6 +856,8 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * determine compliance against the FHIR specification.
      *
      * Header elements would be used to set HTTP headers.
+     *
+     * @return static
      */
     public function addRequestHeader(FHIRTestScriptRequestHeader $requestHeader): self
     {
@@ -849,6 +873,8 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * determine compliance against the FHIR specification.
      *
      * Header elements would be used to set HTTP headers.
+     *
+     * @return static
      */
     public function setRequestHeader(FHIRTestScriptRequestHeader ...$requestHeader): self
     {
@@ -884,6 +910,8 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The fixture id (maybe new) to map to the request.
+     *
+     * @return static
      */
     public function setRequestId(null|string|FHIRIdPrimitive|FHIRId $requestId): self
     {
@@ -922,6 +950,8 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The fixture id (maybe new) to map to the response.
+     *
+     * @return static
      */
     public function setResponseId(null|string|FHIRIdPrimitive|FHIRId $responseId): self
     {
@@ -960,6 +990,8 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The id of the fixture used as the body of a PUT or POST request.
+     *
+     * @return static
      */
     public function setSourceId(null|string|FHIRIdPrimitive|FHIRId $sourceId): self
     {
@@ -998,6 +1030,8 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Id of fixture used for extracting the [id], [type], and [vid] for GET requests.
+     *
+     * @return static
      */
     public function setTargetId(null|string|FHIRIdPrimitive|FHIRId $targetId): self
     {
@@ -1030,6 +1064,8 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Complete request URL.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRStringPrimitive|FHIRString $url): self
     {

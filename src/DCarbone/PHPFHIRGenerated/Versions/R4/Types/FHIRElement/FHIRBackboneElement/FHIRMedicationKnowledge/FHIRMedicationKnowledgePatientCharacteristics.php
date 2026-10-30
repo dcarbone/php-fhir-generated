@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -206,6 +206,8 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
      *
      * Specific characteristic that is relevant to the administration guideline (e.g.
      * height, weight, gender).
+     *
+     * @return static
      */
     public function setCharacteristicCodeableConcept(null|FHIRCodeableConcept $characteristicCodeableConcept): self
     {
@@ -241,6 +243,8 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
      *
      * Specific characteristic that is relevant to the administration guideline (e.g.
      * height, weight, gender).
+     *
+     * @return static
      */
     public function setCharacteristicQuantity(null|FHIRQuantity $characteristicQuantity): self
     {
@@ -283,6 +287,8 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The specific characteristic (e.g. height, weight, gender, etc.).
+     *
+     * @return static
      */
     public function addValue(string|FHIRStringPrimitive|FHIRString $value): self
     {
@@ -302,6 +308,8 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The specific characteristic (e.g. height, weight, gender, etc.).
+     *
+     * @return static
      */
     public function setValue(string|FHIRStringPrimitive|FHIRString ...$value): self
     {

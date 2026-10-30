@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -327,6 +327,8 @@ class FHIRAddress extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The purpose of this address.
+     *
+     * @return static
      */
     public function setUse(null|string|FHIRAddressUseEnum|FHIRAddressUse $use): self
     {
@@ -359,6 +361,8 @@ class FHIRAddress extends FHIRElement
      *
      * Distinguishes between physical addresses (those you can visit) and mailing
      * addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRAddressTypeEnum|FHIRAddressType $type): self
     {
@@ -393,6 +397,8 @@ class FHIRAddress extends FHIRElement
      *
      * Specifies the entire address as it should be displayed e.g. on a postal label.
      * This may be provided instead of or as well as the specific parts.
+     *
+     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -440,6 +446,8 @@ class FHIRAddress extends FHIRElement
      *
      * This component contains the house number, apartment number, street name, street
      * direction, P.O. Box number, delivery hints, and similar address information.
+     *
+     * @return static
      */
     public function addLine(string|FHIRStringPrimitive|FHIRString $line): self
     {
@@ -460,6 +468,8 @@ class FHIRAddress extends FHIRElement
      *
      * This component contains the house number, apartment number, street name, street
      * direction, P.O. Box number, delivery hints, and similar address information.
+     *
+     * @return static
      */
     public function setLine(string|FHIRStringPrimitive|FHIRString ...$line): self
     {
@@ -498,6 +508,8 @@ class FHIRAddress extends FHIRElement
      *
      * The name of the city, town, suburb, village or other community or delivery
      * center.
+     *
+     * @return static
      */
     public function setCity(null|string|FHIRStringPrimitive|FHIRString $city): self
     {
@@ -530,6 +542,8 @@ class FHIRAddress extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the administrative area (county).
+     *
+     * @return static
      */
     public function setDistrict(null|string|FHIRStringPrimitive|FHIRString $district): self
     {
@@ -564,6 +578,8 @@ class FHIRAddress extends FHIRElement
      *
      * Sub-unit of a country with limited sovereignty in a federally organized country.
      * A code may be used if codes are in common use (e.g. US 2 letter state codes).
+     *
+     * @return static
      */
     public function setState(null|string|FHIRStringPrimitive|FHIRString $state): self
     {
@@ -596,6 +612,8 @@ class FHIRAddress extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A postal code designating a region defined by the postal service.
+     *
+     * @return static
      */
     public function setPostalCode(null|string|FHIRStringPrimitive|FHIRString $postalCode): self
     {
@@ -628,6 +646,8 @@ class FHIRAddress extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Country - a nation as commonly understood or generally accepted.
+     *
+     * @return static
      */
     public function setCountry(null|string|FHIRStringPrimitive|FHIRString $country): self
     {
@@ -660,6 +680,8 @@ class FHIRAddress extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period when address was/is in use.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {

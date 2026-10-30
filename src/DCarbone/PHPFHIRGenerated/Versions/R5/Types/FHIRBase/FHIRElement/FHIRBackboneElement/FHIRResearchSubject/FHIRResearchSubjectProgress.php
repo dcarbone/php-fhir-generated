@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -269,6 +269,8 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the aspect of the subject's journey that the state refers to.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -300,6 +302,8 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The current state of the subject.
+     *
+     * @return static
      */
     public function setSubjectState(null|FHIRCodeableConcept $subjectState): self
     {
@@ -331,6 +335,8 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The milestones the subject has passed through.
+     *
+     * @return static
      */
     public function setMilestone(null|FHIRCodeableConcept $milestone): self
     {
@@ -364,6 +370,8 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      *
      * The reason for the state change. If coded it should follow the formal subject
      * state model.
+     *
+     * @return static
      */
     public function setReason(null|FHIRCodeableConcept $reason): self
     {
@@ -401,6 +409,8 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the new status started.
+     *
+     * @return static
      */
     public function setStartDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $startDate): self
     {
@@ -441,6 +451,8 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the state ended.
+     *
+     * @return static
      */
     public function setEndDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $endDate): self
     {

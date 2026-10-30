@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -239,6 +239,8 @@ class FHIRRelatedArtifact extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of relationship to the related artifact.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRRelatedArtifactTypeList|FHIRRelatedArtifactType $type): self
     {
@@ -273,6 +275,8 @@ class FHIRRelatedArtifact extends FHIRElement
      *
      * A brief description of the document or knowledge resource being referenced,
      * suitable for display to a consumer.
+     *
+     * @return static
      */
     public function setDisplay(null|string|FHIRStringPrimitive|FHIRString $display): self
     {
@@ -307,6 +311,8 @@ class FHIRRelatedArtifact extends FHIRElement
      *
      * A bibliographic citation for the related artifact. This text SHOULD be formatted
      * according to an accepted citation format.
+     *
+     * @return static
      */
     public function setCitation(null|string|FHIRStringPrimitive|FHIRString $citation): self
     {
@@ -339,6 +345,8 @@ class FHIRRelatedArtifact extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A url for the artifact that can be followed to access the actual content.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -373,6 +381,8 @@ class FHIRRelatedArtifact extends FHIRElement
      *
      * The document being referenced, represented as an attachment. This is exclusive
      * with the resource element.
+     *
+     * @return static
      */
     public function setDocument(null|FHIRAttachment $document): self
     {
@@ -404,6 +414,8 @@ class FHIRRelatedArtifact extends FHIRElement
      *
      * The related resource, such as a library, value set, profile, or other knowledge
      * resource.
+     *
+     * @return static
      */
     public function setResource(null|FHIRReference $resource): self
     {

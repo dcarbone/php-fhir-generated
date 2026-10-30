@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -212,6 +212,8 @@ class FHIRClinicalUseDefinitionUndesirableEffect extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The situation in which the undesirable effect may manifest.
+     *
+     * @return static
      */
     public function setSymptomConditionEffect(null|FHIRCodeableReference $symptomConditionEffect): self
     {
@@ -243,6 +245,8 @@ class FHIRClinicalUseDefinitionUndesirableEffect extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * High level classification of the effect.
+     *
+     * @return static
      */
     public function setClassification(null|FHIRCodeableConcept $classification): self
     {
@@ -274,6 +278,8 @@ class FHIRClinicalUseDefinitionUndesirableEffect extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How often the effect is seen.
+     *
+     * @return static
      */
     public function setFrequencyOfOccurrence(null|FHIRCodeableConcept $frequencyOfOccurrence): self
     {

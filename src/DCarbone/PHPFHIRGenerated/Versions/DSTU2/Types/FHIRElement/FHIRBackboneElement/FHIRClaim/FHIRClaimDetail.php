@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -310,6 +310,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A service line number.
+     *
+     * @return static
      */
     public function setSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
     {
@@ -342,6 +344,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of product or service.
+     *
+     * @return static
      */
     public function setType(null|FHIRCoding $type): self
     {
@@ -373,6 +377,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
      *
      * If a grouping item then 'GROUP' otherwise it is a node therefore a code to
      * indicate the Professional Service or Product supplied.
+     *
+     * @return static
      */
     public function setService(null|FHIRCoding $service): self
     {
@@ -394,6 +400,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
 
     /**
      * The number of repetitions of a service or product.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRSimpleQuantity $quantity): self
     {
@@ -417,6 +425,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
     /**
      * If the item is a node then this is the fee for the product or service, otherwise
      * this is the total of the fees for the children of the group.
+     *
+     * @return static
      */
     public function setUnitPrice(null|FHIRMoney $unitPrice): self
     {
@@ -452,6 +462,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * A real number that represents a multiplier used in determining the overall value
      * of services delivered and/or goods received. The concept of a Factor allows for
      * a discount or surcharge multiplier to be applied to a monetary amount.
+     *
+     * @return static
      */
     public function setFactor(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $factor): self
     {
@@ -492,6 +504,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * resource intensiveness) associated with the good or service delivered. The
      * concept of Points allows for assignment of point values for services and/or
      * goods, such that a monetary amount can be assigned to each point.
+     *
+     * @return static
      */
     public function setPoints(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $points): self
     {
@@ -522,6 +536,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * charge. For example, the formula: unit Quantity * unit Price (Cost per Point) *
      * factor Number * points = net Amount. Quantity, factor and points are assumed to
      * be 1 if not supplied.
+     *
+     * @return static
      */
     public function setNet(null|FHIRMoney $net): self
     {
@@ -551,6 +567,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * List of Unique Device Identifiers associated with this line item.
+     *
+     * @return static
      */
     public function setUdi(null|FHIRCoding $udi): self
     {
@@ -591,6 +609,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * a patient which is provided to an insurer for payment recovery.
      *
      * Third tier of goods and services.
+     *
+     * @return static
      */
     public function addSubDetail(FHIRClaimSubDetail $subDetail): self
     {
@@ -606,6 +626,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * a patient which is provided to an insurer for payment recovery.
      *
      * Third tier of goods and services.
+     *
+     * @return static
      */
     public function setSubDetail(FHIRClaimSubDetail ...$subDetail): self
     {

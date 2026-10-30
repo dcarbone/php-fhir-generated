@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -257,6 +257,8 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
      *
      * Category of supply, e.g. central, non-stock, etc. This is used to support work
      * flows associated with the supply process.
+     *
+     * @return static
      */
     public function setKind(null|FHIRCodeableConcept $kind): self
     {
@@ -286,6 +288,8 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this supply request.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -313,6 +317,8 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the supply request.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRSupplyStatusList|FHIRSupplyStatus $status): self
     {
@@ -345,6 +351,8 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The item that is requested to be supplied.
+     *
+     * @return static
      */
     public function setOrderedItem(null|FHIRResourceReference $orderedItem): self
     {
@@ -374,6 +382,8 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A link to a resource representing the person whom the ordered item is for.
+     *
+     * @return static
      */
     public function setPatient(null|FHIRResourceReference $patient): self
     {
@@ -414,6 +424,8 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
      *
      * Indicates the details of the dispense event such as the days supply and quantity
      * of a supply dispensed.
+     *
+     * @return static
      */
     public function addDispense(FHIRSupplyDispense $dispense): self
     {
@@ -429,6 +441,8 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
      *
      * Indicates the details of the dispense event such as the days supply and quantity
      * of a supply dispensed.
+     *
+     * @return static
      */
     public function setDispense(FHIRSupplyDispense ...$dispense): self
     {

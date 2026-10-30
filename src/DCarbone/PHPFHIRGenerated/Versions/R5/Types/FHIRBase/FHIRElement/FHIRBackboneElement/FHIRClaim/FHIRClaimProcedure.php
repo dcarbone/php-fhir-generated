@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -130,6 +130,12 @@ class FHIRClaimProcedure extends FHIRBackboneElement
         self::FIELD_SEQUENCE => [
             'min_occurs' => 1,
         ],
+        self::FIELD_PROCEDURE_CODEABLE_CONCEPT => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_PROCEDURE_REFERENCE => [
+            'min_occurs' => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -180,7 +186,7 @@ class FHIRClaimProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The code or reference to a Procedure resource which identifies the clinical
-     * intervention performed. (choose any one of procedure*, but only one)
+     * intervention performed.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $procedureCodeableConcept;
@@ -190,7 +196,7 @@ class FHIRClaimProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The code or reference to a Procedure resource which identifies the clinical
-     * intervention performed. (choose any one of procedure*, but only one)
+     * intervention performed.
      */
     #[FHIRReference]
     protected FHIRReference $procedureReference;
@@ -275,6 +281,8 @@ class FHIRClaimProcedure extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A number to uniquely identify procedure entries.
+     *
+     * @return static
      */
     public function setSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
     {
@@ -322,6 +330,8 @@ class FHIRClaimProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * When the condition was observed or the relative ranking.
+     *
+     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -339,6 +349,8 @@ class FHIRClaimProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * When the condition was observed or the relative ranking.
+     *
+     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -376,6 +388,8 @@ class FHIRClaimProcedure extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date and optionally time the procedure was performed.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -397,7 +411,7 @@ class FHIRClaimProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The code or reference to a Procedure resource which identifies the clinical
-     * intervention performed. (choose any one of procedure*, but only one)
+     * intervention performed.
      */
     public function getProcedureCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -411,7 +425,9 @@ class FHIRClaimProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The code or reference to a Procedure resource which identifies the clinical
-     * intervention performed. (choose any one of procedure*, but only one)
+     * intervention performed.
+     *
+     * @return static
      */
     public function setProcedureCodeableConcept(null|FHIRCodeableConcept $procedureCodeableConcept): self
     {
@@ -429,7 +445,7 @@ class FHIRClaimProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The code or reference to a Procedure resource which identifies the clinical
-     * intervention performed. (choose any one of procedure*, but only one)
+     * intervention performed.
      */
     public function getProcedureReference(): null|FHIRReference
     {
@@ -442,7 +458,9 @@ class FHIRClaimProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The code or reference to a Procedure resource which identifies the clinical
-     * intervention performed. (choose any one of procedure*, but only one)
+     * intervention performed.
+     *
+     * @return static
      */
     public function setProcedureReference(null|FHIRReference $procedureReference): self
     {
@@ -485,6 +503,8 @@ class FHIRClaimProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique Device Identifiers associated with this line item.
+     *
+     * @return static
      */
     public function addUdi(FHIRReference $udi): self
     {
@@ -501,6 +521,8 @@ class FHIRClaimProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique Device Identifiers associated with this line item.
+     *
+     * @return static
      */
     public function setUdi(FHIRReference ...$udi): self
     {

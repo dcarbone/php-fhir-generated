@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -458,6 +458,8 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The label would be used for tracking/logging purposes by test engines.
+     *
+     * @return static
      */
     public function setLabel(null|string|FHIRStringPrimitive|FHIRString $label): self
     {
@@ -492,6 +494,8 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * The description would be used by test engines for tracking and reporting
      * purposes.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -522,6 +526,8 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The direction to use for the assertion.
+     *
+     * @return static
      */
     public function setDirection(null|string|FHIRAssertionDirectionTypeList|FHIRAssertionDirectionType $direction): self
     {
@@ -554,6 +560,8 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Id of fixture used to compare the "sourceId/path" evaluations to.
+     *
+     * @return static
      */
     public function setCompareToSourceId(null|string|FHIRStringPrimitive|FHIRString $compareToSourceId): self
     {
@@ -588,6 +596,8 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * XPath or JSONPath expression against fixture used to compare the "sourceId/path"
      * evaluations to.
+     *
+     * @return static
      */
     public function setCompareToSourcePath(null|string|FHIRStringPrimitive|FHIRString $compareToSourcePath): self
     {
@@ -620,6 +630,8 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * The content-type or mime-type to use for RESTful operation in the 'Content-Type'
      * header.
+     *
+     * @return static
      */
     public function setContentType(null|string|FHIRContentTypeList|FHIRContentType $contentType): self
     {
@@ -652,6 +664,8 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The HTTP header field name e.g. 'Location'.
+     *
+     * @return static
      */
     public function setHeaderField(null|string|FHIRStringPrimitive|FHIRString $headerField): self
     {
@@ -686,6 +700,8 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * The ID of a fixture. Asserts that the response contains at a minimumId the
      * fixture specified by minimumId.
+     *
+     * @return static
      */
     public function setMinimumId(null|string|FHIRStringPrimitive|FHIRString $minimumId): self
     {
@@ -718,6 +734,8 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * Whether or not the test execution performs validation on the bundle navigation
      * links.
+     *
+     * @return static
      */
     public function setNavigationLinks(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $navigationLinks): self
     {
@@ -748,6 +766,8 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The operator type.
+     *
+     * @return static
      */
     public function setOperator(null|string|FHIRAssertionOperatorTypeList|FHIRAssertionOperatorType $operator): self
     {
@@ -782,6 +802,8 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * The XPath or JSONPath expression to be evaluated against the fixture
      * representing the response received from server.
+     *
+     * @return static
      */
     public function setPath(null|string|FHIRStringPrimitive|FHIRString $path): self
     {
@@ -816,6 +838,8 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The type of the resource. See http://hl7-fhir.github.io/resourcelist.html.
+     *
+     * @return static
      */
     public function setResource(null|string|FHIRCodePrimitive|FHIRCode $resource): self
     {
@@ -848,6 +872,8 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * okay | created | noContent | notModified | bad | forbidden | notFound |
      * methodNotAllowed | conflict | gone | preconditionFailed | unprocessable.
+     *
+     * @return static
      */
     public function setResponse(null|string|FHIRAssertionResponseTypesList|FHIRAssertionResponseTypes $response): self
     {
@@ -880,6 +906,8 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the HTTP response code to be tested.
+     *
+     * @return static
      */
     public function setResponseCode(null|string|FHIRStringPrimitive|FHIRString $responseCode): self
     {
@@ -918,6 +946,8 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Fixture to evaluate the XPath/JSONPath expression or the headerField against.
+     *
+     * @return static
      */
     public function setSourceId(null|string|FHIRIdPrimitive|FHIRId $sourceId): self
     {
@@ -956,6 +986,8 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The ID of the Profile to validate against.
+     *
+     * @return static
      */
     public function setValidateProfileId(null|string|FHIRIdPrimitive|FHIRId $validateProfileId): self
     {
@@ -988,6 +1020,8 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value to compare to.
+     *
+     * @return static
      */
     public function setValue(null|string|FHIRStringPrimitive|FHIRString $value): self
     {
@@ -1020,6 +1054,8 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * Whether or not the test execution will produce a warning only on error for this
      * assert.
+     *
+     * @return static
      */
     public function setWarningOnly(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $warningOnly): self
     {

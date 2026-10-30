@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -153,6 +153,8 @@ class FHIRTestReportAction2 extends FHIRBackboneElement
      * A summary of information based on the results of executing a TestScript.
      *
      * An operation would involve a REST request to a server.
+     *
+     * @return static
      */
     public function setOperation(null|FHIRTestReportOperation $operation): self
     {

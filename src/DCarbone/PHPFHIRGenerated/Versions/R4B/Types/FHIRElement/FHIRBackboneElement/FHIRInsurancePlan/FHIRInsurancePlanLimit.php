@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -202,6 +202,8 @@ class FHIRInsurancePlanLimit extends FHIRBackboneElement
      *
      * The maximum amount of a service item a plan will pay for a covered benefit. For
      * examples. wellness visits, or eyeglasses.
+     *
+     * @return static
      */
     public function setValue(null|FHIRQuantity $value): self
     {
@@ -233,6 +235,8 @@ class FHIRInsurancePlanLimit extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific limit on the benefit.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -309,6 +309,8 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The standardized type of action (FHIR or otherwise).
+     *
+     * @return static
      */
     public function setType(null|FHIRCoding $type): self
     {
@@ -338,6 +340,8 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short descriptive label the step to be used in tables or diagrams.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -370,6 +374,8 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The system that invokes the action/transmits the data.
+     *
+     * @return static
      */
     public function setInitiator(null|string|FHIRStringPrimitive|FHIRString $initiator): self
     {
@@ -402,6 +408,8 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The system on which the action is invoked/receives the data.
+     *
+     * @return static
      */
     public function setReceiver(null|string|FHIRStringPrimitive|FHIRString $receiver): self
     {
@@ -442,6 +450,8 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * An explanation of what the operation represents and what it does.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -472,6 +482,8 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If false, the initiator is deactivated right after the operation.
+     *
+     * @return static
      */
     public function setInitiatorActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $initiatorActive): self
     {
@@ -502,6 +514,8 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If false, the receiver is deactivated right after the operation.
+     *
+     * @return static
      */
     public function setReceiverActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $receiverActive): self
     {
@@ -532,6 +546,8 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      *
      * A reference to the instance that is transmitted from requester to receiver as
      * part of the invocation of the operation.
+     *
+     * @return static
      */
     public function setRequest(null|FHIRExampleScenarioContainedInstance $request): self
     {
@@ -559,6 +575,8 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      *
      * A reference to the instance that is transmitted from receiver to requester as
      * part of the operation's synchronous response (if any).
+     *
+     * @return static
      */
     public function setResponse(null|FHIRExampleScenarioContainedInstance $response): self
     {

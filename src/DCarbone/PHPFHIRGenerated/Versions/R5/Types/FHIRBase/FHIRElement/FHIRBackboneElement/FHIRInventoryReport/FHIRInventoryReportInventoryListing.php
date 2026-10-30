@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -230,6 +230,8 @@ class FHIRInventoryReportInventoryListing extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Location of the inventory items.
+     *
+     * @return static
      */
     public function setLocation(null|FHIRReference $location): self
     {
@@ -261,6 +263,8 @@ class FHIRInventoryReportInventoryListing extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the items.
+     *
+     * @return static
      */
     public function setItemStatus(null|FHIRCodeableConcept $itemStatus): self
     {
@@ -298,6 +302,8 @@ class FHIRInventoryReportInventoryListing extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time when the items were counted.
+     *
+     * @return static
      */
     public function setCountingDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $countingDateTime): self
     {
@@ -339,6 +345,8 @@ class FHIRInventoryReportInventoryListing extends FHIRBackboneElement
      * A report of inventory or stock items.
      *
      * The item or items in this listing.
+     *
+     * @return static
      */
     public function addItem(FHIRInventoryReportItem $item): self
     {
@@ -353,6 +361,8 @@ class FHIRInventoryReportInventoryListing extends FHIRBackboneElement
      * A report of inventory or stock items.
      *
      * The item or items in this listing.
+     *
+     * @return static
      */
     public function setItem(FHIRInventoryReportItem ...$item): self
     {

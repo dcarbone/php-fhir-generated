@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -215,6 +215,8 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used to specify if two or more characteristics are combined with OR or AND.
+     *
+     * @return static
      */
     public function setCode(null|string|FHIRCharacteristicCombinationEnum|FHIRCharacteristicCombination $code): self
     {
@@ -247,6 +249,8 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Provides the value of "n" when "at-least" or "at-most" codes are used.
+     *
+     * @return static
      */
     public function setThreshold(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $threshold): self
     {
@@ -290,6 +294,8 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
      * about.
      *
      * A defining factor of the characteristic.
+     *
+     * @return static
      */
     public function addCharacteristic(FHIREvidenceVariableCharacteristic $characteristic): self
     {
@@ -305,6 +311,8 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
      * about.
      *
      * A defining factor of the characteristic.
+     *
+     * @return static
      */
     public function setCharacteristic(FHIREvidenceVariableCharacteristic ...$characteristic): self
     {

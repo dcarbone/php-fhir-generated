@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -306,6 +306,8 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      *
      * Identifies a specific instance of the entity. The reference should always be
      * version specific.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -337,6 +339,8 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      *
      * Identifies a specific instance of the entity. The reference should be version
      * specific.
+     *
+     * @return static
      */
     public function setReference(null|FHIRReference $reference): self
     {
@@ -366,6 +370,8 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of the object that was involved in this audit event.
+     *
+     * @return static
      */
     public function setType(null|FHIRCoding $type): self
     {
@@ -395,6 +401,8 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code representing the role the entity played in the event being audited.
+     *
+     * @return static
      */
     public function setRole(null|FHIRCoding $role): self
     {
@@ -424,6 +432,8 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the data life-cycle stage for the entity.
+     *
+     * @return static
      */
     public function setLifecycle(null|FHIRCoding $lifecycle): self
     {
@@ -466,6 +476,8 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Security labels for the identified entity.
+     *
+     * @return static
      */
     public function addSecurityLabel(FHIRCoding $securityLabel): self
     {
@@ -482,6 +494,8 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Security labels for the identified entity.
+     *
+     * @return static
      */
     public function setSecurityLabel(FHIRCoding ...$securityLabel): self
     {
@@ -511,6 +525,8 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A name of the entity in the audit event.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -543,6 +559,8 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Text that describes the entity in more detail.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -575,6 +593,8 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The query parameters for a query-type entities.
+     *
+     * @return static
      */
     public function setQuery(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $query): self
     {
@@ -620,6 +640,8 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * usage.
      *
      * Tagged value pairs for conveying additional information about the entity.
+     *
+     * @return static
      */
     public function addDetail(FHIRAuditEventDetail $detail): self
     {
@@ -636,6 +658,8 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * usage.
      *
      * Tagged value pairs for conveying additional information about the entity.
+     *
+     * @return static
      */
     public function setDetail(FHIRAuditEventDetail ...$detail): self
     {

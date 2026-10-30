@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -214,6 +214,8 @@ class FHIRMedicationKnowledgeIndicationGuideline extends FHIRBackboneElement
      *
      * Indication or reason for use of the medication that applies to the specific
      * administration guideline.
+     *
+     * @return static
      */
     public function addIndication(FHIRCodeableReference $indication): self
     {
@@ -232,6 +234,8 @@ class FHIRMedicationKnowledgeIndicationGuideline extends FHIRBackboneElement
      *
      * Indication or reason for use of the medication that applies to the specific
      * administration guideline.
+     *
+     * @return static
      */
     public function setIndication(FHIRCodeableReference ...$indication): self
     {
@@ -270,6 +274,8 @@ class FHIRMedicationKnowledgeIndicationGuideline extends FHIRBackboneElement
      * Information about a medication that is used to support knowledge.
      *
      * The guidelines for the dosage of the medication for the indication.
+     *
+     * @return static
      */
     public function addDosingGuideline(FHIRMedicationKnowledgeDosingGuideline $dosingGuideline): self
     {
@@ -284,6 +290,8 @@ class FHIRMedicationKnowledgeIndicationGuideline extends FHIRBackboneElement
      * Information about a medication that is used to support knowledge.
      *
      * The guidelines for the dosage of the medication for the indication.
+     *
+     * @return static
      */
     public function setDosingGuideline(FHIRMedicationKnowledgeDosingGuideline ...$dosingGuideline): self
     {

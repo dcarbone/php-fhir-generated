@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -182,6 +182,8 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The definition of the search parameter that describes this part.
+     *
+     * @return static
      */
     public function setDefinition(null|FHIRReference $definition): self
     {
@@ -213,6 +215,8 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement
      *
      * A sub-expression that defines how to extract values for this component from the
      * output of the main SearchParameter.expression.
+     *
+     * @return static
      */
     public function setExpression(null|string|FHIRStringPrimitive|FHIRString $expression): self
     {

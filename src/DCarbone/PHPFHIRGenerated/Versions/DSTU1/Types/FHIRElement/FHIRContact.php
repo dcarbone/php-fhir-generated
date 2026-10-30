@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -203,6 +203,8 @@ class FHIRContact extends FHIRElement
      *
      * Telecommunications form for contact - what communications system is required to
      * make use of the contact.
+     *
+     * @return static
      */
     public function setSystem(null|string|FHIRContactSystemList|FHIRContactSystem $system): self
     {
@@ -235,6 +237,8 @@ class FHIRContact extends FHIRElement
      *
      * The actual contact details, in a form that is meaningful to the designated
      * communication system (i.e. phone number or email address).
+     *
+     * @return static
      */
     public function setValue(null|string|FHIRStringPrimitive|FHIRString $value): self
     {
@@ -265,6 +269,8 @@ class FHIRContact extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the purpose for the address.
+     *
+     * @return static
      */
     public function setUse(null|string|FHIRContactUseList|FHIRContactUse $use): self
     {
@@ -297,6 +303,8 @@ class FHIRContact extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period when the contact was/is in use.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {

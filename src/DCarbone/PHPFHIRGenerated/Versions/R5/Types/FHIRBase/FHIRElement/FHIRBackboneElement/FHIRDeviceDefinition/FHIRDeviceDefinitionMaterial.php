@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -222,6 +222,8 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement
      * A substance that the device contains, may contain, or is made of - for example
      * latex - to be used to determine patient compatibility. This is not intended to
      * represent the composition of the device, only the clinically relevant materials.
+     *
+     * @return static
      */
     public function setSubstance(null|FHIRCodeableConcept $substance): self
     {
@@ -249,6 +251,8 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates an alternative material of the device.
+     *
+     * @return static
      */
     public function setAlternate(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $alternate): self
     {
@@ -279,6 +283,8 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the substance is a known or suspected allergen.
+     *
+     * @return static
      */
     public function setAllergenicIndicator(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $allergenicIndicator): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -414,6 +414,8 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifiers that are specific to this role.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -431,6 +433,8 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifiers that are specific to this role.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -458,6 +462,8 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this organization affiliation record is in active use.
+     *
+     * @return static
      */
     public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active): self
     {
@@ -492,6 +498,8 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      *
      * The period during which the participatingOrganization is affiliated with the
      * primary organization.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -521,6 +529,8 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization where the role is available (primary organization/has members).
+     *
+     * @return static
      */
     public function setOrganization(null|FHIRReference $organization): self
     {
@@ -552,6 +562,8 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      *
      * The Participating Organization provides/performs the role(s) defined by the code
      * to the Primary Organization (e.g. providing services or is a member of).
+     *
+     * @return static
      */
     public function setParticipatingOrganization(null|FHIRReference $participatingOrganization): self
     {
@@ -598,6 +610,8 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * Health insurance provider network in which the participatingOrganization
      * provides the role's services (if defined) at the indicated locations (if
      * defined).
+     *
+     * @return static
      */
     public function addNetwork(FHIRReference $network): self
     {
@@ -616,6 +630,8 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * Health insurance provider network in which the participatingOrganization
      * provides the role's services (if defined) at the indicated locations (if
      * defined).
+     *
+     * @return static
      */
     public function setNetwork(FHIRReference ...$network): self
     {
@@ -660,6 +676,8 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Definition of the role the participatingOrganization plays in the association.
+     *
+     * @return static
      */
     public function addCode(FHIRCodeableConcept $code): self
     {
@@ -677,6 +695,8 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Definition of the role the participatingOrganization plays in the association.
+     *
+     * @return static
      */
     public function setCode(FHIRCodeableConcept ...$code): self
     {
@@ -721,6 +741,8 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific specialty of the participatingOrganization in the context of the role.
+     *
+     * @return static
      */
     public function addSpecialty(FHIRCodeableConcept $specialty): self
     {
@@ -738,6 +760,8 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific specialty of the participatingOrganization in the context of the role.
+     *
+     * @return static
      */
     public function setSpecialty(FHIRCodeableConcept ...$specialty): self
     {
@@ -780,6 +804,8 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) at which the role occurs.
+     *
+     * @return static
      */
     public function addLocation(FHIRReference $location): self
     {
@@ -796,6 +822,8 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) at which the role occurs.
+     *
+     * @return static
      */
     public function setLocation(FHIRReference ...$location): self
     {
@@ -838,6 +866,8 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Healthcare services provided through the role.
+     *
+     * @return static
      */
     public function addHealthcareService(FHIRReference $healthcareService): self
     {
@@ -854,6 +884,8 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Healthcare services provided through the role.
+     *
+     * @return static
      */
     public function setHealthcareService(FHIRReference ...$healthcareService): self
     {
@@ -898,6 +930,8 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details at the participatingOrganization relevant to this Affiliation.
+     *
+     * @return static
      */
     public function addTelecom(FHIRContactPoint $telecom): self
     {
@@ -915,6 +949,8 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details at the participatingOrganization relevant to this Affiliation.
+     *
+     * @return static
      */
     public function setTelecom(FHIRContactPoint ...$telecom): self
     {
@@ -957,6 +993,8 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Technical endpoints providing access to services operated for this role.
+     *
+     * @return static
      */
     public function addEndpoint(FHIRReference $endpoint): self
     {
@@ -973,6 +1011,8 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Technical endpoints providing access to services operated for this role.
+     *
+     * @return static
      */
     public function setEndpoint(FHIRReference ...$endpoint): self
     {

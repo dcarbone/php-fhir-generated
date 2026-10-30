@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -250,6 +250,8 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Path in the resource that contains the link.
+     *
+     * @return static
      */
     public function setPath(null|string|FHIRStringPrimitive|FHIRString $path): self
     {
@@ -282,6 +284,8 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Which slice (if profiled).
+     *
+     * @return static
      */
     public function setSliceName(null|string|FHIRStringPrimitive|FHIRString $sliceName): self
     {
@@ -314,6 +318,8 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Minimum occurrences for this link.
+     *
+     * @return static
      */
     public function setMin(null|string|float|FHIRIntegerPrimitive|FHIRInteger $min): self
     {
@@ -346,6 +352,8 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Maximum occurrences for this link.
+     *
+     * @return static
      */
     public function setMax(null|string|FHIRStringPrimitive|FHIRString $max): self
     {
@@ -378,6 +386,8 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Information about why this link is of interest in this graph definition.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -423,6 +433,8 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
      * resource defines a set and makes rules about the set.
      *
      * Potential target for the link.
+     *
+     * @return static
      */
     public function addTarget(FHIRGraphDefinitionTarget $target): self
     {
@@ -439,6 +451,8 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
      * resource defines a set and makes rules about the set.
      *
      * Potential target for the link.
+     *
+     * @return static
      */
     public function setTarget(FHIRGraphDefinitionTarget ...$target): self
     {

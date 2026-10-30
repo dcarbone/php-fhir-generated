@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -434,6 +434,8 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The ProcessRequest business identifier.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -450,6 +452,8 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The ProcessRequest business identifier.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -477,6 +481,8 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRFinancialResourceStatusCodesList|FHIRFinancialResourceStatusCodes $status): self
     {
@@ -509,6 +515,8 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
      *
      * The type of processing action being requested, for example Reversal,
      * Readjudication, StatusRequest,PendedRequest.
+     *
+     * @return static
      */
     public function setAction(null|string|FHIRActionListList|FHIRActionList $action): self
     {
@@ -541,6 +549,8 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization which is the target of the request.
+     *
+     * @return static
      */
     public function setTarget(null|FHIRReference $target): self
     {
@@ -576,6 +586,8 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when this resource was created.
+     *
+     * @return static
      */
     public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created): self
     {
@@ -608,6 +620,8 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who is responsible for the action specified in this request.
+     *
+     * @return static
      */
     public function setProvider(null|FHIRReference $provider): self
     {
@@ -637,6 +651,8 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization which is responsible for the action speccified in this request.
+     *
+     * @return static
      */
     public function setOrganization(null|FHIRReference $organization): self
     {
@@ -666,6 +682,8 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference of resource which is the target or subject of this action.
+     *
+     * @return static
      */
     public function setRequest(null|FHIRReference $request): self
     {
@@ -697,6 +715,8 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
      *
      * Reference of a prior response to resource which is the target or subject of this
      * action.
+     *
+     * @return static
      */
     public function setResponse(null|FHIRReference $response): self
     {
@@ -724,6 +744,8 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true remove all history excluding audit.
+     *
+     * @return static
      */
     public function setNullify(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $nullify): self
     {
@@ -756,6 +778,8 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A reference to supply which authenticates the process.
+     *
+     * @return static
      */
     public function setReference(null|string|FHIRStringPrimitive|FHIRString $reference): self
     {
@@ -801,6 +825,8 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
      *
      * List of top level items to be re-adjudicated, if none specified then the entire
      * submission is re-adjudicated.
+     *
+     * @return static
      */
     public function addItem(FHIRProcessRequestItem $item): self
     {
@@ -817,6 +843,8 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
      *
      * List of top level items to be re-adjudicated, if none specified then the entire
      * submission is re-adjudicated.
+     *
+     * @return static
      */
     public function setItem(FHIRProcessRequestItem ...$item): self
     {
@@ -859,6 +887,8 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Names of resource types to include.
+     *
+     * @return static
      */
     public function addInclude(string|FHIRStringPrimitive|FHIRString $include): self
     {
@@ -878,6 +908,8 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Names of resource types to include.
+     *
+     * @return static
      */
     public function setInclude(string|FHIRStringPrimitive|FHIRString ...$include): self
     {
@@ -927,6 +959,8 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Names of resource types to exclude.
+     *
+     * @return static
      */
     public function addExclude(string|FHIRStringPrimitive|FHIRString $exclude): self
     {
@@ -946,6 +980,8 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Names of resource types to exclude.
+     *
+     * @return static
      */
     public function setExclude(string|FHIRStringPrimitive|FHIRString ...$exclude): self
     {
@@ -982,6 +1018,8 @@ class FHIRProcessRequest extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A period of time during which the fulfilling resources would have been created.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {

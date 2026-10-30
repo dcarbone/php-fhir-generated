@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -302,6 +302,8 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      *
      * Whether or not the test execution will require the given capabilities of the
      * server in order for this test script to execute.
+     *
+     * @return static
      */
     public function setRequired(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $required): self
     {
@@ -334,6 +336,8 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      *
      * Whether or not the test execution will validate the given capabilities of the
      * server in order for this test script to execute.
+     *
+     * @return static
      */
     public function setValidated(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $validated): self
     {
@@ -368,6 +372,8 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      *
      * Description of the capabilities that this test script is requiring the server to
      * support.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -413,6 +419,8 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Which origin server these requirements apply to.
+     *
+     * @return static
      */
     public function addOrigin(string|float|FHIRIntegerPrimitive|FHIRInteger $origin): self
     {
@@ -432,6 +440,8 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Which origin server these requirements apply to.
+     *
+     * @return static
      */
     public function setOrigin(string|float|FHIRIntegerPrimitive|FHIRInteger ...$origin): self
     {
@@ -468,6 +478,8 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Which server these requirements apply to.
+     *
+     * @return static
      */
     public function setDestination(null|string|float|FHIRIntegerPrimitive|FHIRInteger $destination): self
     {
@@ -515,6 +527,8 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      *
      * Links to the FHIR specification that describes this interaction and the
      * resources involved in more detail.
+     *
+     * @return static
      */
     public function addLink(string|FHIRUriPrimitive|FHIRUri $link): self
     {
@@ -535,6 +549,8 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      *
      * Links to the FHIR specification that describes this interaction and the
      * resources involved in more detail.
+     *
+     * @return static
      */
     public function setLink(string|FHIRUriPrimitive|FHIRUri ...$link): self
     {
@@ -577,6 +593,8 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      * Minimum capabilities required of server for test script to execute successfully.
      * If server does not meet at a minimum the referenced capability statement, then
      * all tests in this script are skipped.
+     *
+     * @return static
      */
     public function setCapabilities(null|string|FHIRCanonicalPrimitive|FHIRCanonical $capabilities): self
     {

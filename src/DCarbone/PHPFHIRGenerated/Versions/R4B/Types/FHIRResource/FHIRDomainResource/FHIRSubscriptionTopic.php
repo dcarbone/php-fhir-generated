@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -644,6 +644,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * is (or will be) published. This URL can be the target of a canonical reference.
      * It SHALL remain the same when the subscription topic is stored on different
      * servers.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -695,6 +697,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * Business identifiers assigned to this subscription topic by the performer and/or
      * other systems. These identifiers remain constant as the resource is updated and
      * propagates from server to server.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -714,6 +718,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * Business identifiers assigned to this subscription topic by the performer and/or
      * other systems. These identifiers remain constant as the resource is updated and
      * propagates from server to server.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -753,6 +759,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed
      * version is not available. There is also no expectation that versions are
      * orderable.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -787,6 +795,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * A short, descriptive, user-friendly title for the SubscriptionTopic, for
      * example, "admission".
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -836,6 +846,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * The canonical URL pointing to another FHIR-defined SubscriptionTopic that is
      * adhered to in whole or in part by this SubscriptionTopic.
+     *
+     * @return static
      */
     public function addDerivedFrom(string|FHIRCanonicalPrimitive|FHIRCanonical $derivedFrom): self
     {
@@ -857,6 +869,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * The canonical URL pointing to another FHIR-defined SubscriptionTopic that is
      * adhered to in whole or in part by this SubscriptionTopic.
+     *
+     * @return static
      */
     public function setDerivedFrom(string|FHIRCanonicalPrimitive|FHIRCanonical ...$derivedFrom): self
     {
@@ -889,6 +903,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the SubscriptionTopic.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -923,6 +939,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * A flag to indicate that this TopSubscriptionTopicic is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
+     *
+     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -965,6 +983,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * For draft definitions, indicates the date of initial creation. For active
      * definitions, represents the date of activation. For withdrawn definitions,
      * indicates the date of withdrawal.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -999,6 +1019,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * Helps establish the "authority/credibility" of the SubscriptionTopic. May also
      * allow for contact.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1046,6 +1068,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1063,6 +1087,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1102,6 +1128,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * A free text natural language description of the Topic from the consumer's
      * perspective.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1157,6 +1185,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * of code system definitions.
+     *
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1178,6 +1208,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * of code system definitions.
+     *
+     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1222,6 +1254,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A jurisdiction in which the Topic is intended to be used.
+     *
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1239,6 +1273,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A jurisdiction in which the Topic is intended to be used.
+     *
+     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1276,6 +1312,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * the Narrative, or extensions
      *
      * Explains why this Topic is needed and why it has been designed as it has.
+     *
+     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1320,6 +1358,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * A copyright statement relating to the SubscriptionTopic and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the SubscriptionTopic.
+     *
+     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1356,6 +1396,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * The date on which the asset content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
+     *
+     * @return static
      */
     public function setApprovalDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $approvalDate): self
     {
@@ -1392,6 +1434,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * The date on which the asset content was last reviewed. Review happens
      * periodically after that, but doesn't change the original approval date.
+     *
+     * @return static
      */
     public function setLastReviewDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lastReviewDate): self
     {
@@ -1426,6 +1470,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * The period during which the SubscriptionTopic content was or is planned to be
      * effective.
+     *
+     * @return static
      */
     public function setEffectivePeriod(null|FHIRPeriod $effectivePeriod): self
     {
@@ -1474,6 +1520,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * a full FHIR search string or FHIRPath expression. Multiple triggers are
      * considered OR joined (e.g., a resource update matching ANY of the definitions
      * will trigger a notification).
+     *
+     * @return static
      */
     public function addResourceTrigger(FHIRSubscriptionTopicResourceTrigger $resourceTrigger): self
     {
@@ -1493,6 +1541,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * a full FHIR search string or FHIRPath expression. Multiple triggers are
      * considered OR joined (e.g., a resource update matching ANY of the definitions
      * will trigger a notification).
+     *
+     * @return static
      */
     public function setResourceTrigger(FHIRSubscriptionTopicResourceTrigger ...$resourceTrigger): self
     {
@@ -1533,6 +1583,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * useful to filter projections from this topic.
      *
      * Event definition which can be used to trigger the SubscriptionTopic.
+     *
+     * @return static
      */
     public function addEventTrigger(FHIRSubscriptionTopicEventTrigger $eventTrigger): self
     {
@@ -1548,6 +1600,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * useful to filter projections from this topic.
      *
      * Event definition which can be used to trigger the SubscriptionTopic.
+     *
+     * @return static
      */
     public function setEventTrigger(FHIRSubscriptionTopicEventTrigger ...$eventTrigger): self
     {
@@ -1592,6 +1646,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * List of properties by which Subscriptions on the SubscriptionTopic can be
      * filtered. May be defined Search Parameters (e.g., Encounter.patient) or
      * parameters defined within this SubscriptionTopic context (e.g., hub.event).
+     *
+     * @return static
      */
     public function addCanFilterBy(FHIRSubscriptionTopicCanFilterBy $canFilterBy): self
     {
@@ -1609,6 +1665,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * List of properties by which Subscriptions on the SubscriptionTopic can be
      * filtered. May be defined Search Parameters (e.g., Encounter.patient) or
      * parameters defined within this SubscriptionTopic context (e.g., hub.event).
+     *
+     * @return static
      */
     public function setCanFilterBy(FHIRSubscriptionTopicCanFilterBy ...$canFilterBy): self
     {
@@ -1651,6 +1709,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * List of properties to describe the shape (e.g., resources) included in
      * notifications from this Subscription Topic.
+     *
+     * @return static
      */
     public function addNotificationShape(FHIRSubscriptionTopicNotificationShape $notificationShape): self
     {
@@ -1667,6 +1727,8 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * List of properties to describe the shape (e.g., resources) included in
      * notifications from this Subscription Topic.
+     *
+     * @return static
      */
     public function setNotificationShape(FHIRSubscriptionTopicNotificationShape ...$notificationShape): self
     {

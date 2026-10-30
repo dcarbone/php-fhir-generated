@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -260,6 +260,8 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      * A resource listed in the `SubscriptionTopic` this `Subscription` references
      * (`SubscriptionTopic.canFilterBy.resource`). This element can be used to
      * differentiate filters for topics that include more than one resource type.
+     *
+     * @return static
      */
     public function setResourceType(null|string|FHIRUriPrimitive|FHIRUri $resourceType): self
     {
@@ -294,6 +296,8 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      *
      * The filter as defined in the `SubscriptionTopic.canFilterBy.filterParameter`
      * element.
+     *
+     * @return static
      */
     public function setFilterParameter(null|string|FHIRStringPrimitive|FHIRString $filterParameter): self
     {
@@ -322,6 +326,8 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comparator applied to this filter parameter.
+     *
+     * @return static
      */
     public function setComparator(null|string|FHIRSearchComparatorEnum|FHIRSearchComparator $comparator): self
     {
@@ -350,6 +356,8 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Modifier applied to this filter parameter.
+     *
+     * @return static
      */
     public function setModifier(null|string|FHIRSearchModifierCodeEnum|FHIRSearchModifierCode $modifier): self
     {
@@ -384,6 +392,8 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      *
      * The literal value or resource path as is legal in search - for example,
      * `Patient/123` or `le1950`.
+     *
+     * @return static
      */
     public function setValue(null|string|FHIRStringPrimitive|FHIRString $value): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -190,6 +190,8 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement
      * determine compliance against the FHIR specification.
      *
      * A link to the FHIR specification that this test is covering.
+     *
+     * @return static
      */
     public function addLink(FHIRTestScriptLink $link): self
     {
@@ -205,6 +207,8 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement
      * determine compliance against the FHIR specification.
      *
      * A link to the FHIR specification that this test is covering.
+     *
+     * @return static
      */
     public function setLink(FHIRTestScriptLink ...$link): self
     {
@@ -247,6 +251,8 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement
      *
      * Capabilities that must exist and are assumed to function correctly on the FHIR
      * server being tested.
+     *
+     * @return static
      */
     public function addCapability(FHIRTestScriptCapability $capability): self
     {
@@ -263,6 +269,8 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement
      *
      * Capabilities that must exist and are assumed to function correctly on the FHIR
      * server being tested.
+     *
+     * @return static
      */
     public function setCapability(FHIRTestScriptCapability ...$capability): self
     {

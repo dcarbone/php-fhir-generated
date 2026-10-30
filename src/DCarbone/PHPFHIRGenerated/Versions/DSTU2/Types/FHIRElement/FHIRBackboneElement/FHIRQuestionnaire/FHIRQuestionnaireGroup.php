@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -290,6 +290,8 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * An identifier that is unique within the Questionnaire allowing linkage to the
      * equivalent group in a QuestionnaireResponse resource.
+     *
+     * @return static
      */
     public function setLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId): self
     {
@@ -322,6 +324,8 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The human-readable name for this section of the questionnaire.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -369,6 +373,8 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * Identifies a how this group of questions is known in a particular terminology
      * such as LOINC.
+     *
+     * @return static
      */
     public function addConcept(FHIRCoding $concept): self
     {
@@ -386,6 +392,8 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * Identifies a how this group of questions is known in a particular terminology
      * such as LOINC.
+     *
+     * @return static
      */
     public function setConcept(FHIRCoding ...$concept): self
     {
@@ -415,6 +423,8 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional text for the group, used for display purposes.
+     *
+     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -449,6 +459,8 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      * If true, indicates that the group must be present and have required questions
      * within it answered. If false, the group may be skipped when answering the
      * questionnaire.
+     *
+     * @return static
      */
     public function setRequired(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $required): self
     {
@@ -481,6 +493,8 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * Whether the group may occur multiple times in the instance, containing multiple
      * sets of answers.
+     *
+     * @return static
      */
     public function setRepeats(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $repeats): self
     {
@@ -528,6 +542,8 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * A sub-group within a group. The ordering of groups within this group is
      * relevant.
+     *
+     * @return static
      */
     public function addGroup(FHIRQuestionnaireGroup $group): self
     {
@@ -545,6 +561,8 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * A sub-group within a group. The ordering of groups within this group is
      * relevant.
+     *
+     * @return static
      */
     public function setGroup(FHIRQuestionnaireGroup ...$group): self
     {
@@ -589,6 +607,8 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * Set of questions within this group. The order of questions within the group is
      * relevant.
+     *
+     * @return static
      */
     public function addQuestion(FHIRQuestionnaireQuestion $question): self
     {
@@ -606,6 +626,8 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * Set of questions within this group. The order of questions within the group is
      * relevant.
+     *
+     * @return static
      */
     public function setQuestion(FHIRQuestionnaireQuestion ...$question): self
     {

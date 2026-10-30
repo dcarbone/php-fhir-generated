@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -347,6 +347,8 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * This records identifiers associated with this appointment response concern that
      * are defined by business processes and/ or used to refer to it when a direct URL
      * reference to the resource itself is not appropriate.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -366,6 +368,8 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * This records identifiers associated with this appointment response concern that
      * are defined by business processes and/ or used to refer to it when a direct URL
      * reference to the resource itself is not appropriate.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -395,6 +399,8 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Appointment that this response is replying to.
+     *
+     * @return static
      */
     public function setAppointment(null|FHIRReference $appointment): self
     {
@@ -430,6 +436,8 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the appointment is to take place, or requested new start time.
+     *
+     * @return static
      */
     public function setStart(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $start): self
     {
@@ -472,6 +480,8 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * This may be either the same as the appointment request to confirm the details of
      * the appointment, or alternately a new time to request a re-negotiation of the
      * end time.
+     *
+     * @return static
      */
     public function setEnd(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $end): self
     {
@@ -519,6 +529,8 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role of participant in the appointment.
+     *
+     * @return static
      */
     public function addParticipantType(FHIRCodeableConcept $participantType): self
     {
@@ -536,6 +548,8 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role of participant in the appointment.
+     *
+     * @return static
      */
     public function setParticipantType(FHIRCodeableConcept ...$participantType): self
     {
@@ -567,6 +581,8 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      *
      * A Person, Location, HealthcareService, or Device that is participating in the
      * appointment.
+     *
+     * @return static
      */
     public function setActor(null|FHIRReference $actor): self
     {
@@ -602,6 +618,8 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * times should be interpreted as a requested time change. When the status is
      * accepted, the times can either be the time of the appointment (as a confirmation
      * of the time) or can be empty.
+     *
+     * @return static
      */
     public function setParticipantStatus(null|string|FHIRParticipationStatusList|FHIRParticipationStatus $participantStatus): self
     {
@@ -634,6 +652,8 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional comments about the appointment.
+     *
+     * @return static
      */
     public function setComment(null|string|FHIRStringPrimitive|FHIRString $comment): self
     {

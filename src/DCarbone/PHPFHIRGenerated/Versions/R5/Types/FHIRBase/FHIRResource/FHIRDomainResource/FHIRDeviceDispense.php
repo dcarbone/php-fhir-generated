@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -580,6 +580,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for this dispensation.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -597,6 +599,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for this dispensation.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -639,6 +643,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The order or request that this dispense is fulfilling.
+     *
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -655,6 +661,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The order or request that this dispense is fulfilling.
+     *
+     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -697,6 +705,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The bigger event that this dispense is a part of.
+     *
+     * @return static
      */
     public function addPartOf(FHIRReference $partOf): self
     {
@@ -713,6 +723,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The bigger event that this dispense is a part of.
+     *
+     * @return static
      */
     public function setPartOf(FHIRReference ...$partOf): self
     {
@@ -740,6 +752,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the set of dispense events.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRDeviceDispenseStatusCodesEnum|FHIRDeviceDispenseStatusCodes $status): self
     {
@@ -774,6 +788,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the reason why a dispense was or was not performed.
+     *
+     * @return static
      */
     public function setStatusReason(null|FHIRCodeableReference $statusReason): self
     {
@@ -818,6 +834,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the type of device dispense.
+     *
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -835,6 +853,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the type of device dispense.
+     *
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -870,6 +890,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * Identifies the device being dispensed. This is either a link to a resource
      * representing the details of the device or a simple attribute carrying a code
      * that identifies the device from a known list of devices.
+     *
+     * @return static
      */
     public function setDevice(null|FHIRCodeableReference $device): self
     {
@@ -899,6 +921,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A link to a resource representing the person to whom the device is intended.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -932,6 +956,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * Identifies the person who picked up the device or the person or location where
      * the device was delivered. This may be a patient or their caregiver, but some
      * cases exist where it can be a healthcare professional or a location.
+     *
+     * @return static
      */
     public function setReceiver(null|FHIRReference $receiver): self
     {
@@ -961,6 +987,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter that establishes the context for this event.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -1003,6 +1031,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional information that supports the device being dispensed.
+     *
+     * @return static
      */
     public function addSupportingInformation(FHIRReference $supportingInformation): self
     {
@@ -1019,6 +1049,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional information that supports the device being dispensed.
+     *
+     * @return static
      */
     public function setSupportingInformation(FHIRReference ...$supportingInformation): self
     {
@@ -1059,6 +1091,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * to a professional for their use.
      *
      * Indicates who or what performed the event.
+     *
+     * @return static
      */
     public function addPerformer(FHIRDeviceDispensePerformer $performer): self
     {
@@ -1074,6 +1108,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * to a professional for their use.
      *
      * Indicates who or what performed the event.
+     *
+     * @return static
      */
     public function setPerformer(FHIRDeviceDispensePerformer ...$performer): self
     {
@@ -1103,6 +1139,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The principal physical location where the dispense was performed.
+     *
+     * @return static
      */
     public function setLocation(null|FHIRReference $location): self
     {
@@ -1134,6 +1172,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the type of dispensing event that is performed.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -1167,6 +1207,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The number of devices that have been dispensed.
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -1204,6 +1246,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the dispensed product was packaged and reviewed.
+     *
+     * @return static
      */
     public function setPreparedDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $preparedDate): self
     {
@@ -1246,6 +1290,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      *
      * The time the dispensed product was made available to the patient or their
      * representative.
+     *
+     * @return static
      */
     public function setWhenHandedOver(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $whenHandedOver): self
     {
@@ -1280,6 +1326,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      *
      * Identification of the facility/location where the device was /should be shipped
      * to, as part of the dispense process.
+     *
+     * @return static
      */
     public function setDestination(null|FHIRReference $destination): self
     {
@@ -1326,6 +1374,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      *
      * Extra information about the dispense that could not be conveyed in the other
      * attributes.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1344,6 +1394,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      *
      * Extra information about the dispense that could not be conveyed in the other
      * attributes.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1381,6 +1433,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * the Narrative, or extensions
      *
      * The full representation of the instructions.
+     *
+     * @return static
      */
     public function setUsageInstruction(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $usageInstruction): self
     {
@@ -1428,6 +1482,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      *
      * A summary of the events of interest that have occurred, such as when the
      * dispense was verified.
+     *
+     * @return static
      */
     public function addEventHistory(FHIRReference $eventHistory): self
     {
@@ -1445,6 +1501,8 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      *
      * A summary of the events of interest that have occurred, such as when the
      * dispense was verified.
+     *
+     * @return static
      */
     public function setEventHistory(FHIRReference ...$eventHistory): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -202,6 +202,8 @@ class FHIRHealthcareServiceEligibility extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Coded value for the eligibility.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -239,6 +241,8 @@ class FHIRHealthcareServiceEligibility extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Describes the eligibility conditions for the service.
+     *
+     * @return static
      */
     public function setComment(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $comment): self
     {

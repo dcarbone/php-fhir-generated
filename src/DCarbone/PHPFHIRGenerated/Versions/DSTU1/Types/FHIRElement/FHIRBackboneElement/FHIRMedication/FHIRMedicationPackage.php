@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -175,6 +175,8 @@ class FHIRMedicationPackage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of container that this package comes as.
+     *
+     * @return static
      */
     public function setContainer(null|FHIRCodeableConcept $container): self
     {
@@ -215,6 +217,8 @@ class FHIRMedicationPackage extends FHIRBackboneElement
      * ingredients and packaging.
      *
      * A set of components that go to make up the described item.
+     *
+     * @return static
      */
     public function addContent(FHIRMedicationContent $content): self
     {
@@ -230,6 +234,8 @@ class FHIRMedicationPackage extends FHIRBackboneElement
      * ingredients and packaging.
      *
      * A set of components that go to make up the described item.
+     *
+     * @return static
      */
     public function setContent(FHIRMedicationContent ...$content): self
     {

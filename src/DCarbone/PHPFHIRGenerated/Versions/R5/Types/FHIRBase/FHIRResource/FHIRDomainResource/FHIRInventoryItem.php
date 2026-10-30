@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -445,6 +445,8 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for the inventory item.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -462,6 +464,8 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for the inventory item.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -489,6 +493,8 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the item entry.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRInventoryItemStatusCodesEnum|FHIRInventoryItemStatusCodes $status): self
     {
@@ -536,6 +542,8 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Category or class of the item.
+     *
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -553,6 +561,8 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Category or class of the item.
+     *
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -597,6 +607,8 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code designating the specific type of item.
+     *
+     * @return static
      */
     public function addCode(FHIRCodeableConcept $code): self
     {
@@ -614,6 +626,8 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code designating the specific type of item.
+     *
+     * @return static
      */
     public function setCode(FHIRCodeableConcept ...$code): self
     {
@@ -656,6 +670,8 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      *
      * The item name(s) - the brand name, or common name, functional name, generic
      * name.
+     *
+     * @return static
      */
     public function addName(FHIRInventoryItemName $name): self
     {
@@ -672,6 +688,8 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      *
      * The item name(s) - the brand name, or common name, functional name, generic
      * name.
+     *
+     * @return static
      */
     public function setName(FHIRInventoryItemName ...$name): self
     {
@@ -712,6 +730,8 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * supply-related workflows.
      *
      * Organization(s) responsible for the product.
+     *
+     * @return static
      */
     public function addResponsibleOrganization(FHIRInventoryItemResponsibleOrganization $responsibleOrganization): self
     {
@@ -727,6 +747,8 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * supply-related workflows.
      *
      * Organization(s) responsible for the product.
+     *
+     * @return static
      */
     public function setResponsibleOrganization(FHIRInventoryItemResponsibleOrganization ...$responsibleOrganization): self
     {
@@ -754,6 +776,8 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * supply-related workflows.
      *
      * The descriptive characteristics of the inventory item.
+     *
+     * @return static
      */
     public function setDescription(null|FHIRInventoryItemDescription $description): self
     {
@@ -800,6 +824,8 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      *
      * The usage status e.g. recalled, in use, discarded... This can be used to
      * indicate that the items have been taken out of inventory, or are in use, etc.
+     *
+     * @return static
      */
     public function addInventoryStatus(FHIRCodeableConcept $inventoryStatus): self
     {
@@ -818,6 +844,8 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      *
      * The usage status e.g. recalled, in use, discarded... This can be used to
      * indicate that the items have been taken out of inventory, or are in use, etc.
+     *
+     * @return static
      */
     public function setInventoryStatus(FHIRCodeableConcept ...$inventoryStatus): self
     {
@@ -849,6 +877,8 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The base unit of measure - the unit in which the product is used or counted.
+     *
+     * @return static
      */
     public function setBaseUnit(null|FHIRCodeableConcept $baseUnit): self
     {
@@ -882,6 +912,8 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Net content or amount present in the item.
+     *
+     * @return static
      */
     public function setNetContent(null|FHIRQuantity $netContent): self
     {
@@ -922,6 +954,8 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * supply-related workflows.
      *
      * Association with other items or products.
+     *
+     * @return static
      */
     public function addAssociation(FHIRInventoryItemAssociation $association): self
     {
@@ -937,6 +971,8 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * supply-related workflows.
      *
      * Association with other items or products.
+     *
+     * @return static
      */
     public function setAssociation(FHIRInventoryItemAssociation ...$association): self
     {
@@ -977,6 +1013,8 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * supply-related workflows.
      *
      * The descriptive or identifying characteristics of the item.
+     *
+     * @return static
      */
     public function addCharacteristic(FHIRInventoryItemCharacteristic $characteristic): self
     {
@@ -992,6 +1030,8 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * supply-related workflows.
      *
      * The descriptive or identifying characteristics of the item.
+     *
+     * @return static
      */
     public function setCharacteristic(FHIRInventoryItemCharacteristic ...$characteristic): self
     {
@@ -1019,6 +1059,8 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * supply-related workflows.
      *
      * Instances or occurrences of the product.
+     *
+     * @return static
      */
     public function setInstance(null|FHIRInventoryItemInstance $instance): self
     {
@@ -1048,6 +1090,8 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Link to a product resource used in clinical workflows.
+     *
+     * @return static
      */
     public function setProductReference(null|FHIRReference $productReference): self
     {

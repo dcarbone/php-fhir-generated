@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -156,6 +156,8 @@ class FHIRRange extends FHIRElement
 
     /**
      * The low limit. The boundary is inclusive.
+     *
+     * @return static
      */
     public function setLow(null|FHIRSimpleQuantity $low): self
     {
@@ -177,6 +179,8 @@ class FHIRRange extends FHIRElement
 
     /**
      * The high limit. The boundary is inclusive.
+     *
+     * @return static
      */
     public function setHigh(null|FHIRSimpleQuantity $high): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -447,6 +447,8 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warrently duration, or whether biospecimen may be used for further
      * research.
+     *
+     * @return static
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -487,6 +489,8 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warrently duration, or whether biospecimen may be used for further
      * research.
+     *
+     * @return static
      */
     public function setValueDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $valueDecimal): self
     {
@@ -525,6 +529,8 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warrently duration, or whether biospecimen may be used for further
      * research.
+     *
+     * @return static
      */
     public function setValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $valueInteger): self
     {
@@ -565,6 +571,8 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warrently duration, or whether biospecimen may be used for further
      * research.
+     *
+     * @return static
      */
     public function setValueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $valueDate): self
     {
@@ -609,6 +617,8 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warrently duration, or whether biospecimen may be used for further
      * research.
+     *
+     * @return static
      */
     public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime): self
     {
@@ -645,6 +655,8 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warrently duration, or whether biospecimen may be used for further
      * research.
+     *
+     * @return static
      */
     public function setValueTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $valueTime): self
     {
@@ -683,6 +695,8 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warrently duration, or whether biospecimen may be used for further
      * research.
+     *
+     * @return static
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -721,6 +735,8 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warrently duration, or whether biospecimen may be used for further
      * research.
+     *
+     * @return static
      */
     public function setValueUri(null|string|FHIRUriPrimitive|FHIRUri $valueUri): self
     {
@@ -759,6 +775,8 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warrently duration, or whether biospecimen may be used for further
      * research.
+     *
+     * @return static
      */
     public function setValueAttachment(null|FHIRAttachment $valueAttachment): self
     {
@@ -794,6 +812,8 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warrently duration, or whether biospecimen may be used for further
      * research.
+     *
+     * @return static
      */
     public function setValueCoding(null|FHIRCoding $valueCoding): self
     {
@@ -833,6 +853,8 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warrently duration, or whether biospecimen may be used for further
      * research.
+     *
+     * @return static
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -868,6 +890,8 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warrently duration, or whether biospecimen may be used for further
      * research.
+     *
+     * @return static
      */
     public function setValueReference(null|FHIRReference $valueReference): self
     {

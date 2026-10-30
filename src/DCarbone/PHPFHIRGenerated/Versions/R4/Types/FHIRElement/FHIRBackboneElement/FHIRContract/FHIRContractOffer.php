@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -333,6 +333,8 @@ class FHIRContractOffer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this particular Contract Provision.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -350,6 +352,8 @@ class FHIRContractOffer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this particular Contract Provision.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -390,6 +394,8 @@ class FHIRContractOffer extends FHIRBackboneElement
      * policy or agreement.
      *
      * Offer Recipient.
+     *
+     * @return static
      */
     public function addParty(FHIRContractParty $party): self
     {
@@ -405,6 +411,8 @@ class FHIRContractOffer extends FHIRBackboneElement
      * policy or agreement.
      *
      * Offer Recipient.
+     *
+     * @return static
      */
     public function setParty(FHIRContractParty ...$party): self
     {
@@ -438,6 +446,8 @@ class FHIRContractOffer extends FHIRBackboneElement
      * The owner of an asset has the residual control rights over the asset: the right
      * to decide all usages of the asset in any way not inconsistent with a prior
      * contract, custom, or law (Hart, 1995, p. 30).
+     *
+     * @return static
      */
     public function setTopic(null|FHIRReference $topic): self
     {
@@ -471,6 +481,8 @@ class FHIRContractOffer extends FHIRBackboneElement
      *
      * Type of Contract Provision such as specific requirements, purposes for actions,
      * obligations, prohibitions, e.g. life time maximum benefit.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -504,6 +516,8 @@ class FHIRContractOffer extends FHIRBackboneElement
      *
      * Type of choice made by accepting party with respect to an offer made by an
      * offeror/ grantee.
+     *
+     * @return static
      */
     public function setDecision(null|FHIRCodeableConcept $decision): self
     {
@@ -548,6 +562,8 @@ class FHIRContractOffer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How the decision about a Contract was conveyed.
+     *
+     * @return static
      */
     public function addDecisionMode(FHIRCodeableConcept $decisionMode): self
     {
@@ -565,6 +581,8 @@ class FHIRContractOffer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How the decision about a Contract was conveyed.
+     *
+     * @return static
      */
     public function setDecisionMode(FHIRCodeableConcept ...$decisionMode): self
     {
@@ -605,6 +623,8 @@ class FHIRContractOffer extends FHIRBackboneElement
      * policy or agreement.
      *
      * Response to offer text.
+     *
+     * @return static
      */
     public function addAnswer(FHIRContractAnswer $answer): self
     {
@@ -620,6 +640,8 @@ class FHIRContractOffer extends FHIRBackboneElement
      * policy or agreement.
      *
      * Response to offer text.
+     *
+     * @return static
      */
     public function setAnswer(FHIRContractAnswer ...$answer): self
     {
@@ -649,6 +671,8 @@ class FHIRContractOffer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human readable form of this Contract Offer.
+     *
+     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -696,6 +720,8 @@ class FHIRContractOffer extends FHIRBackboneElement
      *
      * The id of the clause or question text of the offer in the referenced
      * questionnaire/response.
+     *
+     * @return static
      */
     public function addLinkId(string|FHIRStringPrimitive|FHIRString $linkId): self
     {
@@ -716,6 +742,8 @@ class FHIRContractOffer extends FHIRBackboneElement
      *
      * The id of the clause or question text of the offer in the referenced
      * questionnaire/response.
+     *
+     * @return static
      */
     public function setLinkId(string|FHIRStringPrimitive|FHIRString ...$linkId): self
     {
@@ -765,6 +793,8 @@ class FHIRContractOffer extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Security labels that protects the offer.
+     *
+     * @return static
      */
     public function addSecurityLabelNumber(string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $securityLabelNumber): self
     {
@@ -784,6 +814,8 @@ class FHIRContractOffer extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Security labels that protects the offer.
+     *
+     * @return static
      */
     public function setSecurityLabelNumber(string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt ...$securityLabelNumber): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -215,6 +215,8 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Examples include confidence interval and interquartile range.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -246,6 +248,8 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Use 95 for a 95% confidence interval.
+     *
+     * @return static
      */
     public function setLevel(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $level): self
     {
@@ -280,6 +284,8 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Lower bound of confidence interval.
+     *
+     * @return static
      */
     public function setFrom(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $from): self
     {
@@ -314,6 +320,8 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Upper bound of confidence interval.
+     *
+     * @return static
      */
     public function setTo(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $to): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -261,6 +261,8 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      *
      * The sequence number of the line item submitted which contains the error. This
      * value is omitted when the error occurs outside of the item structure.
+     *
+     * @return static
      */
     public function setItemSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $itemSequence): self
     {
@@ -297,6 +299,8 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      * The sequence number of the detail within the line item submitted which contains
      * the error. This value is omitted when the error occurs outside of the item
      * structure.
+     *
+     * @return static
      */
     public function setDetailSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $detailSequence): self
     {
@@ -333,6 +337,8 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      * The sequence number of the sub-detail within the detail within the line item
      * submitted which contains the error. This value is omitted when the error occurs
      * outside of the item structure.
+     *
+     * @return static
      */
     public function setSubDetailSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $subDetailSequence): self
     {
@@ -369,6 +375,8 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      *
      * An error code, from a specified code system, which details why the claim could
      * not be adjudicated.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -415,6 +423,8 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      * A [simple subset of FHIRPath](fhirpath.html#simple) limited to element names,
      * repetition indicators and the default child accessor that identifies one of the
      * elements in the resource that caused this issue to be raised.
+     *
+     * @return static
      */
     public function addExpression(string|FHIRStringPrimitive|FHIRString $expression): self
     {
@@ -436,6 +446,8 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      * A [simple subset of FHIRPath](fhirpath.html#simple) limited to element names,
      * repetition indicators and the default child accessor that identifies one of the
      * elements in the resource that caused this issue to be raised.
+     *
+     * @return static
      */
     public function setExpression(string|FHIRStringPrimitive|FHIRString ...$expression): self
     {

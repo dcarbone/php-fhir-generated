@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -233,6 +233,8 @@ class FHIRMonetaryComponent extends FHIRDataType
      * the Narrative, or extensions
      *
      * base | surcharge | deduction | discount | tax | informational.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRCodePrimitive|FHIRCode $type): self
     {
@@ -269,6 +271,8 @@ class FHIRMonetaryComponent extends FHIRDataType
      *
      * Codes may be used to differentiate between kinds of taxes, surcharges, discounts
      * etc.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -300,6 +304,8 @@ class FHIRMonetaryComponent extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Factor used for calculating this component.
+     *
+     * @return static
      */
     public function setFactor(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $factor): self
     {
@@ -332,6 +338,8 @@ class FHIRMonetaryComponent extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Explicit value amount to be used.
+     *
+     * @return static
      */
     public function setAmount(null|FHIRMoney $amount): self
     {

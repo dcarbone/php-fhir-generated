@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -747,6 +747,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      * is (or will be) published. This URL can be the target of a canonical reference.
      * It SHALL remain the same when the structure definition is stored on different
      * servers.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -798,6 +800,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      * A formal identifier that is used to identify this structure definition when it
      * is represented in other formats, or referenced in a specification, model, design
      * or an instance.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -817,6 +821,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      * A formal identifier that is used to identify this structure definition when it
      * is represented in other formats, or referenced in a specification, model, design
      * or an instance.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -856,6 +862,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      * to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -892,6 +900,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      * A natural language name identifying the structure definition. This name should
      * be usable as an identifier for the module by machine processing applications
      * such as code generation.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -924,6 +934,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the structure definition.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -954,6 +966,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      *
      * The status of this structure definition. Enables tracking the life-cycle of the
      * content.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -988,6 +1002,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      * A Boolean value to indicate that this structure definition is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended to be
      * used for genuine usage.
+     *
+     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -1032,6 +1048,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      * date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the structure definition changes.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1066,6 +1084,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      *
      * The name of the organization or individual that published the structure
      * definition.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1113,6 +1133,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1130,6 +1152,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1169,6 +1193,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      *
      * A free text natural language description of the structure definition from a
      * consumer's perspective.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1228,6 +1254,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate structure
      * definition instances.
+     *
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1251,6 +1279,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate structure
      * definition instances.
+     *
+     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1297,6 +1327,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      *
      * A legal or geographic region in which the structure definition is intended to be
      * used.
+     *
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1315,6 +1347,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      *
      * A legal or geographic region in which the structure definition is intended to be
      * used.
+     *
+     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1354,6 +1388,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      *
      * Explanation of why this structure definition is needed and why it has been
      * designed as it has.
+     *
+     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1398,6 +1434,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      * A copyright statement relating to the structure definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the structure definition.
+     *
+     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1447,6 +1485,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      * A set of key words or terms from external terminologies that may be used to
      * assist with indexing and searching of templates nby describing the use of this
      * structure definition, or the content it describes.
+     *
+     * @return static
      */
     public function addKeyword(FHIRCoding $keyword): self
     {
@@ -1465,6 +1505,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      * A set of key words or terms from external terminologies that may be used to
      * assist with indexing and searching of templates nby describing the use of this
      * structure definition, or the content it describes.
+     *
+     * @return static
      */
     public function setKeyword(FHIRCoding ...$keyword): self
     {
@@ -1494,6 +1536,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      * The version of the FHIR specification on which this StructureDefinition is based
      * - this is the formal version of the specification, without the revision number,
      * e.g. [publication].[major].[minor], which is 4.3.0 for this version.
+     *
+     * @return static
      */
     public function setFhirVersion(null|string|FHIRFHIRVersionEnum|FHIRFHIRVersion $fhirVersion): self
     {
@@ -1539,6 +1583,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      * extensions and constraints on resources and data types.
      *
      * An external specification that the content is mapped to.
+     *
+     * @return static
      */
     public function addMapping(FHIRStructureDefinitionMapping $mapping): self
     {
@@ -1555,6 +1601,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      * extensions and constraints on resources and data types.
      *
      * An external specification that the content is mapped to.
+     *
+     * @return static
      */
     public function setMapping(FHIRStructureDefinitionMapping ...$mapping): self
     {
@@ -1580,6 +1628,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the kind of structure that this definition is describing.
+     *
+     * @return static
      */
     public function setKind(null|string|FHIRStructureDefinitionKindEnum|FHIRStructureDefinitionKind $kind): self
     {
@@ -1614,6 +1664,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      * Whether structure this definition describes is abstract or not - that is,
      * whether the structure is not intended to be instantiated. For Resources and Data
      * types, abstract types will never be exchanged between systems.
+     *
+     * @return static
      */
     public function setAbstract(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $abstract): self
     {
@@ -1661,6 +1713,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      *
      * Identifies the types of resource or data type elements to which the extension
      * can be applied.
+     *
+     * @return static
      */
     public function addContext(FHIRStructureDefinitionContext $context): self
     {
@@ -1678,6 +1732,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      *
      * Identifies the types of resource or data type elements to which the extension
      * can be applied.
+     *
+     * @return static
      */
     public function setContext(FHIRStructureDefinitionContext ...$context): self
     {
@@ -1722,6 +1778,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      *
      * A set of rules as FHIRPath Invariants about when the extension can be used (e.g.
      * co-occurrence variants for the extension). All the rules must be true.
+     *
+     * @return static
      */
     public function addContextInvariant(string|FHIRStringPrimitive|FHIRString $contextInvariant): self
     {
@@ -1742,6 +1800,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      *
      * A set of rules as FHIRPath Invariants about when the extension can be used (e.g.
      * co-occurrence variants for the extension). All the rules must be true.
+     *
+     * @return static
      */
     public function setContextInvariant(string|FHIRStringPrimitive|FHIRString ...$contextInvariant): self
     {
@@ -1792,6 +1852,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      * http://hl7.org/fhir/StructureDefinition e.g. "string" is a reference to
      * http://hl7.org/fhir/StructureDefinition/string. Absolute URLs are only allowed
      * in logical models.
+     *
+     * @return static
      */
     public function setType(null|string|FHIRUriPrimitive|FHIRUri $type): self
     {
@@ -1828,6 +1890,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      *
      * An absolute URI that is the base structure from which this type is derived,
      * either by specialization or constraint.
+     *
+     * @return static
      */
     public function setBaseDefinition(null|string|FHIRCanonicalPrimitive|FHIRCanonical $baseDefinition): self
     {
@@ -1856,6 +1920,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the type relates to the baseDefinition.
+     *
+     * @return static
      */
     public function setDerivation(null|string|FHIRTypeDerivationRuleEnum|FHIRTypeDerivationRule $derivation): self
     {
@@ -1890,6 +1956,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      *
      * A snapshot view is expressed in a standalone form that can be used and
      * interpreted without considering the base StructureDefinition.
+     *
+     * @return static
      */
     public function setSnapshot(null|FHIRStructureDefinitionSnapshot $snapshot): self
     {
@@ -1921,6 +1989,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements VersionConta
      *
      * A differential view is expressed relative to the base StructureDefinition - a
      * statement of differences that it applies.
+     *
+     * @return static
      */
     public function setDifferential(null|FHIRStructureDefinitionDifferential $differential): self
     {

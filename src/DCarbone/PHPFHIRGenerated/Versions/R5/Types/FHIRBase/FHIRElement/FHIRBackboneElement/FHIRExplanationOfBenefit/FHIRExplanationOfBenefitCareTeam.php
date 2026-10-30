@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -254,6 +254,8 @@ class FHIRExplanationOfBenefitCareTeam extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A number to uniquely identify care team entries.
+     *
+     * @return static
      */
     public function setSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
     {
@@ -286,6 +288,8 @@ class FHIRExplanationOfBenefitCareTeam extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Member of the team who provided the product or service.
+     *
+     * @return static
      */
     public function setProvider(null|FHIRReference $provider): self
     {
@@ -315,6 +319,8 @@ class FHIRExplanationOfBenefitCareTeam extends FHIRBackboneElement
      *
      * The party who is billing and/or responsible for the claimed products or
      * services.
+     *
+     * @return static
      */
     public function setResponsible(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $responsible): self
     {
@@ -351,6 +357,8 @@ class FHIRExplanationOfBenefitCareTeam extends FHIRBackboneElement
      *
      * The lead, assisting or supervising practitioner and their discipline if a
      * multidisciplinary team.
+     *
+     * @return static
      */
     public function setRole(null|FHIRCodeableConcept $role): self
     {
@@ -384,6 +392,8 @@ class FHIRExplanationOfBenefitCareTeam extends FHIRBackboneElement
      *
      * The specialization of the practitioner or provider which is applicable for this
      * service.
+     *
+     * @return static
      */
     public function setSpecialty(null|FHIRCodeableConcept $specialty): self
     {

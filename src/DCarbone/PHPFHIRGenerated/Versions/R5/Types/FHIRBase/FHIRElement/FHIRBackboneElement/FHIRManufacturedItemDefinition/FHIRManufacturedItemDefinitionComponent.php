@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -275,6 +275,8 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defining type of the component e.g. shell, layer, ink.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -321,6 +323,8 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      *
      * The function of this component within the item e.g. delivers active ingredient,
      * masks taste.
+     *
+     * @return static
      */
     public function addFunction(FHIRCodeableConcept $function): self
     {
@@ -339,6 +343,8 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      *
      * The function of this component within the item e.g. delivers active ingredient,
      * masks taste.
+     *
+     * @return static
      */
     public function setFunction(FHIRCodeableConcept ...$function): self
     {
@@ -387,6 +393,8 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      *
      * The measurable amount of total quantity of all substances in the component,
      * expressable in different ways (e.g. by mass or volume).
+     *
+     * @return static
      */
     public function addAmount(FHIRQuantity $amount): self
     {
@@ -406,6 +414,8 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      *
      * The measurable amount of total quantity of all substances in the component,
      * expressable in different ways (e.g. by mass or volume).
+     *
+     * @return static
      */
     public function setAmount(FHIRQuantity ...$amount): self
     {
@@ -452,6 +462,8 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      * that its component location within the item can be indicated. This not where the
      * item's ingredient are primarily stated (for which see Ingredient.for or
      * ManufacturedItemDefinition.ingredient).
+     *
+     * @return static
      */
     public function addConstituent(FHIRManufacturedItemDefinitionConstituent $constituent): self
     {
@@ -470,6 +482,8 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      * that its component location within the item can be indicated. This not where the
      * item's ingredient are primarily stated (for which see Ingredient.for or
      * ManufacturedItemDefinition.ingredient).
+     *
+     * @return static
      */
     public function setConstituent(FHIRManufacturedItemDefinitionConstituent ...$constituent): self
     {
@@ -510,6 +524,8 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      * tablet or capsule, as contained in a packaged medicinal product.
      *
      * General characteristics of this component.
+     *
+     * @return static
      */
     public function addProperty(FHIRManufacturedItemDefinitionProperty $property): self
     {
@@ -525,6 +541,8 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      * tablet or capsule, as contained in a packaged medicinal product.
      *
      * General characteristics of this component.
+     *
+     * @return static
      */
     public function setProperty(FHIRManufacturedItemDefinitionProperty ...$property): self
     {
@@ -565,6 +583,8 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      * tablet or capsule, as contained in a packaged medicinal product.
      *
      * A component that this component contains or is made from.
+     *
+     * @return static
      */
     public function addComponent(FHIRManufacturedItemDefinitionComponent $component): self
     {
@@ -580,6 +600,8 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      * tablet or capsule, as contained in a packaged medicinal product.
      *
      * A component that this component contains or is made from.
+     *
+     * @return static
      */
     public function setComponent(FHIRManufacturedItemDefinitionComponent ...$component): self
     {

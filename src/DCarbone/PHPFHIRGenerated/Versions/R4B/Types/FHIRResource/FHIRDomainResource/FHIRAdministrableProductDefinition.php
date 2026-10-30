@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -412,6 +412,8 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier for the administrable product.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -429,6 +431,8 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier for the administrable product.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -456,6 +460,8 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      *
      * The status of this administrable product. Enables tracking the life-cycle of the
      * content.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -513,6 +519,8 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * possibly also a cream. This is distinct from the 'producedFrom' which refers to
      * the specific components of the product that are used in this preparation, rather
      * than the product as a whole.
+     *
+     * @return static
      */
     public function addFormOf(FHIRReference $formOf): self
     {
@@ -535,6 +543,8 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * possibly also a cream. This is distinct from the 'producedFrom' which refers to
      * the specific components of the product that are used in this preparation, rather
      * than the product as a whole.
+     *
+     * @return static
      */
     public function setFormOf(FHIRReference ...$formOf): self
     {
@@ -574,6 +584,8 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * manufactured form was 'powder for solution for injection', the administrable
      * dose form could be 'solution for injection' (once mixed with another item having
      * manufactured form 'solvent for solution for injection').
+     *
+     * @return static
      */
     public function setAdministrableDoseForm(null|FHIRCodeableConcept $administrableDoseForm): self
     {
@@ -609,6 +621,8 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * The presentation type in which this item is given to a patient. e.g. for a spray
      * - 'puff' (as in 'contains 100 mcg per puff'), or for a liquid - 'vial' (as in
      * 'contains 5 ml per vial').
+     *
+     * @return static
      */
     public function setUnitOfPresentation(null|FHIRCodeableConcept $unitOfPresentation): self
     {
@@ -665,6 +679,8 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * example, an administrable form might involve combining a liquid and a powder
      * available as part of an overall product, but not involve applying the also
      * supplied cream.
+     *
+     * @return static
      */
     public function addProducedFrom(FHIRReference $producedFrom): self
     {
@@ -688,6 +704,8 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * example, an administrable form might involve combining a liquid and a powder
      * available as part of an overall product, but not involve applying the also
      * supplied cream.
+     *
+     * @return static
      */
     public function setProducedFrom(FHIRReference ...$producedFrom): self
     {
@@ -742,6 +760,8 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * used to make this, or using by incoming references from the Ingredient resource,
      * to state in detail which substances exist within this. This element allows a
      * basic coded ingredient to be used.
+     *
+     * @return static
      */
     public function addIngredient(FHIRCodeableConcept $ingredient): self
     {
@@ -764,6 +784,8 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * used to make this, or using by incoming references from the Ingredient resource,
      * to state in detail which substances exist within this. This element allows a
      * basic coded ingredient to be used.
+     *
+     * @return static
      */
     public function setIngredient(FHIRCodeableConcept ...$ingredient): self
     {
@@ -797,6 +819,8 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * A device that is integral to the medicinal product, in effect being considered
      * as an "ingredient" of the medicinal product. This is not intended for devices
      * that are just co-packaged.
+     *
+     * @return static
      */
     public function setDevice(null|FHIRReference $device): self
     {
@@ -839,6 +863,8 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * performed).
      *
      * Characteristics e.g. a product's onset of action.
+     *
+     * @return static
      */
     public function addProperty(FHIRAdministrableProductDefinitionProperty $property): self
     {
@@ -855,6 +881,8 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * performed).
      *
      * Characteristics e.g. a product's onset of action.
+     *
+     * @return static
      */
     public function setProperty(FHIRAdministrableProductDefinitionProperty ...$property): self
     {
@@ -903,6 +931,8 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * some regions this is referred to as the licenced or approved route.
      * RouteOfAdministration cannot be used when the 'formOf' product already uses
      * MedicinalProductDefinition.route (and vice versa).
+     *
+     * @return static
      */
     public function addRouteOfAdministration(FHIRAdministrableProductDefinitionRouteOfAdministration $routeOfAdministration): self
     {
@@ -922,6 +952,8 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * some regions this is referred to as the licenced or approved route.
      * RouteOfAdministration cannot be used when the 'formOf' product already uses
      * MedicinalProductDefinition.route (and vice versa).
+     *
+     * @return static
      */
     public function setRouteOfAdministration(FHIRAdministrableProductDefinitionRouteOfAdministration ...$routeOfAdministration): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -903,6 +903,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * definition is (or will be) published. The URL SHOULD include the major version
      * of the activity definition. For more information see [Technical and Business
      * Versions](resource.html#versions).
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -952,6 +954,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * A formal identifier that is used to identify this activity definition when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -970,6 +974,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * A formal identifier that is used to identify this activity definition when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -1017,6 +1023,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the
      * Decision Support Service specification. Note that a version is required for
      * non-experimental active assets.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -1053,6 +1061,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * A natural language name identifying the activity definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -1085,6 +1095,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the activity definition.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -1115,6 +1127,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      *
      * The status of this activity definition. Enables tracking the life-cycle of the
      * content.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusList|FHIRPublicationStatus $status): self
     {
@@ -1149,6 +1163,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * A boolean value to indicate that this activity definition is authored for
      * testing purposes (or education/evaluation/marketing), and is not intended to be
      * used for genuine usage.
+     *
+     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -1193,6 +1209,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * date must change if and when the business version changes and it must change if
      * the status code changes. In addition, it should change when the substantive
      * content of the activity definition changes.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1227,6 +1245,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      *
      * The name of the individual or organization that published the activity
      * definition.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1273,6 +1293,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      *
      * A free text natural language description of the activity definition from a
      * consumer's perspective.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1319,6 +1341,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      *
      * Explaination of why this activity definition is needed and why it has been
      * designed as it has.
+     *
+     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1351,6 +1375,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A detailed description of how the asset is used from a clinical perspective.
+     *
+     * @return static
      */
     public function setUsage(null|string|FHIRStringPrimitive|FHIRString $usage): self
     {
@@ -1387,6 +1413,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
+     *
+     * @return static
      */
     public function setApprovalDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $approvalDate): self
     {
@@ -1423,6 +1451,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval, but doesn't change the original approval date.
+     *
+     * @return static
      */
     public function setLastReviewDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lastReviewDate): self
     {
@@ -1457,6 +1487,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      *
      * The period during which the activity definition content was or is planned to be
      * in active use.
+     *
+     * @return static
      */
     public function setEffectivePeriod(null|FHIRPeriod $effectivePeriod): self
     {
@@ -1509,6 +1541,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate activity definition instances.
+     *
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1530,6 +1564,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate activity definition instances.
+     *
+     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1576,6 +1612,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      *
      * A legal or geographic region in which the activity definition is intended to be
      * used.
+     *
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1594,6 +1632,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      *
      * A legal or geographic region in which the activity definition is intended to be
      * used.
+     *
+     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1642,6 +1682,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * Descriptive topics related to the content of the activity. Topics provide a
      * high-level categorization of the activity that can be useful for filtering and
      * searching.
+     *
+     * @return static
      */
     public function addTopic(FHIRCodeableConcept $topic): self
     {
@@ -1661,6 +1703,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * Descriptive topics related to the content of the activity. Topics provide a
      * high-level categorization of the activity that can be useful for filtering and
      * searching.
+     *
+     * @return static
      */
     public function setTopic(FHIRCodeableConcept ...$topic): self
     {
@@ -1707,6 +1751,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      *
      * A contributor to the content of the asset, including authors, editors,
      * reviewers, and endorsers.
+     *
+     * @return static
      */
     public function addContributor(FHIRContributor $contributor): self
     {
@@ -1725,6 +1771,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      *
      * A contributor to the content of the asset, including authors, editors,
      * reviewers, and endorsers.
+     *
+     * @return static
      */
     public function setContributor(FHIRContributor ...$contributor): self
     {
@@ -1769,6 +1817,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1786,6 +1836,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1831,6 +1883,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * A copyright statement relating to the activity definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the activity definition.
+     *
+     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1880,6 +1934,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
+     *
+     * @return static
      */
     public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact): self
     {
@@ -1898,6 +1954,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
+     *
+     * @return static
      */
     public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
     {
@@ -1940,6 +1998,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a Library resource containing any formal logic used by the asset.
+     *
+     * @return static
      */
     public function addLibrary(FHIRReference $library): self
     {
@@ -1956,6 +2016,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a Library resource containing any formal logic used by the asset.
+     *
+     * @return static
      */
     public function setLibrary(FHIRReference ...$library): self
     {
@@ -1987,6 +2049,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * A description of the kind of resource the activity definition is representing.
      * For example, a MedicationRequest, a ProcedureRequest, or a CommunicationRequest.
      * Typically, but not always, this is a Request resource.
+     *
+     * @return static
      */
     public function setKind(null|string|FHIRResourceTypeList|FHIRResourceType $kind): self
     {
@@ -2023,6 +2087,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      *
      * Detailed description of the type of activity; e.g. What lab test, what
      * procedure, what kind of encounter.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -2060,6 +2126,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     *
+     * @return static
      */
     public function setTimingTiming(null|FHIRTiming $timingTiming): self
     {
@@ -2095,6 +2163,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     *
+     * @return static
      */
     public function setTimingDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timingDateTime): self
     {
@@ -2127,6 +2197,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     *
+     * @return static
      */
     public function setTimingPeriod(null|FHIRPeriod $timingPeriod): self
     {
@@ -2156,6 +2228,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
+     *
+     * @return static
      */
     public function setTimingRange(null|FHIRRange $timingRange): self
     {
@@ -2187,6 +2261,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      *
      * Identifies the facility where the activity will occur; e.g. home, hospital,
      * specific clinic, etc.
+     *
+     * @return static
      */
     public function setLocation(null|FHIRReference $location): self
     {
@@ -2227,6 +2303,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * independent of a particular patient, practitioner, or other performance context.
      *
      * Indicates who should participate in performing the action described.
+     *
+     * @return static
      */
     public function addParticipant(FHIRActivityDefinitionParticipant $participant): self
     {
@@ -2242,6 +2320,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * independent of a particular patient, practitioner, or other performance context.
      *
      * Indicates who should participate in performing the action described.
+     *
+     * @return static
      */
     public function setParticipant(FHIRActivityDefinitionParticipant ...$participant): self
     {
@@ -2273,6 +2353,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      *
      * Identifies the food, drug or other product being consumed or supplied in the
      * activity.
+     *
+     * @return static
      */
     public function setProductReference(null|FHIRReference $productReference): self
     {
@@ -2306,6 +2388,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      *
      * Identifies the food, drug or other product being consumed or supplied in the
      * activity.
+     *
+     * @return static
      */
     public function setProductCodeableConcept(null|FHIRCodeableConcept $productCodeableConcept): self
     {
@@ -2341,6 +2425,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      *
      * Identifies the quantity expected to be consumed at once (per dose, per meal,
      * etc.).
+     *
+     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -2385,6 +2471,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      *
      * Provides detailed dosage instructions in the same way that they are described
      * for MedicationRequest resources.
+     *
+     * @return static
      */
     public function addDosage(FHIRDosage $dosage): self
     {
@@ -2402,6 +2490,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      *
      * Provides detailed dosage instructions in the same way that they are described
      * for MedicationRequest resources.
+     *
+     * @return static
      */
     public function setDosage(FHIRDosage ...$dosage): self
     {
@@ -2448,6 +2538,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      *
      * Indicates the sites on the subject's body where the procedure should be
      * performed (I.e. the target sites).
+     *
+     * @return static
      */
     public function addBodySite(FHIRCodeableConcept $bodySite): self
     {
@@ -2466,6 +2558,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      *
      * Indicates the sites on the subject's body where the procedure should be
      * performed (I.e. the target sites).
+     *
+     * @return static
      */
     public function setBodySite(FHIRCodeableConcept ...$bodySite): self
     {
@@ -2499,6 +2593,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * A reference to a StructureMap resource that defines a transform that can be
      * executed to produce the intent resource using the ActivityDefinition instance as
      * the input.
+     *
+     * @return static
      */
     public function setTransform(null|FHIRReference $transform): self
     {
@@ -2547,6 +2643,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * based on the patient's weight, a dynamic value would be used to specify an
      * expression that calculated the weight, and the path on the intent resource that
      * would contain the result.
+     *
+     * @return static
      */
     public function addDynamicValue(FHIRActivityDefinitionDynamicValue $dynamicValue): self
     {
@@ -2566,6 +2664,8 @@ class FHIRActivityDefinition extends FHIRDomainResource implements VersionContai
      * based on the patient's weight, a dynamic value would be used to specify an
      * expression that calculated the weight, and the path on the intent resource that
      * would contain the result.
+     *
+     * @return static
      */
     public function setDynamicValue(FHIRActivityDefinitionDynamicValue ...$dynamicValue): self
     {

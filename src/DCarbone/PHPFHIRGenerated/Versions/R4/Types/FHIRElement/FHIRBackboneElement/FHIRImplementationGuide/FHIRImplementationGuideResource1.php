@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -221,6 +221,8 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where this resource is found.
+     *
+     * @return static
      */
     public function setReference(null|FHIRReference $reference): self
     {
@@ -252,6 +254,8 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
      * If true or a reference, indicates the resource is an example instance. If a
      * reference is present, indicates that the example is an example of the specified
      * profile.
+     *
+     * @return static
      */
     public function setExampleBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $exampleBoolean): self
     {
@@ -290,6 +294,8 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
      * If true or a reference, indicates the resource is an example instance. If a
      * reference is present, indicates that the example is an example of the specified
      * profile.
+     *
+     * @return static
      */
     public function setExampleCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $exampleCanonical): self
     {
@@ -322,6 +328,8 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The relative path for primary page for this resource within the IG.
+     *
+     * @return static
      */
     public function setRelativePath(null|string|FHIRUrlPrimitive|FHIRUrl $relativePath): self
     {

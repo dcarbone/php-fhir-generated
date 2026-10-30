@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -221,6 +221,8 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Series instance UID of the SOP instances in the selection.
+     *
+     * @return static
      */
     public function setUid(null|string|FHIROidPrimitive|FHIROid $uid): self
     {
@@ -255,6 +257,8 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
      *
      * WADO-RS URL to retrieve the series. Note that this URL retrieves all SOP
      * instances of the series not only those in the selection.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -314,6 +318,8 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
      * and so on.
      *
      * Identity and locating information of the selected DICOM SOP instances.
+     *
+     * @return static
      */
     public function addInstance(FHIRImagingObjectSelectionInstance $instance): self
     {
@@ -337,6 +343,8 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
      * and so on.
      *
      * Identity and locating information of the selected DICOM SOP instances.
+     *
+     * @return static
      */
     public function setInstance(FHIRImagingObjectSelectionInstance ...$instance): self
     {

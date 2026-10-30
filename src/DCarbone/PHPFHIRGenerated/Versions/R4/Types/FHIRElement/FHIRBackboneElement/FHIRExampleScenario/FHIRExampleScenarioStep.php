@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -211,6 +211,8 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * Nested process.
+     *
+     * @return static
      */
     public function addProcess(FHIRExampleScenarioProcess $process): self
     {
@@ -225,6 +227,8 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * Nested process.
+     *
+     * @return static
      */
     public function setProcess(FHIRExampleScenarioProcess ...$process): self
     {
@@ -252,6 +256,8 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If there is a pause in the flow.
+     *
+     * @return static
      */
     public function setPause(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $pause): self
     {
@@ -280,6 +286,8 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * Each interaction or action.
+     *
+     * @return static
      */
     public function setOperation(null|FHIRExampleScenarioOperation $operation): self
     {
@@ -320,6 +328,8 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      *
      * Indicates an alternative step that can be taken instead of the operations on the
      * base step in exceptional/atypical circumstances.
+     *
+     * @return static
      */
     public function addAlternative(FHIRExampleScenarioAlternative $alternative): self
     {
@@ -335,6 +345,8 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      *
      * Indicates an alternative step that can be taken instead of the operations on the
      * base step in exceptional/atypical circumstances.
+     *
+     * @return static
      */
     public function setAlternative(FHIRExampleScenarioAlternative ...$alternative): self
     {

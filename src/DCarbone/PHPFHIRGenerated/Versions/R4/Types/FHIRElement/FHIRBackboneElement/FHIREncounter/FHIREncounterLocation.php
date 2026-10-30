@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -212,6 +212,8 @@ class FHIREncounterLocation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location where the encounter takes place.
+     *
+     * @return static
      */
     public function setLocation(null|FHIRReference $location): self
     {
@@ -243,6 +245,8 @@ class FHIREncounterLocation extends FHIRBackboneElement
      * The status of the participants' presence at the specified location during the
      * period specified. If the participant is no longer at the location, then the
      * period will have an end date/time.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIREncounterLocationStatusList|FHIREncounterLocationStatus $status): self
     {
@@ -279,6 +283,8 @@ class FHIREncounterLocation extends FHIRBackboneElement
      *
      * This will be used to specify the required levels (bed/ward/room/etc.) desired to
      * be recorded to simplify either messaging or query.
+     *
+     * @return static
      */
     public function setPhysicalType(null|FHIRCodeableConcept $physicalType): self
     {
@@ -308,6 +314,8 @@ class FHIREncounterLocation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period during which the patient was present at the location.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {

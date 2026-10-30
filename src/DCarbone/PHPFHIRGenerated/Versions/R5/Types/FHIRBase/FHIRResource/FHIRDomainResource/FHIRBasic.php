@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -301,6 +301,8 @@ class FHIRBasic extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Identifier assigned to the resource for business purposes, outside the context
      * of FHIR.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -319,6 +321,8 @@ class FHIRBasic extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Identifier assigned to the resource for business purposes, outside the context
      * of FHIR.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -352,6 +356,8 @@ class FHIRBasic extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Identifies the 'type' of resource - equivalent to the resource name for other
      * resources.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -383,6 +389,8 @@ class FHIRBasic extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Identifies the patient, practitioner, device or any other resource that is the
      * "focus" of this resource.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -420,6 +428,8 @@ class FHIRBasic extends FHIRDomainResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies when the resource was first created.
+     *
+     * @return static
      */
     public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created): self
     {
@@ -452,6 +462,8 @@ class FHIRBasic extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates who was responsible for creating the resource instance.
+     *
+     * @return static
      */
     public function setAuthor(null|FHIRReference $author): self
     {

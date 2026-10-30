@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -267,7 +267,7 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
      */
     #[FHIRString]
     protected FHIRString $versionAlgorithmString;
@@ -277,7 +277,7 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
      */
     #[FHIRCoding]
     protected FHIRCoding $versionAlgorithmCoding;
@@ -738,6 +738,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * which an authoritative instance of this test script is (or will be) published.
      * This URL can be the target of a canonical reference. It SHALL remain the same
      * when the test script is stored on different servers.
+     *
+     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -789,6 +791,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * A formal identifier that is used to identify this test script when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -808,6 +812,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * A formal identifier that is used to identify this test script when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -847,6 +853,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
+     *
+     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -867,7 +875,7 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
      */
     public function getVersionAlgorithmString(): null|FHIRString
     {
@@ -880,7 +888,9 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
+     *
+     * @return static
      */
     public function setVersionAlgorithmString(null|string|FHIRStringPrimitive|FHIRString $versionAlgorithmString): self
     {
@@ -901,7 +911,7 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
      */
     public function getVersionAlgorithmCoding(): null|FHIRCoding
     {
@@ -914,7 +924,9 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
+     * current.
+     *
+     * @return static
      */
     public function setVersionAlgorithmCoding(null|FHIRCoding $versionAlgorithmCoding): self
     {
@@ -948,6 +960,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * A natural language name identifying the test script. This name should be usable
      * as an identifier for the module by machine processing applications such as code
      * generation.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -980,6 +994,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the test script.
+     *
+     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -1008,6 +1024,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this test script. Enables tracking the life-cycle of the content.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -1042,6 +1060,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * A Boolean value to indicate that this test script is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
+     *
+     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -1088,6 +1108,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * changed. The date must change when the business version changes and it must
      * change if the status code changes. In addition, it should change when the
      * substantive content of the test script changes.
+     *
+     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1122,6 +1144,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the test script.
+     *
+     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1169,6 +1193,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1186,6 +1212,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
+     *
+     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1225,6 +1253,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      *
      * A free text natural language description of the test script from a consumer's
      * perspective.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1284,6 +1314,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate test script
      * instances.
+     *
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1307,6 +1339,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate test script
      * instances.
+     *
+     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1351,6 +1385,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the test script is intended to be used.
+     *
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1368,6 +1404,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the test script is intended to be used.
+     *
+     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1407,6 +1445,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      *
      * Explanation of why this test script is needed and why it has been designed as it
      * has.
+     *
+     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1451,6 +1491,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * A copyright statement relating to the test script and/or its contents. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * test script.
+     *
+     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1487,6 +1529,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
+     *
+     * @return static
      */
     public function setCopyrightLabel(null|string|FHIRStringPrimitive|FHIRString $copyrightLabel): self
     {
@@ -1532,6 +1576,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      *
      * An abstract server used in operations within this test script in the origin
      * element.
+     *
+     * @return static
      */
     public function addOrigin(FHIRTestScriptOrigin $origin): self
     {
@@ -1548,6 +1594,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      *
      * An abstract server used in operations within this test script in the origin
      * element.
+     *
+     * @return static
      */
     public function setOrigin(FHIRTestScriptOrigin ...$origin): self
     {
@@ -1590,6 +1638,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      *
      * An abstract server used in operations within this test script in the destination
      * element.
+     *
+     * @return static
      */
     public function addDestination(FHIRTestScriptDestination $destination): self
     {
@@ -1606,6 +1656,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      *
      * An abstract server used in operations within this test script in the destination
      * element.
+     *
+     * @return static
      */
     public function setDestination(FHIRTestScriptDestination ...$destination): self
     {
@@ -1635,6 +1687,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      *
      * The required capability must exist and are assumed to function correctly on the
      * FHIR server being tested.
+     *
+     * @return static
      */
     public function setMetadata(null|FHIRTestScriptMetadata $metadata): self
     {
@@ -1679,6 +1733,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * The scope indicates a conformance artifact that is tested by the test(s) within
      * this test case and the expectation of the test outcome(s) as well as the
      * intended test phase inclusion.
+     *
+     * @return static
      */
     public function addScope(FHIRTestScriptScope $scope): self
     {
@@ -1696,6 +1752,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * The scope indicates a conformance artifact that is tested by the test(s) within
      * this test case and the expectation of the test outcome(s) as well as the
      * intended test phase inclusion.
+     *
+     * @return static
      */
     public function setScope(FHIRTestScriptScope ...$scope): self
     {
@@ -1738,6 +1796,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      *
      * Fixture in the test script - by reference (uri). All fixtures are required for
      * the test script to execute.
+     *
+     * @return static
      */
     public function addFixture(FHIRTestScriptFixture $fixture): self
     {
@@ -1754,6 +1814,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      *
      * Fixture in the test script - by reference (uri). All fixtures are required for
      * the test script to execute.
+     *
+     * @return static
      */
     public function setFixture(FHIRTestScriptFixture ...$fixture): self
     {
@@ -1798,6 +1860,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * the Narrative, or extensions
      *
      * Reference to the profile to be used for validation.
+     *
+     * @return static
      */
     public function addProfile(string|FHIRCanonicalPrimitive|FHIRCanonical $profile): self
     {
@@ -1818,6 +1882,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * the Narrative, or extensions
      *
      * Reference to the profile to be used for validation.
+     *
+     * @return static
      */
     public function setProfile(string|FHIRCanonicalPrimitive|FHIRCanonical ...$profile): self
     {
@@ -1867,6 +1933,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      *
      * Variable is set based either on element value in response body or on header
      * field value in the response headers.
+     *
+     * @return static
      */
     public function addVariable(FHIRTestScriptVariable $variable): self
     {
@@ -1883,6 +1951,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      *
      * Variable is set based either on element value in response body or on header
      * field value in the response headers.
+     *
+     * @return static
      */
     public function setVariable(FHIRTestScriptVariable ...$variable): self
     {
@@ -1910,6 +1980,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * determine compliance against the FHIR specification.
      *
      * A series of required setup operations before tests are executed.
+     *
+     * @return static
      */
     public function setSetup(null|FHIRTestScriptSetup $setup): self
     {
@@ -1950,6 +2022,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * determine compliance against the FHIR specification.
      *
      * A test in this script.
+     *
+     * @return static
      */
     public function addTest(FHIRTestScriptTest $test): self
     {
@@ -1965,6 +2039,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      * determine compliance against the FHIR specification.
      *
      * A test in this script.
+     *
+     * @return static
      */
     public function setTest(FHIRTestScriptTest ...$test): self
     {
@@ -1994,6 +2070,8 @@ class FHIRTestScript extends FHIRCanonicalResource implements VersionContainedTy
      *
      * A series of operations required to clean up after all the tests are executed
      * (successfully or otherwise).
+     *
+     * @return static
      */
     public function setTeardown(null|FHIRTestScriptTeardown $teardown): self
     {

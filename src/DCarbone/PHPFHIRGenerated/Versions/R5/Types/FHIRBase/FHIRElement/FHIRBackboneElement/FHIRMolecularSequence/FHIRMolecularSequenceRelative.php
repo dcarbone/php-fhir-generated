@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -252,6 +252,8 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
      * These are different ways of identifying nucleotides or amino acids within a
      * sequence. Different databases and file types may use different systems. For
      * detail definitions, see https://loinc.org/92822-6/ for more detail.
+     *
+     * @return static
      */
     public function setCoordinateSystem(null|FHIRCodeableConcept $coordinateSystem): self
     {
@@ -283,6 +285,8 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
      *
      * Indicates the order in which the sequence should be considered when putting
      * multiple 'relative' elements together.
+     *
+     * @return static
      */
     public function setOrdinalPosition(null|string|float|FHIRIntegerPrimitive|FHIRInteger $ordinalPosition): self
     {
@@ -317,6 +321,8 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
      *
      * Indicates the nucleotide range in the composed sequence when multiple 'relative'
      * elements are used together.
+     *
+     * @return static
      */
     public function setSequenceRange(null|FHIRRange $sequenceRange): self
     {
@@ -344,6 +350,8 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
      *
      * A sequence that is used as a starting sequence to describe variants that are
      * present in a sequence analyzed.
+     *
+     * @return static
      */
     public function setStartingSequence(null|FHIRMolecularSequenceStartingSequence $startingSequence): self
     {
@@ -382,6 +390,8 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
      * Representation of a molecular sequence.
      *
      * Changes in sequence from the starting sequence.
+     *
+     * @return static
      */
     public function addEdit(FHIRMolecularSequenceEdit $edit): self
     {
@@ -396,6 +406,8 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
      * Representation of a molecular sequence.
      *
      * Changes in sequence from the starting sequence.
+     *
+     * @return static
      */
     public function setEdit(FHIRMolecularSequenceEdit ...$edit): self
     {

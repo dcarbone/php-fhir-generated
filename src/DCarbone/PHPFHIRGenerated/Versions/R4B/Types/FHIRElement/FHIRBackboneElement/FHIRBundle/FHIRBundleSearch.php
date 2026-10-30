@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -199,6 +199,8 @@ class FHIRBundleSearch extends FHIRBackboneElement
      * Why this entry is in the result set - whether it's included as a match or
      * because of an _include requirement, or to convey information or warning
      * information about the search process.
+     *
+     * @return static
      */
     public function setMode(null|string|FHIRSearchEntryModeEnum|FHIRSearchEntryMode $mode): self
     {
@@ -233,6 +235,8 @@ class FHIRBundleSearch extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When searching, the server's search ranking score for the entry.
+     *
+     * @return static
      */
     public function setScore(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $score): self
     {

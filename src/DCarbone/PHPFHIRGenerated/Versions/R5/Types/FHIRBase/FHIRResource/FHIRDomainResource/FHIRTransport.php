@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -761,6 +761,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Identifier for the transport event that is used to identify it across multiple
      * disparate systems.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -779,6 +781,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Identifier for the transport event that is used to identify it across multiple
      * disparate systems.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -812,6 +816,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The URL pointing to a *FHIR*-defined protocol, guideline, orderset or other
      * definition that is adhered to in whole or in part by this Transport.
+     *
+     * @return static
      */
     public function setInstantiatesCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $instantiatesCanonical): self
     {
@@ -846,6 +852,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The URL pointing to an *externally* maintained protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this Transport.
+     *
+     * @return static
      */
     public function setInstantiatesUri(null|string|FHIRUriPrimitive|FHIRUri $instantiatesUri): self
     {
@@ -901,6 +909,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * seeking to fulfill. This latter resource is referenced by FocusOn. For example,
      * based on a ServiceRequest (= BasedOn), a transport is created to fulfill a
      * procedureRequest ( = FocusOn ) to transport a specimen to the lab.
+     *
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -922,6 +932,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * seeking to fulfill. This latter resource is referenced by FocusOn. For example,
      * based on a ServiceRequest (= BasedOn), a transport is created to fulfill a
      * procedureRequest ( = FocusOn ) to transport a specimen to the lab.
+     *
+     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -963,6 +975,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * may have business ramifications in terms of reporting of results, billing, etc.
      * E.g. a requisition number shared by a set of lab tests ordered together, or a
      * prescription number shared by all meds ordered at one time.
+     *
+     * @return static
      */
     public function setGroupIdentifier(null|FHIRIdentifier $groupIdentifier): self
     {
@@ -1005,6 +1019,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger event of which this particular event is a component or step.
+     *
+     * @return static
      */
     public function addPartOf(FHIRReference $partOf): self
     {
@@ -1021,6 +1037,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger event of which this particular event is a component or step.
+     *
+     * @return static
      */
     public function setPartOf(FHIRReference ...$partOf): self
     {
@@ -1046,6 +1064,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the transport event.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRTransportStatusEnum|FHIRTransportStatus $status): self
     {
@@ -1080,6 +1100,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An explanation as to why this transport is held, failed, was refused, etc.
+     *
+     * @return static
      */
     public function setStatusReason(null|FHIRCodeableConcept $statusReason): self
     {
@@ -1109,6 +1131,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * Indicates the "level" of actionability associated with the Transport, i.e.
      * i+R[9]Cs this a proposed transport, a planned transport, an actionable
      * transport, etc.
+     *
+     * @return static
      */
     public function setIntent(null|string|FHIRTransportIntentEnum|FHIRTransportIntent $intent): self
     {
@@ -1139,6 +1163,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Indicates how quickly the Transport should be addressed with respect to other
      * requests.
+     *
+     * @return static
      */
     public function setPriority(null|string|FHIRRequestPriorityEnum|FHIRRequestPriority $priority): self
     {
@@ -1173,6 +1199,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name or code (or both) briefly describing what the transport involves.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -1202,6 +1230,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free-text description of what is to be performed.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -1234,6 +1264,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The request being actioned or the resource being manipulated by this transport.
+     *
+     * @return static
      */
     public function setFocus(null|FHIRReference $focus): self
     {
@@ -1265,6 +1297,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The entity who benefits from the performance of the service specified in the
      * transport (e.g., the patient).
+     *
+     * @return static
      */
     public function setFor(null|FHIRReference $for): self
     {
@@ -1296,6 +1330,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The healthcare event (e.g. a patient and healthcare provider interaction) during
      * which this transport was created.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -1333,6 +1369,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the completion time of the event (the occurrence).
+     *
+     * @return static
      */
     public function setCompletionTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $completionTime): self
     {
@@ -1373,6 +1411,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time this transport was created.
+     *
+     * @return static
      */
     public function setAuthoredOn(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $authoredOn): self
     {
@@ -1413,6 +1453,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time of last modification to this transport.
+     *
+     * @return static
      */
     public function setLastModified(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $lastModified): self
     {
@@ -1445,6 +1487,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The creator of the transport.
+     *
+     * @return static
      */
     public function setRequester(null|FHIRReference $requester): self
     {
@@ -1489,6 +1533,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of participant that should perform the transport.
+     *
+     * @return static
      */
     public function addPerformerType(FHIRCodeableConcept $performerType): self
     {
@@ -1506,6 +1552,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of participant that should perform the transport.
+     *
+     * @return static
      */
     public function setPerformerType(FHIRCodeableConcept ...$performerType): self
     {
@@ -1535,6 +1583,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual organization or Device currently responsible for transport execution.
+     *
+     * @return static
      */
     public function setOwner(null|FHIRReference $owner): self
     {
@@ -1564,6 +1614,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Principal physical location where this transport is performed.
+     *
+     * @return static
      */
     public function setLocation(null|FHIRReference $location): self
     {
@@ -1608,6 +1660,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Insurance plans, coverage extensions, pre-authorizations and/or
      * pre-determinations that may be relevant to the Transport.
+     *
+     * @return static
      */
     public function addInsurance(FHIRReference $insurance): self
     {
@@ -1625,6 +1679,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Insurance plans, coverage extensions, pre-authorizations and/or
      * pre-determinations that may be relevant to the Transport.
+     *
+     * @return static
      */
     public function setInsurance(FHIRReference ...$insurance): self
     {
@@ -1669,6 +1725,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Free-text information captured about the transport as it progresses.
+     *
+     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1686,6 +1744,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Free-text information captured about the transport as it progresses.
+     *
+     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1732,6 +1792,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * Links to Provenance records for past versions of this Transport that identify
      * key state transitions or updates that are likely to be relevant to a user
      * looking at the current version of the transport.
+     *
+     * @return static
      */
     public function addRelevantHistory(FHIRReference $relevantHistory): self
     {
@@ -1750,6 +1812,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * Links to Provenance records for past versions of this Transport that identify
      * key state transitions or updates that are likely to be relevant to a user
      * looking at the current version of the transport.
+     *
+     * @return static
      */
     public function setRelevantHistory(FHIRReference ...$relevantHistory): self
     {
@@ -1781,6 +1845,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * fulfillment (i.e. is asking for the request to be actioned), this element
      * identifies any limitations on what parts of the referenced request should be
      * actioned.
+     *
+     * @return static
      */
     public function setRestriction(null|FHIRTransportRestriction $restriction): self
     {
@@ -1819,6 +1885,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * Record of transport of item.
      *
      * Additional information that may be needed in the execution of the transport.
+     *
+     * @return static
      */
     public function addInput(FHIRTransportInput $input): self
     {
@@ -1833,6 +1901,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * Record of transport of item.
      *
      * Additional information that may be needed in the execution of the transport.
+     *
+     * @return static
      */
     public function setInput(FHIRTransportInput ...$input): self
     {
@@ -1871,6 +1941,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * Record of transport of item.
      *
      * Outputs produced by the Transport.
+     *
+     * @return static
      */
     public function addOutput(FHIRTransportOutput $output): self
     {
@@ -1885,6 +1957,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * Record of transport of item.
      *
      * Outputs produced by the Transport.
+     *
+     * @return static
      */
     public function setOutput(FHIRTransportOutput ...$output): self
     {
@@ -1914,6 +1988,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The desired or final location for the transport.
+     *
+     * @return static
      */
     public function setRequestedLocation(null|FHIRReference $requestedLocation): self
     {
@@ -1943,6 +2019,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The current location for the entity to be transported.
+     *
+     * @return static
      */
     public function setCurrentLocation(null|FHIRReference $currentLocation): self
     {
@@ -1974,6 +2052,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A resource reference indicating why this transport needs to be performed.
+     *
+     * @return static
      */
     public function setReason(null|FHIRCodeableReference $reason): self
     {
@@ -2003,6 +2083,8 @@ class FHIRTransport extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The transport event prior to this one.
+     *
+     * @return static
      */
     public function setHistory(null|FHIRReference $history): self
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -214,6 +214,8 @@ class FHIRCompositionEvent extends FHIRBackboneElement
      * The period of time covered by the documentation. There is no assertion that the
      * documentation is a complete representation for this period, only that it
      * documents events during this time.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -266,6 +268,8 @@ class FHIRCompositionEvent extends FHIRBackboneElement
      * a "History and Physical Report" in which case the procedure being documented is
      * necessarily a "History and Physical" act. The events may be included as a code
      * or as a reference to an other resource.
+     *
+     * @return static
      */
     public function addDetail(FHIRCodeableReference $detail): self
     {
@@ -287,6 +291,8 @@ class FHIRCompositionEvent extends FHIRBackboneElement
      * a "History and Physical Report" in which case the procedure being documented is
      * necessarily a "History and Physical" act. The events may be included as a code
      * or as a reference to an other resource.
+     *
+     * @return static
      */
     public function setDetail(FHIRCodeableReference ...$detail): self
     {

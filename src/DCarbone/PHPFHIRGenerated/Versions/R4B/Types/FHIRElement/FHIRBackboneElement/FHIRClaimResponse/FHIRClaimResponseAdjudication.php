@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -247,6 +247,8 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement
      * payable under the plan, amounts that: the patient is responsible for in
      * aggregate or pertaining to this item; amounts paid by other coverages; and, the
      * benefit payable for this item.
+     *
+     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -280,6 +282,8 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement
      *
      * A code supporting the understanding of the adjudication result and explaining
      * variance from expected amount.
+     *
+     * @return static
      */
     public function setReason(null|FHIRCodeableConcept $reason): self
     {
@@ -309,6 +313,8 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Monetary amount associated with the category.
+     *
+     * @return static
      */
     public function setAmount(null|FHIRMoney $amount): self
     {
@@ -342,6 +348,8 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement
      *
      * A non-monetary value associated with the category. Mutually exclusive to the
      * amount element above.
+     *
+     * @return static
      */
     public function setValue(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $value): self
     {

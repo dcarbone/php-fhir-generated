@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -126,6 +126,12 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
         self::FIELD_TYPE => [
             'min_occurs' => 1,
         ],
+        self::FIELD_WHEN_DATE_TIME => [
+            'min_occurs' => 1,
+        ],
+        self::FIELD_WHEN_PERIOD => [
+            'min_occurs' => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -154,7 +160,7 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A date or period in the past or future indicating when the event occurred or is
-     * expectd to occur. (choose any one of when*, but only one)
+     * expectd to occur.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $whenDateTime;
@@ -164,7 +170,7 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A date or period in the past or future indicating when the event occurred or is
-     * expectd to occur. (choose any one of when*, but only one)
+     * expectd to occur.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $whenPeriod;
@@ -226,6 +232,8 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A coded event such as when a service is expected or a card printed.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -247,7 +255,7 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A date or period in the past or future indicating when the event occurred or is
-     * expectd to occur. (choose any one of when*, but only one)
+     * expectd to occur.
      */
     public function getWhenDateTime(): null|FHIRDateTime
     {
@@ -264,7 +272,9 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A date or period in the past or future indicating when the event occurred or is
-     * expectd to occur. (choose any one of when*, but only one)
+     * expectd to occur.
+     *
+     * @return static
      */
     public function setWhenDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $whenDateTime): self
     {
@@ -285,7 +295,7 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A date or period in the past or future indicating when the event occurred or is
-     * expectd to occur. (choose any one of when*, but only one)
+     * expectd to occur.
      */
     public function getWhenPeriod(): null|FHIRPeriod
     {
@@ -298,7 +308,9 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A date or period in the past or future indicating when the event occurred or is
-     * expectd to occur. (choose any one of when*, but only one)
+     * expectd to occur.
+     *
+     * @return static
      */
     public function setWhenPeriod(null|FHIRPeriod $whenPeriod): self
     {

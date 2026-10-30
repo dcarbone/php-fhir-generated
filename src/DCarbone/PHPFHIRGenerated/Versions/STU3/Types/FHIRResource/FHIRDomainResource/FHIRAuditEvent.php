@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -365,6 +365,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * Identifier for a family of the event. For example, a menu item, program, rule,
      * policy, function code, application name or URL. It identifies the performed
      * function.
+     *
+     * @return static
      */
     public function setType(null|FHIRCoding $type): self
     {
@@ -407,6 +409,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the category of event.
+     *
+     * @return static
      */
     public function addSubtype(FHIRCoding $subtype): self
     {
@@ -423,6 +427,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the category of event.
+     *
+     * @return static
      */
     public function setSubtype(FHIRCoding ...$subtype): self
     {
@@ -452,6 +458,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Indicator for type of action performed during the event that generated the
      * audit.
+     *
+     * @return static
      */
     public function setAction(null|string|FHIRAuditEventActionList|FHIRAuditEventAction $action): self
     {
@@ -488,6 +496,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the event occurred on the source.
+     *
+     * @return static
      */
     public function setRecorded(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $recorded): self
     {
@@ -518,6 +528,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the event succeeded or failed.
+     *
+     * @return static
      */
     public function setOutcome(null|string|FHIRAuditEventOutcomeList|FHIRAuditEventOutcome $outcome): self
     {
@@ -550,6 +562,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text description of the outcome of the event.
+     *
+     * @return static
      */
     public function setOutcomeDesc(null|string|FHIRStringPrimitive|FHIRString $outcomeDesc): self
     {
@@ -597,6 +611,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The purposeOfUse (reason) that was used during the event being recorded.
+     *
+     * @return static
      */
     public function addPurposeOfEvent(FHIRCodeableConcept $purposeOfEvent): self
     {
@@ -614,6 +630,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The purposeOfUse (reason) that was used during the event being recorded.
+     *
+     * @return static
      */
     public function setPurposeOfEvent(FHIRCodeableConcept ...$purposeOfEvent): self
     {
@@ -656,6 +674,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * usage.
      *
      * An actor taking an active role in the event or activity that is logged.
+     *
+     * @return static
      */
     public function addAgent(FHIRAuditEventAgent $agent): self
     {
@@ -672,6 +692,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * usage.
      *
      * An actor taking an active role in the event or activity that is logged.
+     *
+     * @return static
      */
     public function setAgent(FHIRAuditEventAgent ...$agent): self
     {
@@ -701,6 +723,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * usage.
      *
      * The system that is reporting the event.
+     *
+     * @return static
      */
     public function setSource(null|FHIRAuditEventSource $source): self
     {
@@ -743,6 +767,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * usage.
      *
      * Specific instances of data or objects that have been accessed.
+     *
+     * @return static
      */
     public function addEntity(FHIRAuditEventEntity $entity): self
     {
@@ -759,6 +785,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * usage.
      *
      * Specific instances of data or objects that have been accessed.
+     *
+     * @return static
      */
     public function setEntity(FHIRAuditEventEntity ...$entity): self
     {

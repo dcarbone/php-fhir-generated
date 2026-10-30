@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -240,6 +240,8 @@ class FHIRDeviceObservationReport extends FHIRResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The point in time that the values are reported.
+     *
+     * @return static
      */
     public function setInstant(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $instant): self
     {
@@ -274,6 +276,8 @@ class FHIRDeviceObservationReport extends FHIRResource implements VersionContain
      *
      * An identifier assigned to this observation bu the source device that made the
      * observation.
+     *
+     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -303,6 +307,8 @@ class FHIRDeviceObservationReport extends FHIRResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identification information for the device that is the source of the data.
+     *
+     * @return static
      */
     public function setSource(null|FHIRResourceReference $source): self
     {
@@ -332,6 +338,8 @@ class FHIRDeviceObservationReport extends FHIRResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject of the measurement.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRResourceReference $subject): self
     {
@@ -370,6 +378,8 @@ class FHIRDeviceObservationReport extends FHIRResource implements VersionContain
      * Describes the data produced by a device at a point in time.
      *
      * A medical-related subsystem of a medical device.
+     *
+     * @return static
      */
     public function addVirtualDevice(FHIRDeviceObservationReportVirtualDevice $virtualDevice): self
     {
@@ -384,6 +394,8 @@ class FHIRDeviceObservationReport extends FHIRResource implements VersionContain
      * Describes the data produced by a device at a point in time.
      *
      * A medical-related subsystem of a medical device.
+     *
+     * @return static
      */
     public function setVirtualDevice(FHIRDeviceObservationReportVirtualDevice ...$virtualDevice): self
     {

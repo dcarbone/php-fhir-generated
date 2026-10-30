@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -218,6 +218,8 @@ class FHIRConditionStage extends FHIRBackboneElement
      *
      * A simple summary of the stage such as "Stage 3". The determination of the stage
      * is disease-specific.
+     *
+     * @return static
      */
     public function setSummary(null|FHIRCodeableConcept $summary): self
     {
@@ -262,6 +264,8 @@ class FHIRConditionStage extends FHIRBackboneElement
      *
      * Reference to a formal record of the evidence on which the staging assessment is
      * based.
+     *
+     * @return static
      */
     public function addAssessment(FHIRReference $assessment): self
     {
@@ -279,6 +283,8 @@ class FHIRConditionStage extends FHIRBackboneElement
      *
      * Reference to a formal record of the evidence on which the staging assessment is
      * based.
+     *
+     * @return static
      */
     public function setAssessment(FHIRReference ...$assessment): self
     {
@@ -310,6 +316,8 @@ class FHIRConditionStage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of staging, such as pathological or clinical staging.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {

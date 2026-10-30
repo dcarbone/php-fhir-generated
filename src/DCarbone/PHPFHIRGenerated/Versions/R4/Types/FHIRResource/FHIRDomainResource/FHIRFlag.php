@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -333,6 +333,8 @@ class FHIRFlag extends FHIRDomainResource implements VersionContainedTypeInterfa
      * Business identifiers assigned to this flag by the performer or other systems
      * which remain constant as the resource is updated and propagates from server to
      * server.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -352,6 +354,8 @@ class FHIRFlag extends FHIRDomainResource implements VersionContainedTypeInterfa
      * Business identifiers assigned to this flag by the performer or other systems
      * which remain constant as the resource is updated and propagates from server to
      * server.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -381,6 +385,8 @@ class FHIRFlag extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Supports basic workflow.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRFlagStatusList|FHIRFlagStatus $status): self
     {
@@ -432,6 +438,8 @@ class FHIRFlag extends FHIRDomainResource implements VersionContainedTypeInterfa
      * Allows a flag to be divided into different categories like clinical,
      * administrative etc. Intended to be used as a means of filtering which flags are
      * displayed to particular user or in a given context.
+     *
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -451,6 +459,8 @@ class FHIRFlag extends FHIRDomainResource implements VersionContainedTypeInterfa
      * Allows a flag to be divided into different categories like clinical,
      * administrative etc. Intended to be used as a means of filtering which flags are
      * displayed to particular user or in a given context.
+     *
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -482,6 +492,8 @@ class FHIRFlag extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The coded value or textual component of the flag to display to the user.
+     *
+     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -513,6 +525,8 @@ class FHIRFlag extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The patient, location, group, organization, or practitioner etc. this is about
      * record this flag is associated with.
+     *
+     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -544,6 +558,8 @@ class FHIRFlag extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The period of time from the activation of the flag to inactivation of the flag.
      * If the flag is active, the end of the period should be unspecified.
+     *
+     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -573,6 +589,8 @@ class FHIRFlag extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * This alert is only relevant during the encounter.
+     *
+     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -602,6 +620,8 @@ class FHIRFlag extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person, organization or device that created the flag.
+     *
+     * @return static
      */
     public function setAuthor(null|FHIRReference $author): self
     {

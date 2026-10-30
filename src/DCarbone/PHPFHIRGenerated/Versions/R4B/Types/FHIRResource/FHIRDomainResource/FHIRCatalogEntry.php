@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -443,6 +443,8 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
      *
      * Used in supporting different identifiers for the same product, e.g. manufacturer
      * code and retailer code.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -461,6 +463,8 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
      *
      * Used in supporting different identifiers for the same product, e.g. manufacturer
      * code and retailer code.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -492,6 +496,8 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of item - medication, device, service, protocol or other.
+     *
+     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -519,6 +525,8 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the entry represents an orderable item.
+     *
+     * @return static
      */
     public function setOrderable(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $orderable): self
     {
@@ -551,6 +559,8 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The item in a catalog or definition.
+     *
+     * @return static
      */
     public function setReferencedItem(null|FHIRReference $referencedItem): self
     {
@@ -595,6 +605,8 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used in supporting related concepts, e.g. NDC to RxNorm.
+     *
+     * @return static
      */
     public function addAdditionalIdentifier(FHIRIdentifier $additionalIdentifier): self
     {
@@ -612,6 +624,8 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used in supporting related concepts, e.g. NDC to RxNorm.
+     *
+     * @return static
      */
     public function setAdditionalIdentifier(FHIRIdentifier ...$additionalIdentifier): self
     {
@@ -656,6 +670,8 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Classes of devices, or ATC for medication.
+     *
+     * @return static
      */
     public function addClassification(FHIRCodeableConcept $classification): self
     {
@@ -673,6 +689,8 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Classes of devices, or ATC for medication.
+     *
+     * @return static
      */
     public function setClassification(FHIRCodeableConcept ...$classification): self
     {
@@ -700,6 +718,8 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
      *
      * Used to support catalog exchange even for unsupported products, e.g. getting
      * list of medications even if not prescribable.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -732,6 +752,8 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time period in which this catalog entry is expected to be active.
+     *
+     * @return static
      */
     public function setValidityPeriod(null|FHIRPeriod $validityPeriod): self
     {
@@ -767,6 +789,8 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date until which this catalog entry is expected to be active.
+     *
+     * @return static
      */
     public function setValidTo(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $validTo): self
     {
@@ -807,6 +831,8 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
      *
      * Typically date of issue is different from the beginning of the validity. This
      * can be used to see when an item was last updated.
+     *
+     * @return static
      */
     public function setLastUpdated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $lastUpdated): self
     {
@@ -854,6 +880,8 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used for examplefor Out of Formulary, or any specifics.
+     *
+     * @return static
      */
     public function addAdditionalCharacteristic(FHIRCodeableConcept $additionalCharacteristic): self
     {
@@ -871,6 +899,8 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used for examplefor Out of Formulary, or any specifics.
+     *
+     * @return static
      */
     public function setAdditionalCharacteristic(FHIRCodeableConcept ...$additionalCharacteristic): self
     {
@@ -915,6 +945,8 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * User for example for ATC classification, or.
+     *
+     * @return static
      */
     public function addAdditionalClassification(FHIRCodeableConcept $additionalClassification): self
     {
@@ -932,6 +964,8 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * User for example for ATC classification, or.
+     *
+     * @return static
      */
     public function setAdditionalClassification(FHIRCodeableConcept ...$additionalClassification): self
     {
@@ -972,6 +1006,8 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
      *
      * Used for example, to point to a substance, or to a device used to administer a
      * medication.
+     *
+     * @return static
      */
     public function addRelatedEntry(FHIRCatalogEntryRelatedEntry $relatedEntry): self
     {
@@ -987,6 +1023,8 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
      *
      * Used for example, to point to a substance, or to a device used to administer a
      * medication.
+     *
+     * @return static
      */
     public function setRelatedEntry(FHIRCatalogEntryRelatedEntry ...$relatedEntry): self
     {

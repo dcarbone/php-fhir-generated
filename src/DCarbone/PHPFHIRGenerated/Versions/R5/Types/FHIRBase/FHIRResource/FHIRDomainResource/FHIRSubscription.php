@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -535,6 +535,8 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
      * A formal identifier that is used to identify this code system when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -554,6 +556,8 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
      * A formal identifier that is used to identify this code system when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
+     *
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -583,6 +587,8 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the subscription.
+     *
+     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -613,6 +619,8 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
      *
      * The status of the subscription, which marks the server state for managing the
      * subscription.
+     *
+     * @return static
      */
     public function setStatus(null|string|FHIRSubscriptionStatusCodesEnum|FHIRSubscriptionStatusCodes $status): self
     {
@@ -647,6 +655,8 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
      * the Narrative, or extensions
      *
      * The reference to the subscription topic to be notified about.
+     *
+     * @return static
      */
     public function setTopic(null|string|FHIRCanonicalPrimitive|FHIRCanonical $topic): self
     {
@@ -696,6 +706,8 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
      *
      * Contact details for a human to contact about the subscription. The primary use
      * of this for system administrator troubleshooting.
+     *
+     * @return static
      */
     public function addContact(FHIRContactPoint $contact): self
     {
@@ -714,6 +726,8 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
      *
      * Contact details for a human to contact about the subscription. The primary use
      * of this for system administrator troubleshooting.
+     *
+     * @return static
      */
     public function setContact(FHIRContactPoint ...$contact): self
     {
@@ -749,6 +763,8 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time for the server to turn the subscription off.
+     *
+     * @return static
      */
     public function setEnd(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $end): self
     {
@@ -783,6 +799,8 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
      *
      * Entity with authorization to make subsequent revisions to the Subscription and
      * also determines what data the subscription is authorized to disclose.
+     *
+     * @return static
      */
     public function setManagingEntity(null|FHIRReference $managingEntity): self
     {
@@ -812,6 +830,8 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of why this subscription is defined.
+     *
+     * @return static
      */
     public function setReason(null|string|FHIRStringPrimitive|FHIRString $reason): self
     {
@@ -861,6 +881,8 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
      * When multiple filters are applied, evaluates to true if all the conditions
      * applicable to that resource are met; otherwise it returns false (i.e., logical
      * AND).
+     *
+     * @return static
      */
     public function addFilterBy(FHIRSubscriptionFilterBy $filterBy): self
     {
@@ -879,6 +901,8 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
      * When multiple filters are applied, evaluates to true if all the conditions
      * applicable to that resource are met; otherwise it returns false (i.e., logical
      * AND).
+     *
+     * @return static
      */
     public function setFilterBy(FHIRSubscriptionFilterBy ...$filterBy): self
     {
@@ -908,6 +932,8 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of channel to send notifications on.
+     *
+     * @return static
      */
     public function setChannelType(null|FHIRCoding $channelType): self
     {
@@ -937,6 +963,8 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
      * the Narrative, or extensions
      *
      * The url that describes the actual end-point to send notifications to.
+     *
+     * @return static
      */
     public function setEndpoint(null|string|FHIRUrlPrimitive|FHIRUrl $endpoint): self
     {
@@ -982,6 +1010,8 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
      *
      * Channel-dependent information to send as part of the notification (e.g., HTTP
      * Headers).
+     *
+     * @return static
      */
     public function addParameter(FHIRSubscriptionParameter $parameter): self
     {
@@ -998,6 +1028,8 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
      *
      * Channel-dependent information to send as part of the notification (e.g., HTTP
      * Headers).
+     *
+     * @return static
      */
     public function setParameter(FHIRSubscriptionParameter ...$parameter): self
     {
@@ -1031,6 +1063,8 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
      * If present, a 'heartbeat' notification (keep-alive) is sent via this channel
      * with an interval period equal to this elements integer value in seconds. If not
      * present, a heartbeat notification is not sent.
+     *
+     * @return static
      */
     public function setHeartbeatPeriod(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $heartbeatPeriod): self
     {
@@ -1065,6 +1099,8 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
      *
      * If present, the maximum amount of time a server will allow before failing a
      * notification attempt.
+     *
+     * @return static
      */
     public function setTimeout(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $timeout): self
     {
@@ -1109,6 +1145,8 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
      * Parameter](http.html#version-parameter) - e.g., `application/fhir+json;
      * fhirVersion=4.0`. * additional MIME types can be allowed by channels - e.g.,
      * `text/plain` and `text/html` are defined by the Email channel.
+     *
+     * @return static
      */
     public function setContentType(null|string|FHIRCodePrimitive|FHIRCode $contentType): self
     {
@@ -1141,6 +1179,8 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
      * How much of the resource content to deliver in the notification payload. The
      * choices are an empty payload, only the resource id, or the full resource
      * content.
+     *
+     * @return static
      */
     public function setContent(null|string|FHIRSubscriptionPayloadContentEnum|FHIRSubscriptionPayloadContent $content): self
     {
@@ -1177,6 +1217,8 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
      * If present, the maximum number of events that will be included in a notification
      * bundle. Note that this is not a strict limit on the number of entries in a
      * bundle, as dependent resources can be included.
+     *
+     * @return static
      */
     public function setMaxCount(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $maxCount): self
     {

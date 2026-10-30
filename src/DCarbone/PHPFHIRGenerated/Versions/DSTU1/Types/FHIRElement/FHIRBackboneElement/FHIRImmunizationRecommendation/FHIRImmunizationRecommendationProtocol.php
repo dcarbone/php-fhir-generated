@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 20th, 2026 01:17+0000
+ * Class creation date: October 30th, 2026 00:59+0000
  *
  * PHPFHIR Copyright:
  *
@@ -208,6 +208,8 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
      *
      * Indicates the nominal position in a series of the next dose. This is the
      * recommended dose number as per a specified protocol.
+     *
+     * @return static
      */
     public function setDoseSequence(null|string|float|FHIRIntegerPrimitive|FHIRInteger $doseSequence): self
     {
@@ -240,6 +242,8 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
      *
      * Contains the description about the protocol under which the vaccine was
      * administered.
+     *
+     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -272,6 +276,8 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the authority who published the protocol? E.g. ACIP.
+     *
+     * @return static
      */
     public function setAuthority(null|FHIRResourceReference $authority): self
     {
@@ -301,6 +307,8 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
      *
      * One possible path to achieve presumed immunity against a disease - within the
      * context of an authority.
+     *
+     * @return static
      */
     public function setSeries(null|string|FHIRStringPrimitive|FHIRString $series): self
     {
