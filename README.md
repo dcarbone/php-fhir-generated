@@ -17,6 +17,7 @@ FHIR versions — complete with JSON/XML serialization, field validation, and a 
 - **Built-in FHIR REST client** — read, create, update, patch, and delete resources via cURL
 - **Automatic resource parsing** — detect and unserialize arbitrary FHIR responses by `resourceType` or XML element name
 - **Schema-driven validation** — built-in rules derived from the FHIR schema, with support for custom rules
+- **Generated profiles (R4)** — US Core, SDC, SMART App Launch, and more as subclasses of their base types, with optional automatic resolution from `meta.profile`
 - **PHP 8.1+ named arguments** — clean, readable type construction without positional `null` padding
 
 ## Supported FHIR Versions
@@ -128,6 +129,7 @@ Full documentation is available on the **[Wiki](https://github.com/dcarbone/php-
 - [FHIR Client](https://github.com/dcarbone/php-fhir-generated/wiki/FHIR-Client) — Built-in HTTP client for FHIR REST operations
 - [Resource Parsing](https://github.com/dcarbone/php-fhir-generated/wiki/Resource-Parsing) — Automatically parsing arbitrary FHIR responses
 - [Validation](https://github.com/dcarbone/php-fhir-generated/wiki/Validation) — Built-in and custom validation rules
+- [Profiles](https://github.com/dcarbone/php-fhir-generated/wiki/Profiles) — Generated profile classes, slice accessors, and automatic profile resolution
 - [Type System](https://github.com/dcarbone/php-fhir-generated/wiki/Type-System) — Type hierarchy and interfaces
 - [Autoloading](https://github.com/dcarbone/php-fhir-generated/wiki/Autoloading) — Class loading with and without Composer
 - [Migrating from v2](https://github.com/dcarbone/php-fhir-generated/wiki/Migrating-from-v2) — Breaking changes and upgrade guide from the previous major version
