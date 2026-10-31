@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Validation;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 30th, 2026 00:59+0000
+ * Class creation date: October 31st, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -115,9 +115,32 @@ class Validator
                     Constants::UNLIMITED === $constraint => $base[$rule],
                     default => min($base[$rule], $constraint),
                 };
+            } elseif (ChoiceOccursRule::NAME === $rule && is_array($base[$rule]) && is_array($constraint)) {
+                $base[$rule] = self::_tightenChoice($base[$rule], $constraint);
             } else {
                 $base[$rule] = $constraint;
             }
+        }
+        return $base;
+    }
+
+    /**
+     * Examined fields are united, allowed variants intersected and bounds narrowed, so a profile never loosens its
+     * parent's choice.
+     */
+    private static function _tightenChoice(array $base, array $constraining): array
+    {
+        $base['fields'] = array_values(array_unique(array_merge($base['fields'] ?? [], $constraining['fields'] ?? [])));
+        if (isset($constraining['allowed'])) {
+            $base['allowed'] = isset($base['allowed'])
+                ? array_values(array_intersect($base['allowed'], $constraining['allowed']))
+                : $constraining['allowed'];
+        }
+        if (isset($constraining['min'])) {
+            $base['min'] = max($base['min'] ?? 0, $constraining['min']);
+        }
+        if (isset($constraining['max'])) {
+            $base['max'] = isset($base['max']) ? min($base['max'], $constraining['max']) : $constraining['max'];
         }
         return $base;
     }

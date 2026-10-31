@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Client;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 30th, 2026 00:59+0000
+ * Class creation date: October 31st, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -43,7 +43,7 @@ class Client implements ClientInterface
     private const _BASE_CURL_OPTS = [
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_USERAGENT => 'php-fhir client (build: October 30th, 2026 00:59+0000;)',
+        CURLOPT_USERAGENT => 'php-fhir client (build: October 31st, 2026 01:12+0000;)',
     ];
 
     protected Config $_config;
