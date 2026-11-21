@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: October 31st, 2026 01:12+0000
+ * Class creation date: November 21st, 2026 18:21+0000
  *
  * PHPFHIR Copyright:
  *
@@ -27,12 +27,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types;
  */
 
 use DCarbone\PHPFHIRGenerated\FHIRVersion;
-use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\LeafTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Version;
 
 #[\Attribute(\Attribute::TARGET_PROPERTY)]
-class FHIRXHTML implements TypeInterface
+class FHIRXHTML implements LeafTypeInterface
 {
     use TypeValidationsTrait;
 
