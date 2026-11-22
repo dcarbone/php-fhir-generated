@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: November 21st, 2026 18:21+0000
+ * Class creation date: November 22nd, 2026 04:37+0000
  *
  * PHPFHIR Copyright:
  *

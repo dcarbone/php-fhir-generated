@@ -1,0 +1,378 @@
+<?php declare(strict_types=1);
+
+namespace DCarbone\PHPFHIRGenerated\Translation\Maps;
+
+/*!
+ * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
+ * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
+ *
+ * Class creation date: November 22nd, 2026 04:37+0000
+ *
+ * PHPFHIR Copyright:
+ *
+ * Copyright 2016-2026 Daniel Carbone (daniel.p.carbone@gmail.com)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
+use DCarbone\PHPFHIRGenerated\Translation\HopMapInterface;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Version as Version1;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
+use DCarbone\PHPFHIRGenerated\Versions\VersionInterface;
+
+final class HopMap_R5ToR4B implements HopMapInterface
+{
+    private const _REMOVED_TYPES = [
+        'Account.Balance',
+        'Account.Diagnosis',
+        'Account.Procedure',
+        'Account.RelatedAccount',
+        'ActorDefinition',
+        'AdverseEvent.ContributingFactor',
+        'AdverseEvent.MitigatingAction',
+        'AdverseEvent.Participant',
+        'AdverseEvent.PreventiveAction',
+        'AdverseEvent.SupportingInfo',
+        'AdverseEventStatus',
+        'AllergyIntolerance.Participant',
+        'AllResourceTypes',
+        'Appointment.MonthlyTemplate',
+        'Appointment.RecurrenceTemplate',
+        'Appointment.WeeklyTemplate',
+        'Appointment.YearlyTemplate',
+        'AppointmentResponseStatus',
+        'ArtifactAssessment',
+        'ArtifactAssessment.Content',
+        'ArtifactAssessmentDisposition',
+        'ArtifactAssessmentInformationType',
+        'ArtifactAssessmentWorkflowStatus',
+        'AssertionManualCompletionType',
+        'AuditEvent.Outcome',
+        'AuditEventSeverity',
+        'Availability',
+        'Availability.AvailableTime',
+        'Availability.NotAvailableTime',
+        'BackboneType',
+        'Base',
+        'BiologicallyDerivedProduct.Property',
+        'BiologicallyDerivedProductDispense',
+        'BiologicallyDerivedProductDispense.Performer',
+        'BiologicallyDerivedProductDispenseCodes',
+        'BodyStructure.BodyLandmarkOrientation',
+        'BodyStructure.DistanceFromLandmark',
+        'BodyStructure.IncludedStructure',
+        'CanonicalResource',
+        'Claim.BodySite',
+        'Claim.Event',
+        'ClaimProcessingCodes',
+        'ClaimResponse.BodySite',
+        'ClaimResponse.Event',
+        'ClaimResponse.ReviewOutcome',
+        'ColorCodesOrRGB',
+        'ColorCodesOrRGBEnum',
+        'CommonLanguages',
+        'ConceptMap.AdditionalAttribute',
+        'ConceptMap.Property',
+        'ConceptMap.Property1',
+        'ConceptMapAttributeType',
+        'ConceptMapPropertyType',
+        'ConceptMapRelationship',
+        'ConcreteFHIRTypes',
+        'Condition.Participant',
+        'ConditionDefinition',
+        'ConditionDefinition.Medication',
+        'ConditionDefinition.Observation',
+        'ConditionDefinition.Plan',
+        'ConditionDefinition.Precondition',
+        'ConditionDefinition.Questionnaire',
+        'ConditionPreconditionType',
+        'ConditionQuestionnairePurpose',
+        'ConformanceExpectation',
+        'Consent.PolicyBasis',
+        'Coverage.PaymentBy',
+        'CoverageEligibilityRequest.Event',
+        'CoverageEligibilityResponse.Event',
+        'DataRequirement.ValueFilter',
+        'DataType',
+        'DefinitionResourceTypes',
+        'DetectedIssueStatus',
+        'Device.ConformsTo',
+        'Device.Name',
+        'DeviceAssociation',
+        'DeviceAssociation.Operation',
+        'DeviceCorrectiveActionScope',
+        'DeviceDefinition.ChargeItem',
+        'DeviceDefinition.Classification',
+        'DeviceDefinition.ConformsTo',
+        'DeviceDefinition.CorrectiveAction',
+        'DeviceDefinition.Distributor',
+        'DeviceDefinition.Guideline',
+        'DeviceDefinition.HasPart',
+        'DeviceDefinition.Link',
+        'DeviceDefinition.MarketDistribution',
+        'DeviceDefinition.Packaging',
+        'DeviceDefinition.RegulatoryIdentifier',
+        'DeviceDefinition.Version',
+        'DeviceDefinitionRegulatoryIdentifierType',
+        'DeviceDispense',
+        'DeviceDispense.Performer',
+        'DeviceDispenseStatusCodes',
+        'DeviceProductionIdentifierInUDI',
+        'DeviceUsage',
+        'DeviceUsage.Adherence',
+        'DeviceUsageStatus',
+        'DiagnosticReport.SupportingInfo',
+        'DocumentReference.Attester',
+        'DocumentReference.Profile',
+        'ElementDefinition.Additional',
+        'EligibilityOutcome',
+        'Encounter.Admission',
+        'Encounter.Reason',
+        'EncounterHistory',
+        'EncounterHistory.Location',
+        'Endpoint.Payload',
+        'EnrollmentOutcome',
+        'EpisodeOfCare.Reason',
+        'EventResourceTypes',
+        'EvidenceReport.Target',
+        'EvidenceVariable.DefinitionByCombination',
+        'EvidenceVariable.DefinitionByTypeAndValue',
+        'EvidenceVariable.TimeFromEvent',
+        'ExplanationOfBenefit.BodySite',
+        'ExplanationOfBenefit.BodySite1',
+        'ExplanationOfBenefit.Event',
+        'ExplanationOfBenefit.ReviewOutcome',
+        'ExtendedContactDetail',
+        'FamilyMemberHistory.Participant',
+        'FamilyMemberHistory.Procedure',
+        'FHIRTypes',
+        'FormularyItem',
+        'FormularyItemStatusCodes',
+        'GenomicStudy',
+        'GenomicStudy.Analysis',
+        'GenomicStudy.Device',
+        'GenomicStudy.Input',
+        'GenomicStudy.Output',
+        'GenomicStudy.Performer',
+        'GenomicStudyStatus',
+        'GraphDefinition.Node',
+        'GroupMembershipBasis',
+        'ImagingSelection',
+        'ImagingSelection.ImageRegion2D',
+        'ImagingSelection.ImageRegion3D',
+        'ImagingSelection.Instance',
+        'ImagingSelection.Performer',
+        'ImagingSelectionDGraphicType',
+        'ImagingSelectionStatus',
+        'Immunization.ProgramEligibility',
+        'integer64',
+        'integer64-primitive',
+        'InventoryCountType',
+        'InventoryItem',
+        'InventoryItem.Association',
+        'InventoryItem.Characteristic',
+        'InventoryItem.Description',
+        'InventoryItem.Instance',
+        'InventoryItem.Name',
+        'InventoryItem.ResponsibleOrganization',
+        'InventoryItemStatusCodes',
+        'InventoryReport',
+        'InventoryReport.InventoryListing',
+        'InventoryReport.Item',
+        'InventoryReportStatus',
+        'JurisdictionValueSet',
+        'Kind',
+        'LinkRelationTypes',
+        'ManufacturedItemDefinition.Component',
+        'ManufacturedItemDefinition.Constituent',
+        'Measure.Term',
+        'MedicationAdministrationStatusCodes',
+        'MedicationDispenseStatusCodes',
+        'MedicationKnowledge.Definitional',
+        'MedicationKnowledge.DosingGuideline',
+        'MedicationKnowledge.EnvironmentalSetting',
+        'MedicationKnowledge.IndicationGuideline',
+        'MedicationKnowledge.PatientCharacteristic',
+        'MedicationKnowledge.StorageGuideline',
+        'MedicationKnowledgeStatusCodes',
+        'MedicationRequestIntent',
+        'MedicationrequestStatus',
+        'MedicationStatement.Adherence',
+        'MedicinalProductDefinition.Part',
+        'MedicinalProductDefinition.Usage',
+        'MessageheaderResponseRequest',
+        'MetadataResource',
+        'MolecularSequence.Edit',
+        'MolecularSequence.Relative',
+        'MolecularSequence.StartingSequence',
+        'MonetaryComponent',
+        'NutritionIntake',
+        'NutritionIntake.ConsumedItem',
+        'NutritionIntake.IngredientLabel',
+        'NutritionIntake.Performer',
+        'NutritionOrder.Additive',
+        'NutritionOrder.Schedule',
+        'NutritionOrder.Schedule1',
+        'NutritionOrder.Schedule2',
+        'NutritionProduct.Characteristic',
+        'Observation.TriggeredBy',
+        'ObservationDefinition.Component',
+        'ObservationDefinition.QualifiedValue',
+        'OperationOutcomeCodes',
+        'OperationParameterScope',
+        'Organization.Qualification',
+        'OrientationType',
+        'PackagedProductDefinition.Packaging',
+        'ParticipantResourceTypes',
+        'PaymentOutcome',
+        'PaymentReconciliation.Allocation',
+        'Permission',
+        'Permission.Activity',
+        'Permission.Data',
+        'Permission.Justification',
+        'Permission.Resource',
+        'Permission.Rule',
+        'PermissionRuleCombining',
+        'PermissionStatus',
+        'Person.Communication',
+        'PlanDefinition.Actor',
+        'PlanDefinition.Input',
+        'PlanDefinition.Option',
+        'PlanDefinition.Output',
+        'Practitioner.Communication',
+        'PrimitiveType',
+        'QuestionnaireAnswerConstraint',
+        'QuestionnaireItemDisabledDisplay',
+        'RelatedArtifactTypeExpanded',
+        'RequestOrchestration',
+        'RequestOrchestration.Action',
+        'RequestOrchestration.Condition',
+        'RequestOrchestration.DynamicValue',
+        'RequestOrchestration.Input',
+        'RequestOrchestration.Output',
+        'RequestOrchestration.Participant',
+        'RequestOrchestration.RelatedAction',
+        'RequestResourceTypes',
+        'Requirements',
+        'Requirements.Statement',
+        'ResearchStudy.AssociatedParty',
+        'ResearchStudy.ComparisonGroup',
+        'ResearchStudy.Label',
+        'ResearchStudy.OutcomeMeasure',
+        'ResearchStudy.ProgressStatus',
+        'ResearchStudy.Recruitment',
+        'ResearchSubject.Progress',
+        'SearchProcessingModeType',
+        'SequenceType',
+        'ServiceRequest.OrderDetail',
+        'ServiceRequest.Parameter',
+        'ServiceRequest.PatientInstruction',
+        'Specimen.Feature',
+        'SpecimenCombined',
+        'StrandType',
+        'StructureMap.Const',
+        'SubmitDataUpdateType',
+        'Subscription.FilterBy',
+        'Subscription.Parameter',
+        'SubscriptionPayloadContent',
+        'SubstanceDefinition.Characterization',
+        'SubstanceNucleicAcid',
+        'SubstanceNucleicAcid.Linkage',
+        'SubstanceNucleicAcid.Subunit',
+        'SubstanceNucleicAcid.Sugar',
+        'SubstancePolymer',
+        'SubstancePolymer.DegreeOfPolymerisation',
+        'SubstancePolymer.MonomerSet',
+        'SubstancePolymer.Repeat',
+        'SubstancePolymer.RepeatUnit',
+        'SubstancePolymer.StartingMaterial',
+        'SubstancePolymer.StructuralRepresentation',
+        'SubstanceProtein',
+        'SubstanceProtein.Subunit',
+        'SubstanceReferenceInformation',
+        'SubstanceReferenceInformation.Gene',
+        'SubstanceReferenceInformation.GeneElement',
+        'SubstanceReferenceInformation.Target',
+        'SubstanceSourceMaterial',
+        'SubstanceSourceMaterial.Author',
+        'SubstanceSourceMaterial.FractionDescription',
+        'SubstanceSourceMaterial.Hybrid',
+        'SubstanceSourceMaterial.Organism',
+        'SubstanceSourceMaterial.OrganismGeneral',
+        'SubstanceSourceMaterial.PartDescription',
+        'Task.Performer',
+        'TestPlan',
+        'TestPlan.Assertion',
+        'TestPlan.Dependency',
+        'TestPlan.Dependency1',
+        'TestPlan.Script',
+        'TestPlan.TestCase',
+        'TestPlan.TestData',
+        'TestPlan.TestRun',
+        'TestReport.Requirement',
+        'TestScript.Requirement',
+        'TestScript.Scope',
+        'Transport',
+        'Transport.Input',
+        'Transport.Output',
+        'Transport.Restriction',
+        'TransportIntent',
+        'TransportStatus',
+        'TriggeredBytype',
+        'ValueSet.Property',
+        'ValueSet.Property1',
+        'ValueSet.Scope',
+        'ValueSet.SubProperty',
+        'VerificationResultStatus',
+        'VersionIndependentResourceTypesAll',
+        'VirtualServiceDetail',
+    ];
+    /** @var null|\DCarbone\PHPFHIRGenerated\Translation\CodeMap[] */
+    private static null|array $_codeMaps = null;
+    /** @var null|array<string, \DCarbone\PHPFHIRGenerated\Translation\XverExtension> */
+    private static null|array $_xverExtensions = null;
+
+    public function getSourceVersion(): VersionInterface
+    {
+        return new Version();
+    }
+
+    public function getTargetVersion(): VersionInterface
+    {
+        return new Version1();
+    }
+
+    public function getRemovedTypes(): array
+    {
+        return self::_REMOVED_TYPES;
+    }
+
+    public function getCodeMaps(): array
+    {
+        if (null === self::$_codeMaps) {
+            self::$_codeMaps = [
+            ];
+        }
+        return self::$_codeMaps;
+    }
+
+    public function getXverExtensions(): array
+    {
+        if (null === self::$_xverExtensions) {
+            self::$_xverExtensions = [
+            ];
+        }
+        return self::$_xverExtensions;
+    }
+}
