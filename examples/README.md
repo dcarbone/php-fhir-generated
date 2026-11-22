@@ -1,6 +1,8 @@
 # Examples
 
-Working examples for pharmaceutical FHIR R5 resources (IDMP).
+The [medicinal product example](#ibuprofen-400-mg-film-coated-tablets) builds an R5 pharmaceutical bundle.
+The [translation example](#inspecting-data-loss-when-translating-an-r5-account) shows how to tell what was lost
+when moving a resource to an earlier FHIR release.
 
 ## Ibuprofen 400 mg film-coated tablets
 
@@ -65,3 +67,42 @@ Locally against the official HL7 validator:
   Production systems would typically reference a `SubstanceDefinition`.
 - **No `ManufacturedItemDefinition`** — `PackagedProductDefinition.containedItemQuantity`
   carries the "20 tablets per pack" fact without a separate resource.
+
+## Inspecting data loss when translating an R5 Account
+
+R5 has an `Account.currency` field; R4B does not. The default translator in v4.3.1 throws
+`MissingXverDefinitionException` rather than silently losing the currency. If loss is acceptable, opt into `DROP`
+and inspect the notices. To run this example, save it as a PHP file in the repository root after `composer install`:
+
+```php
+<?php
+
+use DCarbone\PHPFHIRGenerated\Encoding\ResourceParser;
+use DCarbone\PHPFHIRGenerated\Translation\OnUnmappableFieldEnum;
+use DCarbone\PHPFHIRGenerated\Translation\TranslationConfig;
+use DCarbone\PHPFHIRGenerated\Translation\Translator;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Version as R4BVersion;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Version as R5Version;
+
+require __DIR__ . '/vendor/autoload.php';
+
+$account = ResourceParser::parse(new R5Version(), '{"resourceType":"Account","status":"active","currency":{"text":"USD"}}');
+$translator = new Translator(new TranslationConfig(onUnmappableField: OnUnmappableFieldEnum::DROP));
+$result = $translator->translate($account, new R4BVersion());
+
+echo json_encode($result->getResource(), JSON_THROW_ON_ERROR), "\n";
+foreach ($result->getNotices() as $notice) {
+    printf("%s -> %s: %s %s\n", $notice->getSourceVersion(), $notice->getTargetVersion(),
+        $notice->getKind(), $notice->getPath());
+}
+```
+
+Output:
+
+```text
+{"status":"active","resourceType":"Account"}
+R5 -> R4B: dropped Account.currency
+```
+
+Translating that R4B Account back to R5 cannot recover the currency. See
+[Cross-Version Translation](https://github.com/dcarbone/php-fhir-generated/wiki/Translation) for the other policies.

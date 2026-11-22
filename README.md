@@ -11,25 +11,26 @@ FHIR versions — complete with JSON/XML serialization, field validation, and a 
 
 ## Features
 
-- **All major FHIR versions** — DSTU1, DSTU2, STU3, R4, R4B, and R5
+- **Six FHIR releases** — DSTU1, DSTU2, STU3, R4, R4B, and R5
 - **Strongly-typed models** — every resource, element, and primitive as a PHP class with full constructor support
 - **JSON & XML serialization** — encode/decode resources using native PHP extensions
 - **Built-in FHIR REST client** — read, create, update, patch, and delete resources via cURL
 - **Automatic resource parsing** — detect and unserialize arbitrary FHIR responses by `resourceType` or XML element name
 - **Schema-driven validation** — built-in rules derived from the FHIR schema, with support for custom rules
 - **Generated profiles (R4)** — US Core, SDC, SMART App Launch, and more as subclasses of their base types, with optional automatic resolution from `meta.profile`
+- **Cross-version translation (beta)** — translate a typed resource to another FHIR release and inspect notices for dropped fields
 - **PHP 8.1+ named arguments** — clean, readable type construction without positional `null` padding
 
 ## Supported FHIR Versions
 
-| Version | FHIR Spec |
-|---------|-----------|
-| DSTU1   | v0.x      |
-| DSTU2   | v1.x      |
-| STU3    | v3.x      |
-| R4      | v4.0      |
-| R4B     | v4.3      |
-| R5      | v5.x      |
+| Version | Generated from |
+|---------|----------------|
+| DSTU1   | v0.0.82        |
+| DSTU2   | v1.0.2         |
+| STU3    | v3.0.1         |
+| R4      | v4.0.1         |
+| R4B     | v4.3.0         |
+| R5      | v5.0.0         |
 
 ## Requirements
 
@@ -83,6 +84,24 @@ echo json_encode($patient, JSON_PRETTY_PRINT);
 $patient = FHIRPatient::jsonUnserialize('{"resourceType":"Patient","id":"patient-1"}');
 ```
 
+### Translating a Resource Between FHIR Versions (Beta)
+
+With package v4.3.1 or later, pass the R4 `$patient` from above and the desired target version to `Translator`:
+
+```php
+use DCarbone\PHPFHIRGenerated\Translation\Translator;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Version as R5Version;
+
+$result = (new Translator())->translate($patient, new R5Version());
+$r5Patient = $result->getResource(); // An R5 FHIRPatient
+$notices = $result->getNotices();
+```
+
+Translation copies compatible fields; it does not guarantee equivalent clinical meaning. The default policy tries to
+preserve unmappable fields as official cross-version extensions. **v4.3.1 ships no extension definitions or terminology
+maps for its translation routes**, so an unmappable field throws by default. See the
+[worked example](examples/README.md#inspecting-data-loss-when-translating-an-r5-account) before opting to drop data.
+
 ### Fetching from a FHIR Server
 
 ```php
@@ -128,6 +147,7 @@ Full documentation is available on the **[Wiki](https://github.com/dcarbone/php-
 - [Serialization](https://github.com/dcarbone/php-fhir-generated/wiki/Serialization) — Encoding and decoding resources in JSON and XML
 - [FHIR Client](https://github.com/dcarbone/php-fhir-generated/wiki/FHIR-Client) — Built-in HTTP client for FHIR REST operations
 - [Resource Parsing](https://github.com/dcarbone/php-fhir-generated/wiki/Resource-Parsing) — Automatically parsing arbitrary FHIR responses
+- [Cross-Version Translation](https://github.com/dcarbone/php-fhir-generated/wiki/Translation) — Routes, unmappable-field policies, notices, and beta limitations
 - [Validation](https://github.com/dcarbone/php-fhir-generated/wiki/Validation) — Built-in and custom validation rules
 - [Profiles](https://github.com/dcarbone/php-fhir-generated/wiki/Profiles) — Generated profile classes, slice accessors, and automatic profile resolution
 - [Type System](https://github.com/dcarbone/php-fhir-generated/wiki/Type-System) — Type hierarchy and interfaces
